@@ -95,7 +95,7 @@ module.exports = {
         query: {
           cacheDirectory: isDev,
           babelrc: false,
-          presets: [['es2015', { modules: false }], 'react', 'stage-0'],
+          presets: [['es2015', { loose: true, modules: false }], 'react', 'stage-0'],
           plugins: ['transform-runtime', 'react-hot-loader/babel'],
         },
       },
