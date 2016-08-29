@@ -1,0 +1,27 @@
+@import '../../theme/variables';
+
+body {
+  background-color: $color-dark-gray;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.App {
+  color: $color-white;
+
+  img {
+    float: left;
+    height: 70px;
+    margin-right: 1em;
+  }
+
+  hr {
+    margin-bottom: 0;
+    margin-top: 0;
+    opacity: .15;
+  }
+}
+
+.header {
+  overflow: auto;
+  padding: 15px;
+}

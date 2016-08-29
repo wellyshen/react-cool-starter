@@ -1,0 +1,17 @@
+@import '../../theme/variables';
+
+.UserList {
+  color: $color-white;
+
+  ul {
+    padding-left: 17px;
+
+    li {
+      margin-bottom: .5em;
+    }
+  }
+
+  a {
+    color: $color-white;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "watch": [
+    "webpack/*.js",
+    "src/server.js",
+    "src/renderHtmlPage.js"
+  ]
+}
