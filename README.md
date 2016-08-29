@@ -6,3 +6,16 @@ A starter boilerplate for an universal web application with the best development
 [![dependencies Status](https://david-dm.org/WellyShen/react-cool-starter.svg)](https://david-dm.org/WellyShen/react-cool-starter)
 [![devDependencies Status](https://david-dm.org/WellyShen/react-cool-starter.svg)](https://david-dm.org/WellyShen/react-cool-starter?type=dev)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/LICENSE)
+
+
+## Getting Started
+
+### Installation
+
+Clone this repository to computer and install all of the npm packages.
+
+```bash
+$ git clone https://github.com/wellyshen/react-cool-starter.git
+$ cd react-cool-starter
+$ npm install
+``` 
