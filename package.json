@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/WellyShen/react-cool-starter"
+    "url": "https://github.com/wellyshen/react-cool-starter"
   },
   "keywords": [
     "react",
@@ -17,7 +17,7 @@
     "isomorphic",
     "universal",
     "express",
-    "webpack-2",
+    "webpack 2",
     "immutable",
     "es6",
     "starter kit",
@@ -29,9 +29,9 @@
   "author": "WellyShen <hivoid19@gmail.com> (https://github.com/WellyShen)",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/wellyshen/react-cool-starter/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/wellyshen/react-cool-starter",
   "scripts": {
     "start": "better-npm-run start",
     "start:prod": "npm run build && better-npm-run start",
@@ -42,38 +42,40 @@
   },
   "betterScripts": {
     "start": {
-      "command": "node index.js",
+      "command": "node ./index.js",
       "env": {
-        "NODE_PATH": "src",
+        "NODE_PATH": "./src",
         "NODE_ENV": "production",
         "PORT": "8080"
       }
     },
     "start-dev": {
-      "command": "nodemon index.js",
+      "command": "nodemon ./index.js",
       "env": {
-        "NODE_PATH": "src",
+        "NODE_PATH": "./src",
         "NODE_ENV": "development",
         "PORT": "3000"
       }
     },
     "build": {
-      "command": "webpack --progress --display-error-details --config webpack/config.js",
+      "command": "webpack --progress --display-error-details --config ./tools/webpack.config.js",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "BABEL_ENV": "es"
       }
     },
     "clean": {
-      "command": "rimraf public/dist"
+      "command": "rimraf ./public/dist"
     },
     "lint": {
-      "command": "eslint -c .eslintrc src webpack index.js"
+      "command": "eslint -c .eslintrc src webpack ./index.js"
     }
   },
   "dependencies": {
     "autoprefixer": "^6.4.0",
     "axios": "^0.14.0",
     "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
     "babel-runtime": "^6.11.6",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
@@ -101,7 +103,6 @@
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-runtime": "^6.12.0",
-    "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "better-npm-run": "0.0.11",

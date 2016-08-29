@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint object-shorthand:0 func-names:0 */
 
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
@@ -19,18 +19,6 @@ module.exports = {
       extension: 'svg',
       parser: WebpackIsomorphicToolsPlugin.url_loader_parser,
     },
-    // For standard CSS stylesheets
-    /* styles: {
-      extensions: ['css', 'scss'],
-      filter: function (module, regular_expression, options, log) {
-        if (options.development) {
-          return WebpackIsomorphicToolsPlugin.style_loader_filter(module, regular_expression, options, log);
-        }
-      },
-      path: WebpackIsomorphicToolsPlugin.style_loader_path_extractor,
-      parser: WebpackIsomorphicToolsPlugin.css_loader_parser,
-    }, */
-    // For CSS stylesheets with "CSS modules" feature
     style_modules: {
       extensions: ['css', 'scss'],
       filter: function (module, regex, options, log) {

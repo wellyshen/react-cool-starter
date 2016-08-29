@@ -11,7 +11,7 @@ global.__DEV__ = process.env.NODE_ENV !== 'production';
 
 // Settings of webpack-isomorphic-tools
 // eslint-disable-next-line max-len
-global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('./webpack/webpackIsomorphicTools.config'))
+global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('./tools/webpackIsomorphicTools.config'))
   .development(__DEV__)
   .server(dirRoot, () => {
     require('./src/server');

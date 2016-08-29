@@ -94,19 +94,16 @@ module.exports = {
         loader: 'babel',
         query: {
           cacheDirectory: isDev,
-          babelrc: false,
-          presets: [['es2015', { loose: true, modules: false }], 'react', 'stage-0'],
-          plugins: ['transform-runtime', 'react-hot-loader/babel'],
         },
       },
       {
         test: /\.css$/,
-        loader: isDev ? 'style!css?localIdentName=[name]_[local].[hash:base64:5]&modules&sourceMap&-minimize&importLoaders=1!postcss'
+        loader: isDev ? 'style!css?localIdentName=[name]__[local].[hash:base64:5]&modules&sourceMap&-minimize&importLoaders=1!postcss'
           : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?modules&sourceMap&importLoaders=1!postcss' }),
       },
       {
         test: /\.scss$/,
-        loader: isDev ? 'style!css?localIdentName=[name]_[local].[hash:base64:5]&modules&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap'
+        loader: isDev ? 'style!css?localIdentName=[name]__[local].[hash:base64:5]&modules&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap'
           : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?modules&sourceMap&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents' }),
       },
       { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
