@@ -68,7 +68,7 @@
       "command": "rimraf ./public/dist"
     },
     "lint": {
-      "command": "eslint -c .eslintrc src webpack ./index.js"
+      "command": "eslint -c .eslintrc ./src ./tools ./index.js"
     }
   },
   "dependencies": {
