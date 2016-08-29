@@ -26,5 +26,6 @@ $ npm install
 ### 3. Try to run it:
 
 ```bash
-$ npm run start:prod  // Running at http://127.0.0.1:8080
+$ npm run start:prod
 ```
+Now the app should be running at http://127.0.0.1:8080/
