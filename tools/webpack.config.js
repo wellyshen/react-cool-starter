@@ -1,9 +1,11 @@
-/* eslint max-len:0 */
+/* eslint max-len:0 prefer-template:0 */
 
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+
+const CSSModules = true;  // Disable css modules here
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
@@ -98,13 +100,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: isDev ? 'style!css?localIdentName=[name]__[local].[hash:base64:5]&modules&sourceMap&-minimize&importLoaders=1!postcss'
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?modules&sourceMap&importLoaders=1!postcss' }),
+        loader: isDev ?
+          'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=1!postcss'
+          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?' + (CSSModules ? 'modules' : '') + '&sourceMap&importLoaders=1!postcss' }),
       },
       {
         test: /\.scss$/,
-        loader: isDev ? 'style!css?localIdentName=[name]__[local].[hash:base64:5]&modules&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap'
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?modules&sourceMap&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents' }),
+        loader: isDev ?
+          'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap'
+          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?' + (CSSModules ? 'modules' : '') + '&sourceMap&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents' }),
       },
       { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
