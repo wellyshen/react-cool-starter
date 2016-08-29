@@ -11,7 +11,8 @@ A starter boilerplate for an universal web application with the best development
 ## Getting Started
 
 ### Installation
-Clone this repository to computer and install all of the npm packages.
+
+Clone this repository to your computer and install all of the npm packages.
 
 ```bash
 $ git clone https://github.com/wellyshen/react-cool-starter.git
