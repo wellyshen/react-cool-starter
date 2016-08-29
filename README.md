@@ -23,7 +23,7 @@ $ cd react-cool-starter
 $ npm install
 ```
 
-3. Try to run it:
+3. Start to run it:
 
 ```bash
 $ npm run start:prod
