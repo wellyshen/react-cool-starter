@@ -34,8 +34,8 @@
   "homepage": "",
   "scripts": {
     "start": "better-npm-run start",
-    "start-prod": "npm run build && better-npm-run start",
-    "start-dev": "better-npm-run start-dev",
+    "start:prod": "npm run build && better-npm-run start",
+    "start:dev": "better-npm-run start-dev",
     "build": "better-npm-run clean && better-npm-run build",
     "clean": "better-npm-run clean",
     "lint": "better-npm-run lint"
