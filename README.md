@@ -10,20 +10,20 @@ A starter boilerplate for an universal web application with the best development
 
 ## Quick Start
 
-1. You can start by clone this repository on your local machine by running:
+#### 1. You can start by clone this repository on your local machine by running:
 
 ```bash
 $ git clone https://github.com/wellyshen/react-cool-starter.git
 $ cd react-cool-starter
 ``` 
 
-2. Install all of the npm packages:
+#### 2. Install all of the npm packages:
 
 ```bash
 $ npm install
 ```
 
-3. Start to run it:
+#### 3. Start to run it:
 
 ```bash
 $ npm run start:prod
