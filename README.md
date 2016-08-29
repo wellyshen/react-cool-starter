@@ -11,7 +11,6 @@ A starter boilerplate for an universal web application with the best development
 ## Getting Started
 
 ### Installation
-
 Clone this repository to computer and install all of the npm packages.
 
 ```bash
