@@ -1,3 +1,5 @@
+/* Disable commonjs while building for webpack-2 tree shake */
+
 const buildPreset = require('babel-preset-es2015').buildPreset;
 
 const BABEL_ENV = process.env.BABEL_ENV;
