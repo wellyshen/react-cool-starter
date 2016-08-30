@@ -38,7 +38,9 @@
     "start:dev": "better-npm-run start-dev",
     "build": "better-npm-run clean && better-npm-run build",
     "clean": "better-npm-run clean",
-    "lint": "better-npm-run lint"
+    "eslint": "better-npm-run lint",
+    "stylelint": "better-npm-run stylelint",
+    "lint": "npm run eslint && npm run stylelint"
   },
   "betterScripts": {
     "start": {
@@ -67,8 +69,11 @@
     "clean": {
       "command": "rimraf ./public/dist"
     },
-    "lint": {
+    "eslint": {
       "command": "eslint -c .eslintrc ./src ./tools ./index.js"
+    },
+    "stylelint": {
+      "command": "stylelint \"./src/**/*.css\""
     }
   },
   "dependencies": {
