@@ -33,7 +33,7 @@ npm install
 npm run start:production  # Building bundle and running production server
 ```
 
-Now the app should be running at http://localhost:8080/
+Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
 
 
 ## NPM Scripts
