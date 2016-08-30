@@ -14,21 +14,24 @@ const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: state => state.get('routing').toJS(),
 });
 
-const renderApp = () => {
+const renderApp = CurrentRoutes => {
   render(
     <AppContainer>
       <Provider store={store}>
-        <Router history={history} routes={routes} />
+        <Router history={history} routes={CurrentRoutes} />
       </Provider>
     </AppContainer>,
     document.getElementById('react-view')
   );
 };
 
-renderApp();
+renderApp(routes);
 
 // Enable hot reload by react-hot-loader
 if (module.hot) {
-  module.hot.accept('./client.js');
-  module.hot.accept('./routes', renderApp);
+  module.hot.accept('./routes', () => {
+    const NextRoutes = require('./routes');
+
+    renderApp(NextRoutes);
+  });
 }
