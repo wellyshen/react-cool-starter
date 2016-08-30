@@ -2,8 +2,9 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const CSSModules = true;  // Disable css modules here
 
@@ -29,6 +30,7 @@ function getPlugins() {
       filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
       minChunks: Infinity,
     }),
+    new StyleLintPlugin({ syntax: 'scss', failOnError: false }),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     webpackIsomorphicToolsPlugin
