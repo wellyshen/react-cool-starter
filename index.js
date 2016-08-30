@@ -1,4 +1,4 @@
-require('babel-core/register'); // Using for babel transpiling
+require('babel-core/register'); // Enable runtime transpilation to use ES6/7 in node
 
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 // This should be the same with webpack context
