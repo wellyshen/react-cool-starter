@@ -73,10 +73,8 @@ Coming soon...
 
 ## To Do
 
-There're some features I also want to include into this starter boilerplate in the future:
+There're some features I'd like to include into this starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork this repository and share it to me.
 
 * [ ] Unit Test
 * [ ] Dynamic Routing
 * [ ] Internationalization
-
-If you have any great ideas or suggestion, feel free to fork this repository and share it to me ;)
