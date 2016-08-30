@@ -66,9 +66,17 @@ Coming soon...
 
 ## Overview
 
-Coming soon...
+### Stateless Functional Components
+
+[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In this starter boilerplate we use it wherever possible.
 
 
 ## To Do
 
-Coming soon...
+There're some features I also want to include into this starter boilerplate in the future:
+
+* [ ] Unit Test
+* [ ] Dynamic Routing
+* [ ] Internationalization
+
+If you have any great ideas or suggestion, feel free to fork this repository and share it to me ;)
