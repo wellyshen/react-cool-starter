@@ -38,7 +38,7 @@
     "start:prod": "better-npm-run start:prod",
     "clean": "better-npm-run clean",
     "build": "better-npm-run clean && better-npm-run build",
-    "eslint": "better-npm-run lint",
+    "eslint": "better-npm-run eslint",
     "stylelint": "better-npm-run stylelint",
     "lint": "npm run eslint && npm run stylelint"
   },
