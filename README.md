@@ -73,6 +73,13 @@ Coming soon...
 [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In this starter boilerplate we use it wherever possible.
 
 
+## Known Issues
+
+> Warning: [react-router] You cannot change <Router routes>; it will be ignored
+
+You will see the error message above whenever the hot reload triggered. It's because of the React Hot Loader 3 will re-render the routes dynamically but [React Router](https://github.com/reactjs/react-router) doesn't support that yet ([react-router#2704](https://github.com/reactjs/react-router/issues/2704)). Please wait for the official fix then and not mind the error message ;)
+
+
 ## To Do...
 
 There're some features I'd like to include into this starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork this repository and share it to me.
