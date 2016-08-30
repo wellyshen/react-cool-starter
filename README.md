@@ -56,7 +56,7 @@ I use [Better NPM Run](https://github.com/benoror/better-npm-run) to manage the 
 |`stylelint`|Lint all `.scss` files.|
 |`lint`|Lint all `.js` and `.scss` files.|
 
-Note: If you encounter the error of `webpack-isomorphic-tools (waiting for the first webpack build to finish)`, try to run `npm run build` to fix it.
+Note: If you encounter the error of > webpack-isomorphic-tools (waiting for the first webpack build to finish), try to run `npm run build` to fix it.
 
 
 ## App Structure
