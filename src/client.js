@@ -8,7 +8,7 @@ import { fromJS } from 'immutable';
 import configureStore from './configureStore';
 import routes from './routes';
 
-const initialState = fromJS(window.__INITIAL_STATE__);  // redux-immutable need immutable object
+const initialState = fromJS(window.__INITIAL_STATE__);  // redux-immutable only allow immutable obj
 const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: state => state.get('routing').toJS(),
