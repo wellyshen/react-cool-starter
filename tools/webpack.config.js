@@ -30,7 +30,7 @@ function getPlugins() {
       filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
       minChunks: Infinity,
     }),
-    new StyleLintPlugin({ syntax: 'scss', failOnError: false }),
+    new StyleLintPlugin({ syntax: 'scss', failOnError: false }),  // Linting your style
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     webpackIsomorphicToolsPlugin
