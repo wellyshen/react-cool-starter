@@ -46,10 +46,7 @@ function getPlugins() {
   } else {
     plugins.push(
       new ExtractTextPlugin({ filename: '[name].[chunkhash].css', allChunks: true }),
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        debug: false,
-      }),
+      new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
       new webpack.optimize.UglifyJsPlugin({
         compress: { screw_ie8: true, warnings: false },
         output: { comments: false },
