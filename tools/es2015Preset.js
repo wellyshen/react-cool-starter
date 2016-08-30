@@ -1,4 +1,4 @@
-/* Disable commonjs while building for webpack-2 tree shake */
+/* For webpack 2 tree shake, we need to disable commonjs while building */
 
 const buildPreset = require('babel-preset-es2015').buildPreset;
 
