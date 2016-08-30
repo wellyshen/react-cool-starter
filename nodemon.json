@@ -1,5 +1,6 @@
 {
   "watch": [
+    "index.js",
     "tools/*.js",
     "src/server.js",
     "src/renderHtmlPage.js"
