@@ -12,21 +12,24 @@ A starter boilerplate for an universal web application with the best development
 
 **1. You can start by clone this repository on your local machine by running:**
 
-```bash
+```sh
 git clone https://github.com/wellyshen/react-cool-starter.git
 cd react-cool-starter
 ``` 
 
 **2. Install all of the npm packages:**
 
-```bash
+```sh
 npm install
 ```
 
 **3. Now start to run it:**
 
-```bash
+```sh
 npm run start:prod
 ```
 
 Now the app should be running at http://127.0.0.1:8080/
+
+
+## How to run build
