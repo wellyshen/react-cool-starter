@@ -19,20 +19,20 @@ Coming soon...
 
 ## Quick Start
 
-**1. You can start by clone this repository on your local machine by running:**
+Step 1. You can start by clone this repository on your local machine by running:
 
 ```sh
 git clone https://github.com/wellyshen/react-cool-starter.git
 cd react-cool-starter
 ``` 
 
-**2. Install all of the npm packages:**
+Step 2. Install all of the npm packages:
 
 ```sh
 npm install
 ```
 
-**3. Start to run it:**
+Step 3. Start to run it:
 
 ```sh
 npm run start:production  # Building bundle and running production server
@@ -71,7 +71,7 @@ Coming soon...
 [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In this starter boilerplate we use it wherever possible.
 
 
-## To Do
+## To Do...
 
 There're some features I'd like to include into this starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork this repository and share it to me.
 
