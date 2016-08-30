@@ -30,7 +30,10 @@ function getPlugins() {
       filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
       minChunks: Infinity,
     }),
-    new StyleLintPlugin({ syntax: 'scss', failOnError: false }),  // Linting your style
+    new StyleLintPlugin({ // Linting your style
+      syntax: 'scss',
+      failOnError: false, // Disable style lint error herer
+    }),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     webpackIsomorphicToolsPlugin
@@ -135,6 +138,8 @@ module.exports = {
     ],
   },
   plugins: getPlugins(),
-  eslint: { failOnError: true },
+  eslint: {
+    failOnError: true,  // Disable js lint error herer
+  },
   postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
 };
