@@ -31,8 +31,8 @@ export default (content, initialState) => {
         }
 
         ${
-          /* Styles will be presented in development mode */
-          /* I put all of the styles here to smoothen the flick */
+          /* Styles will be presented in development mode
+             I put all of the styles here to smoothen the flick */
           Object.keys(assets.styles).length === 0 ?
             `<style>${
               require('./theme/normalize.css')._style +
