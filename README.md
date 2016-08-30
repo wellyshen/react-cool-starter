@@ -48,9 +48,9 @@ I use [Better NPM Run](https://github.com/benoror/better-npm-run) to manage the 
 |`npm run <script>`|Description|
 |------------------|-----------|
 |`start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.|
-|`start:production`|Compiles the app to `./public/dist/` and run it on the production server at `localhost:8080`.|
+|`start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.|
 |`start:prod`|Run your app on the production server only at `localhost:8080`.|
-|`clean`|Remove the `dist` folder from `./public/` to clean the compiled stuff.|
+|`clean`|Remove the `dist` folder from `./public` to clean the compiled stuff.|
 |`build`|Clean the compiled stuff and compile your app to `./public/dist`.|
 |`eslint`|Lint all `.js` files.|
 |`stylelint`|Lint all `.scss` files.|
