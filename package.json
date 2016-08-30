@@ -34,29 +34,29 @@
   "homepage": "https://github.com/wellyshen/react-cool-starter",
   "scripts": {
     "start": "better-npm-run start",
-    "start:prod": "npm run build && better-npm-run start",
-    "start:dev": "better-npm-run start-dev",
-    "build": "better-npm-run clean && better-npm-run build",
+    "start:production": "npm run build && npm run start:prod",
+    "start:prod": "better-npm-run start:prod",
     "clean": "better-npm-run clean",
+    "build": "better-npm-run clean && better-npm-run build",
     "eslint": "better-npm-run lint",
     "stylelint": "better-npm-run stylelint",
     "lint": "npm run eslint && npm run stylelint"
   },
   "betterScripts": {
     "start": {
-      "command": "node ./index.js",
-      "env": {
-        "NODE_PATH": "./src",
-        "NODE_ENV": "production",
-        "PORT": "8080"
-      }
-    },
-    "start-dev": {
       "command": "nodemon ./index.js",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
         "PORT": "3000"
+      }
+    },
+    "start:prod": {
+      "command": "node ./index.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "production",
+        "PORT": "8080"
       }
     },
     "build": {
