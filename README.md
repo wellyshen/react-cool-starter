@@ -1,8 +1,8 @@
 <img src="https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/src/assets/banner.png" alt="React Cool Starter" />
 
-A simple but feature rich starter boilerplate for you to build an universal web application with the best development experience and best practices.
+A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web application with the best development experience and best practices.
 
-Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as Webpack 2, [Babel](https://babeljs.io/), [Immutable.js](https://facebook.github.io/immutable-js/), React Hot Loader 3 and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section **[“Features”](## Features)** for more other awesome features you can expect.
+Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as Webpack 2, [Babel](https://babeljs.io/), [Immutable.js](https://facebook.github.io/immutable-js/), React Hot Loader 3 and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”(#Features)**] for more other awesome features you can expect.
 
 I will improve this starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
 
