@@ -34,6 +34,3 @@ npm run start:prod
 ```
 
 Now the app should be running at http://127.0.0.1:8080/
-
-
-## How to run build, development
