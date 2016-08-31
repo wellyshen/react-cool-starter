@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/src/assets/banner.png" alt="React Cool Starter" />
 
-A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web application with the best development experience and best practices.
+A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web application with the best development experience and a focus on performance and best practices.
 
 Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [Immutable.js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
@@ -24,12 +24,13 @@ Really cool starter boilerplate with the most popular technologies and which are
 - [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) supported
 - [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server
 - [Webpack Hot Middleware]() allows you to add hot reloading into the Express server
-- [Redux](https://github.com/reactjs/redux) for [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation
+- [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation
 - [Redux Thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action
 - [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience
 - [React Router Redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state
 - [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time 
 - [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity
+- [React Addons Shallow Compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure. See [React's Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html) for more detail
 
 (To be continue...)
 
