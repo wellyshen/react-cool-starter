@@ -19,11 +19,11 @@ function getPlugins() {
   const plugins = [];
 
   plugins.push(
-    new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }, // Node env for app
-      __CLIENT__: JSON.stringify(true),                     // Client side env for app
-      __SERVER__: JSON.stringify(false),                    // Server side env for app
-      __DEV__: JSON.stringify(isDev),                       // Node env for app
+    new webpack.DefinePlugin({  // Setup global variables for app
+      'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
+      __CLIENT__: JSON.stringify(true),
+      __SERVER__: JSON.stringify(false),
+      __DEV__: JSON.stringify(isDev),
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',

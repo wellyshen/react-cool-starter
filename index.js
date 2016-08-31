@@ -1,6 +1,6 @@
 require('babel-core/register'); // Enable runtime transpilation to use ES6/7 in node
 
-// Setup global variables for use
+// Setup global variables for node
 global.__CLIENT__ = false;
 global.__SERVER__ = true;
 global.__DEV__ = process.env.NODE_ENV !== 'production';
