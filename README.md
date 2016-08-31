@@ -28,7 +28,7 @@ Really cool starter boilerplate with the most popular technologies and which are
 - [Redux Thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action
 - [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience
 - [React Router Redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state
-- [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time 
+- [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component / store in real time 
 - [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity
 - [React Addons Shallow Compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
 
