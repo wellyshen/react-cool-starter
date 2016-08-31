@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import * as fetchAnUser from '../../actions/fetchAnUser';
@@ -15,6 +16,12 @@ class UserInfo extends Component {
     const { dispatch, params } = this.props;
 
     UserInfo.fetchData(dispatch, params);
+  }
+
+  // Disable the components which with the same props and state
+  // are rendered repeatly. It can boost the performance of your app
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
   }
 
   displayUserCard = () => {
