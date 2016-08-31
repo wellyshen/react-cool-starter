@@ -30,7 +30,7 @@ Really cool starter boilerplate with the most popular technologies and which are
 - [React Router Redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state
 - [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time 
 - [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity
-- [React Addons Shallow Compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure. See [React's Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html) for more detail
+- [React Addons Shallow Compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
 
 (To be continue...)
 
