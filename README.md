@@ -14,27 +14,29 @@ I will improve this starter boilerplate continuously and keep all of the technol
 
 ## Features
 
-Coming soon...
+- [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering
+
+(To be continue...)
 
 
 ## Quick Start
 
 Step 1. You can start by clone this repository on your local machine by running:
 
-```sh
+```bash
 git clone https://github.com/wellyshen/react-cool-starter.git
 cd react-cool-starter
 ``` 
 
 Step 2. Install all of the npm packages:
 
-```sh
+```bash
 npm install
 ```
 
 Step 3. Start to run it:
 
-```sh
+```bash
 npm run start:production  # Building bundle and running production server
 ```
 
@@ -61,9 +63,36 @@ Note: If you get the the following message, try to run `npm run build` to fix it
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
 
-## App Structure
+## Application Structure
 
-Coming soon...
+Here is the structure of this application, which serve as generally accepted guidelines and patterns for building scalable applications.
+
+```
+.
+├── public                                    # The root path of static file
+│   ├── favicon.ico                           # Favicon is placed in the same path with the main HTML page
+│   └── dist                                  # All the built files will be placed into it
+├── src                                       # Application source code
+│   ├── actions                               # Collections of actions
+│   ├── assets                                # Assets required to render components
+│   ├── config                                # Application configuration settings
+│   │   ├── default.js                        # Default settings
+│   │   ├── index.js                          # Configuration entry point
+│   │   └── prod.js                           # Production settings (overrides default settings)
+│   ├── containers                            # Reusable container components
+│   ├── reducers                              # Collections of reducers (registry and injection)
+│   ├── theme                                 # Application-wide style, vendor style, generally settings
+│   ├── client.js                             # Application bootstrap and rendering (webpack entry)
+│   ├── configureStore.js                     # Configure and instrument redux store
+│   ├── renderHtmlPage.js                     # Main HTML page layout for application
+│   ├── routes.js                             # Routes shared between client and server side
+│   └── server.js                             # Express application (uses webpack middleware)                  
+├── tools                                     # Project and build related configuration 
+│   ├── es2015Preset.js                       # es2015 preset configuration file (for .babelrc)
+│   ├── webpack.config.js                     # Webpack configuration file
+│   └── webpackIsomorphicTools.config.js      # Webpack Isomorphic Tools configuration file
+└── index.js                                  # Application start point
+```
 
 
 ## Overview
@@ -86,6 +115,6 @@ You will see the error message above whenever the hot reload triggered. It's bec
 
 There're some features I'd like to include into this starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork this repository and share it to me.
 
-* [ ] Unit Test
-* [ ] Dynamic Routing
-* [ ] Internationalization
+- [ ] Unit Test
+- [ ] Dynamic Routing
+- [ ] Internationalization
