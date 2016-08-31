@@ -2,7 +2,7 @@
 
 A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web application with the best development experience and best practices.
 
-Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as Webpack 2, [Babel](https://babeljs.io/), [Immutable.js](https://facebook.github.io/immutable-js/), React Hot Loader 3 and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [Immutable.js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve this starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
 
@@ -14,7 +14,21 @@ I will improve this starter boilerplate continuously and keep all of the technol
 
 ## Features
 
+Really cool starter boilerplate with the most popular technologies and which are well maintenance:
+
 - [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering
+- [React](https://facebook.github.io/react/) as the view
+- [React Router](https://github.com/reactjs/react-router) as the router
+- [Express](https://expressjs.com/) server
+- [Babel](https://babeljs.io/) for ES6 and ES7 transpiling
+- [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) supported
+- [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server
+- [Webpack Hot Middleware]() allows you to add hot reloading into the Express server
+- [Redux](https://github.com/reactjs/redux) for [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation
+- [Redux Thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action
+- [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience
+- [React Router Redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state
+- [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time 
 
 (To be continue...)
 
