@@ -2,7 +2,7 @@
 
 A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web application with the best development experience and a focus on performance and best practices.
 
-Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [Immutable.js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable.js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve this starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
 
@@ -16,23 +16,32 @@ I will improve this starter boilerplate continuously and keep all of the technol
 
 Really cool starter boilerplate with the most popular technologies and which are well maintenance:
 
-- [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering
-- [React](https://facebook.github.io/react/) as the view
-- [React Router](https://github.com/reactjs/react-router) as the router
-- [Express](https://expressjs.com/) server
-- [Babel](https://babeljs.io/) for ES6 and ES7 transpiling
-- [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) supported
-- [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server
-- [Webpack Hot Middleware]() allows you to add hot reloading into the Express server
-- [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation
-- [Redux Thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action
-- [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience
-- [React Router Redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state
-- [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component / store in real time 
-- [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity
-- [React Addons Shallow Compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
-
-(To be continue...)
+- [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering.
+- [React](https://facebook.github.io/react/) as the view.
+- [React Router](https://github.com/reactjs/react-router) as the router.
+- [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, link, script and base tags on both server and client.
+- [Express](https://expressjs.com/) server.
+- [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
+- [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
+- [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
+- [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server.
+- [Webpack Hot Middleware]() allows you to add hot reloading into the Express server.
+- [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
+- [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
+- [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
+- [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
+- [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
+- [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time.
+- [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
+- [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
+- [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
+- [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
+- [stylelint](http://stylelint.io/) to maintain a consistent css/scss code style.
+- CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). CSS modules enabled.
+- Image (with [image optimizing](https://github.com/tcoopman/image-webpack-loader)) and Font support.
+- [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
+- Split vendors libraries from client bundle.
+- No need other templating engines.
 
 
 ## Quick Start
@@ -61,7 +70,7 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 ## NPM Scripts
 
-I use [Better NPM Run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. Listing all the scripts as following:
+I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. Listing all the scripts as following:
 
 |`npm run <script>`|Description|
 |------------------|-----------|
