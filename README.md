@@ -48,20 +48,20 @@ Really cool starter boilerplate with the most popular technologies and which are
 
 ## Quick Start
 
-Step 1. You can start by clone this repository on your local machine by running:
+**1. You can start by clone this repository on your local machine by running:**
 
 ```bash
 git clone https://github.com/wellyshen/react-cool-starter.git
 cd react-cool-starter
 ``` 
 
-Step 2. Install all of the npm packages:
+**2. Install all of the npm packages:**
 
 ```bash
 npm install
 ```
 
-Step 3. Start to run it:
+**3. Start to run it:**
 
 ```bash
 npm run start:production  # Building bundle and running production server
@@ -128,24 +128,24 @@ Here is the structure of this app, which serve as generally accepted guidelines 
 
 The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow the installation guide to use it:
 
-* For Chrome
+**For Chrome**
 
- * from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
- * or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`
- * or run it in dev mode with npm i && npm start and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
+* from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+* or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`
+* or run it in dev mode with npm i && npm start and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
 
-* For Firefox
+**For Firefox**
 
- * from [AMO](https://github.com/zalmoxisus/redux-devtools-extension)
- * or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
+* from [AMO](https://github.com/zalmoxisus/redux-devtools-extension)
+* or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
 
-* For Electron
+**For Electron**
 
- * just specify REDUX_DEVTOOLS in [electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer).
+* just specify REDUX_DEVTOOLS in [electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer).
 
-* For other browsers and non-browser environment
+**For other browsers and non-browser environment**
 
- * use [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools).
+* use [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools).
 
 ### Stateless Functional Components
 
@@ -179,7 +179,7 @@ import config from './config';
 
 This starter boilerplate supports CSS and SASS. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
-1. With CSS modules:
+**With CSS modules:**
 
 ```javascript
 import styles from './Home.scss';
@@ -194,7 +194,7 @@ render() {
 }
 ```
 
-2. Without CSS modules (you need to turn off CSS modules from `./tools/webpack.config.js`):
+**Without CSS modules (you need to turn off CSS modules from `./tools/webpack.config.js`):**
 
 ```javascript
 import './Home.scss';
