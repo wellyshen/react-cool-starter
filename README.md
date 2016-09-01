@@ -41,7 +41,7 @@ Really cool starter boilerplate with the most popular technologies and which are
 - Image (with [image optimizing](https://github.com/tcoopman/image-webpack-loader)) and Font support.
 - [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
 - Split vendors libraries from client bundle.
-- No need other templating engines.
+- No other templating engines, just javascript HTML template from root down.
 
 
 ## Quick Start
