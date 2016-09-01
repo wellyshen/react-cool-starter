@@ -39,7 +39,7 @@ Really cool starter boilerplate with the most popular technologies and which are
 - [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
 - [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). CSS modules enabled.
-- Image (with [image optimizing](https://github.com/tcoopman/image-webpack-loader)) and Font support.
+- Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
 - Split vendors libraries from client bundle.
 - No other view engines, just javascript based HTML rendering template.
 - Shared application config between development and production.
@@ -123,9 +123,44 @@ Here is the structure of this application, which serve as generally accepted gui
 
 ## Overview
 
+### Using Redux DevTools Extension
+
+The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux application to a time-traveling debugger. It's enabled in development only. You can follow the installation guide to use it:
+
+**For Chrome**
+
+- from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+- or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`
+- or run it in dev mode with npm i && npm start and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
+
+**For Firefox**
+
+- from [AMO](https://github.com/zalmoxisus/redux-devtools-extension)
+- or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
+
+**For Electron**
+
+- just specify REDUX_DEVTOOLS in [electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer).
+
+**For other browsers and non-browser environment**
+
+- use [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools).
+
 ### Stateless Functional Components
 
 [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In this starter boilerplate we use it wherever possible.
+
+### Adding Routes
+
+Add your routes in `./src/routes.js`. For example:
+
+```javascript
+<Route path="/" component={App}>
+  <IndexRoute component={Home} />
+  <Route path="NewRoute" component={NewRoute} />  // Adding a new route
+  <Route path="*" component={NotFound} />
+</Route>
+```
 
 (To be continue...)
 
