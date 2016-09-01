@@ -32,6 +32,7 @@ Really cool starter boilerplate with the most popular technologies and which are
 - [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
 - [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
 - [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time.
+- [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
 - [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 - [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
 - [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
@@ -39,9 +40,9 @@ Really cool starter boilerplate with the most popular technologies and which are
 - [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). CSS modules enabled.
 - Image (with [image optimizing](https://github.com/tcoopman/image-webpack-loader)) and Font support.
-- [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
 - Split vendors libraries from client bundle.
 - No other view engines, just javascript based HTML rendering template.
+- Shared application config between development and production.
 
 
 ## Quick Start
