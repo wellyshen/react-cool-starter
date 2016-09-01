@@ -16,33 +16,33 @@ I will improve this starter boilerplate continuously and keep all of the technol
 
 Really cool starter boilerplate with the most popular technologies and which are well maintenance:
 
-- [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering.
-- [React](https://facebook.github.io/react/) as the view.
-- [React Router](https://github.com/reactjs/react-router) as the router.
-- [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, link, script and base tags on both server and client.
-- [Express](https://expressjs.com/) server.
-- [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
-- [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
-- [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
-- [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server.
-- [Webpack Hot Middleware]() allows you to add hot reloading into the Express server.
-- [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
-- [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
-- [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
-- [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
-- [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
-- [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time.
-- [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
-- [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
-- [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
-- [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
-- [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
-- [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
-- CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). CSS modules enabled.
-- Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
-- Split vendors libraries from client bundle.
-- No other view engines, just javascript based HTML rendering template.
-- Shared application config between development and production.
+* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering.
+* [React](https://facebook.github.io/react/) as the view.
+* [React Router](https://github.com/reactjs/react-router) as the router.
+* [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, link, script and base tags on both server and client.
+* [Express](https://expressjs.com/) server.
+* [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
+* [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
+* [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
+* [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server.
+* [Webpack Hot Middleware]() allows you to add hot reloading into the Express server.
+* [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
+* [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
+* [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
+* [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
+* [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
+* [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time.
+* [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
+* [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
+* [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
+* [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
+* [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
+* [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
+* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). CSS modules enabled.
+* Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
+* Split vendors libraries from client bundle.
+* No other view engines, just javascript based HTML rendering template.
+* Shared application config between development and production.
 
 
 ## Quick Start
@@ -127,24 +127,24 @@ Here is the structure of this application, which serve as generally accepted gui
 
 The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux application to a time-traveling debugger. It's enabled in development only. You can follow the installation guide to use it:
 
-- For Chrome
+* For Chrome
 
-..- from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
-..- or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`
-..- or run it in dev mode with npm i && npm start and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
+ * from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+ * or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`
+ * or run it in dev mode with npm i && npm start and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
 
-- For Firefox
+* For Firefox
 
-..- from [AMO](https://github.com/zalmoxisus/redux-devtools-extension)
-..- or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
+ * from [AMO](https://github.com/zalmoxisus/redux-devtools-extension)
+ * or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
 
-- For Electron
+* For Electron
 
-..- just specify REDUX_DEVTOOLS in [electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer).
+ * just specify REDUX_DEVTOOLS in [electron-devtools-installer](https://github.com/GPMDP/electron-devtools-installer).
 
-- For other browsers and non-browser environment
+* For other browsers and non-browser environment
 
-..- use [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools).
+ * use [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools).
 
 ### Stateless Functional Components
 
@@ -176,6 +176,6 @@ You will see the error message above whenever the hot reload triggered. It's bec
 
 There're some features I'd like to include into this starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork this repository and share it to me.
 
-- [ ] Unit Test
-- [ ] Dynamic Routing
-- [ ] Internationalization
+* [ ] Unit Test
+* [ ] Dynamic Routing
+* [ ] Internationalization
