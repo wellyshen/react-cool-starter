@@ -36,7 +36,7 @@ Really cool starter boilerplate with the most popular technologies and which are
 - [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
 - [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
 - [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
-- [stylelint](http://stylelint.io/) to maintain a consistent css/scss code style.
+- [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). CSS modules enabled.
 - Image (with [image optimizing](https://github.com/tcoopman/image-webpack-loader)) and Font support.
 - [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
