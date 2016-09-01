@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/src/assets/banner.png" alt="React Cool Starter" />
 
-A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web application with the best development experience and a focus on performance and best practices.
+A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
 
 Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable.js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
@@ -42,7 +42,7 @@ Really cool starter boilerplate with the most popular technologies and which are
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
 * Split vendors libraries from client bundle.
 * No other view engines, just javascript based HTML rendering template.
-* Shared application config between development and production.
+* Shared app config between development and production.
 
 
 ## Quick Start
@@ -73,51 +73,51 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. Listing all the scripts as following:
 
-|`npm run <script>`|Description|
-|------------------|-----------|
-|`start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.|
-|`start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.|
-|`start:prod`|Run your app on the production server only at `localhost:8080`.|
-|`clean`|Remove the `dist` folder from `./public` to clean the compiled stuff.|
-|`build`|Clean the compiled stuff and compile your app to `./public/dist`.|
-|`eslint`|Lint all `.js` files.|
-|`stylelint`|Lint all `.scss` files.|
-|`lint`|Lint all `.js` and `.scss` files.|
+`npm run <script>`|Description
+------------------|-----------
+`start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
+`start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
+`start:prod`|Run your app on the production server only at `localhost:8080`.
+`clean`|Remove the `dist` folder from `./public` to clean the compiled stuff.
+`build`|Clean the compiled stuff and compile your app to `./public/dist`.
+`eslint`|Lint all `.js` files.
+`stylelint`|Lint all `.scss` files.
+`lint`|Lint all `.js` and `.scss` files.
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
 
-## Application Structure
+## App Structure
 
-Here is the structure of this application, which serve as generally accepted guidelines and patterns for building scalable applications.
+Here is the structure of this app, which serve as generally accepted guidelines and patterns for building scalable apps.
 
 ```
 .
 ├── public                                    # The root path of static file
 │   ├── favicon.ico                           # Favicon is placed in the same path with the main HTML page
 │   └── dist                                  # All the built files will be placed into it
-├── src                                       # Application source code
+├── src                                       # App source code
 │   ├── actions                               # Collections of actions
 │   ├── assets                                # Assets required to render components
-│   ├── config                                # Application configuration settings
+│   ├── config                                # App configuration settings
 │   │   ├── default.js                        # Default settings
 │   │   ├── index.js                          # Configuration entry point
 │   │   └── prod.js                           # Production settings (overrides default settings)
 │   ├── containers                            # Reusable container components
 │   ├── reducers                              # Collections of reducers (registry and injection)
-│   ├── theme                                 # Application-wide style, vendor style, generally settings
-│   ├── client.js                             # Application bootstrap and rendering (webpack entry)
+│   ├── theme                                 # App-wide style, vendor style, generally settings
+│   ├── client.js                             # App bootstrap and rendering (webpack entry)
 │   ├── configureStore.js                     # Configure and instrument redux store
-│   ├── renderHtmlPage.js                     # Main HTML page layout for application
+│   ├── renderHtmlPage.js                     # Main HTML page layout for app
 │   ├── routes.js                             # Routes shared between client and server side
-│   └── server.js                             # Express application (uses webpack middleware)                  
+│   └── server.js                             # Express app (uses webpack middleware)                  
 ├── tools                                     # Project and build related configuration 
 │   ├── es2015Preset.js                       # es2015 preset configuration file (for .babelrc)
 │   ├── webpack.config.js                     # Webpack configuration file
 │   └── webpackIsomorphicTools.config.js      # Webpack Isomorphic Tools configuration file
-└── index.js                                  # Application start point
+└── index.js                                  # App start point
 ```
 
 
@@ -125,7 +125,7 @@ Here is the structure of this application, which serve as generally accepted gui
 
 ### Using Redux DevTools Extension
 
-The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux application to a time-traveling debugger. It's enabled in development only. You can follow the installation guide to use it:
+The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow the installation guide to use it:
 
 * For Chrome
 
@@ -162,6 +162,18 @@ Add your routes in `./src/routes.js`. For example:
 </Route>
 ```
 
+### Managing Title, Meta, Link, Script and Base
+
+The parent `App.js` defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports base, meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) documents for more info.
+
+### App config
+
+You can store app settings under `./src/config`. The file `prod.js` will be loaded in production, and it inherits the info of `default.js`. You can access the correct config with:
+
+```javascript
+import config from './config';
+```
+
 (To be continue...)
 
 
@@ -176,6 +188,6 @@ You will see the error message above whenever the hot reload triggered. It's bec
 
 There're some features I'd like to include into this starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork this repository and share it to me.
 
-* [ ] Unit Test
-* [ ] Dynamic Routing
-* [ ] Internationalization
+- [ ] Unit Test
+- [ ] Dynamic Routing
+- [ ] Internationalization
