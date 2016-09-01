@@ -216,7 +216,7 @@ render() {
 
 > Warning: [react-router] You cannot change <Router routes>; it will be ignored
 
-You will see the error message above whenever the hot reload triggered. It's because of the React Hot Loader 3 will re-render the routes dynamically for view updating but [React Router](https://github.com/reactjs/react-router) doesn't support that yet ([react-router#2704](https://github.com/reactjs/react-router/issues/2704)). I will wait for the official fix then and not mind the error message ;)
+You will see the error message above whenever the hot reload triggered. It's because of the React Hot Loader 3 will re-render the routes dynamically for view updating but [React Router](https://github.com/reactjs/react-router) doesn't support that yet (see this issue [react-router#2704](https://github.com/reactjs/react-router/issues/2704)). I will wait for the official fix then and not mind the error message ;)
 
 
 ## To Do...
