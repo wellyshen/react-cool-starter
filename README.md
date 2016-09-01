@@ -201,8 +201,8 @@ import './Home.scss';
 ...
 render() {
   return (
-    <div className="Home"> // The className matches one of CSS classes in your SCSS file
-      <Helmet title="Home" />
+    <div className="Home">
+      <Helmet title="Home" /> // Use the CSS class as normal
       {this.displayUserList()}
     </div>
   );
