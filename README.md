@@ -43,6 +43,7 @@ Really cool starter boilerplate with the most popular technologies and which are
 * Split vendors libraries from client bundle.
 * No other view engines, just javascript based HTML rendering template.
 * Shared app config between development and production.
+* 404 error page and redirect handling.
 
 
 ## Quick Start
@@ -69,7 +70,7 @@ npm run start:production  # Building bundle and running production server
 Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
 
 
-## NPM Scripts
+## NPM Script Commands
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. Listing all the scripts as following:
 
@@ -172,6 +173,40 @@ You can store app settings under `./src/config`. The file `prod.js` will be load
 
 ```javascript
 import config from './config';
+```
+
+### Using Styles
+
+This starter boilerplate supports CSS and SASS. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
+
+1. With CSS modules:
+
+```javascript
+import styles from './Home.scss';
+...
+render() {
+  return (
+    <div className={styles.Home}> // The className matches one of CSS classes in your SCSS file
+      <Helmet title="Home" />
+      {this.displayUserList()}
+    </div>
+  );
+}
+```
+
+2. Without CSS modules (you need to turn off CSS modules from `./tools/webpack.config.js`):
+
+```javascript
+import './Home.scss';
+...
+render() {
+  return (
+    <div className="Home"> // The className matches one of CSS classes in your SCSS file
+      <Helmet title="Home" />
+      {this.displayUserList()}
+    </div>
+  );
+}
 ```
 
 (To be continue...)
