@@ -177,7 +177,7 @@ You can access the correct config with:
 import config from './config';
 ```
 
-### Using Styles
+### Styles
 
 This starter boilerplate supports CSS and SASS. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
@@ -212,6 +212,55 @@ render() {
       {this.displayUserList()}
     </div>
   );
+}
+```
+
+### Image and Font
+
+It's super easy to render the image and font both on client and server, the usage would be like below.
+
+Using image:
+
+```javascript
+// Require an image 
+<img src={require('../../assets/react_logo.svg')} alt="Logo" role="presentation" />
+```
+
+Using font-awesome:
+
+```javascript
+// With CSS modules
+import styles from './myStyle.scss';
+
+...
+
+return (
+  <div>
+    <div><i className={styles.iconUser}></i> Welly</div>
+  </div>
+);
+
+// Without CSS modules
+import './font-awesome.css';
+
+...
+
+return (
+  <div>
+    <div><i className="fa fa-user"></i> Welly</div>
+  </div>
+);
+
+```
+
+For using CSS modules, you have to set the proper font path from your scss file:
+
+```
+$fa-font-path:"../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome";
+.icon-user {
+  @extend .fa;
+  @extend .fa-user;
 }
 ```
 
