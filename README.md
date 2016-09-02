@@ -2,7 +2,7 @@
 
 A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
 
-Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable.js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable-js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve this starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
 
@@ -33,7 +33,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
 * [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time.
 * [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
-* [Immutable.js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
+* [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
 * [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
@@ -242,7 +242,7 @@ componentDidMount() {
 
 ### Boost App Performance by Shallow Compare
 
-Luckily, we writing our stores using [Immutable.js](https://facebook.github.io/immutable-js/), the immutable data structures provides you a cheap and less verbose way to track changes on objects, which is all we need to implement `shouldComponentUpdate`. See the [React Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html#shouldcomponentupdate-in-action) topic for more info.
+Luckily, we writing our stores using [Immutable-js](https://facebook.github.io/immutable-js/), the immutable data structures provides you a cheap and less verbose way to track changes on objects, which is all we need to implement `shouldComponentUpdate`. See the [React Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html#shouldcomponentupdate-in-action) topic for more info.
 
 If your React component's render function is "pure" (in other words, it renders the same result given the same props and state), you can use [shallowCompare](https://facebook.github.io/react/docs/shallow-compare.html) with `shouldComponentUpdate` for preventing it from re-render.
 
