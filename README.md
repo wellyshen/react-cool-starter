@@ -169,7 +169,9 @@ The parent `App.js` defines the base title and meta in a `<Helmet {...config.app
 
 ### App config
 
-You can store app settings under `./src/config`. The file `prod.js` will be loaded in production, and it inherits the info of `default.js`. You can access the correct config with:
+You can store app settings under `./src/config`. By default the `default.js` will be loaded. If the `process.env.NODE_ENV` matches to production, the `prod.js` will be used insteadlly, and it inherits the data info from `default.js`.
+
+You can access the correct config with:
 
 ```javascript
 import config from './config';
