@@ -295,7 +295,7 @@ If your React component's render function is "pure" (in other words, it renders 
 
 Luckily, we writing our stores using [Immutable-js](https://facebook.github.io/immutable-js/), the immutable data structures provides you a cheap and less verbose way to track changes on objects, which is all we need to implement `shouldComponentUpdate`. See the [React Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html#shouldcomponentupdate-in-action) topic for more info.
 
-How it's practiced:
+How Shallow Compare is practiced:
 
 ```javascript
 import shallowCompare from 'react-addons-shallow-compare';
