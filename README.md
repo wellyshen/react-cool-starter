@@ -225,6 +225,7 @@ static fetchData = (dispatch, params) => Promise.all([
   // Add the asynchronous actions which must be called while paga loading here
   dispatch(fetchAnUser.fetchAnUserIfNeeded(params.id)),
 ]);
+```
 
 Then invoke the actions in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action to figure out if fetches for data need to be made or not:
 
