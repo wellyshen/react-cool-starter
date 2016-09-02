@@ -7,8 +7,8 @@ Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://express
 I will improve this starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
 
 [![build status](https://travis-ci.org/WellyShen/react-cool-starter.svg?branch=master)](https://travis-ci.org/WellyShen/react-cool-starter?branch=master)
-[![dependencies Status](https://david-dm.org/WellyShen/react-cool-starter.svg)](https://david-dm.org/WellyShen/react-cool-starter)
-[![devDependencies Status](https://david-dm.org/WellyShen/react-cool-starter.svg)](https://david-dm.org/WellyShen/react-cool-starter?type=dev)
+[![dependencies Status](https://david-dm.org/WellyShen/react-cool-starter/status.svg)](https://david-dm.org/WellyShen/react-cool-starter)
+[![devDependencies Status](https://david-dm.org/WellyShen/react-cool-starter/dev-status.svg)](https://david-dm.org/WellyShen/react-cool-starter?type=dev)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/LICENSE)
 
 
