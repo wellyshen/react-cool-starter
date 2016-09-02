@@ -253,7 +253,7 @@ return (
 
 ```
 
-For using CSS modules, you have to set the proper font path from your scss file:
+For using CSS modules, you have to set the proper font path in your scss file:
 
 ```
 $fa-font-path:"../node_modules/font-awesome/fonts";
