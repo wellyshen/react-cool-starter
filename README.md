@@ -72,7 +72,7 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 ## NPM Script Commands
 
-I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. Listing all the scripts as following:
+I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. All of the scripts are listed as following:
 
 `npm run <script>`|Description
 ------------------|-----------
