@@ -291,9 +291,9 @@ componentDidMount() {
 
 ### Boost App Performance by Shallow Compare
 
-Luckily, we writing our stores using [Immutable-js](https://facebook.github.io/immutable-js/), the immutable data structures provides you a cheap and less verbose way to track changes on objects, which is all we need to implement `shouldComponentUpdate`. See the [React Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html#shouldcomponentupdate-in-action) topic for more info.
-
 If your React component's render function is "pure" (in other words, it renders the same result given the same props and state), you can use [shallowCompare](https://facebook.github.io/react/docs/shallow-compare.html) with `shouldComponentUpdate` for preventing it from re-render.
+
+Luckily, we writing our stores using [Immutable-js](https://facebook.github.io/immutable-js/), the immutable data structures provides you a cheap and less verbose way to track changes on objects, which is all we need to implement `shouldComponentUpdate`. See the [React Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html#shouldcomponentupdate-in-action) topic for more info.
 
 How it's practiced:
 
