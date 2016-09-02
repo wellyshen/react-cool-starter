@@ -183,7 +183,9 @@ This starter boilerplate supports CSS and SASS. We use [PostCSS](https://github.
 
 ```javascript
 import styles from './Home.scss';
+
 ...
+
 render() {
   return (
     <div className={styles.Home}> // The className matches one of CSS classes in your SCSS file
@@ -192,13 +194,17 @@ render() {
     </div>
   );
 }
+
+...
 ```
 
 **Without CSS modules (you need to turn off CSS modules from `./tools/webpack.config.js`):**
 
 ```javascript
 import './Home.scss';
+
 ...
+
 render() {
   return (
     <div className="Home">
@@ -207,6 +213,8 @@ render() {
     </div>
   );
 }
+
+...
 ```
 
 (To be continue...)
