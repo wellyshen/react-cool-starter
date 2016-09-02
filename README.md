@@ -194,8 +194,6 @@ render() {
     </div>
   );
 }
-
-...
 ```
 
 **Without CSS modules (you need to turn off CSS modules from `./tools/webpack.config.js`):**
@@ -213,8 +211,6 @@ render() {
     </div>
   );
 }
-
-...
 ```
 
 (To be continue...)
