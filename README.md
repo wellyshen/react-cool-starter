@@ -14,7 +14,7 @@ I will improve this starter boilerplate continuously and keep all of the technol
 
 ## Features
 
-Really cool starter boilerplate with the most popular technologies and which are well maintenance:
+Really cool starter boilerplate with the most popular technologies:
 
 * [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering.
 * [React](https://facebook.github.io/react/) as the view.
