@@ -258,6 +258,7 @@ class Home extends Component {
   ...
 
   shouldComponentUpdate(nextProps, nextState) {
+    // Implement the Shallow Compare helper function
     return shallowCompare(this, nextProps, nextState);
   }
 
