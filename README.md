@@ -213,7 +213,54 @@ render() {
 }
 ```
 
-(To be continue...)
+### Data fetching and client hydration
+
+Just write Redux actions and stores as normal (read the [Redux](https://rackt.github.io/redux/) guide if you are new). This starter boilerplate using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
+
+You can write dispatches for actions that must be called for the container to be ready:
+
+```javascript
+// Write a static function which be called by server and client
+static fetchData = (dispatch, params) => Promise.all([
+  // Add the asynchronous actions which must be called while paga loading here
+  dispatch(fetchAnUser.fetchAnUserIfNeeded(params.id)),
+]);
+
+Then invoke the actions in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action to figure out if fetches for data need to be made or not:
+
+```javascript
+componentDidMount() {
+  const { dispatch, params } = this.props;
+  
+  // Invoke the action for client rendering
+  UserInfo.fetchData(dispatch, params);
+}
+```
+
+### Boost App Performance by Shallow Compare
+
+Luckily, we writing our stores using [Immutable.js](https://facebook.github.io/immutable-js/), the immutable data structures provides you a cheap and less verbose way to track changes on objects, which is all we need to implement `shouldComponentUpdate`. See the [React Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html#shouldcomponentupdate-in-action) topic for more info.
+
+If your React component's render function is "pure" (in other words, it renders the same result given the same props and state), you can use [shallowCompare](https://facebook.github.io/react/docs/shallow-compare.html) with `shouldComponentUpdate` for preventing it from re-render.
+
+How it's practiced:
+
+```javascript
+import shallowCompare from 'react-addons-shallow-compare';
+
+...
+
+class Home extends Component {
+
+  ...
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return shallowCompare(this, nextProps, nextState);
+  }
+
+  ...
+}
+```
 
 
 ## Known Issues
