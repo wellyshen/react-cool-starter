@@ -16,7 +16,10 @@ module.exports = function (config) {
     },
     reporters: ['mocha'],
     webpack: webpackConfig,
-    webpackMiddleware: { stats: 'errors-only' },
-    webpackServer: { noInfo: true },
+    // Make Webpack bundle generation quiet
+    webpackMiddleware: {
+      noInfo: true,
+      stats: 'errors-only',
+    },
   });
 };

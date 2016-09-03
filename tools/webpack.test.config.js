@@ -12,6 +12,10 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
         { test: /\.json$/, loader: 'json-loader' },
         { test: /\.(jpe?g|png|gif|svg)$/, loader: 'url?limit=10240' },
         {
+          test: /\.css$/,
+          loader: 'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=1!postcss',
+        },
+        {
           test: /\.scss$/,
           loader: 'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap',
         },
