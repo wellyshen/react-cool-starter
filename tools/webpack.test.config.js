@@ -3,7 +3,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory' },
-      { test: /\.(jpe?g|png|gif|svg|ico)$/, loader: 'url?limit=10240' },
+      { test: /\.(jpe?g|png|gif|svg)$/, loader: 'url?limit=10240' },
     ],
   },
 };

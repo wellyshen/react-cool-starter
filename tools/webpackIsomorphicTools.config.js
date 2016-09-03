@@ -8,7 +8,7 @@ module.exports = {
   // webpack_stats_file_path: 'webpack-stats.json',
   assets: {
     images: {
-      extensions: ['png', 'jpg', 'jpeg', 'gif', 'ico'],
+      extensions: ['png', 'jpg', 'jpeg', 'gif'],
       parser: WebpackIsomorphicToolsPlugin.url_loader_parser,
     },
     fonts: {
