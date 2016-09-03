@@ -100,6 +100,7 @@ module.exports = {
           cacheDirectory: isDev,
         },
       },
+      { test: /\.json$/, loader: 'json' },
       {
         test: /\.css$/,
         loader: isDev ?
@@ -127,7 +128,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.json'],
     modules: [
       path.join(__dirname, '../src'),
       'node_modules',
