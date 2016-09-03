@@ -34,6 +34,7 @@ function getPlugins() {
       syntax: 'scss',
       failOnError: false, // Disable style lint error herer
     }),
+    new webpack.IgnorePlugin(/webpack-stats\.json$/),
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     webpackIsomorphicToolsPlugin
