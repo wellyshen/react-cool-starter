@@ -1,5 +1,6 @@
 /* eslint max-len:0 prefer-template:0 */
 
+const path = require('path');
 // const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
@@ -15,6 +16,13 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
           test: /\.scss$/,
           loader: 'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap',
         },
+      ],
+    },
+    resolve: {
+      extensions: ['', '.js', '.jsx', '.json'],
+      modules: [
+        path.join(__dirname, '../src'),
+        'node_modules',
       ],
     },
     postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
