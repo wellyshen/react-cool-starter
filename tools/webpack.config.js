@@ -6,8 +6,6 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-const CSSModules = true;  // Disable css modules here
-
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
 
@@ -60,82 +58,84 @@ function getPlugins() {
 }
 
 // Webpack settings
-module.exports = {
-  cache: isDev,
-  debug: isDev,
-  devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
-  context: path.join(__dirname, '..'),
-  entry: {
-    app: isDev ? [
-      'webpack-hot-middleware/client',
-      'react-hot-loader/patch',
-      './src/client.js',
-    ] : './src/client.js',
-    vendor: [
-      'react', 'react-dom',
-      'redux', 'react-redux',
-      'redux-thunk',
-      'immutable',
-      'redux-immutable',
-      'react-router',
-      'react-router-redux',
-      'react-helmet',
-      'axios',
-    ],
-  },
-  output: {
-    path: path.join(__dirname, '../public/dist'),
-    publicPath: '/dist/',
-    filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js',
-  },
-  module: {
-    preLoaders: [{ test: /\.jsx?$/, loader: 'eslint', exclude: /node_modules/ }],
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          cacheDirectory: isDev,
+module.exports = function (CSSModules) {  // eslint-disable-line func-names
+  return {
+    cache: isDev,
+    debug: isDev,
+    devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
+    context: path.join(__dirname, '..'),
+    entry: {
+      app: isDev ? [
+        'webpack-hot-middleware/client',
+        'react-hot-loader/patch',
+        './src/client.js',
+      ] : './src/client.js',
+      vendor: [
+        'react', 'react-dom',
+        'redux', 'react-redux',
+        'redux-thunk',
+        'immutable',
+        'redux-immutable',
+        'react-router',
+        'react-router-redux',
+        'react-helmet',
+        'axios',
+      ],
+    },
+    output: {
+      path: path.join(__dirname, '../public/dist'),
+      publicPath: '/dist/',
+      filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
+      chunkFilename: '[name].[chunkhash].js',
+    },
+    module: {
+      preLoaders: [{ test: /\.jsx?$/, loader: 'eslint', exclude: /node_modules/ }],
+      loaders: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel',
+          query: {
+            cacheDirectory: isDev,
+          },
         },
-      },
-      {
-        test: /\.css$/,
-        loader: isDev ?
-          'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=1!postcss'
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?' + (CSSModules ? 'modules' : '') + '&sourceMap&importLoaders=1!postcss' }),
-      },
-      {
-        test: /\.scss$/,
-        loader: isDev ?
-          'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap'
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?' + (CSSModules ? 'modules' : '') + '&sourceMap&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents' }),
-      },
-      { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
-      {
-        test: webpackIsomorphicToolsPlugin.regular_expression('images'),
-        // Any image below or equal to 10K will be converted to inline base64 instead
-        loaders: [
-          'url?limit=10240',
-          'image-webpack?bypassOnDebug',  // Using for image optimization
-        ],
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-    modules: [
-      path.join(__dirname, '../src'),
-      'node_modules',
-    ],
-  },
-  plugins: getPlugins(),
-  eslint: {
-    failOnError: true,  // Disable js lint error herer
-  },
-  postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+        {
+          test: /\.css$/,
+          loader: isDev ?
+            'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=1!postcss'
+            : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?' + (CSSModules ? 'modules' : '') + '&sourceMap&importLoaders=1!postcss' }),
+        },
+        {
+          test: /\.scss$/,
+          loader: isDev ?
+            'style!css?localIdentName=[name]__[local].[hash:base64:5]&' + (CSSModules ? 'modules' : '') + '&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap'
+            : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css?' + (CSSModules ? 'modules' : '') + '&sourceMap&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents' }),
+        },
+        { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
+        { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
+        { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
+        { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
+        {
+          test: webpackIsomorphicToolsPlugin.regular_expression('images'),
+          // Any image below or equal to 10K will be converted to inline base64 instead
+          loaders: [
+            'url?limit=10240',
+            'image-webpack?bypassOnDebug',  // Using for image optimization
+          ],
+        },
+      ],
+    },
+    resolve: {
+      extensions: ['', '.js', '.jsx'],
+      modules: [
+        path.join(__dirname, '../src'),
+        'node_modules',
+      ],
+    },
+    plugins: getPlugins(),
+    eslint: {
+      failOnError: true,  // Disable js lint error herer
+    },
+    postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+  };
 };
