@@ -29,14 +29,14 @@ function getPlugins() {
       syntax: 'scss',
       failOnError: false, // Disable style lint error herer
     }),
-    new webpack.IgnorePlugin(/webpack-stats\.json$/),
     new webpack.NoErrorsPlugin(),
     webpackIsomorphicToolsPlugin
   );
 
   if (isDev) {
     plugins.push(
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.IgnorePlugin(/webpack-stats\.json$/)
     );
   } else {
     plugins.push(
