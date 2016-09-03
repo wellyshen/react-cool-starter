@@ -99,6 +99,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
             cacheDirectory: isDev,
           },
         },
+        { test: /\.json$/, loader: 'json' },
         {
           test: /\.css$/,
           loader: isDev ?
@@ -126,7 +127,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
       ],
     },
     resolve: {
-      extensions: ['', '.js', '.jsx'],
+      extensions: ['', '.js', '.jsx', '.json'],
       modules: [
         path.join(__dirname, '../src'),
         'node_modules',

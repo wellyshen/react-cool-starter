@@ -1,6 +1,6 @@
 /* eslint max-len:0 prefer-template:0 */
 
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 module.exports = function (CSSModules) {  // eslint-disable-line func-names
@@ -9,6 +9,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
     module: {
       loaders: [
         { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory' },
+        { test: /\.json$/, loader: 'json-loader' },
         { test: /\.(jpe?g|png|gif|svg)$/, loader: 'url?limit=10240' },
         {
           test: /\.scss$/,
