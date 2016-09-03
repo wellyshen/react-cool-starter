@@ -14,7 +14,7 @@ const isDev = nodeEnv !== 'production';
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpackIsomorphicTools.config')).development(isDev);
 
-// Setting the plugins for development and prodcution
+// Setting the plugins for development/prodcution
 function getPlugins() {
   const plugins = [];
 
@@ -25,18 +25,12 @@ function getPlugins() {
       __SERVER__: JSON.stringify(false),
       __DEV__: JSON.stringify(isDev),
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
-      minChunks: Infinity,
-    }),
     new StyleLintPlugin({ // Linting your style
       syntax: 'scss',
       failOnError: false, // Disable style lint error herer
     }),
     new webpack.IgnorePlugin(/webpack-stats\.json$/),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     webpackIsomorphicToolsPlugin
   );
 
@@ -46,6 +40,11 @@ function getPlugins() {
     );
   } else {
     plugins.push(
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        filename: '[name].[chunkhash].js',
+        minChunks: Infinity,
+      }),
       new ExtractTextPlugin({ filename: '[name].[chunkhash].css', allChunks: true }),
       new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
       new webpack.optimize.UglifyJsPlugin({
@@ -53,6 +52,7 @@ function getPlugins() {
         output: { comments: false },
         sourceMap: false,
       }),
+      new webpack.optimize.OccurrenceOrderPlugin(true),
       new webpack.optimize.DedupePlugin()
     );
   }
@@ -60,30 +60,46 @@ function getPlugins() {
   return plugins;
 }
 
-// Webpack settings
+// Setting the entry for development/prodcution
+function getEntry() {
+  let entry;
+
+  if (isDev) {
+    entry = {
+      app: [
+        'webpack-hot-middleware/client',
+        'react-hot-loader/patch',
+        './src/client.js',
+      ],
+    };
+  } else {
+    entry = {
+      app: './src/client.js',
+      // Register vendors here
+      vendor: [
+        'react', 'react-dom',
+        'redux', 'react-redux',
+        'redux-thunk',
+        'immutable',
+        'redux-immutable',
+        'react-router',
+        'react-router-redux',
+        'react-helmet',
+        'axios',
+      ],
+    };
+  }
+
+  return entry;
+}
+
+// Setting webpack config
 module.exports = {
   cache: isDev,
   debug: isDev,
   devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
   context: path.join(__dirname, '..'),
-  entry: {
-    app: isDev ? [
-      'webpack-hot-middleware/client',
-      'react-hot-loader/patch',
-      './src/client.js',
-    ] : './src/client.js',
-    vendor: [
-      'react', 'react-dom',
-      'redux', 'react-redux',
-      'redux-thunk',
-      'immutable',
-      'redux-immutable',
-      'react-router',
-      'react-router-redux',
-      'react-helmet',
-      'axios',
-    ],
-  },
+  entry: getEntry(),
   output: {
     path: path.join(__dirname, '../public/dist'),
     publicPath: '/dist/',
