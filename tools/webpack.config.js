@@ -12,7 +12,7 @@ const isDev = nodeEnv !== 'production';
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpackIsomorphicTools.config')).development(isDev);
 
-// Setting the plugins for development and prodcution
+// Setting the plugins for development/prodcution
 function getPlugins() {
   const plugins = [];
 
@@ -23,27 +23,26 @@ function getPlugins() {
       __SERVER__: JSON.stringify(false),
       __DEV__: JSON.stringify(isDev),
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
-      minChunks: Infinity,
-    }),
     new StyleLintPlugin({ // Linting your style
       syntax: 'scss',
       failOnError: false, // Disable style lint error herer
     }),
-    new webpack.IgnorePlugin(/webpack-stats\.json$/),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     webpackIsomorphicToolsPlugin
   );
 
   if (isDev) {
     plugins.push(
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.IgnorePlugin(/webpack-stats\.json$/)
     );
   } else {
     plugins.push(
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        filename: '[name].[chunkhash].js',
+        minChunks: Infinity,
+      }),
       new ExtractTextPlugin({ filename: '[name].[chunkhash].css', allChunks: true }),
       new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
       new webpack.optimize.UglifyJsPlugin({
@@ -51,6 +50,7 @@ function getPlugins() {
         output: { comments: false },
         sourceMap: false,
       }),
+      new webpack.optimize.OccurrenceOrderPlugin(true),
       new webpack.optimize.DedupePlugin()
     );
   }
@@ -58,19 +58,22 @@ function getPlugins() {
   return plugins;
 }
 
-// Webpack settings
-module.exports = function (CSSModules) {  // eslint-disable-line func-names
-  return {
-    cache: isDev,
-    debug: isDev,
-    devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
-    context: path.join(__dirname, '..'),
-    entry: {
-      app: isDev ? [
+// Setting  the entry for development/prodcution
+function getEntry() {
+  let entry;
+
+  if (isDev) {
+    entry = {
+      app: [
         'webpack-hot-middleware/client',
         'react-hot-loader/patch',
         './src/client.js',
-      ] : './src/client.js',
+      ],
+    };
+  } else {
+    entry = {
+      app: './src/client.js',
+      // Register vendors here
       vendor: [
         'react', 'react-dom',
         'redux', 'react-redux',
@@ -82,7 +85,20 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
         'react-helmet',
         'axios',
       ],
-    },
+    };
+  }
+
+  return entry;
+}
+
+// Setting webpack settings
+module.exports = function (CSSModules) {  // eslint-disable-line func-names
+  return {
+    cache: isDev,
+    debug: isDev,
+    devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
+    context: path.join(__dirname, '..'),
+    entry: getEntry(),
     output: {
       path: path.join(__dirname, '../public/dist'),
       publicPath: '/dist/',
