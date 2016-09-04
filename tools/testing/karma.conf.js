@@ -7,10 +7,7 @@ module.exports = function (config) {
     browsers: ['PhantomJS'],
     singleRun: true,
     frameworks: ['mocha'],
-    files: [
-      '../../node_modules/phantomjs-polyfill/bind-polyfill.js',
-      './test-bundler.js',
-    ],
+    files: ['./test-bundler.js'],
     preprocessors: {
       'tests.webpack.js': ['webpack', 'sourcemap'],
     },
