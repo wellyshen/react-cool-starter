@@ -79,6 +79,7 @@ function getEntry() {
       app: './src/client.js',
       // Register vendors here
       vendor: [
+        'babel-polyfill',
         'react', 'react-dom', 'react-addons-shallow-compare',
         'redux', 'react-redux',
         'redux-thunk',
