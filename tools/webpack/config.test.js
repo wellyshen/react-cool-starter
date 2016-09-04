@@ -7,6 +7,8 @@ const autoprefixer = require('autoprefixer');
 module.exports = function (CSSModules) {  // eslint-disable-line func-names
   return {
     module: {
+      // The sinon library doesn't like being run through babel
+      // noParse: [/node_modules\/sinon\//],
       loaders: [
         { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory' },
         { test: /\.json$/, loader: 'json-loader' },
@@ -21,12 +23,24 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
         },
       ],
     },
+    // required for enzyme to work properly
+    externals: {
+      jsdom: 'window',
+      cheerio: 'window',
+      'react/addons': true,
+      'react/lib/ExecutionEnvironment': true,
+      'react/lib/ReactContext': 'window',
+    },
     resolve: {
       extensions: ['', '.js', '.jsx', '.json'],
       modules: [
         path.join(__dirname, '../../src'),
         'node_modules',
       ],
+      // alias: {
+        // required for enzyme to work properly
+        // sinon: 'sinon/pkg/sinon',
+      // },
     },
     plugins: [
       // Setup global variables for app

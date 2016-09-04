@@ -9,7 +9,7 @@ module.exports = function (config) {
     frameworks: ['mocha'],
     files: ['./test-bundler.js'],
     preprocessors: {
-      'tests.webpack.js': ['webpack', 'sourcemap'],
+      './test-bundler.js': ['webpack', 'sourcemap'],
     },
     reporters: ['mocha'],
     webpack: webpackConfig,
