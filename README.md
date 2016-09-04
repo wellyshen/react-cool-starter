@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/src/assets/banner.png" alt="React Cool Starter" />
+# <img src="https://cloud.githubusercontent.com/assets/21308003/18231766/f810a97c-72f3-11e6-89dc-10ff95902f5b.png" alt="React Cool Starter" />
 
 A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
 
@@ -101,7 +101,6 @@ Here is the structure of this app, which serve as generally accepted guidelines 
 │   └── dist                                  # All the built files will be placed into it
 ├── src                                       # App source code
 │   ├── actions                               # Collections of actions
-│   ├── assets                                # Assets required to render components
 │   ├── config                                # App configuration settings
 │   │   ├── default.js                        # Default settings
 │   │   ├── index.js                          # Configuration entry point
@@ -223,7 +222,7 @@ Using image:
 
 ```javascript
 // Require an image 
-<img src={require('../../assets/react_logo.svg')} alt="Logo" role="presentation" />
+<img src={require('./logo.svg')} alt="Logo" role="presentation" />
 ```
 
 Using font-awesome:
