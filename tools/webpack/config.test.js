@@ -25,7 +25,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
     },
     // required for enzyme to work properly
     externals: {
-      jsdom: 'window',
+      // jsdom: 'window',
       cheerio: 'window',
       'react/addons': true,
       'react/lib/ExecutionEnvironment': true,
