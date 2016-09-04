@@ -40,7 +40,8 @@
     "build": "better-npm-run clean && better-npm-run build",
     "eslint": "better-npm-run eslint",
     "stylelint": "better-npm-run stylelint",
-    "lint": "npm run eslint && npm run stylelint"
+    "lint": "npm run eslint && npm run stylelint",
+    "test": "better-npm-run test"
   },
   "betterScripts": {
     "start": {
@@ -74,6 +75,12 @@
     },
     "stylelint": {
       "command": "stylelint \"./src/**/*.css\""
+    },
+    "test": {
+      "command": "karma start ./tools/testing/karma.conf.js --single-run",
+      "env": {
+        "NODE_ENV": "test"
+      }
     }
   },
   "dependencies": {

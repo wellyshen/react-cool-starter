@@ -8,10 +8,15 @@ body {
 .App {
   color: $color-white;
 
-  img {
-    float: left;
-    height: 70px;
-    margin-right: 1em;
+  .header {
+    overflow: auto;
+    padding: 15px;
+
+    img {
+      float: left;
+      height: 70px;
+      margin-right: 1em;
+    }
   }
 
   hr {
@@ -19,9 +24,4 @@ body {
     margin-top: 0;
     opacity: 0.15;
   }
-}
-
-.header {
-  overflow: auto;
-  padding: 15px;
 }
