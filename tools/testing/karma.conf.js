@@ -8,8 +8,8 @@ module.exports = function (config) {
     singleRun: true,
     frameworks: ['mocha'],
     files: [
-      './node_modules/phantomjs-polyfill/bind-polyfill.js',
-      './testBundler.js',
+      '../../node_modules/phantomjs-polyfill/bind-polyfill.js',
+      './test-bundler.js',
     ],
     preprocessors: {
       'tests.webpack.js': ['webpack', 'sourcemap'],

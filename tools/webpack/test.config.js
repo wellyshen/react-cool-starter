@@ -29,7 +29,8 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
       ],
     },
     plugins: [
-      new webpack.DefinePlugin({  // Setup global variables for app
+      // Setup global variables for app
+      new webpack.DefinePlugin({
         'process.env': { NODE_ENV: JSON.stringify('development') },
         __CLIENT__: JSON.stringify(true),
         __SERVER__: JSON.stringify(false),
