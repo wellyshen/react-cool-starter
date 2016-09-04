@@ -19,13 +19,15 @@ function getPlugins() {
   const plugins = [];
 
   plugins.push(
-    new webpack.DefinePlugin({  // Setup global variables for app
+    // Global variables for app
+    new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
       __CLIENT__: JSON.stringify(true),
       __SERVER__: JSON.stringify(false),
       __DEV__: JSON.stringify(isDev),
     }),
-    new StyleLintPlugin({ // Linting your style
+    // Style lint
+    new StyleLintPlugin({
       syntax: 'scss',
       failOnError: false, // Disable style lint error herer
     }),
