@@ -60,7 +60,7 @@
       }
     },
     "build": {
-      "command": "webpack --progress --display-error-details --config ./tools/webpack.entry.js",
+      "command": "webpack --progress --display-error-details --config ./tools/webpack",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "es"

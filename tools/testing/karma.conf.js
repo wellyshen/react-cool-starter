@@ -1,6 +1,6 @@
 /* eslint func-names:0 */
 
-const webpackConfig = require('./tools/webpack.test.config');
+const webpackConfig = require('../webpack');
 
 module.exports = function (config) {
   config.set({
@@ -9,7 +9,7 @@ module.exports = function (config) {
     frameworks: ['mocha'],
     files: [
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
-      'tests.webpack.js',
+      './testBundler.js',
     ],
     preprocessors: {
       'tests.webpack.js': ['webpack', 'sourcemap'],

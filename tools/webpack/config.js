@@ -10,7 +10,7 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
 
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpackIsomorphicTools.config')).development(isDev);
+const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphicTools.config')).development(isDev);
 
 // Setting the plugins for development/prodcution
 function getPlugins() {
@@ -97,10 +97,10 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
     cache: isDev,
     debug: isDev,
     devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
-    context: path.join(__dirname, '..'),
+    context: path.join(__dirname, '../..'),
     entry: getEntry(),
     output: {
-      path: path.join(__dirname, '../public/dist'),
+      path: path.join(__dirname, '../../public/dist'),
       publicPath: '/dist/',
       filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
       chunkFilename: '[name].[chunkhash].js',
@@ -146,7 +146,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
     resolve: {
       extensions: ['', '.js', '.jsx', '.json'],
       modules: [
-        path.join(__dirname, '../src'),
+        path.join(__dirname, '../../src'),
         'node_modules',
       ],
     },
