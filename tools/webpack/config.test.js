@@ -8,10 +8,17 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
   return {
     module: {
       // The sinon library doesn't like being run through babel
-      // noParse: [/node_modules\/sinon\//],
+      noParse: [/node_modules\/sinon/],
       loaders: [
         { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory' },
         { test: /\.json$/, loader: 'json-loader' },
+        // sinon.js--aliased for enzyme--expects/requires global vars.
+        // imports-loader allows for global vars to be injected into the module.
+        // See https://github.com/webpack/webpack/issues/304
+        {
+          test: /sinon\/pkg\/sinon\.js/,
+          loader: 'imports?define=>false,require=>false',
+        },
         { test: /\.(jpe?g|png|gif|svg)$/, loader: 'url?limit=10240' },
         {
           test: /\.css$/,
@@ -25,7 +32,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
     },
     // required for enzyme to work properly
     externals: {
-      // jsdom: 'window',
+      jsdom: 'window',
       cheerio: 'window',
       'react/addons': true,
       'react/lib/ExecutionEnvironment': true,
@@ -37,10 +44,10 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
         path.join(__dirname, '../../src'),
         'node_modules',
       ],
-      // alias: {
+      alias: {
         // required for enzyme to work properly
-        // sinon: 'sinon/pkg/sinon',
-      // },
+        sinon: 'sinon/pkg/sinon',
+      },
     },
     plugins: [
       // Setup global variables for app
