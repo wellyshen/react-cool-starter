@@ -1,12 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
+import { assert } from 'chai';
 
 import App from '../App';
 
 describe('<App />', () => {
-  it('renders a logo image', () => {
+  it('should display a logo', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('img')).to.have.length(1);
+    const image = wrapper.find('img');
+
+    assert.equal(image.prop('src'), require('../App/logo.svg'));
   });
 });
