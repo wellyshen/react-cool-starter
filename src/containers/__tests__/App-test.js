@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { assert } from 'chai';
+import { expect, assert } from 'chai';
 
 import App from '../App';
 
@@ -9,6 +9,7 @@ describe('<App />', () => {
     const wrapper = shallow(<App />);
     const image = wrapper.find('img');
 
+    expect(image).to.have.length(1);
     assert.equal(image.prop('src'), require('../App/logo.svg'));
   });
 });
