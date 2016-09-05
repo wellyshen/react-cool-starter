@@ -20,6 +20,9 @@
     "__CLIENT__": true,
     "__SERVER__": true,
     "__DEV__": true,
-    "webpackIsomorphicTools": true
+    "webpackIsomorphicTools": true,
+    "should": true,
+    "expect": true,
+    "assert": true
   }
 }
