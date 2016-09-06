@@ -58,7 +58,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
         __SERVER__: JSON.stringify(false),
         __DEV__: JSON.stringify(true),
       }),
-      // new webpack.IgnorePlugin(/\.json$/),
+      new webpack.IgnorePlugin(/\.json$/),
       new webpack.NoErrorsPlugin(),
     ],
     postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
