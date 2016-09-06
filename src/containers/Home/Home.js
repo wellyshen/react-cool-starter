@@ -7,7 +7,7 @@ import UserList from '../../components/UserList';
 
 import styles from './Home.scss';
 
-export class Home extends Component {
+class Home extends Component {
   static fetchData = dispatch => Promise.all([
     dispatch(fetchUsers.fetchUsersIfNeeded()),
   ]);
