@@ -5,13 +5,8 @@ import config from '../../config';
 import App from '../App';
 
 describe('<App />', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<App />);
-  });
-
-  it('should contains a <Helmet />', () => {
+  it('contains a <Helmet />', () => {
+    const wrapper = shallow(<App />);
     const helmet = wrapper.find(Helmet);
 
     expect(helmet).to.have.length(1);
@@ -22,6 +17,7 @@ describe('<App />', () => {
   });
 
   it('renders a logo', () => {
+    const wrapper = shallow(<App />);
     const image = wrapper.find('img');
 
     expect(image).to.have.length(1);
@@ -29,13 +25,21 @@ describe('<App />', () => {
   });
 
   it('renders a title', () => {
+    const wrapper = shallow(<App />);
     const title = wrapper.find('h1');
 
     expect(title).to.have.length(1);
     expect(title.text()).to.equal(config.app.title);
   });
 
-  it('renders the children content', () => {
-    should.exist(wrapper.props().children);
+  it('renders children correctly', () => {
+    const children = (<div className="children">Test</div>);
+    const wrapper = shallow(
+      <App>
+        {children}
+      </App>
+    );
+
+    expect(wrapper.contains(children)).to.be.true;  // eslint-disable-line no-unused-expressions
   });
 });
