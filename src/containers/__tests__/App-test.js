@@ -11,6 +11,10 @@ describe('<App />', () => {
     wrapper = shallow(<App />);
   });
 
+  it('renders self', () => {
+    expect(wrapper).to.have.length(1);
+  });
+
   it('should contains a <Helmet />', () => {
     const helmet = wrapper.find(Helmet);
 
@@ -36,6 +40,6 @@ describe('<App />', () => {
   });
 
   it('renders the children content', () => {
-    should.exist(wrapper.props('children'));
+    should.exist(wrapper.props().children);
   });
 });
