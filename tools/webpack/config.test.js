@@ -6,12 +6,13 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = function (CSSModules) {  // eslint-disable-line func-names
   return {
+    devtool: 'inline-source-map',
     module: {
       // The sinon library doesn't like being run through babel
       noParse: [/node_modules\/sinon/],
       loaders: [
         { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory' },
-        { test: /\.json$/, loader: 'json-loader' },
+        { test: /\.json$/, loader: 'json' },
         // sinon.js--aliased for enzyme--expects/requires global vars.
         // imports-loader allows for global vars to be injected into the module.
         // See https://github.com/webpack/webpack/issues/304
@@ -57,7 +58,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
         __SERVER__: JSON.stringify(false),
         __DEV__: JSON.stringify(true),
       }),
-      new webpack.IgnorePlugin(/\.json$/),
+      // new webpack.IgnorePlugin(/\.json$/),
       new webpack.NoErrorsPlugin(),
     ],
     postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
