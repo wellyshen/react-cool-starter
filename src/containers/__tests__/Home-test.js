@@ -15,10 +15,10 @@ describe('<Home />', () => {
 
     const wrapper = mount(
       <Provider>
-        <Home ...props />
+        <Home {...props} />
       </Provider>
     );
 
-    // console.log(wrapper);
+    console.log(wrapper);
   });
 });
