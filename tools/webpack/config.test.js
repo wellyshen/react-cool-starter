@@ -1,6 +1,5 @@
 /* eslint max-len:0 prefer-template:0 */
 
-const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
