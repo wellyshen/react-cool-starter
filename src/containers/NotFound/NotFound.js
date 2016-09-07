@@ -6,6 +6,6 @@ import styles from './NotFound.scss';
 export default () => (
   <div className={styles.NotFound}>
     <Helmet title="Oops" />
-    Oops, Page was not found!
+    <p>Oops, Page was not found!</p>
   </div>
 );
