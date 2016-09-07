@@ -1,21 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
-import Helmet from 'react-helmet';
 import config from '../../config';
 import App from '../App';
 
 describe('<App />', () => {
-  it('contains a <Helmet />', () => {
-    const wrapper = shallow(<App />);
-    const helmet = wrapper.find(Helmet);
-
-    expect(helmet).to.have.length(1);
-    expect(helmet.props().htmlAttributes).to.equal(config.app.htmlAttributes);
-    expect(helmet.props().title).to.equal(config.app.title);
-    expect(helmet.props().titleTemplate).to.equal(config.app.titleTemplate);
-    expect(helmet.props().meta).to.equal(config.app.meta);
-  });
-
   it('renders a logo', () => {
     const wrapper = shallow(<App />);
     const image = wrapper.find('img');
