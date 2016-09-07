@@ -46,7 +46,13 @@ Really cool starter boilerplate with the most popular technologies:
 * 404 error page and redirect handling.
 
 
-## Quick Start
+## Requirements
+
+* node >= 5.0
+* npm >= 3.0
+
+
+## Getting Started
 
 **1. You can start by clone this repository on your local machine by running:**
 
