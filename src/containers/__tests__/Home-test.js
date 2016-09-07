@@ -12,6 +12,16 @@ const storeFake = state => ({
 });
 
 describe('<Home />', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = store => mount(
+      <Provider store={store}>
+        <Home />
+      </Provider>
+    );
+  });
+
   it('render loading indicator when data invalid', () => {
     const store = storeFake({
       users: {
@@ -20,13 +30,7 @@ describe('<Home />', () => {
       },
     });
 
-    const wrapper = mount(
-      <Provider store={store}>
-        <Home />
-      </Provider>
-    );
-
-    expect(wrapper.find('p').text()).to.equal('Loading...');
+    expect(wrapper(store).find('p').text()).to.equal('Loading...');
   });
 
   it('render loading indicator when data is fetching', () => {
@@ -37,13 +41,7 @@ describe('<Home />', () => {
       },
     });
 
-    const wrapper = mount(
-      <Provider store={store}>
-        <Home />
-      </Provider>
-    );
-
-    expect(wrapper.find('p').text()).to.equal('Loading...');
+    expect(wrapper(store).find('p').text()).to.equal('Loading...');
   });
 
   it('render error message when fail to fetch data', () => {
@@ -54,12 +52,6 @@ describe('<Home />', () => {
       },
     });
 
-    const wrapper = mount(
-      <Provider store={store}>
-        <Home />
-      </Provider>
-    );
-
-    expect(wrapper.find('p').text()).to.equal('Oops, Failed to fetch users!');
+    expect(wrapper(store).find('p').text()).to.equal('Oops, Failed to fetch users!');
   });
 });
