@@ -60,7 +60,7 @@ describe('<Home />', () => {
     const store = storeFake({
       users: {
         readyState: 'USERS_FETCHED',
-        list: [{ name: 'Welly' }],
+        list: [{ name: 'Welly', id: '19850109' }],
       },
     });
     const users = store.getState().get('users');
