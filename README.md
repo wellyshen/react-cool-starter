@@ -12,6 +12,12 @@ I will improve this starter boilerplate continuously and keep all of the technol
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/LICENSE)
 
 
+## Requirements
+
+* [node](https://nodejs.org/en/) >= 5.0
+* [npm](https://www.npmjs.com/) >= 3.0
+
+
 ## Features
 
 Really cool starter boilerplate with the most popular technologies:
@@ -46,13 +52,7 @@ Really cool starter boilerplate with the most popular technologies:
 * 404 error page and redirect handling.
 
 
-## Requirements
-
-* node >= 5.0
-* npm >= 3.0
-
-
-## Getting Started
+## Quick Start
 
 **1. You can start by clone this repository on your local machine by running:**
 
