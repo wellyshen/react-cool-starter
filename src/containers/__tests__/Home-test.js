@@ -12,11 +12,11 @@ const storeFake = state => ({
 });
 
 describe('<Home />', () => {
-  it('renders <Home />', () => {
+  it('render loading indicator when data invalid', () => {
     const store = storeFake({
       users: {
-        readyState: 'USERS_FETCHED',
-        list: [{ name: 'Welly' }],
+        readyState: 'USERS_INVALID',
+        list: null,
       },
     });
 
@@ -26,6 +26,23 @@ describe('<Home />', () => {
       </Provider>
     );
 
-    console.log(wrapper);
+    expect(wrapper.find('p').text()).to.equal('Loading...');
+  });
+
+  it('render loading indicator when data is fetching', () => {
+    const store = storeFake({
+      users: {
+        readyState: 'USERS_FETCHING',
+        list: null,
+      },
+    });
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <Home />
+      </Provider>
+    );
+
+    expect(wrapper.find('p').text()).to.equal('Loading...');
   });
 });
