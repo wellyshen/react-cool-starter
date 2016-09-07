@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
+import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
 import { fromJS } from 'immutable';
 import Home from '../Home';
 import UserList from '../../components/UserList';
@@ -21,6 +22,23 @@ describe('<Home />', () => {
         <Home />
       </Provider>
     );
+  });
+
+  it('calls componentDidMount() lifecycle method to invoke data fetching', () => {
+    const componentDidMountSpy = spy(Home.prototype, 'componentDidMount');
+    const store = storeFake({
+      users: {
+        readyState: 'USERS_INVALID',
+        list: null,
+      },
+    });
+
+    wrapper(store);
+
+    // eslint-disable-next-line no-unused-expressions
+    expect(Home.prototype.componentDidMount.calledOnce).to.equal(true);
+
+    componentDidMountSpy.restore();
   });
 
   it('renders the loading status if data invalid', () => {
