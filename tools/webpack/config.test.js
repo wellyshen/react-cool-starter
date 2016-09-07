@@ -42,7 +42,7 @@ module.exports = function (CSSModules) {  // eslint-disable-line func-names
     resolve: {
       extensions: ['', '.js', '.jsx', '.json'],
       modules: [
-        path.join(__dirname, '../../src'),
+        'src',
         'node_modules',
       ],
       alias: {
