@@ -38,7 +38,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
-* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). CSS modules enabled.
+* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
 * Split vendor's libraries from client bundle.
 * No other view engines, just javascript based HTML rendering template.
@@ -178,9 +178,9 @@ import config from './config';
 
 ### Styles
 
-This starter boilerplate supports CSS and SASS. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
+This starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
-**With CSS modules:**
+**With CSS Modules:**
 
 ```javascript
 import styles from './Home.scss';
@@ -197,7 +197,7 @@ render() {
 }
 ```
 
-**Without CSS modules (you need to turn off CSS modules from `./tools/webpack.config.js`):**
+**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack.config.js`):**
 
 ```javascript
 import './Home.scss';
@@ -228,7 +228,7 @@ Using image:
 Using font-awesome:
 
 ```javascript
-// With CSS modules
+// With CSS Modules
 import styles from './myStyle.scss';
 
 ...
@@ -239,7 +239,7 @@ return (
   </div>
 );
 
-// Without CSS modules
+// Without CSS Modules
 import './font-awesome.css';
 
 ...
@@ -252,7 +252,7 @@ return (
 
 ```
 
-For using CSS modules, you have to set the proper font path in your scss file:
+For using CSS Modules, you have to set the proper font path in your scss file:
 
 ```
 $fa-font-path:"../node_modules/font-awesome/fonts";
