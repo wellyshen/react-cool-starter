@@ -52,7 +52,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [npm](https://www.npmjs.com/) >= 3.0
 
 
-## Quick Start
+## Getting Started
 
 **1. You can start by clone this repository on your local machine by running:**
 
