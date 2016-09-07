@@ -45,4 +45,21 @@ describe('<Home />', () => {
 
     expect(wrapper.find('p').text()).to.equal('Loading...');
   });
+
+  it('render error message when fail to fetch data', () => {
+    const store = storeFake({
+      users: {
+        readyState: 'USERS_FETCH_FAILED',
+        list: null,
+      },
+    });
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <Home />
+      </Provider>
+    );
+
+    expect(wrapper.find('p').text()).to.equal('Oops, Failed to fetch users!');
+  });
 });

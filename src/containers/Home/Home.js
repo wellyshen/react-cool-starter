@@ -32,7 +32,7 @@ class Home extends Component {
       return <p>Loading...</p>;
     }
 
-    if (users.readyState === fetchUsers.USERS_FETCH_FAILED) {
+    if (users.get('readyState') === fetchUsers.USERS_FETCH_FAILED) {
       return <p>Oops, Failed to fetch users!</p>;
     }
 
