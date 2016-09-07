@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { fromJS } from 'immutable';
 import Home from '../Home';
+import UserList from '../../components/UserList';
 
 const storeFake = state => ({
   default: () => {},
@@ -22,7 +23,7 @@ describe('<Home />', () => {
     );
   });
 
-  it('render loading indicator when data invalid', () => {
+  it('renders the loading status if data invalid', () => {
     const store = storeFake({
       users: {
         readyState: 'USERS_INVALID',
@@ -33,7 +34,7 @@ describe('<Home />', () => {
     expect(wrapper(store).find('p').text()).to.equal('Loading...');
   });
 
-  it('render loading indicator when data is fetching', () => {
+  it('renders the loading status if loading data', () => {
     const store = storeFake({
       users: {
         readyState: 'USERS_FETCHING',
@@ -44,7 +45,7 @@ describe('<Home />', () => {
     expect(wrapper(store).find('p').text()).to.equal('Loading...');
   });
 
-  it('render error message when fail to fetch data', () => {
+  it('renders an error if loading failed', () => {
     const store = storeFake({
       users: {
         readyState: 'USERS_FETCH_FAILED',
@@ -53,5 +54,18 @@ describe('<Home />', () => {
     });
 
     expect(wrapper(store).find('p').text()).to.equal('Oops, Failed to fetch users!');
+  });
+
+  it('renders the user list if loading was successful', () => {
+    const store = storeFake({
+      users: {
+        readyState: 'USERS_FETCHED',
+        list: [{ name: 'Welly' }],
+      },
+    });
+    const users = store.getState().get('users');
+
+    // eslint-disable-next-line no-unused-expressions
+    expect(wrapper(store).contains(<UserList list={users.get('list')} />)).to.be.true;
   });
 });
