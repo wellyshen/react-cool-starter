@@ -150,7 +150,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.json'],
     modules: [
-      path.join(__dirname, '../src'),
+      'src',
       'node_modules',
     ],
   },
