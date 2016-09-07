@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { fromJS } from 'immutable';
 import Home from '../Home';
