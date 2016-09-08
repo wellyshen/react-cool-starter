@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -55,8 +56,8 @@ class UserInfo extends Component {
 
 UserInfo.propTypes = {
   dispatch: PropTypes.func,
-  params: PropTypes.object,
-  anUser: PropTypes.object,
+  params: PropTypes.objectOf(PropTypes.string),
+  anUser: ImmutablePropTypes.map,
 };
 
 const mapStateToProps = state => ({ anUser: state.get('anUser') });
