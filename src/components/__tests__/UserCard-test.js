@@ -1,7 +1,7 @@
-/* eslint prefer-template:0 */
+/* eslint prefer-template:0 import/no-extraneous-dependencies:0 */
 
 import React from 'react';
-import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
+import { shallow } from 'enzyme';
 import { fromJS } from 'immutable';
 import UserCard from '../UserCard';
 
