@@ -27,10 +27,7 @@ describe('<Home />', () => {
   it('calls componentDidMount() lifecycle method to invoke data fetching', () => {
     const componentDidMountSpy = spy(Home.prototype, 'componentDidMount');
     const store = storeFake({
-      users: {
-        readyState: 'USERS_INVALID',
-        list: null,
-      },
+      users: { readyState: 'USERS_INVALID' },
     });
 
     wrapper(store);
@@ -43,10 +40,7 @@ describe('<Home />', () => {
 
   it('renders the loading status if data invalid', () => {
     const store = storeFake({
-      users: {
-        readyState: 'USERS_INVALID',
-        list: null,
-      },
+      users: { readyState: 'USERS_INVALID' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal('Loading...');
@@ -54,10 +48,7 @@ describe('<Home />', () => {
 
   it('renders the loading status if loading data', () => {
     const store = storeFake({
-      users: {
-        readyState: 'USERS_FETCHING',
-        list: null,
-      },
+      users: { readyState: 'USERS_FETCHING' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal('Loading...');
@@ -65,10 +56,7 @@ describe('<Home />', () => {
 
   it('renders an error if loading failed', () => {
     const store = storeFake({
-      users: {
-        readyState: 'USERS_FETCH_FAILED',
-        list: null,
-      },
+      users: { readyState: 'USERS_FETCH_FAILED' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal('Oops, Failed to fetch users!');
@@ -78,7 +66,7 @@ describe('<Home />', () => {
     const store = storeFake({
       users: {
         readyState: 'USERS_FETCHED',
-        list: [{ name: 'Welly', id: '19850109' }],
+        list: [{ name: 'Welly', id: '1' }],
       },
     });
     const users = store.getState().get('users');
