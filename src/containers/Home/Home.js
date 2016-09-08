@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -52,7 +53,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  users: PropTypes.object,
+  users: ImmutablePropTypes.map,
   dispatch: PropTypes.func,
 };
 

@@ -17,6 +17,6 @@ const App = ({ children }) => (
   </div>
 );
 
-App.propTypes = { children: PropTypes.object };
+App.propTypes = { children: PropTypes.node };
 
 export default App;
