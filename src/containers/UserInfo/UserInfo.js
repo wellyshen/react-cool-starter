@@ -38,11 +38,7 @@ class UserInfo extends Component {
       return <p>Oops, Failed to fetch the user!</p>;
     }
 
-    return (
-      <div>
-        <UserCard anUser={anUserById.get('info')} />
-      </div>
-    );
+    return <UserCard anUser={anUserById.get('info')} />;
   }
 
   render() {

@@ -37,9 +37,7 @@ class Home extends Component {
       return <p>Oops, Failed to fetch users!</p>;
     }
 
-    return (
-      <UserList list={users.get('list')} />
-    );
+    return <UserList list={users.get('list')} />;
   }
 
   render() {
