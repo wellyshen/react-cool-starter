@@ -62,16 +62,16 @@ describe('<Home />', () => {
     expect(wrapper(store).find('p').text()).to.equal('Oops, Failed to fetch users!');
   });
 
-  it('renders the user list if loading was successful', () => {
+  it('renders the <UserList /> if loading was successful', () => {
     const store = storeFake({
       users: {
         readyState: 'USERS_FETCHED',
         list: [{ name: 'Welly', id: '1' }],
       },
     });
-    const users = store.getState().get('users');
+    const mockData = store.getState().get('users').get('list');
 
     // eslint-disable-next-line no-unused-expressions
-    expect(wrapper(store).contains(<UserList list={users.get('list')} />)).to.be.true;
+    expect(wrapper(store).contains(<UserList list={mockData} />)).to.be.true;
   });
 });

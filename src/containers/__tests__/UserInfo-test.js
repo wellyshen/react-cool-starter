@@ -70,7 +70,7 @@ describe('<UserInfo />', () => {
     expect(wrapper(store).find('p').text()).to.equal('Oops, Failed to fetch the user!');
   });
 
-  it('renders the user card if loading was successful', () => {
+  it('renders the <UserCard /> if loading was successful', () => {
     const store = storeFake({
       anUser: {
         1: {
@@ -84,9 +84,9 @@ describe('<UserInfo />', () => {
         },
       },
     });
-    const anUserById = store.getState().get('anUser').get('1');
+    const mockData = store.getState().get('anUser').get('1').get('info');
 
     // eslint-disable-next-line no-unused-expressions
-    expect(wrapper(store).contains(<UserCard anUser={anUserById.get('info')} />)).to.be.true;
+    expect(wrapper(store).contains(<UserCard anUser={mockData} />)).to.be.true;
   });
 });
