@@ -6,7 +6,8 @@ export const AN_USER_FETCH_FAILED = 'AN_USER_FETCH_FAILED';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
-const fetchAnUser = userId => dispatch => {
+// export this function for testing
+export const fetchAnUser = userId => dispatch => {
   dispatch({ type: AN_USER_FETCHING, userId });
 
   return axios.get(`${API_URL}/${userId}`)
