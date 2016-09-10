@@ -7,7 +7,7 @@ import {
 } from '../../actions/fetchUsers';
 
 describe('reducer_users', () => {
-  it('should return the initial state', () => {
+  it('should handle the initial state', () => {
     expect(
       reducer(undefined, {}).toJS()
     ).to.deep.equal({
