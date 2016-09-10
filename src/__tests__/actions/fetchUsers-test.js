@@ -11,7 +11,7 @@ const mockStore = configureMockStore([thunk]);
 describe('action:fetchUsers', () => {
   let sandbox;
   const response = [{ id: '1', name: 'Welly' }];
-  const errorMessage = { message: 'Oops! Something went wrong!' };
+  const errorMessage = 'Oops! Something went wrong.';
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
@@ -21,7 +21,7 @@ describe('action:fetchUsers', () => {
     sandbox.restore();
   });
 
-  it('creates USERS_FETCHING when success to fetch data', () => {
+  it('creates USERS_FETCHING when success to fetch data', done => {
     sandbox.stub(axios, 'get')
       .returns(Promise.resolve({ status: 200, data: response }));
 
@@ -32,13 +32,14 @@ describe('action:fetchUsers', () => {
     const store = mockStore({ list: null });
 
     store.dispatch(action.fetchUsers())
-      .then(() => expect(store.getActions()).to.equal(expectedActions))
-      .catch(() => {});
+      .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
+      .then(done)
+      .catch(done);
   });
 
-  it('creates USERS_FETCH_FAILED when fail to fetch data', () => {
+  it('creates USERS_FETCH_FAILED when fail to fetch data', done => {
     sandbox.stub(axios, 'get')
-      .returns(Promise.reject({ err: errorMessage }));
+      .returns(Promise.reject(errorMessage));
 
     const expectedActions = [
       { type: action.USERS_FETCHING },
@@ -47,7 +48,8 @@ describe('action:fetchUsers', () => {
     const store = mockStore({ err: null });
 
     store.dispatch(action.fetchUsers())
-      .then(() => expect(store.getActions()).to.equal(expectedActions))
-      .catch(() => {});
+      .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
+      .then(done)
+      .catch(done);
   });
 });

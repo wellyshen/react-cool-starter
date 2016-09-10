@@ -10,13 +10,14 @@ const mockStore = configureMockStore([thunk]);
 
 describe('action:fetchAnUser', () => {
   let sandbox;
+  const userId = '1';
   const response = {
     name: 'Welly',
     phone: '007',
     email: 'test@gmail.com',
     website: 'www.test.com',
   };
-  const errorMessage = { message: 'Oops! Something went wrong!' };
+  const errorMessage = 'Oops! Something went wrong.';
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
@@ -26,33 +27,35 @@ describe('action:fetchAnUser', () => {
     sandbox.restore();
   });
 
-  it('creates AN_USER_FETCHING when success to fetch data', () => {
+  it('creates AN_USER_FETCHED when success to fetch data', done => {
     sandbox.stub(axios, 'get')
       .returns(Promise.resolve({ status: 200, data: response }));
 
     const expectedActions = [
-      { type: action.USERS_FETCHING },
-      { type: action.USERS_FETCHED, data: response },
+      { type: action.AN_USER_FETCHING, userId },
+      { type: action.AN_USER_FETCHED, userId, data: response },
     ];
     const store = mockStore({ info: null });
 
-    store.dispatch(action.fetchAnUser())
-      .then(() => expect(store.getActions()).to.equal(expectedActions))
-      .catch(() => {});
+    store.dispatch(action.fetchAnUser(userId))
+      .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
+      .then(done)
+      .catch(done);
   });
 
-  it('creates AN_USER_FETCH_FAILED when fail to fetch data', () => {
+  it('creates AN_USER_FETCH_FAILED when fail to fetch data', done => {
     sandbox.stub(axios, 'get')
-      .returns(Promise.reject({ err: errorMessage }));
+      .returns(Promise.reject(errorMessage));
 
     const expectedActions = [
-      { type: action.USERS_FETCHING },
-      { type: action.USERS_FETCH_FAILED, err: errorMessage },
+      { type: action.AN_USER_FETCHING, userId },
+      { type: action.AN_USER_FETCH_FAILED, userId, err: errorMessage },
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(action.fetchAnUser())
-      .then(() => expect(store.getActions()).to.equal(expectedActions))
-      .catch(() => {});
+    store.dispatch(action.fetchAnUser(userId))
+      .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
+      .then(done)
+      .catch(done);
   });
 });
