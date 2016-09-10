@@ -4,18 +4,13 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import sinon from 'sinon';
 import axios from 'axios';
-import * as action from '../fetchAnUser';
+import * as action from '../../actions/fetchUsers';
 
 const mockStore = configureMockStore([thunk]);
 
-describe('action:fetchAnUser', () => {
+describe('action:fetchUsers', () => {
   let sandbox;
-  const response = {
-    name: 'Welly',
-    phone: '007',
-    email: 'test@gmail.com',
-    website: 'www.test.com',
-  };
+  const response = [{ id: '1', name: 'Welly' }];
   const errorMessage = { message: 'Oops! Something went wrong!' };
 
   beforeEach(() => {
@@ -26,7 +21,7 @@ describe('action:fetchAnUser', () => {
     sandbox.restore();
   });
 
-  it('creates AN_USER_FETCHING when success to fetch data', () => {
+  it('creates USERS_FETCHING when success to fetch data', () => {
     sandbox.stub(axios, 'get')
       .returns(Promise.resolve({ status: 200, data: response }));
 
@@ -34,14 +29,14 @@ describe('action:fetchAnUser', () => {
       { type: action.USERS_FETCHING },
       { type: action.USERS_FETCHED, data: response },
     ];
-    const store = mockStore({ info: null });
+    const store = mockStore({ list: null });
 
-    store.dispatch(action.fetchAnUser())
+    store.dispatch(action.fetchUsers())
       .then(() => expect(store.getActions()).to.equal(expectedActions))
       .catch(() => {});
   });
 
-  it('creates AN_USER_FETCH_FAILED when fail to fetch data', () => {
+  it('creates USERS_FETCH_FAILED when fail to fetch data', () => {
     sandbox.stub(axios, 'get')
       .returns(Promise.reject({ err: errorMessage }));
 
@@ -51,7 +46,7 @@ describe('action:fetchAnUser', () => {
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(action.fetchAnUser())
+    store.dispatch(action.fetchUsers())
       .then(() => expect(store.getActions()).to.equal(expectedActions))
       .catch(() => {});
   });

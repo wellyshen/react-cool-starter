@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { fromJS } from 'immutable';
-import UserCard from '../UserCard';
+import UserCard from '../../components/UserCard';
 
 describe('<UserCard />', () => {
   it('renders user\'s info', () => {

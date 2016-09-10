@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
 import { fromJS } from 'immutable';
-import UserInfo from '../UserInfo';
+import UserInfo from '../../containers/UserInfo';
 import UserCard from '../../components/UserCard';
 
 const storeFake = state => ({

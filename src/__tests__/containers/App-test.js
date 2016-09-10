@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import config from '../../config';
-import App from '../App';
+import App from '../../containers/App';
 
 describe('<App />', () => {
   it('renders a logo', () => {
@@ -9,7 +9,7 @@ describe('<App />', () => {
     const image = wrapper.find('img');
 
     expect(image).to.have.length(1);
-    expect(image.prop('src')).to.equal(require('../App/logo.svg'));
+    expect(image.prop('src')).to.equal(require('../../containers/App/logo.svg'));
   });
 
   it('renders a title', () => {

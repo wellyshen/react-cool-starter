@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
 import { fromJS } from 'immutable';
-import Home from '../Home';
+import Home from '../../containers/Home';
 import UserList from '../../components/UserList';
 
 const storeFake = state => ({
