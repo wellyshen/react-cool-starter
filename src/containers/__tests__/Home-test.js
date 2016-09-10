@@ -66,7 +66,7 @@ describe('<Home />', () => {
     const store = storeFake({
       users: {
         readyState: 'USERS_FETCHED',
-        list: [{ name: 'Welly', id: '1' }],
+        list: [{ id: '1', name: 'Welly' }],
       },
     });
     const mockData = store.getState().get('users').get('list');
