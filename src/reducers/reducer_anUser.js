@@ -3,8 +3,8 @@
 import { Map, fromJS } from 'immutable';
 import {
   AN_USER_FETCHING,
-  AN_USER_FETCHED,
   AN_USER_FETCH_FAILED,
+  AN_USER_FETCHED,
 } from '../actions/fetchAnUser';
 
 export default (state = Map({}), action) => {

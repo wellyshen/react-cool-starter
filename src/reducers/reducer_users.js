@@ -4,8 +4,8 @@ import { Map, fromJS } from 'immutable';
 import {
   USERS_INVALID,
   USERS_FETCHING,
-  USERS_FETCHED,
   USERS_FETCH_FAILED,
+  USERS_FETCHED,
 } from '../actions/fetchUsers';
 
 const initialState = Map({

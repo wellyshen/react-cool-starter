@@ -8,7 +8,7 @@ import * as action from '../../actions/fetchUsers';
 
 const mockStore = configureMockStore([thunk]);
 
-describe('action:fetchUsers', () => {
+describe('fetchUsers', () => {
   let sandbox;
   const response = [{ id: '1', name: 'Welly' }];
   const errorMessage = 'Oops! Something went wrong.';

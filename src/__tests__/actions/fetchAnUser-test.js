@@ -8,7 +8,7 @@ import * as action from '../../actions/fetchAnUser';
 
 const mockStore = configureMockStore([thunk]);
 
-describe('action:fetchAnUser', () => {
+describe('fetchAnUser', () => {
   let sandbox;
   const userId = '1';
   const response = {
