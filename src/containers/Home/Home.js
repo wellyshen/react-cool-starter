@@ -3,14 +3,14 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import * as fetchUsers from '../../actions/fetchUsers';
+import * as action from '../../actions/fetchUsers';
 import UserList from '../../components/UserList';
 
 import styles from './Home.scss';
 
 class Home extends Component {
   static fetchData = dispatch => Promise.all([
-    dispatch(fetchUsers.fetchUsersIfNeeded()),
+    dispatch(action.fetchUsersIfNeeded()),
   ]);
 
   componentDidMount() {
@@ -28,12 +28,12 @@ class Home extends Component {
   displayUserList = () => {
     const { users } = this.props;
 
-    if (users.get('readyState') === fetchUsers.USERS_INVALID ||
-      users.get('readyState') === fetchUsers.USERS_FETCHING) {
+    if (users.get('readyState') === action.USERS_INVALID ||
+      users.get('readyState') === action.USERS_FETCHING) {
       return <p>Loading...</p>;
     }
 
-    if (users.get('readyState') === fetchUsers.USERS_FETCH_FAILED) {
+    if (users.get('readyState') === action.USERS_FETCH_FAILED) {
       return <p>Oops, Failed to fetch users!</p>;
     }
 
