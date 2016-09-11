@@ -42,7 +42,7 @@
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "test": "better-npm-run test",
-    "test:watch": "npm test -- --watch --no-single-run"
+    "test:watch": "npm test -- --no-single-run"
   },
   "betterScripts": {
     "start": {
