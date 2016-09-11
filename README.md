@@ -44,6 +44,7 @@ Really cool starter boilerplate with the most popular technologies:
 * No other view engines, just javascript based HTML rendering template.
 * Shared app config between development and production.
 * 404 error page and redirect handling.
+* [karma](https://karma-runner.github.io/1.0/index.html), [mocha](https://mochajs.org/), [chai](http://chaijs.com/), [sinon](https://github.com/sinonjs/sinon) and [enzyme](https://github.com/airbnb/enzyme) as the integrated solution for wrting unit tests.
 
 
 ## Requirements
@@ -85,11 +86,13 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
 `start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`clean`|Remove the `dist` folder from `./public` to clean the compiled stuff.
 `build`|Clean the compiled stuff and compile your app to `./public/dist`.
-`eslint`|Lint all `.js` files.
-`stylelint`|Lint all `.scss` files.
+`build:clean`|Remove the `dist` folder from `./public` to clean the compiled stuff.
 `lint`|Lint all `.js` and `.scss` files.
+`lint:js`|Lint all `.js` files.
+`lint:style`|Lint all `.scss` files.
+`test`|Run testing once.
+`test:watch`|Run testing on every test file change.
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
 
@@ -102,28 +105,35 @@ Here is the structure of this app, which serve as generally accepted guidelines 
 
 ```
 .
-├── public                                    # The root path of static file
-│   ├── favicon.ico                           # Favicon is placed in the same path with the main HTML page
-│   └── dist                                  # All the built files will be placed into it
-├── src                                       # App source code
-│   ├── actions                               # Collections of actions
-│   ├── config                                # App configuration settings
-│   │   ├── default.js                        # Default settings
-│   │   ├── index.js                          # Configuration entry point
-│   │   └── prod.js                           # Production settings (overrides default settings)
-│   ├── containers                            # Reusable container components
-│   ├── reducers                              # Collections of reducers (registry and injection)
-│   ├── theme                                 # App-wide style, vendor style, generally settings
-│   ├── client.js                             # App bootstrap and rendering (webpack entry)
-│   ├── configureStore.js                     # Configure and instrument redux store
-│   ├── renderHtmlPage.js                     # Main HTML page layout for app
-│   ├── routes.js                             # Routes shared between client and server side
-│   └── server.js                             # Express app (uses webpack middleware)                  
-├── tools                                     # Project and build related configuration 
-│   ├── es2015Preset.js                       # es2015 preset configuration file (for .babelrc)
-│   ├── webpack.config.js                     # Webpack configuration file
-│   └── webpackIsomorphicTools.config.js      # Webpack Isomorphic Tools configuration file
-└── index.js                                  # App start point
+├── public                                      # The root path of static file
+│   ├── dist                                    # All the built files will be placed into it
+│   └── favicon.ico                             # Favicon is placed in the same path with the main HTML page
+├── src                                         # App source code
+│   ├── __tests__                               # Collections of testing files
+│   ├── actions                                 # Collections of actions
+│   ├── config                                  # App configuration settings
+│   │   ├── default.js                          # Default settings
+│   │   ├── index.js                            # Configuration entry point
+│   │   └── prod.js                             # Production settings (overrides default settings)
+│   ├── containers                              # Reusable container components
+│   ├── reducers                                # Collections of reducers (registry and injection)
+│   ├── theme                                   # App-wide style, vendor style, generally settings
+│   ├── client.js                               # App bootstrap and rendering (webpack entry)
+│   ├── configureStore.js                       # Configure and instrument redux store
+│   ├── renderHtmlPage.js                       # Main HTML page layout for app
+│   ├── routes.js                               # Routes shared between client and server side
+│   └── server.js                               # Express app (uses webpack middleware)                  
+├── tools                                       # Project related configurations (testing/build etc.)
+│   ├── testing                                 # Testing configuration settings
+│   │   ├── karma.conf.js                       # Karma configuration file
+│   │   └── test-bunlder.js                     # Karma pre-processor settings file
+│   ├── webpack                                 # Webpack configuration settings
+│   │   ├── config.js                           # Webpack configuration file
+│   │   ├── config.test.js                      # Webpack configuration file for testing (karma)
+│   │   ├── index.js                            # Webpack configuration entry point
+│   │   └── webpack-isomorphic-tools.config.js  # Webpack Isomorphic Tools configuration file 
+│   └── es2015Preset.js                         # es2015 preset configuration file (for .babelrc)       
+└── index.js                                    # App start point
 ```
 
 
@@ -203,7 +213,7 @@ render() {
 }
 ```
 
-**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack.config.js`):**
+**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/index.js`):**
 
 ```javascript
 import './Home.scss';
@@ -321,6 +331,11 @@ class Home extends Component {
 ```
 
 
+## Unit Tests
+
+
+
+
 ## Known Issues
 
 > Warning: [react-router] You cannot change <Router routes>; it will be ignored
@@ -332,6 +347,6 @@ You will see the error message above whenever the hot reload triggered. It's bec
 
 There're some features I'd like to include into this starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork this repository and share it to me.
 
-- [ ] Unit Test
+- [ ] Testing code coverage
 - [ ] Dynamic Routing
 - [ ] Internationalization
