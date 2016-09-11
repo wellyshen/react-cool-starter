@@ -48,15 +48,6 @@ Really cool starter boilerplate with the most popular technologies:
 
 
 ## Requirements
-<<<<<<< HEAD
-
-* [node](https://nodejs.org/en/) >= 5.0
-* [npm](https://www.npmjs.com/) >= 3.0
-
-
-## Getting Started
-=======
->>>>>>> testing
 
 * [node](https://nodejs.org/en/) >= 5.0
 * [npm](https://www.npmjs.com/) >= 3.0
@@ -114,30 +105,6 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-<<<<<<< HEAD
-├── public                                    # The root path of static file
-│   ├── favicon.ico                           # Favicon is placed in the same path with the main HTML page
-│   └── dist                                  # All the built files will be placed into it
-├── src                                       # App source code
-│   ├── actions                               # Collections of actions
-│   ├── config                                # App configuration settings
-│   │   ├── default.js                        # Default settings
-│   │   ├── index.js                          # Configuration entry point
-│   │   └── prod.js                           # Production settings (overrides default settings)
-│   ├── containers                            # Reusable container components
-│   ├── reducers                              # Collections of reducers (registry and injection)
-│   ├── theme                                 # App-wide style, vendor style, generally settings
-│   ├── client.js                             # App bootstrap and rendering (webpack entry)
-│   ├── configureStore.js                     # Configure and instrument redux store
-│   ├── renderHtmlPage.js                     # Main HTML page layout for app
-│   ├── routes.js                             # Routes shared between client and server side
-│   └── server.js                             # Express app (uses webpack middleware)                  
-├── tools                                     # Project and build related configuration 
-│   ├── es2015Preset.js                       # es2015 preset configuration file (for .babelrc)
-│   ├── webpack.config.js                     # Webpack configuration file
-│   └── webpackIsomorphicTools.config.js      # Webpack Isomorphic Tools configuration file
-└── index.js                                  # App start point
-=======
 ├── public                                      # The root path of static file
 │   ├── dist                                    # All the built files will be placed into it
 │   └── favicon.ico                             # Favicon is placed in the same path with the main HTML page
@@ -167,7 +134,6 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── webpack-isomorphic-tools.config.js  # Webpack Isomorphic Tools configuration file 
 │   └── es2015Preset.js                         # es2015 preset configuration file (for .babelrc)       
 └── index.js                                    # App start point
->>>>>>> testing
 ```
 
 
@@ -228,11 +194,7 @@ import config from './config';
 
 ### Styles
 
-<<<<<<< HEAD
-This starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
-=======
 The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
->>>>>>> testing
 
 **With CSS Modules:**
 
@@ -251,11 +213,7 @@ render() {
 }
 ```
 
-<<<<<<< HEAD
-**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack.config.js`):**
-=======
 **Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/index.js`):**
->>>>>>> testing
 
 ```javascript
 import './Home.scss';
