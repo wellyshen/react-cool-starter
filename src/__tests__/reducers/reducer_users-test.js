@@ -17,7 +17,9 @@ describe('reducer_users', () => {
 
   it('should handle USERS_FETCHING', () => {
     expect(
-      reducer(undefined, { type: USERS_FETCHING }
+      reducer(undefined, {
+        type: USERS_FETCHING,
+      }
     ).toJS()).to.deep.equal({
       readyState: USERS_FETCHING, list: null,
     });

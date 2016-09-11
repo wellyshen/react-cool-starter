@@ -12,7 +12,10 @@ describe('reducer_anUser', () => {
 
   it('should handle AN_USER_FETCHING', () => {
     expect(
-      reducer(undefined, { type: AN_USER_FETCHING, userId: '1' }
+      reducer(undefined, {
+        type: AN_USER_FETCHING,
+        userId: '1',
+      }
     ).toJS()).to.deep.equal({ 1: { readyState: AN_USER_FETCHING } });
   });
 
