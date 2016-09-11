@@ -26,7 +26,7 @@
     "babel",
     "postcss"
   ],
-  "author": "WellyShen <hivoid19@gmail.com> (https://github.com/WellyShen)",
+  "author": "WellyShen <hivoid19@gmail.com> (https://github.com/wellyshen)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wellyshen/react-cool-starter/issues"
@@ -36,11 +36,13 @@
     "start": "better-npm-run start",
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "better-npm-run start:prod",
-    "clean": "better-npm-run clean",
-    "build": "better-npm-run clean && better-npm-run build",
-    "eslint": "better-npm-run eslint",
-    "stylelint": "better-npm-run stylelint",
-    "lint": "npm run eslint && npm run stylelint"
+    "build": "npm run build:clean && better-npm-run build",
+    "build:clean": "better-npm-run build:clean",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "better-npm-run lint:js",
+    "lint:style": "better-npm-run lint:style",
+    "test": "better-npm-run test",
+    "test:watch": "npm test -- --no-single-run"
   },
   "betterScripts": {
     "start": {
@@ -60,20 +62,26 @@
       }
     },
     "build": {
-      "command": "webpack --progress --display-error-details --config ./tools/webpack.config.js",
+      "command": "webpack --progress --display-error-details --config ./tools/webpack",
       "env": {
         "NODE_ENV": "production",
         "BABEL_ENV": "es"
       }
     },
-    "clean": {
+    "build:clean": {
       "command": "rimraf ./public/dist"
     },
-    "eslint": {
+    "lint:js": {
       "command": "eslint -c .eslintrc ./src ./tools ./index.js"
     },
-    "stylelint": {
+    "lint:style": {
       "command": "stylelint \"./src/**/*.css\""
+    },
+    "test": {
+      "command": "karma start ./tools/testing/karma.conf.js --single-run",
+      "env": {
+        "NODE_ENV": "test"
+      }
     }
   },
   "dependencies": {
@@ -114,7 +122,14 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "better-npm-run": "0.0.11",
+<<<<<<< HEAD
     "css-loader": "^0.25.0",
+=======
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.1",
+    "css-loader": "^0.25.0",
+    "enzyme": "^2.4.1",
+>>>>>>> testing
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^11.0.0",
     "eslint-loader": "^1.5.0",
@@ -123,6 +138,7 @@
     "eslint-plugin-react": "^6.2.0",
     "file-loader": "^0.9.0",
     "image-webpack-loader": "^2.0.0",
+<<<<<<< HEAD
     "json-loader": "^0.5.4",
     "node-sass": "^3.9.3",
     "nodemon": "^1.10.2",
@@ -131,6 +147,29 @@
     "react-hot-loader": "^3.0.0-beta.3",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.2",
+=======
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
+    "karma": "^1.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.0.2",
+    "node-sass": "^3.9.0",
+    "nodemon": "^1.10.2",
+    "phantomjs": "^2.1.7",
+    "postcss": "^5.1.2",
+    "postcss-loader": "^0.13.0",
+    "react-addons-test-utils": "^15.3.1",
+    "react-hot-loader": "^3.0.0-beta.3",
+    "redux-mock-store": "^1.2.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.1",
+    "sinon": "^2.0.0-pre.2",
+>>>>>>> testing
     "style-loader": "^0.13.1",
     "stylelint": "^7.2.0",
     "stylelint-config-standard": "^13.0.0",

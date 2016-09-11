@@ -4,7 +4,7 @@ A simple but feature rich starter boilerplate for you to build an [universal](ht
 
 Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable-js](https://facebook.github.io/immutable-js/), [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
-I will improve this starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
+I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
 
 [![build status](https://travis-ci.org/WellyShen/react-cool-starter.svg?branch=master)](https://travis-ci.org/WellyShen/react-cool-starter?branch=master)
 [![dependencies Status](https://david-dm.org/WellyShen/react-cool-starter/status.svg)](https://david-dm.org/WellyShen/react-cool-starter)
@@ -44,9 +44,19 @@ Really cool starter boilerplate with the most popular technologies:
 * No other view engines, just javascript based HTML rendering template.
 * Shared app config between development and production.
 * 404 error page and redirect handling.
+* [karma](https://karma-runner.github.io/1.0/index.html), [mocha](https://mochajs.org/), [enzyme](https://github.com/airbnb/enzyme), [chai](http://chaijs.com/) and [sinon](https://github.com/sinonjs/sinon) as the integrated solution for wrting unit tests.
 
 
 ## Requirements
+<<<<<<< HEAD
+
+* [node](https://nodejs.org/en/) >= 5.0
+* [npm](https://www.npmjs.com/) >= 3.0
+
+
+## Getting Started
+=======
+>>>>>>> testing
 
 * [node](https://nodejs.org/en/) >= 5.0
 * [npm](https://www.npmjs.com/) >= 3.0
@@ -54,7 +64,7 @@ Really cool starter boilerplate with the most popular technologies:
 
 ## Getting Started
 
-**1. You can start by clone this repository on your local machine by running:**
+**1. You can start by clone the repository on your local machine by running:**
 
 ```bash
 git clone https://github.com/wellyshen/react-cool-starter.git
@@ -85,11 +95,13 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
 `start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`clean`|Remove the `dist` folder from `./public` to clean the compiled stuff.
 `build`|Clean the compiled stuff and compile your app to `./public/dist`.
-`eslint`|Lint all `.js` files.
-`stylelint`|Lint all `.scss` files.
+`build:clean`|Remove the `dist` folder from `./public` to clean the compiled stuff.
 `lint`|Lint all `.js` and `.scss` files.
+`lint:js`|Lint all `.js` files.
+`lint:style`|Lint all `.scss` files.
+`test`|Run testing once.
+`test:watch`|Run testing on every test file change.
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
 
@@ -98,10 +110,11 @@ Note: If you get the the following message, try to run `npm run build` to fix it
 
 ## App Structure
 
-Here is the structure of this app, which serve as generally accepted guidelines and patterns for building scalable apps.
+Here is the structure of the app, which serve as generally accepted guidelines and patterns for building scalable apps.
 
 ```
 .
+<<<<<<< HEAD
 ├── public                                    # The root path of static file
 │   ├── favicon.ico                           # Favicon is placed in the same path with the main HTML page
 │   └── dist                                  # All the built files will be placed into it
@@ -124,6 +137,37 @@ Here is the structure of this app, which serve as generally accepted guidelines 
 │   ├── webpack.config.js                     # Webpack configuration file
 │   └── webpackIsomorphicTools.config.js      # Webpack Isomorphic Tools configuration file
 └── index.js                                  # App start point
+=======
+├── public                                      # The root path of static file
+│   ├── dist                                    # All the built files will be placed into it
+│   └── favicon.ico                             # Favicon is placed in the same path with the main HTML page
+├── src                                         # App source code
+│   ├── __tests__                               # Collections of testing files
+│   ├── actions                                 # Collections of actions
+│   ├── config                                  # App configuration settings
+│   │   ├── default.js                          # Default settings
+│   │   ├── index.js                            # Configuration entry point
+│   │   └── prod.js                             # Production settings (overrides default settings)
+│   ├── containers                              # Reusable container components
+│   ├── reducers                                # Collections of reducers (registry and injection)
+│   ├── theme                                   # App-wide style, vendor style, generally settings
+│   ├── client.js                               # App bootstrap and rendering (webpack entry)
+│   ├── configureStore.js                       # Configure and instrument redux store
+│   ├── renderHtmlPage.js                       # Main HTML page layout for app
+│   ├── routes.js                               # Routes shared between client and server side
+│   └── server.js                               # Express app (uses webpack middleware)                  
+├── tools                                       # Project related configurations (testing/build etc.)
+│   ├── testing                                 # Testing configuration settings
+│   │   ├── karma.conf.js                       # Karma configuration file
+│   │   └── test-bunlder.js                     # Karma pre-processor settings file
+│   ├── webpack                                 # Webpack configuration settings
+│   │   ├── config.js                           # Webpack configuration file
+│   │   ├── config.test.js                      # Webpack configuration file for testing (karma)
+│   │   ├── index.js                            # Webpack configuration entry point
+│   │   └── webpack-isomorphic-tools.config.js  # Webpack Isomorphic Tools configuration file 
+│   └── es2015Preset.js                         # es2015 preset configuration file (for .babelrc)       
+└── index.js                                    # App start point
+>>>>>>> testing
 ```
 
 
@@ -154,7 +198,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Stateless Functional Components
 
-[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In this starter boilerplate we use it wherever possible.
+[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In the starter boilerplate we use it wherever possible.
 
 ### Adding Routes
 
@@ -184,7 +228,11 @@ import config from './config';
 
 ### Styles
 
+<<<<<<< HEAD
 This starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
+=======
+The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
+>>>>>>> testing
 
 **With CSS Modules:**
 
@@ -203,7 +251,11 @@ render() {
 }
 ```
 
+<<<<<<< HEAD
 **Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack.config.js`):**
+=======
+**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/index.js`):**
+>>>>>>> testing
 
 ```javascript
 import './Home.scss';
@@ -271,7 +323,7 @@ $fa-font-path:"../node_modules/font-awesome/fonts";
 
 ### Data fetching and client hydration
 
-Just write Redux actions and stores as normal (read the [Redux](https://rackt.github.io/redux/) guide if you are new). This starter boilerplate using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
+Just write Redux actions and stores as normal (read the [Redux](https://rackt.github.io/redux/) guide if you are new). The starter boilerplate using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
 You can write dispatches for actions that must be called for the container to be ready:
 
@@ -321,6 +373,18 @@ class Home extends Component {
 ```
 
 
+## Unit Tests
+
+The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit tests, it uses [karma](https://karma-runner.github.io/1.0/index.html) as the test runner, and uses [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. Moreover it also uses [chai](http://chaijs.com/) as the assertion library and uses [sinon](https://github.com/sinonjs/sinon) to provide the standalone test spies, stubs and mocks.
+
+The unit tests focus on four parts as below:
+
+* Actions
+* Containers
+* Components
+* Reducers
+
+
 ## Known Issues
 
 > Warning: [react-router] You cannot change <Router routes>; it will be ignored
@@ -330,8 +394,8 @@ You will see the error message above whenever the hot reload triggered. It's bec
 
 ## To Do...
 
-There're some features I'd like to include into this starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork this repository and share it to me.
+There're some features I'd like to include into the starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork the repository and share it to me.
 
-- [ ] Unit Test
+- [ ] Testing code coverage
 - [ ] Dynamic Routing
 - [ ] Internationalization

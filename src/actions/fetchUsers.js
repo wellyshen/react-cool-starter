@@ -7,7 +7,8 @@ export const USERS_FETCH_FAILED = 'USERS_FETCH_FAILED';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
-const fetchUsers = () => dispatch => {
+// export this function for testing
+export const fetchUsers = () => dispatch => {
   dispatch({ type: USERS_FETCHING });
 
   return axios.get(API_URL)

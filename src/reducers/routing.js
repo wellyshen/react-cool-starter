@@ -1,4 +1,4 @@
-/* This is for react-router-redux working with immutable */
+/* Configure for react-router-redux + immutable */
 
 import { fromJS } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';

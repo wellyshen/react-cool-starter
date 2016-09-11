@@ -7,7 +7,8 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "mocha": true
   },
   "rules": {
     "global-require": 0,
@@ -19,6 +20,9 @@
     "__CLIENT__": true,
     "__SERVER__": true,
     "__DEV__": true,
-    "webpackIsomorphicTools": true
+    "webpackIsomorphicTools": true,
+    "should": true,
+    "expect": true,
+    "assert": true
   }
 }
