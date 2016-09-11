@@ -122,14 +122,10 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "better-npm-run": "0.0.11",
-<<<<<<< HEAD
-    "css-loader": "^0.25.0",
-=======
     "chai": "^3.5.0",
     "chai-enzyme": "^0.5.1",
     "css-loader": "^0.25.0",
     "enzyme": "^2.4.1",
->>>>>>> testing
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^11.0.0",
     "eslint-loader": "^1.5.0",
@@ -138,16 +134,6 @@
     "eslint-plugin-react": "^6.2.0",
     "file-loader": "^0.9.0",
     "image-webpack-loader": "^2.0.0",
-<<<<<<< HEAD
-    "json-loader": "^0.5.4",
-    "node-sass": "^3.9.3",
-    "nodemon": "^1.10.2",
-    "postcss": "^5.2.0",
-    "postcss-loader": "^0.13.0",
-    "react-hot-loader": "^3.0.0-beta.3",
-    "rimraf": "^2.5.4",
-    "sass-loader": "^4.0.2",
-=======
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
     "karma": "^1.2.0",
@@ -169,7 +155,6 @@
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.1",
     "sinon": "^2.0.0-pre.2",
->>>>>>> testing
     "style-loader": "^0.13.1",
     "stylelint": "^7.2.0",
     "stylelint-config-standard": "^13.0.0",
