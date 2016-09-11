@@ -2,28 +2,21 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
-import { fromJS } from 'immutable';
+import storeFake from './storeFake';
 import UserInfo from '../../containers/UserInfo';
 import UserCard from '../../components/UserCard';
 
-const storeFake = state => ({
-  default: () => {},
-  subscribe: () => {},
-  dispatch: () => {},
-  getState: () => fromJS({ ...state }),
-});
-
 describe('<UserInfo />', () => {
   let wrapper;
-
-  const props = {
-    params: { id: '1' },
+  const state = {
+    loading: 'Loading...',
+    error: 'Oops, Failed to fetch the user!',
   };
 
   beforeEach(() => {
     wrapper = store => mount(
       <Provider store={store}>
-        <UserInfo {...props} />
+        <UserInfo params={{ id: '1' }} />
       </Provider>
     );
   });
@@ -47,7 +40,7 @@ describe('<UserInfo />', () => {
       anUser: {},
     });
 
-    expect(wrapper(store).find('p').text()).to.equal('Loading...');
+    expect(wrapper(store).find('p').text()).to.equal(state.loading);
   });
 
   it('renders the loading status if loading data', () => {
@@ -57,7 +50,7 @@ describe('<UserInfo />', () => {
       },
     });
 
-    expect(wrapper(store).find('p').text()).to.equal('Loading...');
+    expect(wrapper(store).find('p').text()).to.equal(state.loading);
   });
 
   it('renders an error if loading failed', () => {
@@ -67,7 +60,7 @@ describe('<UserInfo />', () => {
       },
     });
 
-    expect(wrapper(store).find('p').text()).to.equal('Oops, Failed to fetch the user!');
+    expect(wrapper(store).find('p').text()).to.equal(state.error);
   });
 
   it('renders the <UserCard /> if loading was successful', () => {

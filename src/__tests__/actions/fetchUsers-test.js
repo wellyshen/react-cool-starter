@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies:0 */
 
-import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
 import sinon from 'sinon';
 import axios from 'axios';
 import * as action from '../../actions/fetchUsers';

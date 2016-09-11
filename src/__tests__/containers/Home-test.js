@@ -2,19 +2,16 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
-import { fromJS } from 'immutable';
+import storeFake from './storeFake';
 import Home from '../../containers/Home';
 import UserList from '../../components/UserList';
 
-const storeFake = state => ({
-  default: () => {},
-  subscribe: () => {},
-  dispatch: () => {},
-  getState: () => fromJS({ ...state }),
-});
-
 describe('<Home />', () => {
   let wrapper;
+  const state = {
+    loading: 'Loading...',
+    error: 'Oops, Failed to fetch users!',
+  };
 
   beforeEach(() => {
     wrapper = store => mount(
@@ -43,7 +40,7 @@ describe('<Home />', () => {
       users: { readyState: 'USERS_INVALID' },
     });
 
-    expect(wrapper(store).find('p').text()).to.equal('Loading...');
+    expect(wrapper(store).find('p').text()).to.equal(state.loading);
   });
 
   it('renders the loading status if loading data', () => {
@@ -51,7 +48,7 @@ describe('<Home />', () => {
       users: { readyState: 'USERS_FETCHING' },
     });
 
-    expect(wrapper(store).find('p').text()).to.equal('Loading...');
+    expect(wrapper(store).find('p').text()).to.equal(state.loading);
   });
 
   it('renders an error if loading failed', () => {
@@ -59,7 +56,7 @@ describe('<Home />', () => {
       users: { readyState: 'USERS_FETCH_FAILED' },
     });
 
-    expect(wrapper(store).find('p').text()).to.equal('Oops, Failed to fetch users!');
+    expect(wrapper(store).find('p').text()).to.equal(state.error);
   });
 
   it('renders the <UserList /> if loading was successful', () => {

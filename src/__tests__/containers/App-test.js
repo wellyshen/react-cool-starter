@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
-import config from '../../config';
 import App from '../../containers/App';
+import config from '../../config';
 
 describe('<App />', () => {
   it('renders a logo', () => {
@@ -22,11 +22,7 @@ describe('<App />', () => {
 
   it('renders children correctly', () => {
     const children = (<div className="children">Test</div>);
-    const wrapper = shallow(
-      <App>
-        {children}
-      </App>
-    );
+    const wrapper = shallow(<App>{children}</App>);
 
     expect(wrapper.contains(children)).to.be.true;  // eslint-disable-line no-unused-expressions
   });

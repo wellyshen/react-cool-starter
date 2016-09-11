@@ -1,4 +1,4 @@
-import reducer from '../../reducers/reducer_anUser';
+import reducer from '../../reducers/anUser';
 import {
   AN_USER_FETCHING,
   AN_USER_FETCH_FAILED,

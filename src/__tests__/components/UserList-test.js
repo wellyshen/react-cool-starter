@@ -14,7 +14,6 @@ describe('<UserList />', () => {
     );
     const wrapper = shallow(<UserList list={mockData} />);
 
-    // eslint-disable-next-line no-unused-expressions
-    expect(wrapper.contains(listItem)).to.be.true;
+    expect(wrapper.contains(listItem)).to.be.true;  // eslint-disable-line no-unused-expressions
   });
 });

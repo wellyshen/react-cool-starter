@@ -1,4 +1,4 @@
-import reducer from '../../reducers/reducer_users';
+import reducer from '../../reducers/users';
 import {
   USERS_INVALID,
   USERS_FETCHING,
@@ -25,7 +25,10 @@ describe('reducer_users', () => {
 
   it('should handle USERS_FETCH_FAILED', () => {
     expect(
-      reducer(undefined, { type: USERS_FETCH_FAILED, err: 'Oops! Something went wrong.' }).toJS()
+      reducer(undefined, {
+        type: USERS_FETCH_FAILED,
+        err: 'Oops! Something went wrong.',
+      }).toJS()
     ).to.deep.equal({
       readyState: USERS_FETCH_FAILED,
       list: null,
@@ -35,7 +38,10 @@ describe('reducer_users', () => {
 
   it('should handle USERS_FETCHED', () => {
     expect(
-      reducer(undefined, { type: USERS_FETCHED, data: [{ id: '1', name: 'Welly' }] }).toJS()
+      reducer(undefined, {
+        type: USERS_FETCHED,
+        data: [{ id: '1', name: 'Welly' }],
+      }).toJS()
     ).to.deep.equal({
       readyState: USERS_FETCHED,
       list: [{ id: '1', name: 'Welly' }],

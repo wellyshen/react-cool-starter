@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux-immutable';
-import users from './reducer_users';
-import anUser from './reducer_anUser';
-import routing from './reducer_routing';
+import users from './users';
+import anUser from './anUser';
+import routing from './routing';
 
 export default combineReducers({
   users,
