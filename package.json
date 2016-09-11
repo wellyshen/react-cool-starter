@@ -42,7 +42,7 @@
     "stylelint": "better-npm-run stylelint",
     "lint": "npm run eslint && npm run stylelint",
     "test": "better-npm-run test",
-    "test:watch": ""
+    "test:watch": "npm test -- --watch --no-single-run"
   },
   "betterScripts": {
     "start": {
