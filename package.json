@@ -26,7 +26,7 @@
     "babel",
     "postcss"
   ],
-  "author": "WellyShen <hivoid19@gmail.com> (https://github.com/WellyShen)",
+  "author": "WellyShen <hivoid19@gmail.com> (https://github.com/wellyshen)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wellyshen/react-cool-starter/issues"
@@ -36,11 +36,11 @@
     "start": "better-npm-run start",
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "better-npm-run start:prod",
-    "clean": "better-npm-run clean",
-    "build": "better-npm-run clean && better-npm-run build",
-    "eslint": "better-npm-run eslint",
-    "stylelint": "better-npm-run stylelint",
-    "lint": "npm run eslint && npm run stylelint",
+    "build": "npm run build:clean && better-npm-run build",
+    "build:clean": "better-npm-run build:clean",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "better-npm-run lint:js",
+    "lint:style": "better-npm-run lint:style",
     "test": "better-npm-run test",
     "test:watch": "npm test -- --watch --no-single-run"
   },
@@ -68,13 +68,13 @@
         "BABEL_ENV": "es"
       }
     },
-    "clean": {
+    "build:clean": {
       "command": "rimraf ./public/dist"
     },
-    "eslint": {
+    "lint:js": {
       "command": "eslint -c .eslintrc ./src ./tools ./index.js"
     },
-    "stylelint": {
+    "lint:style": {
       "command": "stylelint \"./src/**/*.css\""
     },
     "test": {
