@@ -129,7 +129,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── test-bunlder.js                     # Karma pre-processor settings file
 │   ├── webpack                                 # Webpack configuration settings
 │   │   ├── config.js                           # Webpack configuration file
-│   │   ├── config.test.js                      # Webpack configuration file for testing (karma)
+│   │   ├── config.test.js                      # Webpack configuration file for testing (for karma config)
 │   │   ├── index.js                            # Webpack configuration entry point
 │   │   └── webpack-isomorphic-tools.config.js  # Webpack Isomorphic Tools configuration file 
 │   └── es2015Preset.js                         # es2015 preset configuration file (for .babelrc)       
