@@ -27,6 +27,7 @@ module.exports = function (config) {
       stats: 'errors-only',
     },
 
+    // Set the format of reporter
     coverageReporter: {
       dir: path.join(process.cwd(), 'coverage'),
       reporters: [
