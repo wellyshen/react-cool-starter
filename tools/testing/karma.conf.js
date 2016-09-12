@@ -1,5 +1,6 @@
 /* eslint func-names:0 */
 
+const path = require('path');
 const webpackConfig = require('../webpack');
 
 module.exports = function (config) {
@@ -16,7 +17,7 @@ module.exports = function (config) {
       './test-bundler.js': ['webpack', 'sourcemap'],
     },
 
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage'],
 
     webpack: webpackConfig,
 
@@ -24,6 +25,15 @@ module.exports = function (config) {
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only',
+    },
+
+    coverageReporter: {
+      dir: path.join(process.cwd(), 'coverage'),
+      reporters: [
+        { type: 'html', subdir: 'html' },
+        { type: 'lcov', subdir: 'lcov' },
+        { type: 'text-summary', subdir: '.', file: 'text-summary.txt' },
+      ],
     },
   });
 };

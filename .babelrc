@@ -1,4 +1,17 @@
 {
   "presets": ["./tools/es2015Preset", "react", "stage-0"],
-  "plugins": ["transform-runtime", "react-hot-loader/babel"]
+  "plugins": ["transform-runtime", "react-hot-loader/babel"],
+  "env": {
+    "test": {
+      "plugins": [
+        ["istanbul", {
+          "exclude": [
+            "src/__tests__",
+            "src/config",
+            "tools/testing"
+          ]
+        }]
+      ]
+    }
+  }
 }
