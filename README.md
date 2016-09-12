@@ -1,4 +1,5 @@
-# <img src="https://cloud.githubusercontent.com/assets/21308003/18428536/1354d25e-7901-11e6-9156-e00f1951135b.png" alt="Banner" />
+# <img src="https://cloud.githubusercontent.com/assets/21308003/18428617/85848db0-7901-11e6-8a4c-9c7882f7830f.png" alt="Banner" style="margin-left:auto;
+  margin-right:auto; height:300px;" />
 
 A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
 
