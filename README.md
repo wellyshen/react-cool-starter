@@ -1,4 +1,4 @@
-# <img src="https://cloud.githubusercontent.com/assets/21308003/18422908/af3ea0a2-78d2-11e6-92bc-8fdd1863eb0a.png" alt="React Cool Starter" />
+# <img src="https://cloud.githubusercontent.com/assets/21308003/18428536/1354d25e-7901-11e6-9156-e00f1951135b.png" alt="Banner" />
 
 A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
 
