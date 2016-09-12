@@ -6,8 +6,6 @@ module.exports = function (config) {
   config.set({
     browsers: ['PhantomJS'],
 
-    // autoWatch: false,
-
     singleRun: true,
 
     frameworks: ['mocha'],
