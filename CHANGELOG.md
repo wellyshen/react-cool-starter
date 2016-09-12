@@ -10,4 +10,5 @@
 * Configuring `./tools/testing/karma.conf.js` and `.babelrc` to support code coverage.
 * Configuring npm scripts to support code coverage.
 * Configuring [Travis CI](https://travis-ci.org/) to run `coveralls` script.
-* Add [Coverall.io](https://coveralls.io/) badge.
+* Adding [Coverall.io](https://coveralls.io/) badge.
+* Adding `.coverage` folder to .gitignore.
