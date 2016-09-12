@@ -352,6 +352,7 @@ You will see the error message above whenever the hot reload is triggered. This 
 
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
-- [ ] Testing code coverage
+- [ ] Testing Code Coverage
 - [ ] Dynamic Routing
 - [ ] Internationalization
+- [ ] Express Server Security
