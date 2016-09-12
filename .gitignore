@@ -1,6 +1,7 @@
 .DS_Store
 *.log
 
+coverage
 node_modules
 public/dist
 webpack-assets.json
