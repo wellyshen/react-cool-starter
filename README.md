@@ -345,12 +345,12 @@ The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit test
 
 > Warning: [react-router] You cannot change <Router routes>; it will be ignored
 
-You will see the error message above whenever the hot reload triggered. It's because of the React Hot Loader 3 will re-render the routes dynamically for view updating but [React Router](https://github.com/reactjs/react-router) doesn't support that yet (see this issue [react-router#2704](https://github.com/reactjs/react-router/issues/2704)). I will wait for the official fix then and not mind the error message ;)
+You will see the error message above whenever the hot reload is triggered. This is because the React Hot Loader 3 will re-render the routes dynamically for view updates, but [React Router](https://github.com/reactjs/react-router) doesn't support that yet (see this issue [react-router#2704](https://github.com/reactjs/react-router/issues/2704)). I'll wait for the official fix, and not mind the error message ;)
 
 
 ## To Do...
 
-There're some features I'd like to include into the starter boilerplate in the near future. If you have any great ideas or suggestion, feel free to fork the repository and share it to me.
+There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
 - [ ] Testing code coverage
 - [ ] Dynamic Routing
