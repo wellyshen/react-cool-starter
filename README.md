@@ -73,7 +73,7 @@ npm install
 **3. Start to run it:**
 
 ```bash
-npm run start:production  # Building bundle and running production server
+npm run start:production    # Building bundle and running production server
 ```
 
 Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
