@@ -21,7 +21,7 @@ describe('fetchUsers', () => {
     sandbox.restore();
   });
 
-  it('creates USERS_FETCHING when success to fetch data', done => {
+  it('creates USERS_FETCHING when success to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.resolve({ status: 200, data: response }));
 
@@ -37,7 +37,7 @@ describe('fetchUsers', () => {
       .catch(done);
   });
 
-  it('creates USERS_FETCH_FAILED when fail to fetch data', done => {
+  it('creates USERS_FETCH_FAILED when fail to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.reject(errorMessage));
 

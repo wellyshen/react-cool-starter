@@ -14,7 +14,7 @@ const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: state => state.get('routing').toJS(),
 });
 
-const renderApp = CurrentRoutes => {
+const renderApp = (CurrentRoutes) => {
   render(
     <AppContainer>
       <Provider store={store}>

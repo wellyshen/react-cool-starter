@@ -27,7 +27,7 @@ describe('fetchAnUser', () => {
     sandbox.restore();
   });
 
-  it('creates AN_USER_FETCHED when success to fetch data', done => {
+  it('creates AN_USER_FETCHED when success to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.resolve({ status: 200, data: response }));
 
@@ -43,7 +43,7 @@ describe('fetchAnUser', () => {
       .catch(done);
   });
 
-  it('creates AN_USER_FETCH_FAILED when fail to fetch data', done => {
+  it('creates AN_USER_FETCH_FAILED when fail to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.reject(errorMessage));
 

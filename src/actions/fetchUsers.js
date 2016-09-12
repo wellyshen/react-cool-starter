@@ -8,19 +8,19 @@ export const USERS_FETCH_FAILED = 'USERS_FETCH_FAILED';
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // export this function for testing
-export const fetchUsers = () => dispatch => {
+export const fetchUsers = () => (dispatch) => {
   dispatch({ type: USERS_FETCHING });
 
   return axios.get(API_URL)
-    .then(res => {
+    .then((res) => {
       dispatch({ type: USERS_FETCHED, data: res.data });
     })
-    .catch(err => {
+    .catch((err) => {
       dispatch({ type: USERS_FETCH_FAILED, err });
     });
 };
 
-const shouldFetchUsers = state => {
+const shouldFetchUsers = (state) => {
   const users = state.get('users');
 
   if (!users.get('list') ||

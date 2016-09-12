@@ -71,7 +71,7 @@ app.get('*', (req, res) => {
 });
 
 if (config.port) {
-  app.listen(config.port, config.host, err => {
+  app.listen(config.port, config.host, (err) => {
     if (err) console.error(`==> 😭  OMG!!! ${err}`);
 
     console.info(`==> 🌎  Listening at http://${config.host}:${config.port}`);
