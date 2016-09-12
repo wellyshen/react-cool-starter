@@ -9,6 +9,7 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 [![build status](https://travis-ci.org/WellyShen/react-cool-starter.svg?branch=master)](https://travis-ci.org/WellyShen/react-cool-starter?branch=master)
 [![dependencies Status](https://david-dm.org/WellyShen/react-cool-starter/status.svg)](https://david-dm.org/WellyShen/react-cool-starter)
 [![devDependencies Status](https://david-dm.org/WellyShen/react-cool-starter/dev-status.svg)](https://david-dm.org/WellyShen/react-cool-starter?type=dev)
+[![Coverage Status](https://coveralls.io/repos/github/wellyshen/react-cool-starter/badge.svg?branch=master)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/LICENSE)
 
 
@@ -45,6 +46,7 @@ Really cool starter boilerplate with the most popular technologies:
 * Shared app config between development and production.
 * 404 error page and redirect handling.
 * [karma](https://karma-runner.github.io/1.0/index.html), [mocha](https://mochajs.org/), [enzyme](https://github.com/airbnb/enzyme), [chai](http://chaijs.com/) and [sinon](https://github.com/sinonjs/sinon) as the integrated solution for wrting unit tests.
+* Testing code coverage support.
 
 
 ## Requirements
@@ -87,12 +89,14 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
 `build`|Clean the compiled stuff and compile your app to `./public/dist`.
-`build:clean`|Remove the `dist` folder from `./public` to clean the compiled stuff.
+`build:clean`|Remove both `./public/dist` and `./coverage` folder to clean the compiled stuff and the code coverage report.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `test`|Run testing once.
 `test:watch`|Run testing on every test file change.
+`test:clean`|Remove the `./coverage` folder to clean the code coverage report.
+`coveralls`|Command running for [Coverall.io](https://coveralls.io/).
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
 
@@ -340,6 +344,26 @@ The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit test
 * Components
 * Reducers
 
+By the way, code coverage support for testing, the report is generated in `./coverage` folder. You can configure `.babelrc` to ignore the files which you don't want to cover. For example:
+
+```bash
+{
+  ...
+
+  "env": {
+    "test": {
+      "plugins": [
+        ["istanbul", {
+          "exclude": [          
+            "**/*.-test.js"   # ignore testing files
+          ]
+        }]
+      ]
+    }
+  }
+}
+```
+
 
 ## Known Issues
 
@@ -352,7 +376,6 @@ You will see the error message above whenever the hot reload is triggered. This 
 
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
-- [ ] Testing Code Coverage
 - [ ] Dynamic Routing
 - [ ] Internationalization
 - [ ] Express Server Security
