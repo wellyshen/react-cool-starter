@@ -6,7 +6,7 @@ Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://express
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
 
-[![build status](https://travis-ci.org/WellyShen/react-cool-starter.svg?branch=master)](https://travis-ci.org/WellyShen/react-cool-starter?branch=master)
+[![Build Status](https://travis-ci.org/wellyshen/react-cool-starter.svg?branch=master)](https://travis-ci.org/wellyshen/react-cool-starter)
 [![dependencies Status](https://david-dm.org/WellyShen/react-cool-starter/status.svg)](https://david-dm.org/WellyShen/react-cool-starter)
 [![devDependencies Status](https://david-dm.org/WellyShen/react-cool-starter/dev-status.svg)](https://david-dm.org/WellyShen/react-cool-starter?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/WellyShen/react-cool-starter/badge.svg?branch=master)](https://coveralls.io/github/WellyShen/react-cool-starter?branch=master)
