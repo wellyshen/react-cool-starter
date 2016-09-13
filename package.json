@@ -45,7 +45,7 @@
     "test": "better-npm-run test",
     "test:watch": "npm test -- --no-single-run",
     "test:clean": "better-npm-run test:clean",
-    "coveralls": "better-npm-run coveralls"
+    "coveralls": "better-npm-run coveralls && npm run test:clean"
   },
   "betterScripts": {
     "start": {
