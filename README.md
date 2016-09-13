@@ -167,7 +167,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Stateless Functional Components
 
-[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In the starter boilerplate we use it wherever possible.
+[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In the starter boilerplate I use it wherever possible.
 
 ### Adding Routes
 
@@ -197,7 +197,7 @@ import config from './config';
 
 ### Styles
 
-The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. We use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
+The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
 **With CSS Modules:**
 
@@ -343,7 +343,7 @@ The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit test
 * Components
 * Reducers
 
-By the way, code coverage support for testing, the report is generated in `./coverage` folder. You can configure `.babelrc` to ignore the files which you don't want to cover. For example:
+By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) to instruments your code with Istanbul coverage, the report is generated in `./coverage` folder. You can configure `.babelrc` to ignore the files which you don't want to cover. For example:
 
 ```bash
 {
@@ -362,6 +362,8 @@ By the way, code coverage support for testing, the report is generated in `./cov
   }
 }
 ```
+
+You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code to skip instrumenting.
 
 
 ## Known Issues
