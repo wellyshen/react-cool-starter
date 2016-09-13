@@ -20,22 +20,30 @@ export const fetchUsers = () => (dispatch) => {
     });
 };
 
+/* istanbul ignore next */
 const shouldFetchUsers = (state) => {
+  /* istanbul ignore next */
   const users = state.get('users');
 
+  /* istanbul ignore if */
   if (!users.get('list') ||
       users.readyState === USERS_INVALID ||
       users.readyState === USERS_FETCH_FAILED) return true;
 
+  /* istanbul ignore next */
   return false;
 };
 
+/* istanbul ignore next */
 export function fetchUsersIfNeeded() {
+  /* istanbul ignore next */
   return (dispatch, getState) => {
+    /* istanbul ignore if */
     if (shouldFetchUsers(getState())) {
       return dispatch(fetchUsers());
     }
 
+    /* istanbul ignore next */
     return null;
   };
 }

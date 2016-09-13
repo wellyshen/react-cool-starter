@@ -19,20 +19,28 @@ export const fetchAnUser = userId => (dispatch) => {
     });
 };
 
+/* istanbul ignore next */
 const shouldFetchAnUser = (state, userId) => {
+  /* istanbul ignore next */
   const anUser = state.getIn(['anUser', userId]);
 
+  /* istanbul ignore if */
   if (!anUser || anUser.readyState === AN_USER_FETCH_FAILED) return true;
 
+  /* istanbul ignore next */
   return false;
 };
 
+/* istanbul ignore next */
 export function fetchAnUserIfNeeded(userId) {
+  /* istanbul ignore next */
   return (dispatch, getState) => {
+    /* istanbul ignore if */
     if (shouldFetchAnUser(getState(), userId)) {
       return dispatch(fetchAnUser(userId));
     }
 
+    /* istanbul ignore next */
     return null;
   };
 }
