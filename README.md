@@ -33,7 +33,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
 * [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
 * [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) tweaks React component/store in real time.
-* [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`, `./tools/*.js`).
+* [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`).
 * [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
 * [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
