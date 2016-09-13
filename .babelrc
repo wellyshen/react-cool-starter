@@ -5,10 +5,11 @@
     "test": {
       "plugins": [
         ["istanbul", {
-          "exclude": [
-            "src/__tests__",
-            "src/config",
-            "tools/testing"
+          "include": [
+            "src/actions",
+            "src/components",
+            "src/containers",
+            "src/reducers"
           ]
         }]
       ]
