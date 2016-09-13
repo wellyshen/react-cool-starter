@@ -96,7 +96,6 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `test`|Run testing once.
 `test:watch`|Run testing on every test file change.
 `test:clean`|Remove the `./coverage` folder to clean the code coverage report.
-`coveralls`|Command ran for [Coverall.io](https://coveralls.io/).
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
 
