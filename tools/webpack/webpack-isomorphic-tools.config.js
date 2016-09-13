@@ -1,6 +1,6 @@
-/* eslint object-shorthand:0 func-names:0 */
+/* eslint-disable */
 
-const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
+var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
 module.exports = {
   // debug: true,
