@@ -1,4 +1,4 @@
-# <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18429148/94de2d18-7904-11e6-82f8-424a55d5d7da.png" height="250px" alt="Banner" /></div>
+# <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
 A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
 
