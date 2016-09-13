@@ -7,10 +7,10 @@ Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://express
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it :)
 
 [![Build Status](https://travis-ci.org/wellyshen/react-cool-starter.svg?branch=master)](https://travis-ci.org/wellyshen/react-cool-starter)
-[![dependencies Status](https://david-dm.org/WellyShen/react-cool-starter/status.svg)](https://david-dm.org/WellyShen/react-cool-starter)
-[![devDependencies Status](https://david-dm.org/WellyShen/react-cool-starter/dev-status.svg)](https://david-dm.org/WellyShen/react-cool-starter?type=dev)
+[![dependencies Status](https://david-dm.org/wellyshen/react-cool-starter/status.svg)](https://david-dm.org/wellyshen/react-cool-starter)
+[![devDependencies Status](https://david-dm.org/wellyshen/react-cool-starter/dev-status.svg)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/wellyshen/react-cool-starter/badge.svg)](https://coveralls.io/github/wellyshen/react-cool-starter)
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/WellyShen/react-cool-starter/master/LICENSE)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/wellyshen/react-cool-starter/master/LICENSE)
 
 
 ## Features
