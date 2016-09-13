@@ -38,7 +38,7 @@
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "better-npm-run start:prod",
     "build": "npm run build:clean && better-npm-run build",
-    "build:clean": "npm run test:clean && better-npm-run build:clean",
+    "build:clean": "better-npm-run build:clean",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
