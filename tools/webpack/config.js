@@ -1,20 +1,20 @@
-/* eslint max-len:0 prefer-template:0 */
+/* eslint-disable */
 
-const path = require('path');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+var path = require('path');
+var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var StyleLintPlugin = require('stylelint-webpack-plugin');
 
-const nodeEnv = process.env.NODE_ENV || 'development';
-const isDev = nodeEnv !== 'production';
+var nodeEnv = process.env.NODE_ENV || 'development';
+var isDev = nodeEnv !== 'production';
 
-const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools.config')).development(isDev);
+var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
+var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools.config')).development(isDev);
 
 // Setting the plugins for development/prodcution
 function getPlugins() {
-  const plugins = [];
+  var plugins = [];
 
   plugins.push(
     // Setup global variables for app
@@ -62,7 +62,7 @@ function getPlugins() {
 
 // Setting  the entry for development/prodcution
 function getEntry() {
-  let entry;
+  var entry;
 
   if (isDev) {
     entry = {
@@ -95,7 +95,7 @@ function getEntry() {
 }
 
 // Setting webpack settings
-module.exports = function (CSSModules) {  // eslint-disable-line func-names
+module.exports = function (CSSModules) {
   return {
     cache: isDev,
     debug: isDev,

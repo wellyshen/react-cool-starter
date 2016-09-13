@@ -1,9 +1,9 @@
-/* eslint max-len:0 prefer-template:0 */
+/* eslint-disable */
 
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
-module.exports = function (CSSModules) {  // eslint-disable-line func-names
+module.exports = function (CSSModules) {
   return {
     devtool: 'inline-source-map',
     module: {
