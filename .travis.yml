@@ -17,5 +17,9 @@ script:
   - npm test
   - npm run build
 
+notifications:
+  email:
+    on_failure: change
+
 after_success:
   - npm run coveralls
