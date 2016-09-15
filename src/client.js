@@ -6,7 +6,6 @@ import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
 import configureStore from './configureStore';
-import routes from './routes';
 
 const initialState = fromJS(window.__INITIAL_STATE__);  // redux-immutable only allow immutable obj
 const store = configureStore(initialState);
@@ -15,27 +14,36 @@ const history = syncHistoryWithStore(browserHistory, store, {
 });
 const mountNode = document.getElementById('react-view');
 
-const renderApp = (CurrentRoutes) => {
+const renderApp = () => {
+  const routes = require('./routes').default;
+
   render(
     <AppContainer>
       <Provider store={store}>
-        <Router history={history} routes={CurrentRoutes} />
+        <Router history={history} routes={routes} />
       </Provider>
     </AppContainer>,
     mountNode
   );
 };
 
-renderApp(routes);
-
 // Enable hot reload by react-hot-loader
 if (module.hot) {
-  module.hot.accept('./routes', () => {
-    const NextRoutes = require('./routes').default;
+  const reRenderApp = () => {
+    try {
+      renderApp();
+    } catch (error) {
+      const RedBox = require('redbox-react').default;
 
-    // Prevent the error of "[react-router] You cannot change ; it will be ignored"
-    // from react-router
+      render(<RedBox error={error} />, mountNode);
+    }
+  };
+
+  module.hot.accept('./routes', () => {
+    // Prevent the hot reloading error from react-router
     unmountComponentAtNode(mountNode);
-    renderApp(NextRoutes);
+    reRenderApp();
   });
 }
+
+renderApp();
