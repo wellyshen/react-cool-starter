@@ -1,6 +1,14 @@
 # Changelog
 
 
+### 1.1.1
+
+> 2016-09-15
+
+* Fix the bug of static functions from `./src/contaners/Home.js` and `./src/contaners/UserInfo.js`.
+* Fix the error of react-router while hot reloading triggered.
+
+
 ### 1.1.0
 
 > 2016-09-12
