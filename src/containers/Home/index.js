@@ -9,9 +9,11 @@ import UserList from '../../components/UserList';
 import styles from './Home.scss';
 
 class Home extends Component {
-  static fetchData = dispatch => Promise.all([
-    dispatch(action.fetchUsersIfNeeded()),
-  ]);
+  static fetchData(dispatch) {
+    return Promise.all([
+      dispatch(action.fetchUsersIfNeeded()),
+    ]);
+  }
 
   componentDidMount() {
     const { dispatch } = this.props;

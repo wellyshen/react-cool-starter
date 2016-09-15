@@ -9,9 +9,11 @@ import UserCard from '../../components/UserCard';
 import styles from './UserInfo.scss';
 
 class UserInfo extends Component {
-  static fetchData = (dispatch, params) => Promise.all([
-    dispatch(action.fetchAnUserIfNeeded(params.id)),
-  ]);
+  static fetchData(dispatch, params) {
+    return Promise.all([
+      dispatch(action.fetchAnUserIfNeeded(params.id)),
+    ]);
+  }
 
   componentDidMount() {
     const { dispatch, params } = this.props;
