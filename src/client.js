@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { render, unmountComponentAtNode } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
@@ -13,6 +13,7 @@ const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: state => state.get('routing').toJS(),
 });
+const mountNode = document.getElementById('react-view');
 
 const renderApp = (CurrentRoutes) => {
   render(
@@ -21,7 +22,7 @@ const renderApp = (CurrentRoutes) => {
         <Router history={history} routes={CurrentRoutes} />
       </Provider>
     </AppContainer>,
-    document.getElementById('react-view')
+    mountNode
   );
 };
 
@@ -30,8 +31,11 @@ renderApp(routes);
 // Enable hot reload by react-hot-loader
 if (module.hot) {
   module.hot.accept('./routes', () => {
-    const NextRoutes = require('./routes');
+    const NextRoutes = require('./routes').default;
 
+    // Prevent the error of "[react-router] You cannot change ; it will be ignored"
+    // from react-router
+    unmountComponentAtNode(mountNode);
     renderApp(NextRoutes);
   });
 }
