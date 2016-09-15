@@ -290,10 +290,12 @@ You can write dispatches for actions that must be called for the container to be
 
 ```javascript
 // Write a static function which be called by server and client
-static fetchData = (dispatch, params) => Promise.all([
+static fetchData(dispatch, params) {
   // Add the asynchronous actions which must be called while paga loading here
-  dispatch(fetchAnUser.fetchAnUserIfNeeded(params.id)),
-]);
+  return Promise.all([
+    dispatch(action.fetchAnUserIfNeeded(params.id)),
+  ]);
+}
 ```
 
 Then invoke the actions in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action to figure out if fetches for data need to be made or not:
