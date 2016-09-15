@@ -366,13 +366,6 @@ By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-pl
 You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code to skip instrumenting.
 
 
-## Known Issues
-
-> Warning: [react-router] You cannot change <Router routes>; it will be ignored
-
-You will see the error message above whenever the hot reload is triggered. This is because the React Hot Loader 3 will re-render the routes dynamically for view updates, but [React Router](https://github.com/reactjs/react-router) doesn't support that yet (see this issue [react-router#2704](https://github.com/reactjs/react-router/issues/2704)). I'll wait for the official fix, and not mind the error message ;)
-
-
 ## To Do...
 
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
