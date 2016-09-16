@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -37,14 +37,15 @@
     "start": "better-npm-run start",
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "better-npm-run start:prod",
-    "build": "npm run build:clean && better-npm-run build",
-    "build:clean": "better-npm-run build:clean",
+    "build": "npm run clean:build && better-npm-run build",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "test": "better-npm-run test",
     "test:watch": "npm test -- --no-single-run",
-    "test:clean": "better-npm-run test:clean",
+    "clean:all": "npm run clean:build && npm run clean:coverage",
+    "clean:build": "better-npm-run clean:build",
+    "clean:coverage": "better-npm-run clean:coverage",
     "coveralls": "better-npm-run coveralls && npm run test:clean"
   },
   "betterScripts": {
@@ -71,9 +72,6 @@
         "BABEL_ENV": "es"
       }
     },
-    "build:clean": {
-      "command": "rimraf ./public/dist"
-    },
     "lint:js": {
       "command": "eslint -c .eslintrc ./src ./tools ./index.js"
     },
@@ -86,7 +84,10 @@
         "NODE_ENV": "test"
       }
     },
-    "test:clean": {
+    "clean:build": {
+      "command": "rimraf ./public/dist"
+    },
+    "clean:coverage": {
       "command": "rimraf ./coverage"
     },
     "coveralls": {

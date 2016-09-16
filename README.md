@@ -88,14 +88,15 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
 `start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Clean the compiled stuff and compile your app to `./public/dist`.
-`build:clean`|Remove the `./public/dist` folder to clean the compiled stuff.
+`build`|Clean the previous compiled stuff and compile your app to `./public/dist`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `test`|Run testing once.
 `test:watch`|Run testing on every test file change.
-`test:clean`|Remove the `./coverage` folder to clean the code coverage report.
+`clean:all`|Remove the `./public/dist` and the `./coverage` folder.
+`clean:build`|Remove the `./public/dist` folder to clean the compiled stuff.
+`clean:coverage`|Remove the `./coverage` folder to clean the code coverage report.
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
 
