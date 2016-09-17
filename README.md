@@ -226,8 +226,8 @@ import './Home.scss';
 
 render() {
   return (
-    <div className="Home">
-      <Helmet title="Home" /> // Use the CSS class as normal
+    <div className="Home"> // Use the CSS class as normal
+      <Helmet title="Home" />
       {this.displayUserList()}
     </div>
   );
