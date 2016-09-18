@@ -103,6 +103,7 @@
     "babel-runtime": "^6.11.6",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
+    "helmet": "^2.2.0",
     "immutable": "^3.8.1",
     "morgan": "^1.7.0",
     "react": "^15.3.1",
