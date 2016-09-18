@@ -174,14 +174,14 @@ Concering to the security for Express in production. I already setup the [helmet
 ```javascript
 import helmet from 'helmet';
 
-...
+// ...
 
 const app = express();
 
 // Using helmet to secure Express with various HTTP headers
 app.use(helmet());
 
-...
+// ...
 ```
  
 In addition, for the performance of server response. I also setup the [compression](https://github.com/expressjs/compression), which supports Gzip compressing can greatly decrease the size of the response body and hence increase the speed of server response time.
@@ -189,14 +189,14 @@ In addition, for the performance of server response. I also setup the [compressi
 ```javascript
 import compression from 'compression';
 
-...
+// ...
 
 const app = express();
 
 // Compress all requests
 app.use(compression());
 
-...
+// ...
 ```
 
 
@@ -241,7 +241,7 @@ The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/
 ```javascript
 import styles from './Home.scss';
 
-...
+// ...
 
 render() {
   return (
@@ -258,7 +258,7 @@ render() {
 ```javascript
 import './Home.scss';
 
-...
+// ...
 
 render() {
   return (
@@ -287,7 +287,7 @@ Using font-awesome:
 // With CSS Modules
 import styles from './myStyle.scss';
 
-...
+// ...
 
 return (
   <div>
@@ -298,7 +298,7 @@ return (
 // Without CSS Modules
 import './font-awesome.css';
 
-...
+// ...
 
 return (
   <div>
@@ -357,18 +357,18 @@ How Shallow Compare is practiced:
 ```javascript
 import shallowCompare from 'react-addons-shallow-compare';
 
-...
+// ...
 
 class Home extends Component {
 
-  ...
+  // ...
 
   shouldComponentUpdate(nextProps, nextState) {
     // Implement the Shallow Compare helper function
     return shallowCompare(this, nextProps, nextState);
   }
 
-  ...
+  // ...
 }
 ```
 
@@ -385,8 +385,6 @@ By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-pl
 
 ```bash
 {
-  ...
-
   "env": {
     "test": {
       "plugins": [
