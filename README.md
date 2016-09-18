@@ -20,7 +20,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering.
 * [React](https://facebook.github.io/react/) as the view.
 * [React Router](https://github.com/reactjs/react-router) as the router.
-* [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, link, script and base tags on both server and client.
+* [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 * [Express](https://expressjs.com/) server.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
@@ -183,9 +183,9 @@ Add your routes in `./src/routes.js`. For example:
 </Route>
 ```
 
-### Managing Title, Meta, Link, Script and Base
+### Managing Title, Meta, Styles and Scripts
 
-The parent `App.js` defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports base, meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) documents for more info.
+The parent `App.js` defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) documents for more info.
 
 ### App config
 

@@ -1,6 +1,8 @@
 import path from 'path';
 import morgan from 'morgan';
 import express from 'express';
+import compression from 'compression';
+import helmet from 'helmet';
 import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -12,6 +14,11 @@ import renderHtmlPage from './renderHtmlPage';
 import config from './config';
 
 const app = express();
+
+// Using helmet to secure Express with various HTTP headers
+app.use(helmet());
+// Compress all requests
+app.use(compression());
 
 // Use morgan for http request debug (only show error)
 app.use(morgan('dev', { skip: (req, res) => res.statusCode < 400 }));
