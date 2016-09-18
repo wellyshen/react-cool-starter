@@ -22,6 +22,8 @@ Really cool starter boilerplate with the most popular technologies:
 * [React Router](https://github.com/reactjs/react-router) as the router.
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 * [Express](https://expressjs.com/) server.
+* [helmet](https://github.com/helmetjs/helmet) helps secure Express server with various HTTP headers.
+* [compression](https://github.com/expressjs/compression) to increase the speed of Express server response.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
@@ -162,6 +164,39 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── webpack-isomorphic-tools.config.js  # Webpack Isomorphic Tools configuration file 
 │   └── es2015Preset.js                         # es2015 preset configuration file (for .babelrc)       
 └── index.js                                    # App start point
+```
+
+
+## Server Side Security and Performance
+
+Concering to the security for Express in production. I already setup the [helmet](https://github.com/helmetjs/helmet) for you. It can help protect your app from some well-known web vulnerabilities by setting HTTP headers appropriately. It's just a basic protected mechanism for your app, you can see [Security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
+
+```javascript
+import helmet from 'helmet';
+
+...
+
+const app = express();
+
+// Using helmet to secure Express with various HTTP headers
+app.use(helmet());
+
+...
+```
+ 
+In addition, for the performance of server response. I also setup the [compression](https://github.com/expressjs/compression), which supports Gzip compressing can greatly decrease the size of the response body and hence increase the speed of server response time.
+
+```javascript
+import compression from 'compression';
+
+...
+
+const app = express();
+
+// Compress all requests
+app.use(compression());
+
+...
 ```
 
 
@@ -373,7 +408,5 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
-- [ ] Express Server Security
-- [ ] Express Server Performance
 - [ ] Dynamic Routing
 - [ ] Internationalization

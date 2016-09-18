@@ -1,6 +1,14 @@
 # Changelog
 
 
+### 1.2.0
+
+> 2016-09-18
+
+* Using [helmet](https://github.com/helmetjs/helmet) helps secure Express server with various HTTP headers.
+* Using [compression](https://github.com/expressjs/compression) to increase the speed of Express server response.
+
+
 ### 1.1.2
 
 > 2016-09-17
