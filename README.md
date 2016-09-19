@@ -146,34 +146,8 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 ## Server Side Security and Performance
 
 Concering to the security for Express in production. I already setup the [helmet](https://github.com/helmetjs/helmet) for you. It can help protect your app from some well-known web vulnerabilities by setting HTTP headers appropriately. It's just a basic protected mechanism for your app, you can see [Security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
-
-```javascript
-import helmet from 'helmet';
-
-// ...
-
-const app = express();
-
-// Using helmet to secure Express with various HTTP headers
-app.use(helmet());
-
-// ...
-```
  
 In addition, for the performance of server response. I also setup the [compression](https://github.com/expressjs/compression), which supports Gzip compressing can greatly decrease the size of the response body and hence increase the speed of server response time.
-
-```javascript
-import compression from 'compression';
-
-// ...
-
-const app = express();
-
-// Compress all requests
-app.use(compression());
-
-// ...
-```
 
 
 ## Setup Redux DevTools Extension
