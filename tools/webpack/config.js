@@ -27,7 +27,7 @@ function getPlugins() {
     // Style lint
     new StyleLintPlugin({
       syntax: 'scss',
-      failOnError: false, // Disable style lint error herer
+      failOnError: true, // Disable style lint error terminating here
     }),
     new webpack.NoErrorsPlugin(),
     webpackIsomorphicToolsPlugin
@@ -36,6 +36,7 @@ function getPlugins() {
   if (isDev) {
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
+      new webpack.LoaderOptionsPlugin({ debug: true }),
       new webpack.IgnorePlugin(/webpack-stats\.json$/)
     );
   } else {
@@ -98,7 +99,6 @@ function getEntry() {
 module.exports = function (CSSModules) {
   return {
     cache: isDev,
-    debug: isDev,
     devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
     context: path.join(__dirname, '../..'),
     entry: getEntry(),
@@ -155,7 +155,7 @@ module.exports = function (CSSModules) {
     },
     plugins: getPlugins(),
     eslint: {
-      failOnError: true,  // Disable js lint error herer
+      failOnError: true,  // Disable js lint error terminating here
     },
     postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
   };

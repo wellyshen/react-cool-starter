@@ -32,7 +32,6 @@ module.exports = function (CSSModules) {
     },
     // required for enzyme to work properly
     externals: {
-      jsdom: 'window',
       cheerio: 'window',
       'react/addons': true,
       'react/lib/ExecutionEnvironment': true,
