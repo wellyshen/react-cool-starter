@@ -35,7 +35,6 @@ if (__DEV__) {
   app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
     noInfo: true,
-    // hot: true,
     stats: { colors: true },
   }));
 
