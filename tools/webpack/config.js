@@ -17,17 +17,29 @@ function getPlugins() {
   var plugins = [];
 
   plugins.push(
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        // Javascript lint
+        eslint: {
+          failOnError: true,  // Disable js lint error terminating here
+        },
+        postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+        context: '/', // Required for the sourceMap of css/sass loader
+        debug: isDev,
+        minimize: !isDev,
+      },
+    }),
+    // Style lint
+    new StyleLintPlugin({
+      syntax: 'scss',
+      failOnError: true,  // Disable style lint error terminating here
+    }),
     // Setup global variables for app
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
       __CLIENT__: JSON.stringify(true),
       __SERVER__: JSON.stringify(false),
       __DEV__: JSON.stringify(isDev),
-    }),
-    // Style lint
-    new StyleLintPlugin({
-      syntax: 'scss',
-      failOnError: true, // Disable style lint error terminating here
     }),
     new webpack.NoErrorsPlugin(),
     webpackIsomorphicToolsPlugin
@@ -36,7 +48,6 @@ function getPlugins() {
   if (isDev) {
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.LoaderOptionsPlugin({ debug: true }),
       new webpack.IgnorePlugin(/webpack-stats\.json$/)
     );
   } else {
@@ -47,7 +58,6 @@ function getPlugins() {
         minChunks: Infinity,
       }),
       new ExtractTextPlugin({ filename: '[name].[chunkhash].css', allChunks: true }),
-      new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
       new webpack.optimize.UglifyJsPlugin({
         compress: { screw_ie8: true, warnings: false },
         output: { comments: false },
@@ -109,15 +119,18 @@ module.exports = function (CSSModules) {
       chunkFilename: '[name].[chunkhash].js',
     },
     module: {
-      preLoaders: [{ test: /\.jsx?$/, loader: 'eslint', exclude: /node_modules/ }],
-      loaders: [
+      rules: [
+        {
+          enforce: 'pre',
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'eslint',
+        },
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel',
-          query: {
-            cacheDirectory: isDev,
-          },
+          query: { cacheDirectory: isDev },
         },
         { test: /\.json$/, loader: 'json' },
         {
@@ -147,16 +160,12 @@ module.exports = function (CSSModules) {
       ],
     },
     resolve: {
-      extensions: ['', '.js', '.jsx', '.json'],
+      extensions: ['.js', '.jsx', '.json'],
       modules: [
         'src',
         'node_modules',
       ],
     },
     plugins: getPlugins(),
-    eslint: {
-      failOnError: true,  // Disable js lint error terminating here
-    },
-    postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
   };
 };

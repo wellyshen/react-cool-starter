@@ -1,6 +1,13 @@
 # Changelog
 
 
+### 1.2.1
+
+> 2016-09-21
+
+* Migrate to [Webpack-2@beta.24](https://github.com/webpack/webpack/releases/tag/v2.1.0-beta.24).
+
+
 ### 1.2.0
 
 > 2016-09-18

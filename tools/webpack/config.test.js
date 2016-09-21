@@ -1,7 +1,7 @@
 /* eslint-disable */
 
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
+var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 module.exports = function (CSSModules) {
   return {
@@ -9,7 +9,7 @@ module.exports = function (CSSModules) {
     module: {
       // The sinon library doesn't like being run through babel
       noParse: [/node_modules\/sinon/],
-      loaders: [
+      rules: [
         { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory' },
         { test: /\.json$/, loader: 'json' },
         // sinon.js--aliased for enzyme--expects/requires global vars.
@@ -38,7 +38,7 @@ module.exports = function (CSSModules) {
       'react/lib/ReactContext': true,
     },
     resolve: {
-      extensions: ['', '.js', '.jsx', '.json'],
+      extensions: ['.js', '.jsx', '.json'],
       modules: [
         'src',
         'node_modules',
@@ -49,6 +49,12 @@ module.exports = function (CSSModules) {
       },
     },
     plugins: [
+      new webpack.LoaderOptionsPlugin({
+        options: {
+          postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+          context: '/', // Required for the sourceMap of css/sass loader
+        },
+      }),
       // Setup global variables for app
       new webpack.DefinePlugin({
         'process.env': { NODE_ENV: JSON.stringify('development') },
@@ -59,6 +65,5 @@ module.exports = function (CSSModules) {
       new webpack.IgnorePlugin(/\.json$/),
       new webpack.NoErrorsPlugin(),
     ],
-    postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
   };
 };
