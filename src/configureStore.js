@@ -12,7 +12,11 @@ export default (initialState) => {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
-      store.replaceReducer(require('./reducers').default);
+      try {
+        store.replaceReducer(require('./reducers').default);
+      } catch (error) {
+        console.error('error: ', error);
+      }
     });
   }
 
