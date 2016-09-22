@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import express from 'express';
 import compression from 'compression';
 import helmet from 'helmet';
+import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -17,6 +18,8 @@ const app = express();
 
 // Using helmet to secure Express with various HTTP headers
 app.use(helmet());
+// Prevent HTTP parameter pollution.
+app.use(hpp());
 // Compress all requests
 app.use(compression());
 

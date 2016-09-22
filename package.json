@@ -109,6 +109,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
     "helmet": "^2.2.0",
+    "hpp": "^0.2.1",
     "immutable": "^3.8.1",
     "morgan": "^1.7.0",
     "react": "^15.3.2",
