@@ -33,6 +33,10 @@
     "url": "https://github.com/wellyshen/react-cool-starter/issues"
   },
   "homepage": "https://github.com/wellyshen/react-cool-starter",
+  "files": [
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "start": "better-npm-run start",
     "start:production": "npm run build && npm run start:prod",
