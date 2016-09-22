@@ -1,6 +1,13 @@
 # Changelog
 
 
+### 1.2.2
+
+> 2016-09-23
+
+* Adding [hpp](https://github.com/analog-nico/hpp) middleware to protect your Express server.
+
+
 ### 1.2.1
 
 > 2016-09-21
