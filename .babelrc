@@ -1,6 +1,6 @@
 {
   "presets": ["./tools/es2015Preset", "react", "stage-0"],
-  "plugins": ["transform-runtime", "react-hot-loader/babel"],
+  "plugins": ["transform-runtime"],
   "env": {
     "test": {
       "plugins": [

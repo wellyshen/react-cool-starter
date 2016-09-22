@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -18,11 +17,9 @@ const renderApp = () => {
   const routes = require('./routes').default;
 
   render(
-    <AppContainer>
-      <Provider store={store}>
-        <Router history={history} routes={routes} />
-      </Provider>
-    </AppContainer>,
+    <Provider store={store}>
+      <Router history={history} routes={routes} />
+    </Provider>,
     mountNode
   );
 };
