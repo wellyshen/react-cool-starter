@@ -78,7 +78,6 @@ function getEntry() {
   if (isDev) {
     entry = {
       app: [
-        'webpack/hot/only-dev-server',
         'webpack-hot-middleware/client',
         './src/client.js',
       ],
