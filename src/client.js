@@ -17,6 +17,7 @@ const renderApp = () => {
   const routes = require('./routes').default;
 
   match({ routes, history: browserHistory }, (error, redirectLocation, renderProps) => {
+    // Using the enhanced history (react-redux-router) instead of the 'browserHistory'
     const props = Object.assign({}, renderProps, { history });
 
     render(
