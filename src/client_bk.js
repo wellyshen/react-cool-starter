@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
-import { match, Router, browserHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
 import configureStore from './configureStore';
@@ -16,14 +16,12 @@ const mountNode = document.getElementById('react-view');
 const renderApp = () => {
   const routes = require('./routes').default;
 
-  match({ routes, history }, (error, redirectLocation, renderProps) => {
-    render(
-      <Provider store={store}>
-        <Router {...renderProps} />
-      </Provider>,
-      mountNode
-    );
-  });
+  render(
+    <Provider store={store}>
+      <Router history={history} routes={routes} />
+    </Provider>,
+    mountNode
+  );
 };
 
 // Enable hot reload by react-hot-loader

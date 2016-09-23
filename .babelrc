@@ -1,6 +1,6 @@
 {
   "presets": ["./tools/es2015Preset", "react", "stage-0"],
-  "plugins": ["transform-runtime"],
+  "plugins": ["transform-runtime", "system-import-transformer"],
   "env": {
     "test": {
       "plugins": [

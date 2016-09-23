@@ -1,14 +1,37 @@
-import React from 'react';
-import { Route, IndexRoute } from 'react-router';
 import App from './containers/App';
-import Home from './containers/Home';
-import UserInfo from './containers/UserInfo';
-import NotFound from './containers/NotFound';
 
-export default (
-  <Route path="/" component={App}>
-    <IndexRoute component={Home} />
-    <Route path="UserInfo/:id" component={UserInfo} />
-    <Route path="*" component={NotFound} />
-  </Route>
-);
+const errorLoading = (err) => {
+  console.error(`==> 😭  Dynamic page loading failed ${err}`);
+};
+
+const loadRoute = cb => module => cb(null, module.default);
+
+export default {
+  path: '/',
+  component: App,
+  indexRoute: {
+    getComponent(location, cb) {
+      System.import('./containers/Home')
+        .then(loadRoute(cb))
+        .catch(errorLoading);
+    },
+  },
+  childRoutes: [
+    {
+      path: 'UserInfo/:id',
+      getComponent(location, cb) {
+        System.import('./containers/UserInfo')
+          .then(loadRoute(cb))
+          .catch(errorLoading);
+      },
+    },
+    {
+      path: '*',
+      getComponent(location, cb) {
+        System.import('./containers/NotFound')
+          .then(loadRoute(cb))
+          .catch(errorLoading);
+      },
+    },
+  ],
+};

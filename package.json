@@ -136,6 +136,7 @@
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.5",
     "babel-plugin-istanbul": "^2.0.1",
+    "babel-plugin-system-import-transformer": "^2.3.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
