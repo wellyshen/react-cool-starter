@@ -78,7 +78,7 @@ function getEntry() {
   if (isDev) {
     entry = {
       app: [
-        'webpack-hot-middleware/client',
+        'webpack-hot-middleware/client?reload=true',
         './src/client.js',
       ],
     };
