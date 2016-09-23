@@ -16,10 +16,12 @@ const mountNode = document.getElementById('react-view');
 const renderApp = () => {
   const routes = require('./routes').default;
 
-  match({ routes, history }, (error, redirectLocation, renderProps) => {
+  match({ routes, history: browserHistory }, (error, redirectLocation, renderProps) => {
+    const props = Object.assign({}, renderProps, { history });
+
     render(
       <Provider store={store}>
-        <Router {...renderProps} />
+        <Router {...props} />
       </Provider>,
       mountNode
     );
