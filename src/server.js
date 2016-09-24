@@ -9,6 +9,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
+import chalk from 'chalk';
 import routes from './routes';
 import configureStore from './configureStore';
 import renderHtmlPage from './renderHtmlPage';
@@ -83,8 +84,8 @@ if (config.port) {
   app.listen(config.port, config.host, (err) => {
     if (err) console.error(`==> 😭  OMG!!! ${err}`);
 
-    console.info(`==> 🌎  Listening at http://${config.host}:${config.port}`);
+    console.info(chalk.green(`==> 🌎  Listening at http://${config.host}:${config.port}`));
   });
 } else {
-  console.error('==> 😭  OMG!!! No PORT environment variable has been specified');
+  console.error(chalk.red('==> 😭  OMG!!! No PORT environment variable has been specified'));
 }
