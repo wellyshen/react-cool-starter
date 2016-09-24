@@ -1,10 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import axios from 'axios';
 import rootReducer from './reducers';
 
 export default (initialState) => {
   const store = createStore(rootReducer, initialState, compose(
-    applyMiddleware(thunk),
+    applyMiddleware(thunk.withExtraArgument(axios)),
     __DEV__ && typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ?
       window.devToolsExtension() : f => f
   ));
