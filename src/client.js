@@ -16,6 +16,7 @@ const mountNode = document.getElementById('react-view');
 const renderApp = () => {
   const routes = require('./routes').default;
 
+  // Sync routes both on client and server side
   match({ routes, history: browserHistory }, (error, redirectLocation, renderProps) => {
     // Using the enhanced history (react-redux-router) instead of the 'browserHistory'
     const props = Object.assign({}, renderProps, { history });
