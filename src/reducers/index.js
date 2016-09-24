@@ -4,7 +4,7 @@ import anUser from './anUser';
 import routing from './routing';
 
 export default combineReducers({
+  routing,
   users,
   anUser,
-  routing,
 });
