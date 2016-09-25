@@ -6,7 +6,8 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
 import configureStore from './configureStore';
 
-const initialState = fromJS(window.__INITIAL_STATE__);  // redux-immutable only allow immutable obj
+// redux-immutable only allow immutable obj
+const initialState = fromJS(window.__INITIAL_STATE__);
 const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: state => state.get('routing').toJS(),
