@@ -13,6 +13,11 @@ const initialState = Map({
   list: null,
 });
 
+// HMR not working here...
+const mockData = [
+  { id: 1, name: 'Welly' },
+];
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case USERS_FETCHING:
@@ -27,7 +32,8 @@ export default (state = initialState, action) => {
     case USERS_FETCHED:
       return state.merge({
         readyState: USERS_FETCHED,
-        list: fromJS(action.data),
+        list: fromJS(mockData),
+        // list: fromJS(action.data),
       });
     default:
       return state;
