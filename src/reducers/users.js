@@ -15,7 +15,7 @@ const initialState = Map({
 
 // HMR not working for this reducer...
 const mockData = [
-  { id: 1, name: 'Welly' },
+  { id: 1, name: 'CCC' },
 ];
 
 export default (state = initialState, action) => {

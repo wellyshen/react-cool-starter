@@ -24,7 +24,7 @@ export default (initialState) => {
     module.hot.accept('./reducers', () => {
       try {
         // eslint-disable-next-line import/newline-after-import
-        const reducers = require('./reducers');
+        const reducers = require('./reducers').default;
         store.replaceReducer(reducers(store.asyncReducers));
       } catch (error) {
         console.error(chalk.red(`==> 😭  Reducer hot reloading error ${error}`));
