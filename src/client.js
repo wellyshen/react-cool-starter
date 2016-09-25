@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router/es6';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
 import configureStore from './configureStore';
