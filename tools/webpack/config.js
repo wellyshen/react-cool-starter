@@ -78,6 +78,7 @@ function getEntry() {
   if (isDev) {
     entry = {
       app: [
+        'react-hot-loader/patch',
         'webpack-hot-middleware/client?reload=true',
         './src/client.js',
       ],
@@ -99,6 +100,7 @@ function getEntry() {
         'react-helmet',
         'axios',
         'redbox-react',
+        'react-hot-loader',
       ],
     };
   }

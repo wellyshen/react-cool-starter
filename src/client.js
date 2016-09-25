@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
-import { match, Router, browserHistory } from 'react-router';
+import { match, Router, browserHistory } from 'react-router/es6';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
+import { AppContainer } from 'react-hot-loader';
 import configureStore from './configureStore';
 
 const initialState = fromJS(window.__INITIAL_STATE__);  // redux-immutable only allow immutable obj
@@ -24,9 +25,11 @@ const renderApp = () => {
     const props = Object.assign({}, renderProps, { history });
 
     render(
-      <Provider store={store}>
-        <Router {...props} />
-      </Provider>,
+      <AppContainer>
+        <Provider store={store}>
+          <Router {...props} />
+        </Provider>
+      </AppContainer>,
       mountNode
     );
   });
