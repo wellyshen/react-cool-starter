@@ -23,7 +23,9 @@ export default (initialState) => {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
       try {
-        store.replaceReducer(require('./reducers').default);
+        // eslint-disable-next-line import/newline-after-import
+        const reducers = require('./reducers');
+        store.replaceReducer(reducers(store.asyncReducers));
       } catch (error) {
         console.error(chalk.red(`==> 😭  Reducer hot reloading error ${error}`));
       }
