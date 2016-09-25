@@ -17,10 +17,7 @@ export default (initialState) => {
 
   const store = createStore(createReducer(), initialState, compose(...enhancers));
 
-  store.asyncReducers = {
-    // users: {},
-    // anUser: {},
-  };
+  store.asyncReducers = {};
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
