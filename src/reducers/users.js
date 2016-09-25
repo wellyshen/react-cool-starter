@@ -27,7 +27,7 @@ export default (state = initialState, action) => {
     case USERS_FETCHED:
       return state.merge({
         readyState: USERS_FETCHED,
-        list: fromJS(action.data),
+        list: fromJS([{ id: 1, name: 'DDDD' }]),
       });
     default:
       return state;

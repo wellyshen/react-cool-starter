@@ -10,7 +10,7 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 import chalk from 'chalk';
-import routes from './routes';
+import createRoutes from './routes';
 import configureStore from './configureStore';
 import renderHtmlPage from './renderHtmlPage';
 import config from './config';
@@ -47,6 +47,9 @@ if (__DEV__) {
 
 // Render content
 app.get('*', (req, res) => {
+  const store = configureStore();
+  const routes = createRoutes(store);
+
   if (__DEV__) {
     webpackIsomorphicTools.refresh();
   }
@@ -59,8 +62,6 @@ app.get('*', (req, res) => {
     } else if (!renderProps) {
       res.sendStatus(404);
     } else {
-      const store = configureStore();
-
       const promises = renderProps.components
         .filter(component => component.fetchData)
         .map(component => component.fetchData(store.dispatch, renderProps.params));

@@ -14,9 +14,11 @@ const history = syncHistoryWithStore(browserHistory, store, {
 const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
-  const routes = require('./routes').default;
+  // eslint-disable-next-line import/newline-after-import
+  const createRoutes = require('./routes').default;
+  const routes = createRoutes(store);
 
-  // Sync routes both on client and server side
+  // Sync routes both on client and server
   match({ routes, history: browserHistory }, (error, redirectLocation, renderProps) => {
     // Using the enhanced history (react-redux-router) instead of the 'browserHistory'
     const props = Object.assign({}, renderProps, { history });

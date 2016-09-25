@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import chalk from 'chalk';
-import rootReducer from './reducers';
+import createReducer from './reducers';
 
 export default (initialState) => {
   const middlewares = [
@@ -15,7 +15,12 @@ export default (initialState) => {
       window.devToolsExtension() : f => f,
   ];
 
-  const store = createStore(rootReducer, initialState, compose(...enhancers));
+  const store = createStore(createReducer(), initialState, compose(...enhancers));
+
+  store.asyncReducers = {
+    // users: {},
+    // anUser: {},
+  };
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
@@ -30,3 +35,10 @@ export default (initialState) => {
 
   return store;
 };
+
+/* eslint-disable */
+export function injectAsyncReducer(store, name, asyncReducer) {
+  store.asyncReducers[name] = asyncReducer;
+  store.replaceReducer(createReducer(store.asyncReducers));
+}
+/* eslint-enable */

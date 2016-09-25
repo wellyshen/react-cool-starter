@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux-immutable';
-import users from './users';
-import anUser from './anUser';
+// import users from './users';
+// import anUser from './anUser';
 import routing from './routing';
 
-export default combineReducers({
-  routing,
-  users,
-  anUser,
-});
+export default function createReducer(asyncReducers) {
+  return combineReducers({
+    routing,
+    // users: () => {},
+    // anUser: () => {},
+    ...asyncReducers,
+  });
+}
