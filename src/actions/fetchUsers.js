@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const USERS_INVALID = 'USERS_INVALID';
 export const USERS_FETCHING = 'USERS_FETCHING';
 export const USERS_FETCHED = 'USERS_FETCHED';
@@ -8,7 +6,7 @@ export const USERS_FETCH_FAILED = 'USERS_FETCH_FAILED';
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // export this function for testing
-export const fetchUsers = () => (dispatch) => {
+export const fetchUsers = axios => (dispatch) => {
   dispatch({ type: USERS_FETCHING });
 
   return axios.get(API_URL)
@@ -37,10 +35,10 @@ const shouldFetchUsers = (state) => {
 /* istanbul ignore next */
 export function fetchUsersIfNeeded() {
   /* istanbul ignore next */
-  return (dispatch, getState) => {
+  return (dispatch, getState, axios) => {
     /* istanbul ignore if */
     if (shouldFetchUsers(getState())) {
-      return dispatch(fetchUsers());
+      return dispatch(fetchUsers(axios));
     }
 
     /* istanbul ignore next */
