@@ -383,4 +383,5 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
 - [ ] Dynamic Routing
+- [ ] Async Reducers
 - [ ] Internationalization
