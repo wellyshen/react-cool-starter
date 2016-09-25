@@ -14,9 +14,7 @@ const history = syncHistoryWithStore(browserHistory, store, {
 const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
-  // eslint-disable-next-line import/newline-after-import
-  const createRoutes = require('./routes').default;
-  const routes = createRoutes(store);
+  const routes = require('./routes').default(store);
 
   // Sync routes both on client and server
   match({ routes, history: browserHistory }, (error, redirectLocation, renderProps) => {
