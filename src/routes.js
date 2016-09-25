@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { injectAsyncReducer } from './configureStore';
+import { injectReducer } from './reducers';
 import App from './containers/App';
 
 const errorLoading = (err) => {
@@ -25,7 +25,7 @@ export default function createRoutes(store) {
 
         importModules
           .then(([reducer, Component]) => {
-            injectAsyncReducer(store, 'users', reducer.default);
+            injectReducer(store, 'users', reducer.default);
 
             renderRoute(Component);
           })
@@ -45,7 +45,7 @@ export default function createRoutes(store) {
 
           importModules
             .then(([reducer, Component]) => {
-              injectAsyncReducer(store, 'anUser', reducer.default);
+              injectReducer(store, 'anUser', reducer.default);
 
               renderRoute(Component);
             })

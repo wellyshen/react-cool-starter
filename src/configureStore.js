@@ -34,10 +34,3 @@ export default (initialState) => {
 
   return store;
 };
-
-/* eslint-disable */
-export function injectAsyncReducer(store, name, asyncReducer) {
-  store.asyncReducers[name] = asyncReducer;
-  store.replaceReducer(createReducer(store.asyncReducers));
-}
-/* eslint-enable */

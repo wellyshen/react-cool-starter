@@ -14,3 +14,10 @@ export default function createReducer(asyncReducers) {
     ...asyncReducers,
   });
 }
+
+/* eslint-disable */
+export const injectReducer = (store, key, reducer) => {
+  store.asyncReducers[key] = reducer
+  store.replaceReducer(createReducer(store.asyncReducers))
+}
+/* eslint-enable */
