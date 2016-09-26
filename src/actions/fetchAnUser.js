@@ -3,6 +3,7 @@ export const AN_USER_FETCHED = 'AN_USER_FETCHED';
 export const AN_USER_FETCH_FAILED = 'AN_USER_FETCH_FAILED';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
+let prevState;
 
 // Export this function for testing
 export const fetchAnUser = (userId, axios) => (dispatch) => {
@@ -21,7 +22,12 @@ export const fetchAnUser = (userId, axios) => (dispatch) => {
 const shouldFetchAnUser = (state, userId) => {
   const anUser = state.getIn(['anUser', userId]);
 
-  if (anUser && anUser.get('readyState') === AN_USER_FETCHED) return false;
+  if (anUser && anUser.get('readyState') === AN_USER_FETCHED) {
+    if (prevState === anUser) return true;
+
+    prevState = anUser;
+    return false;
+  }
 
   return true;
 };
