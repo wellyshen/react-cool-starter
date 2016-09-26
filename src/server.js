@@ -45,7 +45,7 @@ if (__DEV__) {
   app.use(require('webpack-hot-middleware')(compiler));
 }
 
-// Render content
+// Register server-side rendering middleware
 app.get('*', (req, res) => {
   const store = configureStore();
   const routes = createRoutes(store);
@@ -62,10 +62,12 @@ app.get('*', (req, res) => {
     } else if (!renderProps) {
       res.sendStatus(404);
     } else {
+      // Dispatch the initial action of each container first
       const promises = renderProps.components
         .filter(component => component.fetchData)
         .map(component => component.fetchData(store.dispatch, renderProps.params));
 
+      // Then render the routes
       Promise.all(promises)
         .then(() => {
           const content = renderToString(
