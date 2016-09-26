@@ -4,7 +4,7 @@ export const AN_USER_FETCH_FAILED = 'AN_USER_FETCH_FAILED';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
-// export this function for testing
+// Export this function for testing
 export const fetchAnUser = (userId, axios) => (dispatch) => {
   dispatch({ type: AN_USER_FETCHING, userId });
 
@@ -19,26 +19,20 @@ export const fetchAnUser = (userId, axios) => (dispatch) => {
 
 /* istanbul ignore next */
 const shouldFetchAnUser = (state, userId) => {
-  /* istanbul ignore next */
   const anUser = state.getIn(['anUser', userId]);
 
-  /* istanbul ignore if */
-  if (!anUser || anUser.readyState === AN_USER_FETCH_FAILED) return true;
+  if (anUser && anUser.get('readyState') === AN_USER_FETCHED) return false;
 
-  /* istanbul ignore next */
-  return false;
+  return true;
 };
 
 /* istanbul ignore next */
 export function fetchAnUserIfNeeded(userId) {
-  /* istanbul ignore next */
   return (dispatch, getState, axios) => {
-    /* istanbul ignore if */
     if (shouldFetchAnUser(getState(), userId)) {
       return dispatch(fetchAnUser(userId, axios));
     }
 
-    /* istanbul ignore next */
     return null;
   };
 }
