@@ -99,6 +99,7 @@ function getEntry() {
         'react-helmet',
         'axios',
         'redbox-react',
+        'chalk',
       ],
     };
   }
