@@ -10,7 +10,7 @@ describe('<Home />', () => {
   let wrapper;
   const state = {
     loading: 'Loading...',
-    error: 'Oops, Failed to fetch list!',
+    error: 'Oops, Failed to load list!',
   };
 
   beforeEach(() => {

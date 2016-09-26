@@ -10,7 +10,7 @@ describe('<UserInfo />', () => {
   let wrapper;
   const state = {
     loading: 'Loading...',
-    error: 'Oops, Failed to fetch user info!',
+    error: 'Oops, Failed to load info!',
   };
 
   beforeEach(() => {

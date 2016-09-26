@@ -40,7 +40,7 @@ class Home extends Component {
     }
 
     if (home.get('readyState') === action.DATA_FAILED) {
-      return <p>Oops, Failed to fetch list!</p>;
+      return <p>Oops, Failed to load list!</p>;
     }
 
     return <UserList list={home.get('list')} />;

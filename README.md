@@ -306,7 +306,7 @@ You can write dispatches for actions that must be called for the container to be
 static fetchData(dispatch, params) {
   // Add the asynchronous actions which must be called while paga loading here
   return Promise.all([
-    dispatch(action.fetchAnUserIfNeeded(params.id)),
+    dispatch(action.fetchDataIfNeeded(params.id)),
   ]);
 }
 ```

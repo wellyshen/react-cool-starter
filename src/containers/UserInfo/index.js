@@ -39,7 +39,7 @@ class UserInfo extends Component {
     }
 
     if (userInfoById.get('readyState') === action.DATA_FAILED) {
-      return <p>Oops, Failed to fetch user info!</p>;
+      return <p>Oops, Failed to load info!</p>;
     }
 
     return <UserCard info={userInfoById.get('info')} />;

@@ -13,11 +13,6 @@ const initialState = Map({
   list: null,
 });
 
-// HMR not working for this reducer...
-// const mockData = [
-//   { id: 1, name: 'AAA' },
-// ];
-
 export default (state = initialState, action) => {
   switch (action.type) {
     case DATA_REQUESTING:
@@ -32,7 +27,6 @@ export default (state = initialState, action) => {
     case DATA_SUCCESS:
       return state.merge({
         readyState: DATA_SUCCESS,
-        // list: fromJS(mockData),
         list: fromJS(action.data),
       });
     default:

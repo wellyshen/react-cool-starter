@@ -28,7 +28,7 @@ const shouldFetchData = (state) => {
   /* istanbul ignore if */
   if (home.get('list') && home.get('readyState') === DATA_SUCCESS) {
     /* istanbul ignore if */
-    if (prevState === home) return true;
+    if (prevState === home) return true;  // Dispatch action if data changed
 
     /* istanbul ignore next */
     prevState = home;

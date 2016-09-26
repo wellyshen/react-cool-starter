@@ -6,7 +6,7 @@ import UserList from '../index';
 
 describe('<UserList />', () => {
   it('renders the linkable list item', () => {
-    const mockData = fromJS([{ name: 'Welly', id: '1' }]);
+    const mockData = fromJS([{ id: '1', name: 'Welly' }]);
     const listItem = (
       <Link to={`UserInfo/${mockData.get(0).get('id')}`}>
         {mockData.get(0).get('name')}
