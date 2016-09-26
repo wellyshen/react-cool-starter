@@ -16,6 +16,7 @@ export default function createReducer(asyncReducers) {
 }
 
 /* eslint-disable */
+// Using for injecting the async reducers
 export const injectReducer = (store, key, reducer) => {
   store.asyncReducers[key] = reducer
   store.replaceReducer(createReducer(store.asyncReducers))
