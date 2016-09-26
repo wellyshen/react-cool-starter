@@ -43,13 +43,13 @@ describe('action:UserInfo', () => {
       .catch(done);
   });
 
-  it('creates DATA_FAILED when fail to fetch data', (done) => {
+  it('creates DATA_FAILURE when fail to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.reject(errorMessage));
 
     const expectedActions = [
       { type: action.DATA_REQUESTING, userId },
-      { type: action.DATA_FAILED, userId, err: errorMessage },
+      { type: action.DATA_FAILURE, userId, err: errorMessage },
     ];
     const store = mockStore({ err: null });
 

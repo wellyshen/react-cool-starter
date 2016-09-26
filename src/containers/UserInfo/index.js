@@ -38,7 +38,7 @@ class UserInfo extends Component {
       return <p>Loading...</p>;
     }
 
-    if (userInfoById.get('readyState') === action.DATA_FAILED) {
+    if (userInfoById.get('readyState') === action.DATA_FAILURE) {
       return <p>Oops, Failed to load info!</p>;
     }
 

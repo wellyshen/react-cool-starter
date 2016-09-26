@@ -39,7 +39,7 @@ class Home extends Component {
       return <p>Loading...</p>;
     }
 
-    if (home.get('readyState') === action.DATA_FAILED) {
+    if (home.get('readyState') === action.DATA_FAILURE) {
       return <p>Oops, Failed to load list!</p>;
     }
 

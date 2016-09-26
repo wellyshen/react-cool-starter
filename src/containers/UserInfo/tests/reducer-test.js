@@ -1,7 +1,7 @@
 import reducer from '../reducer';
 import {
   DATA_REQUESTING,
-  DATA_FAILED,
+  DATA_FAILURE,
   DATA_SUCCESS,
 } from '../action';
 
@@ -19,16 +19,16 @@ describe('reducer:userInfo', () => {
     ).toJS()).to.deep.equal({ 1: { readyState: DATA_REQUESTING } });
   });
 
-  it('should handle DATA_FAILED', () => {
+  it('should handle DATA_FAILURE', () => {
     expect(
       reducer(undefined, {
-        type: DATA_FAILED,
+        type: DATA_FAILURE,
         userId: '1',
         err: 'Oops! Something went wrong.',
       }
     ).toJS()).to.deep.equal({
       1: {
-        readyState: DATA_FAILED,
+        readyState: DATA_FAILURE,
         err: 'Oops! Something went wrong.',
       },
     });

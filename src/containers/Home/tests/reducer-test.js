@@ -2,7 +2,7 @@ import reducer from '../reducer';
 import {
   DATA_INVALID,
   DATA_REQUESTING,
-  DATA_FAILED,
+  DATA_FAILURE,
   DATA_SUCCESS,
 } from '../action';
 
@@ -25,14 +25,14 @@ describe('reducer:Home', () => {
     });
   });
 
-  it('should handle DATA_FAILED', () => {
+  it('should handle DATA_FAILURE', () => {
     expect(
       reducer(undefined, {
-        type: DATA_FAILED,
+        type: DATA_FAILURE,
         err: 'Oops! Something went wrong.',
       }).toJS()
     ).to.deep.equal({
-      readyState: DATA_FAILED,
+      readyState: DATA_FAILURE,
       list: null,
       err: 'Oops! Something went wrong.',
     });

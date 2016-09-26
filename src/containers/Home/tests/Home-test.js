@@ -53,7 +53,7 @@ describe('<Home />', () => {
 
   it('renders an error if loading failed', () => {
     const store = storeFake({
-      home: { readyState: 'DATA_FAILED' },
+      home: { readyState: 'DATA_FAILURE' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal(state.error);

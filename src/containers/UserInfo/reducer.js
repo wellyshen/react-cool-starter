@@ -3,7 +3,7 @@
 import { Map, fromJS } from 'immutable';
 import {
   DATA_REQUESTING,
-  DATA_FAILED,
+  DATA_FAILURE,
   DATA_SUCCESS,
 } from './action';
 
@@ -15,10 +15,10 @@ export default (state = Map({}), action) => {
           readyState: DATA_REQUESTING,
         }),
       });
-    case DATA_FAILED:
+    case DATA_FAILURE:
       return state.merge({
         [action.userId]: Map({
-          readyState: DATA_FAILED,
+          readyState: DATA_FAILURE,
           err: fromJS(action.err),
         }),
       });

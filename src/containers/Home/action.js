@@ -1,7 +1,7 @@
 export const DATA_INVALID = 'DATA_INVALID';
 export const DATA_REQUESTING = 'DATA_REQUESTING';
 export const DATA_SUCCESS = 'DATA_SUCCESS';
-export const DATA_FAILED = 'DATA_FAILED';
+export const DATA_FAILURE = 'DATA_FAILURE';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 let prevState;
@@ -15,7 +15,7 @@ export const fetchData = axios => (dispatch) => {
       dispatch({ type: DATA_SUCCESS, data: res.data });
     })
     .catch((err) => {
-      dispatch({ type: DATA_FAILED, err });
+      dispatch({ type: DATA_FAILURE, err });
     });
 };
 

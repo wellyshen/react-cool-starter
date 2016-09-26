@@ -182,16 +182,50 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In the starter boilerplate I use it wherever possible.
 
-### Adding Routes
+### Adding Routes and Async Reducers
 
-Add your routes in `./src/routes.js`. For example:
+[React Router](https://github.com/reactjs/react-router) provides the dynamic routing by "Code Splitting". It's great for building scableable apps (see the [documents](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md) for the detail). 
+
+Here I use the `System.import` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7).
+
+You can add your routes and async reducers in `./src/routes.js`. For example:
 
 ```javascript
-<Route path="/" component={App}>
-  <IndexRoute component={Home} />
-  <Route path="NewRoute" component={NewRoute} />  // Adding a new route
-  <Route path="*" component={NotFound} />
-</Route>
+import { injectReducer } from './reducers';
+
+// ...
+
+export default function createRoutes(store) {
+  return {
+
+    // ...
+
+    childRoutes: [
+      {
+        path: 'path',
+        getComponent(location, cb) {
+          const importModules = Promise.all([
+            System.import('./containers/MyNewRouteComponent'),                 // Add your route component here
+            System.import('./containers/MyNewRouteComponent/myAsyncReducer'),  // Add your async reducer here
+          ]);
+
+          const renderRoute = loadModule(cb);
+
+          importModules
+            .then(([Component, reducer]) => {
+              injectReducer(store, 'userInfo', reducer.default);               // Inject your async reducer 
+                                                                               // to the store
+              renderRoute(Component);
+            })
+            .catch(errorLoading);
+        },
+      },
+      
+      // ...
+
+    ],
+  };
+}
 ```
 
 ### Managing Title, Meta, Styles and Scripts
@@ -382,5 +416,4 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
-- [ ] Dynamic Routing
 - [ ] Internationalization

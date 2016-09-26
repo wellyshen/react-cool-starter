@@ -56,7 +56,7 @@ describe('<UserInfo />', () => {
   it('renders an error if loading failed', () => {
     const store = storeFake({
       userInfo: {
-        1: { readyState: 'DATA_FAILED' },
+        1: { readyState: 'DATA_FAILURE' },
       },
     });
 
