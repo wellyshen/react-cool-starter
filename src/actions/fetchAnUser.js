@@ -20,25 +20,35 @@ export const fetchAnUser = (userId, axios) => (dispatch) => {
 
 /* istanbul ignore next */
 const shouldFetchAnUser = (state, userId) => {
+  /* istanbul ignore next */
   const anUser = state.getIn(['anUser', userId]);
 
+  /* istanbul ignore if */
   if (anUser && anUser.get('readyState') === AN_USER_FETCHED) {
+    /* istanbul ignore if */
     if (prevState === anUser) return true;
 
+    /* istanbul ignore next */
     prevState = anUser;
+    /* istanbul ignore next */
     return false;
   }
 
+  /* istanbul ignore next */
   return true;
 };
 
 /* istanbul ignore next */
 export function fetchAnUserIfNeeded(userId) {
+  /* istanbul ignore next */
   return (dispatch, getState, axios) => {
+    /* istanbul ignore if */
     if (shouldFetchAnUser(getState(), userId)) {
+      /* istanbul ignore next */
       return dispatch(fetchAnUser(userId, axios));
     }
 
+    /* istanbul ignore next */
     return null;
   };
 }

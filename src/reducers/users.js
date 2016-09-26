@@ -14,9 +14,9 @@ const initialState = Map({
 });
 
 // HMR not working for this reducer...
-const mockData = [
-  { id: 1, name: 'AAA' },
-];
+// const mockData = [
+//   { id: 1, name: 'AAA' },
+// ];
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -32,8 +32,8 @@ export default (state = initialState, action) => {
     case USERS_FETCHED:
       return state.merge({
         readyState: USERS_FETCHED,
-        list: fromJS(mockData),
-        // list: fromJS(action.data),
+        // list: fromJS(mockData),
+        list: fromJS(action.data),
       });
     default:
       return state;

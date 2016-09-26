@@ -21,25 +21,35 @@ export const fetchUsers = axios => (dispatch) => {
 
 /* istanbul ignore next */
 const shouldFetchUsers = (state) => {
+  /* istanbul ignore next */
   const users = state.get('users');
 
+  /* istanbul ignore if */
   if (users.get('list') && users.get('readyState') === USERS_FETCHED) {
+    /* istanbul ignore if */
     if (prevState === users) return true;
 
+    /* istanbul ignore next */
     prevState = users;
+    /* istanbul ignore next */
     return false;
   }
 
+  /* istanbul ignore next */
   return true;
 };
 
 /* istanbul ignore next */
 export function fetchUsersIfNeeded() {
+  /* istanbul ignore next */
   return (dispatch, getState, axios) => {
+    /* istanbul ignore if */
     if (shouldFetchUsers(getState())) {
+      /* istanbul ignore next */
       return dispatch(fetchUsers(axios));
     }
 
+    /* istanbul ignore next */
     return null;
   };
 }
