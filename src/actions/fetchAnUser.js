@@ -18,6 +18,7 @@ export const fetchAnUser = (userId, axios) => (dispatch) => {
     });
 };
 
+// Using for preventing dobule fetching data
 /* istanbul ignore next */
 const shouldFetchAnUser = (state, userId) => {
   /* istanbul ignore next */

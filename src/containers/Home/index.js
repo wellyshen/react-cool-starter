@@ -29,7 +29,8 @@ class Home extends Component {
   displayUserList = () => {
     const { users } = this.props;
 
-    if (users.get('readyState') === action.USERS_INVALID ||
+    if (!users.get('readyState') ||
+      users.get('readyState') === action.USERS_INVALID ||
       users.get('readyState') === action.USERS_FETCHING) {
       return <p>Loading...</p>;
     }

@@ -19,6 +19,7 @@ export const fetchUsers = axios => (dispatch) => {
     });
 };
 
+// Preventing dobule fetching data
 /* istanbul ignore next */
 const shouldFetchUsers = (state) => {
   /* istanbul ignore next */
