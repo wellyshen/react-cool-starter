@@ -2,30 +2,30 @@
 
 import { Map, fromJS } from 'immutable';
 import {
-  AN_USER_FETCHING,
-  AN_USER_FETCH_FAILED,
-  AN_USER_FETCHED,
-} from '../actions/fetchAnUser';
+  DATA_REQUESTING,
+  DATA_FAILED,
+  DATA_SUCCESS,
+} from './action';
 
 export default (state = Map({}), action) => {
   switch (action.type) {
-    case AN_USER_FETCHING:
+    case DATA_REQUESTING:
       return state.merge({
         [action.userId]: Map({
-          readyState: AN_USER_FETCHING,
+          readyState: DATA_REQUESTING,
         }),
       });
-    case AN_USER_FETCH_FAILED:
+    case DATA_FAILED:
       return state.merge({
         [action.userId]: Map({
-          readyState: AN_USER_FETCH_FAILED,
+          readyState: DATA_FAILED,
           err: fromJS(action.err),
         }),
       });
-    case AN_USER_FETCHED:
+    case DATA_SUCCESS:
       return state.merge({
         [action.userId]: Map({
-          readyState: AN_USER_FETCHED,
+          readyState: DATA_SUCCESS,
           info: fromJS(action.data),
         }),
       });

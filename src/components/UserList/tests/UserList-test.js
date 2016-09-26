@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { fromJS } from 'immutable';
 import { Link } from 'react-router';
-import UserList from '../../components/UserList';
+import UserList from '../index';
 
 describe('<UserList />', () => {
   it('renders the linkable list item', () => {

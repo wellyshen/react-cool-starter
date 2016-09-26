@@ -1,51 +1,51 @@
-import reducer from '../../reducers/users';
+import reducer from '../reducer';
 import {
-  USERS_INVALID,
-  USERS_FETCHING,
-  USERS_FETCH_FAILED,
-  USERS_FETCHED,
-} from '../../actions/fetchUsers';
+  DATA_INVALID,
+  DATA_REQUESTING,
+  DATA_FAILED,
+  DATA_SUCCESS,
+} from '../action';
 
-describe('reducer_users', () => {
+describe('reducer:Home', () => {
   it('should handle the initial state', () => {
     expect(
       reducer(undefined, {}).toJS()
     ).to.deep.equal({
-      readyState: USERS_INVALID, list: null,
+      readyState: DATA_INVALID, list: null,
     });
   });
 
-  it('should handle USERS_FETCHING', () => {
+  it('should handle DATA_REQUESTING', () => {
     expect(
       reducer(undefined, {
-        type: USERS_FETCHING,
+        type: DATA_REQUESTING,
       }
     ).toJS()).to.deep.equal({
-      readyState: USERS_FETCHING, list: null,
+      readyState: DATA_REQUESTING, list: null,
     });
   });
 
-  it('should handle USERS_FETCH_FAILED', () => {
+  it('should handle DATA_FAILED', () => {
     expect(
       reducer(undefined, {
-        type: USERS_FETCH_FAILED,
+        type: DATA_FAILED,
         err: 'Oops! Something went wrong.',
       }).toJS()
     ).to.deep.equal({
-      readyState: USERS_FETCH_FAILED,
+      readyState: DATA_FAILED,
       list: null,
       err: 'Oops! Something went wrong.',
     });
   });
 
-  it('should handle USERS_FETCHED', () => {
+  it('should handle DATA_SUCCESS', () => {
     expect(
       reducer(undefined, {
-        type: USERS_FETCHED,
+        type: DATA_SUCCESS,
         data: [{ id: '1', name: 'Welly' }],
       }).toJS()
     ).to.deep.equal({
-      readyState: USERS_FETCHED,
+      readyState: DATA_SUCCESS,
       list: [{ id: '1', name: 'Welly' }],
     });
   });

@@ -17,15 +17,15 @@ export default function createRoutes(store) {
     indexRoute: {
       getComponent(location, cb) {
         const importModules = Promise.all([
-          System.import('./reducers/users'),
           System.import('./containers/Home'),
+          System.import('./containers/Home/reducer'),
         ]);
 
         const renderRoute = loadModule(cb);
 
         importModules
-          .then(([reducer, Component]) => {
-            injectReducer(store, 'users', reducer.default);
+          .then(([Component, reducer]) => {
+            injectReducer(store, 'home', reducer.default);
 
             renderRoute(Component);
           })
@@ -37,15 +37,15 @@ export default function createRoutes(store) {
         path: 'UserInfo/:id',
         getComponent(location, cb) {
           const importModules = Promise.all([
-            System.import('./reducers/anUser'),
             System.import('./containers/UserInfo'),
+            System.import('./containers/UserInfo/reducer'),
           ]);
 
           const renderRoute = loadModule(cb);
 
           importModules
-            .then(([reducer, Component]) => {
-              injectReducer(store, 'anUser', reducer.default);
+            .then(([Component, reducer]) => {
+              injectReducer(store, 'userInfo', reducer.default);
 
               renderRoute(Component);
             })

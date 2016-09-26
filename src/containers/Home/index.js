@@ -3,7 +3,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import * as action from '../../actions/fetchUsers';
+import * as action from './action';
 import UserList from '../../components/UserList';
 
 import styles from './Home.scss';
@@ -12,7 +12,7 @@ class Home extends Component {
   // Fetching data method used for both server and client
   static fetchData(dispatch) {
     return Promise.all([
-      dispatch(action.fetchUsersIfNeeded()),
+      dispatch(action.fetchDataIfNeeded()),
     ]);
   }
 
@@ -31,19 +31,19 @@ class Home extends Component {
   }
 
   displayUserList = () => {
-    const { users } = this.props;
+    const { home } = this.props;
 
-    if (!users.get('readyState') ||
-      users.get('readyState') === action.USERS_INVALID ||
-      users.get('readyState') === action.USERS_FETCHING) {
+    if (!home.get('readyState') ||
+      home.get('readyState') === action.DATA_INVALID ||
+      home.get('readyState') === action.DATA_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (users.get('readyState') === action.USERS_FETCH_FAILED) {
-      return <p>Oops, Failed to fetch users!</p>;
+    if (home.get('readyState') === action.DATA_FAILED) {
+      return <p>Oops, Failed to fetch list!</p>;
     }
 
-    return <UserList list={users.get('list')} />;
+    return <UserList list={home.get('list')} />;
   }
 
   render() {
@@ -57,10 +57,10 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  users: ImmutablePropTypes.map,
+  home: ImmutablePropTypes.map,
   dispatch: PropTypes.func,
 };
 
-const mapStateToProps = state => ({ users: state.get('users') });
+const mapStateToProps = state => ({ home: state.get('home') });
 
 export default connect(mapStateToProps)(Home);

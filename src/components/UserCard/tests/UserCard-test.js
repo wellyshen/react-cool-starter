@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { fromJS } from 'immutable';
-import UserCard from '../../components/UserCard';
+import UserCard from '../index';
 
 describe('<UserCard />', () => {
   it('renders user\'s info', () => {
@@ -13,7 +13,7 @@ describe('<UserCard />', () => {
       email: 'test@gmail.com',
       website: 'www.test.com',
     });
-    const wrapper = shallow(<UserCard anUser={mockData} />);
+    const wrapper = shallow(<UserCard info={mockData} />);
 
     // Validate all of the text in each <li>
     expect(wrapper.find('ul').childAt(0).text()).to.equal('Name: ' + mockData.get('name'));
