@@ -1,5 +1,3 @@
-/* eslint max-len:0 */
-
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
 
