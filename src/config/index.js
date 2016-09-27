@@ -1,7 +1,7 @@
-/* istanbul ignore if */
 if (process.env.NODE_ENV !== 'production') {
+  /* istanbul ignore next */
   module.exports = require('./default');
-/* istanbul ignore else */
 } else {
+  /* istanbul ignore next */
   module.exports = require('./prod');
 }

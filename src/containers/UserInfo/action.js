@@ -24,9 +24,7 @@ const shouldFetchData = (state, userId) => {
   /* istanbul ignore next */
   const userInfo = state.getIn(['userInfo', userId]);
 
-  /* istanbul ignore if */
   if (userInfo && userInfo.get('readyState') === AN_USER_SUCCESS) {
-    /* istanbul ignore if */
     if (prevState === userInfo) return true;  // Dispatch action if data changed
 
     /* istanbul ignore next */
@@ -43,7 +41,6 @@ const shouldFetchData = (state, userId) => {
 export function fetchDataIfNeeded(userId) {
   /* istanbul ignore next */
   return (dispatch, getState, axios) => {
-    /* istanbul ignore if */
     if (shouldFetchData(getState(), userId)) {
       /* istanbul ignore next */
       return dispatch(fetchData(userId, axios));
