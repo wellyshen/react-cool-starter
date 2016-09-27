@@ -17,7 +17,7 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 
 Really cool starter boilerplate with the most popular technologies:
 
-* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering, dynamic routing, async redux reducers, async data fetching and and code-splitting.
+* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering, dynamic routing, async redux reducers, async data fetching and code-splitting.
 * [React](https://facebook.github.io/react/) as the view.
 * [React Router](https://github.com/reactjs/react-router) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
