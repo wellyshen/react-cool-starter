@@ -10,7 +10,6 @@ const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 const dirRoot = require('path').join(__dirname, '.');
 
 // Settings of webpack-isomorphic-tools
-// eslint-disable-next-line max-len
 global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('./tools/webpack/WIT.config'))
   .development(__DEV__)
   .server(dirRoot, () => {
