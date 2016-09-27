@@ -89,7 +89,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
 `build`|Clean the previous compiled stuff and compile your app to `./public/dist`.
-`lint`|Lint all `.js` and `.scss` files.
+`lint`|Lint all `.js` and `.scss` files.(recommend to use for checking errors before running your app)
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `test`|Run testing once.
