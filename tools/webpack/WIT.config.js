@@ -1,6 +1,4 @@
-/* eslint-disable */
-
-var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
+const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
 module.exports = {
   // debug: true,
@@ -21,21 +19,21 @@ module.exports = {
     },
     style_modules: {
       extensions: ['css', 'scss'],
-      filter: function (module, regex, options, log) {
+      filter: (module, regex, options, log) => {
         if (options.development) {
           return WebpackIsomorphicToolsPlugin.style_loader_filter(module, regex, options, log);
         }
 
         return regex.test(module.name);
       },
-      path: function (module, options, log) {
+      path: (module, options, log) => {
         if (options.development) {
           return WebpackIsomorphicToolsPlugin.style_loader_path_extractor(module, options, log);
         }
 
         return module.name;
       },
-      parser: function (module, options, log) {
+      parser: (module, options, log) => {
         if (options.development) {
           return WebpackIsomorphicToolsPlugin.css_modules_loader_parser(module, options, log);
         }

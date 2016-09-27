@@ -1,5 +1,5 @@
 const path = require('path');
-const webpackConfig = require('../webpack');
+const webpackConfig = require('../webpack/config.test.babel');
 
 module.exports = (config) => {
   config.set({

@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 // Run express as webpack dev server
 if (__DEV__) {
   const webpack = require('webpack');
-  const webpackConfig = require('../tools/webpack');
+  const webpackConfig = require('../tools/webpack/config.babel');
 
   const compiler = webpack(webpackConfig);
 
