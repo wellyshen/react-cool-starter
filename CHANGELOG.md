@@ -6,10 +6,11 @@
 > 2016-09-27
 
 * Support dynamic routing, async redux reducers for building scaleable apps.
-* Using [chlk](https://github.com/chalk/chalk) for terminal warning styling (for better DX).
-* Refining app strcuture.
 * Fixing the bug of action creators, now the reducers hot reloadable.
-* Removing React Hot Loader 3, just using vanilla HMR API would be enough (see this [post](https://medium.com/@dan_abramov/hot-reloading-in-react-1140438583bf#.ac8a72hs2))
+* Refining app strcuture.
+* Using [chlk](https://github.com/chalk/chalk) for terminal warning styling (for better DX).
+* Removing React Hot Loader 3, just using vanilla HMR API would be enough (see this [post](https://medium.com/@dan_abramov/hot-reloading-in-react-1140438583bf#.ac8a72hs2)).
+* Updateing `favicon.ico`.
 
 
 ### 1.2.2
