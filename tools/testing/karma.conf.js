@@ -1,9 +1,7 @@
-/* eslint-disable */
+const path = require('path');
+const webpackConfig = require('../webpack');
 
-var path = require('path');
-var webpackConfig = require('../webpack');
-
-module.exports = function (config) {
+module.exports = (config) => {
   config.set({
     browsers: ['PhantomJS'],
 
