@@ -1,8 +1,8 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
-A simple but feature rich starter boilerplate for you to build an [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) web app with the best development experience and a focus on performance and best practices.
+A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router](https://github.com/reactjs/react-router) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
 
-Built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable-js](https://facebook.github.io/immutable-js/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [Immutable-js](https://facebook.github.io/immutable-js/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
@@ -17,25 +17,25 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 
 Really cool starter boilerplate with the most popular technologies:
 
-* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering.
+* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering, dynamic routing, async redux reducers, async data fetching and code-splitting.
 * [React](https://facebook.github.io/react/) as the view.
 * [React Router](https://github.com/reactjs/react-router) as the router.
-* [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
+* [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
+* [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [Express](https://expressjs.com/) server.
-* [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
-* [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
+* [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
+* [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
+* [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
+* [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
+* [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 * [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server.
 * [Webpack Hot Middleware]() allows you to add hot reloading into the Express server.
 * [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
-* [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
-* [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
-* [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
-* [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
-* [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`).
-* [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
-* [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
+* [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
+* [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
+* [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`).
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 * CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
@@ -109,35 +109,36 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── public                                      # The root path of static file
-│   ├── dist                                    # All the built files will be placed into it
-│   └── favicon.ico                             # Favicon is placed in the same path with the main HTML page
-├── src                                         # App source code
-│   ├── __tests__                               # Collections of testing files
-│   ├── actions                                 # Collections of actions
-│   ├── config                                  # App configuration settings
-│   │   ├── default.js                          # Default settings
-│   │   ├── index.js                            # Configuration entry point
-│   │   └── prod.js                             # Production settings (overrides default settings)
-│   ├── containers                              # Reusable container components
-│   ├── reducers                                # Collections of reducers (registry and injection)
-│   ├── theme                                   # App-wide style, vendor style, generally settings
-│   ├── client.js                               # App bootstrap and rendering (webpack entry)
-│   ├── configureStore.js                       # Configure and instrument redux store
-│   ├── renderHtmlPage.js                       # Main HTML page layout for app
-│   ├── routes.js                               # Routes shared between client and server side
-│   └── server.js                               # Express app (uses webpack middleware)                  
-├── tools                                       # Project related configurations (testing/build etc.)
-│   ├── testing                                 # Testing configuration settings
-│   │   ├── karma.conf.js                       # Karma configuration file
-│   │   └── test-bunlder.js                     # Karma pre-processor settings file
-│   ├── webpack                                 # Webpack configuration settings
-│   │   ├── config.js                           # Webpack configuration file
-│   │   ├── config.test.js                      # Webpack configuration file for testing (for karma config)
-│   │   ├── index.js                            # Webpack configuration entry point
-│   │   └── webpack-isomorphic-tools.config.js  # Webpack Isomorphic Tools configuration file 
-│   └── es2015Preset.js                         # es2015 preset configuration file (for .babelrc)       
-└── index.js                                    # App start point
+├── public                      # The path of the public files (server static path)
+│   ├── dist                    # All the built files will be placed into it
+│   └── favicon.ico             # Favicon is placed in the same path with the main HTML page
+├── src                         # App source code
+│   ├── config                  # App configuration settings
+│   │   ├── default.js          # Default settings
+│   │   ├── index.js            # Configuration entry point
+│   │   └── prod.js             # Production settings (overrides default settings)
+│   ├── components              # Reusable components (including scss/testing files)
+│   ├── containers              # Container components (including assets/action/reducer/scss/testing files)
+│   ├── helper                  # App-wide utils
+│   │   ├── renderHtmlPage.js   # Main HTML page layout for app
+│   │   └── fakeStore.js        # Fake Redux store for testing                        
+│   ├── theme                   # App-wide style, vendor style, generally settings
+│   ├── client.js               # App bootstrap and rendering (webpack entry)
+│   ├── reducers.js             # The root reducer (registry and injection)                         
+│   ├── store.js                # Configure and instrument Redux store
+│   ├── routes.js               # Routes shared between client and server side
+│   └── server.js               # Express server (with webpack dev/hot middlewares)                  
+├── tools                       # Project related configurations (testing/build etc.)
+│   ├── testing                 # Testing configuration settings
+│   │   ├── karma.conf.js       # Karma configuration file
+│   │   └── test-bunlder.js     # Karma pre-processor settings file
+│   ├── webpack                 # Webpack configuration settings
+│   │   ├── config.js           # Webpack configuration file
+│   │   ├── config.test.js      # Webpack configuration file for testing (for karma config)
+│   │   ├── index.js            # Webpack configuration entry point
+│   │   └── WIT.config.js       # Webpack Isomorphic Tools configuration file 
+│   └── es2015Preset.js         # es2015 preset configuration file (for .babelrc)       
+└── index.js                    # App start point
 ```
 
 
@@ -182,16 +183,50 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In the starter boilerplate I use it wherever possible.
 
-### Adding Routes
+### Adding Routes and Async Reducers
 
-Add your routes in `./src/routes.js`. For example:
+[React Router](https://github.com/reactjs/react-router) provides the dynamic routing by "Code-Splitting". It's great for building scableable apps (see the [documents](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md) for the detail). 
+
+Here I use the `System.import` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7).
+
+You can add your routes and async reducers in `./src/routes.js`. For example:
 
 ```javascript
-<Route path="/" component={App}>
-  <IndexRoute component={Home} />
-  <Route path="NewRoute" component={NewRoute} />  // Adding a new route
-  <Route path="*" component={NotFound} />
-</Route>
+import { injectReducer } from './reducers';
+
+// ...
+
+export default function createRoutes(store) {
+  return {
+
+    // ...
+
+    childRoutes: [
+      {
+        path: 'path',
+        getComponent(location, cb) {
+          const importModules = Promise.all([
+            System.import('./containers/MyNewRouteComponent'),                 // Add your route component here
+            System.import('./containers/MyNewRouteComponent/myAsyncReducer'),  // Add your async reducer here
+          ]);
+
+          const renderRoute = loadModule(cb);
+
+          importModules
+            .then(([Component, reducer]) => {
+              injectReducer(store, 'userInfo', reducer.default);               // Inject your async reducer 
+                                                                               // to the store
+              renderRoute(Component);
+            })
+            .catch(errorLoading);
+        },
+      },
+      
+      // ...
+
+    ],
+  };
+}
 ```
 
 ### Managing Title, Meta, Styles and Scripts
@@ -254,7 +289,7 @@ Using image:
 
 ```javascript
 // Require an image 
-<img src={require('./logo.svg')} alt="Logo" role="presentation" />
+<img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
 ```
 
 Using font-awesome:
@@ -306,7 +341,7 @@ You can write dispatches for actions that must be called for the container to be
 static fetchData(dispatch, params) {
   // Add the asynchronous actions which must be called while paga loading here
   return Promise.all([
-    dispatch(action.fetchAnUserIfNeeded(params.id)),
+    dispatch(action.fetchDataIfNeeded(params.id)),
   ]);
 }
 ```
@@ -382,6 +417,4 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
-- [ ] Dynamic Routing
-- [ ] Async Reducers
 - [ ] Internationalization
