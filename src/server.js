@@ -10,9 +10,9 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 import chalk from 'chalk';
-import routes from './routes';
-import configureStore from './configureStore';
-import renderHtmlPage from './renderHtmlPage';
+import createRoutes from './routes';
+import configureStore from './store';
+import renderHtmlPage from './helper/renderHtmlPage';
 import config from './config';
 
 const app = express();
@@ -45,8 +45,11 @@ if (__DEV__) {
   app.use(require('webpack-hot-middleware')(compiler));
 }
 
-// Render content
+// Register server-side rendering middleware
 app.get('*', (req, res) => {
+  const store = configureStore();
+  const routes = createRoutes(store);
+
   if (__DEV__) {
     webpackIsomorphicTools.refresh();
   }
@@ -59,12 +62,12 @@ app.get('*', (req, res) => {
     } else if (!renderProps) {
       res.sendStatus(404);
     } else {
-      const store = configureStore();
-
+      // Dispatch the initial action of each container first
       const promises = renderProps.components
         .filter(component => component.fetchData)
         .map(component => component.fetchData(store.dispatch, renderProps.params));
 
+      // Then render the routes
       Promise.all(promises)
         .then(() => {
           const content = renderToString(

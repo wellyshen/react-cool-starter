@@ -4,19 +4,13 @@ import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import sinon from 'sinon';
 import axios from 'axios';
-import * as action from '../../actions/fetchAnUser';
+import * as action from '../action';
 
 const mockStore = configureMockStore([thunk]);
 
-describe('fetchAnUser', () => {
+describe('action:Home', () => {
   let sandbox;
-  const userId = '1';
-  const response = {
-    name: 'Welly',
-    phone: '007',
-    email: 'test@gmail.com',
-    website: 'www.test.com',
-  };
+  const response = [{ id: '1', name: 'Welly' }];
   const errorMessage = 'Oops! Something went wrong.';
 
   beforeEach(() => {
@@ -27,33 +21,33 @@ describe('fetchAnUser', () => {
     sandbox.restore();
   });
 
-  it('creates AN_USER_FETCHED when success to fetch data', (done) => {
+  it('creates USERS_REQUESTING when success to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.resolve({ status: 200, data: response }));
 
     const expectedActions = [
-      { type: action.AN_USER_FETCHING, userId },
-      { type: action.AN_USER_FETCHED, userId, data: response },
+      { type: action.USERS_REQUESTING },
+      { type: action.USERS_SUCCESS, data: response },
     ];
-    const store = mockStore({ info: null });
+    const store = mockStore({ list: null });
 
-    store.dispatch(action.fetchAnUser(userId, axios))
+    store.dispatch(action.fetchData(axios))
       .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
       .then(done)
       .catch(done);
   });
 
-  it('creates AN_USER_FETCH_FAILED when fail to fetch data', (done) => {
+  it('creates USERS_FAILURE when fail to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.reject(errorMessage));
 
     const expectedActions = [
-      { type: action.AN_USER_FETCHING, userId },
-      { type: action.AN_USER_FETCH_FAILED, userId, err: errorMessage },
+      { type: action.USERS_REQUESTING },
+      { type: action.USERS_FAILURE, err: errorMessage },
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(action.fetchAnUser(userId, axios))
+    store.dispatch(action.fetchData(axios))
       .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
       .then(done)
       .catch(done);

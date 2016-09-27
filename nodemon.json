@@ -5,6 +5,6 @@
     "!tools/testing",
     "!tools/webpack/config.test.js",
     "src/server.js",
-    "src/renderHtmlPage.js"
+    "src/helper/renderHtmlPage.js"
   ]
 }

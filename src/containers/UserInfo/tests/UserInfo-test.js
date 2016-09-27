@@ -2,15 +2,15 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
-import storeFake from './storeFake';
-import UserInfo from '../../containers/UserInfo';
-import UserCard from '../../components/UserCard';
+import storeFake from '../../../helper/storeFake';
+import UserInfo from '../index';
+import UserCard from '../../../components/UserCard';
 
 describe('<UserInfo />', () => {
   let wrapper;
   const state = {
     loading: 'Loading...',
-    error: 'Oops, Failed to fetch the user!',
+    error: 'Oops, Failed to load info!',
   };
 
   beforeEach(() => {
@@ -24,7 +24,7 @@ describe('<UserInfo />', () => {
   it('calls componentDidMount() lifecycle method to invoke data fetching', () => {
     const componentDidMountSpy = spy(UserInfo.prototype, 'componentDidMount');
     const store = storeFake({
-      anUser: {},
+      userInfo: {},
     });
 
     wrapper(store);
@@ -35,9 +35,9 @@ describe('<UserInfo />', () => {
     componentDidMountSpy.restore();
   });
 
-  it('renders the loading status if data invalid of an user id', () => {
+  it('renders the loading status if the data of an user invalid', () => {
     const store = storeFake({
-      anUser: {},
+      userInfo: {},
     });
 
     expect(wrapper(store).find('p').text()).to.equal(state.loading);
@@ -45,8 +45,8 @@ describe('<UserInfo />', () => {
 
   it('renders the loading status if loading data', () => {
     const store = storeFake({
-      anUser: {
-        1: { readyState: 'AN_USER_FETCHING' },
+      userInfo: {
+        1: { readyState: 'AN_USER_REQUESTING' },
       },
     });
 
@@ -55,8 +55,8 @@ describe('<UserInfo />', () => {
 
   it('renders an error if loading failed', () => {
     const store = storeFake({
-      anUser: {
-        1: { readyState: 'AN_USER_FETCH_FAILED' },
+      userInfo: {
+        1: { readyState: 'AN_USER_FAILURE' },
       },
     });
 
@@ -65,9 +65,9 @@ describe('<UserInfo />', () => {
 
   it('renders the <UserCard /> if loading was successful', () => {
     const store = storeFake({
-      anUser: {
+      userInfo: {
         1: {
-          readyState: 'AN_USER_FETCHED',
+          readyState: 'AN_USER_SUCCESS',
           info: {
             name: 'Welly',
             phone: '007',
@@ -77,9 +77,9 @@ describe('<UserInfo />', () => {
         },
       },
     });
-    const mockData = store.getState().get('anUser').get('1').get('info');
+    const mockData = store.getState().get('userInfo').get('1').get('info');
 
     // eslint-disable-next-line no-unused-expressions
-    expect(wrapper(store).contains(<UserCard anUser={mockData} />)).to.be.true;
+    expect(wrapper(store).contains(<UserCard info={mockData} />)).to.be.true;
   });
 });

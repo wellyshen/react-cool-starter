@@ -1,12 +1,13 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router/es6';
+import { match, Router, browserHistory } from 'react-router/es6';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
-import configureStore from './configureStore';
+import configureStore from './store';
 
-const initialState = fromJS(window.__INITIAL_STATE__);  // redux-immutable only allow immutable obj
+// redux-immutable only allow immutable obj
+const initialState = fromJS(window.__INITIAL_STATE__);
 const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: state => state.get('routing').toJS(),
@@ -14,14 +15,20 @@ const history = syncHistoryWithStore(browserHistory, store, {
 const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
-  const routes = require('./routes').default;
+  const routes = require('./routes').default(store);
 
-  render(
-    <Provider store={store}>
-      <Router history={history} routes={routes} />
-    </Provider>,
-    mountNode
-  );
+  // Sync routes both on client and server
+  match({ routes, history: browserHistory }, (error, redirectLocation, renderProps) => {
+    // Using the enhanced history (react-redux-router) instead of the 'browserHistory'
+    const props = Object.assign({}, renderProps, { history });
+
+    render(
+      <Provider store={store}>
+        <Router {...props} />
+      </Provider>,
+      mountNode
+    );
+  });
 };
 
 // Enable hot reload by react-hot-loader

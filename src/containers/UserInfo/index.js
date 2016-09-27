@@ -3,21 +3,25 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import * as action from '../../actions/fetchAnUser';
+import * as action from './action';
 import UserCard from '../../components/UserCard';
 
 import styles from './UserInfo.scss';
 
 class UserInfo extends Component {
+  // Fetching data method used for both server and client
   static fetchData(dispatch, params) {
     return Promise.all([
-      dispatch(action.fetchAnUserIfNeeded(params.id)),
+      dispatch(action.fetchDataIfNeeded(params.id)),
     ]);
   }
 
   componentDidMount() {
     const { dispatch, params } = this.props;
 
+    // Fetching data on component loaded
+    // the preventing dobule fetching data mechanism
+    // is implemented in the action.js
     UserInfo.fetchData(dispatch, params);
   }
 
@@ -27,18 +31,18 @@ class UserInfo extends Component {
   }
 
   displayUserCard = () => {
-    const { anUser, params } = this.props;
-    const anUserById = anUser.get(params.id);
+    const { userInfo, params } = this.props;
+    const userInfoById = userInfo.get(params.id);
 
-    if (!anUserById || anUserById.get('readyState') === action.AN_USER_FETCHING) {
+    if (!userInfoById || userInfoById.get('readyState') === action.AN_USER_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (anUserById.get('readyState') === action.AN_USER_FETCH_FAILED) {
-      return <p>Oops, Failed to fetch the user!</p>;
+    if (userInfoById.get('readyState') === action.AN_USER_FAILURE) {
+      return <p>Oops, Failed to load info!</p>;
     }
 
-    return <UserCard anUser={anUserById.get('info')} />;
+    return <UserCard info={userInfoById.get('info')} />;
   }
 
   render() {
@@ -54,9 +58,9 @@ class UserInfo extends Component {
 UserInfo.propTypes = {
   dispatch: PropTypes.func,
   params: PropTypes.objectOf(PropTypes.string),
-  anUser: ImmutablePropTypes.map,
+  userInfo: ImmutablePropTypes.map,
 };
 
-const mapStateToProps = state => ({ anUser: state.get('anUser') });
+const mapStateToProps = state => ({ userInfo: state.get('userInfo') });
 
 export default connect(mapStateToProps)(UserInfo);
