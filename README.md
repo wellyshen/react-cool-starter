@@ -111,36 +111,35 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── public                      # The path of the public files (server static path)
-│   ├── dist                    # All the built files will be placed into it
-│   └── favicon.ico             # Favicon is placed in the same path with the main HTML page
-├── src                         # App source code
-│   ├── config                  # App configuration settings
-│   │   ├── default.js          # Default settings
-│   │   ├── index.js            # Configuration entry point
-│   │   └── prod.js             # Production settings (overrides default settings)
-│   ├── components              # Reusable components (including scss/testing files)
-│   ├── containers              # Container components (including assets/action/reducer/scss/testing files)
-│   ├── helper                  # App-wide utils
-│   │   ├── renderHtmlPage.js   # Main HTML page layout for app
-│   │   └── fakeStore.js        # Fake Redux store for testing                        
-│   ├── theme                   # App-wide style, vendor style, generally settings
-│   ├── client.js               # App bootstrap and rendering (webpack entry)
-│   ├── reducers.js             # The root reducer (registry and injection)                         
-│   ├── store.js                # Configure and instrument Redux store
-│   ├── routes.js               # Routes shared between client and server side
-│   └── server.js               # Express server (with webpack dev/hot middlewares)                  
-├── tools                       # Project related configurations (testing/build etc.)
-│   ├── testing                 # Testing configuration settings
-│   │   ├── karma.conf.js       # Karma configuration file
-│   │   └── test-bunlder.js     # Karma pre-processor settings file
-│   ├── webpack                 # Webpack configuration settings
-│   │   ├── config.js           # Webpack configuration file
-│   │   ├── config.test.js      # Webpack configuration file for testing (for karma config)
-│   │   ├── index.js            # Webpack configuration entry point
-│   │   └── WIT.config.js       # Webpack Isomorphic Tools configuration file 
-│   └── es2015Preset.js         # es2015 preset configuration file (for .babelrc)       
-└── index.js                    # App start point
+├── public                          # The path of the public files (server static path)
+│   ├── dist                        # All the built files will be placed into it
+│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
+├── src                             # App source code
+│   ├── config                      # App configuration settings
+│   │   ├── default.js              # Default settings
+│   │   ├── index.js                # Configuration entry point
+│   │   └── prod.js                 # Production settings (overrides default settings)
+│   ├── components                  # Reusable components (including scss/testing files)
+│   ├── containers                  # Container components (including assets/action/reducer/scss/testing files)
+│   ├── helper                      # App-wide utils
+│   │   ├── renderHtmlPage.js       # Main HTML page layout for app
+│   │   └── fakeStore.js            # Fake Redux store for testing                        
+│   ├── theme                       # App-wide style, vendor style, generally settings
+│   ├── client.js                   # App bootstrap and rendering (webpack entry)
+│   ├── reducers.js                 # The root reducer (registry and injection)                         
+│   ├── store.js                    # Configure and instrument Redux store
+│   ├── routes.js                   # Routes shared between client and server side
+│   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
+├── tools                           # Project related configurations (testing/build etc.)
+│   ├── testing                     # Testing configuration settings
+│   │   ├── karma.conf.js           # Karma configuration file
+│   │   └── test-bunlder.js         # Karma pre-processor settings file
+│   ├── webpack                     # Webpack configuration settings
+│   │   ├── config.babel.js         # Webpack configuration file
+│   │   ├── config.test.babel.js    # Webpack configuration file for testing (for karma config)
+│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file 
+│   └── es2015Preset.js             # es2015 preset configuration file (for .babelrc)       
+└── index.js                        # App start point
 ```
 
 
