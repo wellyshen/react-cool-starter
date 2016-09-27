@@ -289,7 +289,7 @@ Using image:
 
 ```javascript
 // Require an image 
-<img src={require('./logo.svg')} alt="Logo" role="presentation" />
+<img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
 ```
 
 Using font-awesome:
