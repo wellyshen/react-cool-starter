@@ -113,13 +113,12 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── dist                                    # All the built files will be placed into it
 │   └── favicon.ico                             # Favicon is placed in the same path with the main HTML page
 ├── src                                         # App source code
-│   ├── __tests__                               # Collections of testing files
-│   ├── actions                                 # Collections of actions
 │   ├── config                                  # App configuration settings
 │   │   ├── default.js                          # Default settings
 │   │   ├── index.js                            # Configuration entry point
 │   │   └── prod.js                             # Production settings (overrides default settings)
-│   ├── containers                              # Reusable container components
+│   ├── components                              # Reusable components (scss/testing files)
+│   ├── containers                              # Container components (assets/action/reducer/scss/testing)
 │   ├── reducers                                # Collections of reducers (registry and injection)
 │   ├── theme                                   # App-wide style, vendor style, generally settings
 │   ├── client.js                               # App bootstrap and rendering (webpack entry)

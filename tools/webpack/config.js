@@ -10,7 +10,7 @@ var nodeEnv = process.env.NODE_ENV || 'development';
 var isDev = nodeEnv !== 'production';
 
 var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools.config')).development(isDev);
+var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./WIT.config')).development(isDev);
 
 // Setting the plugins for development/prodcution
 function getPlugins() {

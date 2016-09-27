@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 import chalk from 'chalk';
 import createRoutes from './routes';
-import configureStore from './configureStore';
+import configureStore from './store';
 import renderHtmlPage from './helper/renderHtmlPage';
 import config from './config';
 
