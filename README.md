@@ -265,7 +265,7 @@ render() {
 }
 ```
 
-**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/index.js`):**
+**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.babel.js`):**
 
 ```javascript
 import './Home.scss';
