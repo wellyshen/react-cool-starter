@@ -2,31 +2,31 @@
 
 import { Map, fromJS } from 'immutable';
 import {
-  DATA_INVALID,
-  DATA_REQUESTING,
-  DATA_FAILURE,
-  DATA_SUCCESS,
+  USERS_INVALID,
+  USERS_REQUESTING,
+  USERS_FAILURE,
+  USERS_SUCCESS,
 } from './action';
 
 const initialState = Map({
-  readyState: DATA_INVALID,
+  readyState: USERS_INVALID,
   list: null,
 });
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case DATA_REQUESTING:
+    case USERS_REQUESTING:
       return state.merge({
-        readyState: DATA_REQUESTING,
+        readyState: USERS_REQUESTING,
       });
-    case DATA_FAILURE:
+    case USERS_FAILURE:
       return state.merge({
-        readyState: DATA_FAILURE,
+        readyState: USERS_FAILURE,
         err: fromJS(action.err),
       });
-    case DATA_SUCCESS:
+    case USERS_SUCCESS:
       return state.merge({
-        readyState: DATA_SUCCESS,
+        readyState: USERS_SUCCESS,
         list: fromJS(action.data),
       });
     default:

@@ -34,11 +34,11 @@ class UserInfo extends Component {
     const { userInfo, params } = this.props;
     const userInfoById = userInfo.get(params.id);
 
-    if (!userInfoById || userInfoById.get('readyState') === action.DATA_REQUESTING) {
+    if (!userInfoById || userInfoById.get('readyState') === action.AN_USER_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (userInfoById.get('readyState') === action.DATA_FAILURE) {
+    if (userInfoById.get('readyState') === action.AN_USER_FAILURE) {
       return <p>Oops, Failed to load info!</p>;
     }
 

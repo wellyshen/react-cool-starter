@@ -39,10 +39,10 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "start": "better-npm-run start",
+    "start": "npm run lint && better-npm-run start",
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "better-npm-run start:prod",
-    "build": "npm run clean:build && better-npm-run build",
+    "build": "npm run lint && npm run clean:build && better-npm-run build",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",

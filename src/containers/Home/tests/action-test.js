@@ -21,13 +21,13 @@ describe('action:Home', () => {
     sandbox.restore();
   });
 
-  it('creates DATA_REQUESTING when success to fetch data', (done) => {
+  it('creates USERS_REQUESTING when success to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.resolve({ status: 200, data: response }));
 
     const expectedActions = [
-      { type: action.DATA_REQUESTING },
-      { type: action.DATA_SUCCESS, data: response },
+      { type: action.USERS_REQUESTING },
+      { type: action.USERS_SUCCESS, data: response },
     ];
     const store = mockStore({ list: null });
 
@@ -37,13 +37,13 @@ describe('action:Home', () => {
       .catch(done);
   });
 
-  it('creates DATA_FAILURE when fail to fetch data', (done) => {
+  it('creates USERS_FAILURE when fail to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.reject(errorMessage));
 
     const expectedActions = [
-      { type: action.DATA_REQUESTING },
-      { type: action.DATA_FAILURE, err: errorMessage },
+      { type: action.USERS_REQUESTING },
+      { type: action.USERS_FAILURE, err: errorMessage },
     ];
     const store = mockStore({ err: null });
 

@@ -1,20 +1,20 @@
-export const DATA_REQUESTING = 'DATA_REQUESTING';
-export const DATA_SUCCESS = 'DATA_SUCCESS';
-export const DATA_FAILURE = 'DATA_FAILURE';
+export const AN_USER_REQUESTING = 'AN_USER_REQUESTING';
+export const AN_USER_SUCCESS = 'AN_USER_SUCCESS';
+export const AN_USER_FAILURE = 'AN_USER_FAILURE';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 let prevState;
 
 // Export this function for testing
 export const fetchData = (userId, axios) => (dispatch) => {
-  dispatch({ type: DATA_REQUESTING, userId });
+  dispatch({ type: AN_USER_REQUESTING, userId });
 
   return axios.get(`${API_URL}/${userId}`)
     .then((res) => {
-      dispatch({ type: DATA_SUCCESS, userId, data: res.data });
+      dispatch({ type: AN_USER_SUCCESS, userId, data: res.data });
     })
     .catch((err) => {
-      dispatch({ type: DATA_FAILURE, userId, err });
+      dispatch({ type: AN_USER_FAILURE, userId, err });
     });
 };
 
@@ -25,7 +25,7 @@ const shouldFetchData = (state, userId) => {
   const userInfo = state.getIn(['userInfo', userId]);
 
   /* istanbul ignore if */
-  if (userInfo && userInfo.get('readyState') === DATA_SUCCESS) {
+  if (userInfo && userInfo.get('readyState') === AN_USER_SUCCESS) {
     /* istanbul ignore if */
     if (prevState === userInfo) return true;  // Dispatch action if data changed
 

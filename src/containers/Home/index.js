@@ -33,13 +33,12 @@ class Home extends Component {
   displayUserList = () => {
     const { home } = this.props;
 
-    if (!home.get('readyState') ||
-      home.get('readyState') === action.DATA_INVALID ||
-      home.get('readyState') === action.DATA_REQUESTING) {
+    if (!home.get('readyState') || home.get('readyState') === action.USERS_INVALID ||
+      home.get('readyState') === action.USERS_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (home.get('readyState') === action.DATA_FAILURE) {
+    if (home.get('readyState') === action.USERS_FAILURE) {
       return <p>Oops, Failed to load list!</p>;
     }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
-import storeFake from '../../../utils/storeFake';
+import storeFake from '../../../helper/storeFake';
 import UserInfo from '../index';
 import UserCard from '../../../components/UserCard';
 
@@ -46,7 +46,7 @@ describe('<UserInfo />', () => {
   it('renders the loading status if loading data', () => {
     const store = storeFake({
       userInfo: {
-        1: { readyState: 'DATA_REQUESTING' },
+        1: { readyState: 'AN_USER_REQUESTING' },
       },
     });
 
@@ -56,7 +56,7 @@ describe('<UserInfo />', () => {
   it('renders an error if loading failed', () => {
     const store = storeFake({
       userInfo: {
-        1: { readyState: 'DATA_FAILURE' },
+        1: { readyState: 'AN_USER_FAILURE' },
       },
     });
 
@@ -67,7 +67,7 @@ describe('<UserInfo />', () => {
     const store = storeFake({
       userInfo: {
         1: {
-          readyState: 'DATA_SUCCESS',
+          readyState: 'AN_USER_SUCCESS',
           info: {
             name: 'Welly',
             phone: '007',

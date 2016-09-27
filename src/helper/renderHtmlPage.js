@@ -35,13 +35,13 @@ export default (content, initialState) => {
              I put all of the styles here to smoothen the flick */
           Object.keys(assets.styles).length === 0 ?
             `<style>${
-              require('./theme/normalize.css')._style +
-              require('./containers/App/App.scss')._style +
-              require('./containers/Home/Home.scss')._style +
-              require('./containers/UserInfo/UserInfo.scss')._style +
-              require('./containers/NotFound/NotFound.scss')._style +
-              require('./components/UserList/UserList.scss')._style +
-              require('./components/UserCard/UserCard.scss')._style
+              require('../theme/normalize.css')._style +
+              require('../containers/App/App.scss')._style +
+              require('../containers/Home/Home.scss')._style +
+              require('../containers/UserInfo/UserInfo.scss')._style +
+              require('../containers/NotFound/NotFound.scss')._style +
+              require('../components/UserList/UserList.scss')._style +
+              require('../components/UserCard/UserCard.scss')._style
             }</style>` : ''
         }
       </head>

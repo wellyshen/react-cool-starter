@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
-import storeFake from '../../../utils/storeFake';
+import storeFake from '../../../helper/storeFake';
 import Home from '../index';
 import UserList from '../../../components/UserList';
 
@@ -24,7 +24,7 @@ describe('<Home />', () => {
   it('calls componentDidMount() lifecycle method to invoke fetching data', () => {
     const componentDidMountSpy = spy(Home.prototype, 'componentDidMount');
     const store = storeFake({
-      home: { readyState: 'DATA_INVALID' },
+      home: { readyState: 'USERS_INVALID' },
     });
 
     wrapper(store);
@@ -37,7 +37,7 @@ describe('<Home />', () => {
 
   it('renders the loading status if data invalid', () => {
     const store = storeFake({
-      home: { readyState: 'DATA_INVALID' },
+      home: { readyState: 'USERS_INVALID' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal(state.loading);
@@ -45,7 +45,7 @@ describe('<Home />', () => {
 
   it('renders the loading status if loading data', () => {
     const store = storeFake({
-      home: { readyState: 'DATA_REQUESTING' },
+      home: { readyState: 'USERS_REQUESTING' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal(state.loading);
@@ -53,7 +53,7 @@ describe('<Home />', () => {
 
   it('renders an error if loading failed', () => {
     const store = storeFake({
-      home: { readyState: 'DATA_FAILURE' },
+      home: { readyState: 'USERS_FAILURE' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal(state.error);
@@ -62,7 +62,7 @@ describe('<Home />', () => {
   it('renders the <UserList /> if loading was successful', () => {
     const store = storeFake({
       home: {
-        readyState: 'DATA_SUCCESS',
+        readyState: 'USERS_SUCCESS',
         list: [{ id: '1', name: 'Welly' }],
       },
     });

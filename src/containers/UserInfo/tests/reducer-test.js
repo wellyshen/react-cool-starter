@@ -1,8 +1,8 @@
 import reducer from '../reducer';
 import {
-  DATA_REQUESTING,
-  DATA_FAILURE,
-  DATA_SUCCESS,
+  AN_USER_REQUESTING,
+  AN_USER_FAILURE,
+  AN_USER_SUCCESS,
 } from '../action';
 
 describe('reducer:userInfo', () => {
@@ -10,34 +10,34 @@ describe('reducer:userInfo', () => {
     expect(reducer(undefined, {}).toJS()).to.deep.equal({});
   });
 
-  it('should handle DATA_REQUESTING', () => {
+  it('should handle AN_USER_REQUESTING', () => {
     expect(
       reducer(undefined, {
-        type: DATA_REQUESTING,
+        type: AN_USER_REQUESTING,
         userId: '1',
       }
-    ).toJS()).to.deep.equal({ 1: { readyState: DATA_REQUESTING } });
+    ).toJS()).to.deep.equal({ 1: { readyState: AN_USER_REQUESTING } });
   });
 
-  it('should handle DATA_FAILURE', () => {
+  it('should handle AN_USER_FAILURE', () => {
     expect(
       reducer(undefined, {
-        type: DATA_FAILURE,
+        type: AN_USER_FAILURE,
         userId: '1',
         err: 'Oops! Something went wrong.',
       }
     ).toJS()).to.deep.equal({
       1: {
-        readyState: DATA_FAILURE,
+        readyState: AN_USER_FAILURE,
         err: 'Oops! Something went wrong.',
       },
     });
   });
 
-  it('should handle DATA_SUCCESS', () => {
+  it('should handle AN_USER_SUCCESS', () => {
     expect(
       reducer(undefined, {
-        type: DATA_SUCCESS,
+        type: AN_USER_SUCCESS,
         userId: '1',
         data: {
           name: 'Welly',
@@ -48,7 +48,7 @@ describe('reducer:userInfo', () => {
       }).toJS()
     ).to.deep.equal({
       1: {
-        readyState: DATA_SUCCESS,
+        readyState: AN_USER_SUCCESS,
         info: {
           name: 'Welly',
           phone: '007',

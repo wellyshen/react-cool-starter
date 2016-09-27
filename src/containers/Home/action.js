@@ -1,21 +1,21 @@
-export const DATA_INVALID = 'DATA_INVALID';
-export const DATA_REQUESTING = 'DATA_REQUESTING';
-export const DATA_SUCCESS = 'DATA_SUCCESS';
-export const DATA_FAILURE = 'DATA_FAILURE';
+export const USERS_INVALID = 'USERS_INVALID';
+export const USERS_REQUESTING = 'USERS_REQUESTING';
+export const USERS_SUCCESS = 'USERS_SUCCESS';
+export const USERS_FAILURE = 'USERS_FAILURE';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 let prevState;
 
 // Export this function for testing
 export const fetchData = axios => (dispatch) => {
-  dispatch({ type: DATA_REQUESTING });
+  dispatch({ type: USERS_REQUESTING });
 
   return axios.get(API_URL)
     .then((res) => {
-      dispatch({ type: DATA_SUCCESS, data: res.data });
+      dispatch({ type: USERS_SUCCESS, data: res.data });
     })
     .catch((err) => {
-      dispatch({ type: DATA_FAILURE, err });
+      dispatch({ type: USERS_FAILURE, err });
     });
 };
 
@@ -26,7 +26,7 @@ const shouldFetchData = (state) => {
   const home = state.get('home');
 
   /* istanbul ignore if */
-  if (home.get('list') && home.get('readyState') === DATA_SUCCESS) {
+  if (home.get('list') && home.get('readyState') === USERS_SUCCESS) {
     /* istanbul ignore if */
     if (prevState === home) return true;  // Dispatch action if data changed
 

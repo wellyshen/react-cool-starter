@@ -12,7 +12,7 @@ import { match, RouterContext } from 'react-router';
 import chalk from 'chalk';
 import createRoutes from './routes';
 import configureStore from './configureStore';
-import renderHtmlPage from './renderHtmlPage';
+import renderHtmlPage from './helper/renderHtmlPage';
 import config from './config';
 
 const app = express();
