@@ -166,7 +166,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
-    "mocha": "^3.0.2",
+    "mocha": "^3.1.0",
     "node-sass": "^3.10.0",
     "nodemon": "^1.10.2",
     "phantomjs": "^2.1.7",
