@@ -1,18 +1,13 @@
 {
   "presets": ["./tools/latestPreset", "react", "stage-0"],
-  "plugins": [
-    "transform-runtime",
-    "system-import-transformer"
-  ],
+  "plugins": ["transform-runtime", "system-import-transformer"],
   "env": {
     "test": {
       "plugins": [
         ["istanbul", {
-          "include": [
-            "src/actions",
+          "exclude": [
             "src/components",
-            "src/containers",
-            "src/reducers"
+            "src/containers"
           ]
         }]
       ]
