@@ -6,7 +6,7 @@ The project built on the top of [Node.js](https://nodejs.org/en/), [Express](htt
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
-> I'm curious what this starter boilerplate helps you guys do anything? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us 👻 
+> 👻 I'm curious what this starter boilerplate helps you guys do anything? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us. 
 
 [![Build Status](https://travis-ci.org/wellyshen/react-cool-starter.svg?branch=master)](https://travis-ci.org/wellyshen/react-cool-starter)
 [![dependencies Status](https://david-dm.org/wellyshen/react-cool-starter/status.svg)](https://david-dm.org/wellyshen/react-cool-starter)
