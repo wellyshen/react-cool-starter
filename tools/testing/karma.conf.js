@@ -1,3 +1,5 @@
+'use strict'; // eslint-disable-line
+
 const path = require('path');
 const webpackConfig = require('../webpack/config.test.babel');
 
