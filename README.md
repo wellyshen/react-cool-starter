@@ -428,8 +428,10 @@ This generally means that you are using server rendering and the markup generate
 the server was not what the client was expecting. React injected new markup to compensate 
 which works but you have lost many of the benefits of server rendering. Instead, figure 
 out why the markup being generated is different on the client or server:
- (client) <noscript data-reacti
- (server) <div data-reactid=".1
+
+> (client) <noscript data-reacti
+
+> (server) <div data-reactid=".1
 
 
 ## To Do...
