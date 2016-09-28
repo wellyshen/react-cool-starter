@@ -423,14 +423,9 @@ If the hot reloading doesn't working, it might caused by the following error. To
 
 If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios) 
 
-> Warning: React attempted to reuse markup in a container but the checksum was invalid. 
-This generally means that you are using server rendering and the markup generated on 
-the server was not what the client was expecting. React injected new markup to compensate 
-which works but you have lost many of the benefits of server rendering. Instead, figure 
-out why the markup being generated is different on the client or server:
-
-> (client) <noscript data-reacti
-> (server) <div data-reactid=".1
+> Warning: React attempted to reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server:
+(client) <noscript data-reacti
+(server) <div data-reactid=".1
 
 
 ## To Do...
