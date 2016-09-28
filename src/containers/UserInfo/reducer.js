@@ -30,6 +30,6 @@ export default (state = Map({}), action) => {
         }),
       });
     default:
-      return state
+      return state;
   }
 };
