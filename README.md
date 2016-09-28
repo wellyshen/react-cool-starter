@@ -417,7 +417,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Known Issue
 
-If the hot reloading doesn't working, it might caused by the following error. You can solve this problem by click the **refresh button** from your browser.
+If the hot reloading doesn't working, it might caused by the following error. To solve this problem, just click the **refresh button** from your browser.
 
 > Refused to execute script from 'app.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
 
