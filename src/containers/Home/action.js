@@ -21,10 +21,10 @@ export const fetchData = axios => (dispatch) => {
 // Preventing dobule fetching data
 /* istanbul ignore next */
 const shouldFetchData = (state) => {
-  // In development, we need to dispatch action
+  // In development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
   /* istanbul ignore next */
-  if (module.hot) return true;
+  if (__DEV__) return true;
 
   /* istanbul ignore next */
   const home = state.get('home');

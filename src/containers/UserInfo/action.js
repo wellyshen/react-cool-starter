@@ -20,10 +20,10 @@ export const fetchData = (userId, axios) => (dispatch) => {
 // Using for preventing dobule fetching data
 /* istanbul ignore next */
 const shouldFetchData = (state, userId) => {
-  // In development, we need to dispatch action
+  // In development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
   /* istanbul ignore next */
-  if (module.hot) return true;
+  if (__DEV__) return true;
 
   /* istanbul ignore next */
   const userInfo = state.getIn(['userInfo', userId]);
