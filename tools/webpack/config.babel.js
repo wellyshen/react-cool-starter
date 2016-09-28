@@ -124,16 +124,12 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: 'pre',
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint',
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: { cacheDirectory: isDev },
+        loaders: [
+          isDev ? 'babel?cacheDirectory' : 'babel',
+          'eslint',
+        ],
       },
       { test: /\.json$/, loader: 'json' },
       {
