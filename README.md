@@ -423,7 +423,7 @@ If the hot reloading doesn't working, it might caused by the following error. To
 
 If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios) 
 
-> We're living the future so
+> We're living the future so 
 > the present is our past.
 
 
