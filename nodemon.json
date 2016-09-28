@@ -1,9 +1,8 @@
 {
   "watch": [
     "index.js",
-    "tools",
-    "!tools/testing",
-    "!tools/webpack/config.test.babel.js",
+    "tools/webpack/config.babel.js",
+    "tools/webpack/WIT.config.js",
     "src/server.js",
     "src/helper/renderHtmlPage.js"
   ]

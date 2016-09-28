@@ -3,7 +3,6 @@ export const AN_USER_SUCCESS = 'AN_USER_SUCCESS';
 export const AN_USER_FAILURE = 'AN_USER_FAILURE';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
-let prevState;
 
 // Export this function for testing
 export const fetchData = (userId, axios) => (dispatch) => {
@@ -21,16 +20,17 @@ export const fetchData = (userId, axios) => (dispatch) => {
 // Using for preventing dobule fetching data
 /* istanbul ignore next */
 const shouldFetchData = (state, userId) => {
+  // In development, we need to dispatch action
+  // or your reducer hot reloading won't updated on the view
+  /* istanbul ignore next */
+  if (module.hot) return true;
+
   /* istanbul ignore next */
   const userInfo = state.getIn(['userInfo', userId]);
 
-  // If data received and not changed, don't dispatch action (preventing dobule fetching data)
-  if (userInfo && userInfo.get('readyState') === AN_USER_SUCCESS && prevState !== userInfo) {
-    /* istanbul ignore next */
-    prevState = userInfo;
-    /* istanbul ignore next */
-    return false;
-  }
+  // Preventing dobule fetching data in production
+  /* istanbul ignore next */
+  if (userInfo && userInfo.get('readyState') === AN_USER_SUCCESS) return false;
 
   /* istanbul ignore next */
   return true;

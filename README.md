@@ -131,6 +131,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── routes.js                   # Routes shared between client and server side
 │   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
 ├── tools                           # Project related configurations (testing/build etc.)
+│   ├── openBrowser                 # Utility for opening Google Chrome 
 │   ├── testing                     # Testing configuration settings
 │   │   ├── karma.conf.js           # Karma configuration file
 │   │   └── test-bunlder.js         # Karma pre-processor settings file
@@ -412,6 +413,13 @@ By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-pl
 ```
 
 You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code to skip instrumenting.
+
+
+## Known Issue
+
+If the hot reloading doesn't working, it might caused by the following error. You can solve this problem by click the "Refresh Button" from your browser.
+
+> Refused to execute script from 'app.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
 
 
 ## To Do...

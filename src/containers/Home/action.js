@@ -4,7 +4,6 @@ export const USERS_SUCCESS = 'USERS_SUCCESS';
 export const USERS_FAILURE = 'USERS_FAILURE';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
-let prevState;
 
 // Export this function for testing
 export const fetchData = axios => (dispatch) => {
@@ -22,16 +21,16 @@ export const fetchData = axios => (dispatch) => {
 // Preventing dobule fetching data
 /* istanbul ignore next */
 const shouldFetchData = (state) => {
+  // In development, we need to dispatch action
+  // or your reducer hot reloading won't updated on the view
+  /* istanbul ignore next */
+  if (module.hot) return true;
+
   /* istanbul ignore next */
   const home = state.get('home');
 
-  // If data received and not changed, don't dispatch action (preventing dobule fetching data)
-  if (home.get('readyState') === USERS_SUCCESS && prevState !== home) {
-    /* istanbul ignore next */
-    prevState = home;
-    /* istanbul ignore next */
-    return false;
-  }
+  /* istanbul ignore next */
+  if (home.get('readyState') === USERS_SUCCESS) return false; // Preventing double fetching data
 
   /* istanbul ignore next */
   return true;
