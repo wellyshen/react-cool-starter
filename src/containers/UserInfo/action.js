@@ -24,9 +24,8 @@ const shouldFetchData = (state, userId) => {
   /* istanbul ignore next */
   const userInfo = state.getIn(['userInfo', userId]);
 
-  if (userInfo && userInfo.get('readyState') === AN_USER_SUCCESS) {
-    if (prevState === userInfo) return true;  // Dispatch action if data changed
-
+  // If data received and not changed, don't dispatch action (preventing dobule fetching data)
+  if (userInfo && userInfo.get('readyState') === AN_USER_SUCCESS && prevState !== userInfo) {
     /* istanbul ignore next */
     prevState = userInfo;
     /* istanbul ignore next */

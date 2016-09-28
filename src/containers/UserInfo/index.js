@@ -9,7 +9,7 @@ import UserCard from '../../components/UserCard';
 import styles from './UserInfo.scss';
 
 class UserInfo extends Component {
-  // Fetching data method used for both server and client
+  // Fetching data method for both server/client side rendering
   static fetchData(dispatch, params) {
     return Promise.all([
       dispatch(action.fetchDataIfNeeded(params.id)),
@@ -19,9 +19,7 @@ class UserInfo extends Component {
   componentDidMount() {
     const { dispatch, params } = this.props;
 
-    // Fetching data on component loaded
-    // the preventing dobule fetching data mechanism
-    // is implemented in the action.js
+    // Fetching data for client side rendering
     UserInfo.fetchData(dispatch, params);
   }
 

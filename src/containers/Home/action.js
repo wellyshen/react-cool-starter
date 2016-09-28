@@ -25,9 +25,8 @@ const shouldFetchData = (state) => {
   /* istanbul ignore next */
   const home = state.get('home');
 
-  if (home.get('list') && home.get('readyState') === USERS_SUCCESS) {
-    if (prevState === home) return true;  // Dispatch action if data changed
-
+  // If data received and not changed, don't dispatch action (preventing dobule fetching data)
+  if (home.get('readyState') === USERS_SUCCESS && prevState !== home) {
     /* istanbul ignore next */
     prevState = home;
     /* istanbul ignore next */

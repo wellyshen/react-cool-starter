@@ -9,7 +9,7 @@ import UserList from '../../components/UserList';
 import styles from './Home.scss';
 
 class Home extends Component {
-  // Fetching data method used for both server and client
+  // Fetching data method for both server/client side rendering
   static fetchData(dispatch) {
     return Promise.all([
       dispatch(action.fetchDataIfNeeded()),
@@ -19,9 +19,7 @@ class Home extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
 
-    // Fetching data on component loaded
-    // the preventing dobule fetching data mechanism
-    // is implemented in the action.js
+    // Fetching data for client side rendering
     Home.fetchData(dispatch);
   }
 
