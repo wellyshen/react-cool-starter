@@ -417,11 +417,11 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-* If the hot reloading doesn't working, it might caused by the following error. To solve the problem, just click the **refresh button** from your browser.
+If the hot reloading doesn't working, it might caused by the following error. To solve the problem, just click the **refresh button** from your browser.
 
 > Refused to execute script from 'app.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
 
-* If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios) 
+If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios) 
 
 > (client) <noscript data-reacti
 (server) <div data-reactid=".1
