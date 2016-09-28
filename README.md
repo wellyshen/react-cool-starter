@@ -430,7 +430,6 @@ which works but you have lost many of the benefits of server rendering. Instead,
 out why the markup being generated is different on the client or server:
 
 > (client) <noscript data-reacti
-
 > (server) <div data-reactid=".1
 
 
