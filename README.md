@@ -307,11 +307,6 @@ ${
       // Include the vendor stylesheet and the stylesheets which you have used here
       require('../theme/normalize.css')._style +                
       require('../containers/App/App.scss')._style +              
-      require('../containers/Home/Home.scss')._style +
-      require('../containers/UserInfo/UserInfo.scss')._style +
-      require('../containers/NotFound/NotFound.scss')._style +
-      require('../components/UserList/UserList.scss')._style +
-      require('../components/UserCard/UserCard.scss')._style
     }</style>` : ''
 }
 
