@@ -291,7 +291,7 @@ import styles from './App.scss';      // import your based stylesheet here
 
 const App = ({ children }) => (
 
-  / ...
+  // ...
 
 );
 ```
