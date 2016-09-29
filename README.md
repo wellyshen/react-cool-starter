@@ -152,7 +152,7 @@ Concering to the security and performance for Express in production, I already s
 * [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
 * [compression](https://github.com/expressjs/compression) - Gzip compression support for speeding up Express server responses.
 
-Note: It's just a basic protected mechanism for your app, you can see [Security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
+Note: It's just a basic protected mechanism for your app, you can see the [security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
 
 
 ## Setup Redux DevTools Extension
