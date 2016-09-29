@@ -249,7 +249,7 @@ import config from './config';
 
 The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
-**With CSS Modules:**
+With CSS Modules:
 
 ```javascript
 import styles from './Home.scss';
@@ -266,7 +266,7 @@ render() {
 }
 ```
 
-**Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.babel.js`):**
+Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.babel.js`):
 
 ```javascript
 import './Home.scss';
@@ -281,6 +281,41 @@ render() {
     </div>
   );
 }
+```
+
+By the way, if you want to use your based stylesheet or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
+
+```javascript
+import '../../theme/normalize.css';   // import a vendor stylesheet here
+import styles from './App.scss';      // import your based stylesheet here
+
+const App = ({ children }) => (
+
+  / ...
+
+);
+```
+
+For the better development experience, don't forget to include those files in the `./src/helper/renderHtmlPage.js`, for example:
+
+```javascript
+// ...
+
+${
+  Object.keys(assets.styles).length === 0 ?
+    `<style>${
+      // Include the vendor stylesheet and the stylesheets which you have used here
+      require('../theme/normalize.css')._style +                
+      require('../containers/App/App.scss')._style +              
+      require('../containers/Home/Home.scss')._style +
+      require('../containers/UserInfo/UserInfo.scss')._style +
+      require('../containers/NotFound/NotFound.scss')._style +
+      require('../components/UserList/UserList.scss')._style +
+      require('../components/UserCard/UserCard.scss')._style
+    }</style>` : ''
+}
+
+// ...
 ```
 
 ### Image and Font
@@ -431,3 +466,4 @@ If you run the example of the app. And you encounter the checksum error like bel
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
 - [ ] Internationalization
+- [ ] Integrating Bootstrap 4
