@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { match, Router, browserHistory } from 'react-router/es6';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
-import configureStore from './store';
+import configureStore from './redux/store';
 
 // redux-immutable only allow immutable obj
 const initialState = fromJS(window.__INITIAL_STATE__);

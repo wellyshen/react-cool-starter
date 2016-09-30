@@ -128,7 +128,7 @@ module.exports = {
         exclude: /node_modules/,
         loaders: [
           isDev ? 'babel?cacheDirectory' : 'babel',
-          'eslint',
+          // 'eslint',
         ],
       },
       { test: /\.json$/, loader: 'json' },

@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { injectReducer } from './reducers';
+import { injectReducer } from './redux/reducers';
 import App from './containers/App';
 
 const errorLoading = (err) => {
