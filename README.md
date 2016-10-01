@@ -461,5 +461,6 @@ If you run the example of the app. And you encounter the checksum error like bel
 
 There're some features I'd like to include in the starter boilerplate in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
+- [ ] Optimizing Webpack bundle performance
 - [ ] Internationalization
 - [ ] Integrating Bootstrap 4
