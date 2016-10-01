@@ -195,7 +195,7 @@ Here I use the `System.import` syntax to achieve loading the components and asyn
 You can add your routes and async reducers in `./src/routes.js`. For example:
 
 ```javascript
-import { injectReducer } from './reducers';
+import { injectReducer } from './redux/reducers';
 
 // ...
 
