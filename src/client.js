@@ -19,7 +19,7 @@ const renderApp = () => {
 
   // Sync routes both on client and server
   match({ history: browserHistory, routes }, (error, redirectLocation, renderProps) => {
-    // Using the enhanced history of react-redux-router instead of the 'browserHistory'
+    // Using the enhanced history of react-redux-router to instead of the 'browserHistory'
     const props = Object.assign({}, renderProps, { history });
 
     render(

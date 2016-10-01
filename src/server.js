@@ -82,7 +82,7 @@ app.get('*', (req, res) => {
       // Then render the routes
       Promise.all(promises)
         .then(() => {
-          // Using the enhanced history of react-redux-router instead of the 'memoryHistory'
+          // Using the enhanced history of react-redux-router to instead of the 'memoryHistory'
           const props = Object.assign({}, renderProps, { history });
           const content = renderToString(
             <Provider store={store}>
