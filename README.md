@@ -118,16 +118,17 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── config                      # App configuration settings
 │   │   ├── default.js              # Default settings
 │   │   ├── index.js                # Configuration entry point
-│   │   └── prod.js                 # Production settings (overrides default settings)
+│   │   └── prod.js                 # Production settings (overrides the default settings)
 │   ├── components                  # Reusable components (including scss/testing files)
 │   ├── containers                  # Container components (including assets/action/reducer/scss/testing files)
 │   ├── helper                      # App-wide utils
 │   │   ├── renderHtmlPage.js       # Main HTML page layout for app
 │   │   └── fakeStore.js            # Fake Redux store for testing                        
+│   ├── redux                       # Redux related configuration scripts
+│   │   ├── reducers.js             # The root reducer (registry and injection)
+│   │   └── store.js                # Configure and instrument Redux store   
 │   ├── theme                       # App-wide style, vendor style, generally settings
 │   ├── client.js                   # App bootstrap and rendering (webpack entry)
-│   ├── reducers.js                 # The root reducer (registry and injection)                         
-│   ├── store.js                    # Configure and instrument Redux store
 │   ├── routes.js                   # Routes shared between client and server side
 │   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
 ├── tools                           # Project related configurations (testing/build etc.)

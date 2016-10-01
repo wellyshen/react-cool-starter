@@ -1,7 +1,7 @@
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
 
-export default (content, initialState) => {
+export default (store, content) => {
   const head = Helmet.rewind();
   const assets = webpackIsomorphicTools.assets();
 
@@ -44,10 +44,10 @@ export default (content, initialState) => {
         }
       </head>
       <body>
-        <div id="react-view">${content || null}</div>
+        <div id="react-view">${content || ''}</div>
 
         <script type="text/javascript">
-          ${initialState && `window.__INITIAL_STATE__=${serialize(initialState)}`}
+          ${store && `window.__INITIAL_STATE__=${serialize(store.getState())}`}
         </script>
 
         <!--[if gte IE 9 ]>

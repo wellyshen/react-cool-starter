@@ -41,6 +41,7 @@ const getPlugins = () => {
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
       __CLIENT__: JSON.stringify(true),
       __SERVER__: JSON.stringify(false),
+      __DISABLE_SSR__: JSON.stringify(false),
       __DEV__: JSON.stringify(isDev),
     }),
     new webpack.NoErrorsPlugin(),

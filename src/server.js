@@ -8,7 +8,8 @@ import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import { match, RouterContext } from 'react-router';
+import { createMemoryHistory, match, RouterContext } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 import chalk from 'chalk';
 import createRoutes from './routes';
 import configureStore from './redux/store';
@@ -47,14 +48,25 @@ if (__DEV__) {
 
 // Register server-side rendering middleware
 app.get('*', (req, res) => {
-  const store = configureStore();
-  const routes = createRoutes(store);
-
   if (__DEV__) {
     webpackIsomorphicTools.refresh();
   }
 
-  match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+  const memoryHistory = createMemoryHistory(req.url);
+  const store = configureStore();
+  const routes = createRoutes(store);
+  const history = syncHistoryWithStore(memoryHistory, store, {
+    selectLocationState: state => state.get('routing').toJS(),
+  });
+
+  // If __DISABLE_SSR__ = true, disable server side rendering
+  if (__DISABLE_SSR__) {
+    res.send(renderHtmlPage(store));
+    return;
+  }
+
+  // eslint-disable-next-line max-len
+  match({ history: memoryHistory, routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {
       res.status(500).send(error.message);
     } else if (redirectLocation) {
@@ -70,14 +82,15 @@ app.get('*', (req, res) => {
       // Then render the routes
       Promise.all(promises)
         .then(() => {
+          // Using the enhanced history of react-redux-router instead of the 'memoryHistory'
+          const props = Object.assign({}, renderProps, { history });
           const content = renderToString(
             <Provider store={store}>
-              <RouterContext {...renderProps} />
+              <RouterContext {...props} />
             </Provider>
           );
-          const initialState = store.getState();
 
-          res.status(200).send(renderHtmlPage(content, initialState));
+          res.status(200).send(renderHtmlPage(store, content));
         });
     }
   });

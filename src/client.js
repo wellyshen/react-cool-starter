@@ -18,8 +18,8 @@ const renderApp = () => {
   const routes = require('./routes').default(store);
 
   // Sync routes both on client and server
-  match({ routes, history: browserHistory }, (error, redirectLocation, renderProps) => {
-    // Using the enhanced history (react-redux-router) instead of the 'browserHistory'
+  match({ history: browserHistory, routes }, (error, redirectLocation, renderProps) => {
+    // Using the enhanced history of react-redux-router instead of the 'browserHistory'
     const props = Object.assign({}, renderProps, { history });
 
     render(

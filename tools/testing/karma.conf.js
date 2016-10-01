@@ -29,7 +29,7 @@ module.exports = (config) => {
 
     // Set the format of reporter
     coverageReporter: {
-      dir: path.join(process.cwd(), 'coverage'),
+      dir: path.join(process.cwd(), './coverage'),
       reporters: [
         { type: 'html', subdir: 'html' },
         { type: 'lcov', subdir: 'lcov' },
