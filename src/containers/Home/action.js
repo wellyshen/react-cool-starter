@@ -37,15 +37,12 @@ const shouldFetchData = (state) => {
 };
 
 /* istanbul ignore next */
-export function fetchDataIfNeeded() {
-  /* istanbul ignore next */
-  return (dispatch, getState, axios) => {
-    if (shouldFetchData(getState())) {
-      /* istanbul ignore next */
-      return dispatch(fetchData(axios));
-    }
-
+export const fetchDataIfNeeded = () => (dispatch, getState, axios) => {
+  if (shouldFetchData(getState())) {
     /* istanbul ignore next */
-    return null;
-  };
-}
+    return dispatch(fetchData(axios));
+  }
+
+  /* istanbul ignore next */
+  return null;
+};
