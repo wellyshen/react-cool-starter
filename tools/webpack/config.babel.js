@@ -81,6 +81,7 @@ const getEntry = () => {
   if (isDev) {
     entry = {
       app: [
+        'react-hot-loader/patch',
         'webpack-hot-middleware/client?reload=true',
         './src/client.js',
       ],
@@ -95,6 +96,7 @@ const getEntry = () => {
         'redux', 'react-redux',
         'redux-thunk',
         'immutable',
+        'react-hot-loader',
         'react-immutable-proptypes',
         'redux-immutable',
         'react-router',

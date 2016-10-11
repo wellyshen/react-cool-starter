@@ -1,6 +1,10 @@
 {
   "presets": ["./tools/latestPreset", "react", "stage-0"],
-  "plugins": ["transform-runtime", "system-import-transformer"],
+  "plugins": [
+    "transform-runtime",
+    "system-import-transformer",
+    "react-hot-loader/babel"
+  ],
   "env": {
     "test": {
       "plugins": [

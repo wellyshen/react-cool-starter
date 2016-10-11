@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { match, Router, browserHistory } from 'react-router/es6';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
+import { AppContainer } from 'react-hot-loader';
 import configureStore from './redux/store';
 
 // redux-immutable only allow immutable obj
@@ -23,9 +24,11 @@ const renderApp = () => {
     const props = Object.assign({}, renderProps, { history });
 
     render(
-      <Provider store={store}>
-        <Router {...props} />
-      </Provider>,
+      <AppContainer>
+        <Provider store={store}>
+          <Router {...props} />
+        </Provider>
+      </AppContainer>,
       mountNode
     );
   });
