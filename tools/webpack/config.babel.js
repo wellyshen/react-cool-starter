@@ -56,7 +56,7 @@ const getPlugins = () => {
     plugins.push(
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
-        // filename: '[name].[chunkhash].js',
+        filename: '[name].[chunkhash].js',
         minChunks: Infinity,
       }),
       new ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
