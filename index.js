@@ -12,7 +12,6 @@ const dirRoot = require('path').join(process.cwd());
 
 // Settings of webpack-isomorphic-tools
 global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('./tools/webpack/WIT.config'))
-  .development(__DEV__)
   .server(dirRoot, () => {
     require('./src/server');
   });
