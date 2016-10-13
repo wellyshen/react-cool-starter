@@ -52,18 +52,19 @@ app.get('*', (req, res) => {
     webpackIsomorphicTools.refresh();
   }
 
-  const memoryHistory = createMemoryHistory(req.url);
   const store = configureStore();
-  const routes = createRoutes(store);
-  const history = syncHistoryWithStore(memoryHistory, store, {
-    selectLocationState: state => state.get('routing').toJS(),
-  });
 
   // If __DISABLE_SSR__ = true, disable server side rendering
   if (__DISABLE_SSR__) {
     res.send(renderHtmlPage(store));
     return;
   }
+
+  const memoryHistory = createMemoryHistory(req.url);
+  const routes = createRoutes(store);
+  const history = syncHistoryWithStore(memoryHistory, store, {
+    selectLocationState: state => state.get('routing').toJS(),
+  });
 
   // eslint-disable-next-line max-len
   match({ history: memoryHistory, routes, location: req.url }, (error, redirectLocation, renderProps) => {

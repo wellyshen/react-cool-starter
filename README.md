@@ -207,7 +207,7 @@ export default function createRoutes(store) {
 
     childRoutes: [
       {
-        path: 'path',
+        path: '/path',                                                         // Define your route path here
         getComponent(location, cb) {
           const importModules = Promise.all([
             System.import('./containers/MyNewRouteComponent'),                 // Add your route component here

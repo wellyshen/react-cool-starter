@@ -12,30 +12,30 @@ const loadModule = cb => (Component) => {
 
 export default function createRoutes(store) {
   return {
-    path: '/',
     component: App,
-    indexRoute: {
-      getComponent(location, cb) {
-        const importModules = Promise.all([
-          System.import('./containers/Home'),
-          System.import('./containers/Home/reducer'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
-        importModules
-          .then(([Component, reducer]) => {
-            injectReducer(store, 'home', reducer.default);
-
-            renderRoute(Component);
-          })
-          .catch(errorLoading);
-      },
-    },
     childRoutes: [
       {
+        path: '/',
+        getComponent(nextState, cb) {
+          const importModules = Promise.all([
+            System.import('./containers/Home'),
+            System.import('./containers/Home/reducer'),
+          ]);
+
+          const renderRoute = loadModule(cb);
+
+          importModules
+            .then(([Component, reducer]) => {
+              injectReducer(store, 'home', reducer.default);
+
+              renderRoute(Component);
+            })
+            .catch(errorLoading);
+        },
+      },
+      {
         path: 'UserInfo/:id',
-        getComponent(location, cb) {
+        getComponent(nextState, cb) {
           const importModules = Promise.all([
             System.import('./containers/UserInfo'),
             System.import('./containers/UserInfo/reducer'),

@@ -96,7 +96,7 @@
     }
   },
   "dependencies": {
-    "autoprefixer": "^6.5.0",
+    "autoprefixer": "^6.5.1",
     "axios": "^0.15.0",
     "babel-core": "^6.17.0",
     "babel-polyfill": "^6.16.0",
@@ -129,7 +129,7 @@
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.0",
-    "webpack-isomorphic-tools": "^2.5.8"
+    "webpack-isomorphic-tools": "^2.6.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.0.0",

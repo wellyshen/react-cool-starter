@@ -41,7 +41,6 @@ const getPlugins = () => {
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
       __CLIENT__: JSON.stringify(true),
       __SERVER__: JSON.stringify(false),
-      __DISABLE_SSR__: JSON.stringify(false),
       __DEV__: JSON.stringify(isDev),
     }),
     new webpack.NoErrorsPlugin(),
@@ -57,10 +56,10 @@ const getPlugins = () => {
     plugins.push(
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
-        filename: '[name].[chunkhash].js',
+        // filename: '[name].[chunkhash].js',
         minChunks: Infinity,
       }),
-      new ExtractTextPlugin({ filename: '[name].[chunkhash].css', allChunks: true }),
+      new ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
       new webpack.optimize.UglifyJsPlugin({
         compress: { screw_ie8: true, warnings: false },
         output: { comments: false },
@@ -79,16 +78,14 @@ const getEntry = () => {
   let entry;
 
   if (isDev) {
-    entry = {
-      app: [
-        'react-hot-loader/patch',
-        'webpack-hot-middleware/client?reload=true',
-        './src/client.js',
-      ],
-    };
+    entry = [
+      'react-hot-loader/patch',
+      'webpack-hot-middleware/client?reload=true',
+      './src/client.js',
+    ];
   } else {
     entry = {
-      app: './src/client.js',
+      main: './src/client.js',
       // Register vendors here
       vendor: [
         'babel-polyfill',
@@ -99,7 +96,7 @@ const getEntry = () => {
         'react-hot-loader',
         'react-immutable-proptypes',
         'redux-immutable',
-        'react-router',
+        // 'react-router',
         'react-router-redux',
         'react-helmet',
         'axios',
@@ -121,8 +118,9 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../../public/dist'),
     publicPath: '/dist/',
-    filename: isDev ? '[name].[hash].js' : '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js',
+    // Don't use hashes in dev mode for better performance
+    filename: isDev ? '[name].js' : '[name].[chunkhash].js',
+    chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash].chunk.js',
   },
   module: {
     rules: [
@@ -131,7 +129,7 @@ module.exports = {
         exclude: /node_modules/,
         loaders: [
           isDev ? 'babel?cacheDirectory' : 'babel',
-          // 'eslint',
+          'eslint',
         ],
       },
       { test: /\.json$/, loader: 'json' },
