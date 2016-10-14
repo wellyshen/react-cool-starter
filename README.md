@@ -465,3 +465,4 @@ There're some features I'd like to include in the starter boilerplate in the nea
 - [ ] Optimizing Webpack bundle performance
 - [ ] Internationalization
 - [ ] Integrating Bootstrap 4
+- [ ] Support React Router v4
