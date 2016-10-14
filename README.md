@@ -43,6 +43,7 @@ Really cool starter boilerplate with the most popular technologies:
 * CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
 * Hot reloading support.
+* [nodemon]() to monitor for any changes in your node.js application and automatically restart the server.
 * Split vendor's libraries from client bundle.
 * No other view engines, just javascript based HTML rendering template.
 * Shared app config between development and production.
