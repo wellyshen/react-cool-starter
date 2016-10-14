@@ -434,7 +434,7 @@ By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-pl
     'transform-runtime',
     ['istanbul', {
       exclude: [
-        '**/*-test.js',
+        '**/*-test.js',   // Ignore the files which you don't want to cover here
       ],
     }],
   ],
