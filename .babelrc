@@ -1,19 +1,7 @@
+// Main used for server side, the client & testing parts
+// are included in their webpack config files
+
 {
-  "presets": ["./tools/latestPreset", "react", "stage-0"],
-  "plugins": [
-    "transform-runtime",
-    "system-import-transformer",
-    "react-hot-loader/babel"
-  ],
-  "env": {
-    "test": {
-      "plugins": [
-        ["istanbul", {
-          "exclude": [
-            "**/*-test.js"
-          ]
-        }]
-      ]
-    }
-  }
+  "presets": ["es2015", "react", "stage-0"],
+  "plugins": ["system-import-transformer"]
 }

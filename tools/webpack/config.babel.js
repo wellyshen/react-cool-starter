@@ -57,7 +57,7 @@ const getPlugins = () => {
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         filename: '[name].[chunkhash].js',
-        minChunks: Infinity,
+        minChunks: 2,
       }),
       new ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
       new webpack.optimize.UglifyJsPlugin({
@@ -88,7 +88,6 @@ const getEntry = () => {
       main: './src/client.js',
       // Register vendors here
       vendor: [
-        'babel-polyfill',
         'react', 'react-dom', 'react-addons-shallow-compare',
         'redux', 'react-redux',
         'redux-thunk',
@@ -96,7 +95,7 @@ const getEntry = () => {
         'react-hot-loader',
         'react-immutable-proptypes',
         'redux-immutable',
-        // 'react-router',
+        'react-router',
         'react-router-redux',
         'react-helmet',
         'axios',
@@ -113,6 +112,7 @@ const getEntry = () => {
 module.exports = {
   cache: isDev,
   devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
+  target: 'web',
   context: path.join(__dirname, '../..'),
   entry: getEntry(),
   output: {
@@ -126,11 +126,20 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
+        enforce: 'pre',
         exclude: /node_modules/,
-        loaders: [
-          isDev ? 'babel?cacheDirectory' : 'babel',
-          'eslint',
-        ],
+        loaders: 'eslint',
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          cacheDirectory: isDev,
+          babelrc: false,
+          presets: [['es2015', { modules: false }], 'react', 'stage-0'],
+          plugins: ['transform-runtime', 'react-hot-loader/babel'],
+        },
       },
       { test: /\.json$/, loader: 'json' },
       {

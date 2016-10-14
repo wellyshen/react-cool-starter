@@ -8,7 +8,7 @@ describe('<UserList />', () => {
   it('renders the linkable list item', () => {
     const mockData = fromJS([{ id: '1', name: 'Welly' }]);
     const listItem = (
-      <Link to={`UserInfo/${mockData.get(0).get('id')}`}>
+      <Link to={`/UserInfo/${mockData.get(0).get('id')}`}>
         {mockData.get(0).get('name')}
       </Link>
     );

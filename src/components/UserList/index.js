@@ -10,7 +10,7 @@ const UserList = ({ list }) => (
     <ul>
       {list.map(user => (
         <li key={user.get('id')}>
-          <Link to={`UserInfo/${user.get('id')}`}>{user.get('name')}</Link>
+          <Link to={`/UserInfo/${user.get('id')}`}>{user.get('name')}</Link>
         </li>
       ))}
     </ul>

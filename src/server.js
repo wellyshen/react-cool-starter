@@ -48,9 +48,7 @@ if (__DEV__) {
 
 // Register server-side rendering middleware
 app.get('*', (req, res) => {
-  if (__DEV__) {
-    webpackIsomorphicTools.refresh();
-  }
+  if (__DEV__) webpackIsomorphicTools.refresh();
 
   const store = configureStore();
 

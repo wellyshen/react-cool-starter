@@ -38,7 +38,6 @@ Really cool starter boilerplate with the most popular technologies:
 * [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
-* [nodemon](http://nodemon.io/) to reload non-boundled files (e.g. `./src/server.js`).
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 * CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
@@ -140,8 +139,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── webpack                     # Webpack configuration settings
 │   │   ├── config.babel.js         # Webpack configuration file
 │   │   ├── config.test.babel.js    # Webpack configuration file for testing (for karma config)
-│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file 
-│   └── es2015Preset.js             # es2015 preset configuration file (for .babelrc)       
+│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file        
 └── index.js                        # App start point
 ```
 
@@ -426,21 +424,22 @@ The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit test
 * Components
 * Reducers
 
-By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) to instruments your code with Istanbul coverage, the report is generated in `./coverage` folder. You can configure `.babelrc` to ignore the files which you don't want to cover. For example:
+By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) to instruments your code with Istanbul coverage, the report is generated in `./coverage` folder. You can configure `./tools/webpack/config.test.babel.js` to ignore the files which you don't want to cover. For example:
 
-```bash
+```javascript
 {
-  "env": {
-    "test": {
-      "plugins": [
-        ["istanbul", {
-          "exclude": [          
-            "**/*.-test.js"   # ignore testing files
-          ]
-        }]
-      ]
-    }
-  }
+  // ...
+
+  plugins: [
+    'transform-runtime',
+    ['istanbul', {
+      exclude: [
+        '**/*-test.js',
+      ],
+    }],
+  ],
+
+  // ...
 }
 ```
 

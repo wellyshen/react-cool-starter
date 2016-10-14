@@ -34,7 +34,7 @@ export default function createRoutes(store) {
         },
       },
       {
-        path: 'UserInfo/:id',
+        path: '/UserInfo/:id',
         getComponent(nextState, cb) {
           const importModules = Promise.all([
             System.import('./containers/UserInfo'),

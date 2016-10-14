@@ -38,6 +38,7 @@ const shouldFetchData = (state, userId) => {
 
 /* istanbul ignore next */
 export const fetchDataIfNeeded = userId => (dispatch, getState, axios) => {
+  /* istanbul ignore next */
   if (shouldFetchData(getState(), userId)) {
     /* istanbul ignore next */
     return dispatch(fetchData(userId, axios));

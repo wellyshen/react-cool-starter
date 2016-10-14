@@ -8,7 +8,24 @@ module.exports = {
     // The sinon library doesn't like being run through babel
     noParse: [/node_modules\/sinon/],
     rules: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory' },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          cacheDirectory: true,
+          babelrc: false,
+          presets: [['es2015', { modules: false }], 'react', 'stage-0'],
+          plugins: [
+            'transform-runtime',
+            ['istanbul', {
+              exclude: [
+                '**/*-test.js',
+              ],
+            }],
+          ],
+        },
+      },
       { test: /\.json$/, loader: 'json' },
       // sinon.js--aliased for enzyme--expects/requires global vars.
       // imports-loader allows for global vars to be injected into the module.

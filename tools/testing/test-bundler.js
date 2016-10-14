@@ -1,5 +1,3 @@
-import 'babel-polyfill';
-
 import chai from 'chai';  // eslint-disable-line import/no-extraneous-dependencies
 import chaiEnzyme from 'chai-enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 
