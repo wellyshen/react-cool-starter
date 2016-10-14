@@ -1,6 +1,6 @@
 /* Create enhanced history object for router */
 
-export default (routeName) => {
+export default (reducerName) => {
   let prevRoutingState;
   let prevRoutingStateJS;
 
