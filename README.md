@@ -121,9 +121,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── prod.js                 # Production settings (overrides the default settings)
 │   ├── components                  # Reusable components (including scss/testing files)
 │   ├── containers                  # Container components (including assets/action/reducer/scss/testing files)
-│   ├── helper                      # App-wide utils
-│   │   ├── renderHtmlPage.js       # Main HTML page layout for app
-│   │   └── fakeStore.js            # Fake Redux store for testing                        
+│   ├── helper                      # App-wide utils (including HTML render view, testing fake store etc.)
 │   ├── redux                       # Redux related configuration scripts
 │   │   ├── reducers.js             # The root reducer (registry and injection)
 │   │   └── store.js                # Configure and instrument Redux store   
