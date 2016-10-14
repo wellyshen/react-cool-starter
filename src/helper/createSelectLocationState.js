@@ -5,7 +5,7 @@ export default (reducerName) => {
   let prevRoutingStateJS;
 
   return (state) => {
-    const routingState = state.get(routeName); // or state.routing
+    const routingState = state.get(reducerName); // or state.routing
 
     if (!routingState.equals(prevRoutingState)) {
       prevRoutingState = routingState;
