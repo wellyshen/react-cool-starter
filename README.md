@@ -28,6 +28,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
+* [nodemon]() to monitor for any changes in your node.js application and automatically restart the server.
 * [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
 * [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 * [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
@@ -42,8 +43,6 @@ Really cool starter boilerplate with the most popular technologies:
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 * CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
-* Hot reloading support.
-* [nodemon]() to monitor for any changes in your node.js application and automatically restart the server.
 * Split vendor's libraries from client bundle.
 * No other view engines, just javascript based HTML rendering template.
 * Shared app config between development and production.
