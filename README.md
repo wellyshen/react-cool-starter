@@ -111,9 +111,10 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── public                          # The path of the public files (server static path)
-│   ├── dist                        # All the built files will be placed into it
-│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
+├── build                           # The parent folder of bundled files (server side file will be placed here)
+│   └── public                      # The Express server static path
+│       ├── assets                  # The client side files will be placed here
+│       └── favicon.ico             # Favicon is placed in the same path with the main HTML page       
 ├── src                             # App source code
 │   ├── config                      # App configuration settings
 │   │   ├── default.js              # Default settings

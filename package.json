@@ -82,7 +82,7 @@
       "command": "karma start ./tools/testing/karma.conf.js --single-run"
     },
     "clean:build": {
-      "command": "rimraf ./public/dist"
+      "command": "rimraf ./build/public/assets"
     },
     "clean:coverage": {
       "command": "rimraf ./coverage"

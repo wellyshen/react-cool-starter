@@ -116,8 +116,8 @@ module.exports = {
   context: path.join(__dirname, '../..'),
   entry: getEntry(),
   output: {
-    path: path.join(__dirname, '../../public/dist'),
-    publicPath: '/dist/',
+    path: path.join(__dirname, '../../build/public/assets'),
+    publicPath: '/assets/',
     // Don't use hashes in dev mode for better performance
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
     chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash].chunk.js',
