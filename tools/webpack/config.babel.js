@@ -14,6 +14,23 @@ const isDev = nodeEnv !== 'production';
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./WIT.config')).development(isDev);
 
+// Register your vendors here
+const vendor = [
+  'react', 'react-dom', 'react-addons-shallow-compare',
+  'redux', 'react-redux',
+  'redux-thunk',
+  'immutable',
+  'react-hot-loader',
+  'react-immutable-proptypes',
+  'redux-immutable',
+  'react-router',
+  'react-router-redux',
+  'react-helmet',
+  'axios',
+  'redbox-react',
+  'chalk',
+];
+
 // Setting the plugins for development/prodcution
 const getPlugins = () => {
   const plugins = [];
@@ -86,22 +103,7 @@ const getEntry = () => {
   } else {
     entry = {
       main: './src/client.js',
-      // Register vendors here
-      vendor: [
-        'react', 'react-dom', 'react-addons-shallow-compare',
-        'redux', 'react-redux',
-        'redux-thunk',
-        'immutable',
-        'react-hot-loader',
-        'react-immutable-proptypes',
-        'redux-immutable',
-        'react-router',
-        'react-router-redux',
-        'react-helmet',
-        'axios',
-        'redbox-react',
-        'chalk',
-      ],
+      vendor,
     };
   }
 
