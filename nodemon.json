@@ -4,6 +4,6 @@
     "tools/webpack/",
     "!tools/webpack/config.test.babel.js",
     "src/server.js",
-    "src/helper/renderHtmlPage.js"
+    "src/util/renderHtmlPage.js"
   ]
 }

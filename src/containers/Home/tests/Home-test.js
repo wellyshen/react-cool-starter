@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
 import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
-import { storeFake } from '../../../utils/helpers';
+import { storeFake } from '../../../util/helpers';
 import Home from '../index';
 import UserList from '../../../components/UserList';
 
