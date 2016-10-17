@@ -1,3 +1,6 @@
+// Useful for debugging node.js code that has been bundled with Webpack
+import 'source-map-support/register';
+
 import path from 'path';
 import morgan from 'morgan';
 import express from 'express';

@@ -1,6 +1,8 @@
+const port = process.env.NODE_ENV === 'production' ? 8080 : 3000;
+
 module.exports = {
-  host: process.env.HOST || 'localhost',
-  port: process.env.PORT,
+  host: 'localhost',
+  port,
   app: {
     htmlAttributes: { lang: 'en' },
     title: 'React Cool Starter',
