@@ -1,5 +1,7 @@
-import chai from 'chai';  // eslint-disable-line import/no-extraneous-dependencies
-import chaiEnzyme from 'chai-enzyme'; // eslint-disable-line import/no-extraneous-dependencies
+/* eslint import/no-extraneous-dependencies:0  */
+
+import chai from 'chai';
+import chaiEnzyme from 'chai-enzyme';
 
 // Loading chai-enzyme
 chai.use(chaiEnzyme());

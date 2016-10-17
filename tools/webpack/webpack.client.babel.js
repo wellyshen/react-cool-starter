@@ -6,13 +6,14 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-const CSSModules = true;  // Disable CSSModules here
-
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
 
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./WIT.config')).development(isDev);
+
+// Disable CSSModules here
+const CSSModules = true;
 
 // Register your vendors here
 const vendor = [
@@ -53,12 +54,12 @@ const getPlugins = () => {
       syntax: 'scss',
       failOnError: true,  // Disable style lint error terminating here
     }),
-    // Setup global variables for app
+    // Setup global variables for client
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
-      __CLIENT__: JSON.stringify(true),
-      __SERVER__: JSON.stringify(false),
-      __DEV__: JSON.stringify(isDev),
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEV__: isDev,
     }),
     new webpack.NoErrorsPlugin(),
     webpackIsomorphicToolsPlugin
@@ -112,13 +113,13 @@ const getEntry = () => {
 
 // Setting webpack config
 module.exports = {
+  target: 'web',
   cache: isDev,
   devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
-  target: 'web',
-  context: path.join(__dirname, '../..'),
+  context: path.join(process.cwd()),
   entry: getEntry(),
   output: {
-    path: path.join(__dirname, '../../build/public/assets'),
+    path: path.join(process.cwd(), './build/public/assets'),
     publicPath: '/assets/',
     // Don't use hashes in dev mode for better performance
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
@@ -172,10 +173,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
-    modules: [
-      'src',
-      'node_modules',
-    ],
+    modules: ['src', 'node_modules'],
   },
   plugins: getPlugins(),
 };

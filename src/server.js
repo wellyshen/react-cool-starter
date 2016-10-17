@@ -13,8 +13,8 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import chalk from 'chalk';
 import createRoutes from './routes';
 import configureStore from './redux/store';
-import createSelectLocationState from './helper/createSelectLocationState';
-import renderHtmlPage from './helper/renderHtmlPage';
+import { createSelectLocationState } from './utils/helpers';
+import renderHtmlPage from './utils/renderHtmlPage';
 import config from './config';
 
 const app = express();
@@ -28,13 +28,13 @@ app.use(compression());
 
 // Use morgan for http request debug (only show error)
 app.use(morgan('dev', { skip: (req, res) => res.statusCode < 400 }));
-app.use(favicon(path.join(__dirname, '../build/public/favicon.ico')));
-app.use(express.static(path.join(__dirname, '../build/public')));
+app.use(favicon(path.join(process.cwd(), './build/public/favicon.ico')));
+app.use(express.static(path.join(process.cwd(), './build/public')));
 
 // Run express as webpack dev server
 if (__DEV__) {
   const webpack = require('webpack');
-  const webpackConfig = require('../tools/webpack/config.babel');
+  const webpackConfig = require('../tools/webpack/webpack.client.babel');
 
   const compiler = webpack(webpackConfig);
 

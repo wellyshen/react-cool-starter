@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "1.3.6",
+  "version": "1.4.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -38,20 +38,23 @@
     "start": "better-npm-run start",
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "better-npm-run start:prod",
-    "build": "npm run clean:build && better-npm-run build",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "npm run clean:client && better-npm-run build:client",
+    "build:server": "npm run clean:server && better-npm-run build:server",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "test": "better-npm-run test",
     "test:watch": "npm test -- --no-single-run",
-    "clean:all": "npm run clean:build && npm run clean:coverage",
-    "clean:build": "better-npm-run clean:build",
+    "clean:all": "npm run clean:client && npm run clean:server && npm run clean:coverage",
+    "clean:client": "better-npm-run clean:client",
+    "clean:server": "better-npm-run clean:server",
     "clean:coverage": "better-npm-run clean:coverage",
     "coveralls": "better-npm-run coveralls && npm run test:clean"
   },
   "betterScripts": {
     "start": {
-      "command": "nodemon ./index.js",
+      "command": "nodemon ./index.js --exec babel-node",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
@@ -66,8 +69,14 @@
         "PORT": "8080"
       }
     },
-    "build": {
-      "command": "webpack --progress --display-error-details --config ./tools/webpack/config.babel",
+    "build:client": {
+      "command": "webpack --progress --config ./tools/webpack/webpack.client.babel",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "build:server": {
+      "command": "webpack --progress --config ./tools/webpack/webpack.server.babel",
       "env": {
         "NODE_ENV": "production"
       }
@@ -79,10 +88,16 @@
       "command": "stylelint \"./src/**/*.css\""
     },
     "test": {
-      "command": "karma start ./tools/testing/karma.conf.js --single-run"
+      "command": "karma start ./tools/testing/karma.conf.js --single-run",
+      "env": {
+        "NODE_ENV": "test"
+      }
     },
-    "clean:build": {
+    "clean:client": {
       "command": "rimraf ./build/public/assets"
+    },
+    "clean:server": {
+      "command": "rimraf ./build/server.js"
     },
     "clean:coverage": {
       "command": "rimraf ./coverage"
@@ -128,9 +143,10 @@
     "webpack-isomorphic-tools": "^2.6.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.16.0",
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
-    "babel-plugin-istanbul": "^2.0.1",
+    "babel-plugin-istanbul": "^2.0.3",
     "babel-plugin-system-import-transformer": "^2.4.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-latest": "^6.16.0",
@@ -143,12 +159,12 @@
     "enzyme": "^2.4.1",
     "eslint": "^3.8.0",
     "eslint-config-airbnb": "^12.0.0",
-    "eslint-loader": "^1.5.0",
+    "eslint-loader": "^1.6.0",
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
     "file-loader": "^0.9.0",
-    "image-webpack-loader": "^2.0.0",
+    "image-webpack-loader": "^3.0.0",
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
     "karma": "^1.3.0",
@@ -171,10 +187,11 @@
     "redux-mock-store": "^1.2.1",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.2",
-    "sinon": "^2.0.0-pre.2",
+    "sinon": "^2.0.0-pre.3",
     "style-loader": "^0.13.1",
     "stylelint": "^7.4.2",
     "stylelint-config-standard": "^13.0.2",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "webpack-node-externals": "^1.5.4"
   }
 }

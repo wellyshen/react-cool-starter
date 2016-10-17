@@ -88,16 +88,19 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `npm run <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
+`start:production`|Bundles the app to `./build` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Clean the previous compiled stuff and compile your app to `./public/dist`.
+`build`|Remove the previous client and server bundled stuff and bundle them to `./build`.
+`build:client`|Remove the previous client bundled stuff and bundle it to `./build/public/assets`.
+`build:client`|Remove the previous server bundled stuff and bundle it to `./build`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `test`|Run testing once.
 `test:watch`|Run testing on every test file change.
-`clean:all`|Remove the `./public/dist` and the `./coverage` folder.
-`clean:build`|Remove the `./public/dist` folder to clean the compiled stuff.
+`clean:all`|Remove the client/server bundled stuff and the coverage report.
+`clean:client`|Remove the `./build/public/assets` folder to clean the client bundled stuff.
+`clean:server`|Remove the server bundled stuff from the `./build` folder.
 `clean:coverage`|Remove the `./coverage` folder to clean the code coverage report.
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
@@ -111,35 +114,36 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── build                           # The parent folder of bundled files (server side file will be placed here)
-│   └── public                      # The Express server static path
-│       ├── assets                  # The client side files will be placed here
-│       └── favicon.ico             # Favicon is placed in the same path with the main HTML page       
-├── src                             # App source code
-│   ├── config                      # App configuration settings
-│   │   ├── default.js              # Default settings
-│   │   ├── index.js                # Configuration entry point
-│   │   └── prod.js                 # Production settings (overrides the default settings)
-│   ├── components                  # Reusable components (including scss/testing files)
-│   ├── containers                  # Container components (including assets/action/reducer/scss/testing files)
-│   ├── helper                      # App-wide utils (including HTML render view, testing fake store etc.)
-│   ├── redux                       # Redux related configuration scripts
-│   │   ├── reducers.js             # The root reducer (registry and injection)
-│   │   └── store.js                # Configure and instrument Redux store   
-│   ├── theme                       # App-wide style, vendor style, generally settings
-│   ├── client.js                   # App bootstrap and rendering (webpack entry)
-│   ├── routes.js                   # Routes shared between client and server side
-│   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
-├── tools                           # Project related configurations (testing/build etc.)
-│   ├── openBrowser                 # Utility for opening Google Chrome 
-│   ├── testing                     # Testing configuration settings
-│   │   ├── karma.conf.js           # Karma configuration file
-│   │   └── test-bunlder.js         # Karma pre-processor settings file
-│   ├── webpack                     # Webpack configuration settings
-│   │   ├── config.babel.js         # Webpack configuration file
-│   │   ├── config.test.babel.js    # Webpack configuration file for testing (for karma config)
-│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file        
-└── index.js                        # App start point
+├── build                             # The parent folder of bundled files (server side file will be placed here)
+│   └── public                        # The Express server static path
+│       ├── assets                    # The client side files will be placed here
+│       └── favicon.ico               # Favicon is placed in the same path with the main HTML page       
+├── src                               # App source code
+│   ├── config                        # App configuration settings
+│   │   ├── default.js                # Default settings
+│   │   ├── index.js                  # Configuration entry point
+│   │   └── prod.js                   # Production settings (overrides the default settings)
+│   ├── components                    # Reusable components (including scss/testing files)
+│   ├── containers                    # Container components (including assets/action/reducer/scss/testing files)
+│   ├── utils                         # App-wide utils (including HTML render view, helpers)
+│   ├── redux                         # Redux related configuration scripts
+│   │   ├── reducers.js               # The root reducer (registry and injection)
+│   │   └── store.js                  # Configure and instrument Redux store   
+│   ├── theme                         # App-wide style, vendor style, generally settings
+│   ├── client.js                     # App bootstrap and rendering (webpack entry)
+│   ├── routes.js                     # Routes shared between client and server side
+│   └── server.js                     # Express server (with webpack dev/hot middlewares)                  
+├── tools                             # Project related configurations (testing/build etc.)
+│   ├── openBrowser                   # Utility for opening Google Chrome 
+│   ├── testing                       # Testing configuration settings
+│   │   ├── karma.conf.js             # Karma configuration file
+│   │   └── test-bunlder.js           # Karma pre-processor settings file
+│   ├── webpack                       # Webpack configuration settings
+│   │   ├── webpack.client.babel.js   # Webpack configuration for client
+│   │   ├── webpack.server.babel.js   # Webpack configuration for server
+│   │   ├── config.test.babel.js      # Webpack configuration file for testing (for karma config)
+│   │   └── WIT.config.js             # Webpack Isomorphic Tools configuration file        
+└── index.js                          # App start point
 ```
 
 
