@@ -17,7 +17,7 @@ import chalk from 'chalk';
 import createRoutes from './routes';
 import configureStore from './redux/store';
 import { createSelectLocationState } from './util/helpers';
-import renderHtmlPage from './utils/renderHtmlPage';
+import renderHtmlPage from './util/renderHtmlPage';
 import config from './config';
 
 const app = express();
