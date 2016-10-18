@@ -2,7 +2,7 @@ import React from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { Link } from 'react-router';
 
-import styles from './UserList.scss';
+import styles from './styles.scss';
 
 const UserList = ({ list }) => (
   <div className={styles.UserList}>

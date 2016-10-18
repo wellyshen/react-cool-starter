@@ -34,12 +34,12 @@ export default (store, content) => {
           Object.keys(assets.styles).length === 0 ?
             `<style>${
               require('../theme/normalize.css')._style +
-              require('../containers/App/App.scss')._style +
-              require('../containers/Home/Home.scss')._style +
-              require('../containers/UserInfo/UserInfo.scss')._style +
-              require('../containers/NotFound/NotFound.scss')._style +
-              require('../components/UserList/UserList.scss')._style +
-              require('../components/UserCard/UserCard.scss')._style
+              require('../containers/App/styles.scss')._style +
+              require('../containers/Home/styles.scss')._style +
+              require('../containers/UserInfo/styles.scss')._style +
+              require('../containers/NotFound/styles.scss')._style +
+              require('../components/UserList/styles.scss')._style +
+              require('../components/UserCard/styles.scss')._style
             }</style>` : ''
         }
       </head>

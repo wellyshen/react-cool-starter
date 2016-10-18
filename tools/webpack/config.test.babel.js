@@ -61,9 +61,9 @@ module.exports = {
     // Setup global variables for app
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify('development') },
-      __CLIENT__: JSON.stringify(true),
-      __SERVER__: JSON.stringify(false),
-      __DEV__: JSON.stringify(true),
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEV__: process.env.NODE_ENV !== 'production',
     }),
     new webpack.IgnorePlugin(/\.json$/),
     new webpack.NoErrorsPlugin(),

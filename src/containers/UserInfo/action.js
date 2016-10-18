@@ -22,17 +22,13 @@ export const fetchData = (userId, axios) => (dispatch) => {
 const shouldFetchData = (state, userId) => {
   // In development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
-  /* istanbul ignore next */
   if (__DEV__) return true;
 
-  /* istanbul ignore next */
   const userInfo = state.getIn(['userInfo', userId]);
 
   // Preventing dobule fetching data in production
-  /* istanbul ignore next */
   if (userInfo && userInfo.get('readyState') === AN_USER_SUCCESS) return false;
 
-  /* istanbul ignore next */
   return true;
 };
 

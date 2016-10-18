@@ -6,13 +6,30 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-const CSSModules = true;  // Disable CSSModules here
-
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
 
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./WIT.config')).development(isDev);
+
+// Disable CSSModules here
+const CSSModules = true;
+// Register vendors here
+const vendor = [
+  'react', 'react-dom', 'react-addons-shallow-compare',
+  'redux', 'react-redux',
+  'redux-thunk',
+  'immutable',
+  'react-hot-loader',
+  'react-immutable-proptypes',
+  'redux-immutable',
+  'react-router',
+  'react-router-redux',
+  'react-helmet',
+  'axios',
+  'redbox-react',
+  'chalk',
+];
 
 // Setting the plugins for development/prodcution
 const getPlugins = () => {
@@ -39,9 +56,9 @@ const getPlugins = () => {
     // Setup global variables for app
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
-      __CLIENT__: JSON.stringify(true),
-      __SERVER__: JSON.stringify(false),
-      __DEV__: JSON.stringify(isDev),
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEV__: isDev,
     }),
     new webpack.NoErrorsPlugin(),
     webpackIsomorphicToolsPlugin
@@ -87,21 +104,7 @@ const getEntry = () => {
     entry = {
       main: './src/client.js',
       // Register vendors here
-      vendor: [
-        'react', 'react-dom', 'react-addons-shallow-compare',
-        'redux', 'react-redux',
-        'redux-thunk',
-        'immutable',
-        'react-hot-loader',
-        'react-immutable-proptypes',
-        'redux-immutable',
-        'react-router',
-        'react-router-redux',
-        'react-helmet',
-        'axios',
-        'redbox-react',
-        'chalk',
-      ],
+      vendor,
     };
   }
 
@@ -113,11 +116,11 @@ module.exports = {
   cache: isDev,
   devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
   target: 'web',
-  context: path.join(__dirname, '../..'),
+  context: path.join(process.cwd()),
   entry: getEntry(),
   output: {
-    path: path.join(__dirname, '../../public/dist'),
-    publicPath: '/dist/',
+    path: path.join(process.cwd(), './public/assets'),
+    publicPath: '/assets/',
     // Don't use hashes in dev mode for better performance
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
     chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash].chunk.js',

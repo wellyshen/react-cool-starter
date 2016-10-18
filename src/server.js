@@ -13,8 +13,8 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import chalk from 'chalk';
 import createRoutes from './routes';
 import configureStore from './redux/store';
-import createSelectLocationState from './helper/createSelectLocationState';
-import renderHtmlPage from './helper/renderHtmlPage';
+import { createSelectLocationState } from './util/helpers';
+import renderHtmlPage from './util/renderHtmlPage';
 import config from './config';
 
 const app = express();

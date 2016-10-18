@@ -6,7 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { fromJS } from 'immutable';
 import { AppContainer } from 'react-hot-loader';
 import configureStore from './redux/store';
-import createSelectLocationState from './helper/createSelectLocationState';
+import { createSelectLocationState } from './util/helpers';
 
 // redux-immutable only allow immutable obj
 const initialState = fromJS(window.__INITIAL_STATE__);

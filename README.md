@@ -88,16 +88,16 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `npm run <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Compiles the app to `./public/dist` and run it on the production server at `localhost:8080`.
+`start:production`|Bundle your app to `./public/assets` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Clean the previous compiled stuff and compile your app to `./public/dist`.
+`build`|Remove the previous bundled stuff and bundle your app to `./public/assets`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `test`|Run testing once.
 `test:watch`|Run testing on every test file change.
-`clean:all`|Remove the `./public/dist` and the `./coverage` folder.
-`clean:build`|Remove the `./public/dist` folder to clean the compiled stuff.
+`clean:all`|Remove the `./public/assets` and the `./coverage` folder.
+`clean:build`|Remove the `./public/assets` folder to clean the bundled stuff.
 `clean:coverage`|Remove the `./coverage` folder to clean the code coverage report.
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
@@ -111,8 +111,8 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── public                          # The path of the public files (server static path)
-│   ├── dist                        # All the built files will be placed into it
+├── public                          # Server static files path
+│   ├── assets                      # All the bundled files will be placed into it
 │   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
 ├── src                             # App source code
 │   ├── config                      # App configuration settings
@@ -121,7 +121,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── prod.js                 # Production settings (overrides the default settings)
 │   ├── components                  # Reusable components (including scss/testing files)
 │   ├── containers                  # Container components (including assets/action/reducer/scss/testing files)
-│   ├── helper                      # App-wide utils (including HTML render view, testing fake store etc.)
+│   ├── util                        # App-wide util (including HTML render view, helpers)
 │   ├── redux                       # Redux related configuration scripts
 │   │   ├── reducers.js             # The root reducer (registry and injection)
 │   │   └── store.js                # Configure and instrument Redux store   
@@ -250,7 +250,7 @@ The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/
 With CSS Modules:
 
 ```javascript
-import styles from './Home.scss';
+import styles from './styles.scss';
 
 // ...
 
@@ -267,7 +267,7 @@ render() {
 Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.babel.js`):
 
 ```javascript
-import './Home.scss';
+import './styles.scss';
 
 // ...
 
@@ -284,8 +284,8 @@ render() {
 By the way, if you want to use your based stylesheet or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
 
 ```javascript
-import '../../theme/normalize.css';   // import a vendor stylesheet here
-import styles from './App.scss';      // import your based stylesheet here
+import '../../theme/normalize.css';     // import a vendor stylesheet here
+import styles from './styles.scss';     // import your based stylesheet here
 
 const App = ({ children }) => (
 
@@ -294,7 +294,7 @@ const App = ({ children }) => (
 );
 ```
 
-For the better development experience, don't forget to include those files in the `./src/helper/renderHtmlPage.js`, for example:
+For the better development experience, don't forget to include those files in the `./src/util/renderHtmlPage.js`, for example:
 
 ```javascript
 // ...
@@ -417,9 +417,9 @@ class Home extends Component {
 
 The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit tests, it uses [karma](https://karma-runner.github.io/1.0/index.html) as the test runner, and uses [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. Moreover it also uses [chai](http://chaijs.com/) as the assertion library and uses [sinon](https://github.com/sinonjs/sinon) to provide the standalone test spies, stubs and mocks. The unit tests focus on four parts as below:
 
-* Actions
 * Containers
 * Components
+* Actions
 * Reducers
 
 By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) to instruments your code with Istanbul coverage, the report is generated in `./coverage` folder. You can configure `./tools/webpack/config.test.babel.js` to ignore the files which you don't want to cover. For example:

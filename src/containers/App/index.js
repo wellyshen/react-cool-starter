@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import config from '../../config';
 
 import '../../theme/normalize.css';
-import styles from './App.scss';
+import styles from './styles.scss';
 
 const App = ({ children }) => (
   <div className={styles.App}>

@@ -23,16 +23,12 @@ export const fetchData = axios => (dispatch) => {
 const shouldFetchData = (state) => {
   // In development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
-  /* istanbul ignore next */
   if (__DEV__) return true;
 
-  /* istanbul ignore next */
   const home = state.get('home');
 
-  /* istanbul ignore next */
   if (home.get('readyState') === USERS_SUCCESS) return false; // Preventing double fetching data
 
-  /* istanbul ignore next */
   return true;
 };
 
