@@ -304,7 +304,7 @@ ${
     `<style>${
       // Include the vendor stylesheet and the stylesheets which you have used here
       require('../theme/normalize.css')._style +                
-      require('../containers/App/App.scss')._style +              
+      require('../containers/App/styles.scss')._style +              
     }</style>` : ''
 }
 
