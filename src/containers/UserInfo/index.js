@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import * as action from './action';
 import UserCard from '../../components/UserCard';
 
-import styles from './UserInfo.scss';
+import styles from './styles.scss';
 
 class UserInfo extends Component {
   // Fetching data method for both server/client side rendering

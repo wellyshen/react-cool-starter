@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import * as action from './action';
 import UserList from '../../components/UserList';
 
-import styles from './Home.scss';
+import styles from './styles.scss';
 
 class Home extends Component {
   // Fetching data method for both server/client side rendering

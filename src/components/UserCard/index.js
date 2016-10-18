@@ -1,7 +1,7 @@
 import React from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 
-import styles from './UserCard.scss';
+import styles from './styles.scss';
 
 const UserCard = ({ info }) => (
   <div className={styles.UserCard}>

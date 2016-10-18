@@ -255,7 +255,7 @@ The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/
 With CSS Modules:
 
 ```javascript
-import styles from './Home.scss';
+import styles from './styles.scss';
 
 // ...
 
@@ -272,7 +272,7 @@ render() {
 Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.babel.js`):
 
 ```javascript
-import './Home.scss';
+import './styles.scss';
 
 // ...
 
@@ -290,7 +290,7 @@ By the way, if you want to use your based stylesheet or a vendor CSS framework, 
 
 ```javascript
 import '../../theme/normalize.css';   // import a vendor stylesheet here
-import styles from './App.scss';      // import your based stylesheet here
+import styles from './styles.scss';      // import your based stylesheet here
 
 const App = ({ children }) => (
 
@@ -309,7 +309,7 @@ ${
     `<style>${
       // Include the vendor stylesheet and the stylesheets which you have used here
       require('../theme/normalize.css')._style +                
-      require('../containers/App/App.scss')._style +              
+      require('../containers/App/styles.scss')._style +              
     }</style>` : ''
 }
 
