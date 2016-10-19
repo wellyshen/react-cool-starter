@@ -2,7 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
+// const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
@@ -43,7 +43,7 @@ const getPlugins = () => {
         eslint: {
           failOnError: true,  // Disable js lint error terminating here
         },
-        postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+        // postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
         context: '/', // Required for the sourceMap of css/sass loader
         debug: isDev,
         minimize: !isDev,
