@@ -40,11 +40,7 @@ module.exports = {
   plugins: [
     // Setup global variables for server
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-        NODE_HOST: JSON.stringify(process.env.NODE_HOST),
-        NODE_PORT: parseInt(process.env.NODE_PORT, 10),
-      },
+      'process.env': { NODE_ENV: JSON.stringify('production') },
       __CLIENT__: false,
       __SERVER__: true,
       __DEV__: process.env.NODE_ENV !== 'production',

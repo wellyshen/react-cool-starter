@@ -57,16 +57,14 @@
       "command": "nodemon ./index.js --exec babel-node",
       "env": {
         "NODE_PATH": "./src",
-        "NODE_ENV": "development",
-        "NODE_PORT": 3000
+        "NODE_ENV": "development"
       }
     },
     "start:prod": {
       "command": "node ./index.js",
       "env": {
         "NODE_PATH": "./src",
-        "NODE_ENV": "production",
-        "NODE_PORT": 8080
+        "NODE_ENV": "production"
       }
     },
     "build:client": {
