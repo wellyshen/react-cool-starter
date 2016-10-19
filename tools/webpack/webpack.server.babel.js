@@ -45,11 +45,11 @@ module.exports = {
       __DEV__: process.env.NODE_ENV !== 'production',
     }),
     new webpack.IgnorePlugin(/\.(eot|woff|woff2|ttf|otf|svg|png|jpe?g|gif|webp|mp4|mp3|ogg|pdf)$/),
-    new webpack.optimize.UglifyJsPlugin({
+    /* new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
       sourceMap: true,
-    }),
+    }), */
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
   ],
   resolve: {
