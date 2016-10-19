@@ -5,11 +5,13 @@ import config from '../../config';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
+console.log(__CLIENT__);
+
 const App = ({ children }) => (
   <div className={styles.App}>
     <Helmet {...config.app} />
     <div className={styles.header}>
-      <img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
+      { __CLIENT__ && <img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />}
       <h1>{config.app.title}</h1>
     </div>
     <hr />
