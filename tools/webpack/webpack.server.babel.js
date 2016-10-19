@@ -29,6 +29,7 @@ module.exports = {
         query: {
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
+          plugins: ['transform-runtime'],
         },
       },
       { test: /\.json$/, loader: 'json' },
