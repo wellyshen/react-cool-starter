@@ -32,8 +32,8 @@ module.exports = {
         },
       },
       { test: /\.json$/, loader: 'json' },
-      { test: /\.css$/, loaders: ['css-loader/locals', 'postcss'] },
-      { test: /\.scss$/, loaders: ['css-loader/locals', 'postcss', 'sass'] },
+      { test: /\.css$/, loaders: ['css/locals', 'postcss'] },
+      { test: /\.scss$/, loaders: ['css/locals', 'postcss', 'sass'] },
     ],
   },
   plugins: [
