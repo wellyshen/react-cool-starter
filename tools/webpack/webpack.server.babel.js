@@ -35,7 +35,11 @@ module.exports = {
       { test: /\.json$/, loader: 'json' },
       { test: /\.css$/, loaders: ['css/locals', 'postcss'] },
       { test: /\.scss$/, loaders: ['css/locals', 'postcss', 'sass'] },
-      // { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'null' },
+      { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url' },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url' },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url' },
+      { test: /\.(jpe?g|png|gif)$/, loader: 'url' },
     ],
   },
   plugins: [
@@ -46,12 +50,6 @@ module.exports = {
       __SERVER__: true,
       __DEV__: process.env.NODE_ENV !== 'production',
     }),
-    new webpack.IgnorePlugin(/\.(eot|woff|woff2|ttf|otf|png|jpe?g|gif|svg|webp|mp4|mp3|ogg|pdf)$/),
-    /* new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false },
-      output: { comments: false },
-      sourceMap: true,
-    }), */
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
   ],
   resolve: {
