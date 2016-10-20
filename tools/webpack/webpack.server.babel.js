@@ -24,6 +24,12 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        loaders: 'eslint',
+      },
+      {
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
         query: {
@@ -44,6 +50,14 @@ module.exports = {
   },
   plugins: [
     // Setup global variables for server
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        // Javascript lint
+        eslint: {
+          failOnError: true,  // Disable js lint error terminating here
+        },
+      },
+    }),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify('production') },
       __CLIENT__: false,
