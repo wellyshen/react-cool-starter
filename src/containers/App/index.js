@@ -5,8 +5,6 @@ import config from '../../config';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-console.log(__CLIENT__);
-
 const App = ({ children }) => (
   <div className={styles.App}>
     <Helmet {...config.app} />

@@ -5,9 +5,6 @@ const webpack = require('webpack');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const nodeExternals = require('webpack-node-externals');
 
-const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./WIT.config')).development();
-
 module.exports = {
   target: 'node',
   externals: [nodeExternals({
@@ -38,7 +35,7 @@ module.exports = {
       { test: /\.json$/, loader: 'json' },
       { test: /\.css$/, loaders: ['css/locals', 'postcss'] },
       { test: /\.scss$/, loaders: ['css/locals', 'postcss', 'sass'] },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
+      // { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'null' },
     ],
   },
   plugins: [
@@ -49,14 +46,13 @@ module.exports = {
       __SERVER__: true,
       __DEV__: process.env.NODE_ENV !== 'production',
     }),
-    new webpack.IgnorePlugin(/\.(eot|woff|woff2|ttf|otf|png|jpe?g|gif|webp|mp4|mp3|ogg|pdf)$/),
+    new webpack.IgnorePlugin(/\.(eot|woff|woff2|svg|ttf|otf|png|jpe?g|gif|webp|mp4|mp3|ogg|pdf)$/),
     /* new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
       sourceMap: true,
     }), */
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
-    webpackIsomorphicToolsPlugin,
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
