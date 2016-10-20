@@ -46,7 +46,7 @@ module.exports = {
       __SERVER__: true,
       __DEV__: process.env.NODE_ENV !== 'production',
     }),
-    new webpack.IgnorePlugin(/\.(eot|woff|woff2|svg|ttf|otf|png|jpe?g|gif|webp|mp4|mp3|ogg|pdf)$/),
+    new webpack.IgnorePlugin(/\.(eot|woff|woff2|ttf|otf|png|jpe?g|gif|svg|webp|mp4|mp3|ogg|pdf)$/),
     /* new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
