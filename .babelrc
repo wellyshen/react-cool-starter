@@ -1,5 +1,4 @@
-// Main used for server side, the client & testing parts
-// are included in their webpack config files
+// Used for the server side of development enviroment only
 
 {
   "presets": ["es2015", "react", "stage-0"],
