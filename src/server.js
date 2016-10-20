@@ -89,6 +89,12 @@ app.get('*', (req, res) => {
           );
 
           res.status(200).send(renderHtmlPage(store, content));
+        })
+        .catch((err) => {
+          console.error(`==> 😭  Rendering routes error: ${err}`);
+        })
+        .catch((err) => {
+          console.error(`==> 😭  Rendering routes error: ${err}`);
         });
     }
   });
