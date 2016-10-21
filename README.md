@@ -78,7 +78,7 @@ npm install
 npm run start:production    # Building bundle and running production server
 ```
 
-Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
+Now the app should be running at [http://localhost:3000/](http://localhost:3000/)
 
 
 ## NPM Script Commands
@@ -88,8 +88,8 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `npm run <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Bundles the app to `./build` and run it on the production server at `localhost:8080`.
-`start:prod`|Run your app on the production server only at `localhost:8080`.
+`start:production`|Bundles the app to `./build` and run it on the production server at `localhost:3000`.
+`start:prod`|Run your app on the production server only at `localhost:3000`.
 `build`|Remove the previous client and server bundled stuff and bundle them to `./build`.
 `build:client`|Remove the previous client bundled stuff and bundle it to `./build/public/assets`.
 `build:client`|Remove the previous server bundled stuff and bundle it to `./build`.
@@ -103,6 +103,8 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `clean:server`|Remove the server bundled stuff from the `./build` folder.
 `clean:coverage`|Remove the `./coverage` folder to clean the code coverage report.
 
+You can change the URL and port through `./src/config/default.js` or setup it for production throught `./src/config/prod.js`.
+
 Note: If you get the the following message, try to run `npm run build` to fix it.
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
@@ -114,9 +116,8 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── build                             # The parent folder of bundled files (server side file will be placed here)
+├── build                             # Webpack bundled files will be place into it
 │   └── public                        # The Express server static path
-│       ├── assets                    # The client side files will be placed here
 │       └── favicon.ico               # Favicon is placed in the same path with the main HTML page       
 ├── src                               # App source code
 │   ├── config                        # App configuration settings
