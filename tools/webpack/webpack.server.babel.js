@@ -41,11 +41,14 @@ module.exports = {
       { test: /\.json$/, loader: 'json' },
       { test: /\.css$/, loaders: ['css/locals', 'postcss'] },
       { test: /\.scss$/, loaders: ['css/locals', 'postcss', 'sass'] },
-      { test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/, loader: 'url' },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url' },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url' },
-      { test: /\.(jpe?g|png|gif)$/, loader: 'url' },
+      {
+        test: /\.(png|jpe?g|gif|svg|woff2?|ttf|eot)$/,
+        loader: 'url',
+        query: {
+          name: '[hash].[ext]',
+          limit: 10000,
+        },
+      },
     ],
   },
   plugins: [
