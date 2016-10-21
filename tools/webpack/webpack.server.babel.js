@@ -63,6 +63,7 @@ module.exports = {
       __CLIENT__: false,
       __SERVER__: true,
       __DEV__: process.env.NODE_ENV !== 'production',
+      __DISABLE_SSR__: false,   // Disable server side render here
     }),
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
   ],
