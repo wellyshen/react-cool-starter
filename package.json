@@ -38,9 +38,9 @@
     "start": "better-npm-run start",
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "better-npm-run start:prod",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "npm run clean:client && better-npm-run build:client",
+    "build": "npm run build:server && npm run build:client",
     "build:server": "npm run clean:server && better-npm-run build:server",
+    "build:client": "npm run clean:client && better-npm-run build:client",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
@@ -91,11 +91,11 @@
         "NODE_ENV": "test"
       }
     },
-    "clean:client": {
-      "command": "rimraf ./build/public/assets"
-    },
     "clean:server": {
       "command": "rimraf ./build/server.js ./build/server.js.map"
+    },
+    "clean:client": {
+      "command": "rimraf ./build/public/assets"
     },
     "clean:coverage": {
       "command": "rimraf ./coverage"
@@ -179,7 +179,7 @@
     "nodemon": "^1.11.0",
     "null-loader": "^0.1.1",
     "phantomjs": "^2.1.7",
-    "postcss": "^5.2.4",
+    "postcss": "^5.2.5",
     "postcss-loader": "^1.0.0",
     "react-addons-test-utils": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.6",
