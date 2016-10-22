@@ -111,6 +111,7 @@ const getEntry = () => {
 
 // Setting webpack config
 module.exports = {
+  name: 'client',
   target: 'web',
   cache: isDev,
   devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',

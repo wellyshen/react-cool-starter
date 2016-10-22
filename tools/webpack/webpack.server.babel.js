@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
+  name: 'server',
   target: 'node',
   externals: [nodeExternals({
     // Load non-javascript files with extensions, presumably via loaders
