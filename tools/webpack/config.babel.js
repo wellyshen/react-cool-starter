@@ -135,7 +135,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
-        query: {
+        options: {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
