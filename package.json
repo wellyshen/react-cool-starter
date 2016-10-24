@@ -177,7 +177,7 @@
     "sinon": "^2.0.0-pre.3",
     "style-loader": "^0.13.1",
     "stylelint": "^7.5.0",
-    "stylelint-config-standard": "^13.0.2",
+    "stylelint-config-standard": "^14.0.0",
     "url-loader": "^0.5.7"
   }
 }
