@@ -33,7 +33,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
-        query: {
+        options: {
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
           plugins: ['transform-runtime'],
@@ -45,7 +45,7 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg|woff2?|ttf|eot)$/,
         loader: 'url',
-        query: {
+        options: {
           name: '[hash].[ext]',
           limit: 10000,
         },
