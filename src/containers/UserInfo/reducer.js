@@ -7,7 +7,7 @@ import {
   AN_USER_SUCCESS,
 } from './action';
 
-export default (state = Map({}), action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case AN_USER_REQUESTING:
       return state.merge({

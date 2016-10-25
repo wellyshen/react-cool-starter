@@ -3,7 +3,7 @@ require('babel-core/register'); // Enable runtime transpilation to use ES6/7 in 
 // Setup global variables for node
 global.__CLIENT__ = false;
 global.__SERVER__ = true;
-global.__DISABLE_SSR__ = false;   // Disable server side render here
+global.__DISABLE_SSR__ = true;   // Disable server side render here
 global.__DEV__ = process.env.NODE_ENV !== 'production';
 
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');

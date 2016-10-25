@@ -11,6 +11,7 @@ import {
 const initialState = Map({
   readyState: USERS_INVALID,
   list: null,
+  get:false
 });
 
 export default (state = initialState, action) => {

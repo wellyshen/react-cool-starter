@@ -14,7 +14,8 @@
     "global-require": 0,
     "no-underscore-dangle": 0,
     "no-console": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "linebreak-style":0
   },
   "globals": {
     "__CLIENT__": true,

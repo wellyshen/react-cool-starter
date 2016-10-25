@@ -39,7 +39,7 @@ const getPlugins = () => {
       options: {
         // Javascript lint
         eslint: {
-          failOnError: true,  // Disable js lint error terminating here
+          failOnError: false,  // Disable js lint error terminating here
         },
         context: '/',         // Required for the sourceMap of css/sass loader
         debug: isDev,
@@ -49,7 +49,7 @@ const getPlugins = () => {
     // Style lint
     new StyleLintPlugin({
       syntax: 'scss',
-      failOnError: true,      // Disable style lint error terminating here
+      failOnError: false,      // Disable style lint error terminating here
     }),
     // Setup global variables for app
     new webpack.DefinePlugin({
@@ -125,12 +125,12 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loaders: 'eslint',
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.jsx?$/,
+      //   exclude: /node_modules/,
+      //   loaders: 'eslint',
+      // },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
