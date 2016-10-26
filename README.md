@@ -467,4 +467,3 @@ There're some features or improvements I'd like to do in the near future. If you
 
 - [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)
 - [ ] Optimizing Webpack bundle performance
-- [ ] Wepback backend bundling
