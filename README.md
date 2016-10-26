@@ -459,3 +459,12 @@ If the hot reloading doesn't working, it might caused by the following error. To
 If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios) 
 
 > React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
+
+
+## To Do...
+
+There're some features or improvements I'd like to do in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
+
+- [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)
+- [ ] Optimizing Webpack bundle performance
+- [ ] Wepback backend bundling
