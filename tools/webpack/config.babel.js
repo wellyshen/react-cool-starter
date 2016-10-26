@@ -72,7 +72,7 @@ const getPlugins = () => {
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         filename: '[name].[chunkhash].js',
-        minChunks: 2,
+        minChunks: Infinity,
       }),
       new ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
       new webpack.optimize.UglifyJsPlugin({
