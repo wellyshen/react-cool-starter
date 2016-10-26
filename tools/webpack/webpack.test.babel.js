@@ -34,7 +34,7 @@ module.exports = {
         test: /sinon\/pkg\/sinon\.js/,
         loader: 'imports?define=>false,require=>false',
       },
-      { test: /\.(css|scss|png|jpe?g|gif|svg|woff2?|ttf|eot)$/, loader: 'null' },
+      { test: /\.(css|scss|png|jpe?g|gif|woff2?|ttf|eot|svg)$/, loader: 'null' },
     ],
   },
   // Required for enzyme to work properly

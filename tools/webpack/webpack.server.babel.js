@@ -42,14 +42,7 @@ module.exports = {
       { test: /\.json$/, loader: 'json' },
       { test: /\.css$/, loaders: ['css/locals', 'postcss'] },
       { test: /\.scss$/, loaders: ['css/locals', 'postcss', 'sass'] },
-      {
-        test: /\.(png|jpe?g|gif|svg|woff2?|ttf|eot)$/,
-        loader: 'url',
-        options: {
-          name: '[hash].[ext]',
-          limit: 10000,
-        },
-      },
+      { test: /\.(png|jpe?g|gif|svg|woff2?|ttf|eot)$/, loader: 'url?limit=10000' },
     ],
   },
   plugins: [
