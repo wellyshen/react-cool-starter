@@ -2,10 +2,10 @@ import React from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { Link } from 'react-router';
 
-import styles from './styles.scss';
+import './styles.scss';
 
 const UserList = ({ list }) => (
-  <div className={styles.UserList}>
+  <div className="UserList">
     <h4>User List</h4>
     <ul>
       {list.map(user => (

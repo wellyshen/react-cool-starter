@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import * as action from './action';
 import UserList from '../../components/UserList';
 
-import styles from './styles.scss';
+import './styles.scss';
 
 class Home extends Component {
   // Fetching data method for both server/client side rendering
@@ -45,7 +45,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className={styles.Home}>
+      <div className="Home">
         <Helmet title="Home" />
         {this.displayUserList()}
       </div>

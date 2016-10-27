@@ -1,10 +1,10 @@
 import React from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 
-import styles from './styles.scss';
+import './styles.scss';
 
 const UserCard = ({ info }) => (
-  <div className={styles.UserCard}>
+  <div className="UserCard">
     <h4>User Card</h4>
     <ul>
       <li>Name: {info.get('name')}</li>

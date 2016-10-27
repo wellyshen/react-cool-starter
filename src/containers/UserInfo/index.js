@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import * as action from './action';
 import UserCard from '../../components/UserCard';
 
-import styles from './styles.scss';
+import './styles.scss';
 
 class UserInfo extends Component {
   // Fetching data method for both server/client side rendering
@@ -45,7 +45,7 @@ class UserInfo extends Component {
 
   render() {
     return (
-      <div className={styles.UserInfo}>
+      <div className="UserInfo">
         <Helmet title="User Info" />
         {this.displayUserCard()}
       </div>
