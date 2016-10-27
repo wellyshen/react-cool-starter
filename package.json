@@ -131,8 +131,8 @@
     "webpack-isomorphic-tools": "^2.6.3"
   },
   "devDependencies": {
-    "babel-eslint": "^7.0.0",
-    "babel-loader": "^6.2.5",
+    "babel-eslint": "^7.1.0",
+    "babel-loader": "^6.2.6",
     "babel-plugin-istanbul": "^2.0.3",
     "babel-plugin-system-import-transformer": "^2.4.0",
     "babel-plugin-transform-runtime": "^6.15.0",
@@ -150,7 +150,6 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
-    "file-loader": "^0.9.0",
     "image-webpack-loader": "^3.0.0",
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
