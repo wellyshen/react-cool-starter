@@ -49,7 +49,7 @@ const getPlugins = () => {
     // Style lint
     new StyleLintPlugin({
       syntax: 'scss',
-      failOnError: true,      // Disable style lint error terminating here
+      failOnError: false,      // Disable style lint error terminating here
     }),
     // Setup global variables for app
     new webpack.DefinePlugin({
