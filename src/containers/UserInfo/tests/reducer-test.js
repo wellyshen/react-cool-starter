@@ -15,7 +15,7 @@ describe('reducer:userInfo', () => {
       reducer(undefined, {
         type: AN_USER_REQUESTING,
         userId: '1',
-      }
+      },
     ).toJS()).to.deep.equal({ 1: { readyState: AN_USER_REQUESTING } });
   });
 
@@ -25,7 +25,7 @@ describe('reducer:userInfo', () => {
         type: AN_USER_FAILURE,
         userId: '1',
         err: 'Oops! Something went wrong.',
-      }
+      },
     ).toJS()).to.deep.equal({
       1: {
         readyState: AN_USER_FAILURE,
@@ -45,7 +45,7 @@ describe('reducer:userInfo', () => {
           email: 'test@gmail.com',
           website: 'www.test.com',
         },
-      }).toJS()
+      }).toJS(),
     ).to.deep.equal({
       1: {
         readyState: AN_USER_SUCCESS,

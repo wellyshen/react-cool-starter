@@ -27,7 +27,7 @@ const renderApp = () => {
           <Router {...renderProps} />
         </Provider>
       </AppContainer>,
-      mountNode
+      mountNode,
     );
   });
 };

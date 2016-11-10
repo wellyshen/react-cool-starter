@@ -17,7 +17,7 @@ describe('<Home />', () => {
     wrapper = store => mount(
       <Provider store={store}>
         <Home />
-      </Provider>
+      </Provider>,
     );
   });
 

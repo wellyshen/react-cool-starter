@@ -85,7 +85,7 @@ app.get('*', (req, res) => {
           const content = renderToString(
             <Provider store={store}>
               <RouterContext {...renderProps} />
-            </Provider>
+            </Provider>,
           );
 
           res.status(200).send(renderHtmlPage(store, content));
