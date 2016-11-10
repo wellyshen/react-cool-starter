@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 'use strict'; // eslint-disable-line
 
 const path = require('path');
@@ -59,13 +61,13 @@ const getPlugins = () => {
       __DEV__: isDev,
     }),
     new webpack.NoErrorsPlugin(),
-    webpackIsomorphicToolsPlugin,
+    webpackIsomorphicToolsPlugin
   );
 
   if (isDev) {
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.IgnorePlugin(/webpack-stats\.json$/),
+      new webpack.IgnorePlugin(/webpack-stats\.json$/)
     );
   } else {
     plugins.push(
@@ -81,7 +83,7 @@ const getPlugins = () => {
         sourceMap: false,
       }),
       new webpack.optimize.OccurrenceOrderPlugin(true),
-      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.DedupePlugin()
     );
   }
 
