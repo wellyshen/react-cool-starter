@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 'use strict'; // eslint-disable-line
 
 const path = require('path');

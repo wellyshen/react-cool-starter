@@ -9,7 +9,7 @@ import {
 describe('reducer:Home', () => {
   it('should handle the initial state', () => {
     expect(
-      reducer(undefined, {}).toJS()
+      reducer(undefined, {}).toJS(),
     ).to.deep.equal({
       readyState: USERS_INVALID, list: null,
     });
@@ -19,7 +19,7 @@ describe('reducer:Home', () => {
     expect(
       reducer(undefined, {
         type: USERS_REQUESTING,
-      }
+      },
     ).toJS()).to.deep.equal({
       readyState: USERS_REQUESTING, list: null,
     });
@@ -30,7 +30,7 @@ describe('reducer:Home', () => {
       reducer(undefined, {
         type: USERS_FAILURE,
         err: 'Oops! Something went wrong.',
-      }).toJS()
+      }).toJS(),
     ).to.deep.equal({
       readyState: USERS_FAILURE,
       list: null,
@@ -43,7 +43,7 @@ describe('reducer:Home', () => {
       reducer(undefined, {
         type: USERS_SUCCESS,
         data: [{ id: '1', name: 'Welly' }],
-      }).toJS()
+      }).toJS(),
     ).to.deep.equal({
       readyState: USERS_SUCCESS,
       list: [{ id: '1', name: 'Welly' }],

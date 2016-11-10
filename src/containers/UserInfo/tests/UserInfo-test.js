@@ -17,7 +17,7 @@ describe('<UserInfo />', () => {
     wrapper = store => mount(
       <Provider store={store}>
         <UserInfo params={{ id: '1' }} />
-      </Provider>
+      </Provider>,
     );
   });
 
