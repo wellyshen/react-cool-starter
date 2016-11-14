@@ -68,13 +68,13 @@
       }
     },
     "build:client": {
-      "command": "webpack --progress --config ./tools/webpack/webpack.client.babel",
+      "command": "webpack --progress --display-error-details --config ./tools/webpack/webpack.client.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
     },
     "build:server": {
-      "command": "webpack --progress --config ./tools/webpack/webpack.server.babel",
+      "command": "webpack --progress --display-error-details --config ./tools/webpack/webpack.server.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
@@ -136,7 +136,7 @@
     "serve-favicon": "^2.3.0",
     "source-map-support": "^0.4.6",
     "stylelint-webpack-plugin": "^0.4.0",
-    "webpack": "^2.1.0-beta.25",
+    "webpack": "^2.1.0-beta.26",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2",
     "webpack-isomorphic-tools": "^2.6.4"
@@ -153,10 +153,10 @@
     "babel-preset-stage-0": "^6.16.0",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.0",
-    "coveralls": "^2.11.14",
+    "coveralls": "^2.11.15",
     "css-loader": "^0.25.0",
     "enzyme": "^2.6.0",
-    "eslint": "^3.9.1",
+    "eslint": "^3.10.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
@@ -174,7 +174,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "mocha": "^3.1.2",
-    "node-sass": "^3.11.2",
+    "node-sass": "^3.12.2",
     "nodemon": "^1.11.0",
     "null-loader": "^0.1.1",
     "phantomjs": "^2.1.7",

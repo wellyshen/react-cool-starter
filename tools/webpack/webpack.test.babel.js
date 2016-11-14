@@ -11,7 +11,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         options: {
           cacheDirectory: true,
           babelrc: false,
@@ -26,15 +26,15 @@ module.exports = {
           ],
         },
       },
-      { test: /\.json$/, loader: 'json' },
+      { test: /\.json$/, loader: 'json-loader' },
       // sinon.js--aliased for enzyme--expects/requires global vars.
       // imports-loader allows for global vars to be injected into the module.
       // See https://github.com/webpack/webpack/issues/304
       {
         test: /sinon\/pkg\/sinon\.js/,
-        loader: 'imports?define=>false,require=>false',
+        loader: 'imports-loader?define=>false,require=>false',
       },
-      { test: /\.(css|scss|png|jpe?g|gif|woff2?|ttf|eot|svg)$/, loader: 'null' },
+      { test: /\.(css|scss|png|jpe?g|gif|woff2?|ttf|eot|svg)$/, loader: 'null-loader' },
     ],
   },
   // Required for enzyme to work properly
