@@ -131,12 +131,12 @@ module.exports = {
         enforce: 'pre',
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: 'eslint',
+        loader: 'eslint-loader',
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         options: {
           cacheDirectory: isDev,
           babelrc: false,
@@ -144,26 +144,26 @@ module.exports = {
           plugins: ['transform-runtime', 'react-hot-loader/babel'],
         },
       },
-      { test: /\.json$/, loader: 'json' },
+      { test: /\.json$/, loader: 'json-loader' },
       {
         test: /\.css$/,
         loader: isDev ?
-          `style!css?localIdentName=[name]__[local].[hash:base64:5]&${CSSModules ? 'modules' : ''}&sourceMap&-minimize&importLoaders=1!postcss`
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: `css?${CSSModules ? 'modules' : ''}&sourceMap&importLoaders=1!postcss` }),
+          `style-loader!css-loader?localIdentName=[name]__[local].[hash:base64:5]&${CSSModules ? 'modules' : ''}&sourceMap&-minimize&importLoaders=1!postcss-loader`
+          : ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: `css-loader?${CSSModules ? 'modules' : ''}&sourceMap&importLoaders=1!postcss-loader` }),
       },
       {
         test: /\.scss$/,
         loader: isDev ?
-          `style!css?localIdentName=[name]__[local].[hash:base64:5]&${CSSModules ? 'modules' : ''}&sourceMap&-minimize&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap`
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: `css?${CSSModules ? 'modules' : ''}&sourceMap&importLoaders=2!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents` }),
+          `style-loader!css-loader?localIdentName=[name]__[local].[hash:base64:5]&${CSSModules ? 'modules' : ''}&sourceMap&-minimize&importLoaders=2!postcss-loader!sass-loader?outputStyle=expanded&sourceMap`
+          : ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: `css-loader?${CSSModules ? 'modules' : ''}&sourceMap&importLoaders=2!postcss-loader!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents` }),
       },
-      { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
+      { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url-loader?limit=10000' },
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
         // Any image below or equal to 10K will be converted to inline base64 instead
         loaders: [
-          'url?limit=10240',
-          'image-webpack?bypassOnDebug',  // Using for image optimization
+          'url-loader?limit=10240',
+          'image-webpack-loader?bypassOnDebug',  // Using for image optimization
         ],
       },
     ],
