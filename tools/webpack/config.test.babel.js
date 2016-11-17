@@ -40,9 +40,9 @@ module.exports = {
   // Required for enzyme to work properly
   externals: {
     cheerio: 'window',
-    'react/addons': true,
-    'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true,
+    'react/addons': 'react/addons',
+    'react/lib/ExecutionEnvironment': 'react/lib/ExecutionEnvironment',
+    'react/lib/ReactContext': 'react/lib/ReactContext',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
