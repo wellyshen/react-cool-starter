@@ -82,8 +82,7 @@ const getPlugins = () => {
         output: { comments: false },
         sourceMap: false,
       }),
-      new webpack.optimize.OccurrenceOrderPlugin(true),
-      new webpack.optimize.DedupePlugin()
+      new webpack.optimize.OccurrenceOrderPlugin(true)
     );
   }
 
