@@ -82,8 +82,7 @@ const getPlugins = () => {
         compress: { screw_ie8: true, warnings: false },
         output: { comments: false },
         sourceMap: false,
-      }),
-      new webpack.optimize.OccurrenceOrderPlugin(true)
+      })
     );
   }
 
