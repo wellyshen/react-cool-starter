@@ -174,4 +174,7 @@ module.exports = {
     ],
   },
   plugins: getPlugins(),
+  performance: {
+    hints: false,
+  },
 };
