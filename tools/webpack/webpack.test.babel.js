@@ -66,4 +66,7 @@ module.exports = {
     new webpack.IgnorePlugin(/\.json$/),
     new webpack.NoErrorsPlugin(),
   ],
+  performance: {
+    hints: false,
+  },
 };
