@@ -39,7 +39,6 @@ module.exports = {
           plugins: ['transform-runtime'],
         },
       },
-      { test: /\.json$/, loader: 'json-loader' },
       { test: /\.css$/, loaders: ['css-loader/locals', 'postcss-loader'] },
       { test: /\.scss$/, loaders: ['css-loader/locals', 'postcss-loader', 'sass-loader'] },
       { test: /\.(png|jpe?g|gif|svg|woff2?|ttf|eot)$/, loader: 'url-loader?limit=10000' },
