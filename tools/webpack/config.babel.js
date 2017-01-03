@@ -142,7 +142,6 @@ module.exports = {
           plugins: ['transform-runtime', 'react-hot-loader/babel'],
         },
       },
-      { test: /\.json$/, loader: 'json-loader' },
       {
         test: /\.css$/,
         loader: isDev ?
@@ -175,6 +174,6 @@ module.exports = {
   },
   plugins: getPlugins(),
   performance: {
-    hints: false,
+    hints: isDev ? false : 'warning',
   },
 };
