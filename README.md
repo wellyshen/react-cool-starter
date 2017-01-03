@@ -2,7 +2,7 @@
 
 A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router](https://github.com/reactjs/react-router) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
 
-The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader), [Immutable-js](https://facebook.github.io/immutable-js/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader), [Immutable-js](https://facebook.github.io/immutable-js/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
@@ -25,7 +25,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
 * [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [Express](https://expressjs.com/) server.
-* [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
+* [Webpack 2](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 * [nodemon]() to monitor for any changes in your node.js application and automatically restart the server.
@@ -187,7 +187,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 [React Router](https://github.com/reactjs/react-router) provides the dynamic routing by "Code-Splitting". It's great for building scableable apps (see the [document](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md) for the detail). 
 
-Here I use the `System.import` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7).
+Here I use the `System.import` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://webpack.js.org/).
 
 You can add your routes and async reducers in `./src/routes.js`. For example:
 
