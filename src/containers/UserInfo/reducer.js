@@ -1,5 +1,3 @@
-/* eslint new-cap:0 */
-
 import { Map, fromJS } from 'immutable';
 import {
   AN_USER_REQUESTING,
