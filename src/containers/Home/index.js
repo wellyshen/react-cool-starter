@@ -3,6 +3,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
+import { Map } from 'immutable';
 import * as action from './action';
 import UserList from '../../components/UserList';
 
@@ -55,12 +56,14 @@ class Home extends Component {
 
 Home.propTypes = {
   home: ImmutablePropTypes.map,
-  dispatch: PropTypes.func,
+  dispatch: PropTypes.func.isRequired,
 };
 
 Home.defaultProps = {
-  home: ImmutablePropTypes.map,
-  dispatch: PropTypes.func,
+  home: Map({
+    readyState: 'USERS_INVALID',
+    list: null,
+  }),
 };
 
 const mapStateToProps = state => ({ home: state.get('home') });

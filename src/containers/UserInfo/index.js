@@ -3,6 +3,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import shallowCompare from 'react-addons-shallow-compare';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
+import { Map } from 'immutable';
 import * as action from './action';
 import UserCard from '../../components/UserCard';
 
@@ -54,15 +55,13 @@ class UserInfo extends Component {
 }
 
 UserInfo.propTypes = {
-  dispatch: PropTypes.func,
-  params: PropTypes.objectOf(PropTypes.string),
+  dispatch: PropTypes.func.isRequired,
+  params: PropTypes.objectOf(PropTypes.string).isRequired,
   userInfo: ImmutablePropTypes.map,
 };
 
 UserInfo.defaultProps = {
-  dispatch: PropTypes.func,
-  params: PropTypes.objectOf(PropTypes.string),
-  userInfo: ImmutablePropTypes.map,
+  userInfo: Map({}),
 };
 
 const mapStateToProps = state => ({ userInfo: state.get('userInfo') });
