@@ -59,6 +59,12 @@ UserInfo.propTypes = {
   userInfo: ImmutablePropTypes.map,
 };
 
+UserInfo.defaultProps = {
+  dispatch: PropTypes.func,
+  params: PropTypes.objectOf(PropTypes.string),
+  userInfo: ImmutablePropTypes.map,
+};
+
 const mapStateToProps = state => ({ userInfo: state.get('userInfo') });
 
 export default connect(mapStateToProps)(UserInfo);

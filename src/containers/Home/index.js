@@ -58,6 +58,11 @@ Home.propTypes = {
   dispatch: PropTypes.func,
 };
 
+Home.defaultProps = {
+  home: ImmutablePropTypes.map,
+  dispatch: PropTypes.func,
+};
+
 const mapStateToProps = state => ({ home: state.get('home') });
 
 export default connect(mapStateToProps)(Home);

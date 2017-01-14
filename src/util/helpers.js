@@ -2,7 +2,7 @@ import { fromJS } from 'immutable';
 
 // The fake store creator for testing Components
 
-function storeFake(state) {
+export function storeFake(state) {
   return {
     default: () => {},
     subscribe: () => {},
@@ -13,7 +13,7 @@ function storeFake(state) {
 
 // Create enhanced history object for router
 /* istanbul ignore next */
-function createSelectLocationState(reducerName) {
+export function createSelectLocationState(reducerName) {
   let prevRoutingState;
   let prevRoutingStateJS;
 
@@ -28,8 +28,3 @@ function createSelectLocationState(reducerName) {
     return prevRoutingStateJS;
   };
 }
-
-module.exports = {
-  storeFake,
-  createSelectLocationState,
-};

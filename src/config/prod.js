@@ -1,7 +1,7 @@
 const defaultConfig = require('./default');
 
-const config = {
+const config = Object.assign({}, defaultConfig, {
   // Over write default settings here...
-};
+});
 
-module.exports = Object.assign({}, defaultConfig, config);
+export default config;
