@@ -55,7 +55,7 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
-        "NODE_PORT": 3000
+        "PORT": 3000
       }
     },
     "start:prod": {
@@ -63,7 +63,7 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
-        "NODE_PORT": 8080
+        "PORT": 8080
       }
     },
     "build": {
