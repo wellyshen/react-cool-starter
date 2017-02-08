@@ -15,6 +15,7 @@ export const fetchData = axios => (dispatch) => {
     })
     .catch((err) => {
       dispatch({ type: USERS_FAILURE, err });
+      throw err;
     });
 };
 
