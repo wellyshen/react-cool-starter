@@ -27,7 +27,7 @@ const shouldFetchData = (state, userId) => {
   const userInfo = state.getIn(['userInfo', userId]);
 
   // Preventing dobule fetching data in production
-  if (userInfo && userInfo.get('readyState') === AN_USER_SUCCESS) return false;
+  if (userInfo && userInfo.readyState === AN_USER_SUCCESS) return false;
 
   return true;
 };

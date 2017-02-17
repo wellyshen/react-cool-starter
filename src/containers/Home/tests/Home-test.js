@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
-import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
-import { storeFake } from '../../../util/helpers';
+import { mount } from 'enzyme';
+import { spy } from 'sinon';
+import { storeFake } from '../../../utils/helpers';
 import Home from '../index';
 import UserList from '../../../components/UserList';
 
@@ -29,7 +29,6 @@ describe('<Home />', () => {
 
     wrapper(store);
 
-    // eslint-disable-next-line no-unused-expressions
     expect(Home.prototype.componentDidMount.calledOnce).to.equal(true);
 
     componentDidMountSpy.restore();
@@ -66,7 +65,7 @@ describe('<Home />', () => {
         list: [{ id: '1', name: 'Welly' }],
       },
     });
-    const mockData = store.getState().get('home').get('list');
+    const mockData = store.getState().home.list;
 
     // eslint-disable-next-line no-unused-expressions
     expect(wrapper(store).contains(<UserList list={mockData} />)).to.be.true;

@@ -17,6 +17,7 @@ module.exports = {
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
           plugins: [
+            'syntax-dynamic-import',
             'transform-runtime',
             ['istanbul', {
               exclude: [
@@ -31,7 +32,7 @@ module.exports = {
       // See https://github.com/webpack/webpack/issues/304
       {
         test: /sinon\/pkg\/sinon\.js/,
-        loader: 'imports-loader?define=>false,require=>false',
+        loader: 'imports-loader?define=>false&require=>false',
       },
       { test: /\.(css|scss|png|jpe?g|gif|woff2?|ttf|eot|svg)$/, loader: 'null-loader' },
     ],
@@ -45,10 +46,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
-    modules: [
-      'src',
-      'node_modules',
-    ],
+    modules: ['src', 'node_modules'],
     alias: {
       // Required for enzyme to work properly
       sinon: 'sinon/pkg/sinon',
@@ -58,9 +56,9 @@ module.exports = {
     // Setup global variables for app
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify('development') },
-      __CLIENT__: true,
-      __SERVER__: false,
-      __DEV__: process.env.NODE_ENV !== 'production',
+      __CLIENT__: JSON.stringify(true),
+      __SERVER__: JSON.stringify(false),
+      __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
     }),
     new webpack.IgnorePlugin(/\.json$/),
     new webpack.NoEmitOnErrorsPlugin(),

@@ -1,5 +1,6 @@
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
+import _ from 'lodash';
 
 export default (store, content) => {
   const head = Helmet.rewind();
@@ -23,7 +24,7 @@ export default (store, content) => {
 
         ${
           /* Styles will be presented in production with webpack extract text plugin */
-          Object.keys(assets.styles).map(style =>
+          _.keys(assets.styles).map(style =>
             `<link href="${assets.styles[style]}" media="screen, projection" rel="stylesheet" type="text/css" />`)
             .join('\n')
         }
@@ -31,7 +32,7 @@ export default (store, content) => {
         ${
           /* Styles will be presented in development mode
              I put all of the styles here to smoothen the flick */
-          Object.keys(assets.styles).length === 0 ?
+          _.keys(assets.styles).length === 0 ?
             `<style>${
               require('../theme/normalize.css')._style +
               require('../containers/App/styles.scss')._style +
@@ -57,7 +58,7 @@ export default (store, content) => {
 
         ${
           /* Reverse the order of scripts for accessing vendor.js first */
-          Object.keys(assets.javascript).reverse().map(script =>
+          _.keys(assets.javascript).reverse().map(script =>
           `<script src="${assets.javascript[script]}"></script>`)
           .join('\n')
         }

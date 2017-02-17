@@ -1,5 +1,3 @@
-/* eslint import/no-extraneous-dependencies:0 */
-
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import sinon from 'sinon';

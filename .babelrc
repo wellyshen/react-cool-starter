@@ -3,5 +3,5 @@
 
 {
   "presets": ["es2015", "react", "stage-0"],
-  "plugins": ["system-import-transformer"]
+  "plugins": ["syntax-dynamic-import", "dynamic-import-node"]
 }

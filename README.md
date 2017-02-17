@@ -2,11 +2,11 @@
 
 A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router](https://github.com/reactjs/react-router) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
 
-The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader), [Immutable-js](https://facebook.github.io/immutable-js/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
-> 👻 I'm curious what this starter boilerplate helps you guys do anything? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us. 
+> 👻 I'm curious what this starter boilerplate helps you guys do anything? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
 
 [![Build Status](https://travis-ci.org/wellyshen/react-cool-starter.svg?branch=master)](https://travis-ci.org/wellyshen/react-cool-starter)
 [![dependencies Status](https://david-dm.org/wellyshen/react-cool-starter/status.svg)](https://david-dm.org/wellyshen/react-cool-starter)
@@ -23,20 +23,18 @@ Really cool starter boilerplate with the most popular technologies:
 * [React](https://facebook.github.io/react/) as the view.
 * [React Router](https://github.com/reactjs/react-router) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
-* [Immutable-js](https://facebook.github.io/immutable-js/) provides persistent data collections which increase efficiency and simplicity.
 * [Express](https://expressjs.com/) server.
 * [Webpack 2](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
-* [nodemon]() to monitor for any changes in your node.js application and automatically restart the server.
+* [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
 * [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
 * [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 * [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 * [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
 * [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server.
-* [Webpack Hot Middleware]() allows you to add hot reloading into the Express server.
-* [react-addons-shallow-compare](https://facebook.github.io/react/docs/shallow-compare.html) for a performance boost, it works perfectly with immutable data structure.
+* [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
@@ -64,7 +62,7 @@ Really cool starter boilerplate with the most popular technologies:
 ```bash
 git clone https://github.com/wellyshen/react-cool-starter.git
 cd react-cool-starter
-``` 
+```
 
 **2. Install all of the npm packages:**
 
@@ -121,7 +119,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── prod.js                 # Production settings (overrides the default settings)
 │   ├── components                  # Reusable components (including scss/testing files)
 │   ├── containers                  # Container components (including assets/action/reducer/scss/testing files)
-│   ├── util                        # App-wide util (including HTML render view, helpers)
+│   ├── utils                       # App-wide utils (including HTML render view, helpers)
 │   ├── redux                       # Redux related configuration scripts
 │   │   ├── reducers.js             # The root reducer (registry and injection)
 │   │   └── store.js                # Configure and instrument Redux store   
@@ -130,7 +128,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── routes.js                   # Routes shared between client and server side
 │   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
 ├── tools                           # Project related configurations (testing/build etc.)
-│   ├── openBrowser                 # Utility for opening Google Chrome 
+│   ├── openBrowser                 # Utility for opening Google Chrome
 │   ├── testing                     # Testing configuration settings
 │   │   ├── karma.conf.js           # Karma configuration file
 │   │   └── test-bunlder.js         # Karma pre-processor settings file
@@ -185,7 +183,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Adding Routes and Async Reducers
 
-[React Router](https://github.com/reactjs/react-router) provides the dynamic routing by "Code-Splitting". It's great for building scableable apps (see the [document](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md) for the detail). 
+[React Router](https://github.com/reactjs/react-router) provides the dynamic routing by "Code-Splitting". It's great for building scableable apps (see the [document](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md) for the detail).
 
 Here I use the `System.import` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://webpack.js.org/).
 
@@ -203,25 +201,25 @@ export default function createRoutes(store) {
 
     childRoutes: [
       {
-        path: '/path',                                                         // Define your route path here
+        path: '/path',                                                        // Define your route path here
         getComponent(location, cb) {
           const importModules = Promise.all([
-            System.import('./containers/MyNewRouteComponent'),                 // Add your route component here
-            System.import('./containers/MyNewRouteComponent/myAsyncReducer'),  // Add your async reducer here
+            import('./containers/MyNewRouteComponent'),                       // Add your route component here
+            import('./containers/MyNewRouteComponent/myAsyncReducer'),        // Add your async reducer here
           ]);
 
           const renderRoute = loadModule(cb);
 
           importModules
             .then(([Component, reducer]) => {
-              injectReducer(store, 'userInfo', reducer.default);               // Inject your async reducer 
-                                                                               // to the store
+              injectReducer(store, 'userInfo', reducer.default);              // Inject your async reducer
+                                                                              // to the store
               renderRoute(Component);
             })
             .catch(errorLoading);
         },
       },
-      
+
       // ...
 
     ],
@@ -294,7 +292,7 @@ const App = ({ children }) => (
 );
 ```
 
-For the better development experience, don't forget to include those files in the `./src/util/renderHtmlPage.js`, for example:
+For the better development experience, don't forget to include those files in the `./src/utils/renderHtmlPage.js`, for example:
 
 ```javascript
 // ...
@@ -318,7 +316,7 @@ It's super easy to render the image and font both on client and server, the usag
 Using image:
 
 ```javascript
-// Require an image 
+// Require an image
 <img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
 ```
 
@@ -381,7 +379,7 @@ Then invoke the actions in `componentDidMount`. This ensures that if the compone
 ```javascript
 componentDidMount() {
   const { dispatch, params } = this.props;
-  
+
   // Invoke the action for client rendering
   UserInfo.fetchData(dispatch, params);
 }
@@ -389,27 +387,19 @@ componentDidMount() {
 
 ### Boost App Performance by Shallow Compare
 
-If your React component's render function is "pure" (in other words, it renders the same result given the same props and state), you can use [shallowCompare](https://facebook.github.io/react/docs/shallow-compare.html) with `shouldComponentUpdate` for preventing it from re-render.
+If your React component's render function is "pure" (in other words, it renders the same result given the same props and state), you can use [React.PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent), which implements `shouldComponentUpdate()` with a shallow prop and state comparison for preventing it from re-render. See the [Optimizing Performance](https://facebook.github.io/react/docs/optimizing-performance.html#examples) topic for more info.
 
-Luckily, we writing our stores using [Immutable-js](https://facebook.github.io/immutable-js/), the immutable data structures provides you a cheap and less verbose way to track changes on objects, which is all we need to implement `shouldComponentUpdate`. See the [React Advanced Performance](https://facebook.github.io/react/docs/advanced-performance.html#shouldcomponentupdate-in-action) topic for more info.
-
-How Shallow Compare is practiced:
+How we implemented the optimizing:
 
 ```javascript
-import shallowCompare from 'react-addons-shallow-compare';
+import React, { PureComponent } from 'react';
 
 // ...
 
-class Home extends Component {
+class Home extends PureComponent {  // Use PureComponent instead of Component
 
   // ...
 
-  shouldComponentUpdate(nextProps, nextState) {
-    // Implement the Shallow Compare helper function
-    return shallowCompare(this, nextProps, nextState);
-  }
-
-  // ...
 }
 ```
 
@@ -429,6 +419,7 @@ By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-pl
   // ...
 
   plugins: [
+    'syntax-dynamic-import',
     'transform-runtime',
     ['istanbul', {
       exclude: [
@@ -450,7 +441,7 @@ If the hot reloading doesn't working, it might caused by the following error. To
 
 > Refused to execute script from 'app.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
 
-If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios) 
+If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios)
 
 > React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
 
@@ -460,5 +451,4 @@ If you run the example of the app. And you encounter the checksum error like bel
 There're some features or improvements I'd like to do in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
 - [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)
-- [ ] Optimizing Webpack bundle performance
-- [ ] Wepback backend bundling
+- [ ] Type checking with [Flow](https://flowtype.org/)

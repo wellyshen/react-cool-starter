@@ -1,5 +1,3 @@
-/* eslint-disable comma-dangle */
-
 'use strict'; // eslint-disable-line
 
 const path = require('path');
@@ -15,28 +13,35 @@ const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('.
 
 // Disable CSSModules here
 const CSSModules = true;
-// Register vendors here
+
+// Register vendors here (don't including "react-dom" and "redbox-react"),
+// or you will get errors
 const vendor = [
-  'react', 'react-dom', 'react-addons-shallow-compare',
-  'redux', 'react-redux',
+  'react',
+  // 'react-dom',
+  'redux',
+  'react-redux',
   'redux-thunk',
-  'immutable',
   'react-hot-loader',
-  'react-immutable-proptypes',
-  'redux-immutable',
   'react-router',
   'react-router-redux',
   'react-helmet',
   'axios',
-  'redbox-react',
+  // 'redbox-react',
   'chalk',
+  'lodash',
 ];
 
 // Setting the plugins for development/prodcution
 const getPlugins = () => {
-  const plugins = [];
-
-  plugins.push(
+  // Common
+  const plugins = [
+    new ExtractTextPlugin({
+      filename: '[name].[contenthash:8].css',
+      allChunks: true,
+      disable: isDev, // Disable css extracting on development
+      ignoreOrder: CSSModules,
+    }),
     new webpack.LoaderOptionsPlugin({
       options: {
         // Javascript lint
@@ -56,49 +61,59 @@ const getPlugins = () => {
     // Setup global variables for app
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
-      __CLIENT__: true,
-      __SERVER__: false,
-      __DEV__: isDev,
+      __CLIENT__: JSON.stringify(true),
+      __SERVER__: JSON.stringify(false),
+      __DEV__: JSON.stringify(isDev),
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    webpackIsomorphicToolsPlugin
-  );
+    webpackIsomorphicToolsPlugin,
+  ];
 
-  if (isDev) {
+  if (isDev) {  // For development
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.IgnorePlugin(/webpack-stats\.json$/)
+      // Prints more readable module names in the browser console on HMR updates
+      new webpack.NamedModulesPlugin(),
+      new webpack.IgnorePlugin(/webpack-stats\.json$/)  // eslint-disable-line comma-dangle
     );
   } else {
-    plugins.push(
+    plugins.push( // For production
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        filename: '[name].[chunkhash].js',
+        // Enable browser to cache the "vendor" by adding the plus "manifest",
+        // please refer to "https://webpack.js.org/guides/code-splitting-libraries/#manifest-file"
+        names: ['vendor', 'manifest'],
         minChunks: Infinity,
       }),
-      new ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: true }),
+      new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.UglifyJsPlugin({
-        compress: { screw_ie8: true, warnings: false },
-        output: { comments: false },
-        sourceMap: false,
-      })
+        sourceMap: true,
+        beautify: false,
+        mangle: { screw_ie8: true },
+        compress: {
+          screw_ie8: true,  // React doesn't support IE8
+          warnings: false,
+          unused: true,
+          dead_code: true,
+        },
+        output: { screw_ie8: true, comments: false },
+      })  // eslint-disable-line comma-dangle
     );
   }
 
   return plugins;
 };
 
-// Setting  the entry for development/prodcution
+// Setting the entry for development/prodcution
 const getEntry = () => {
-  let entry;
+  // For development
+  let entry = [
+    'react-hot-loader/patch',
+    'webpack-hot-middleware/client?reload=true',
+    './src/client.js',
+  ];
 
-  if (isDev) {
-    entry = [
-      'react-hot-loader/patch',
-      'webpack-hot-middleware/client?reload=true',
-      './src/client.js',
-    ];
-  } else {
+  // For prodcution
+  if (!isDev) {
     entry = {
       main: './src/client.js',
       // Register vendors here
@@ -119,15 +134,15 @@ module.exports = {
   output: {
     path: path.join(process.cwd(), './public/assets'),
     publicPath: '/assets/',
-    // Don't use hashes in dev mode for better performance
-    filename: isDev ? '[name].js' : '[name].[chunkhash].js',
-    chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash].chunk.js',
+    // Don't use chunkhash in development it will increase compilation time
+    filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
+    chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash:8].chunk.js',
   },
   module: {
     rules: [
       {
-        enforce: 'pre',
         test: /\.jsx?$/,
+        enforce: 'pre',
         exclude: /node_modules/,
         loader: 'eslint-loader',
       },
@@ -139,38 +154,84 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
-          plugins: ['transform-runtime', 'react-hot-loader/babel'],
+          plugins: [
+            'syntax-dynamic-import',
+            'transform-runtime',
+            'react-hot-loader/babel',
+          ],
         },
       },
       {
         test: /\.css$/,
-        loader: isDev ?
-          `style-loader!css-loader?localIdentName=[name]__[local].[hash:base64:5]&${CSSModules ? 'modules' : ''}&sourceMap&-minimize&importLoaders=1!postcss-loader`
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: `css-loader?${CSSModules ? 'modules' : ''}&sourceMap&importLoaders=1!postcss-loader` }),
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                sourceMap: true,
+                modules: CSSModules,
+                localIdentName: isDev ? '[name]__[local].[hash:base64:5]' : '[hash:base64:5]',
+                minimize: !isDev,
+              },
+            },
+            'postcss-loader',
+          ],
+        }),
       },
       {
         test: /\.scss$/,
-        loader: isDev ?
-          `style-loader!css-loader?localIdentName=[name]__[local].[hash:base64:5]&${CSSModules ? 'modules' : ''}&sourceMap&-minimize&importLoaders=2!postcss-loader!sass-loader?outputStyle=expanded&sourceMap`
-          : ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: `css-loader?${CSSModules ? 'modules' : ''}&sourceMap&importLoaders=2!postcss-loader!sass-loader?outputStyle=expanded&sourceMap&sourceMapContents` }),
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+                sourceMap: true,
+                modules: CSSModules,
+                localIdentName: isDev ? '[name]__[local].[hash:base64:5]' : '[hash:base64:5]',
+                minimize: !isDev,
+              },
+            },
+            'postcss-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                outputStyle: 'expanded',
+                sourceMap: true,
+                sourceMapContents: !isDev,
+              },
+            },
+          ],
+        }),
       },
-      { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url-loader?limit=10000' },
+      {
+        test: /\.(woff2?|ttf|eot|svg)$/,
+        loader: 'url-loader',
+        options: { limit: 10000 },
+      },
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
         // Any image below or equal to 10K will be converted to inline base64 instead
-        loaders: [
-          'url-loader?limit=10240',
-          'image-webpack-loader?bypassOnDebug',  // Using for image optimization
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 10240 },
+          },
+          // Using for image optimization
+          {
+            loader: 'image-webpack-loader',
+            options: { bypassOnDebug: true },
+          },
         ],
       },
     ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
-    modules: [
-      'src',
-      'node_modules',
-    ],
+    modules: ['src', 'node_modules'],
   },
   plugins: getPlugins(),
 };

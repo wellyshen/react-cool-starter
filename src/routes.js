@@ -18,8 +18,8 @@ export default function createRoutes(store) {
         path: '/',
         getComponent(nextState, cb) {
           const importModules = Promise.all([
-            System.import('./containers/Home'),
-            System.import('./containers/Home/reducer'),
+            import('./containers/Home'),
+            import('./containers/Home/reducer'),
           ]);
 
           const renderRoute = loadModule(cb);
@@ -37,8 +37,8 @@ export default function createRoutes(store) {
         path: '/UserInfo/:id',
         getComponent(nextState, cb) {
           const importModules = Promise.all([
-            System.import('./containers/UserInfo'),
-            System.import('./containers/UserInfo/reducer'),
+            import('./containers/UserInfo'),
+            import('./containers/UserInfo/reducer'),
           ]);
 
           const renderRoute = loadModule(cb);
@@ -55,7 +55,7 @@ export default function createRoutes(store) {
       {
         path: '*',
         getComponent(location, cb) {
-          System.import('./containers/NotFound')
+          import('./containers/NotFound')
             .then(loadModule(cb))
             .catch(errorLoading);
         },

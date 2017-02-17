@@ -25,9 +25,9 @@ const shouldFetchData = (state) => {
   // or your reducer hot reloading won't updated on the view
   if (__DEV__) return true;
 
-  const home = state.get('home');
+  const home = state.home;
 
-  if (home.get('readyState') === USERS_SUCCESS) return false; // Preventing double fetching data
+  if (home.readyState === USERS_SUCCESS) return false; // Preventing double fetching data
 
   return true;
 };

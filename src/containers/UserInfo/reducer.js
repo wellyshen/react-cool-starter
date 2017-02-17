@@ -1,31 +1,32 @@
-import { Map, fromJS } from 'immutable';
+import _ from 'lodash';
+
 import {
   AN_USER_REQUESTING,
   AN_USER_FAILURE,
   AN_USER_SUCCESS,
 } from './action';
 
-export default (state = Map({}), action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case AN_USER_REQUESTING:
-      return state.merge({
-        [action.userId]: Map({
+      return _.assign({}, state, {
+        [action.userId]: {
           readyState: AN_USER_REQUESTING,
-        }),
+        },
       });
     case AN_USER_FAILURE:
-      return state.merge({
-        [action.userId]: Map({
+      return _.assign({}, state, {
+        [action.userId]: {
           readyState: AN_USER_FAILURE,
-          err: fromJS(action.err),
-        }),
+          err: action.err,
+        },
       });
     case AN_USER_SUCCESS:
-      return state.merge({
-        [action.userId]: Map({
+      return _.assign({}, state, {
+        [action.userId]: {
           readyState: AN_USER_SUCCESS,
-          info: fromJS(action.data),
-        }),
+          info: action.data,
+        },
       });
     default:
       return state;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { mount } from 'enzyme'; // eslint-disable-line import/no-extraneous-dependencies
-import { spy } from 'sinon';  // eslint-disable-line import/no-extraneous-dependencies
-import { storeFake } from '../../../util/helpers';
+import { mount } from 'enzyme';
+import { spy } from 'sinon';
+import { storeFake } from '../../../utils/helpers';
 import UserInfo from '../index';
 import UserCard from '../../../components/UserCard';
 
@@ -29,7 +29,6 @@ describe('<UserInfo />', () => {
 
     wrapper(store);
 
-    // eslint-disable-next-line no-unused-expressions
     expect(UserInfo.prototype.componentDidMount.calledOnce).to.equal(true);
 
     componentDidMountSpy.restore();
@@ -77,7 +76,7 @@ describe('<UserInfo />', () => {
         },
       },
     });
-    const mockData = store.getState().get('userInfo').get('1').get('info');
+    const mockData = store.getState().userInfo['1'].info;
 
     // eslint-disable-next-line no-unused-expressions
     expect(wrapper(store).contains(<UserCard info={mockData} />)).to.be.true;

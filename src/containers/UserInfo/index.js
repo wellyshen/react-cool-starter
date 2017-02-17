@@ -1,15 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-import ImmutablePropTypes from 'react-immutable-proptypes';
-import shallowCompare from 'react-addons-shallow-compare';
+import React, { PureComponent, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import { Map } from 'immutable';
 import * as action from './action';
 import UserCard from '../../components/UserCard';
 
 import styles from './styles.scss';
 
-class UserInfo extends Component {
+class UserInfo extends PureComponent {
   // Fetching data method for both server/client side rendering
   static fetchData(dispatch, params) {
     return Promise.all([
@@ -24,24 +21,19 @@ class UserInfo extends Component {
     UserInfo.fetchData(dispatch, params);
   }
 
-  // Prevent the components which with the same props and state are rendered repeatly
-  shouldComponentUpdate(nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState);
-  }
-
   displayUserCard = () => {
     const { userInfo, params } = this.props;
-    const userInfoById = userInfo.get(params.id);
+    const userInfoById = userInfo[params.id];
 
-    if (!userInfoById || userInfoById.get('readyState') === action.AN_USER_REQUESTING) {
+    if (!userInfoById || userInfoById.readyState === action.AN_USER_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (userInfoById.get('readyState') === action.AN_USER_FAILURE) {
+    if (userInfoById.readyState === action.AN_USER_FAILURE) {
       return <p>Oops, Failed to load info!</p>;
     }
 
-    return <UserCard info={userInfoById.get('info')} />;
+    return <UserCard info={userInfoById.info} />;
   }
 
   render() {
@@ -57,13 +49,29 @@ class UserInfo extends Component {
 UserInfo.propTypes = {
   dispatch: PropTypes.func.isRequired,
   params: PropTypes.objectOf(PropTypes.string).isRequired,
-  userInfo: ImmutablePropTypes.map,
+  userInfo: PropTypes.shape({
+    readyState: PropTypes.string,
+    info: PropTypes.shape({
+      name: PropTypes.string,
+      phone: PropTypes.string,
+      email: PropTypes.string,
+      website: PropTypes.string,
+    }),
+  }),
 };
 
 UserInfo.defaultProps = {
-  userInfo: Map({}),
+  userInfo: {
+    readyState: '',
+    info: {
+      name: '',
+      phone: '',
+      email: '',
+      website: '',
+    },
+  },
 };
 
-const mapStateToProps = state => ({ userInfo: state.get('userInfo') });
+const mapStateToProps = ({ userInfo }) => ({ userInfo });
 
 export default connect(mapStateToProps)(UserInfo);

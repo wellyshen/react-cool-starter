@@ -3,17 +3,12 @@ import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
 import { match, Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { fromJS } from 'immutable';
 import { AppContainer } from 'react-hot-loader';
 import configureStore from './redux/store';
-import { createSelectLocationState } from './util/helpers';
 
-// redux-immutable only allow immutable obj
-const initialState = fromJS(window.__INITIAL_STATE__);
+const initialState = window.__INITIAL_STATE__;
 const store = configureStore(initialState);
-const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: createSelectLocationState('routing'),
-});
+const history = syncHistoryWithStore(browserHistory, store);
 const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
