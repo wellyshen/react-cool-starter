@@ -14,11 +14,10 @@ const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('.
 // Disable CSSModules here
 const CSSModules = true;
 
-// Register vendors here (don't including "react-dom" and "redbox-react"),
-// or you will get errors
+// Register vendors here
 const vendor = [
   'react',
-  // 'react-dom',
+  'react-dom',
   'redux',
   'react-redux',
   'redux-thunk',
@@ -27,7 +26,7 @@ const vendor = [
   'react-router-redux',
   'react-helmet',
   'axios',
-  // 'redbox-react',
+  'redbox-react',
   'chalk',
   'lodash',
 ];
@@ -78,12 +77,7 @@ const getPlugins = () => {
     );
   } else {
     plugins.push( // For production
-      new webpack.optimize.CommonsChunkPlugin({
-        // Enable browser to cache the "vendor" by adding the plus "manifest",
-        // please refer to "https://webpack.js.org/guides/code-splitting-libraries/#manifest-file"
-        names: ['vendor', 'manifest'],
-        minChunks: Infinity,
-      }),
+      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
       new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,

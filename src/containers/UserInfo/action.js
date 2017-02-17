@@ -24,7 +24,7 @@ const shouldFetchData = (state, userId) => {
   // or your reducer hot reloading won't updated on the view
   if (__DEV__) return true;
 
-  const userInfo = state.getIn(['userInfo', userId]);
+  const userInfo = state.userInfo[userId];
 
   // Preventing dobule fetching data in production
   if (userInfo && userInfo.readyState === AN_USER_SUCCESS) return false;
