@@ -185,7 +185,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 [React Router](https://github.com/reactjs/react-router) provides the dynamic routing by "Code-Splitting". It's great for building scableable apps (see the [document](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md) for the detail).
 
-Here I use the `System.import` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://webpack.js.org/).
+Here I use the `import()` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://webpack.js.org/).
 
 You can add your routes and async reducers in `./src/routes.js`. For example:
 
@@ -298,7 +298,7 @@ For the better development experience, don't forget to include those files in th
 // ...
 
 ${
-  Object.keys(assets.styles).length === 0 ?
+  _.keys(assets.styles).length === 0 ?
     `<style>${
       // Include the vendor stylesheet and the stylesheets which you have used here
       require('../theme/normalize.css')._style +                
