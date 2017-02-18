@@ -17,7 +17,6 @@ module.exports = {
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
           plugins: [
-            'syntax-dynamic-import',
             'transform-runtime',
             ['istanbul', {
               exclude: [

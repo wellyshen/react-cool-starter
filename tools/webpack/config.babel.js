@@ -148,11 +148,7 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
-          plugins: [
-            'syntax-dynamic-import',
-            'transform-runtime',
-            'react-hot-loader/babel',
-          ],
+          plugins: ['transform-runtime', 'react-hot-loader/babel'],
         },
       },
       {

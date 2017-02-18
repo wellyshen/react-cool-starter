@@ -419,7 +419,6 @@ By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-pl
   // ...
 
   plugins: [
-    'syntax-dynamic-import',
     'transform-runtime',
     ['istanbul', {
       exclude: [
