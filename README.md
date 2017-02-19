@@ -47,6 +47,7 @@ Really cool starter boilerplate with the most popular technologies:
 * 404 error page and redirect handling.
 * [karma](https://karma-runner.github.io/1.0/index.html), [mocha](https://mochajs.org/), [enzyme](https://github.com/airbnb/enzyme), [chai](http://chaijs.com/) and [sinon](https://github.com/sinonjs/sinon) as the integrated solution for wrting unit tests.
 * Testing code coverage support.
+* [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
 
 
 ## Requirements
@@ -64,16 +65,16 @@ git clone https://github.com/wellyshen/react-cool-starter.git
 cd react-cool-starter
 ```
 
-**2. Install all of the npm packages:**
+**2. Install all of the dependencies:**
 
 ```bash
-npm install
+yarn install
 ```
 
 **3. Start to run it:**
 
 ```bash
-npm run start:production    # Building bundle and running production server
+yarn run start:production    # Building bundle and running production server
 ```
 
 Now the app should be running at [http://localhost:3000/](http://localhost:3000/)
@@ -83,7 +84,7 @@ Now the app should be running at [http://localhost:3000/](http://localhost:3000/
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. All of the scripts are listed as following:
 
-`npm run <script>`|Description
+`yarn run <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
 `start:production`|Bundles the app to `./build` and run it on the production server at `localhost:3000`.
@@ -103,7 +104,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 
 You can change the URL and port through `./src/config/default.js` or setup it for production throught `./src/config/prod.js`.
 
-Note: If you get the the following message, try to run `npm run build` to fix it.
+Note: If you get the the following message, try to run `yarn run build` to fix it.
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 

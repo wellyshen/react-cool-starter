@@ -37,21 +37,21 @@
   "homepage": "https://github.com/wellyshen/react-cool-starter",
   "scripts": {
     "start": "better-npm-run start",
-    "start:production": "npm run build && npm run start:prod",
+    "start:production": "yarn run build && yarn run start:prod",
     "start:prod": "better-npm-run start:prod",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "npm run clean:client && better-npm-run build:client",
-    "build:server": "npm run clean:server && better-npm-run build:server",
-    "lint": "npm run lint:js && npm run lint:style",
+    "build": "yarn run build:client && yarn run build:server",
+    "build:client": "yarn run clean:client && better-npm-run build:client",
+    "build:server": "yarn run clean:server && better-npm-run build:server",
+    "lint": "yarn run lint:js && yarn run lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "test": "better-npm-run test",
-    "test:watch": "npm test -- --no-single-run",
-    "clean:all": "npm run clean:client && npm run clean:server && npm run clean:coverage",
+    "test:watch": "yarn test -- --no-single-run",
+    "clean:all": "yarn run clean:client && yarn run clean:server && yarn run clean:coverage",
     "clean:client": "better-npm-run clean:client",
     "clean:server": "better-npm-run clean:server",
     "clean:coverage": "better-npm-run clean:coverage",
-    "coveralls": "better-npm-run coveralls && npm run test:clean"
+    "coveralls": "better-npm-run coveralls && yarn run test:clean"
   },
   "betterScripts": {
     "start": {
