@@ -14,7 +14,7 @@ import chalk from 'chalk';
 import createRoutes from './routes';
 import configureStore from './redux/store';
 import renderHtmlPage from './utils/renderHtmlPage';
-import config from './config';
+import { port, host } from './config';
 
 const app = express();
 
@@ -95,13 +95,13 @@ app.get('*', (req, res) => {
   });
 });
 
-if (config.port) {
-  app.listen(config.port, config.host, (err) => {
+if (port) {
+  app.listen(port, host, (err) => {
     if (err) console.error(`==> 😭  OMG!!! ${err}`);
 
-    console.info(chalk.green(`==> 🌎  Listening at http://${config.host}:${config.port}`));
+    console.info(chalk.green(`==> 🌎  Listening at http://${host}:${port}`));
     // Open Chrome
-    require('../tools/openBrowser').default(config.port);
+    require('../tools/openBrowser').default(port);
   });
 } else {
   console.error(chalk.red('==> 😭  OMG!!! No PORT environment variable has been specified'));

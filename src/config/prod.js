@@ -1,9 +1,6 @@
-import _ from 'lodash';
-
+const _ = require('lodash');
 const defaultConfig = require('./default');
 
-const config = _.assign({}, defaultConfig, {
+module.exports = _.assign({}, defaultConfig, {
   // Over write default settings here...
 });
-
-export default config;
