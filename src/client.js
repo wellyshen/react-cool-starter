@@ -6,6 +6,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 import configureStore from './redux/store';
 
+console.log('CLIENT __DEV__ ===> ', __DEV__);
+console.log('CLIENT __NODE__ENV__ ===> ', process.env.NODE_ENV);
+
 const initialState = window.__INITIAL_STATE__;
 const store = configureStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store);

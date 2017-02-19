@@ -40,7 +40,7 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: [
           {
             loader: 'css-loader/locals',
@@ -52,22 +52,6 @@ module.exports = {
               localIdentName: '[hash:base64:5]',
             },
           },
-          'postcss-loader',
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'css-loader/locals',
-            options: {
-              modules: CSSModules,
-              context: path.join(process.cwd(), './src'),
-              localIdentName: '[hash:base64:5]',
-            },
-          },
-          'postcss-loader',
-          'sass-loader',
         ],
       },
       {
