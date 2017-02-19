@@ -3,6 +3,8 @@
 
 coverage
 node_modules
-public/assets
+build/server.js
+build/server.js.map
+build/public/assets
 webpack-assets.json
 webpack-stats.json
