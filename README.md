@@ -395,7 +395,9 @@ componentDidMount() {
 
 ### Boost App Performance by Shallow Compare
 
-If your React component's render function is "pure" (in other words, it renders the same result given the same props and state), you can use [React.PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent), which implements `shouldComponentUpdate()` with a shallow prop and state comparison for preventing it from re-render. See the [Optimizing Performance](https://facebook.github.io/react/docs/optimizing-performance.html#examples) topic for more info.
+If your React component's render() function renders the same result given the same props and state, you can use [React.PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent) for a performance boost.
+
+React.PureComponent is exactly like React.Component but implements `shouldComponentUpdate()` with a shallow prop and state comparison. See the [Optimizing Performance](https://facebook.github.io/react/docs/optimizing-performance.html#examples) topic for more info.
 
 How we implemented the optimizing:
 
