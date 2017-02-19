@@ -76,7 +76,7 @@ npm install
 npm run start:production    # Building bundle and running production server
 ```
 
-Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
+Now the app should be running at [http://localhost:3000/](http://localhost:3000/)
 
 
 ## NPM Script Commands
@@ -86,17 +86,22 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `npm run <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Bundle your app to `./public/assets` and run it on the production server at `localhost:8080`.
-`start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Remove the previous bundled stuff and bundle your app to `./public/assets`.
+`start:production`|Bundles the app to `./build` and run it on the production server at `localhost:3000`.
+`start:prod`|Run your app on the production server only at `localhost:3000`.
+`build`|Remove the previous client and server bundled stuff and bundle them to `./build`.
+`build:client`|Remove the previous client bundled stuff and bundle it to `./build/public/assets`.
+`build:client`|Remove the previous server bundled stuff and bundle it to `./build`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `test`|Run testing once.
 `test:watch`|Run testing on every test file change.
-`clean:all`|Remove the `./public/assets` and the `./coverage` folder.
-`clean:build`|Remove the `./public/assets` folder to clean the bundled stuff.
+`clean:all`|Remove the client/server bundled stuff and the coverage report.
+`clean:client`|Remove the `./build/public/assets` folder to clean the client bundled stuff.
+`clean:server`|Remove the server bundled stuff from the `./build` folder.
 `clean:coverage`|Remove the `./coverage` folder to clean the code coverage report.
+
+You can change the URL and port through `./src/config/default.js` or setup it for production throught `./src/config/prod.js`.
 
 Note: If you get the the following message, try to run `npm run build` to fix it.
 
@@ -109,34 +114,36 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── public                          # Server static files path
-│   ├── assets                      # All the bundled files will be placed into it
-│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
-├── src                             # App source code
-│   ├── config                      # App configuration settings
-│   │   ├── default.js              # Default settings
-│   │   ├── index.js                # Configuration entry point
-│   │   └── prod.js                 # Production settings (overrides the default settings)
-│   ├── components                  # Reusable components (including scss/testing files)
-│   ├── containers                  # Container components (including assets/action/reducer/scss/testing files)
-│   ├── utils                       # App-wide utils (including HTML render view, helpers)
-│   ├── redux                       # Redux related configuration scripts
-│   │   ├── reducers.js             # The root reducer (registry and injection)
-│   │   └── store.js                # Configure and instrument Redux store   
-│   ├── theme                       # App-wide style, vendor style, generally settings
-│   ├── client.js                   # App bootstrap and rendering (webpack entry)
-│   ├── routes.js                   # Routes shared between client and server side
-│   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
-├── tools                           # Project related configurations (testing/build etc.)
-│   ├── openBrowser                 # Utility for opening Google Chrome
-│   ├── testing                     # Testing configuration settings
-│   │   ├── karma.conf.js           # Karma configuration file
-│   │   └── test-bunlder.js         # Karma pre-processor settings file
-│   ├── webpack                     # Webpack configuration settings
-│   │   ├── config.babel.js         # Webpack configuration file
-│   │   ├── config.test.babel.js    # Webpack configuration file for testing (for karma config)
-│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file        
-└── index.js                        # App start point
+├── build                             # Webpack bundled files will be place into it
+│   └── public                        # The Express server static path
+│       └── favicon.ico               # Favicon is placed in the same path with the main HTML page       
+├── src                               # App source code
+│   ├── config                        # App configuration settings
+│   │   ├── default.js                # Default settings
+│   │   ├── index.js                  # Configuration entry point
+│   │   └── prod.js                   # Production settings (overrides the default settings)
+│   ├── components                    # Reusable components (including scss/testing files)
+│   ├── containers                    # Container components (including assets/action/reducer/scss/testing files)
+│   ├── utils                         # App-wide util (including HTML render view, helpers)
+│   ├── redux                         # Redux related configuration scripts
+│   │   ├── reducers.js               # The root reducer (registry and injection)
+│   │   └── store.js                  # Configure and instrument Redux store   
+│   ├── theme                         # App-wide style, vendor style, generally settings
+│   ├── client.js                     # App bootstrap and rendering (webpack entry)
+│   ├── routes.js                     # Routes shared between client and server side
+│   └── server.js                     # Express server (with webpack dev/hot middlewares)                  
+├── tools                             # Project related configurations (testing/build etc.)
+│   ├── openBrowser                   # Utility for opening Google Chrome
+│   ├── testing                       # Testing configuration settings
+│   │   ├── karma.conf.js             # Karma configuration file
+│   │   └── test-bunlder.js           # Karma pre-processor settings file
+│   ├── webpack                       # Webpack configuration settings
+│   │   ├── config.js                 # Configuration for CSSModules, vendor registering
+│   │   ├── webpack.client.babel.js   # Webpack configuration for client
+│   │   ├── webpack.server.babel.js   # Webpack configuration for server
+│   │   ├── config.test.babel.js      # Webpack configuration file for testing (for karma config)
+│   │   └── WIT.config.js             # Webpack Isomorphic Tools configuration file        
+└── index.js                          # App start point
 ```
 
 
@@ -262,7 +269,7 @@ render() {
 }
 ```
 
-Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.babel.js`):
+Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.js`):
 
 ```javascript
 import './styles.scss';
@@ -282,8 +289,8 @@ render() {
 By the way, if you want to use your based stylesheet or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
 
 ```javascript
-import '../../theme/normalize.css';     // import a vendor stylesheet here
-import styles from './styles.scss';     // import your based stylesheet here
+import '../../theme/normalize.css';   // import a vendor stylesheet here
+import styles from './styles.scss';      // import your based stylesheet here
 
 const App = ({ children }) => (
 
@@ -407,9 +414,9 @@ class Home extends PureComponent {  // Use PureComponent instead of Component
 
 The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit tests, it uses [karma](https://karma-runner.github.io/1.0/index.html) as the test runner, and uses [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. Moreover it also uses [chai](http://chaijs.com/) as the assertion library and uses [sinon](https://github.com/sinonjs/sinon) to provide the standalone test spies, stubs and mocks. The unit tests focus on four parts as below:
 
+* Actions
 * Containers
 * Components
-* Actions
 * Reducers
 
 By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) to instruments your code with Istanbul coverage, the report is generated in `./coverage` folder. You can configure `./tools/webpack/config.test.babel.js` to ignore the files which you don't want to cover. For example:
@@ -449,5 +456,5 @@ If you run the example of the app. And you encounter the checksum error like bel
 
 There're some features or improvements I'd like to do in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
-- [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)
 - [ ] Type checking with [Flow](https://flowtype.org/)
+- [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)

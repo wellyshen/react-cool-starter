@@ -4,32 +4,13 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const { CSSModules, vendor } = require('./config');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
 
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./WIT.config')).development(isDev);
-
-// Disable CSSModules here
-const CSSModules = true;
-
-// Register vendors here
-const vendor = [
-  'react',
-  'react-dom',
-  'redux',
-  'react-redux',
-  'redux-thunk',
-  'react-hot-loader',
-  'react-router',
-  'react-router-redux',
-  'react-helmet',
-  'axios',
-  'redbox-react',
-  'chalk',
-  'lodash',
-];
 
 // Setting the plugins for development/prodcution
 const getPlugins = () => {
@@ -57,7 +38,7 @@ const getPlugins = () => {
       syntax: 'scss',
       failOnError: true,      // Disable style lint error terminating here
     }),
-    // Setup global variables for app
+    // Setup enviorment variables for client
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
       __CLIENT__: JSON.stringify(true),
@@ -120,13 +101,14 @@ const getEntry = () => {
 
 // Setting webpack config
 module.exports = {
+  name: 'client',
   target: 'web',
   cache: isDev,
   devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
   context: path.join(process.cwd()),
   entry: getEntry(),
   output: {
-    path: path.join(process.cwd(), './public/assets'),
+    path: path.join(process.cwd(), './build/public/assets'),
     publicPath: '/assets/',
     // Don't use chunkhash in development it will increase compilation time
     filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
@@ -162,6 +144,9 @@ module.exports = {
                 importLoaders: 1,
                 sourceMap: true,
                 modules: CSSModules,
+                // "context" and "localIdentName" need to be the same with server config,
+                // or the style will flick when page first loaded
+                context: path.join(process.cwd(), './src'),
                 localIdentName: isDev ? '[name]__[local].[hash:base64:5]' : '[hash:base64:5]',
                 minimize: !isDev,
               },
@@ -181,6 +166,7 @@ module.exports = {
                 importLoaders: 2,
                 sourceMap: true,
                 modules: CSSModules,
+                context: path.join(process.cwd(), './src'),
                 localIdentName: isDev ? '[name]__[local].[hash:base64:5]' : '[hash:base64:5]',
                 minimize: !isDev,
               },
