@@ -458,3 +458,4 @@ There're some features or improvements I'd like to do in the near future. If you
 
 - [ ] Type checking with [Flow](https://flowtype.org/)
 - [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)
+- [ ] Upgrading to [React Router v4](https://reacttraining.com/react-router/)
