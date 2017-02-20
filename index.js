@@ -18,6 +18,6 @@ global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('./tools/webp
       require('./src/server');
     } else {
       // $FlowFixMe: server.js will be generated during compiling
-      require('./build/server');
+      require('./build/server');  // eslint-disable-line import/no-unresolved
     }
   });
