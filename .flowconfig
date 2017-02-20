@@ -1,8 +1,17 @@
 [ignore]
 <PROJECT_ROOT>/build/.*
-
-# Including these files causes issues
 .*/node_modules/stylelint/.*
+
+[include]
+
+[libs]
+flow_declare/globalVariables.js
+
+[options]
+module.name_mapper='^\(.*\)\.\(css\|scss\)$' -> '<PROJECT_ROOT>/flow_declare/CSSModule.js.flow'
+
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment= \\(.\\|\n\\)*\\$FlowIssue
 
 [version]
 ^0.39.0
