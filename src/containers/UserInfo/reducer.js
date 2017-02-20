@@ -1,5 +1,4 @@
 import _ from 'lodash';
-
 import {
   AN_USER_REQUESTING,
   AN_USER_FAILURE,
