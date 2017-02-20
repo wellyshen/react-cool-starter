@@ -15,6 +15,6 @@ global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('./tools/webp
     if (__DEV__) {
       require('./src/server');
     } else {
-      require('./build/server');
+      require('./build/server');  // eslint-disable-line import/no-unresolved
     }
   });

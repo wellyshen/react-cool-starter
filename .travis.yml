@@ -14,13 +14,13 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 script:
-  - npm run lint
-  - npm test
-  - npm run build
+  - yarn lint
+  - yarn test
+  - yarn build
 
 notifications:
   email:
     on_failure: change
 
 after_success:
-  - npm run coveralls
+  - yarn coveralls
