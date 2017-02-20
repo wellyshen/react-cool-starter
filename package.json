@@ -45,6 +45,7 @@
     "lint": "yarn run lint:js && yarn run lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
+    "flow": "better-npm-run flow",
     "test": "better-npm-run test",
     "test:watch": "yarn test -- --no-single-run",
     "clean:all": "yarn run clean:client && yarn run clean:server && yarn run clean:coverage",
@@ -84,6 +85,9 @@
     },
     "lint:style": {
       "command": "stylelint \"./src/**/*.css\""
+    },
+    "flow": {
+      "command": "flow; test $? -eq 0 -o $? -eq 2"
     },
     "test": {
       "command": "karma start ./tools/testing/karma.conf.js --single-run",
@@ -136,6 +140,7 @@
     "babel-loader": "^6.3.2",
     "babel-plugin-dynamic-import-node": "^1.0.0",
     "babel-plugin-istanbul": "^4.0.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
@@ -153,6 +158,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "flow-bin": "^0.39.0",
     "image-webpack-loader": "^3.2.0",
     "imports-loader": "^0.7.0",
     "karma": "^1.4.1",
@@ -171,7 +177,6 @@
     "postcss": "^5.2.14",
     "postcss-loader": "^1.3.1",
     "react-addons-test-utils": "^15.4.2",
-    "react-hot-loader": "^3.0.0-beta.6",
     "redux-mock-store": "^1.2.2",
     "rimraf": "^2.6.0",
     "sass-loader": "^6.0.1",
