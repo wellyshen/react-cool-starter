@@ -7,17 +7,6 @@ import UserList from '../../components/UserList';
 import styles from './styles.scss';
 
 class Home extends PureComponent {
-  static propTypes = {
-    home: PropTypes.shape({
-      readyState: PropTypes.string,
-      list: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
-        name: PropTypes.string,
-      })),
-    }),
-    dispatch: PropTypes.func.isRequired,
-  };
-
   // Fetching data method for both server/client side rendering
   static fetchData(dispatch) {
     return Promise.all([
@@ -57,16 +46,16 @@ class Home extends PureComponent {
   }
 }
 
-// Home.propTypes = {
-//   home: PropTypes.shape({
-//     readyState: PropTypes.string,
-//     list: PropTypes.arrayOf(PropTypes.shape({
-//       id: PropTypes.number,
-//       name: PropTypes.string,
-//     })),
-//   }),
-//   dispatch: PropTypes.func.isRequired,
-// };
+Home.propTypes = {
+  home: PropTypes.shape({
+    readyState: PropTypes.string,
+    list: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+    })),
+  }),
+  dispatch: PropTypes.func.isRequired,
+};
 
 Home.defaultProps = {
   home: {
