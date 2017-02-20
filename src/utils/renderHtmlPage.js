@@ -23,15 +23,15 @@ export default (store, content) => {
         ${head.link.toString()}
 
         ${
-          /* Styles will be presented in production with webpack extract text plugin */
+          // Styles will be presented in production with webpack extract text plugin
           _.keys(assets.styles).map(style =>
             `<link href="${assets.styles[style]}" media="screen, projection" rel="stylesheet" type="text/css" />`)
             .join('\n')
         }
 
         ${
-          /* Styles will be presented in development mode
-             I put all of the styles here to smoothen the flick */
+          // Styles will be presented in development mode
+          // I put all of the styles here to smoothen the flick
           _.keys(assets.styles).length === 0 ?
             `<style>${
               require('../theme/normalize.css')._style +
@@ -57,7 +57,7 @@ export default (store, content) => {
         <![endif]-->
 
         ${
-          /* Reverse the order of scripts for accessing vendor.js first */
+          // Reverse the order of scripts for accessing vendor.js first
           _.keys(assets.javascript).reverse().map(script =>
           `<script src="${assets.javascript[script]}"></script>`)
           .join('\n')
