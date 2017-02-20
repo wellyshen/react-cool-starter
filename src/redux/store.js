@@ -4,8 +4,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import chalk from 'chalk';
-import type { Store } from '../types';
 import createReducer from './reducers';
+import type { Store } from '../types';
 
 export default (initialState: Object = {}) => {
   const middlewares = [

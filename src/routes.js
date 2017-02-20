@@ -1,3 +1,5 @@
+/* @flow */
+
 import chalk from 'chalk';
 import { injectReducer } from './redux/reducers';
 import App from './containers/App';

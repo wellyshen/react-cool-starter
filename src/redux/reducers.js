@@ -1,7 +1,10 @@
+/* @flow */
+
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
+import type { Store } from '../types';
 
-export default function createReducer(asyncReducers) {
+export default function createReducer(asyncReducers: Object = {}) {
   return combineReducers({
     routing,
     // Register the inital async reducers, otherwise you will get the warning of Redux
@@ -13,7 +16,7 @@ export default function createReducer(asyncReducers) {
 
 /* eslint-disable */
 // Using for injecting the async reducers
-export const injectReducer = (store, name, reducer) => {
+export const injectReducer = (store: Store, name: string, reducer: Object) => {
   store.asyncReducers[name] = reducer
   store.replaceReducer(createReducer(store.asyncReducers))
 }

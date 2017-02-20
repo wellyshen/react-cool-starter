@@ -8,11 +8,11 @@
 # Official "flow-typed" repository definitions
 # tools/flow/flow-typed/npm
 # The app's global variables are declared here
-tools/flow/definition
+tools/flow/definitions
 
 [options]
 # Avoid CSS modules error
-module.name_mapper='^\(.*\)\.\(css\|scss\)$' -> '<PROJECT_ROOT>/tools/flow/stub/CSSModules.js'
+module.name_mapper='^\(.*\)\.\(css\|scss\)$' -> '<PROJECT_ROOT>/tools/flow/stubs/CSSModules.js'
 
 suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
 suppress_comment= \\(.\\|\n\\)*\\$FlowIssue

@@ -1,8 +1,11 @@
+/* @flow */
+
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
 import _ from 'lodash';
+import type { Store } from '../types';
 
-export default (store, content) => {
+export default (store: Store, content: string = '') => {
   const head = Helmet.rewind();
   const assets = webpackIsomorphicTools.assets();
 
@@ -23,23 +26,30 @@ export default (store, content) => {
         ${head.link.toString()}
 
         ${
-          /* Styles will be presented in production with webpack extract text plugin */
+          // Styles will be presented in production with webpack extract text plugin
           _.keys(assets.styles).map(style =>
             `<link href="${assets.styles[style]}" media="screen, projection" rel="stylesheet" type="text/css" />`)
             .join('\n')
         }
 
         ${
-          /* Styles will be presented in development mode
-             I put all of the styles here to smoothen the flick */
+          // Styles will be presented in development mode
+          // I put all of the styles here to smoothen the flick
           _.keys(assets.styles).length === 0 ?
             `<style>${
+              // $FlowFixMe: It's not an issue
               require('../theme/normalize.css')._style +
+              // $FlowFixMe: It's not an issue
               require('../containers/App/styles.scss')._style +
+              // $FlowFixMe: It's not an issue
               require('../containers/Home/styles.scss')._style +
+              // $FlowFixMe: It's not an issue
               require('../containers/UserInfo/styles.scss')._style +
+              // $FlowFixMe: It's not an issue
               require('../containers/NotFound/styles.scss')._style +
+              // $FlowFixMe: It's not an issue
               require('../components/UserList/styles.scss')._style +
+              // $FlowFixMe: It's not an issue
               require('../components/UserCard/styles.scss')._style
             }</style>` : ''
         }
@@ -57,7 +67,7 @@ export default (store, content) => {
         <![endif]-->
 
         ${
-          /* Reverse the order of scripts for accessing vendor.js first */
+          // Reverse the order of scripts for accessing vendor.js first
           _.keys(assets.javascript).reverse().map(script =>
           `<script src="${assets.javascript[script]}"></script>`)
           .join('\n')
