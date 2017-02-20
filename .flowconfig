@@ -8,7 +8,7 @@
 # Official "flow-typed" repository definitions
 # tools/flow/flow-typed/npm
 # The app's global variables are declared here
-tools/flow/definition/globalVariables.js
+tools/flow/definition
 
 [options]
 # Avoid CSS modules error
