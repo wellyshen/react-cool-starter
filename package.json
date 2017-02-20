@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -21,6 +21,7 @@
     "express",
     "webpack 2",
     "es6",
+    "flow",
     "starter kit",
     "boilerpate",
     "hot reloading",
