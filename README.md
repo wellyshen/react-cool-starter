@@ -104,10 +104,6 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 
 You can change the URL and port through `./src/config/default.js` or setup it for production throught `./src/config/prod.js`.
 
-Note: If you get the the following message, try to run `yarn build` to fix it.
-
-> webpack-isomorphic-tools (waiting for the first webpack build to finish)
-
 
 ## App Structure
 
@@ -446,9 +442,9 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-If the hot reloading doesn't working, it might caused by the following error. To solve the problem, just click the **refresh button** from your browser.
+If you get the the following message during developing, try to run `yarn build` to fix it.
 
-> Refused to execute script from 'app.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+> webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
 If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios)
 
