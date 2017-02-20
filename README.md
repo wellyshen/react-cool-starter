@@ -74,7 +74,7 @@ yarn install
 **3. Start to run it:**
 
 ```bash
-yarn run start:production    # Building bundle and running production server
+yarn start:production    # Building bundle and running production server
 ```
 
 Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
@@ -84,11 +84,11 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. All of the scripts are listed as following:
 
-`yarn run <script>`|Description
+`yarn <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Bundles the app to `./build` and run it on the production server at `localhost:3000`.
-`start:prod`|Run your app on the production server only at `localhost:3000`.
+`start:production`|Bundles the app to `./build` and run it on the production server at `localhost:8080`.
+`start:prod`|Run your app on the production server only at `localhost:8080`.
 `build`|Remove the previous client and server bundled stuff and bundle them to `./build`.
 `build:client`|Remove the previous client bundled stuff and bundle it to `./build/public/assets`.
 `build:client`|Remove the previous server bundled stuff and bundle it to `./build`.
@@ -101,12 +101,6 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `clean:client`|Remove the `./build/public/assets` folder to clean the client bundled stuff.
 `clean:server`|Remove the server bundled stuff from the `./build` folder.
 `clean:coverage`|Remove the `./coverage` folder to clean the code coverage report.
-
-You can change the URL and port through `./src/config/default.js` or setup it for production throught `./src/config/prod.js`.
-
-Note: If you get the the following message, try to run `yarn run build` to fix it.
-
-> webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
 
 ## App Structure
@@ -446,9 +440,9 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-If the hot reloading doesn't working, it might caused by the following error. To solve the problem, just click the **refresh button** from your browser.
+If you get the the following message during developing, try to run `yarn build` to fix it.
 
-> Refused to execute script from 'app.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+> webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
 If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios)
 
