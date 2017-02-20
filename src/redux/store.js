@@ -1,10 +1,13 @@
+/* @flow */
+
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import chalk from 'chalk';
+import type { Store } from '../types';
 import createReducer from './reducers';
 
-export default (initialState) => {
+export default (initialState: Object = {}) => {
   const middlewares = [
     thunk.withExtraArgument(axios),
   ];
@@ -15,7 +18,7 @@ export default (initialState) => {
       window.devToolsExtension() : f => f,
   ];
 
-  const store = createStore(createReducer(), initialState, compose(...enhancers));
+  const store: Store = createStore(createReducer(), initialState, compose(...enhancers));
 
   store.asyncReducers = {}; // Async reducer registry
 

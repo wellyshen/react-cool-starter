@@ -5,6 +5,7 @@
 [include]
 
 [libs]
+flow-typed/
 flow_declare/globalVariables.js
 
 [options]
