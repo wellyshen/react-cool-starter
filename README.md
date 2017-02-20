@@ -74,7 +74,7 @@ yarn install
 **3. Start to run it:**
 
 ```bash
-yarn run start:production    # Building bundle and running production server
+yarn start:production    # Building bundle and running production server
 ```
 
 Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
@@ -84,7 +84,7 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. All of the scripts are listed as following:
 
-`yarn run <script>`|Description
+`yarn <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
 `start:production`|Bundles the app to `./build` and run it on the production server at `localhost:3000`.
@@ -104,7 +104,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 
 You can change the URL and port through `./src/config/default.js` or setup it for production throught `./src/config/prod.js`.
 
-Note: If you get the the following message, try to run `yarn run build` to fix it.
+Note: If you get the the following message, try to run `yarn build` to fix it.
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
