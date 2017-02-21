@@ -14,6 +14,7 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 script:
+  - yarn flow
   - yarn lint
   - yarn test
   - yarn build
