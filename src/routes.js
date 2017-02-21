@@ -1,4 +1,4 @@
-/* Flow not support dyanmic import at this moment yet */
+/* No flow in this file, waiting for dynamic import support */
 
 import chalk from 'chalk';
 import { injectReducer } from './redux/reducers';
