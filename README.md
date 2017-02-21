@@ -37,6 +37,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
+* [Flow](https://flowtype.org/) as the static type checker for javascript.
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 * CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
@@ -95,6 +96,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
+`flow`|Run type checking for `.js` files.
 `test`|Run testing once.
 `test:watch`|Run testing on every test file change.
 `clean:all`|Remove the client/server bundled stuff and the coverage report.
@@ -128,6 +130,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── routes.js                     # Routes shared between client and server side
 │   └── server.js                     # Express server (with webpack dev/hot middlewares)                  
 ├── tools                             # Project related configurations (testing/build etc.)
+│   ├── flow                          # Flow definitions and module aliasing
 │   ├── openBrowser                   # Utility for opening Google Chrome
 │   ├── testing                       # Testing configuration settings
 │   │   ├── karma.conf.js             # Karma configuration file
@@ -181,7 +184,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Stateless Functional Components
 
-[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain JavaScript functions. In the starter boilerplate I use it wherever possible.
+[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain javascript functions. In the starter boilerplate I use it wherever possible.
 
 ### Adding Routes and Async Reducers
 
@@ -256,7 +259,7 @@ import styles from './styles.scss';
 
 render() {
   return (
-    <div className={styles.Home}> // The className matches one of CSS classes in your SCSS file
+    <div className={styles.Home}>   // The className matches one of CSS classes in your SCSS file
       <Helmet title="Home" />
       {this.displayUserList()}
     </div>
@@ -273,7 +276,7 @@ import './styles.scss';
 
 render() {
   return (
-    <div className="Home"> // Use the CSS class as normal
+    <div className="Home">    // Use the CSS class as normal
       <Helmet title="Home" />
       {this.displayUserList()}
     </div>
@@ -285,7 +288,7 @@ By the way, if you want to use your based stylesheet or a vendor CSS framework, 
 
 ```javascript
 import '../../theme/normalize.css';   // import a vendor stylesheet here
-import styles from './styles.scss';      // import your based stylesheet here
+import styles from './styles.scss';   // import your based stylesheet here
 
 const App = ({ children }) => (
 
@@ -406,6 +409,16 @@ class Home extends PureComponent {  // Use PureComponent instead of Component
 
 }
 ```
+
+
+### Type Checking by Flow
+
+[Flow](https://flowtype.org/docs/react.html), a static type checker for javascript. It adds static typing to javascript to improve developer productivity and code quality. In particular, static typing offers benefits like early error checking, which helps you avoid certain kinds of runtime failures, and code intelligence, which aids code maintenance, navigation, transformation, and optimization.
+
+Flow’s static analysis makes building large web apps with React safe by tracking the types of props and state. Flow understands which props are required and also supports default props. (learn more about [Flow with React](https://flowtype.org/docs/react.html))
+
+I love to write React with Flow, it
+
 
 ### JavaScript and Style Lint
 
