@@ -131,7 +131,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── routes.js                     # Routes shared between client and server side
 │   └── server.js                     # Express server (with webpack dev/hot middlewares)                  
 ├── tools                             # Project related configurations (testing/build etc.)
-│   ├── flow                          # Flow definitions and module aliasing
+│   ├── flow                          # Flow types, interface, module aliasing definitions
 │   ├── openBrowser                   # Utility for opening Google Chrome
 │   ├── testing                       # Testing configuration settings
 │   │   ├── karma.conf.js             # Karma configuration file
@@ -418,9 +418,18 @@ class Home extends PureComponent {  // Use PureComponent instead of Component
 
 [Flow](https://flowtype.org/docs/react.html), a static type checker for javascript. It adds static typing to javascript to improve developer productivity and code quality. In particular, static typing offers benefits like early error checking, which helps you avoid certain kinds of runtime failures, and code intelligence, which aids code maintenance, navigation, transformation, and optimization.
 
-Flow’s static analysis makes building large web apps with React safe by tracking the types of props and state. Flow understands which props are required and also supports default props. (learn more about [Flow with React](https://flowtype.org/docs/react.html))
+Flow’s static analysis makes building web apps with React safe by tracking the types of props and state. Flow understands which props are required and also supports default props. If you are new to Flow, [five simple examples](https://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs.
 
-I love to write React, Redux with Flow. If you are new to Flow, [five simple examples](https://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs.
+I love to write React, Redux with Flow, I know it's not easy to learn at the beginning. But trsut me, it's worth to learn. There're some useful instructions that I can give you as below:
+
+* If you are new to Flow, [five simple examples](https://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs.
+
+* Learn how to use Flow with React Component's props and state, you can learn from [here](https://flowtype.org/docs/react.html).
+
+* Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
+
+Note: Often you will want to use third-party libraries. For these circumstances, Flow supports the concept of a "libdef" ("Library Definition") which allows you to describe the interface and types of the library seperate from the library and without needing to add types to or change the library itself. You can write a libdef file yourself if you need to or use [flow-typed](https://flowtype.org/docs/third-party.html#using-flow-typed), which is a repository of third-party library interface definitions for use with Flow.
+
 
 There're some tips
 
