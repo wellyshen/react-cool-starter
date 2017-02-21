@@ -409,7 +409,7 @@ class Home extends PureComponent {  // Use PureComponent instead of Component
 
 ### JavaScript and Style Lint
 
-[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want be interrupted during developing, you can turn off those from `./tools/webpack/config.js` and do the mannually checking by `yarn lint`.
+[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want them be actived during developing, you can turn off those from `./tools/webpack/config.js` and do the mannually checking by `yarn lint`.
 
 
 ### Unit Tests
