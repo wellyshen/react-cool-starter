@@ -7,7 +7,7 @@ import config from '../../config';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-type Props = { children: Element<any> };
+type Props = { children: number };
 
 const App = ({ children }: Props) => (
   <div className={styles.App}>

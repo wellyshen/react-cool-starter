@@ -26,9 +26,9 @@ const getPlugins = () => {
       options: {
         // Javascript lint
         eslint: {
-          failOnError: true,  // Disable js lint error terminating here
+          failOnError: true,    // Disable js lint error terminating here
         },
-        context: '/',         // Required for the sourceMap of css/sass loader
+        context: '/',           // Required for the sourceMap of css/sass loader
         debug: isDev,
         minimize: !isDev,
       },
@@ -36,7 +36,7 @@ const getPlugins = () => {
     // Style lint
     new StyleLintPlugin({
       syntax: 'scss',
-      failOnError: true,      // Disable style lint error terminating here
+      failOnError: true,        // Disable style lint error terminating here
     }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
@@ -131,11 +131,7 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
-          plugins: [
-            'transform-runtime',
-            'transform-flow-strip-types',
-            'react-hot-loader/babel',
-          ],
+          plugins: ['transform-runtime', 'react-hot-loader/babel'],
         },
       },
       {

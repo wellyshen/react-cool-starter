@@ -36,7 +36,7 @@ module.exports = {
         options: {
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
-          plugins: ['transform-runtime', 'transform-flow-strip-types'],
+          plugins: ['transform-runtime'],
         },
       },
       {

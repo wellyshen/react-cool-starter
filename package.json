@@ -141,7 +141,6 @@
     "babel-loader": "^6.3.2",
     "babel-plugin-dynamic-import-node": "^1.0.0",
     "babel-plugin-istanbul": "^4.0.0",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
