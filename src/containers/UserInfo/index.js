@@ -72,6 +72,6 @@ UserInfo.defaultProps = {
   },
 };
 
-const mapStateToProps = ({ userInfo }) => ({ userInfo });
-
-export default connect(mapStateToProps)(UserInfo);
+export default connect(
+  ({ userInfo }) => ({ userInfo }),
+)(UserInfo);

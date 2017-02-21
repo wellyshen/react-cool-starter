@@ -64,6 +64,6 @@ Home.defaultProps = {
   },
 };
 
-const mapStateToProps = ({ home }) => ({ home });
-
-export default connect(mapStateToProps)(Home);
+export default connect(
+  ({ home }) => ({ home }),
+)(Home);
