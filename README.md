@@ -256,7 +256,7 @@ import styles from './styles.scss';
 
 render() {
   return (
-    <div className={styles.Home}> // The className matches one of CSS classes in your SCSS file
+    <div className={styles.Home}>   // The className matches one of CSS classes in your SCSS file
       <Helmet title="Home" />
       {this.displayUserList()}
     </div>
@@ -273,7 +273,7 @@ import './styles.scss';
 
 render() {
   return (
-    <div className="Home"> // Use the CSS class as normal
+    <div className="Home">    // Use the CSS class as normal
       <Helmet title="Home" />
       {this.displayUserList()}
     </div>
@@ -285,7 +285,7 @@ By the way, if you want to use your based stylesheet or a vendor CSS framework, 
 
 ```javascript
 import '../../theme/normalize.css';   // import a vendor stylesheet here
-import styles from './styles.scss';      // import your based stylesheet here
+import styles from './styles.scss';   // import your based stylesheet here
 
 const App = ({ children }) => (
 
