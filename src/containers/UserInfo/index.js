@@ -1,12 +1,39 @@
-import React, { PureComponent, PropTypes } from 'react';
+/* eslint-disable react/sort-comp */
+/* @flow */
+
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
 import * as action from './action';
 import UserCard from '../../components/UserCard';
+import type { UserInfo as UserInfoType, Dispatch, Reducer } from '../../types';
 
 import styles from './styles.scss';
 
+type Props = {
+  userInfo: UserInfoType,
+  params: Object,
+  dispatch: Dispatch,
+};
+
 class UserInfo extends PureComponent {
+  props: Props;
+
+  static defaultProps: {
+    userInfo: {
+      readyState: '',
+      info: {
+        name: '',
+        phone: '',
+        email: '',
+        website: '',
+      },
+    },
+    params: null,
+    dispatch: () => void,
+  };
+
   // Fetching data method for both server/client side rendering
   static fetchData(dispatch, params) {
     return Promise.all([
@@ -46,32 +73,8 @@ class UserInfo extends PureComponent {
   }
 }
 
-UserInfo.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  params: PropTypes.objectOf(PropTypes.string).isRequired,
-  userInfo: PropTypes.shape({
-    readyState: PropTypes.string,
-    info: PropTypes.shape({
-      name: PropTypes.string,
-      phone: PropTypes.string,
-      email: PropTypes.string,
-      website: PropTypes.string,
-    }),
-  }),
-};
+const connector: Connector<{}, Props> = connect(
+  ({ userInfo }: Reducer) => ({ userInfo }),
+);
 
-UserInfo.defaultProps = {
-  userInfo: {
-    readyState: '',
-    info: {
-      name: '',
-      phone: '',
-      email: '',
-      website: '',
-    },
-  },
-};
-
-export default connect(
-  ({ userInfo }) => ({ userInfo }),
-)(UserInfo);
+export default connector(UserInfo);

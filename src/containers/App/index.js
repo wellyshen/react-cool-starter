@@ -1,11 +1,15 @@
-import React, { PropTypes } from 'react';
+/* @flow */
+
+import React, { Element } from 'react';
 import Helmet from 'react-helmet';
 import config from '../../config';
 
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-const App = ({ children }) => (
+type Props = { children: Element<any> };
+
+const App = ({ children }: Props) => (
   <div className={styles.App}>
     <Helmet {...config.app} />
     <div className={styles.header}>
@@ -17,7 +21,6 @@ const App = ({ children }) => (
   </div>
 );
 
-App.propTypes = { children: PropTypes.node };
 App.defaultProps = { children: null };
 
 export default App;

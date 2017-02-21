@@ -1,3 +1,5 @@
+/* @flow */
+
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 
 // Setup global variables for server
@@ -15,6 +17,7 @@ global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('./tools/webp
     if (__DEV__) {
       require('./src/server');
     } else {
+      // $FlowFixMe: server.js will be generated during compiling
       require('./build/server');  // eslint-disable-line import/no-unresolved
     }
   });

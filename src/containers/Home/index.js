@@ -1,12 +1,32 @@
-import React, { PureComponent, PropTypes } from 'react';
+/* eslint-disable react/sort-comp */
+/* @flow */
+
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
 import * as action from './action';
 import UserList from '../../components/UserList';
+import type { Home as HomeType, Dispatch, Reducer } from '../../types';
 
 import styles from './styles.scss';
 
+type Props = {
+  home: HomeType,
+  dispatch: Dispatch,
+};
+
 class Home extends PureComponent {
+  props: Props;
+
+  static defaultProps: {
+    home: {
+      readyState: 'USERS_INVALID',
+      list: null,
+    },
+    dispatch: () => void,
+  };
+
   // Fetching data method for both server/client side rendering
   static fetchData(dispatch) {
     return Promise.all([
@@ -46,24 +66,8 @@ class Home extends PureComponent {
   }
 }
 
-Home.propTypes = {
-  home: PropTypes.shape({
-    readyState: PropTypes.string,
-    list: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-    })),
-  }),
-  dispatch: PropTypes.func.isRequired,
-};
+const connector: Connector<{}, Props> = connect(
+  ({ home }: Reducer) => ({ home }),
+);
 
-Home.defaultProps = {
-  home: {
-    readyState: 'USERS_INVALID',
-    list: null,
-  },
-};
-
-export default connect(
-  ({ home }) => ({ home }),
-)(Home);
+export default connector(Home);

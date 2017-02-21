@@ -1,3 +1,5 @@
+/* No flow in this file, waiting for dynamic import support */
+
 import chalk from 'chalk';
 import { injectReducer } from './redux/reducers';
 import App from './containers/App';
