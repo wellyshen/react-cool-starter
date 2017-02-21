@@ -407,6 +407,11 @@ class Home extends PureComponent {  // Use PureComponent instead of Component
 }
 ```
 
+### JavaScript and Style Lint
+
+[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want be interrupted during developing, you can turn off those from `./tools/webpack/config.js` and do the mannually checking by `yarn lint`.
+
+
 ### Unit Tests
 
 The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit tests, it uses [karma](https://karma-runner.github.io/1.0/index.html) as the test runner, and uses [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. Moreover it also uses [chai](http://chaijs.com/) as the assertion library and uses [sinon](https://github.com/sinonjs/sinon) to provide the standalone test spies, stubs and mocks. The unit tests focus on four parts as below:
