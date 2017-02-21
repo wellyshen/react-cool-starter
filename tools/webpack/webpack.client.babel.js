@@ -4,7 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const { CSSModules, vendor } = require('./config');
+const { CSSModules, eslint, stylelint, vendor } = require('./config');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
@@ -19,25 +19,20 @@ const getPlugins = () => {
     new ExtractTextPlugin({
       filename: '[name].[contenthash:8].css',
       allChunks: true,
-      disable: isDev, // Disable css extracting on development
+      disable: isDev,   // Disable css extracting on development
       ignoreOrder: CSSModules,
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
         // Javascript lint
-        eslint: {
-          failOnError: true,  // Disable js lint error terminating here
-        },
-        context: '/',         // Required for the sourceMap of css/sass loader
+        eslint: { failOnError: eslint },
+        context: '/',   // Required for the sourceMap of css/sass loader
         debug: isDev,
         minimize: !isDev,
       },
     }),
     // Style lint
-    new StyleLintPlugin({
-      syntax: 'scss',
-      failOnError: true,      // Disable style lint error terminating here
-    }),
+    new StyleLintPlugin({ syntax: 'scss', failOnError: stylelint }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
     // Setup global variables for client

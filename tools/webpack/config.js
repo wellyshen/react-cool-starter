@@ -1,6 +1,11 @@
 // Disable CSSModules here
 const CSSModules = true;
 
+// Disable js lint error terminating here
+const eslint = true;
+// Disable style lint error terminating here
+const stylelint = true;
+
 // Register vendors here
 const vendor = [
   'react',
@@ -18,4 +23,9 @@ const vendor = [
   'lodash',
 ];
 
-module.exports = { CSSModules, vendor };
+module.exports = {
+  CSSModules,
+  eslint,
+  stylelint,
+  vendor,
+};

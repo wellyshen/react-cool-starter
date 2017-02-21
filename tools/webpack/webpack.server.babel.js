@@ -3,7 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
-const { CSSModules } = require('./config');
+const { CSSModules, stylelint } = require('./config');
 
 module.exports = {
   name: 'server',
@@ -66,9 +66,7 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       options: {
         // Javascript lint
-        eslint: {
-          failOnError: true,  // Disable js lint error terminating here
-        },
+        eslint: { failOnError: stylelint },
       },
     }),
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
