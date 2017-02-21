@@ -1,8 +1,17 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import styles from './styles.scss';
 
-const UserCard = ({ info }) => (
+type Props = {
+  info: {
+    name: string,
+    phone: string,
+    email: string,
+    website: string,
+  },
+};
+
+const UserCard = ({ info }: Props) => (
   <div className={styles.UserCard}>
     <h4>User Card</h4>
     <ul>
@@ -13,15 +22,6 @@ const UserCard = ({ info }) => (
     </ul>
   </div>
 );
-
-UserCard.propTypes = {
-  info: PropTypes.shape({
-    name: PropTypes.string,
-    phone: PropTypes.string,
-    email: PropTypes.string,
-    website: PropTypes.string,
-  }).isRequired,
-};
 
 UserCard.defaulProps = {
   info: {
