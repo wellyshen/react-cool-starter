@@ -13,7 +13,7 @@ import styles from './styles.scss';
 
 type Props = {
   userInfo: UserInfoType,
-  params: { id: string },
+  params: Object,
   dispatch: Dispatch,
 };
 

@@ -2,14 +2,7 @@ import React from 'react';
 
 import styles from './styles.scss';
 
-type Props = {
-  info: {
-    name: string,
-    phone: string,
-    email: string,
-    website: string,
-  },
-};
+type Props = { info: Object };
 
 const UserCard = ({ info }: Props) => (
   <div className={styles.UserCard}>
