@@ -51,6 +51,11 @@ Really cool starter boilerplate with the most popular technologies:
 * [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
 
 
+## Looking for No Flow Version?
+
+You can find the no Flow version of this starter [here](https://github.com/wellyshen/react-cool-starter/tree/no-flow-type)
+
+
 ## Requirements
 
 * [node](https://nodejs.org/en/) >= 5.0
