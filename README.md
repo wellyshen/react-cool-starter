@@ -46,7 +46,7 @@ Really cool starter boilerplate with the most popular technologies:
 * No other view engines, just javascript based HTML rendering template.
 * Shared app config between development and production.
 * 404 error page and redirect handling.
-* [karma](https://karma-runner.github.io/1.0/index.html), [mocha](https://mochajs.org/), [enzyme](https://github.com/airbnb/enzyme), [chai](http://chaijs.com/) and [sinon](https://github.com/sinonjs/sinon) as the integrated solution for wrting unit tests.
+* [karma](https://karma-runner.github.io/1.0/index.html), [mocha](https://mochajs.org/), [enzyme](https://github.com/airbnb/enzyme), [chai](http://chaijs.com/) and [sinon](https://github.com/sinonjs/sinon) as the integrated solution for writing unit tests.
 * Testing code coverage support.
 * [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
 
@@ -83,7 +83,7 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 ## NPM Script Commands
 
-I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of corss-platform. All of the scripts are listed as following:
+I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platform. All of the scripts are listed as following:
 
 `yarn <script>`|Description
 ------------------|-----------
@@ -148,7 +148,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ## Server Side Security and Performance
 
-Concering to the security and performance for Express in production, I already setup some middlewares for you:
+Concerning to the security and performance for Express in production, I already setup some middlewares for you:
 
 * [helmet](https://github.com/helmetjs/helmet) - Helps secure Express server with various HTTP headers.
 * [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
@@ -241,7 +241,7 @@ The parent `App.js` defines the base title and meta in a `<Helmet {...config.app
 
 ### App config
 
-You can store app settings under `./src/config`. By default the `default.js` will be loaded. If the `process.env.NODE_ENV` matches to production, the `prod.js` will be used insteadlly, and it inherits the data info from `default.js`.
+You can store app settings under `./src/config`. By default the `default.js` will be loaded. If the `process.env.NODE_ENV` matches to production, the `prod.js` will be used instead, and it inherits the data info from `default.js`.
 
 You can access the correct config with:
 
@@ -375,7 +375,7 @@ You can write dispatches for actions that must be called for the container to be
 ```javascript
 // Write a static function which be called by server and client
 static fetchData(dispatch, params) {
-  // Add the asynchronous actions which must be called while paga loading here
+  // Add the asynchronous actions which must be called while page loading here
   return Promise.all([
     dispatch(action.fetchDataIfNeeded(params.id)),
   ]);
@@ -418,9 +418,9 @@ class Home extends PureComponent {  // Use PureComponent instead of Component
 
 [Flow](https://flowtype.org/docs/react.html), a static type checker for javascript. It adds static typing to javascript to improve developer productivity and code quality. In particular, static typing offers benefits like early error checking, which helps you avoid certain kinds of runtime failures, and code intelligence, which aids code maintenance, navigation, transformation, and optimization.
 
-Flow’s static analysis makes building web apps with React safe by tracking the types of props and state. Flow understands which props are required and also supports default props. If you are new to Flow, [five simple examples](https://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs.
+Flow’s static analysis makes building web apps with React safe by tracking the types of props and state. Flow understands which props are required and also supports default props.
 
-I love to write React, Redux with Flow, I know it's not easy to learn at the beginning. But trsut me, it's worth to learn. There're some useful instructions that I can give you as below:
+I love to write React, Redux with Flow, I know it's not easy to learn at the beginning. But trust me, it's worth to learn. There're some useful instructions that I can give you as below:
 
 * If you are new to Flow, [five simple examples](https://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs.
 
@@ -428,12 +428,12 @@ I love to write React, Redux with Flow, I know it's not easy to learn at the beg
 
 * Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
 
-Note: Often you will want to use third-party libraries. For these circumstances, Flow supports the concept of a "libdef" ("Library Definition") which allows you to describe the interface and types of the library seperate from the library and without needing to add types to or change the library itself. You can write a libdef file yourself if you need to or use [flow-typed](https://flowtype.org/docs/third-party.html#using-flow-typed), which is a repository of third-party library interface definitions for use with Flow.
+Note: Often you will want to use third-party libraries. For these circumstances, Flow supports the concept of a "libdef" ("Library Definition") which allows you to describe the interface and types of the library separate from the library and without needing to add types to or change the library itself. You can write a libdef file yourself if you need to or use [flow-typed](https://flowtype.org/docs/third-party.html#using-flow-typed), which is a repository of third-party library interface definitions for use with Flow.
 
 
 ### JavaScript and Style Lint
 
-[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want them be actived during developing, you can turn off those from `./tools/webpack/config.js` and do the mannually checking by `yarn lint`.
+[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want them be activated during developing, you can turn off those from `./tools/webpack/config.js` and do the manually checking by `yarn lint`.
 
 
 ### Unit Tests
@@ -482,6 +482,5 @@ If you run the example of the app. And you encounter the checksum error like bel
 
 There're some features or improvements I'd like to do in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
 
-- [ ] Type checking with [Flow](https://flowtype.org/)
-- [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)
 - [ ] Upgrading to [React Router v4](https://reacttraining.com/react-router/)
+- [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)

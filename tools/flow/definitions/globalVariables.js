@@ -1,6 +1,6 @@
 /* @flow */
 
-// Decalre global variables type for flow checking
+// Decalre your global variables type here for flow checking
 declare var __CLIENT__: bool;
 declare var __SERVER__: bool;
 declare var __DISABLE_SSR__: bool;

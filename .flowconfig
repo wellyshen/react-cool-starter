@@ -6,8 +6,6 @@
 [include]
 
 [libs]
-# Official "flow-typed" repository definitions ()
-flow-typed/npm
 # The app's global variables are declared here
 tools/flow/definitions
 
