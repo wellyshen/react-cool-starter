@@ -4,8 +4,8 @@ import type { Store as ReduxStore } from 'redux';
 
 export type Home = {
   readyState: string,
-  err?: any,
-  list?: Array<Object>,
+  err: any,
+  list: Array<Object>,
 };
 
 export type UserInfo = {
