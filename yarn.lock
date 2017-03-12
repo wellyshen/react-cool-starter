@@ -6467,13 +6467,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.2.6, rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.0.tgz#89b8a0fe432b9ff9ec9a925a00b6cdb3a91bbada"
-  dependencies:
-    glob "^7.0.5"
-
-rimraf@^2.6.1:
+rimraf@2, rimraf@^2.2.6, rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.0, rimraf@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
@@ -7627,9 +7621,9 @@ webpack-hot-middleware@^2.17.1:
     querystring "^0.2.0"
     strip-ansi "^3.0.0"
 
-webpack-isomorphic-tools@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/webpack-isomorphic-tools/-/webpack-isomorphic-tools-3.0.0.tgz#d477d7307fa06dc0bcea5b254dac634c802e0cd1"
+webpack-isomorphic-tools@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/webpack-isomorphic-tools/-/webpack-isomorphic-tools-3.0.1.tgz#15b62c0edd68b95e83a0fb36ee5a510dbb89a093"
   dependencies:
     babel-runtime "^6.6.1"
     colors "^1.1.2"
