@@ -3,7 +3,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import configureStore from './redux/store';
@@ -18,9 +18,9 @@ const renderApp = () => {
   render(
     <AppContainer>
       <Provider store={store}>
-        <Router>
+        <BrowserRouter>
           <App />
-        </Router>
+        </BrowserRouter>
       </Provider>
     </AppContainer>,
     mountNode,
