@@ -8,8 +8,8 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
-import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
