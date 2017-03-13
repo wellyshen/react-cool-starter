@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import type { Store } from '../types';
 
-export default (store: Store, content: string = '') => {
+export default (store: Store, htmlApp: string = '') => {
   const head = Helmet.rewind();
   const assets = webpackIsomorphicTools.assets();
 
@@ -56,7 +56,7 @@ export default (store: Store, content: string = '') => {
         }
       </head>
       <body>
-        <div id="react-view">${content || ''}</div>
+        <div id="react-view">${htmlApp || ''}</div>
 
         <script type="text/javascript">
           ${store && `window.__INITIAL_STATE__=${serialize(store.getState())}`}

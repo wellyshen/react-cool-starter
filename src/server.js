@@ -62,8 +62,7 @@ app.get('*', (req, res) => {
   }
 
   const context = {};
-
-  const content = renderToString(
+  const htmlApp = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={context}>
         <App />
@@ -71,9 +70,13 @@ app.get('*', (req, res) => {
     </Provider>,
   );
 
-  if (context.url) res.redirect(302, context.url);
+  if (context.url) {
+    res.writeHead(302, { Location: context.url });
 
-  res.status(200).send(renderHtmlPage(store, content));
+    res.end();
+  } else {
+    res.status(200).send(renderHtmlPage(store, htmlApp));
+  }
 });
 
 if (port) {
