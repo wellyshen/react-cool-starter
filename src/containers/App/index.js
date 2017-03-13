@@ -1,15 +1,17 @@
 /* @flow */
 
-import React, { Element } from 'react';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
-import config from '../../config';
 
+import config from '../../config';
+import Home from '../Home';
+import UserInfo from '../UserInfo';
+import NotFound from '../NotFound';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-type Props = { children: Element<any> };
-
-const App = ({ children }: Props) => (
+export default () => (
   <div className={styles.App}>
     <Helmet {...config.app} />
     <div className={styles.header}>
@@ -17,10 +19,10 @@ const App = ({ children }: Props) => (
       <h1>{config.app.title}</h1>
     </div>
     <hr />
-    {children}
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="UserInfo/:id" component={UserInfo} />
+      <Route component={NotFound} />
+    </Switch>
   </div>
 );
-
-App.defaultProps = { children: null };
-
-export default App;

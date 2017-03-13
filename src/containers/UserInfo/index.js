@@ -5,10 +5,10 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
-import * as action from './action';
-import UserCard from '../../components/UserCard';
-import type { UserInfo as UserInfoType, Dispatch, Reducer } from '../../types';
 
+import * as action from './action';
+import type { UserInfo as UserInfoType, Dispatch, Reducer } from '../../types';
+import UserCard from '../../components/UserCard';
 import styles from './styles.scss';
 
 type Props = {

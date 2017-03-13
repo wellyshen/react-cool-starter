@@ -8,15 +8,15 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
+import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import { createMemoryHistory, match, RouterContext } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import chalk from 'chalk';
-import createRoutes from './routes';
+
 import configureStore from './redux/store';
 import renderHtmlPage from './utils/renderHtmlPage';
 import { port, host } from './config';
+import App from './containers/App';
 
 const app = express();
 
@@ -61,40 +61,19 @@ app.get('*', (req, res) => {
     return;
   }
 
-  const memoryHistory = createMemoryHistory(req.url);
-  const routes = createRoutes(store);
-  const history = syncHistoryWithStore(memoryHistory, store);
+  const context = {};
 
-  // eslint-disable-next-line max-len
-  match({ history, routes, location: req.url }, (error, redirectLocation, renderProps) => {
-    if (error) {
-      res.status(500).send(error.message);
-    } else if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-    } else if (!renderProps) {
-      res.sendStatus(404);
-    } else {
-      // Dispatch the initial action of each container first
-      const promises = renderProps.components
-        .filter(component => component.fetchData)
-        .map(component => component.fetchData(store.dispatch, renderProps.params));
+  const content = renderToString(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context}>
+        <App />
+      </StaticRouter>
+    </Provider>,
+  );
 
-      // Then render the routes
-      Promise.all(promises)
-        .then(() => {
-          const content = renderToString(
-            <Provider store={store}>
-              <RouterContext {...renderProps} />
-            </Provider>,
-          );
+  if (context.url) res.redirect(302, context.url);
 
-          res.status(200).send(renderHtmlPage(store, content));
-        })
-        .catch((err) => {
-          console.error(`==> 😭  Rendering routes error: ${err}`);
-        });
-    }
-  });
+  res.status(200).send(renderHtmlPage(store, content));
 });
 
 if (port) {
