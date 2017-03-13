@@ -3,6 +3,7 @@
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
 import _ from 'lodash';
+
 import type { Store } from '../types';
 
 export default (store: Store, content: string = '') => {

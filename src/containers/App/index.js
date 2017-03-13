@@ -21,7 +21,7 @@ export default () => (
     <hr />
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="UserInfo/:id" component={UserInfo} />
+      <Route path="/UserInfo/:id" component={UserInfo} />
       <Route component={NotFound} />
     </Switch>
   </div>

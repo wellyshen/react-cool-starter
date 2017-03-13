@@ -15,8 +15,8 @@ import chalk from 'chalk';
 
 import configureStore from './redux/store';
 import renderHtmlPage from './utils/renderHtmlPage';
-import { port, host } from './config';
 import App from './containers/App';
+import { port, host } from './config';
 
 const app = express();
 

@@ -1,6 +1,7 @@
 /* @flow */
 
 import _ from 'lodash';
+
 import {
   USERS_INVALID,
   USERS_REQUESTING,
