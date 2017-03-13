@@ -13,7 +13,7 @@ import styles from './styles.scss';
 
 type Props = {
   userInfo: UserInfoType,
-  params: Object,
+  match: Object,
   dispatch: Dispatch,
 };
 
@@ -30,27 +30,27 @@ class UserInfo extends PureComponent {
         website: '',
       },
     },
-    params: null,
+    match: null,
     dispatch: () => void,
   };
 
   // Fetching data method for both server/client side rendering
-  static fetchData(dispatch, params) {
+  static fetchData(dispatch, id) {
     return Promise.all([
-      dispatch(action.fetchDataIfNeeded(params.id)),
+      dispatch(action.fetchDataIfNeeded(id)),
     ]);
   }
 
   componentDidMount() {
-    const { dispatch, params } = this.props;
+    const { dispatch, match: { params: { id } } } = this.props;
 
     // Fetching data for client side rendering
-    UserInfo.fetchData(dispatch, params);
+    UserInfo.fetchData(dispatch, id);
   }
 
   displayUserCard = () => {
-    const { userInfo, params } = this.props;
-    const userInfoById = userInfo[params.id];
+    const { userInfo, match: { params: { id } } } = this.props;
+    const userInfoById = userInfo[id];
 
     if (!userInfoById || userInfoById.readyState === action.AN_USER_REQUESTING) {
       return <p>Loading...</p>;
