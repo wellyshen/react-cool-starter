@@ -61,22 +61,27 @@ app.get('*', (req, res) => {
     return;
   }
 
-  const context = {};
+  const routerContext = {};
   const htmlApp = renderToString(
     <Provider store={store}>
-      <StaticRouter location={req.url} context={context}>
+      <StaticRouter location={req.url} context={routerContext}>
         <App />
       </StaticRouter>
     </Provider>,
   );
 
-  if (context.url) {
-    res.writeHead(302, { Location: context.url });
-
+  // We got URL, this is a signal that redirect happened
+  if (routerContext.url) {
+    res.status(301).setHeader('Location', routerContext.url);
     res.end();
-  } else {
-    res.status(200).send(renderHtmlPage(store, htmlApp));
+
+    return;
   }
+
+  // Checking is page is 404
+  const status = routerContext.status === '404' ? 404 : 200;
+
+  res.status(status).send(renderHtmlPage(store, htmlApp));
 });
 
 if (port) {
