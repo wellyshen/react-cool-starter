@@ -45,7 +45,7 @@ describe('<UserInfo />', () => {
   it('renders the loading status if loading data', () => {
     const store = storeFake({
       userInfo: {
-        1: { readyState: 'AN_USER_REQUESTING' },
+        1: { readyStatus: 'AN_USER_REQUESTING' },
       },
     });
 
@@ -55,7 +55,7 @@ describe('<UserInfo />', () => {
   it('renders an error if loading failed', () => {
     const store = storeFake({
       userInfo: {
-        1: { readyState: 'AN_USER_FAILURE' },
+        1: { readyStatus: 'AN_USER_FAILURE' },
       },
     });
 
@@ -66,7 +66,7 @@ describe('<UserInfo />', () => {
     const store = storeFake({
       userInfo: {
         1: {
-          readyState: 'AN_USER_SUCCESS',
+          readyStatus: 'AN_USER_SUCCESS',
           info: {
             name: 'Welly',
             phone: '007',

@@ -21,7 +21,7 @@ class Home extends PureComponent {
 
   static defaultProps: {
     home: {
-      readyState: 'USERS_INVALID',
+      readyStatus: 'USERS_INVALID',
       list: null,
     },
     dispatch: () => void,
@@ -44,12 +44,12 @@ class Home extends PureComponent {
   displayUserList = () => {
     const { home } = this.props;
 
-    if (!home.readyState || home.readyState === action.USERS_INVALID ||
-      home.readyState === action.USERS_REQUESTING) {
+    if (!home.readyStatus || home.readyStatus === action.USERS_INVALID ||
+      home.readyStatus === action.USERS_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (home.readyState === action.USERS_FAILURE) {
+    if (home.readyStatus === action.USERS_FAILURE) {
       return <p>Oops, Failed to load list!</p>;
     }
 

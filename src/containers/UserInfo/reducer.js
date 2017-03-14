@@ -16,20 +16,20 @@ export default (state: State = {}, action: Action): State => {
     case AN_USER_REQUESTING:
       return _.assign({}, state, {
         [action.userId]: {
-          readyState: AN_USER_REQUESTING,
+          readyStatus: AN_USER_REQUESTING,
         },
       });
     case AN_USER_FAILURE:
       return _.assign({}, state, {
         [action.userId]: {
-          readyState: AN_USER_FAILURE,
+          readyStatus: AN_USER_FAILURE,
           err: action.err,
         },
       });
     case AN_USER_SUCCESS:
       return _.assign({}, state, {
         [action.userId]: {
-          readyState: AN_USER_SUCCESS,
+          readyStatus: AN_USER_SUCCESS,
           info: action.data,
         },
       });

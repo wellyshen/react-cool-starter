@@ -22,7 +22,7 @@ class UserInfo extends PureComponent {
 
   static defaultProps: {
     userInfo: {
-      readyState: '',
+      readyStatus: '',
       info: {
         name: '',
         phone: '',
@@ -52,11 +52,11 @@ class UserInfo extends PureComponent {
     const { userInfo, match: { params } } = this.props;
     const userInfoById = userInfo[params.id];
 
-    if (!userInfoById || userInfoById.readyState === action.AN_USER_REQUESTING) {
+    if (!userInfoById || userInfoById.readyStatus === action.AN_USER_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (userInfoById.readyState === action.AN_USER_FAILURE) {
+    if (userInfoById.readyStatus === action.AN_USER_FAILURE) {
       return <p>Oops, Failed to load info!</p>;
     }
 

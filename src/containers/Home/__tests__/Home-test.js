@@ -24,7 +24,7 @@ describe('<Home />', () => {
   it('calls componentDidMount() lifecycle method to invoke fetching data', () => {
     const componentDidMountSpy = spy(Home.prototype, 'componentDidMount');
     const store = storeFake({
-      home: { readyState: 'USERS_INVALID' },
+      home: { readyStatus: 'USERS_INVALID' },
     });
 
     wrapper(store);
@@ -36,7 +36,7 @@ describe('<Home />', () => {
 
   it('renders the loading status if data invalid', () => {
     const store = storeFake({
-      home: { readyState: 'USERS_INVALID' },
+      home: { readyStatus: 'USERS_INVALID' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal(state.loading);
@@ -44,7 +44,7 @@ describe('<Home />', () => {
 
   it('renders the loading status if loading data', () => {
     const store = storeFake({
-      home: { readyState: 'USERS_REQUESTING' },
+      home: { readyStatus: 'USERS_REQUESTING' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal(state.loading);
@@ -52,7 +52,7 @@ describe('<Home />', () => {
 
   it('renders an error if loading failed', () => {
     const store = storeFake({
-      home: { readyState: 'USERS_FAILURE' },
+      home: { readyStatus: 'USERS_FAILURE' },
     });
 
     expect(wrapper(store).find('p').text()).to.equal(state.error);
@@ -61,7 +61,7 @@ describe('<Home />', () => {
   it('renders the <UserList /> if loading was successful', () => {
     const store = storeFake({
       home: {
-        readyState: 'USERS_SUCCESS',
+        readyStatus: 'USERS_SUCCESS',
         list: [{ id: '1', name: 'Welly' }],
       },
     });

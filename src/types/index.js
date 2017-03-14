@@ -3,14 +3,14 @@
 import type { Store as ReduxStore } from 'redux';
 
 export type Home = {
-  readyState: string,
+  readyStatus: string,
   err: any,
   list: Array<Object>,
 };
 
 export type UserInfo = {
   [userId: string]: {
-    readyState: string,
+    readyStatus: string,
     err: any,
     info: Object,
   },

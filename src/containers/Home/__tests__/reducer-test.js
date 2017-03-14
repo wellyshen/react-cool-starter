@@ -12,7 +12,7 @@ describe('reducer:Home', () => {
       err: null,
       list: [],
     })).to.deep.equal({
-      readyState: USERS_INVALID,
+      readyStatus: USERS_INVALID,
       err: null,
       list: [],
     });
@@ -26,7 +26,7 @@ describe('reducer:Home', () => {
         list: [],
       }),
     ).to.deep.equal({
-      readyState: USERS_REQUESTING,
+      readyStatus: USERS_REQUESTING,
       err: null,
       list: [],
     });
@@ -40,7 +40,7 @@ describe('reducer:Home', () => {
         list: [],
       }),
     ).to.deep.equal({
-      readyState: USERS_FAILURE,
+      readyStatus: USERS_FAILURE,
       err: 'Oops! Something went wrong.',
       list: [],
     });
@@ -54,7 +54,7 @@ describe('reducer:Home', () => {
         data: [{ id: '1', name: 'Welly' }],
       }),
     ).to.deep.equal({
-      readyState: USERS_SUCCESS,
+      readyStatus: USERS_SUCCESS,
       err: null,
       list: [{ id: '1', name: 'Welly' }],
     });

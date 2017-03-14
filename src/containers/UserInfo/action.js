@@ -37,7 +37,7 @@ const shouldFetchData = (state: Reducer, userId: string): boolean => {
   const userInfo = state.userInfo[userId];
 
   // Preventing dobule fetching data in production
-  if (userInfo && userInfo.readyState === AN_USER_SUCCESS) return false;
+  if (userInfo && userInfo.readyStatus === AN_USER_SUCCESS) return false;
 
   return true;
 };

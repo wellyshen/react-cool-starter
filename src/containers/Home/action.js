@@ -37,7 +37,7 @@ const shouldFetchData = (state: Reducer): boolean => {
 
   const home = state.home;
 
-  if (home.readyState === USERS_SUCCESS) return false; // Preventing double fetching data
+  if (home.readyStatus === USERS_SUCCESS) return false; // Preventing double fetching data
 
   return true;
 };

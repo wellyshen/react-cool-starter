@@ -16,7 +16,7 @@ describe('reducer:userInfo', () => {
         type: AN_USER_REQUESTING,
         userId: '1',
       }),
-    ).to.deep.equal({ 1: { readyState: AN_USER_REQUESTING } });
+    ).to.deep.equal({ 1: { readyStatus: AN_USER_REQUESTING } });
   });
 
   it('should handle AN_USER_FAILURE', () => {
@@ -28,7 +28,7 @@ describe('reducer:userInfo', () => {
       }),
     ).to.deep.equal({
       1: {
-        readyState: AN_USER_FAILURE,
+        readyStatus: AN_USER_FAILURE,
         err: 'Oops! Something went wrong.',
       },
     });
@@ -48,7 +48,7 @@ describe('reducer:userInfo', () => {
       }),
     ).to.deep.equal({
       1: {
-        readyState: AN_USER_SUCCESS,
+        readyStatus: AN_USER_SUCCESS,
         info: {
           name: 'Welly',
           phone: '007',
