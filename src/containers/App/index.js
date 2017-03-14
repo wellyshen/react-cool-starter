@@ -3,11 +3,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import _ from 'lodash';
 
 import config from '../../config';
-import Home from '../Home';
-import UserInfo from '../UserInfo';
-import NotFound from '../NotFound';
+import routes from '../../routes';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
@@ -20,9 +19,7 @@ export default () => (
     </div>
     <hr />
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/UserInfo/:id" component={UserInfo} />
-      <Route component={NotFound} />
+      {routes.map(route => (<Route key={_.uniqueId()} {...route} />))}
     </Switch>
   </div>
 );
