@@ -7,9 +7,6 @@ import _ from 'lodash';
 
 import config from '../../config';
 import routes from '../../routes';
-// import Home from '../Home';
-// import UserInfo from '../UserInfo';
-// import NotFound from '../NotFound';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
@@ -28,7 +25,7 @@ export default () => (
             key={_.uniqueId()}
             path={route.path}
             render={props => (
-              // pass the sub-routes down to keep nesting
+              // Pass the sub-routes down to keep nesting
               <route.component {...props} routes={route.routes} />
             )}
           />
