@@ -35,22 +35,22 @@ class UserInfo extends PureComponent {
   };
 
   // Fetching data method for both server/client side rendering
-  static fetchData(dispatch, id) {
+  static fetchData(dispatch, params) {
     return Promise.all([
-      dispatch(action.fetchDataIfNeeded(id)),
+      dispatch(action.fetchDataIfNeeded(params.id)),
     ]);
   }
 
   componentDidMount() {
-    const { dispatch, match: { params: { id } } } = this.props;
+    const { dispatch, match: { params } } = this.props;
 
     // Fetching data for client side rendering
-    UserInfo.fetchData(dispatch, id);
+    UserInfo.fetchData(dispatch, params);
   }
 
   displayUserCard = () => {
-    const { userInfo, match: { params: { id } } } = this.props;
-    const userInfoById = userInfo[id];
+    const { userInfo, match: { params } } = this.props;
+    const userInfoById = userInfo[params.id];
 
     if (!userInfoById || userInfoById.readyState === action.AN_USER_REQUESTING) {
       return <p>Loading...</p>;
