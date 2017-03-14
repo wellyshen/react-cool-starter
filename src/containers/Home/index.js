@@ -29,9 +29,9 @@ class Home extends PureComponent {
 
   // Fetching data method for both server/client side rendering
   static fetchData(dispatch) {
-    return [
+    return Promise.all([
       dispatch(action.fetchDataIfNeeded()),
-    ];
+    ]);
   }
 
   componentDidMount() {
