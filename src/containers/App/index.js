@@ -19,7 +19,7 @@ export default () => (
     </div>
     <hr />
     <Switch>
-      {routes.map((route, index) => routeWithSubRoutes(route, index))}
+      {routes.map(route => routeWithSubRoutes(route))}
     </Switch>
   </div>
 );
