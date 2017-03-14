@@ -8,7 +8,7 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
@@ -63,7 +63,7 @@ app.get('*', (req, res) => {
   }
 
   const routerContext = {};
-  const htmlApp = renderToStaticMarkup(
+  const htmlApp = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={routerContext}>
         <App />
@@ -76,7 +76,9 @@ app.get('*', (req, res) => {
   routes.some((route) => {
     const match = matchPath(req.url, route);
 
-    if (match) promises.push(route.loadData(store.dispatch, match.params));
+    if (match && route.loadData) {
+      promises.push(route.loadData(store.dispatch, match.params));
+    }
 
     return match;
   });

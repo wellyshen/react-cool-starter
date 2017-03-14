@@ -19,6 +19,5 @@ export default [
   {
     path: '*',
     component: NotFound,
-    loadData: () => {},
   },
 ];
