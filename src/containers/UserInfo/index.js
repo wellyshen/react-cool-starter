@@ -36,9 +36,9 @@ class UserInfo extends PureComponent {
 
   // Fetching data method for both server/client side rendering
   static fetchData(dispatch, params) {
-    return Promise.all([
+    return [
       dispatch(action.fetchDataIfNeeded(params.id)),
-    ]);
+    ];
   }
 
   componentDidMount() {

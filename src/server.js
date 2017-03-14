@@ -9,15 +9,14 @@ import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom';
-// import { StaticRouter, matchPath } from 'react-router-dom';
+import { StaticRouter, matchPath } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
 import configureStore from './redux/store';
 import renderHtmlPage from './utils/renderHtmlPage';
 import App from './containers/App';
-// import routes from './routes';
+import routes from './routes';
 import { port, host } from './config';
 
 const app = express();
@@ -72,20 +71,7 @@ app.get('*', (req, res) => {
     </Provider>,
   );
 
-  // We got URL, this is a signal that redirect happened
-  if (routerContext.url) {
-    res.status(301).setHeader('Location', routerContext.url);
-    res.end();
-
-    return;
-  }
-
-  // Checking is page is 404
-  const status = routerContext.status === '404' ? 404 : 200;
-
-  res.status(status).send(renderHtmlPage(store, htmlApp));
-
-  /* const promises = [];
+  const promises = [];
 
   routes.some((route) => {
     const match = matchPath(req.url, route);
@@ -104,7 +90,7 @@ app.get('*', (req, res) => {
     })
     .catch((err) => {
       console.error(`==> 😭  Rendering routes error: ${err}`);
-    }); */
+    });
 });
 
 if (port) {
