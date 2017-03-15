@@ -1,6 +1,6 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
-> 🙌 👉 I'm doing hard to upgrade React-Router v4 and change to Jest framework, please be patient...
+> 🙌 👉 I'm doing hardly to upgrade [React-Router v4](https://reacttraining.com/react-router/) and change to [Jest](https://facebook.github.io/jest/) framework, please be patient...
 
 A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router](https://github.com/reactjs/react-router) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
 
