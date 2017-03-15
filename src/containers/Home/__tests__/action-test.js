@@ -29,7 +29,7 @@ describe('action:Home', () => {
     ];
     const store = mockStore({ list: null });
 
-    store.dispatch(action.fetchData(axios))
+    store.dispatch(action.fetchUsers(axios))
       .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
       .then(done)
       .catch(done);
@@ -45,7 +45,7 @@ describe('action:Home', () => {
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(action.fetchData(axios))
+    store.dispatch(action.fetchUsers(axios))
       .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
       .then(done)
       .catch(done);

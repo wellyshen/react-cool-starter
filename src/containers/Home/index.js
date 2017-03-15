@@ -13,7 +13,7 @@ import styles from './styles.scss';
 
 type Props = {
   home: HomeType,
-  dispatch: Dispatch,
+  fetchUsersIfNeeded: () => void,
 };
 
 class Home extends PureComponent {
@@ -24,21 +24,13 @@ class Home extends PureComponent {
       readyStatus: 'USERS_INVALID',
       list: null,
     },
-    dispatch: () => void,
+    fetchUsersIfNeeded: () => {},
   };
 
-  // Fetching data method for both server/client side rendering
-  static fetchData(dispatch) {
-    return Promise.all([
-      dispatch(action.fetchDataIfNeeded()),
-    ]);
-  }
-
   componentDidMount() {
-    const { dispatch } = this.props;
+    const { fetchUsersIfNeeded } = this.props;
 
-    // Fetching data for client side rendering
-    Home.fetchData(dispatch);
+    fetchUsersIfNeeded();
   }
 
   displayUserList = () => {
@@ -68,6 +60,9 @@ class Home extends PureComponent {
 
 const connector: Connector<{}, Props> = connect(
   ({ home }: Reducer) => ({ home }),
+  (dispatch: Dispatch) => ({
+    fetchUsersIfNeeded: () => dispatch(action.fetchUsersIfNeeded()),
+  }),
 );
 
 export default connector(Home);

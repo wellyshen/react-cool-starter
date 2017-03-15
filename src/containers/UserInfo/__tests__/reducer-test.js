@@ -1,8 +1,8 @@
 import reducer from '../reducer';
 import {
-  AN_USER_REQUESTING,
-  AN_USER_FAILURE,
-  AN_USER_SUCCESS,
+  USER_REQUESTING,
+  USER_FAILURE,
+  USER_SUCCESS,
 } from '../action';
 
 describe('reducer:userInfo', () => {
@@ -13,22 +13,22 @@ describe('reducer:userInfo', () => {
   it('should handle AN_USER_REQUESTING', () => {
     expect(
       reducer(undefined, {
-        type: AN_USER_REQUESTING,
+        type: USER_REQUESTING,
         userId: '1',
       }),
-    ).to.deep.equal({ 1: { readyStatus: AN_USER_REQUESTING } });
+    ).to.deep.equal({ 1: { readyStatus: USER_REQUESTING } });
   });
 
   it('should handle AN_USER_FAILURE', () => {
     expect(
       reducer(undefined, {
-        type: AN_USER_FAILURE,
+        type: USER_FAILURE,
         userId: '1',
         err: 'Oops! Something went wrong.',
       }),
     ).to.deep.equal({
       1: {
-        readyStatus: AN_USER_FAILURE,
+        readyStatus: USER_FAILURE,
         err: 'Oops! Something went wrong.',
       },
     });
@@ -37,7 +37,7 @@ describe('reducer:userInfo', () => {
   it('should handle AN_USER_SUCCESS', () => {
     expect(
       reducer(undefined, {
-        type: AN_USER_SUCCESS,
+        type: USER_SUCCESS,
         userId: '1',
         data: {
           name: 'Welly',
@@ -48,7 +48,7 @@ describe('reducer:userInfo', () => {
       }),
     ).to.deep.equal({
       1: {
-        readyStatus: AN_USER_SUCCESS,
+        readyStatus: USER_SUCCESS,
         info: {
           name: 'Welly',
           phone: '007',

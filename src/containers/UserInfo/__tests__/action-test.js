@@ -25,33 +25,33 @@ describe('action:UserInfo', () => {
     sandbox.restore();
   });
 
-  it('creates AN_USER_SUCCESS when success to fetch data', (done) => {
+  it('creates USER_SUCCESS when success to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.resolve({ status: 200, data: response }));
 
     const expectedActions = [
-      { type: action.AN_USER_REQUESTING, userId },
-      { type: action.AN_USER_SUCCESS, userId, data: response },
+      { type: action.USER_REQUESTING, userId },
+      { type: action.USER_SUCCESS, userId, data: response },
     ];
     const store = mockStore({ info: null });
 
-    store.dispatch(action.fetchData(userId, axios))
+    store.dispatch(action.fetchUser(userId, axios))
       .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
       .then(done)
       .catch(done);
   });
 
-  it('creates AN_USER_FAILURE when fail to fetch data', (done) => {
+  it('creates USER_FAILURE when fail to fetch data', (done) => {
     sandbox.stub(axios, 'get')
       .returns(Promise.reject(errorMessage));
 
     const expectedActions = [
-      { type: action.AN_USER_REQUESTING, userId },
-      { type: action.AN_USER_FAILURE, userId, err: errorMessage },
+      { type: action.USER_REQUESTING, userId },
+      { type: action.USER_FAILURE, userId, err: errorMessage },
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(action.fetchData(userId, axios))
+    store.dispatch(action.fetchUser(userId, axios))
       .then(() => { expect(store.getActions()).to.deep.equal(expectedActions); })
       .then(done)
       .catch(done);

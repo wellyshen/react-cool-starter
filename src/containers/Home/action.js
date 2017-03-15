@@ -15,7 +15,7 @@ export const USERS_FAILURE = 'USERS_FAILURE';
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this function for testing
-export const fetchData = (axios: any): ThunkAction =>
+export const fetchUsers = (axios: any): ThunkAction =>
   (dispatch: Dispatch) => {
     dispatch({ type: USERS_REQUESTING });
 
@@ -30,7 +30,7 @@ export const fetchData = (axios: any): ThunkAction =>
 
 // Preventing dobule fetching data
 /* istanbul ignore next */
-const shouldFetchData = (state: Reducer): boolean => {
+const shouldFetchUsers = (state: Reducer): boolean => {
   // In development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
   if (__DEV__) return true;
@@ -43,12 +43,12 @@ const shouldFetchData = (state: Reducer): boolean => {
 };
 
 /* istanbul ignore next */
-export const fetchDataIfNeeded = (): ThunkAction =>
+export const fetchUsersIfNeeded = (): ThunkAction =>
   (dispatch: Dispatch, getState: GetState, axios: any) => {
     /* istanbul ignore next */
-    if (shouldFetchData(getState())) {
+    if (shouldFetchUsers(getState())) {
       /* istanbul ignore next */
-      return dispatch(fetchData(axios));
+      return dispatch(fetchUsers(axios));
     }
 
     /* istanbul ignore next */

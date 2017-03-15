@@ -2,8 +2,8 @@
 
 import { asyncComponent } from './utils/helpers';
 import type { Dispatch } from './types';
-import { fetchDataIfNeeded as fetchDataIfNeededHome } from './containers/Home/action';
-import { fetchDataIfNeeded as fetchDataIfNeededUserInfo } from './containers/UserInfo/action';
+import { fetchUsersIfNeeded } from './containers/Home/action';
+import { fetchUserIfNeeded } from './containers/UserInfo/action';
 
 export default [
   {
@@ -13,7 +13,7 @@ export default [
       import('./containers/Home'),
     ]).then(([Component]) => Component.default)),
     loadData: (dispatch: Dispatch) => Promise.all([
-      dispatch(fetchDataIfNeededHome()),
+      dispatch(fetchUsersIfNeeded()),
     ]),
   },
   {
@@ -23,7 +23,7 @@ export default [
       import('./containers/UserInfo'),
     ]).then(([Component]) => Component.default)),
     loadData: (dispatch: Dispatch, params: Object) => Promise.all([
-      dispatch(fetchDataIfNeededUserInfo(params.id)),
+      dispatch(fetchUserIfNeeded(params.id)),
     ]),
   },
   {

@@ -45,11 +45,9 @@ export const asyncComponent = (getComponent: () => Promise<any>) =>
   };
 
 // The fake store creator for testing Components
-export function storeFake(state: Object): Object {
-  return {
-    default: () => {},
-    subscribe: () => {},
-    dispatch: () => {},
-    getState: () => ({ ...state }),
-  };
-}
+export const storeFake = (state: Object): Object => ({
+  default: () => {},
+  subscribe: () => {},
+  dispatch: () => {},
+  getState: () => ({ ...state }),
+});

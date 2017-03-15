@@ -14,7 +14,7 @@ import styles from './styles.scss';
 type Props = {
   userInfo: UserInfoType,
   match: Object,
-  dispatch: Dispatch,
+  fetchUserIfNeeded: (id: string) => void,
 };
 
 class UserInfo extends PureComponent {
@@ -31,32 +31,24 @@ class UserInfo extends PureComponent {
       },
     },
     match: null,
-    dispatch: () => void,
+    fetchUserIfNeeded: () => {},
   };
 
-  // Fetching data method for both server/client side rendering
-  static fetchData(dispatch, params) {
-    return Promise.all([
-      dispatch(action.fetchDataIfNeeded(params.id)),
-    ]);
-  }
-
   componentDidMount() {
-    const { dispatch, match: { params } } = this.props;
+    const { fetchUserIfNeeded, match: { params } } = this.props;
 
-    // Fetching data for client side rendering
-    UserInfo.fetchData(dispatch, params);
+    fetchUserIfNeeded(params.id);
   }
 
   displayUserCard = () => {
     const { userInfo, match: { params } } = this.props;
     const userInfoById = userInfo[params.id];
 
-    if (!userInfoById || userInfoById.readyStatus === action.AN_USER_REQUESTING) {
+    if (!userInfoById || userInfoById.readyStatus === action.USER_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (userInfoById.readyStatus === action.AN_USER_FAILURE) {
+    if (userInfoById.readyStatus === action.USER_FAILURE) {
       return <p>Oops, Failed to load info!</p>;
     }
 
@@ -75,6 +67,9 @@ class UserInfo extends PureComponent {
 
 const connector: Connector<{}, Props> = connect(
   ({ userInfo }: Reducer) => ({ userInfo }),
+  (dispatch: Dispatch) => ({
+    fetchUserIfNeeded: (id: string) => dispatch(action.fetchUserIfNeeded(id)),
+  }),
 );
 
 export default connector(UserInfo);
