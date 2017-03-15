@@ -8,13 +8,13 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
 import configureStore from './redux/store';
-import renderHtmlPage from './utils/renderHtmlPage';
+import Html from './utils/Html';
 import App from './containers/App';
 import routes from './routes';
 import { port, host } from './config';
@@ -54,11 +54,16 @@ if (__DEV__) {
 app.get('*', (req, res) => {
   if (__DEV__) webpackIsomorphicTools.refresh();
 
+  const renderHtml = (store, htmlApp) => {
+    const html = renderToStaticMarkup(<Html store={store} htmlApp={htmlApp} />);
+
+    return `<!doctype html>${html}`;
+  };
   const store = configureStore();
 
   // If __DISABLE_SSR__ = true, disable server side rendering
   if (__DISABLE_SSR__) {
-    res.send(renderHtmlPage(store));
+    res.send(renderHtml(store));
     return;
   }
 
@@ -88,7 +93,7 @@ app.get('*', (req, res) => {
       // Checking is page is 404
       const status = routerContext.status === '404' ? 404 : 200;
 
-      res.status(status).send(renderHtmlPage(store, htmlApp));
+      res.status(status).send(renderHtml(store, htmlApp));
     })
     .catch((err) => {
       console.error(`==> 😭  Rendering routes error: ${err}`);
