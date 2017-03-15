@@ -1,5 +1,7 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
+> 🙌 👉 I'm doing hard to upgrade React-Router v4 and change to Jest framework, please be patient...
+
 A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router](https://github.com/reactjs/react-router) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
 
 The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
