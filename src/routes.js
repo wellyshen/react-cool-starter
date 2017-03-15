@@ -1,3 +1,5 @@
+/* No flow in this file, waiting for dynamic import support */
+
 import { asyncComponent } from './utils/helpers';
 import type { Dispatch } from './types';
 import { fetchDataIfNeeded as fetchDataIfNeededHome } from './containers/Home/action';
