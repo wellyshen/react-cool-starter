@@ -6980,9 +6980,9 @@ strip-outer@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
-style-loader@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.14.0.tgz#e44fe69ef891513bb22fdd10c3167aaa99711164"
+style-loader@^0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.14.1.tgz#27b9b6c9822adf8c4748e02a1efae229405d79a5"
   dependencies:
     loader-utils "^1.0.2"
 
