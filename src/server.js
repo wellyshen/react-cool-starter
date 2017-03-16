@@ -70,10 +70,10 @@ app.get('*', (req, res) => {
     return;
   }
 
-  // React-Router rendering for server-side
+  // React-Router server-side rendering
   const routes = createRoutes(store);
   const routerContext = {};
-  const htmlApp = renderToString(
+  const htmlContent = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={routerContext}>
         <App routes={routes} />
@@ -110,7 +110,7 @@ app.get('*', (req, res) => {
       // Checking is page is 404
       const status = routerContext.status === '404' ? 404 : 200;
 
-      res.status(status).send(renderHtml(store, htmlApp));
+      res.status(status).send(renderHtml(store, htmlContent));
     })
     .catch((err) => {
       console.error(`==> 😭  Rendering routes error: ${err}`);

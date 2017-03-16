@@ -7,9 +7,9 @@ import _ from 'lodash';
 
 import type { Store } from '../types';
 
-type Props = { store: Store, htmlApp?: string };
+type Props = { store: Store, htmlContent?: string };
 
-const Html = ({ store, htmlApp }: Props) => {
+const Html = ({ store, htmlContent }: Props) => {
   const head = Helmet.rewind();
   const attrs = head.htmlAttributes.toComponent();
   const { lang, ...rest } = attrs || {};
@@ -69,7 +69,7 @@ const Html = ({ store, htmlApp }: Props) => {
         <div
           id="react-view"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: htmlApp || '' }}
+          dangerouslySetInnerHTML={{ __html: htmlContent || '' }}
         />
 
         <script
@@ -90,6 +90,6 @@ const Html = ({ store, htmlApp }: Props) => {
   );
 };
 
-Html.defaultProps = { htmlApp: '' };
+Html.defaultProps = { htmlContent: '' };
 
 export default Html;
