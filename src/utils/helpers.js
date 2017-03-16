@@ -2,7 +2,25 @@
 
 import React, { Element } from 'react';
 import { Route } from 'react-router-dom';
+import { matchRoutes } from 'react-router-config';
 import _ from 'lodash';
+
+import type { Store } from '../types';
+
+export const loadBranchData = (
+  routes: Array<Object>,
+  location: Object,
+  store: Store): Promise<any> => {
+  const branch = matchRoutes(routes, location.pathname);
+
+  const promises = branch.map(({ route, match }) => {
+    if (route.loadData) return route.loadData(store.dispath, match.parameter);
+
+    return Promise.resolve(null);
+  });
+
+  return Promise.all(promises);
+};
 
 // When sub routes are added to any route it'll work
 export const routeWithSubRoutes = (route: Object): Element<any> => (

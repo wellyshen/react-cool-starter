@@ -6106,6 +6106,10 @@ react-redux@^5.0.3:
     lodash-es "^4.2.0"
     loose-envify "^1.1.0"
 
+react-router-config@^1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/react-router-config/-/react-router-config-1.0.0-beta.1.tgz#e83158d6b1179b99d8077d0248e529c1049222e4"
+
 react-router-dom@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.0.0.tgz#4fa4418e14b8cfc5bcc0bdea0c4083fb8c2aef10"

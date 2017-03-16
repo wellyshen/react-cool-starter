@@ -9,11 +9,12 @@ import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
-import { StaticRouter, matchPath } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
 import configureStore from './redux/store';
+import { loadBranchData } from './utils/helpers';
 import Html from './utils/Html';
 import App from './containers/App';
 import createRoutes from './routes';
@@ -77,19 +78,16 @@ app.get('*', (req, res) => {
     </Provider>,
   );
 
-  const promises = [];
+  // Check if the render result contains a redirect, if so we need to set
+  // the specific status and redirect header and end the response.
+  if (routerContext.url) {
+    res.status(301).setHeader('Location', routerContext.url);
+    res.end();
 
-  routes.some((route) => {
-    const match = matchPath(req.url, route);
+    return;
+  }
 
-    if (match && route.loadData) {
-      promises.push(route.loadData(store.dispatch, match.params));
-    }
-
-    return match;
-  });
-
-  Promise.all(promises)
+  loadBranchData(routes, req.url, store)
     .then(() => {
       // Checking is page is 404
       const status = routerContext.status === '404' ? 404 : 200;
