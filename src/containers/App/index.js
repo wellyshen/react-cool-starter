@@ -6,11 +6,12 @@ import Helmet from 'react-helmet';
 
 import config from '../../config';
 import { routeWithSubRoutes } from '../../utils/helpers';
-import routes from '../../routes';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-export default () => (
+type Props = { routes: Array<Object> };
+
+export default ({ routes }: Props) => (
   <div className={styles.App}>
     <Helmet {...config.app} />
     <div className={styles.header}>

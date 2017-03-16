@@ -4,9 +4,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import chalk from 'chalk';
-
+import createReducer from './reducers';
 import type { Store } from '../types';
-import rootReducer from './reducers';
 
 export default (initialState: Object = {}) => {
   const middlewares = [
@@ -19,15 +18,17 @@ export default (initialState: Object = {}) => {
       window.devToolsExtension() : f => f,
   ];
 
-  const store: Store = createStore(rootReducer, initialState, compose(...enhancers));
+  const store: Store = createStore(createReducer(), initialState, compose(...enhancers));
+
+  store.asyncReducers = {}; // Async reducer registry
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
       try {
-        const nextRootReducer = require('./reducers').default;
+        const reducers = require('./reducers').default;
 
-        store.replaceReducer(nextRootReducer);
+        store.replaceReducer(reducers(store.asyncReducers));
       } catch (error) {
         console.error(chalk.red(`==> 😭  Reducer hot reloading error ${error}`));
       }

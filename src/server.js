@@ -16,7 +16,7 @@ import chalk from 'chalk';
 import configureStore from './redux/store';
 import Html from './utils/Html';
 import App from './containers/App';
-import routes from './routes';
+import createRoutes from './routes';
 import { port, host } from './config';
 
 const app = express();
@@ -60,6 +60,7 @@ app.get('*', (req, res) => {
     return `<!doctype html>${html}`;
   };
   const store = configureStore();
+  const routes = createRoutes(store);
 
   // If __DISABLE_SSR__ = true, disable server side rendering
   if (__DISABLE_SSR__) {
@@ -71,7 +72,7 @@ app.get('*', (req, res) => {
   const htmlApp = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={routerContext}>
-        <App />
+        <App routes={routes} />
       </StaticRouter>
     </Provider>,
   );

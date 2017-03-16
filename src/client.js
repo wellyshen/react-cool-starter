@@ -7,9 +7,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import configureStore from './redux/store';
+import createRoutes from './routes';
 
 const initialState = window.__INITIAL_STATE__;
 const store = configureStore(initialState);
+const routes = createRoutes(store);
 const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
@@ -19,7 +21,7 @@ const renderApp = () => {
     <AppContainer>
       <Provider store={store}>
         <BrowserRouter>
-          <App />
+          <App routes={routes} />
         </BrowserRouter>
       </Provider>
     </AppContainer>,
