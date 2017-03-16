@@ -10,11 +10,11 @@ import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
+import { matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
 import configureStore from './redux/store';
-import { loadBranchData } from './utils/helpers';
 import Html from './utils/Html';
 import App from './containers/App';
 import createRoutes from './routes';
@@ -86,6 +86,18 @@ app.get('*', (req, res) => {
 
     return;
   }
+
+  const loadBranchData = (location) => {
+    const branch = matchRoutes(routes, location.pathname);
+
+    const promises = branch.map(({ route, match }) => {
+      if (route.loadData) return route.loadData(store.dispath, match.parameter);
+
+      return Promise.resolve(null);
+    });
+
+    return Promise.all(promises);
+  };
 
   loadBranchData(routes, req.url, store)
     .then(() => {
