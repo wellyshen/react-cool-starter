@@ -15,7 +15,7 @@ const vendor = [
   'redux-thunk',
   'react-hot-loader',
   'react-router-dom',
-  // 'react-router-redux',
+  'react-router-redux',
   'react-helmet',
   'axios',
   'redbox-react',
