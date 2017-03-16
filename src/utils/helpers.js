@@ -2,8 +2,7 @@
 
 import React from 'react';
 
-// getComponent is a function that returns a promise for a component
-// It will not be called until the first mount
+// Rendering async component for React-Router code-splitting
 export const asyncComponent = (getComponent: () => Promise<any>) =>
   class AsyncComponent extends React.Component {
     static Component = null;

@@ -16,7 +16,7 @@ export default ({ routes }: Props) => {
   const routeWithSubRoutes = route => (
     <Route
       key={_.uniqueId()}
-      exact={route.exact}
+      exact={route.exact || false}
       path={route.path}
       render={props => (
         // Pass the sub-routes down to keep nesting

@@ -28,12 +28,10 @@ class Home extends PureComponent {
   };
 
   componentDidMount() {
-    const { fetchUsersIfNeeded } = this.props;
-
-    fetchUsersIfNeeded();
+    this.props.fetchUsersIfNeeded();
   }
 
-  displayUserList = () => {
+  renderUserList = () => {
     const { home } = this.props;
 
     if (!home.readyStatus || home.readyStatus === action.USERS_INVALID ||
@@ -52,7 +50,7 @@ class Home extends PureComponent {
     return (
       <div className={styles.Home}>
         <Helmet title="Home" />
-        {this.displayUserList()}
+        {this.renderUserList()}
       </div>
     );
   }

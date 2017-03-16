@@ -40,7 +40,7 @@ class UserInfo extends PureComponent {
     fetchUserIfNeeded(params.id);
   }
 
-  displayUserCard = () => {
+  renderUserCard = () => {
     const { userInfo, match: { params } } = this.props;
     const userInfoById = userInfo[params.id];
 
@@ -59,7 +59,7 @@ class UserInfo extends PureComponent {
     return (
       <div className={styles.UserInfo}>
         <Helmet title="User Info" />
-        {this.displayUserCard()}
+        {this.renderUserCard()}
       </div>
     );
   }

@@ -61,7 +61,6 @@ app.get('*', (req, res) => {
     return `<!doctype html>${html}`;
   };
   const store = configureStore();
-  const routes = createRoutes(store);
 
   // If __DISABLE_SSR__ = true, disable server side rendering
   if (__DISABLE_SSR__) {
@@ -69,6 +68,8 @@ app.get('*', (req, res) => {
     return;
   }
 
+  // React-Router rendering for server-side
+  const routes = createRoutes(store);
   const routerContext = {};
   const htmlApp = renderToString(
     <Provider store={store}>
@@ -87,10 +88,12 @@ app.get('*', (req, res) => {
     return;
   }
 
+  // Loading data on server-side
   const loadBranchData = (location) => {
     const branch = matchRoutes(routes, location.pathname);
 
     const promises = branch.map(({ route, match }) => {
+      // Dispatch the actions from the routes config
       if (route.loadData) return route.loadData(store.dispath, match.parameter);
 
       return Promise.resolve(null);
@@ -99,6 +102,7 @@ app.get('*', (req, res) => {
     return Promise.all(promises);
   };
 
+  // Send response after all the actions are dispathed
   loadBranchData(routes, req.url, store)
     .then(() => {
       // Checking is page is 404

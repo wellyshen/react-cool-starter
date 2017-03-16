@@ -4,9 +4,9 @@ import chalk from 'chalk';
 
 import { asyncComponent } from './utils/helpers';
 import type { Store, Dispatch } from './types';
+import { injectReducer } from './redux/reducers';
 import { fetchUsersIfNeeded } from './containers/Home/action';
 import { fetchUserIfNeeded } from './containers/UserInfo/action';
-import { injectReducer } from './redux/reducers';
 
 const errorLoading = (err) => {
   console.error(chalk.red(`==> 😭  Dynamic page loading failed ${err}`));
@@ -34,7 +34,6 @@ export default (store: Store): Array<Object> => [
   },
   {
     path: '/UserInfo/:id',
-    exact: false,
     component: asyncComponent(
       () => Promise.all([
         import('./containers/UserInfo'),
@@ -53,7 +52,6 @@ export default (store: Store): Array<Object> => [
   },
   {
     path: '*',
-    exact: false,
     component: asyncComponent(
       () => Promise.all([
         import('./containers/NotFound'),
