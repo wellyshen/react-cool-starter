@@ -6,6 +6,6 @@
     "!tools/webpack/webpack.server.babel.js",
     "!tools/webpack/webpack.test.babel.js",
     "src/server.js",
-    "src/utils/renderHtmlPage.js"
+    "src/utils/Html.js"
   ]
 }
