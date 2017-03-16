@@ -12,7 +12,7 @@ import styles from './styles.scss';
 type Props = { routes: Array<Object> };
 
 export default ({ routes }: Props) => {
-  // When sub routes are added to any route it'll work
+  // Use it when sub routes are added to any route it'll work
   const routeWithSubRoutes = route => (
     <Route
       key={_.uniqueId()}
