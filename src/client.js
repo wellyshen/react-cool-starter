@@ -2,15 +2,18 @@
 
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
+import createHistory from 'history/createBrowserHistory';
+import { ConnectedRouter } from 'react-router-redux';
+import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { AppContainer } from 'react-hot-loader';
 
 import configureStore from './redux/store';
 import createRoutes from './routes';
 
 const initialState = window.__INITIAL_STATE__;
-const store = configureStore(initialState);
+const history = createHistory();
+const store = configureStore(history, initialState);
 const routes = createRoutes(store);
 const mountNode = document.getElementById('react-view');
 
@@ -20,9 +23,11 @@ const renderApp = () => {
   render(
     <AppContainer>
       <Provider store={store}>
-        <BrowserRouter>
-          <App routes={routes} />
-        </BrowserRouter>
+        <ConnectedRouter history={history}>
+          <BrowserRouter>
+            <App routes={routes} />
+          </BrowserRouter>
+        </ConnectedRouter>
       </Provider>
     </AppContainer>,
     mountNode,

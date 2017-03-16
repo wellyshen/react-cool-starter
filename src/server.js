@@ -14,6 +14,7 @@ import { matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
+import createHistory from 'history/createMemoryHistory';
 import configureStore from './redux/store';
 import Html from './utils/Html';
 import App from './containers/App';
@@ -60,7 +61,8 @@ app.get('*', (req, res) => {
 
     return `<!doctype html>${html}`;
   };
-  const store = configureStore();
+  const history = createHistory();
+  const store = configureStore(history);
 
   // If __DISABLE_SSR__ = true, disable server side rendering
   if (__DISABLE_SSR__) {

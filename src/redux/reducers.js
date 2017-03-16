@@ -1,10 +1,13 @@
 /* @flow */
 
 import { combineReducers } from 'redux';
+import { routerReducer as routing } from 'react-router-redux';
+
 import type { Store } from '../types';
 
 export default function createReducer(asyncReducers: Object = {}) {
   return combineReducers({
+    routing,
     // Register the inital async reducers, otherwise you will get the warning of Redux
     home: (state = {}) => state,
     userInfo: (state = {}) => state,
