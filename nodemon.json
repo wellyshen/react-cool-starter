@@ -1,7 +1,6 @@
 {
   "watch": [
     "index.js",
-    "tools/flow/",
     "tools/webpack/",
     "!tools/webpack/webpack.server.babel.js",
     "src/server.js",

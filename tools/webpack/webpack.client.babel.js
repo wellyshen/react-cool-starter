@@ -152,7 +152,7 @@ module.exports = {
         }),
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass)$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [

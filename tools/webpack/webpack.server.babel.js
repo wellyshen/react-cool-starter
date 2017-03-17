@@ -40,7 +40,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css|scss|sass)$/,
         use: [
           {
             loader: 'css-loader/locals',

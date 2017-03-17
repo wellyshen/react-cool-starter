@@ -15,6 +15,7 @@ const vendor = [
   'redux-thunk',
   'react-hot-loader',
   'react-router-dom',
+  'history',
   'react-router-redux',
   'react-helmet',
   'axios',

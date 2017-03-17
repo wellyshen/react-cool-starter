@@ -16,36 +16,32 @@ export default (store: Store): Array<Object> => [
   {
     path: '/',
     exact: true,
-    component: asyncComponent(
-      () => Promise.all([
-        import('./containers/Home'),
-        import('./containers/Home/reducer'),
-      ])
-      .then(([Component, reducer]) => {
-        injectReducer(store, 'home', reducer.default);
+    component: asyncComponent(() => Promise.all([
+      import('./containers/Home'),
+      import('./containers/Home/reducer'),
+    ])
+    .then(([Component, reducer]) => {
+      injectReducer(store, 'home', reducer.default);
 
-        return Component.default;
-      })
-      .catch(errorLoading),
-    ),
+      return Component.default;
+    })
+    .catch(errorLoading)),
     loadData: (dispatch: Dispatch) => Promise.all([
       dispatch(fetchUsersIfNeeded()),
     ]),
   },
   {
     path: '/UserInfo/:id',
-    component: asyncComponent(
-      () => Promise.all([
-        import('./containers/UserInfo'),
-        import('./containers/UserInfo/reducer'),
-      ])
-      .then(([Component, reducer]) => {
-        injectReducer(store, 'userInfo', reducer.default);
+    component: asyncComponent(() => Promise.all([
+      import('./containers/UserInfo'),
+      import('./containers/UserInfo/reducer'),
+    ])
+    .then(([Component, reducer]) => {
+      injectReducer(store, 'userInfo', reducer.default);
 
-        return Component.default;
-      })
-      .catch(errorLoading),
-    ),
+      return Component.default;
+    })
+    .catch(errorLoading)),
     loadData: (dispatch: Dispatch, params: Object) => Promise.all([
       dispatch(fetchUserIfNeeded(params.id)),
     ]),
