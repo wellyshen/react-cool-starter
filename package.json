@@ -140,7 +140,7 @@
     "autoprefixer": "^6.7.7",
     "babel-cli": "^6.24.0",
     "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.4.0",
+    "babel-loader": "^6.4.1",
     "babel-plugin-dynamic-import-node": "^1.0.0",
     "babel-plugin-istanbul": "^4.0.0",
     "babel-plugin-transform-runtime": "^6.23.0",
