@@ -25,6 +25,8 @@ export default ({ routes }: Props) => {
     />
   );
 
+  console.log(routes.map(route => routeWithSubRoutes(route)));
+
   return (
     <div className={styles.App}>
       <Helmet {...config.app} />
