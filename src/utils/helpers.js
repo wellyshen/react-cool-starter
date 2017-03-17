@@ -3,6 +3,7 @@
 import React from 'react';
 
 // Rendering async component for React-Router code-splitting
+// eslint-disable-next-line import/prefer-default-export
 export const asyncComponent = (getComponent: () => Promise<any>) =>
   class AsyncComponent extends React.Component {
     static Component = null;
@@ -27,11 +28,3 @@ export const asyncComponent = (getComponent: () => Promise<any>) =>
       return null;
     }
   };
-
-// The fake store creator for testing Components
-export const storeFake = (state: Object): Object => ({
-  default: () => {},
-  subscribe: () => {},
-  dispatch: () => {},
-  getState: () => ({ ...state }),
-});

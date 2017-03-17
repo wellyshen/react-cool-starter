@@ -12,6 +12,8 @@
     "url": "https://github.com/wellyshen/react-cool-starter"
   },
   "keywords": [
+    "starter kit",
+    "boilerpate",
     "react",
     "redux",
     "universal",
@@ -21,11 +23,10 @@
     "webpack 2",
     "es6",
     "flow",
-    "starter kit",
-    "boilerpate",
     "hot reloading",
     "babel",
     "postcss",
+    "jest",
     "unit tests",
     "performance optimizing"
   ],
@@ -46,13 +47,9 @@
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "flow": "better-npm-run flow",
-    "test": "better-npm-run test",
-    "test:watch": "yarn test -- --no-single-run",
     "clean:all": "yarn run clean:client && yarn run clean:server && yarn run clean:coverage",
     "clean:client": "better-npm-run clean:client",
-    "clean:server": "better-npm-run clean:server",
-    "clean:coverage": "better-npm-run clean:coverage",
-    "coveralls": "better-npm-run coveralls && yarn run test:clean"
+    "clean:server": "better-npm-run clean:server"
   },
   "betterScripts": {
     "start": {
@@ -89,23 +86,11 @@
     "flow": {
       "command": "flow; test $? -eq 0 -o $? -eq 2"
     },
-    "test": {
-      "command": "karma start ./tools/testing/karma.conf.js --single-run",
-      "env": {
-        "NODE_ENV": "test"
-      }
-    },
     "clean:server": {
       "command": "rimraf ./build/server.js ./build/server.js.map"
     },
     "clean:client": {
       "command": "rimraf ./build/public/assets"
-    },
-    "clean:coverage": {
-      "command": "rimraf ./coverage"
-    },
-    "coveralls": {
-      "command": "cat ./coverage/lcov/lcov.info | coveralls"
     }
   },
   "dependencies": {
@@ -118,6 +103,7 @@
     "helmet": "^3.5.0",
     "history": "^4.6.1",
     "hpp": "^0.2.1",
+    "jest": "^19.0.2",
     "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "opn": "^4.0.2",
@@ -148,11 +134,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
     "better-npm-run": "0.0.14",
-    "chai": "^3.5.0",
-    "chai-enzyme": "^0.6.1",
-    "coveralls": "^2.12.0",
     "css-loader": "^0.27.3",
-    "enzyme": "^2.7.1",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-loader": "^1.6.3",
@@ -163,26 +145,12 @@
     "flow-bin": "^0.41.0",
     "image-webpack-loader": "^3.2.0",
     "imports-loader": "^0.7.1",
-    "karma": "^1.5.0",
-    "karma-cli": "^1.0.1",
-    "karma-coverage": "^1.1.1",
-    "karma-mocha": "^1.3.0",
-    "karma-mocha-reporter": "^2.2.2",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^2.0.3",
-    "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
     "nodemon": "^1.11.0",
-    "null-loader": "^0.1.1",
-    "phantomjs-prebuilt": "^2.1.14",
     "postcss": "^5.2.16",
     "postcss-loader": "^1.3.3",
-    "react-addons-test-utils": "^15.4.2",
-    "redux-mock-store": "^1.2.2",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
-    "sinon": "^2.0.0",
     "style-loader": "^0.14.1",
     "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
