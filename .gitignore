@@ -1,7 +1,6 @@
 .DS_Store
 *.log
 
-coverage
 node_modules
 build/server.js
 build/server.js.map

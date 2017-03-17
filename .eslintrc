@@ -9,8 +9,7 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true,
-    "mocha": true
+    "node": true
   },
   "rules": {
     "global-require": 0,
@@ -24,9 +23,6 @@
     "__SERVER__": true,
     "__DISABLE_SSR__": true,
     "__DEV__": true,
-    "webpackIsomorphicTools": true,
-    "should": true,
-    "expect": true,
-    "assert": true
+    "webpackIsomorphicTools": true
   }
 }
