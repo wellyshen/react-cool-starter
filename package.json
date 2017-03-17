@@ -47,6 +47,7 @@
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "flow": "better-npm-run flow",
+    "test": "better-npm-run test",
     "clean:all": "yarn run clean:client && yarn run clean:server && yarn run clean:coverage",
     "clean:client": "better-npm-run clean:client",
     "clean:server": "better-npm-run clean:server"
@@ -86,6 +87,12 @@
     "flow": {
       "command": "flow; test $? -eq 0 -o $? -eq 2"
     },
+    "test": {
+      "command": "jest",
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
     "clean:server": {
       "command": "rimraf ./build/server.js ./build/server.js.map"
     },
@@ -103,7 +110,6 @@
     "helmet": "^3.5.0",
     "history": "^4.6.1",
     "hpp": "^0.2.1",
-    "jest": "^19.0.2",
     "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "opn": "^4.0.2",
@@ -145,6 +151,7 @@
     "flow-bin": "^0.41.0",
     "image-webpack-loader": "^3.2.0",
     "imports-loader": "^0.7.1",
+    "jest": "^19.0.2",
     "node-sass": "^4.5.0",
     "nodemon": "^1.11.0",
     "postcss": "^5.2.16",
