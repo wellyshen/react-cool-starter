@@ -3,8 +3,10 @@ import { shallow } from 'enzyme';
 
 import NotFound from '../index';
 
-test('<NotFound />', () => {
-  const wrapper = shallow(<NotFound />);
+describe('<NotFound />', () => {
+  test('renders 404 error message', () => {
+    const wrapper = shallow(<NotFound />);
 
-  expect(wrapper.find('p').text()).toEqual('Oops, Page was not found!');
+    expect(wrapper.find('p').text()).toEqual('Oops, Page was not found!');
+  });
 });
