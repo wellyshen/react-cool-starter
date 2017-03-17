@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -12,9 +12,10 @@
     "url": "https://github.com/wellyshen/react-cool-starter"
   },
   "keywords": [
-    "starter kit",
+    "starter",
     "boilerpate",
     "react",
+    "react router",
     "redux",
     "universal",
     "code spltting",
@@ -27,7 +28,7 @@
     "babel",
     "postcss",
     "jest",
-    "unit tests",
+    "unit testing",
     "performance optimizing"
   ],
   "author": "WellyShen <hivoid19@gmail.com> (https://github.com/wellyshen)",
@@ -88,7 +89,7 @@
       "command": "flow; test $? -eq 0 -o $? -eq 2"
     },
     "test": {
-      "command": "jest --config .jestrc",
+      "command": "jest",
       "env": {
         "NODE_ENV": "test"
       }
@@ -98,6 +99,60 @@
     },
     "clean:client": {
       "command": "rimraf ./build/public/assets"
+    }
+  },
+  "babel": {
+    "presets": ["es2015", "react", "stage-0"],
+    "plugins": ["dynamic-import-node"]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "plugins": [
+      "react",
+      "jsx-a11y",
+      "import"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true,
+      "es6": true
+    },
+    "rules": {
+      "global-require": 0,
+      "no-underscore-dangle": 0,
+      "no-console": 0,
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    },
+    "globals": {
+      "__CLIENT__": true,
+      "__SERVER__": true,
+      "__DISABLE_SSR__": true,
+      "__DEV__": true,
+      "webpackIsomorphicTools": true
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "string-quotes": "single",
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global",
+            "local"
+          ]
+        }
+      ]
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
     }
   },
   "dependencies": {
