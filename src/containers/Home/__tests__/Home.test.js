@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
-import { storeFake } from '../../../utils/helpers';
 
+import { storeFake } from '../../../utils/helpers';
 import Home from '../index';
 
 describe('<Home />', () => {
@@ -14,6 +14,10 @@ describe('<Home />', () => {
       </StaticRouter>
     </Provider>,
   ).toJSON();
+
+  test('calls data fetch action', () => {
+
+  });
 
   test('renders the loading status if data invalid', () => {
     const store = storeFake({
