@@ -16,7 +16,8 @@ type Props = {
   fetchUsersIfNeeded: () => void,
 };
 
-class Home extends PureComponent {
+// Export this for unite testing more easily
+export class Home extends PureComponent {
   props: Props;
 
   static defaultProps: {

@@ -1,22 +1,31 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 
 import { storeFake } from '../../../utils/helpers';
-import Home from '../index';
+import ReduxHome, { Home } from '../index';
 
 describe('<Home />', () => {
   const tree = store => renderer.create(
     <Provider store={store}>
       <StaticRouter location={''} context={{}}>
-        <Home />
+        <ReduxHome />
       </StaticRouter>
     </Provider>,
   ).toJSON();
 
-  test('calls data fetch action', () => {
+  test('should call fetchUsersIfNeeded when componentDidMount', () => {
+    const mockAction = jest.fn();
 
+    mount(
+      <StaticRouter location={''} context={{}}>
+        <Home home={{}} fetchUsersIfNeeded={mockAction} />
+      </StaticRouter>,
+    );
+
+    expect(mockAction).toHaveBeenCalled();
   });
 
   test('renders the loading status if data invalid', () => {

@@ -13,7 +13,7 @@ export const USER_FAILURE = 'USER_FAILURE';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
-// Export this function for testing
+// Export this for unite testing more easily
 export const fetchUser = (userId: string, axios: any): ThunkAction =>
   (dispatch: Dispatch) => {
     dispatch({ type: USER_REQUESTING, userId });
