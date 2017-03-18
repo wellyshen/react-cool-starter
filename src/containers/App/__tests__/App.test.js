@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { StaticRouter } from 'react-router-dom';
 
 import App from '../index';
 
@@ -10,7 +11,11 @@ describe('<App />', () => {
       exact: true,
       component: () => <div><p>Hi, it rocks!</p></div>,
     }];
-    const tree = renderer.create(<App routes={routes} />).toJSON();
+    const tree = renderer.create(
+      <StaticRouter location={''} context={{}}>
+        <App routes={routes} />
+      </StaticRouter>,
+    ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
