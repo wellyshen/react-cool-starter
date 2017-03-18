@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -17,6 +17,7 @@
     "react",
     "react router",
     "redux",
+    "react router redux",
     "universal",
     "code spltting",
     "async reducers",
