@@ -6,12 +6,12 @@ import App from '../index';
 import config from '../../../config';
 
 describe('<App />', () => {
-  const route = [{
+  const routes = [{
     path: '/',
     exact: true,
     component: () => <div><p>Hi, it rocks!</p></div>,
   }];
-  const wrapper = shallow(<App routes={route} />);
+  const wrapper = shallow(<App routes={routes} />);
 
   test('renders a logo', () => {
     const image = wrapper.find('img');
@@ -33,8 +33,8 @@ describe('<App />', () => {
 
     expect(RRSwitch).toHaveLength(1);
     expect(RRRoute).toHaveLength(1);
-    expect(RRRoute.prop('path')).toBe('/');
-    expect(RRRoute.prop('exact')).toBeTruthy();
-    // expect(RRRoute.prop('render')).toBe(route[0].component);
+    expect(RRRoute.prop('path')).toBe(routes[0].path);
+    expect(RRRoute.prop('exact')).toBe(routes[0].exact);
+    // expect(RRRoute.prop('render')).toBe(() => {});
   });
 });
