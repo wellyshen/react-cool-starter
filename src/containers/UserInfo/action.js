@@ -8,8 +8,8 @@ import type {
 } from '../../types';
 
 export const USER_REQUESTING = 'USER_REQUESTING';
-export const USER_SUCCESS = 'USER_SUCCESS';
 export const USER_FAILURE = 'USER_FAILURE';
+export const USER_SUCCESS = 'USER_SUCCESS';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 

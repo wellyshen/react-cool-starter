@@ -9,8 +9,8 @@ import type {
 
 export const USERS_INVALID = 'USERS_INVALID';
 export const USERS_REQUESTING = 'USERS_REQUESTING';
-export const USERS_SUCCESS = 'USERS_SUCCESS';
 export const USERS_FAILURE = 'USERS_FAILURE';
+export const USERS_SUCCESS = 'USERS_SUCCESS';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 

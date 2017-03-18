@@ -1,27 +1,35 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 
-import { storeFake } from '../../../utils/helpers';
-import ReduxHome, { Home } from '../index';
+import {
+  USERS_INVALID,
+  USERS_REQUESTING,
+  USERS_FAILURE,
+  USERS_SUCCESS,
+} from '../action';
+import { Home } from '../index';
 
 describe('<Home />', () => {
-  const tree = store => renderer.create(
-    <Provider store={store}>
-      <StaticRouter location={''} context={{}}>
-        <ReduxHome />
-      </StaticRouter>
-    </Provider>,
+  const tree = (props, actions) => renderer.create(
+    <StaticRouter location={''} context={{}}>
+      <Home {...props} {...actions} />
+    </StaticRouter>,
   ).toJSON();
 
   test('should call fetchUsersIfNeeded when componentDidMount', () => {
     const mockAction = jest.fn();
+    const props = {
+      home: {},
+    };
+    const actions = {
+      fetchUsersIfNeeded: mockAction,
+    };
 
     mount(
       <StaticRouter location={''} context={{}}>
-        <Home home={{}} fetchUsersIfNeeded={mockAction} />
+        <Home {...props} {...actions} />
       </StaticRouter>,
     );
 
@@ -29,37 +37,41 @@ describe('<Home />', () => {
   });
 
   test('renders the loading status if data invalid', () => {
-    const store = storeFake({
-      home: { readyStatus: 'USERS_INVALID' },
-    });
+    const props = {
+      home: { readyStatus: USERS_INVALID },
+    };
+    const actions = { fetchUsersIfNeeded: () => {} };
 
-    expect(tree(store)).toMatchSnapshot();
+    expect(tree(props, actions)).toMatchSnapshot();
   });
 
-  test('renders the loading status if loading data', () => {
-    const store = storeFake({
-      home: { readyStatus: 'USERS_REQUESTING' },
-    });
+  test('renders the loading status if requesting data', () => {
+    const props = {
+      home: { readyStatus: USERS_REQUESTING },
+    };
+    const actions = { fetchUsersIfNeeded: () => {} };
 
-    expect(tree(store)).toMatchSnapshot();
+    expect(tree(props, actions)).toMatchSnapshot();
   });
 
   test('renders an error if loading failed', () => {
-    const store = storeFake({
-      home: { readyStatus: 'USERS_FAILURE' },
-    });
+    const props = {
+      home: { readyStatus: USERS_FAILURE },
+    };
+    const actions = { fetchUsersIfNeeded: () => {} };
 
-    expect(tree(store)).toMatchSnapshot();
+    expect(tree(props, actions)).toMatchSnapshot();
   });
 
   test('renders the <UserList /> if loading was successful', () => {
-    const store = storeFake({
+    const props = {
       home: {
-        readyStatus: 'USERS_SUCCESS',
+        readyStatus: USERS_SUCCESS,
         list: [{ id: '1', name: 'Welly' }],
       },
-    });
+    };
+    const actions = { fetchUsersIfNeeded: () => {} };
 
-    expect(tree(store)).toMatchSnapshot();
+    expect(tree(props, actions)).toMatchSnapshot();
   });
 });

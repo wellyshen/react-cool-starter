@@ -17,20 +17,13 @@ type Props = {
   fetchUserIfNeeded: (id: string) => void,
 };
 
-class UserInfo extends PureComponent {
+// Export this for unite testing more easily
+export class UserInfo extends PureComponent {
   props: Props;
 
   static defaultProps: {
-    userInfo: {
-      readyStatus: '',
-      info: {
-        name: '',
-        phone: '',
-        email: '',
-        website: '',
-      },
-    },
-    match: null,
+    userInfo: {},
+    match: { params: { id: '' } },
     fetchUserIfNeeded: () => {},
   };
 
