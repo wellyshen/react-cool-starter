@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import NotFound from '../index';
 
 describe('<NotFound />', () => {
-  test('renders 404 error message', () => {
-    const wrapper = shallow(<NotFound />);
+  test('renders', () => {
+    const tree = renderer.create(<NotFound />).toJSON();
 
-    expect(wrapper.find('p').text()).toBe('Oops, Page was not found!');
+    expect(tree).toMatchSnapshot();
   });
 });
