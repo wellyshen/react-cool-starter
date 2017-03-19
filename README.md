@@ -15,6 +15,11 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/wellyshen/react-cool-starter/master/LICENSE)
 
 
+## Real Case Study
+
+* [BECK Friends](https://www.beckfriends.com/) is an international deliver service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
+
+
 ## Features
 
 Really cool starter boilerplate with the most popular technologies:
@@ -48,11 +53,6 @@ Really cool starter boilerplate with the most popular technologies:
 * 404 error page and redirect handling.
 * Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
 * [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
-
-
-## Real Case Study
-
-* [BECK Friends](https://www.beckfriends.com/) is an international deliver service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
 
 
 ## Requirements
