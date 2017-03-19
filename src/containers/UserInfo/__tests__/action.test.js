@@ -13,7 +13,7 @@ import {
 
 const mockStore = configureMockStore([thunk]);
 
-describe('fetch users data', () => {
+describe('fetch user data', () => {
   const userId = '1';
   const response = {
     name: 'Welly',
