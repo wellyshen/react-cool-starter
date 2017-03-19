@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-// Rendering async component for React-Router code-splitting
+// Rendering async component for React-Router dynamic routes
 // eslint-disable-next-line import/prefer-default-export
 export const asyncComponent = (getComponent: () => Promise<any>) =>
   class AsyncComponent extends React.Component {

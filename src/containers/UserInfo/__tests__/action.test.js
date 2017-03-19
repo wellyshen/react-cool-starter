@@ -27,7 +27,7 @@ describe('fetch user data', () => {
 
   afterEach(() => { moxios.uninstall(); });
 
-  test('creates USER_SUCCESS when fetching users has been done', () => {
+  test('creates USER_SUCCESS when fetching user has been done', () => {
     moxios.stubRequest(API_URL, {
       status: 200,
       response: { data: response },
@@ -43,7 +43,7 @@ describe('fetch user data', () => {
       .then(() => { expect(store.getActions()).toEqual(expectedActions); });
   });
 
-  test('creates USER_FAILURE when fail to fetch users', () => {
+  test('creates USER_FAILURE when fail to fetch user', () => {
     moxios.stubRequest(API_URL + userId, {
       status: 400,
       response: { err: errorMessage },

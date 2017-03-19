@@ -140,18 +140,11 @@
       "no-console": 0,
       "react/jsx-filename-extension": [
         1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
+        { "extensions": [".js", ".jsx"] }
       ],
       "import/no-extraneous-dependencies": [
         "error",
-        {
-          "devDependencies": true
-        }
+        { "devDependencies": true }
       ]
     },
     "globals": {
@@ -168,12 +161,7 @@
       "string-quotes": "single",
       "selector-pseudo-class-no-unknown": [
         true,
-        {
-          "ignorePseudoClasses": [
-            "global",
-            "local"
-          ]
-        }
+        { "ignorePseudoClasses": ["global", "local"] }
       ]
     }
   },

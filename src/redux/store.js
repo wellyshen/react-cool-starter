@@ -9,7 +9,7 @@ import chalk from 'chalk';
 import createReducer from './reducers';
 import type { Store } from '../types';
 
-export default (history: Object, initialState: Object = {}) => {
+export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
     thunk.withExtraArgument(axios),
     routerMiddleware(history),

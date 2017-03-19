@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import _ from 'lodash';
 
 import config from '../../config';
+// Import your global styles here
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 

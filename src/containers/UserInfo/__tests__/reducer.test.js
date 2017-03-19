@@ -5,7 +5,7 @@ import {
   USER_SUCCESS,
 } from '../action';
 
-describe('reducer:userInfo', () => {
+describe('user data reducer', () => {
   it('should handle the initial state', () => {
     expect(reducer(undefined, {})).toEqual({});
   });
