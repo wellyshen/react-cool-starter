@@ -83,7 +83,7 @@
       "command": "webpack --progress --hide-modules --config ./tools/webpack/webpack.server.babel.js"
     },
     "lint:js": {
-      "command": "eslint -c .eslintrc ./src ./tools ./index.js"
+      "command": "eslint ./src ./tools ./index.js"
     },
     "lint:style": {
       "command": "stylelint \"./src/**/*.css\""
