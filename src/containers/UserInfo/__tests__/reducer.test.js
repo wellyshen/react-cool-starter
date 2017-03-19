@@ -6,11 +6,11 @@ import {
 } from '../action';
 
 describe('user data reducer', () => {
-  it('should handle the initial state', () => {
+  test('should handle the initial state', () => {
     expect(reducer(undefined, {})).toEqual({});
   });
 
-  it('should handle USER_REQUESTING', () => {
+  test('should handle USER_REQUESTING', () => {
     expect(
       reducer(undefined, {
         type: USER_REQUESTING,
@@ -19,7 +19,7 @@ describe('user data reducer', () => {
     ).toEqual({ 1: { readyStatus: USER_REQUESTING } });
   });
 
-  it('should handle USER_FAILURE', () => {
+  test('should handle USER_FAILURE', () => {
     expect(
       reducer(undefined, {
         type: USER_FAILURE,
@@ -34,7 +34,7 @@ describe('user data reducer', () => {
     });
   });
 
-  it('should handle USER_SUCCESS', () => {
+  test('should handle USER_SUCCESS', () => {
     expect(
       reducer(undefined, {
         type: USER_SUCCESS,

@@ -7,7 +7,7 @@ import {
 } from '../action';
 
 describe('users data reducer', () => {
-  it('should handle USERS_INVALID', () => {
+  test('should handle USERS_INVALID', () => {
     expect(reducer(undefined, {
       err: null,
       list: [],
@@ -18,7 +18,7 @@ describe('users data reducer', () => {
     });
   });
 
-  it('should handle USERS_REQUESTING', () => {
+  test('should handle USERS_REQUESTING', () => {
     expect(
       reducer(undefined, {
         type: USERS_REQUESTING,
@@ -32,7 +32,7 @@ describe('users data reducer', () => {
     });
   });
 
-  it('should handle USERS_FAILURE', () => {
+  test('should handle USERS_FAILURE', () => {
     expect(
       reducer(undefined, {
         type: USERS_FAILURE,
@@ -46,7 +46,7 @@ describe('users data reducer', () => {
     });
   });
 
-  it('should handle USERS_SUCCESS', () => {
+  test('should handle USERS_SUCCESS', () => {
     expect(
       reducer(undefined, {
         type: USERS_SUCCESS,
