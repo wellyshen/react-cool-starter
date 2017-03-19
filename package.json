@@ -18,6 +18,7 @@
     "redux",
     "react router",
     "universal",
+    "dyanmic routes",
     "async reducers",
     "express",
     "webpack 2",
