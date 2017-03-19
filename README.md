@@ -1,8 +1,8 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
-A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router](https://github.com/reactjs/react-router) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
+A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router v4](https://reacttraining.com/react-router/) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
 
-The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router](https://github.com/reactjs/react-router). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
@@ -21,7 +21,7 @@ Really cool starter boilerplate with the most popular technologies:
 
 * [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering, dynamic routing, async redux reducers, async data fetching and code-splitting.
 * [React](https://facebook.github.io/react/) as the view.
-* [React Router](https://github.com/reactjs/react-router) as the router.
+* [React Router v4](https://reacttraining.com/react-router/) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
 * [Express](https://expressjs.com/) server.
 * [Webpack 2](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
@@ -40,14 +40,13 @@ Really cool starter boilerplate with the most popular technologies:
 * [Flow](https://flowtype.org/) as the static type checker for javascript.
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb's code style).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
-* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS Modules](https://github.com/css-Modules/css-Modules) enabled.
+* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
 * Split vendor's libraries from client bundle.
-* No other view engines, just javascript based HTML rendering template.
+* No other view engines, just javascript based HTML rendering component.
 * Shared app config between development and production.
 * 404 error page and redirect handling.
-* [karma](https://karma-runner.github.io/1.0/index.html), [mocha](https://mochajs.org/), [enzyme](https://github.com/airbnb/enzyme), [chai](http://chaijs.com/) and [sinon](https://github.com/sinonjs/sinon) as the integrated solution for writing unit tests.
-* Testing code coverage support.
+* Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
 * [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
 
 
@@ -102,7 +101,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `flow`|Run type checking for `.js` files.
-`test`|Run testing once.
+`test`|Run testing once (with code coverage).
 `test:watch`|Run testing on every test file change.
 `clean:all`|Remove the client/server bundled stuff and the coverage report.
 `clean:client`|Remove the `./build/public/assets` folder to clean the client bundled stuff.
@@ -126,11 +125,11 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── prod.js                   # Production settings (overrides the default settings)
 │   ├── components                    # Reusable components (including scss/testing files)
 │   ├── containers                    # Container components (including assets/action/reducer/scss/testing files)
-│   ├── utils                         # App-wide util (including HTML render view, helpers)
+│   ├── utils                         # App-wide util (including HTML component, helpers)
 │   ├── redux                         # Redux related configuration scripts
 │   │   ├── reducers.js               # The root reducer (registry and injection)
 │   │   └── store.js                  # Configure and instrument Redux store   
-│   ├── theme                         # App-wide style, vendor style, generally settings
+│   ├── theme                         # App-wide styles and vendor styles
 │   ├── types                         # Flow types for actions, reducers and more
 │   ├── client.js                     # App bootstrap and rendering (webpack entry)
 │   ├── routes.js                     # Routes shared between client and server side
@@ -138,16 +137,13 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 ├── tools                             # Project related configurations (testing/build etc.)
 │   ├── flow                          # Flow types, interface, module aliasing definitions
 │   ├── openBrowser                   # Utility for opening Google Chrome
-│   ├── testing                       # Testing configuration settings
-│   │   ├── karma.conf.js             # Karma configuration file
-│   │   └── test-bunlder.js           # Karma pre-processor settings file
+│   ├── jest                          # Jest CSS modules and assets mocks settings
 │   ├── webpack                       # Webpack configuration settings
-│   │   ├── config.js                 # Configuration for CSSModules, vendor registering
+│   │   ├── config.js                 # Configuration for CSS modules, vendor registering
 │   │   ├── webpack.client.babel.js   # Webpack configuration for client
 │   │   ├── webpack.server.babel.js   # Webpack configuration for server
-│   │   ├── config.test.babel.js      # Webpack configuration file for testing (for karma config)
 │   │   └── WIT.config.js             # Webpack Isomorphic Tools configuration file        
-└── index.js                          # App start point
+└── index.js                          # App entry point
 ```
 
 
@@ -192,11 +188,11 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Stateless Functional Components
 
-[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions). These components are written in plain javascript functions. In the starter boilerplate I use it wherever possible.
+[React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/components-and-props.html). These components are written in plain javascript functions. In the starter boilerplate I use it wherever possible.
 
 ### Adding Routes and Async Reducers
 
-[React Router](https://github.com/reactjs/react-router) provides the dynamic routing by "Code-Splitting". It's great for building scableable apps (see the [document](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md) for the detail).
+This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. One great feature of the project is support the daynamic routes by "code-splitting". With it, our visitors don't have to download the entire website before they can use it. Each page will be downloaded incrementally when they visiting it.
 
 Here I use the `import()` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://webpack.js.org/).
 
@@ -207,38 +203,89 @@ import { injectReducer } from './redux/reducers';
 
 // ...
 
-export default function createRoutes(store) {
-  return {
+export default store => [
+  {
+    // Define your route path
+    path: '/myPath',
+    // If the route matches the location.pathname exactly (used for index route usually)
+    exact: true,
+    component: asyncComponent(() => Promise.all([
+      // Import your route component here
+      import('./containers/MyRouteComponent'),
+      // Import your async reducer(s) here
+      import('./containers/MyRouteComponent/myAsyncReducer'),
+    ])
+    .then(([Component, reducer]) => {
+      // Inject your async reducer to the store
+      injectReducer(store, 'home', reducer.default);
 
+      return Component.default;
+    })
+    .catch(errorLoading)),
     // ...
+  },
+  // Setup other routes...
+];
+```
 
-    childRoutes: [
-      {
-        path: '/path',                                                        // Define your route path here
-        getComponent(location, cb) {
-          const importModules = Promise.all([
-            import('./containers/MyNewRouteComponent'),                       // Add your route component here
-            import('./containers/MyNewRouteComponent/myAsyncReducer'),        // Add your async reducer here
-          ]);
 
-          const renderRoute = loadModule(cb);
+### Data Fetching from Server-side
 
-          importModules
-            .then(([Component, reducer]) => {
-              injectReducer(store, 'userInfo', reducer.default);              // Inject your async reducer
-                                                                              // to the store
-              renderRoute(Component);
-            })
-            .catch(errorLoading);
-        },
-      },
+Just write Redux actions and stores as normal (read the [Redux](http://redux.js.org/docs/basics/) guide if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
-      // ...
+Register the action(s) in `./src/routes.js`, which have to be called from server-sdie:
 
-    ],
+```javascript
+// ...
+
+export default store => [
+  {
+    // ...
+    loadData: (dispatch: Dispatch) => Promise.all([
+      // Register your server-side call action(s) here
+      dispatch(myReduxAction()),
+    ]),
+  },
+  // ...
+];
+```
+
+The action(s) will be dispatched through `./src/server.js` before client rednering:
+
+```javascript
+// ...
+
+app.get('*', (req, res) => {
+  // ...
+
+  const loadBranchData = (location) => {
+    const branch = matchRoutes(routes, location.pathname);
+
+    const promises = branch.map(({ route, match }) => {
+      // Dispatch the action(s) through the loadData method of "./src/routes.js"
+      if (route.loadData) return route.loadData(store.dispath, match.parameter);
+
+      return Promise.resolve(null);
+    });
+
+    return Promise.all(promises);
   };
+
+  // ...
+});
+
+// ...
+```
+
+On client-side we also need to invoke the action(s) in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action(s) to figure out if fetches for data need to be made or not:
+
+```javascript
+componentDidMount() {
+  // Invoke your redux action(s) for client rendering
+  this.props.myReduxAction();
 }
 ```
+
 
 ### Managing Title, Meta, Styles and Scripts
 
@@ -256,9 +303,9 @@ import config from './config';
 
 ### Styles
 
-The starter boilerplate supports CSS, SASS and [CSS Modules](https://github.com/css-Modules/css-Modules) is enabled by default. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
+The starter boilerplate supports CSS, SASS and [CSS modules](https://github.com/css-Modules/css-Modules) is enabled by default. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
-With CSS Modules:
+With CSS modules:
 
 ```javascript
 import styles from './styles.scss';
@@ -275,7 +322,7 @@ render() {
 }
 ```
 
-Without CSS Modules (you need to turn off CSS Modules from `./tools/webpack/config.js`):
+Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.js`):
 
 ```javascript
 import './styles.scss';
@@ -305,19 +352,23 @@ const App = ({ children }) => (
 );
 ```
 
-For the better development experience, don't forget to include those files in the `./src/utils/renderHtmlPage.js`, for example:
+For the better development experience, don't forget to include those files in the `./src/utils/Html.js`, for example:
 
 ```javascript
 // ...
 
-${
-  _.keys(assets.styles).length === 0 ?
-    `<style>${
-      // Include the vendor stylesheet and the stylesheets which you have used here
-      require('../theme/normalize.css')._style +                
-      require('../containers/App/styles.scss')._style +              
-    }</style>` : ''
-}
+  {
+    _.keys(assets.styles).length === 0 ?
+      <style
+        dangerouslySetInnerHTML={{ __html:
+          // Include the vendor styles and the styles which you have used here
+          require('../theme/normalize.css')._style +
+          require('../containers/App/styles.scss')._style +
+          // Other styles...
+        }}
+      />
+      : null
+  }
 
 // ...
 ```
@@ -336,7 +387,7 @@ Using image:
 Using font-awesome:
 
 ```javascript
-// With CSS Modules
+// With CSS modules
 import styles from './myStyle.scss';
 
 // ...
@@ -347,7 +398,7 @@ return (
   </div>
 );
 
-// Without CSS Modules
+// Without CSS modules
 import './font-awesome.css';
 
 // ...
@@ -360,7 +411,7 @@ return (
 
 ```
 
-For using CSS Modules, you have to set the proper font path in your scss file:
+For using CSS modules, you have to set the proper font path in your scss file:
 
 ```
 $fa-font-path:"../node_modules/font-awesome/fonts";
@@ -371,32 +422,6 @@ $fa-font-path:"../node_modules/font-awesome/fonts";
 }
 ```
 
-### Data fetching and client hydration
-
-Just write Redux actions and stores as normal (read the [Redux](https://rackt.github.io/redux/) guide if you are new). The starter boilerplate using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
-
-You can write dispatches for actions that must be called for the container to be ready:
-
-```javascript
-// Write a static function which be called by server and client
-static fetchData(dispatch, params) {
-  // Add the asynchronous actions which must be called while page loading here
-  return Promise.all([
-    dispatch(action.fetchDataIfNeeded(params.id)),
-  ]);
-}
-```
-
-Then invoke the actions in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action to figure out if fetches for data need to be made or not:
-
-```javascript
-componentDidMount() {
-  const { dispatch, params } = this.props;
-
-  // Invoke the action for client rendering
-  UserInfo.fetchData(dispatch, params);
-}
-```
 
 ### Boost App Performance by Shallow Compare
 
@@ -443,33 +468,34 @@ Note: Often you will want to use third-party libraries. For these circumstances,
 
 ### Unit Tests
 
-The starter boilerplate uses [mocha](https://mochajs.org/) to run your unit tests, it uses [karma](https://karma-runner.github.io/1.0/index.html) as the test runner, and uses [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. Moreover it also uses [chai](http://chaijs.com/) as the assertion library and uses [sinon](https://github.com/sinonjs/sinon) to provide the standalone test spies, stubs and mocks. The unit tests focus on four parts as below:
+The starter use [Jest](https://facebook.github.io/jest/) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapsot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very useful for testing React component. Give it a try, you'll be impressed.
 
+I also use [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. The unit tests focus on three parts as below:
+
+* React Components
 * Actions
-* Containers
-* Components
 * Reducers
 
-By the way, I use [babel-plugin-istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) to instruments your code with Istanbul coverage, the report is generated in `./coverage` folder. You can configure `./tools/webpack/config.test.babel.js` to ignore the files which you don't want to cover. For example:
+By the way, Jest support code coverage, the report is generated in `./coverage` folder. You can configure `./package.json` to define which files that you want to cover. For example:
 
 ```javascript
 {
   // ...
 
-  plugins: [
-    'transform-runtime',
-    ['istanbul', {
-      exclude: [
-        '**/*-test.js',   // Ignore the files which you don't want to cover here
-      ],
-    }],
-  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/containers/**/*.js",   // Define the files, which want to be covered
+      "src/components/**/*.js",
+      "!src/**/__tests__"         // The files will be ignored by code coverage
+    ],
+    // Other configurations
+  },
 
   // ...
 }
 ```
 
-You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code to skip instrumenting.
+You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code in a javascript file to skip code coverage.
 
 
 ## Troubleshooting
@@ -478,14 +504,6 @@ If you get the the following message during developing, try to run `yarn build` 
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
-If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the problem. (it's a react universal issue, this solution might not works for your further developing scenarios)
+If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
 
 > React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
-
-
-## To Do...
-
-There're some features or improvements I'd like to do in the near future. If you have any great ideas or suggestions, feel free to fork the repository and share it.
-
-- [ ] Upgrading to [React Router v4](https://reacttraining.com/react-router/)
-- [ ] Replacing the Mocha testing framework with [Jest](https://facebook.github.io/jest/)

@@ -17,9 +17,9 @@ export default (store: Store): Array<Object> => [
     path: '/',
     exact: true,
     component: asyncComponent(() => Promise.all([
-      // Register your route here
+      // Import your route here
       import('./containers/Home'),
-      // Register your async reducer(s) here
+      // Import your async reducer(s) here
       import('./containers/Home/reducer'),
     ])
     .then(([Component, reducer]) => {
