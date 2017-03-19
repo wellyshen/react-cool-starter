@@ -109,6 +109,7 @@ module.exports = {
     // Don't use chunkhash in development it will increase compilation time
     filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
     chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash:8].chunk.js',
+    pathinfo: isDev,
   },
   module: {
     rules: [
@@ -116,12 +117,12 @@ module.exports = {
         test: /\.jsx?$/,
         enforce: 'pre',
         exclude: /node_modules/,
-        loader: 'eslint-loader',
+        loader: 'eslint',
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel',
         options: {
           cacheDirectory: isDev,
           babelrc: false,
@@ -132,10 +133,10 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: 'style',
           use: [
             {
-              loader: 'css-loader',
+              loader: 'css',
               options: {
                 importLoaders: 1,
                 sourceMap: true,
@@ -147,17 +148,17 @@ module.exports = {
                 minimize: !isDev,
               },
             },
-            'postcss-loader',
+            'postcss',
           ],
         }),
       },
       {
         test: /\.(scss|sass)$/,
         loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: 'style',
           use: [
             {
-              loader: 'css-loader',
+              loader: 'css',
               options: {
                 importLoaders: 2,
                 sourceMap: true,
@@ -167,9 +168,9 @@ module.exports = {
                 minimize: !isDev,
               },
             },
-            'postcss-loader',
+            'postcss',
             {
-              loader: 'sass-loader',
+              loader: 'sass',
               options: {
                 outputStyle: 'expanded',
                 sourceMap: true,
@@ -181,7 +182,7 @@ module.exports = {
       },
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
-        loader: 'url-loader',
+        loader: 'url',
         options: { limit: 10000 },
       },
       {
@@ -189,21 +190,38 @@ module.exports = {
         // Any image below or equal to 10K will be converted to inline base64 instead
         use: [
           {
-            loader: 'url-loader',
+            loader: 'url',
             options: { limit: 10240 },
           },
           // Using for image optimization
           {
-            loader: 'image-webpack-loader',
+            loader: 'image-webpack',
             options: { bypassOnDebug: true },
           },
         ],
       },
     ],
   },
+  // Where to resolve our loaders
+  resolveLoader: {
+    modules: ['node_modules'],
+    moduleExtensions: ['-loader'],
+  },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
     modules: ['src', 'node_modules'],
+    descriptionFiles: ['package.json'],
+    moduleExtensions: ['-loader'],
+    extensions: ['.js', '.jsx', '.json'],
   },
   plugins: getPlugins(),
+  // Some libraries import Node modules but don't use them in the browser.
+  // Tell Webpack to provide empty mocks for them so importing them works.
+  // https://webpack.github.io/docs/configuration.html#node
+  // https://github.com/webpack/node-libs-browser/tree/master/mock
+  node: {
+    fs: 'empty',
+    vm: 'empty',
+    net: 'empty',
+    tls: 'empty',
+  },
 };

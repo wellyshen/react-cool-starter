@@ -27,12 +27,12 @@ module.exports = {
         test: /\.jsx?$/,
         enforce: 'pre',
         exclude: /node_modules/,
-        loader: 'eslint-loader',
+        loader: 'eslint',
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel',
         options: {
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
@@ -43,7 +43,7 @@ module.exports = {
         test: /\.(css|scss|sass)$/,
         use: [
           {
-            loader: 'css-loader/locals',
+            loader: 'css/locals',
             options: {
               modules: CSSModules,
               // "context" and "localIdentName" need to be the same with client config,
@@ -56,7 +56,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff2?|ttf|eot)$/,
-        loader: 'url-loader',
+        loader: 'url',
         options: { limit: 10000 },
       },
     ],
@@ -71,9 +71,16 @@ module.exports = {
     }),
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
   ],
+  // Where to resolve our loaders
+  resolveLoader: {
+    modules: ['node_modules'],
+    moduleExtensions: ['-loader'],
+  },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
     modules: ['src', 'node_modules'],
+    descriptionFiles: ['package.json'],
+    moduleExtensions: ['-loader'],
+    extensions: ['.js', '.jsx', '.json'],
   },
   node: {
     console: false,
