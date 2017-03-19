@@ -19,7 +19,7 @@ export default (store: Store): Array<Object> => [
     component: asyncComponent(() => Promise.all([
       // Register your route here
       import('./containers/Home'),
-      // Register your async reducer here
+      // Register your async reducer(s) here
       import('./containers/Home/reducer'),
     ])
     .then(([Component, reducer]) => {
@@ -29,6 +29,7 @@ export default (store: Store): Array<Object> => [
     })
     .catch(errorLoading)),
     loadData: (dispatch: Dispatch) => Promise.all([
+      // Register your server-side call action(s) here
       dispatch(fetchUsersIfNeeded()),
     ]),
   },

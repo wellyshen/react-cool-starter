@@ -14,10 +14,10 @@
   "keywords": [
     "starter",
     "boilerpate",
+    "universal",
     "react",
     "redux",
     "react router",
-    "universal",
     "dyanmic routes",
     "async reducers",
     "express",

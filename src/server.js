@@ -70,7 +70,7 @@ app.get('*', (req, res) => {
     return;
   }
 
-  // React-Router server-side rendering
+  // Setup React-Router server-side rendering
   const routes = createRoutes(store);
   const routerContext = {};
   const htmlContent = renderToString(
@@ -82,7 +82,7 @@ app.get('*', (req, res) => {
   );
 
   // Check if the render result contains a redirect, if so we need to set
-  // the specific status and redirect header and end the response.
+  // the specific status and redirect header and end the response
   if (routerContext.url) {
     res.status(301).setHeader('Location', routerContext.url);
     res.end();
@@ -90,12 +90,12 @@ app.get('*', (req, res) => {
     return;
   }
 
-  // Loading data on server-side
+  // Load data on server-side
   const loadBranchData = (location) => {
     const branch = matchRoutes(routes, location.pathname);
 
     const promises = branch.map(({ route, match }) => {
-      // Dispatch the actions from the routes config
+      // Dispatch the loadData action(s) of "./routes.js"
       if (route.loadData) return route.loadData(store.dispath, match.parameter);
 
       return Promise.resolve(null);
@@ -104,7 +104,7 @@ app.get('*', (req, res) => {
     return Promise.all(promises);
   };
 
-  // Send response after all the actions are dispathed
+  // Send response after all the action(s) are dispathed
   loadBranchData(routes, req.url, store)
     .then(() => {
       // Checking is page is 404
