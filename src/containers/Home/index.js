@@ -5,51 +5,42 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
-import * as action from './action';
-import UserList from '../../components/UserList';
-import type { Home as HomeType, Dispatch, Reducer } from '../../types';
 
+import * as action from './action';
+import type { Home as HomeType, Dispatch, Reducer } from '../../types';
+import UserList from '../../components/UserList';
 import styles from './styles.scss';
 
 type Props = {
   home: HomeType,
-  dispatch: Dispatch,
+  fetchUsersIfNeeded: () => void,
 };
 
-class Home extends PureComponent {
+// Export this for unit testing more easily
+export class Home extends PureComponent {
   props: Props;
 
   static defaultProps: {
     home: {
-      readyState: 'USERS_INVALID',
+      readyStatus: 'USERS_INVALID',
       list: null,
     },
-    dispatch: () => void,
+    fetchUsersIfNeeded: () => {},
   };
 
-  // Fetching data method for both server/client side rendering
-  static fetchData(dispatch) {
-    return Promise.all([
-      dispatch(action.fetchDataIfNeeded()),
-    ]);
-  }
-
   componentDidMount() {
-    const { dispatch } = this.props;
-
-    // Fetching data for client side rendering
-    Home.fetchData(dispatch);
+    this.props.fetchUsersIfNeeded();
   }
 
-  displayUserList = () => {
+  renderUserList = () => {
     const { home } = this.props;
 
-    if (!home.readyState || home.readyState === action.USERS_INVALID ||
-      home.readyState === action.USERS_REQUESTING) {
+    if (!home.readyStatus || home.readyStatus === action.USERS_INVALID ||
+      home.readyStatus === action.USERS_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (home.readyState === action.USERS_FAILURE) {
+    if (home.readyStatus === action.USERS_FAILURE) {
       return <p>Oops, Failed to load list!</p>;
     }
 
@@ -60,7 +51,7 @@ class Home extends PureComponent {
     return (
       <div className={styles.Home}>
         <Helmet title="Home" />
-        {this.displayUserList()}
+        {this.renderUserList()}
       </div>
     );
   }
@@ -68,6 +59,9 @@ class Home extends PureComponent {
 
 const connector: Connector<{}, Props> = connect(
   ({ home }: Reducer) => ({ home }),
+  (dispatch: Dispatch) => ({
+    fetchUsersIfNeeded: () => dispatch(action.fetchUsersIfNeeded()),
+  }),
 );
 
 export default connector(Home);

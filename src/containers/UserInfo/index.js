@@ -5,58 +5,43 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
-import * as action from './action';
-import UserCard from '../../components/UserCard';
-import type { UserInfo as UserInfoType, Dispatch, Reducer } from '../../types';
 
+import * as action from './action';
+import type { UserInfo as UserInfoType, Dispatch, Reducer } from '../../types';
+import UserCard from '../../components/UserCard';
 import styles from './styles.scss';
 
 type Props = {
   userInfo: UserInfoType,
-  params: Object,
-  dispatch: Dispatch,
+  match: Object,
+  fetchUserIfNeeded: (id: string) => void,
 };
 
-class UserInfo extends PureComponent {
+// Export this for unit testing more easily
+export class UserInfo extends PureComponent {
   props: Props;
 
   static defaultProps: {
-    userInfo: {
-      readyState: '',
-      info: {
-        name: '',
-        phone: '',
-        email: '',
-        website: '',
-      },
-    },
-    params: null,
-    dispatch: () => void,
+    userInfo: {},
+    match: { params: { id: '' } },
+    fetchUserIfNeeded: () => {},
   };
 
-  // Fetching data method for both server/client side rendering
-  static fetchData(dispatch, params) {
-    return Promise.all([
-      dispatch(action.fetchDataIfNeeded(params.id)),
-    ]);
-  }
-
   componentDidMount() {
-    const { dispatch, params } = this.props;
+    const { fetchUserIfNeeded, match: { params } } = this.props;
 
-    // Fetching data for client side rendering
-    UserInfo.fetchData(dispatch, params);
+    fetchUserIfNeeded(params.id);
   }
 
-  displayUserCard = () => {
-    const { userInfo, params } = this.props;
+  renderUserCard = () => {
+    const { userInfo, match: { params } } = this.props;
     const userInfoById = userInfo[params.id];
 
-    if (!userInfoById || userInfoById.readyState === action.AN_USER_REQUESTING) {
+    if (!userInfoById || userInfoById.readyStatus === action.USER_REQUESTING) {
       return <p>Loading...</p>;
     }
 
-    if (userInfoById.readyState === action.AN_USER_FAILURE) {
+    if (userInfoById.readyStatus === action.USER_FAILURE) {
       return <p>Oops, Failed to load info!</p>;
     }
 
@@ -67,7 +52,7 @@ class UserInfo extends PureComponent {
     return (
       <div className={styles.UserInfo}>
         <Helmet title="User Info" />
-        {this.displayUserCard()}
+        {this.renderUserCard()}
       </div>
     );
   }
@@ -75,6 +60,9 @@ class UserInfo extends PureComponent {
 
 const connector: Connector<{}, Props> = connect(
   ({ userInfo }: Reducer) => ({ userInfo }),
+  (dispatch: Dispatch) => ({
+    fetchUserIfNeeded: (id: string) => dispatch(action.fetchUserIfNeeded(id)),
+  }),
 );
 
 export default connector(UserInfo);

@@ -2,6 +2,7 @@
 
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
+
 import type { Store } from '../types';
 
 export default function createReducer(asyncReducers: Object = {}) {

@@ -1,12 +1,30 @@
 /* @flow */
 
-// The fake store creator for testing Components
+import React from 'react';
+
+// Rendering async component for React-Router dynamic routes
 // eslint-disable-next-line import/prefer-default-export
-export function storeFake(state: Object): Object {
-  return {
-    default: () => {},
-    subscribe: () => {},
-    dispatch: () => {},
-    getState: () => ({ ...state }),
+export const asyncComponent = (getComponent: () => Promise<any>) =>
+  class AsyncComponent extends React.Component {
+    static Component = null;
+
+    state = { Component: AsyncComponent.Component };
+
+    componentDidMount() {
+      if (this.state.Component) return;
+
+      getComponent().then((Component) => {
+        AsyncComponent.Component = Component;
+
+        this.setState({ Component });
+      });
+    }
+
+    render() {
+      const { Component } = this.state;
+
+      if (Component) return <Component {...this.props} />;
+
+      return null;
+    }
   };
-}

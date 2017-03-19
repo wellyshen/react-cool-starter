@@ -6,13 +6,13 @@ import {
   USERS_SUCCESS,
 } from '../action';
 
-describe('reducer:Home', () => {
-  it('should handle the initial state', () => {
+describe('users data reducer', () => {
+  it('should handle USERS_INVALID', () => {
     expect(reducer(undefined, {
       err: null,
       list: [],
-    })).to.deep.equal({
-      readyState: USERS_INVALID,
+    })).toEqual({
+      readyStatus: USERS_INVALID,
       err: null,
       list: [],
     });
@@ -25,8 +25,8 @@ describe('reducer:Home', () => {
         err: null,
         list: [],
       }),
-    ).to.deep.equal({
-      readyState: USERS_REQUESTING,
+    ).toEqual({
+      readyStatus: USERS_REQUESTING,
       err: null,
       list: [],
     });
@@ -39,8 +39,8 @@ describe('reducer:Home', () => {
         err: 'Oops! Something went wrong.',
         list: [],
       }),
-    ).to.deep.equal({
-      readyState: USERS_FAILURE,
+    ).toEqual({
+      readyStatus: USERS_FAILURE,
       err: 'Oops! Something went wrong.',
       list: [],
     });
@@ -53,8 +53,8 @@ describe('reducer:Home', () => {
         err: null,
         data: [{ id: '1', name: 'Welly' }],
       }),
-    ).to.deep.equal({
-      readyState: USERS_SUCCESS,
+    ).toEqual({
+      readyStatus: USERS_SUCCESS,
       err: null,
       list: [{ id: '1', name: 'Welly' }],
     });

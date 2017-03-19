@@ -1,15 +1,18 @@
 /* @flow */
 
+import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import chalk from 'chalk';
+
 import createReducer from './reducers';
 import type { Store } from '../types';
 
-export default (initialState: Object = {}) => {
+export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
     thunk.withExtraArgument(axios),
+    routerMiddleware(history),
   ];
 
   const enhancers = [

@@ -8,14 +8,17 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom';
+import { matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
-import { createMemoryHistory, match, RouterContext } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import chalk from 'chalk';
-import createRoutes from './routes';
+
+import createHistory from 'history/createMemoryHistory';
 import configureStore from './redux/store';
-import renderHtmlPage from './utils/renderHtmlPage';
+import Html from './utils/Html';
+import App from './containers/App';
+import createRoutes from './routes';
 import { port, host } from './config';
 
 const app = express();
@@ -53,48 +56,66 @@ if (__DEV__) {
 app.get('*', (req, res) => {
   if (__DEV__) webpackIsomorphicTools.refresh();
 
-  const store = configureStore();
+  const renderHtml = (store, htmlApp) => {
+    const html = renderToStaticMarkup(<Html store={store} htmlApp={htmlApp} />);
+
+    return `<!doctype html>${html}`;
+  };
+  const history = createHistory();
+  const store = configureStore(history);
 
   // If __DISABLE_SSR__ = true, disable server side rendering
   if (__DISABLE_SSR__) {
-    res.send(renderHtmlPage(store));
+    res.send(renderHtml(store));
     return;
   }
 
-  const memoryHistory = createMemoryHistory(req.url);
+  // Setup React-Router server-side rendering
   const routes = createRoutes(store);
-  const history = syncHistoryWithStore(memoryHistory, store);
+  const routerContext = {};
+  const htmlContent = renderToString(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={routerContext}>
+        <App routes={routes} />
+      </StaticRouter>
+    </Provider>,
+  );
 
-  // eslint-disable-next-line max-len
-  match({ history, routes, location: req.url }, (error, redirectLocation, renderProps) => {
-    if (error) {
-      res.status(500).send(error.message);
-    } else if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-    } else if (!renderProps) {
-      res.sendStatus(404);
-    } else {
-      // Dispatch the initial action of each container first
-      const promises = renderProps.components
-        .filter(component => component.fetchData)
-        .map(component => component.fetchData(store.dispatch, renderProps.params));
+  // Check if the render result contains a redirect, if so we need to set
+  // the specific status and redirect header and end the response
+  if (routerContext.url) {
+    res.status(301).setHeader('Location', routerContext.url);
+    res.end();
 
-      // Then render the routes
-      Promise.all(promises)
-        .then(() => {
-          const content = renderToString(
-            <Provider store={store}>
-              <RouterContext {...renderProps} />
-            </Provider>,
-          );
+    return;
+  }
 
-          res.status(200).send(renderHtmlPage(store, content));
-        })
-        .catch((err) => {
-          console.error(`==> 😭  Rendering routes error: ${err}`);
-        });
-    }
-  });
+  // Load data on server-side
+  const loadBranchData = (location) => {
+    const branch = matchRoutes(routes, location.pathname);
+
+    const promises = branch.map(({ route, match }) => {
+      // Dispatch the action(s) through the loadData method of "./routes.js"
+      if (route.loadData) return route.loadData(store.dispath, match.parameter);
+
+      return Promise.resolve(null);
+    });
+
+    return Promise.all(promises);
+  };
+
+  // Send response after all the action(s) are dispathed
+  loadBranchData(routes, req.url, store)
+    .then(() => {
+      // Checking is page is 404
+      const status = routerContext.status === '404' ? 404 : 200;
+
+      // Pass the route and initial state into html template
+      res.status(status).send(renderHtml(store, htmlContent));
+    })
+    .catch((err) => {
+      console.error(`==> 😭  Rendering routes error: ${err}`);
+    });
 });
 
 if (port) {

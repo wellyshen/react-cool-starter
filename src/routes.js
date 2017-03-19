@@ -1,67 +1,61 @@
 /* No flow in this file, waiting for dynamic import support */
 
 import chalk from 'chalk';
+
+import { asyncComponent } from './utils/helpers';
+import type { Store, Dispatch } from './types';
 import { injectReducer } from './redux/reducers';
-import App from './containers/App';
+import { fetchUsersIfNeeded } from './containers/Home/action';
+import { fetchUserIfNeeded } from './containers/UserInfo/action';
 
 const errorLoading = (err) => {
   console.error(chalk.red(`==> 😭  Dynamic page loading failed ${err}`));
 };
 
-const loadModule = cb => (Component) => {
-  cb(null, Component.default);
-};
+export default (store: Store): Array<Object> => [
+  {
+    path: '/',
+    exact: true,
+    component: asyncComponent(() => Promise.all([
+      // Import your route here
+      import('./containers/Home'),
+      // Import your async reducer(s) here
+      import('./containers/Home/reducer'),
+    ])
+    .then(([Component, reducer]) => {
+      injectReducer(store, 'home', reducer.default);
 
-export default function createRoutes(store) {
-  return {
-    component: App,
-    childRoutes: [
-      {
-        path: '/',
-        getComponent(nextState, cb) {
-          const importModules = Promise.all([
-            import('./containers/Home'),
-            import('./containers/Home/reducer'),
-          ]);
+      return Component.default;
+    })
+    .catch(errorLoading)),
+    loadData: (dispatch: Dispatch) => Promise.all([
+      // Register your server-side call action(s) here
+      dispatch(fetchUsersIfNeeded()),
+    ]),
+  },
+  {
+    path: '/UserInfo/:id',
+    component: asyncComponent(() => Promise.all([
+      import('./containers/UserInfo'),
+      import('./containers/UserInfo/reducer'),
+    ])
+    .then(([Component, reducer]) => {
+      injectReducer(store, 'userInfo', reducer.default);
 
-          const renderRoute = loadModule(cb);
-
-          importModules
-            .then(([Component, reducer]) => {
-              injectReducer(store, 'home', reducer.default);
-
-              renderRoute(Component);
-            })
-            .catch(errorLoading);
-        },
-      },
-      {
-        path: '/UserInfo/:id',
-        getComponent(nextState, cb) {
-          const importModules = Promise.all([
-            import('./containers/UserInfo'),
-            import('./containers/UserInfo/reducer'),
-          ]);
-
-          const renderRoute = loadModule(cb);
-
-          importModules
-            .then(([Component, reducer]) => {
-              injectReducer(store, 'userInfo', reducer.default);
-
-              renderRoute(Component);
-            })
-            .catch(errorLoading);
-        },
-      },
-      {
-        path: '*',
-        getComponent(location, cb) {
-          import('./containers/NotFound')
-            .then(loadModule(cb))
-            .catch(errorLoading);
-        },
-      },
-    ],
-  };
-}
+      return Component.default;
+    })
+    .catch(errorLoading)),
+    loadData: (dispatch: Dispatch, params: Object) => Promise.all([
+      dispatch(fetchUserIfNeeded(params.id)),
+    ]),
+  },
+  {
+    path: '*',
+    component: asyncComponent(
+      () => Promise.all([
+        import('./containers/NotFound'),
+      ])
+      .then(([Component]) => Component.default),
+    ),
+  },
+];

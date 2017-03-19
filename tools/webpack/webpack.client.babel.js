@@ -37,9 +37,9 @@ const getPlugins = () => {
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
     // Setup global variables for client
     new webpack.DefinePlugin({
-      __CLIENT__: JSON.stringify(true),
-      __SERVER__: JSON.stringify(false),
-      __DEV__: JSON.stringify(isDev),
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEV__: isDev,
     }),
     new webpack.NoEmitOnErrorsPlugin(),
     webpackIsomorphicToolsPlugin,
@@ -152,7 +152,7 @@ module.exports = {
         }),
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass)$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [

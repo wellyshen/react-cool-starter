@@ -2,31 +2,37 @@
 
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { Provider } from 'react-redux';
-import { match, Router, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
+import { ConnectedRouter } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
-import configureStore from './redux/store';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
+import configureStore from './redux/store';
+import createRoutes from './routes';
+
+// Get initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
-const store = configureStore(initialState);
-const history = syncHistoryWithStore(browserHistory, store);
+const history = createHistory();
+const store = configureStore(history, initialState);
+const routes = createRoutes(store);
 const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
-  const routes = require('./routes').default(store);
+  const App = require('./containers/App').default;
 
-  // Sync routes both on client and server
-  match({ history, routes }, (error, redirectLocation, renderProps) => {
-    render(
-      <AppContainer>
-        <Provider store={store}>
-          <Router {...renderProps} />
-        </Provider>
-      </AppContainer>,
-      mountNode,
-    );
-  });
+  render(
+    <AppContainer>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <BrowserRouter>
+            <App routes={routes} />
+          </BrowserRouter>
+        </ConnectedRouter>
+      </Provider>
+    </AppContainer>,
+    mountNode,
+  );
 };
 
 // Enable hot reload by react-hot-loader
@@ -41,7 +47,7 @@ if (module.hot) {
     }
   };
 
-  module.hot.accept('./routes', () => {
+  module.hot.accept('./containers/App', () => {
     setImmediate(() => {
       // Preventing the hot reloading error from react-router
       unmountComponentAtNode(mountNode);
