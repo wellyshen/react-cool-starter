@@ -3,6 +3,8 @@
 <PROJECT_ROOT>/.*/__tests__/.*
 ; Ignore stylelint errors
 .*/node_modules/stylelint/.*
+; Ignore nock errors
+.*/node_modules/nock/.*
 
 [include]
 

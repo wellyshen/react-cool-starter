@@ -11,7 +11,7 @@ export const USER_REQUESTING = 'USER_REQUESTING';
 export const USER_FAILURE = 'USER_FAILURE';
 export const USER_SUCCESS = 'USER_SUCCESS';
 
-const API_URL = 'https://jsonplaceholder.typicode.com/users';
+export const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unite testing more easily
 export const fetchUser = (userId: string, axios: any): ThunkAction =>
