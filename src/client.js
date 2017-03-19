@@ -11,7 +11,8 @@ import { BrowserRouter } from 'react-router-dom';
 import configureStore from './redux/store';
 import createRoutes from './routes';
 
-const initialState = window.__INITIAL_STATE__;  // Get initial state from server-side
+// Get initial state from server-side rendering
+const initialState = window.__INITIAL_STATE__;
 const history = createHistory();
 const store = configureStore(history, initialState);
 const routes = createRoutes(store);

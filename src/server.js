@@ -110,6 +110,7 @@ app.get('*', (req, res) => {
       // Checking is page is 404
       const status = routerContext.status === '404' ? 404 : 200;
 
+      // Pass the route and initial state into html template
       res.status(status).send(renderHtml(store, htmlContent));
     })
     .catch((err) => {

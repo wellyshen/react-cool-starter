@@ -67,11 +67,13 @@ const Html = ({ store, htmlContent }: Props) => (
     <body>
       <div
         id="react-view"
+        // Rendering the route, which passed from server-side
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: htmlContent || '' }}
       />
 
       <script
+        // Store the initial state into window
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
           __html: store && `window.__INITIAL_STATE__=${serialize(store.getState())};`,

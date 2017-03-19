@@ -24,7 +24,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [React Router v4](https://reacttraining.com/react-router/) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
 * [Express](https://expressjs.com/) server.
-* [Webpack 2](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](http://www.2ality.com/2015/12/webpack-tree-shaking.html) support.
+* [Webpack 2](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 * [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
@@ -33,7 +33,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 * [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
-* [Webpack Dev Middleware](http://webpack.github.io/docs/webpack-dev-middleware.html) serves the files emitted from webpack over the Express server.
+* [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 * [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
@@ -50,9 +50,9 @@ Really cool starter boilerplate with the most popular technologies:
 * [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
 
 
-## Looking for No Flow Version?
+## Real Case Study
 
-You can find the no Flow version of this starter [here](https://github.com/wellyshen/react-cool-starter/tree/no-flow-type)
+* [BECK Friends](https://www.beckfriends.com/) is an international deliver service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
 
 
 ## Requirements
@@ -101,7 +101,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `flow`|Run type checking for `.js` files.
-`test`|Run testing once (with code coverage).
+`test`|Run testing once (with code coverage reports).
 `test:watch`|Run testing on every test file change.
 `clean:all`|Remove the client/server bundled stuff and the coverage report.
 `clean:client`|Remove the `./build/public/assets` folder to clean the client bundled stuff.
@@ -115,7 +115,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 
 ```
 .
-├── build                             # Webpack bundled files will be place into it
+├── build                             # Webpack bundled files will be placed into it
 │   └── public                        # The Express server static path
 │       └── favicon.ico               # Favicon is placed in the same path with the main HTML page       
 ├── src                               # App source code
@@ -129,10 +129,10 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── redux                         # Redux related configuration scripts
 │   │   ├── reducers.js               # The root reducer (registry and injection)
 │   │   └── store.js                  # Configure and instrument Redux store   
-│   ├── theme                         # App-wide styles and vendor styles
+│   ├── theme                         # App-wide style and vendor CSS framework
 │   ├── types                         # Flow types for actions, reducers and more
 │   ├── client.js                     # App bootstrap and rendering (webpack entry)
-│   ├── routes.js                     # Routes shared between client and server side
+│   ├── routes.js                     # Routes configuration for both client and server side
 │   └── server.js                     # Express server (with webpack dev/hot middlewares)                  
 ├── tools                             # Project related configurations (testing/build etc.)
 │   ├── flow                          # Flow types, interface, module aliasing definitions
@@ -163,24 +163,18 @@ Note: It's just a basic protected mechanism for your app, you can see the [secur
 The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow the installation guide to use it:
 
 **For Chrome**
-
-* from [Chrome Web - from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
+* from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
 * or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`;
 * or run it in dev mode with `npm i && npm start` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
 
-
 **For Firefox**
-
 * from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/remotedev/);
 * or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
 
-
 **For Electron**
-
 * just specify `REDUX_DEVTOOLS` in [`electron-devtools-installer`](https://github.com/GPMDP/electron-devtools-installer).
 
 **For other browsers and non-browser environment**
-
 * use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
 
@@ -192,11 +186,11 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Adding Routes and Async Reducers
 
-This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. One great feature of the project is support the daynamic routes by "code-splitting". With it, our visitors don't have to download the entire website before they can use it. Each page will be downloaded incrementally when they visiting it.
+This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. One great feature of the project is support the daynamic routes by "code-splitting". With it, our visitors don't have to download the entire app before they can use it. Each route will be downloaded incrementally when they visiting it.
 
 Here I use the `import()` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://webpack.js.org/).
 
-You can add your routes and async reducers in `./src/routes.js`. For example:
+You can setup your routes and async reducers in `./src/routes.js`. For example:
 
 ```javascript
 import { injectReducer } from './redux/reducers';
@@ -207,7 +201,7 @@ export default store => [
   {
     // Define your route path
     path: '/myPath',
-    // If the route matches the location.pathname exactly (used for index route usually)
+    // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
     component: asyncComponent(() => Promise.all([
       // Import your route component here
@@ -250,7 +244,7 @@ export default store => [
 ];
 ```
 
-The action(s) will be dispatched through `./src/server.js` before client rednering:
+The action(s) will be dispatched through `./src/server.js` on server-side:
 
 ```javascript
 // ...
@@ -258,6 +252,7 @@ The action(s) will be dispatched through `./src/server.js` before client redneri
 app.get('*', (req, res) => {
   // ...
 
+  // Here's the method for loading data on server-side
   const loadBranchData = (location) => {
     const branch = matchRoutes(routes, location.pathname);
 
@@ -277,7 +272,7 @@ app.get('*', (req, res) => {
 // ...
 ```
 
-On client-side we also need to invoke the action(s) in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action(s) to figure out if fetches for data need to be made or not:
+On client-side, don't forget to invoke the action(s) in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action(s) to figure out if fetches for data need to be made or not:
 
 ```javascript
 componentDidMount() {
@@ -314,9 +309,9 @@ import styles from './styles.scss';
 
 render() {
   return (
-    <div className={styles.Home}>   // The className matches one of CSS classes in your SCSS file
+    <div className={styles.myClass}>   // The className matches one of CSS classes in your SCSS file
       <Helmet title="Home" />
-      {this.displayUserList()}
+      {this.renderUserList()}
     </div>
   );
 }
@@ -331,25 +326,25 @@ import './styles.scss';
 
 render() {
   return (
-    <div className="Home">    // Use the CSS class as normal
+    <div className="myClass">    // Use the CSS class as normal
       <Helmet title="Home" />
-      {this.displayUserList()}
+      {this.renderUserList()}
     </div>
   );
 }
 ```
 
-By the way, if you want to use your based stylesheet or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
+By the way, if you want to use your based style or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
 
 ```javascript
-import '../../theme/normalize.css';   // import a vendor stylesheet here
-import styles from './styles.scss';   // import your based stylesheet here
+import '../../theme/normalize.css';   // Import a vendor stylesheet here
+import styles from './styles.scss';   // Import your based stylesheet here
 
-const App = ({ children }) => (
+export default routes => {
 
   // ...
 
-);
+};
 ```
 
 For the better development experience, don't forget to include those files in the `./src/utils/Html.js`, for example:
@@ -361,7 +356,7 @@ For the better development experience, don't forget to include those files in th
     _.keys(assets.styles).length === 0 ?
       <style
         dangerouslySetInnerHTML={{ __html:
-          // Include the vendor styles and the styles which you have used here
+          // Include the vendor CSS framework and your own style here
           require('../theme/normalize.css')._style +
           require('../containers/App/styles.scss')._style +
           // Other styles...
@@ -388,7 +383,7 @@ Using font-awesome:
 
 ```javascript
 // With CSS modules
-import styles from './myStyle.scss';
+import styles from './styles.scss';
 
 // ...
 
@@ -411,7 +406,7 @@ return (
 
 ```
 
-For using CSS modules, you have to set the proper font path in your scss file:
+For using CSS modules, you have to set the proper font path in your scss/sass file:
 
 ```
 $fa-font-path:"../node_modules/font-awesome/fonts";
@@ -458,7 +453,9 @@ I love to write React, Redux with Flow, I know it's not easy to learn at the beg
 
 * Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
 
-Note: Often you will want to use third-party libraries. For these circumstances, Flow supports the concept of a "libdef" ("Library Definition") which allows you to describe the interface and types of the library separate from the library and without needing to add types to or change the library itself. You can write a libdef file yourself if you need to or use [flow-typed](https://flowtype.org/docs/third-party.html#using-flow-typed), which is a repository of third-party library interface definitions for use with Flow.
+Moreover, often you will want to use third-party libraries. For these circumstances, Flow supports the concept of a "libdef" ("Library Definition") which allows you to describe the interface and types of the library separate from the library and without needing to add types to or change the library itself. You can write a libdef file yourself if you need to or use [flow-typed](https://flowtype.org/docs/third-party.html#using-flow-typed), which is a repository of third-party library interface definitions for use with Flow.
+
+Note: If you don't want to use Flow, just remove the `/* @flow */` comment and related typing definitions from each javascript file.
 
 
 ### JavaScript and Style Lint
@@ -468,7 +465,7 @@ Note: Often you will want to use third-party libraries. For these circumstances,
 
 ### Unit Tests
 
-The starter use [Jest](https://facebook.github.io/jest/) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapsot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very useful for testing React component. Give it a try, you'll be impressed.
+The starter use [Jest](https://facebook.github.io/jest/) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapsot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very powerful for testing React component. Give it a try, you'll be impressed.
 
 I also use [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. The unit tests focus on three parts as below:
 
@@ -476,9 +473,9 @@ I also use [enzyme](https://github.com/airbnb/enzyme) as the testing utility for
 * Actions
 * Reducers
 
-By the way, Jest support code coverage, the report is generated in `./coverage` folder. You can configure `./package.json` to define which files that you want to cover. For example:
+By the way, Jest built-in code coverage reports, the report files are generated in `./coverage` folder. You can configure `./package.json` to define which files that you want to cover. For example:
 
-```javascript
+```
 {
   // ...
 
@@ -500,7 +497,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-If you get the the following message during developing, try to run `yarn build` to fix it.
+If you get the the following message during developing, try to run `yarn build:client` to create the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles, image etc.) working on universal rendering.
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
