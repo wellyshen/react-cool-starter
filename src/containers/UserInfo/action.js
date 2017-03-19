@@ -28,6 +28,7 @@ export const fetchUser = (userId: string, axios: any): ThunkAction =>
   };
 
 // Using for preventing dobule fetching data
+/* istanbul ignore next */
 const shouldFetchUser = (state: Reducer, userId: string): boolean => {
   // In development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
@@ -41,11 +42,15 @@ const shouldFetchUser = (state: Reducer, userId: string): boolean => {
   return true;
 };
 
+/* istanbul ignore next */
 export const fetchUserIfNeeded = (userId: string): ThunkAction =>
   (dispatch: Dispatch, getState: GetState, axios: any) => {
+    /* istanbul ignore next */
     if (shouldFetchUser(getState(), userId)) {
+      /* istanbul ignore next */
       return dispatch(fetchUser(userId, axios));
     }
 
+    /* istanbul ignore next */
     return null;
   };

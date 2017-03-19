@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/server.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> server.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/86</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/65</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* @flow */
+&nbsp;
+import path <span class="cstat-no" title="statement not covered" >from 'path';<span class="cstat-no" title="statement not covered" ></span></span>
+import morgan <span class="cstat-no" title="statement not covered" >from 'morgan';<span class="cstat-no" title="statement not covered" ></span></span>
+import express <span class="cstat-no" title="statement not covered" >from 'express';<span class="cstat-no" title="statement not covered" ></span></span>
+import compression <span class="cstat-no" title="statement not covered" >from 'compression';<span class="cstat-no" title="statement not covered" ></span></span>
+import helmet <span class="cstat-no" title="statement not covered" >from 'helmet';<span class="cstat-no" title="statement not covered" ></span></span>
+import hpp <span class="cstat-no" title="statement not covered" >from 'hpp';<span class="cstat-no" title="statement not covered" ></span></span>
+import favicon from <span class="cstat-no" title="statement not covered" >'serve-favicon';<span class="cstat-no" title="statement not covered" ></span></span>
+import React <span class="cstat-no" title="statement not covered" >from 'react';<span class="cstat-no" title="statement not covered" ></span></span>
+import { rende<span class="cstat-no" title="statement not covered" >rToString, renderToStaticMar</span>kup } from 'react-dom/server';
+import { StaticRouter <span class="cstat-no" title="statement not covered" >} from 'react-router-dom';</span>
+import { matchRoutes } fr<span class="cstat-no" title="statement not covered" >om 'react-router-config';</span>
+import { Provider <span class="cstat-no" title="statement not covered" >} from 'react-redux';</span>
+import chalk <span class="cstat-no" title="statement not covered" >from 'chalk';<span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+import createHistory from '<span class="cstat-no" title="statement not covered" >history/createMemoryHistory';<span class="cstat-no" title="statement not covered" ></span></span>
+import config<span class="cstat-no" title="statement not covered" >ureStore from './redux/st</span>ore';<span class="cstat-no" title="statement not covered" ></span>
+import Html <span class="cstat-no" title="statement not covered" >from './utils/Html';<span class="cstat-no" title="statement not covered" ></span></span>
+import App <span class="cstat-no" title="statement not covered" >from './containers/App';<span class="cstat-no" title="statement not covered" ></span></span>
+import createR<span class="cstat-no" title="statement not covered" >outes from './routes</span>';<span class="cstat-no" title="statement not covered" ></span>
+import { port,<span class="cstat-no" title="statement not covered" > host } from './conf</span>ig';<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+&nbsp;
+const app <span class="cstat-no" title="statement not covered" >= express();</span>
+&nbsp;
+// Using helmet to secure Express with various HTTP headers
+<span class="cstat-no" title="statement not covered" >app.use(helmet());</span>
+// Prevent HTTP parameter pollution.
+<span class="cstat-no" title="statement not covered" >app.use(hpp());</span>
+// Compress all requests
+<span class="cstat-no" title="statement not covered" >app.use(compression());</span>
+&nbsp;
+// Use morgan for http request debug (only show error)
+<span class="cstat-no" title="statement not covered" >app.use(morgan('dev', { skip: (req, res) =&gt; res.status<span class="fstat-no" title="function not covered" >Code </span>&lt; 400 }));<span class="cstat-no" title="statement not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >app.use(favicon(path.join(process.cwd(), './build/public/favicon.ico')));</span>
+<span class="cstat-no" title="statement not covered" >app.use(express.static(path.join(process.cwd(), './build/public')));</span>
+&nbsp;
+// Run express as webpack dev server
+<span class="cstat-no" title="statement not covered" >if (__DEV__) {</span>
+  const webpack <span class="cstat-no" title="statement not covered" >= require('webpack'</span>);
+  const webpackConfig <span class="cstat-no" title="statement not covered" >= require('../tools/webpack/webpack.client.babel'</span>);
+&nbsp;
+  const compiler <span class="cstat-no" title="statement not covered" >= webpack(webpackConfig</span>);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  app.use(require('webpack-dev-middleware')(compiler, {</span>
+    publicPath: webpackConfig.output.publicPath,
+    hot: true,
+    noInfo: true,
+    stats: 'minimal',
+  }));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  app.use(require('webpack-hot-middleware')(compiler));</span>
+}
+&nbsp;
+// Register server-side rendering middleware
+<span class="cstat-no" title="statement not covered" >app.get('*', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  if (__DEV__) <span class="cstat-no" title="statement not covered" >webpackIsomorphicTools.refresh();</span></span>
+&nbsp;
+  const renderHtml <span class="cstat-no" title="statement not covered" >= (store,<span class="fstat-no" title="function not covered" > htmlApp) =</span>&gt; {</span>
+    const html <span class="cstat-no" title="statement not covered" >= renderToStaticMarkup(&lt;Html store={store} htmlApp={htmlApp} /&gt;);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return `&lt;!doctype html&gt;${html}`;</span>
+  };
+  const history <span class="cstat-no" title="statement not covered" >= createHistory();</span>
+  const store <span class="cstat-no" title="statement not covered" >= configureStore(history);</span>
+&nbsp;
+  // If __DISABLE_SSR__ = true, disable server side rendering
+<span class="cstat-no" title="statement not covered" >  if (__DISABLE_SSR__) {</span>
+<span class="cstat-no" title="statement not covered" >    res.send(renderHtml(store));</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
+  }
+&nbsp;
+  // React-Router server-side rendering
+  const routes <span class="cstat-no" title="statement not covered" >= createRoutes(store);</span>
+  const routerContext <span class="cstat-no" title="statement not covered" >= {</span>};
+  const htmlContent <span class="cstat-no" title="statement not covered" >= renderToString(</span>
+    &lt;Provider store={store}&gt;
+      &lt;StaticRouter location={req.url} context={routerContext}&gt;
+        &lt;App routes={routes} /&gt;
+      &lt;/StaticRouter&gt;
+    &lt;/Provider&gt;,
+  );
+&nbsp;
+  // Check if the render result contains a redirect, if so we need to set
+  // the specific status and redirect header and end the response.
+<span class="cstat-no" title="statement not covered" >  if (routerContext.url) {</span>
+<span class="cstat-no" title="statement not covered" >    res.status(301).setHeader('Location', routerContext.url);</span>
+<span class="cstat-no" title="statement not covered" >    res.end();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return;</span>
+  }
+&nbsp;
+  // Loading data on server-side
+  const loadBranchData <span class="cstat-no" title="statement not covered" >= (locati<span class="fstat-no" title="function not covered" >on) =&gt; {</span></span>
+    const branch <span class="cstat-no" title="statement not covered" >= matchRoutes(routes, location.pathname);</span>
+&nbsp;
+    const promises <span class="cstat-no" title="statement not covered" >= branch.ma<span class="fstat-no" title="function not covered" >p(</span>({ route, match }) =&gt; {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+      // Dispatch the actions from the routes config
+<span class="cstat-no" title="statement not covered" >      if (route.loadData) <span class="cstat-no" title="statement not covered" >return route.loadData(store.dispath, match.parameter);</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return Promise.resolve(null);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return Promise.all(promises);</span>
+  };
+&nbsp;
+  // Send response after all the actions are dispathed
+<span class="cstat-no" title="statement not covered" >  loadBranchData(routes, req.url, store)</span>
+    .th<span class="fstat-no" title="function not covered" >en</span>(() =&gt; {
+      // Checking is page is 404
+      const statu<span class="cstat-no" title="statement not covered" >s = routerContext.status === '404' ? 404 : </span>200;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      res.status(status).send(renderHtml(store, htmlContent))</span>;
+    })
+    .cat<span class="fstat-no" title="function not covered" >ch</span>((err) =&gt; {
+<span class="cstat-no" title="statement not covered" >      console.error(`==&gt; 😭  Rendering routes error: ${err}`);</span>
+    });
+});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >if (port) {</span>
+<span class="cstat-no" title="statement not covered" >  app.listen(port, host, (err) =&gt; {<span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >console.error(`==&gt; 😭  OMG!!! ${err}`);</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    console.info(chalk.green(`==&gt; 🌎  Listening at http://${host}:${port}`));</span>
+    // Open Chrome
+<span class="cstat-no" title="statement not covered" >    require('../tools/openBrowser').default(port);</span>
+  });
+} else {
+<span class="cstat-no" title="statement not covered" >  console.error(chalk.red('==&gt; 😭  OMG!!! No PORT environment variable has been specified'));</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Mar 19 2017 16:11:01 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

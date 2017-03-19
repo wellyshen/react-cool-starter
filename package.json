@@ -49,10 +49,12 @@
     "lint:style": "better-npm-run lint:style",
     "flow": "better-npm-run flow",
     "test": "better-npm-run test",
-    "test:watch": "yarn test -- --watch",
+    "test:watch": "yarn test --watch",
     "clean:all": "yarn run clean:client && yarn run clean:server && yarn run clean:coverage",
     "clean:client": "better-npm-run clean:client",
-    "clean:server": "better-npm-run clean:server"
+    "clean:server": "better-npm-run clean:server",
+    "clean:coverage": "better-npm-run clean:coverage",
+    "coveralls": "better-npm-run coveralls && yarn run clean:coverage"
   },
   "betterScripts": {
     "start": {
@@ -90,17 +92,23 @@
       "command": "flow; test $? -eq 0 -o $? -eq 2"
     },
     "test": {
-      "command": "jest",
+      "command": "jest --coverage",
       "env": {
         "NODE_ENV": "test"
       }
     },
+    "clean:client": {
+      "command": "rimraf ./build/public/assets"
+    },
     "clean:server": {
       "command": "rimraf ./build/server.js ./build/server.js.map"
     },
-    "clean:client": {
-      "command": "rimraf ./build/public/assets"
-    }
+    "clean:coverage": {
+      "command": "rimraf ./coverage"
+    },
+    "coveralls": {
+     "command": "cat ./coverage/lcov/lcov.info | coveralls"
+   }
   },
   "babel": {
     "presets": [
@@ -170,6 +178,11 @@
     }
   },
   "jest": {
+    "collectCoverageFrom": [
+      "src/containers/**/*.js",
+      "src/components/**/*.js",
+      "!src/**/__tests__"
+    ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
       ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
