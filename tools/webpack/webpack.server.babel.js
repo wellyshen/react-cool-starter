@@ -73,7 +73,7 @@ module.exports = {
   ],
   // Where to resolve our loaders
   resolveLoader: {
-    modules: ['node_modules'],
+    modules: ['src', 'node_modules'],
     moduleExtensions: ['-loader'],
   },
   resolve: {
