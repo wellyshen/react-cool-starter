@@ -39,22 +39,22 @@
   "homepage": "https://github.com/wellyshen/react-cool-starter",
   "scripts": {
     "start": "better-npm-run start",
-    "start:production": "yarn run build && yarn run start:prod",
+    "start:production": "yarn build && yarn start:prod",
     "start:prod": "better-npm-run start:prod",
-    "build": "yarn run build:client && yarn run build:server",
-    "build:client": "yarn run clean:client && better-npm-run build:client",
-    "build:server": "yarn run clean:server && better-npm-run build:server",
-    "lint": "yarn run lint:js && yarn run lint:style",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "yarn clean:client && better-npm-run build:client",
+    "build:server": "yarn clean:server && better-npm-run build:server",
+    "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "flow": "better-npm-run flow",
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
-    "clean:all": "yarn run clean:client && yarn run clean:server && yarn run clean:coverage",
+    "clean:all": "yarn clean:client && yarn clean:server && yarn clean:coverage",
     "clean:client": "better-npm-run clean:client",
     "clean:server": "better-npm-run clean:server",
     "clean:coverage": "better-npm-run clean:coverage",
-    "coveralls": "better-npm-run coveralls && yarn run clean:coverage"
+    "coveralls": "better-npm-run coveralls && yarn clean:coverage"
   },
   "betterScripts": {
     "start": {
@@ -107,8 +107,8 @@
       "command": "rimraf ./coverage"
     },
     "coveralls": {
-     "command": "cat ./coverage/lcov/lcov.info | coveralls"
-   }
+      "command": "cat ./coverage/lcov/lcov.info | coveralls"
+    }
   },
   "babel": {
     "presets": [
@@ -140,11 +140,18 @@
       "no-console": 0,
       "react/jsx-filename-extension": [
         1,
-        { "extensions": [".js", ".jsx"] }
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
       ],
       "import/no-extraneous-dependencies": [
         "error",
-        { "devDependencies": true }
+        {
+          "devDependencies": true
+        }
       ]
     },
     "globals": {
@@ -161,7 +168,12 @@
       "string-quotes": "single",
       "selector-pseudo-class-no-unknown": [
         true,
-        { "ignorePseudoClasses": ["global", "local"] }
+        {
+          "ignorePseudoClasses": [
+            "global",
+            "local"
+          ]
+        }
       ]
     }
   },
@@ -224,7 +236,7 @@
     "eslint-loader": "^1.6.3",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-react": "^6.10.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "flow-bin": "^0.42.0",
     "image-webpack-loader": "^3.2.0",
