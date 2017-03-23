@@ -106,7 +106,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `clean:all`|Remove the client/server bundled stuff and the coverage report.
 `clean:client`|Remove the `./build/public/assets` folder to clean the client bundled stuff.
 `clean:server`|Remove the server bundled stuff from the `./build` folder.
-`clean:coverage`|Remove the `./coverage` folder to clean the code coverage report.
+`clean:test`|Remove the `./coverage` folder to clean the code coverage report.
 
 
 ## App Structure

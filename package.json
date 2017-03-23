@@ -50,11 +50,11 @@
     "flow": "better-npm-run flow",
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
-    "clean:all": "yarn clean:client && yarn clean:server && yarn clean:coverage",
+    "clean:all": "yarn clean:client && yarn clean:server && yarn clean:test",
     "clean:client": "better-npm-run clean:client",
     "clean:server": "better-npm-run clean:server",
-    "clean:coverage": "better-npm-run clean:coverage",
-    "coveralls": "better-npm-run coveralls && yarn clean:coverage"
+    "clean:test": "better-npm-run clean:test",
+    "coveralls": "better-npm-run coveralls && yarn clean:test"
   },
   "betterScripts": {
     "start": {
@@ -103,11 +103,11 @@
     "clean:server": {
       "command": "rimraf ./build/server.js ./build/server.js.map"
     },
-    "clean:coverage": {
+    "clean:test": {
       "command": "rimraf ./coverage"
     },
     "coveralls": {
-      "command": "cat ./coverage/lcov/lcov.info | coveralls"
+      "command": "cat ./coverage/lcov.info | coveralls"
     }
   },
   "babel": {
