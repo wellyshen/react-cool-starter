@@ -86,7 +86,7 @@
       "command": "eslint ./src ./tools ./index.js"
     },
     "lint:style": {
-      "command": "stylelint \"./src/**/*.css\""
+      "command": "stylelint \"./src/**/*.scss\" --syntax scss"
     },
     "flow": {
       "command": "flow; test $? -eq 0 -o $? -eq 2"

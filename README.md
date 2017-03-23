@@ -96,7 +96,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `start:prod`|Run your app on the production server only at `localhost:8080`.
 `build`|Remove the previous client and server bundled stuff and bundle them to `./build`.
 `build:client`|Remove the previous client bundled stuff and bundle it to `./build/public/assets`.
-`build:client`|Remove the previous server bundled stuff and bundle it to `./build`.
+`build:server`|Remove the previous server bundled stuff and bundle it to `./build`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
