@@ -219,7 +219,7 @@
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "babel-cli": "^6.24.0",
-    "babel-eslint": "^7.2.0",
+    "babel-eslint": "^7.2.1",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-dynamic-import-node": "^1.0.1",
