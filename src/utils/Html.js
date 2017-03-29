@@ -9,7 +9,7 @@ import type { Store } from '../types';
 
 type Props = { store: Store, htmlContent?: string };
 
-const head = Helmet.rewind();
+const head = Helmet.renderStatic();
 const attrs = head.htmlAttributes.toComponent();
 const { lang, ...rest } = attrs || {};
 const assets = webpackIsomorphicTools.assets();
