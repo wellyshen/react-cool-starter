@@ -105,7 +105,7 @@ app.get('*', (req, res) => {
   };
 
   // Send response after all the action(s) are dispathed
-  loadBranchData(routes, req.url, store)
+  loadBranchData(req.url)
     .then(() => {
       // Checking is page is 404
       const status = routerContext.status === '404' ? 404 : 200;
