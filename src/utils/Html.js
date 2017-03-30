@@ -10,6 +10,7 @@ import type { Store } from '../types';
 type Props = { store: Store, htmlContent?: string };
 
 const Html = ({ store, htmlContent }: Props) => {
+  // Should be declared after "renderToStaticMarkup()" of "../server.js" or it won't work
   const head = Helmet.renderStatic();
   const attrs = head.htmlAttributes.toComponent();
   const { lang, ...rest } = attrs || {};
