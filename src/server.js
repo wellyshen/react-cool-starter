@@ -113,6 +113,8 @@ app.get('*', (req, res) => {
       res.status(status).send(renderHtml(store, htmlContent));
     })
     .catch((err) => {
+      res.status(404).send('Not Found :(');
+
       console.error(`==> 😭  Rendering routes error: ${err}`);
     });
 });
