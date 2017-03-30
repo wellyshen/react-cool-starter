@@ -27,9 +27,9 @@ export default (history: Object, initialState: Object = {}): Store => {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
       try {
-        const reducers = require('./reducers').default;
+        const nextReducer = require('./reducers').default;
 
-        store.replaceReducer(reducers(store.asyncReducers));
+        store.replaceReducer(nextReducer);
       } catch (error) {
         console.error(chalk.red(`==> 😭  Reducer hot reloading error ${error}`));
       }
