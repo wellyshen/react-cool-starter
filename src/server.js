@@ -95,7 +95,6 @@ app.get('*', (req, res) => {
     const branch = matchRoutes(routes, req.url);
 
     const promises = branch.map(({ route, match }) => {
-      console.log('LOG ==> ', match.params);
       // Dispatch the action(s) through the loadData method of "./routes.js"
       if (route.loadData) return route.loadData(store.dispatch, match.params);
 
