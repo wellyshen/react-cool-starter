@@ -191,7 +191,7 @@ import MyRouteComponent from './containers/MyRouteComponent';
 
 // ...
 
-export default store => [
+export default [
   {
     // Define your route path
     path: '/myPath',
