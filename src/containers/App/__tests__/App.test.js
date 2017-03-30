@@ -7,8 +7,15 @@ import App from '../index';
 
 describe('<App />', () => {
   test('renders', () => {
+    const fakeStore = {
+      default: () => {},
+      subscribe: () => {},
+      dispatch: () => {},
+      getState: () => ({ home: () => {} }),
+    };
+
     const tree = renderer.create(
-      <Provider store={{}}>
+      <Provider store={fakeStore}>
         <StaticRouter location={''} context={{}}>
           <App />
         </StaticRouter>
