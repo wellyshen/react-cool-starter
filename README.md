@@ -215,10 +215,10 @@ Register the action(s) in `./src/routes.js`, which have to be called from server
 ```javascript
 // ...
 
-export default store => [
+export default [
   {
     // ...
-    loadData: (dispatch: Dispatch) => Promise.all([
+    loadData: (dispatch) => Promise.all([
       // Register your server-side call action(s) here
       dispatch(myReduxAction()),
     ]),
