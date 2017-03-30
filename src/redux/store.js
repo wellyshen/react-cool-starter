@@ -6,8 +6,8 @@ import thunk from 'redux-thunk';
 import axios from 'axios';
 import chalk from 'chalk';
 
-import rootReducer from './reducers';
 import type { Store } from '../types';
+import rootReducer from './reducers';
 
 export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
