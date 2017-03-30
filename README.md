@@ -1,6 +1,6 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
-A simple but feature rich starter boilerplate for creating your own  [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own  [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. The starter built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
@@ -123,7 +123,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── prod.js                   # Production settings (overrides the default settings)
 │   ├── components                    # Reusable components (including scss/testing files)
 │   ├── containers                    # Container components (including assets/action/reducer/scss/testing files)
-│   ├── utils                         # App-wide util (e.g. HTML component)
+│   ├── utils                         # App-wide utils (e.g. HTML component)
 │   ├── redux                         # Redux related configuration scripts
 │   │   ├── reducers.js               # The root reducer (registry and injection)
 │   │   └── store.js                  # Configure and instrument Redux store   
@@ -184,7 +184,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Adding Routes
 
-This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. You can setup your routes and async reducers in `./src/routes.js`. For example:
+This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. You can setup your routes in `./src/routes.js`. For example:
 
 ```javascript
 import MyRouteComponent from './containers/MyRouteComponent';
@@ -236,12 +236,12 @@ app.get('*', (req, res) => {
   // ...
 
   // Here's the method for loading data on server-side
-  const loadBranchData = (location) => {
-    const branch = matchRoutes(routes, location.pathname);
+  const loadBranchData = () => {
+    const branch = matchRoutes(routes, req.url);
 
     const promises = branch.map(({ route, match }) => {
       // Dispatch the action(s) through the loadData method of "./src/routes.js"
-      if (route.loadData) return route.loadData(store.dispath, match.parameter);
+      if (route.loadData) return route.loadData(store.dispath, match.params);
 
       return Promise.resolve(null);
     });
@@ -281,7 +281,7 @@ import config from './config';
 
 ### Styles
 
-The starter boilerplate supports CSS, SASS and [CSS modules](https://github.com/css-Modules/css-Modules) is enabled by default. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
+The starter supports CSS, SASS and [CSS modules](https://github.com/css-Modules/css-Modules) is enabled by default. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
 With CSS modules:
 
