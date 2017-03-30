@@ -24,8 +24,8 @@ const Html = ({ store, htmlContent }: Props) => {
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="shortcut icon" href="/favicon.ico" />
 
-        {head.base.toComponent()}
         {head.title.toComponent()}
+        {head.base.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
 
