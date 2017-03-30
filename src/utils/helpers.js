@@ -10,7 +10,7 @@ export const asyncComponent = (getComponent: () => Promise<any>) =>
 
     state = { Component: AsyncComponent.Component };
 
-    componentDidMount() {
+    componentWillMount() {
       if (this.state.Component) return;
 
       getComponent().then((Component) => {

@@ -91,12 +91,12 @@ app.get('*', (req, res) => {
   }
 
   // Load data on server-side
-  const loadBranchData = (location) => {
-    const branch = matchRoutes(routes, location.pathname);
+  const loadBranchData = () => {
+    const branch = matchRoutes(routes, req.url);
 
     const promises = branch.map(({ route, match }) => {
       // Dispatch the action(s) through the loadData method of "./routes.js"
-      if (route.loadData) return route.loadData(store.dispath, match.parameter);
+      if (route.loadData) return route.loadData(store.dispatch, match.parameter);
 
       return Promise.resolve(null);
     });
@@ -105,7 +105,7 @@ app.get('*', (req, res) => {
   };
 
   // Send response after all the action(s) are dispathed
-  loadBranchData(req.url)
+  loadBranchData()
     .then(() => {
       // Checking is page is 404
       const status = routerContext.status === '404' ? 404 : 200;
