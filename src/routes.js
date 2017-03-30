@@ -1,61 +1,30 @@
-/* No flow in this file, waiting for dynamic import support */
+/* @flow */
 
-import chalk from 'chalk';
-
-import { asyncComponent } from './utils/helpers';
-import type { Store, Dispatch } from './types';
-import { injectReducer } from './redux/reducers';
+import type { Dispatch } from './types';
 import { fetchUsersIfNeeded } from './containers/Home/action';
 import { fetchUserIfNeeded } from './containers/UserInfo/action';
+import HomePage from './containers/Home';
+import UserInfoPage from './containers/UserInfo';
+import NotFoundPage from './containers/NotFound';
 
-const errorLoading = (err) => {
-  console.error(chalk.red(`==> 😭  Dynamic page loading failed ${err}`));
-};
-
-export default (store: Store): Array<Object> => [
+export default [
   {
     path: '/',
     exact: true,
-    component: asyncComponent(() => Promise.all([
-      // Import your route here
-      import('./containers/Home'),
-      // Import your async reducer(s) here
-      import('./containers/Home/reducer'),
-    ])
-    .then(([Component, reducer]) => {
-      injectReducer(store, 'home', reducer.default);
-
-      return Component.default;
-    })
-    .catch(errorLoading)),
+    component: HomePage,  // Add your route here
     loadData: (dispatch: Dispatch) => Promise.all([
-      // Register your server-side call action(s) here
-      dispatch(fetchUsersIfNeeded()),
+      dispatch(fetchUsersIfNeeded()), // Register your server-side call action(s) here
     ]),
   },
   {
     path: '/UserInfo/:id',
-    component: asyncComponent(() => Promise.all([
-      import('./containers/UserInfo'),
-      import('./containers/UserInfo/reducer'),
-    ])
-    .then(([Component, reducer]) => {
-      injectReducer(store, 'userInfo', reducer.default);
-
-      return Component.default;
-    })
-    .catch(errorLoading)),
+    component: UserInfoPage,
     loadData: (dispatch: Dispatch, params: Object) => Promise.all([
       dispatch(fetchUserIfNeeded(params.id)),
     ]),
   },
   {
     path: '*',
-    component: asyncComponent(
-      () => Promise.all([
-        import('./containers/NotFound'),
-      ])
-      .then(([Component]) => Component.default),
-    ),
+    component: NotFoundPage,
   },
 ];

@@ -9,13 +9,11 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import configureStore from './redux/store';
-import createRoutes from './routes';
 
 // Get initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
 const history = createHistory();
 const store = configureStore(history, initialState);
-const routes = createRoutes(store);
 const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
@@ -26,7 +24,7 @@ const renderApp = () => {
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <BrowserRouter>
-            <App routes={routes} />
+            <App />
           </BrowserRouter>
         </ConnectedRouter>
       </Provider>

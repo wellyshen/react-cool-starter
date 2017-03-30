@@ -1,8 +1,6 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
-A simple but feature rich starter boilerplate with [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5), [React Router v4](https://reacttraining.com/react-router/) dynamic routing, async [Redux](https://github.com/reactjs/redux) reducers, async data fetching and code-splitting.
-
-The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own  [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. The project built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
@@ -24,7 +22,7 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 
 Really cool starter boilerplate with the most popular technologies:
 
-* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering, dynamic routing, async redux reducers, async data fetching and code-splitting.
+* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering with async data fetching.
 * [React](https://facebook.github.io/react/) as the view.
 * [React Router v4](https://reacttraining.com/react-router/) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
@@ -125,7 +123,7 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   │   └── prod.js                   # Production settings (overrides the default settings)
 │   ├── components                    # Reusable components (including scss/testing files)
 │   ├── containers                    # Container components (including assets/action/reducer/scss/testing files)
-│   ├── utils                         # App-wide util (including HTML component, helpers)
+│   ├── utils                         # App-wide util (e.g. HTML component)
 │   ├── redux                         # Redux related configuration scripts
 │   │   ├── reducers.js               # The root reducer (registry and injection)
 │   │   └── store.js                  # Configure and instrument Redux store   
@@ -184,16 +182,12 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 [React 0.14](https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html) introduced a simpler way to define components called [stateless functional components](https://facebook.github.io/react/docs/components-and-props.html). These components are written in plain javascript functions. In the starter boilerplate I use it wherever possible.
 
-### Adding Routes and Async Reducers
+### Adding Routes
 
-This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. One great feature of the project is support the daynamic routes by "code-splitting". With it, our visitors don't have to download the entire app before they can use it. Each route will be downloaded incrementally when they visiting it.
-
-Here I use the `import()` syntax to achieve loading the components and async reducers (by Redux) via a Promise based api, which already support by [Webpack 2](https://webpack.js.org/).
-
-You can setup your routes and async reducers in `./src/routes.js`. For example:
+This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. You can setup your routes and async reducers in `./src/routes.js`. For example:
 
 ```javascript
-import { injectReducer } from './redux/reducers';
+import MyRouteComponent from './containers/MyRouteComponent';
 
 // ...
 
@@ -203,19 +197,8 @@ export default store => [
     path: '/myPath',
     // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
-    component: asyncComponent(() => Promise.all([
-      // Import your route component here
-      import('./containers/MyRouteComponent'),
-      // Import your async reducer(s) here
-      import('./containers/MyRouteComponent/myAsyncReducer'),
-    ])
-    .then(([Component, reducer]) => {
-      // Inject your async reducer to the store
-      injectReducer(store, 'home', reducer.default);
-
-      return Component.default;
-    })
-    .catch(errorLoading)),
+    // Add your route component here
+    component: MyRouteComponent,
     // ...
   },
   // Setup other routes...

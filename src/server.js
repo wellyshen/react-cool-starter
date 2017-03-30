@@ -18,7 +18,7 @@ import createHistory from 'history/createMemoryHistory';
 import configureStore from './redux/store';
 import Html from './utils/Html';
 import App from './containers/App';
-import createRoutes from './routes';
+import routes from './routes';
 import { port, host } from './config';
 
 const app = express();
@@ -71,12 +71,11 @@ app.get('*', (req, res) => {
   }
 
   // Setup React-Router server-side rendering
-  const routes = createRoutes(store);
   const routerContext = {};
   const htmlContent = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={routerContext}>
-        <App routes={routes} />
+        <App />
       </StaticRouter>
     </Provider>,
   );

@@ -6,13 +6,12 @@ import Helmet from 'react-helmet';
 import _ from 'lodash';
 
 import config from '../../config';
+import routes from '../../routes';
 // Import your global styles here
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-type Props = { routes: Array<Object> };
-
-export default ({ routes }: Props) => {
+export default () => {
   // Use it when sub routes are added to any route it'll work
   const routeWithSubRoutes = route => (
     <Route

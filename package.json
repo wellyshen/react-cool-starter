@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -18,8 +18,6 @@
     "react",
     "redux",
     "react router",
-    "dyanmic routes",
-    "async reducers",
     "express",
     "webpack 2",
     "es6",
@@ -115,9 +113,6 @@
       "es2015",
       "react",
       "stage-0"
-    ],
-    "plugins": [
-      "dynamic-import-node"
     ]
   },
   "eslintConfig": {
@@ -222,7 +217,6 @@
     "babel-eslint": "^7.2.1",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.4.1",
-    "babel-plugin-dynamic-import-node": "^1.0.1",
     "babel-plugin-istanbul": "^4.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.0",
