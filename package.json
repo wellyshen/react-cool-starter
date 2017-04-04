@@ -133,21 +133,8 @@
       "global-require": 0,
       "no-underscore-dangle": 0,
       "no-console": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true
-        }
-      ]
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
     },
     "globals": {
       "__CLIENT__": true,
@@ -161,15 +148,7 @@
     "extends": "stylelint-config-standard",
     "rules": {
       "string-quotes": "single",
-      "selector-pseudo-class-no-unknown": [
-        true,
-        {
-          "ignorePseudoClasses": [
-            "global",
-            "local"
-          ]
-        }
-      ]
+      "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global", "local"] }]
     }
   },
   "jest": {
