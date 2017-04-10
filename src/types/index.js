@@ -17,10 +17,9 @@ export type UserInfo = {
 };
 
 export type Reducer = {
-  routing: any,
   home: Home,
   userInfo: UserInfo,
-  asyncReducers: Object,
+  router: any,
 };
 
 export type Action =
