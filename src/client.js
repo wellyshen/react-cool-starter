@@ -6,7 +6,7 @@ import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { withRouter, BrowserRouter } from 'react-router-dom';
 
 import configureStore from './redux/store';
 
@@ -18,14 +18,17 @@ const mountNode = document.getElementById('react-view');
 
 const renderApp = () => {
   const App = require('./containers/App').default;
+  // For the .push() method of react-router-redux works fine
+  // See https://github.com/ReactTraining/react-router/issues/4924 for more detail
+  const nonBlockingRouter = withRouter(BrowserRouter);
 
   render(
     <AppContainer>
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <BrowserRouter>
+          <nonBlockingRouter>
             <App />
-          </BrowserRouter>
+          </nonBlockingRouter>
         </ConnectedRouter>
       </Provider>
     </AppContainer>,
