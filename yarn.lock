@@ -330,9 +330,9 @@ babel-core@^6.0.0, babel-core@^6.24.1:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-eslint@^7.2.1:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.2.1.tgz#079422eb73ba811e3ca0865ce87af29327f8c52f"
+babel-eslint@^7.2.2:
+  version "7.2.2"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.2.2.tgz#0da2cbe6554fd0fb069f19674f2db2f9c59270ff"
   dependencies:
     babel-code-frame "^6.22.0"
     babel-traverse "^6.23.1"
@@ -3388,7 +3388,7 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoist-non-react-statics@^1.0.3:
+hoist-non-react-statics@^1.0.3, hoist-non-react-statics@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
@@ -3407,9 +3407,9 @@ hpkp@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/hpkp/-/hpkp-2.0.0.tgz#10e142264e76215a5d30c44ec43de64dee6d1672"
 
-hpp@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/hpp/-/hpp-0.2.1.tgz#e103d0480397edfd50777be4ad735596286929cd"
+hpp@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/hpp/-/hpp-0.2.2.tgz#0ec5f77472049a74361d85ba2b88e2470a4356f8"
   dependencies:
     lodash "^4.7.0"
     type-is "^1.6.12"
@@ -5858,9 +5858,15 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.0.0, prop-types@^15.5.2, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@~15.5.0:
-  version "15.5.6"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.6.tgz#797a915b1714b645ebb7c5d6cc690346205bd2aa"
+prop-types@^15.0.0, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@~15.5.7:
+  version "15.5.7"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.7.tgz#231c4f29cdd82e355011d4889386ca9059544dd1"
+  dependencies:
+    fbjs "^0.8.9"
+
+prop-types@^15.5.8:
+  version "15.5.8"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
   dependencies:
     fbjs "^0.8.9"
 
@@ -5969,14 +5975,14 @@ react-deep-force-update@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.0.1.tgz#4f7f6c12c3e7de42f345992a3c518236fa1ecad3"
 
-react-dom@^15.5.3:
-  version "15.5.3"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.5.3.tgz#2ee127ce942df55da53111ae303316e68072b5c5"
+react-dom@^15.5.4:
+  version "15.5.4"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.5.4.tgz#ba0c28786fd52ed7e4f2135fe0288d462aef93da"
   dependencies:
     fbjs "^0.8.9"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
-    prop-types "~15.5.0"
+    prop-types "~15.5.7"
 
 react-helmet@^5.0.3:
   version "5.0.3"
@@ -6016,16 +6022,18 @@ react-redux@^5.0.4:
     loose-envify "^1.1.0"
     prop-types "^15.0.0"
 
-react-router-config@^1.0.0-beta.1:
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/react-router-config/-/react-router-config-1.0.0-beta.1.tgz#e83158d6b1179b99d8077d0248e529c1049222e4"
+react-router-config@^1.0.0-beta.2:
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/react-router-config/-/react-router-config-1.0.0-beta.2.tgz#0377463eea5769277f9e6a2be8934a821bd1cfaf"
 
-react-router-dom@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.0.0.tgz#4fa4418e14b8cfc5bcc0bdea0c4083fb8c2aef10"
+react-router-dom@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.1.0.tgz#81a48c17687b133a264c22769afc85fe0b9648b9"
   dependencies:
     history "^4.5.1"
-    react-router "^4.0.0"
+    loose-envify "^1.3.1"
+    prop-types "^15.5.4"
+    react-router "^4.1.0"
 
 react-router-redux@next:
   version "5.0.0-alpha.3"
@@ -6034,14 +6042,16 @@ react-router-redux@next:
     history "^4.5.1"
     react-router "^4.0.0"
 
-react-router@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.0.0.tgz#6532075231f0bb5077c2005c1d417ad6165b3997"
+react-router@^4.0.0, react-router@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.1.0.tgz#959365d54bd4ffaf1e0219f878bb1f24366b73ac"
   dependencies:
     history "^4.6.0"
+    hoist-non-react-statics "^1.2.0"
     invariant "^2.2.2"
     loose-envify "^1.3.1"
     path-to-regexp "^1.5.3"
+    prop-types "^15.5.4"
     warning "^3.0.0"
 
 react-side-effect@^1.1.0:
@@ -6058,14 +6068,14 @@ react-test-renderer@^15.5.4:
     fbjs "^0.8.9"
     object-assign "^4.1.0"
 
-react@^15.5.3:
-  version "15.5.3"
-  resolved "https://registry.yarnpkg.com/react/-/react-15.5.3.tgz#84055382c025dec4e3b902bb61a8697cc79c1258"
+react@^15.5.4:
+  version "15.5.4"
+  resolved "https://registry.yarnpkg.com/react/-/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
   dependencies:
     fbjs "^0.8.9"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
-    prop-types "^15.5.2"
+    prop-types "^15.5.7"
 
 read-all-stream@^3.0.0:
   version "3.1.0"
