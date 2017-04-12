@@ -56,8 +56,8 @@ if (__DEV__) {
 app.get('*', (req, res) => {
   if (__DEV__) webpackIsomorphicTools.refresh();
 
-  const renderHtml = (store, htmlApp) => {
-    const html = renderToStaticMarkup(<Html store={store} htmlApp={htmlApp} />);
+  const renderHtml = (store, htmlContent) => {
+    const html = renderToStaticMarkup(<Html store={store} htmlContent={htmlContent} />);
 
     return `<!doctype html>${html}`;
   };
