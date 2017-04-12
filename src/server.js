@@ -56,36 +56,17 @@ if (__DEV__) {
 app.get('*', (req, res) => {
   if (__DEV__) webpackIsomorphicTools.refresh();
 
-  const renderHtml = (store, htmlContent) => {
+  const history = createHistory();
+  const store = configureStore(history);
+  const renderHtml = (store, htmlContent) => {  // eslint-disable-line no-shadow
     const html = renderToStaticMarkup(<Html store={store} htmlContent={htmlContent} />);
 
     return `<!doctype html>${html}`;
   };
-  const history = createHistory();
-  const store = configureStore(history);
 
   // If __DISABLE_SSR__ = true, disable server side rendering
   if (__DISABLE_SSR__) {
     res.send(renderHtml(store));
-    return;
-  }
-
-  // Setup React-Router server-side rendering
-  const routerContext = {};
-  const htmlContent = renderToString(
-    <Provider store={store}>
-      <StaticRouter location={req.url} context={routerContext}>
-        <App />
-      </StaticRouter>
-    </Provider>,
-  );
-
-  // Check if the render result contains a redirect, if so we need to set
-  // the specific status and redirect header and end the response
-  if (routerContext.url) {
-    res.status(301).setHeader('Location', routerContext.url);
-    res.end();
-
     return;
   }
 
@@ -106,6 +87,25 @@ app.get('*', (req, res) => {
   // Send response after all the action(s) are dispathed
   loadBranchData()
     .then(() => {
+      // Setup React-Router server-side rendering
+      const routerContext = {};
+      const htmlContent = renderToString(
+        <Provider store={store}>
+          <StaticRouter location={req.url} context={routerContext}>
+            <App />
+          </StaticRouter>
+        </Provider>,
+      );
+
+      // Check if the render result contains a redirect, if so we need to set
+      // the specific status and redirect header and end the response
+      if (routerContext.url) {
+        res.status(301).setHeader('Location', routerContext.url);
+        res.end();
+
+        return;
+      }
+
       // Checking is page is 404
       const status = routerContext.status === '404' ? 404 : 200;
 
