@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
+import createHistory from 'history/createBrowserHistory';
+import { ConnectedRouter } from 'react-router-redux';
 
 import configureStore from './redux/store';
 
