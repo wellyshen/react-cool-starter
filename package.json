@@ -215,9 +215,9 @@
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.2",
+    "babel-eslint": "^7.2.3",
     "babel-jest": "^19.0.0",
-    "babel-loader": "^6.4.1",
+    "babel-loader": "^7.0.0",
     "babel-plugin-istanbul": "^4.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
@@ -234,7 +234,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "extract-text-webpack-plugin": "^2.1.0",
-    "flow-bin": "^0.44.0",
+    "flow-bin": "0.44.2",
     "image-webpack-loader": "^3.3.0",
     "imports-loader": "^0.7.1",
     "jest": "^19.0.2",
@@ -254,7 +254,7 @@
     "stylelint-webpack-plugin": "^0.7.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1",
-    "webpack-dev-middleware": "^1.10.1",
+    "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.0",
     "webpack-node-externals": "^1.5.4"
   }
