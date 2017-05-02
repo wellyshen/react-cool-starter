@@ -78,6 +78,7 @@ const getPlugins = () => {
 const getEntry = () => {
   // For development
   let entry = [
+    'babel-polyfill',
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
     './src/client.js',
@@ -86,7 +87,7 @@ const getEntry = () => {
   // For prodcution
   if (!isDev) {
     entry = {
-      main: './src/client.js',
+      main: ['babel-polyfill', './src/client.js'],
       // Register vendors here
       vendor,
     };
