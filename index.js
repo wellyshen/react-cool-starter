@@ -1,5 +1,7 @@
 /* @flow */
 
+require('babel-polyfill');  // Add this to fix IE browser error
+
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 
 // Setup global variables for server

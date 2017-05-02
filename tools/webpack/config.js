@@ -22,6 +22,7 @@ const vendor = [
   'redbox-react',
   'chalk',
   'lodash',
+  'babel-polyfill',
 ];
 
 module.exports = {
