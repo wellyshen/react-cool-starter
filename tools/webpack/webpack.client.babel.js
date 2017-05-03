@@ -78,7 +78,7 @@ const getPlugins = () => {
 const getEntry = () => {
   // For development
   let entry = [
-    'babel-polyfill',
+    'babel-polyfill',   // Support promise for IE browser (for dev)
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
     './src/client.js',
@@ -87,7 +87,7 @@ const getEntry = () => {
   // For prodcution
   if (!isDev) {
     entry = {
-      main: ['babel-polyfill', './src/client.js'],
+      main: './src/client.js',
       // Register vendors here
       vendor,
     };
