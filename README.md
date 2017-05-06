@@ -13,6 +13,11 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/wellyshen/react-cool-starter/master/LICENSE)
 
 
+## Who's the starter for?
+
+This starter is for those who with basic knowledge of React and have the need for building a server-sdie app. In other words, it's not for newbie. If you're new to React and wihtout the need of server-sdie, I'd recommand you to give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
+
+
 ## Real Case Study
 
 * [BECK Friends](https://www.beckfriends.com/) is an international deliver service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
