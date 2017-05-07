@@ -7,11 +7,10 @@ import {
 } from '../action';
 
 describe('users data reducer', () => {
-  test('should handle USERS_INVALID', () => {
-    expect(reducer(undefined, {
-      err: null,
-      list: [],
-    })).toEqual({
+  test('should return the initial state', () => {
+    expect(
+      reducer(undefined, {}),
+    ).toEqual({
       readyStatus: USERS_INVALID,
       err: null,
       list: [],
@@ -23,7 +22,7 @@ describe('users data reducer', () => {
       reducer(undefined, {
         type: USERS_REQUESTING,
         err: null,
-        list: [],
+        data: [],
       }),
     ).toEqual({
       readyStatus: USERS_REQUESTING,
@@ -37,7 +36,7 @@ describe('users data reducer', () => {
       reducer(undefined, {
         type: USERS_FAILURE,
         err: 'Oops! Something went wrong.',
-        list: [],
+        data: [],
       }),
     ).toEqual({
       readyStatus: USERS_FAILURE,

@@ -256,7 +256,7 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
-autoprefixer@^6.0.0, autoprefixer@^6.3.1, autoprefixer@^6.7.7:
+autoprefixer@^6.0.0, autoprefixer@^6.3.1:
   version "6.7.7"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-6.7.7.tgz#1dbd1c835658e35ce3f9984099db00585c782014"
   dependencies:
@@ -265,6 +265,17 @@ autoprefixer@^6.0.0, autoprefixer@^6.3.1, autoprefixer@^6.7.7:
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^5.2.16"
+    postcss-value-parser "^3.2.3"
+
+autoprefixer@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.0.0.tgz#734cc4f56ec964fcd4b6048e028b60c4226e7fdd"
+  dependencies:
+    browserslist "^2.1.2"
+    caniuse-lite "^1.0.30000665"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^6.0.0"
     postcss-value-parser "^3.2.3"
 
 aws-sign2@~0.6.0:
@@ -490,6 +501,14 @@ babel-jest@^19.0.0:
     babel-plugin-istanbul "^4.0.0"
     babel-preset-jest "^19.0.0"
 
+babel-jest@^20.0.0:
+  version "20.0.0"
+  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-20.0.0.tgz#05ae371102ee8e30c9d61ffdf3f61c738a87741f"
+  dependencies:
+    babel-core "^6.0.0"
+    babel-plugin-istanbul "^4.0.0"
+    babel-preset-jest "^20.0.0"
+
 babel-loader@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.0.0.tgz#2e43a66bee1fff4470533d0402c8a4532fafbaf7"
@@ -521,6 +540,10 @@ babel-plugin-istanbul@^4.0.0, babel-plugin-istanbul@^4.1.3:
 babel-plugin-jest-hoist@^19.0.0:
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-19.0.0.tgz#4ae2a04ea612a6e73651f3fde52c178991304bea"
+
+babel-plugin-jest-hoist@^20.0.0:
+  version "20.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-20.0.0.tgz#d2afe94fa6aea3b8bfa5d61d8028f633c898d86d"
 
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
@@ -935,6 +958,12 @@ babel-preset-jest@^19.0.0:
   dependencies:
     babel-plugin-jest-hoist "^19.0.0"
 
+babel-preset-jest@^20.0.0:
+  version "20.0.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-jest/-/babel-preset-jest-20.0.0.tgz#16b992c9351c2525e87a19fd36ba14e47df51bad"
+  dependencies:
+    babel-plugin-jest-hoist "^20.0.0"
+
 babel-preset-latest@^6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-preset-latest/-/babel-preset-latest-6.24.1.tgz#677de069154a7485c2d25c577c02f624b85b85e8"
@@ -1236,6 +1265,13 @@ browserslist@^1.0.1, browserslist@^1.1.1, browserslist@^1.1.3, browserslist@^1.5
     caniuse-db "^1.0.30000631"
     electron-to-chromium "^1.2.5"
 
+browserslist@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.1.2.tgz#a9dd0791342dab019861c2dd1cd0fd5d83230d39"
+  dependencies:
+    caniuse-lite "^1.0.30000665"
+    electron-to-chromium "^1.3.9"
+
 bser@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/bser/-/bser-1.0.2.tgz#381116970b2a6deea5646dd15dd7278444b56169"
@@ -1334,6 +1370,10 @@ caniuse-api@^1.5.2:
 caniuse-db@^1.0.30000187, caniuse-db@^1.0.30000346, caniuse-db@^1.0.30000631, caniuse-db@^1.0.30000634:
   version "1.0.30000634"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000634.tgz#439f4b95e715b1fd105196d40c681edd7122e622"
+
+caniuse-lite@^1.0.30000665:
+  version "1.0.30000665"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000665.tgz#62cf1283afb9b7b42d5ddceeb0345ce1ec432a1e"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -2251,6 +2291,10 @@ ee-first@1.1.1:
 electron-to-chromium@^1.2.5:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.2.6.tgz#f38ad51d1919b06bc07275c62629db803ddca05a"
+
+electron-to-chromium@^1.3.9:
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.9.tgz#db1cba2a26aebcca2f7f5b8b034554468609157d"
 
 elliptic@^6.0.0:
   version "6.3.3"
@@ -5814,12 +5858,20 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.18, postcss@^5.0.2, postcss@^5.0.20, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.13, postcss@^5.2.15, postcss@^5.2.16, postcss@^5.2.17, postcss@^5.2.4:
+postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.18, postcss@^5.0.2, postcss@^5.0.20, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.13, postcss@^5.2.15, postcss@^5.2.16, postcss@^5.2.4:
   version "5.2.17"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.17.tgz#cf4f597b864d65c8a492b2eabe9d706c879c388b"
   dependencies:
     chalk "^1.1.3"
     js-base64 "^2.1.9"
+    source-map "^0.5.6"
+    supports-color "^3.2.3"
+
+postcss@^6.0.0, postcss@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.1.tgz#000dbd1f8eef217aa368b9a212c5fc40b2a8f3f2"
+  dependencies:
+    chalk "^1.1.3"
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
@@ -7495,9 +7547,9 @@ webpack-sources@^0.2.3:
     source-list-map "^1.1.1"
     source-map "~0.5.3"
 
-webpack@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.5.0.tgz#5a17089f8d0e43442e606d6cf9b2a146c8ed9911"
+webpack@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.5.1.tgz#61742f0cf8af555b87460a9cd8bba2f1e3ee2fce"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
