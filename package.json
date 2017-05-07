@@ -172,6 +172,10 @@
       ]
     }
   },
+  "browserslist": [
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "jest": {
     "collectCoverageFrom": [
       "src/containers/**/*.js",
