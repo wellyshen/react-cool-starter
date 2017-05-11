@@ -149,7 +149,7 @@ module.exports = {
                 minimize: !isDev,
               },
             },
-            'postcss',
+            { loader: 'postcss', options: { sourceMap: true } },
           ],
         }),
       },
@@ -169,7 +169,7 @@ module.exports = {
                 minimize: !isDev,
               },
             },
-            'postcss',
+            { loader: 'postcss', options: { sourceMap: true } },
             {
               loader: 'sass',
               options: {

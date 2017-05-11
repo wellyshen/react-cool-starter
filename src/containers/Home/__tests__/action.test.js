@@ -1,15 +1,20 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import moxios from 'moxios';
+import httpAdapter from 'axios/lib/adapters/http';
+import nock from 'nock';
 
 import {
   fetchUsers,
   USERS_REQUESTING,
   USERS_FAILURE,
   USERS_SUCCESS,
-  API_URL,
 } from '../action';
+
+const host = 'http://localhost';
+
+axios.defaults.host = host;
+axios.defaults.adapter = httpAdapter;
 
 const mockStore = configureMockStore([thunk]);
 
@@ -17,15 +22,12 @@ describe('fetch users data', () => {
   const response = [{ id: '1', name: 'Welly' }];
   const errorMessage = 'Oops! Something went wrong.';
 
-  beforeEach(() => { moxios.install(); });
-
-  afterEach(() => { moxios.uninstall(); });
+  afterEach(() => { nock.disableNetConnect(); });
 
   test('creates USERS_SUCCESS when fetching users has been done', () => {
-    moxios.stubRequest(API_URL, {
-      status: 200,
-      response: { data: response },
-    });
+    nock(host)
+      .get('/test')
+      .reply(200, response);
 
     const expectedActions = [
       { type: USERS_REQUESTING },
@@ -33,23 +35,22 @@ describe('fetch users data', () => {
     ];
     const store = mockStore({ list: null });
 
-    store.dispatch(fetchUsers(axios))
+    store.dispatch(fetchUsers(axios, `${host}/test`))
       .then(() => { expect(store.getActions()).toEqual(expectedActions); });
   });
 
   test('creates USERS_FAILURE when fail to fetch users', () => {
-    moxios.stubRequest(API_URL, {
-      status: 400,
-      response: { err: errorMessage },
-    });
+    nock(host)
+      .get('/test')
+      .replyWithError(errorMessage);
 
     const expectedActions = [
       { type: USERS_REQUESTING },
-      { type: USERS_FAILURE, err: errorMessage },
+      { type: USERS_FAILURE, err: new Error([errorMessage]) },
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(fetchUsers(axios))
+    store.dispatch(fetchUsers(axios, `${host}/test`))
       .then(() => { expect(store.getActions()).toEqual(expectedActions); });
   });
 });

@@ -1,20 +1,25 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-import moxios from 'moxios';
+import httpAdapter from 'axios/lib/adapters/http';
+import nock from 'nock';
 
 import {
   fetchUser,
   USER_REQUESTING,
   USER_FAILURE,
   USER_SUCCESS,
-  API_URL,
 } from '../action';
+
+const host = 'http://localhost';
+
+axios.defaults.host = host;
+axios.defaults.adapter = httpAdapter;
 
 const mockStore = configureMockStore([thunk]);
 
 describe('fetch user data', () => {
-  const userId = '1';
+  const userId = 'test';
   const response = {
     name: 'Welly',
     phone: '007',
@@ -23,15 +28,12 @@ describe('fetch user data', () => {
   };
   const errorMessage = 'Oops! Something went wrong.';
 
-  beforeEach(() => { moxios.install(); });
-
-  afterEach(() => { moxios.uninstall(); });
+  afterEach(() => { nock.disableNetConnect(); });
 
   test('creates USER_SUCCESS when fetching user has been done', () => {
-    moxios.stubRequest(API_URL, {
-      status: 200,
-      response: { data: response },
-    });
+    nock(host)
+      .get('/test')
+      .reply(200, response);
 
     const expectedActions = [
       { type: USER_REQUESTING, userId },
@@ -39,23 +41,22 @@ describe('fetch user data', () => {
     ];
     const store = mockStore({ info: null });
 
-    store.dispatch(fetchUser(userId, axios))
+    store.dispatch(fetchUser('test', axios, host))
       .then(() => { expect(store.getActions()).toEqual(expectedActions); });
   });
 
   test('creates USER_FAILURE when fail to fetch user', () => {
-    moxios.stubRequest(API_URL + userId, {
-      status: 400,
-      response: { err: errorMessage },
-    });
+    nock(host)
+      .get('/test')
+      .replyWithError(errorMessage);
 
     const expectedActions = [
       { type: USER_REQUESTING, userId },
-      { type: USER_FAILURE, userId, err: errorMessage },
+      { type: USER_FAILURE, userId, err: new Error([errorMessage]) },
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(fetchUser(userId, axios))
+    store.dispatch(fetchUser('test', axios, host))
       .then(() => { expect(store.getActions()).toEqual(expectedActions); });
   });
 });
