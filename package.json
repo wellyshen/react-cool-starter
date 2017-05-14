@@ -108,21 +108,6 @@
       "command": "cat ./coverage/lcov.info | coveralls"
     }
   },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "string-quotes": "single",
-      "selector-pseudo-class-no-unknown": [
-        true,
-        {
-          "ignorePseudoClasses": [
-            "global",
-            "local"
-          ]
-        }
-      ]
-    }
-  },
   "dependencies": {
     "axios": "^0.16.1",
     "babel-polyfill": "^6.23.0",
