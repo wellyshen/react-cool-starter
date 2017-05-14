@@ -165,10 +165,6 @@
       ]
     }
   },
-  "browserslist": [
-    "last 2 versions",
-    "not ie <= 8"
-  ],
   "dependencies": {
     "axios": "^0.16.1",
     "babel-polyfill": "^6.23.0",
