@@ -90,7 +90,7 @@
       "command": "flow; test $? -eq 0 -o $? -eq 2"
     },
     "test": {
-      "command": "jest --coverage",
+      "command": "jest --coverage --config ./tools/jest/config.json",
       "env": {
         "NODE_ENV": "test"
       }
@@ -169,17 +169,6 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "jest": {
-    "collectCoverageFrom": [
-      "src/containers/**/*.js",
-      "src/components/**/*.js",
-      "!src/**/__tests__"
-    ],
-    "moduleNameMapper": {
-      ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
-    }
-  },
   "dependencies": {
     "axios": "^0.16.1",
     "babel-polyfill": "^6.23.0",
