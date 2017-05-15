@@ -5,6 +5,8 @@
 .*/node_modules/stylelint/.*
 ; Ignore nock errors
 .*/node_modules/nock/.*
+; Ignore eslint-plugin-jsx-a11y errors
+.*/node_modules/eslint-plugin-jsx-a11y/src/rules/.*
 
 [include]
 

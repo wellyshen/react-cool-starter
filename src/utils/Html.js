@@ -32,13 +32,13 @@ const Html = ({ store, htmlContent }: Props) => {
 
         {/* Styles will be presented in production with webpack extract text plugin */}
         {_.keys(assets.styles).map(style =>
-          <link
+          (<link
             key={_.uniqueId()}
             href={assets.styles[style]}
             media="screen, projection"
             rel="stylesheet"
             type="text/css"
-          />,
+          />),
         )}
         {/* Styles will be presented in development mode */}
         {/* I put all of the styles here to smoothen the flick */}
