@@ -90,7 +90,7 @@
       "command": "flow; test $? -eq 0 -o $? -eq 2"
     },
     "test": {
-      "command": "jest --coverage",
+      "command": "jest --coverage --config ./tools/jest/config.json",
       "env": {
         "NODE_ENV": "test"
       }
@@ -106,85 +106,6 @@
     },
     "coveralls": {
       "command": "cat ./coverage/lcov.info | coveralls"
-    }
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react",
-      "stage-0"
-    ]
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "plugins": [
-      "react",
-      "jsx-a11y",
-      "import"
-    ],
-    "env": {
-      "browser": true,
-      "node": true,
-      "jest": true,
-      "es6": true
-    },
-    "rules": {
-      "global-require": 0,
-      "no-underscore-dangle": 0,
-      "no-console": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true
-        }
-      ]
-    },
-    "globals": {
-      "__CLIENT__": true,
-      "__SERVER__": true,
-      "__DISABLE_SSR__": true,
-      "__DEV__": true,
-      "webpackIsomorphicTools": true
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "string-quotes": "single",
-      "selector-pseudo-class-no-unknown": [
-        true,
-        {
-          "ignorePseudoClasses": [
-            "global",
-            "local"
-          ]
-        }
-      ]
-    }
-  },
-  "browserslist": [
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "jest": {
-    "collectCoverageFrom": [
-      "src/containers/**/*.js",
-      "src/components/**/*.js",
-      "!src/**/__tests__"
-    ],
-    "moduleNameMapper": {
-      ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
     }
   },
   "dependencies": {
