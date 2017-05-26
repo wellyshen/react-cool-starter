@@ -34,7 +34,7 @@ const getPlugins = () => {
     // Style lint
     new StyleLintPlugin({ syntax: 'scss', failOnError: stylelint }),
     // Setup enviorment variables for client
-    new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
+    new webpack.EnvironmentPlugin({ NODE_ENV: nodeEnv }),
     // Setup global variables for client
     new webpack.DefinePlugin({
       __CLIENT__: true,
