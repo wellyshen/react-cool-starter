@@ -16,7 +16,7 @@ const UserCard = ({ info }: Props) => (
   </div>
 );
 
-UserCard.defaulProps = {
+UserCard.defaultProps = {
   info: {
     name: '',
     phone: '',
