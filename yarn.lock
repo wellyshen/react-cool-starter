@@ -538,15 +538,7 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-istanbul@^4.0.0:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.3.tgz#6ee6280410dcf59c7747518c3dfd98680958f102"
-  dependencies:
-    find-up "^2.1.0"
-    istanbul-lib-instrument "^1.7.1"
-    test-exclude "^4.1.0"
-
-babel-plugin-istanbul@^4.1.4:
+babel-plugin-istanbul@^4.0.0, babel-plugin-istanbul@^4.1.4:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.4.tgz#18dde84bf3ce329fddf3f4103fae921456d8e587"
   dependencies:
@@ -2012,13 +2004,13 @@ debug@2.2.0, debug@~2.2.0:
   dependencies:
     ms "0.7.1"
 
-debug@2.6.7, debug@^2.1.1, debug@^2.2.0, debug@^2.4.5, debug@^2.6.0:
+debug@2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
   dependencies:
     ms "2.0.0"
 
-debug@2.6.8, debug@^2.6.3:
+debug@2.6.8, debug@^2.1.1, debug@^2.2.0, debug@^2.4.5, debug@^2.6.0, debug@^2.6.3:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -4053,11 +4045,7 @@ istanbul-api@^1.1.1:
     mkdirp "^0.5.1"
     once "^1.4.0"
 
-istanbul-lib-coverage@^1.0.0-alpha.0, istanbul-lib-coverage@^1.0.1, istanbul-lib-coverage@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.0.tgz#caca19decaef3525b5d6331d701f3f3b7ad48528"
-
-istanbul-lib-coverage@^1.1.1:
+istanbul-lib-coverage@^1.0.0-alpha.0, istanbul-lib-coverage@^1.0.1, istanbul-lib-coverage@^1.1.0, istanbul-lib-coverage@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.1.tgz#73bfb998885299415c93d38a3e9adf784a77a9da"
 
@@ -4067,7 +4055,7 @@ istanbul-lib-hook@^1.0.6:
   dependencies:
     append-transform "^0.4.0"
 
-istanbul-lib-instrument@^1.4.2, istanbul-lib-instrument@^1.7.2:
+istanbul-lib-instrument@^1.4.2, istanbul-lib-instrument@^1.7.1, istanbul-lib-instrument@^1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/istanbul-lib-instrument/-/istanbul-lib-instrument-1.7.2.tgz#6014b03d3470fb77638d5802508c255c06312e56"
   dependencies:
@@ -4077,18 +4065,6 @@ istanbul-lib-instrument@^1.4.2, istanbul-lib-instrument@^1.7.2:
     babel-types "^6.18.0"
     babylon "^6.13.0"
     istanbul-lib-coverage "^1.1.1"
-    semver "^5.3.0"
-
-istanbul-lib-instrument@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/istanbul-lib-instrument/-/istanbul-lib-instrument-1.7.1.tgz#169e31bc62c778851a99439dd99c3cc12184d360"
-  dependencies:
-    babel-generator "^6.18.0"
-    babel-template "^6.16.0"
-    babel-traverse "^6.18.0"
-    babel-types "^6.18.0"
-    babylon "^6.13.0"
-    istanbul-lib-coverage "^1.1.0"
     semver "^5.3.0"
 
 istanbul-lib-report@^1.1.0:
@@ -6341,16 +6317,17 @@ rechoir@^0.6.2:
     resolve "^1.1.6"
 
 redbox-react@^1.2.5:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/redbox-react/-/redbox-react-1.3.6.tgz#70314c57c066257eb70b0a24dc794b5cef4f1c4e"
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/redbox-react/-/redbox-react-1.3.7.tgz#bb3a1a73c07ebe1d67b55860908ee2bc35386968"
   dependencies:
     error-stack-parser "^1.3.6"
     object-assign "^4.0.1"
     prop-types "^15.5.4"
+    sourcemapped-stacktrace "^1.1.6"
 
-redbox-react@^1.3.7:
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/redbox-react/-/redbox-react-1.3.7.tgz#bb3a1a73c07ebe1d67b55860908ee2bc35386968"
+redbox-react@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/redbox-react/-/redbox-react-1.4.0.tgz#0b571dab6a7acbf3da0e0034825c44b5bd8dba34"
   dependencies:
     error-stack-parser "^1.3.6"
     object-assign "^4.0.1"
@@ -7235,16 +7212,6 @@ tempfile@^1.0.0:
   dependencies:
     os-tmpdir "^1.0.0"
     uuid "^2.0.1"
-
-test-exclude@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/test-exclude/-/test-exclude-4.1.0.tgz#04ca70b7390dd38c98d4a003a173806ca7991c91"
-  dependencies:
-    arrify "^1.0.1"
-    micromatch "^2.3.11"
-    object-assign "^4.1.0"
-    read-pkg-up "^1.0.1"
-    require-main-filename "^1.0.1"
 
 test-exclude@^4.1.1:
   version "4.1.1"
