@@ -51,6 +51,7 @@ Really cool starter boilerplate with the most popular technologies:
 * 404 error page and redirect handling.
 * Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
 * [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
+* Basic [Docker](https://www.docker.com/) functionality.
 
 
 ## Who's the starter for?
@@ -492,3 +493,6 @@ If you get the the following message during developing, try to run `yarn build:c
 If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
 
 > React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
+
+## Docker functionality
+This is quite fluid and can be changed to whatever you need. To run the config that's currently there, run `docker build -t rcs:0.0.1 .` then `docker run -it --rm -p 80:80 rcs:0.0.1`

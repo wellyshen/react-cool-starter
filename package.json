@@ -39,6 +39,8 @@
     "start": "better-npm-run start",
     "start:production": "yarn build && yarn start:prod",
     "start:prod": "better-npm-run start:prod",
+    "start:production:docker": "yarn build && yarn start:prod:docker",
+    "start:prod:docker": "better-npm-run start:prod:docker",
     "build": "yarn build:client && yarn build:server",
     "build:client": "yarn clean:client && better-npm-run build:client",
     "build:server": "yarn clean:server && better-npm-run build:server",
@@ -69,6 +71,17 @@
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
         "PORT": 8080
+      }
+    },
+    "start:prod:docker": {
+      "command": "node ./index.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_HOST": "0.0.0.0",
+        "NODE_ENV": "production",
+        "SUPRESS_BROWSER_LAUNCH": true, 
+        "DOCKER": true,
+        "PORT": 80
       }
     },
     "build:client": {
