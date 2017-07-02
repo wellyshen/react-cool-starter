@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.3.0",
+  "version": "2.2.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -233,7 +233,7 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-loader": "^1.8.0",
-    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^2.1.2",
@@ -245,7 +245,7 @@
     "nock": "^9.0.13",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
-    "postcss": "^6.0.3",
+    "postcss": "^6.0.4",
     "postcss-loader": "^2.0.6",
     "react-addons-test-utils": "^15.6.0",
     "react-test-renderer": "^15.6.1",
