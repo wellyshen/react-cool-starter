@@ -231,8 +231,8 @@
     "css-loader": "^0.28.4",
     "enzyme": "^2.9.1",
     "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-loader": "^1.8.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-react": "^7.1.0",
@@ -245,7 +245,7 @@
     "nock": "^9.0.13",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
-    "postcss": "^6.0.4",
+    "postcss": "^6.0.6",
     "postcss-loader": "^2.0.6",
     "react-addons-test-utils": "^15.6.0",
     "react-test-renderer": "^15.6.1",
@@ -259,7 +259,7 @@
     "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.11.0",
-    "webpack-hot-middleware": "^2.18.0",
+    "webpack-hot-middleware": "^2.18.1",
     "webpack-node-externals": "^1.6.0"
   }
 }
