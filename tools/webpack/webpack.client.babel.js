@@ -42,7 +42,6 @@ const getPlugins = () => {
       __DEV__: isDev,
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.optimize.ModuleConcatenationPlugin(),
     webpackIsomorphicToolsPlugin,
   ];
 
@@ -55,8 +54,8 @@ const getPlugins = () => {
     );
   } else {
     plugins.push( // For production
-      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
       new webpack.HashedModuleIdsPlugin(),
+      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
       new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,
         beautify: false,
@@ -68,7 +67,8 @@ const getPlugins = () => {
           dead_code: true,
         },
         output: { screw_ie8: true, comments: false },
-      })  // eslint-disable-line comma-dangle
+      }),
+      new webpack.optimize.ModuleConcatenationPlugin()  // eslint-disable-line comma-dangle
     );
   }
 
@@ -123,7 +123,12 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        include: [
+          path.join(process.cwd(), './src'),
+          // Including the following two files to fix the errors of Webpack's UglifyJsPlugin
+          path.join(process.cwd(), './node_modules/chalk'),
+          path.join(process.cwd(), './node_modules/ansi-styles/index.js'),
+        ],
         loader: 'babel',
         options: {
           cacheDirectory: isDev,

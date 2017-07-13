@@ -45,7 +45,6 @@ if (__DEV__) {
   app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
     hot: true,
-    lazy: true,
     noInfo: true,
     stats: 'errors-only',
   }));
