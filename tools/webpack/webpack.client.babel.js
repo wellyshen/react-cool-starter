@@ -42,6 +42,7 @@ const getPlugins = () => {
       __DEV__: isDev,
     }),
     new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     webpackIsomorphicToolsPlugin,
   ];
 

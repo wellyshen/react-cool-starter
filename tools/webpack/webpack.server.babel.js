@@ -69,6 +69,7 @@ module.exports = {
       },
     }),
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   // Where to resolve our loaders
   resolveLoader: {
