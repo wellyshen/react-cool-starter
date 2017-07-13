@@ -498,4 +498,4 @@ If you run the example of the app. And you encounter the checksum error like bel
 
 ESLint V4 has been released. I will upgrade it to V4 as soon as Airbnb's [javascript code style](https://github.com/airbnb/javascript) support it. You can follow this [issue](https://github.com/airbnb/javascript/issues/1447) to track the process.
 
-* [x] Upgrade to ESlint V4
+* [] Upgrade to ESlint V4
