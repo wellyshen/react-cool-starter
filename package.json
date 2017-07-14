@@ -60,6 +60,7 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
+        "BABEL_ENV": "development",
         "PORT": 3000
       }
     },
@@ -74,7 +75,8 @@
     "build:client": {
       "command": "webpack --progress --hide-modules --config ./tools/webpack/webpack.client.babel.js",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production"
       }
     },
     "build:server": {
@@ -223,6 +225,7 @@
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-istanbul": "^4.1.4",
+    "babel-preset-babili": "^0.1.4",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

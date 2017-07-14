@@ -56,18 +56,6 @@ const getPlugins = () => {
     plugins.push( // For production
       new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
-      new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true,
-        beautify: false,
-        mangle: { screw_ie8: true },
-        compress: {
-          screw_ie8: true,  // React doesn't support IE8
-          warnings: false,
-          unused: true,
-          dead_code: true,
-        },
-        output: { screw_ie8: true, comments: false },
-      }),
       new webpack.optimize.ModuleConcatenationPlugin()  // eslint-disable-line comma-dangle
     );
   }
@@ -123,17 +111,13 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        include: [
-          path.join(process.cwd(), './src'),
-          // Including the following two files to fix the errors of Webpack's UglifyJsPlugin
-          path.join(process.cwd(), './node_modules/chalk'),
-          path.join(process.cwd(), './node_modules/ansi-styles/index.js'),
-        ],
+        exclude: /node_modules/,
         loader: 'babel',
         options: {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
+          env: { production: { presets: ['babili'] } },
           plugins: ['react-hot-loader/babel'],
         },
       },
