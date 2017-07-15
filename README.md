@@ -494,7 +494,7 @@ If you run the example of the app. And you encounter the checksum error like bel
 > React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
 
 
-## To Do List
+## To Do
 
 ESLint V4 has been released. I will upgrade it to V4 as soon as Airbnb's [javascript code style](https://github.com/airbnb/javascript) start to support it. You can follow this [issue](https://github.com/airbnb/javascript/issues/1447) to track the process.
 
