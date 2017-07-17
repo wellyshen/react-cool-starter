@@ -4,6 +4,8 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const BabiliPlugin = require('babili-webpack-plugin');
+
 const { CSSModules, eslint, stylelint, vendor } = require('./config');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
@@ -54,6 +56,7 @@ const getPlugins = () => {
     );
   } else {
     plugins.push( // For production
+      new BabiliPlugin(),
       new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
       new webpack.optimize.ModuleConcatenationPlugin()  // eslint-disable-line comma-dangle
@@ -117,7 +120,6 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['es2015', { modules: false }], 'react', 'stage-0'],
-          env: { production: { presets: ['babili'] } },
           plugins: ['react-hot-loader/babel'],
         },
       },

@@ -3,6 +3,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const BabiliPlugin = require('babili-webpack-plugin');
+
 const { CSSModules, eslint } = require('./config');
 
 module.exports = {
@@ -35,7 +37,7 @@ module.exports = {
         loader: 'babel',
         options: {
           babelrc: false,
-          presets: [['es2015', { modules: false }], 'react', 'stage-0', 'babili'],
+          presets: [['es2015', { modules: false }], 'react', 'stage-0'],
         },
       },
       {
@@ -61,6 +63,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new BabiliPlugin(),
     // Setup global variables for server
     new webpack.LoaderOptionsPlugin({
       options: {
