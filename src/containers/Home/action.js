@@ -15,18 +15,10 @@ export const USERS_SUCCESS = 'USERS_SUCCESS';
 export const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
-export const fetchUsers = (axios: any, URL: string = API_URL): ThunkAction =>
-  (dispatch: Dispatch) => {
-    dispatch({ type: USERS_REQUESTING });
-
-    return axios.get(URL)
-      .then((res) => {
-        dispatch({ type: USERS_SUCCESS, data: res.data });
-      })
-      .catch((err) => {
-        dispatch({ type: USERS_FAILURE, err });
-      });
-  };
+export const fetchUsers = (axios: any, URL: string = API_URL): ThunkAction => ({
+  promise: client => client.get(URL).then(value => ({ data: value.data })),
+  events: [USERS_REQUESTING, USERS_SUCCESS, USERS_FAILURE],
+});
 
 // Preventing dobule fetching data
 /* istanbul ignore next */
