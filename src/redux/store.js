@@ -8,13 +8,11 @@ import chalk from 'chalk';
 
 import type { Store } from '../types';
 import rootReducer from './reducers';
-import promisedMiddleware from './promisedMiddleware';
 
 export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
     thunk.withExtraArgument(axios),
     routerMiddleware(history),
-    promisedMiddleware(axios),
   ];
 
   const enhancers = [
