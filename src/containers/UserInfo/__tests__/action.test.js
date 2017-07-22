@@ -10,13 +10,14 @@ import {
   USER_FAILURE,
   USER_SUCCESS,
 } from '../action';
+import promisedMiddleware from '../../../redux/promisedMiddleware';
 
 const host = 'http://localhost';
 
 axios.defaults.host = host;
 axios.defaults.adapter = httpAdapter;
 
-const mockStore = configureMockStore([thunk]);
+const mockStore = configureMockStore([thunk, promisedMiddleware(axios)]);
 
 describe('fetch user data', () => {
   const userId = 'test';
