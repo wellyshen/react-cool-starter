@@ -57,7 +57,7 @@ app.get('*', (req, res) => {
 
   const history = createHistory();
   const store = configureStore(history);
-  const renderHtml = (store, htmlContent) => {  // eslint-disable-line no-shadow
+  const renderHtml = (store, htmlContent) => { // eslint-disable-line no-shadow
     const html = renderToStaticMarkup(<Html store={store} htmlContent={htmlContent} />);
 
     return `<!doctype html>${html}`;
