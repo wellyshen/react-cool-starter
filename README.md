@@ -491,6 +491,26 @@ If you get the the following message during developing, try to run `yarn build:c
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
-If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
+If you encounter the checksum error like following, try to restart the server to solve the it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
 
 > React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
+
+If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following.
+
+In the `./package.json` script:
+
+```
+// ...
+
+"start:prod": {
+  "command": "node ./index.js",
+  "env": {
+    "NODE_PATH": "./src",
+    "NODE_ENV": "production",
+    "PORT": 8080,
+    "BROWSER": "none"   // Add this node variable to turn off the open browser util
+  }
+},
+
+// ...
+```
