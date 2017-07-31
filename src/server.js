@@ -122,11 +122,14 @@ app.get('*', (req, res) => {
 
 if (port) {
   app.listen(port, host, (err) => {
+    const url = `http://${host}:${port}`;
+
     if (err) console.error(`==> 😭  OMG!!! ${err}`);
 
-    console.info(chalk.green(`==> 🌎  Listening at http://${host}:${port}`));
+    console.info(chalk.green(`==> 🌎  Listening at ${url}`));
+
     // Open Chrome
-    require('../tools/openBrowser').default(port);
+    require('../tools/openBrowser')(url);
   });
 } else {
   console.error(chalk.red('==> 😭  OMG!!! No PORT environment variable has been specified'));
