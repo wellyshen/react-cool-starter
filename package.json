@@ -258,7 +258,7 @@
     "stylelint-webpack-plugin": "^0.9.0",
     "url-loader": "^0.5.9",
     "webpack": "^3.4.1",
-    "webpack-dev-middleware": "^1.11.0",
+    "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-node-externals": "^1.6.0"
   }
