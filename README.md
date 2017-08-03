@@ -55,7 +55,7 @@ Really cool starter boilerplate with the most popular technologies:
 
 ## Who's the starter for?
 
-This starter is for those who with basic knowledge of React and have the need for building a server-sdie app. In other words, it's not for newbie. If you're new to React and wihtout the need of server-sdie, I'd recommand you to give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
+This starter is for those who with basic knowledge of React and have the need for building a server-sdie app. In other words, it's not for newbie. If you're new to React or you don't need a server-sdie rendering app, I'd recommand you to give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
 
 
 ## Requirements
