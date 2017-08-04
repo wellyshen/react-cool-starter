@@ -20,7 +20,7 @@ const mockStore = configureMockStore([thunk]);
 
 describe('fetch users data', () => {
   const response = [{ id: '1', name: 'Welly' }];
-  const errorMessage = 'Oops! Something went wrong.';
+  const errorMessage = 'Request failed with status code 404';
 
   afterEach(() => { nock.disableNetConnect(); });
 
@@ -46,7 +46,7 @@ describe('fetch users data', () => {
 
     const expectedActions = [
       { type: USERS_REQUESTING },
-      { type: USERS_FAILURE, err: new Error([errorMessage]) },
+      { type: USERS_FAILURE, err: errorMessage },
     ];
     const store = mockStore({ err: null });
 

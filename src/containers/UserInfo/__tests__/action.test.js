@@ -26,7 +26,7 @@ describe('fetch user data', () => {
     email: 'test@gmail.com',
     website: 'www.test.com',
   };
-  const errorMessage = 'Oops! Something went wrong.';
+  const errorMessage = 'Request failed with status code 404';
 
   afterEach(() => { nock.disableNetConnect(); });
 
@@ -52,7 +52,7 @@ describe('fetch user data', () => {
 
     const expectedActions = [
       { type: USER_REQUESTING, userId },
-      { type: USER_FAILURE, userId, err: new Error([errorMessage]) },
+      { type: USER_FAILURE, userId, err: errorMessage },
     ];
     const store = mockStore({ err: null });
 
