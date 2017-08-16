@@ -20,7 +20,7 @@ export default () => {
       path={route.path}
       render={props => (
         // Pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
+        <route.component {...props} routes={route.routes || null} />
       )}
     />
   );
