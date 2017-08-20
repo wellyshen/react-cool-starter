@@ -204,6 +204,13 @@ export default [
     exact: true,
     // Add your route component here
     component: MyRouteComponent,
+    // Add your sub route component here
+    routes: [
+      {
+        path: '/myPath/mySubPath',
+        component: MySubRouteComponent
+      }
+    ]
     // ...
   },
   // Setup other routes...
