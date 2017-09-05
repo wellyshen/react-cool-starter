@@ -60,7 +60,7 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 ## Requirements
 
-* [node](https://nodejs.org/en/) >= 5.0
+* [node](https://nodejs.org/en/) >= 6.0
 * [npm](https://www.npmjs.com/) >= 3.0
 
 
