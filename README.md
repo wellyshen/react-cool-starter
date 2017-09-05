@@ -1,6 +1,6 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
-A simple but feature rich starter boilerplate for creating your own  [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own  [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
@@ -15,7 +15,7 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 
 ## Real Case Study
 
-* [BECK Friends](https://www.beckfriends.com/) is an international deliver service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
+* [BECK Friends](https://www.beckfriends.com/) is an international delivery service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
 
 
 ## Features
@@ -55,7 +55,7 @@ Really cool starter boilerplate with the most popular technologies:
 
 ## Who's the starter for?
 
-This starter is for those who with basic knowledge of React and have the need for building a server-sdie app. In other words, it's not for newbie. If you're new to React or you don't need a server-sdie rendering app, I'd recommand you to give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
+This starter is for those who with basic knowledge of React and have the need for building a server-side app. In other words, it's not for a newbie. If you're new to React or you don't need a server-side rendering app, I'd recommend you give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
 
 
 ## Requirements
@@ -66,7 +66,7 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 ## Getting Started
 
-**1. You can start by clone the repository on your local machine by running:**
+**1. You can start by cloning the repository on your local machine by running:**
 
 ```bash
 git clone https://github.com/wellyshen/react-cool-starter.git
@@ -114,7 +114,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 
 ## App Structure
 
-Here is the structure of the app, which serve as generally accepted guidelines and patterns for building scalable apps.
+Here is the structure of the app, which serves as generally accepted guidelines and patterns for building scalable apps.
 
 ```
 .
@@ -150,9 +150,9 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 ```
 
 
-## Server Side Security and Performance
+## Server-Side Security and Performance
 
-Concerning to the security and performance for Express in production, I already setup some middlewares for you:
+Concerning the security and performance of Express in production, I already setup some middleware for you:
 
 * [helmet](https://github.com/helmetjs/helmet) - Helps secure Express server with various HTTP headers.
 * [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
@@ -163,7 +163,7 @@ Note: It's just a basic protected mechanism for your app, you can see the [secur
 
 ## Setup Redux DevTools Extension
 
-The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow the installation guide to use it:
+The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow these installation guides to use it:
 
 **For Chrome**
 * from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
