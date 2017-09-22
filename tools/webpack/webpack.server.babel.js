@@ -3,6 +3,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const BabiliPlugin = require('babili-webpack-plugin');
+
 const { CSSModules, eslint } = require('./config');
 
 module.exports = {
@@ -61,6 +63,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new BabiliPlugin(),
     // Setup global variables for server
     new webpack.LoaderOptionsPlugin({
       options: {
@@ -69,6 +72,7 @@ module.exports = {
       },
     }),
     new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   // Where to resolve our loaders
   resolveLoader: {

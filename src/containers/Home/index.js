@@ -2,6 +2,7 @@
 /* @flow */
 
 import React, { PureComponent } from 'react';
+import type { Element } from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -32,7 +33,7 @@ export class Home extends PureComponent {
     this.props.fetchUsersIfNeeded();
   }
 
-  renderUserList = () => {
+  renderUserList = (): Element<any> => {
     const { home } = this.props;
 
     if (!home.readyStatus || home.readyStatus === action.USERS_INVALID ||

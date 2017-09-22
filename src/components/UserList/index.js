@@ -1,9 +1,11 @@
+/* @flow */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 
-type Props = { list: Object };
+type Props = { list: Array<Object> };
 
 const UserList = ({ list }: Props) => (
   <div className={styles.UserList}>

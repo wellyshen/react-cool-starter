@@ -9,6 +9,7 @@
 [include]
 
 [libs]
+./node_modules/fbjs/flow/lib/dev.js
 ; The app's global variables are declared here
 tools/flow/definitions
 
@@ -19,6 +20,7 @@ module.system=haste
 
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
+unsafe.enable_getters_and_setters=true
 
 munge_underscores=false
 
@@ -36,4 +38,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.49.1
+^0.52.0

@@ -22,7 +22,7 @@ const vendor = [
   'redbox-react',
   'chalk',
   'lodash',
-  'babel-polyfill',   // Support promise for IE browser (for prod)
+  'babel-polyfill', // Support promise for IE browser (for prod)
 ];
 
 module.exports = {

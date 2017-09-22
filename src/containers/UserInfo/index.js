@@ -2,6 +2,7 @@
 /* @flow */
 
 import React, { PureComponent } from 'react';
+import type { Element } from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -33,7 +34,7 @@ export class UserInfo extends PureComponent {
     fetchUserIfNeeded(params.id);
   }
 
-  renderUserCard = () => {
+  renderUserCard = (): Element<any> => {
     const { userInfo, match: { params } } = this.props;
     const userInfoById = userInfo[params.id];
 

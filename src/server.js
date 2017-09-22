@@ -9,8 +9,7 @@ import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom';
-import { matchRoutes } from 'react-router-config';
+import { StaticRouter, matchPath } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
@@ -46,7 +45,7 @@ if (__DEV__) {
     publicPath: webpackConfig.output.publicPath,
     hot: true,
     noInfo: true,
-    stats: 'minimal',
+    stats: 'errors-only',
   }));
 
   app.use(require('webpack-hot-middleware')(compiler));
@@ -58,7 +57,7 @@ app.get('*', (req, res) => {
 
   const history = createHistory();
   const store = configureStore(history);
-  const renderHtml = (store, htmlContent) => {  // eslint-disable-line no-shadow
+  const renderHtml = (store, htmlContent) => { // eslint-disable-line no-shadow
     const html = renderToStaticMarkup(<Html store={store} htmlContent={htmlContent} />);
 
     return `<!doctype html>${html}`;
@@ -72,13 +71,15 @@ app.get('*', (req, res) => {
 
   // Load data on server-side
   const loadBranchData = () => {
-    const branch = matchRoutes(routes, req.url);
+    const promises = [];
 
-    const promises = branch.map(({ route, match }) => {
-      // Dispatch the action(s) through the loadData method of "./routes.js"
-      if (route.loadData) return route.loadData(store.dispatch, match.params);
+    routes.some((route) => {
+      const match = matchPath(req.url, route);
 
-      return Promise.resolve(null);
+      // $FlowFixMe: the params of pre-load actions are dynamic
+      if (match && route.loadData) promises.push(route.loadData(store.dispatch, match.params));
+
+      return match;
     });
 
     return Promise.all(promises);
@@ -121,11 +122,14 @@ app.get('*', (req, res) => {
 
 if (port) {
   app.listen(port, host, (err) => {
+    const url = `http://${host}:${port}`;
+
     if (err) console.error(`==> 😭  OMG!!! ${err}`);
 
-    console.info(chalk.green(`==> 🌎  Listening at http://${host}:${port}`));
+    console.info(chalk.green(`==> 🌎  Listening at ${url}`));
+
     // Open Chrome
-    require('../tools/openBrowser').default(port);
+    require('../tools/openBrowser')(url);
   });
 } else {
   console.error(chalk.red('==> 😭  OMG!!! No PORT environment variable has been specified'));

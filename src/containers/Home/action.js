@@ -20,12 +20,8 @@ export const fetchUsers = (axios: any, URL: string = API_URL): ThunkAction =>
     dispatch({ type: USERS_REQUESTING });
 
     return axios.get(URL)
-      .then((res) => {
-        dispatch({ type: USERS_SUCCESS, data: res.data });
-      })
-      .catch((err) => {
-        dispatch({ type: USERS_FAILURE, err });
-      });
+      .then(res => dispatch({ type: USERS_SUCCESS, data: res.data }))
+      .catch(err => dispatch({ type: USERS_FAILURE, err: err.message }));
   };
 
 // Preventing dobule fetching data

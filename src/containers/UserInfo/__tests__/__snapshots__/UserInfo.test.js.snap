@@ -2,7 +2,7 @@
 
 exports[`<UserInfo /> renders an error if loading failed 1`] = `
 <div
-  className={undefined}
+  className="UserInfo"
 >
   <p>
     Oops, Failed to load info!
@@ -12,10 +12,10 @@ exports[`<UserInfo /> renders an error if loading failed 1`] = `
 
 exports[`<UserInfo /> renders the <UserCard /> if loading was successful 1`] = `
 <div
-  className={undefined}
+  className="UserInfo"
 >
   <div
-    className={undefined}
+    className="UserCard"
   >
     <h4>
       User Card
@@ -44,7 +44,7 @@ exports[`<UserInfo /> renders the <UserCard /> if loading was successful 1`] = `
 
 exports[`<UserInfo /> renders the loading status if data invalid 1`] = `
 <div
-  className={undefined}
+  className="UserInfo"
 >
   <p>
     Loading...
@@ -54,7 +54,7 @@ exports[`<UserInfo /> renders the loading status if data invalid 1`] = `
 
 exports[`<UserInfo /> renders the loading status if requesting data 1`] = `
 <div
-  className={undefined}
+  className="UserInfo"
 >
   <p>
     Loading...

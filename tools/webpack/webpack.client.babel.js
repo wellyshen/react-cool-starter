@@ -4,6 +4,8 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const BabiliPlugin = require('babili-webpack-plugin');
+
 const { CSSModules, eslint, stylelint, vendor } = require('./config');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
@@ -19,14 +21,14 @@ const getPlugins = () => {
     new ExtractTextPlugin({
       filename: '[name].[contenthash:8].css',
       allChunks: true,
-      disable: isDev,   // Disable css extracting on development
+      disable: isDev, // Disable css extracting on development
       ignoreOrder: CSSModules,
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
         // Javascript lint
         eslint: { failOnError: eslint },
-        context: '/',   // Required for the sourceMap of css/sass loader
+        context: '/', // Required for the sourceMap of css/sass loader
         debug: isDev,
         minimize: !isDev,
       },
@@ -45,29 +47,19 @@ const getPlugins = () => {
     webpackIsomorphicToolsPlugin,
   ];
 
-  if (isDev) {  // For development
+  if (isDev) { // For development
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       // Prints more readable module names in the browser console on HMR updates
       new webpack.NamedModulesPlugin(),
-      new webpack.IgnorePlugin(/webpack-stats\.json$/)  // eslint-disable-line comma-dangle
+      new webpack.IgnorePlugin(/webpack-stats\.json$/) // eslint-disable-line comma-dangle
     );
   } else {
     plugins.push( // For production
-      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
+      new BabiliPlugin(),
       new webpack.HashedModuleIdsPlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true,
-        beautify: false,
-        mangle: { screw_ie8: true },
-        compress: {
-          screw_ie8: true,  // React doesn't support IE8
-          warnings: false,
-          unused: true,
-          dead_code: true,
-        },
-        output: { screw_ie8: true, comments: false },
-      })  // eslint-disable-line comma-dangle
+      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
+      new webpack.optimize.ModuleConcatenationPlugin() // eslint-disable-line comma-dangle
     );
   }
 
@@ -78,7 +70,7 @@ const getPlugins = () => {
 const getEntry = () => {
   // For development
   let entry = [
-    'babel-polyfill',   // Support promise for IE browser (for dev)
+    'babel-polyfill', // Support promise for IE browser (for dev)
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
     './src/client.js',

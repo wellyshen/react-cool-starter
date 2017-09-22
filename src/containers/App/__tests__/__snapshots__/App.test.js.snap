@@ -2,10 +2,10 @@
 
 exports[`<App /> renders 1`] = `
 <div
-  className={undefined}
+  className="App"
 >
   <div
-    className={undefined}
+    className="header"
   >
     <img
       alt="Logo"
@@ -18,7 +18,7 @@ exports[`<App /> renders 1`] = `
   </div>
   <hr />
   <div
-    className={undefined}
+    className="Home"
   >
     <p>
       Loading...
