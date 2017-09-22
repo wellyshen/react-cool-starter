@@ -119,7 +119,7 @@ module.exports = {
         options: {
           cacheDirectory: isDev,
           babelrc: false,
-          presets: [['es2015', { modules: false }], 'react', 'stage-0'],
+          presets: [['env', { modules: false }], 'react', 'stage-0'],
           plugins: ['react-hot-loader/babel'],
         },
       },
