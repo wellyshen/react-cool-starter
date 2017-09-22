@@ -30,8 +30,6 @@ export default () => {
       <Helmet {...config.app} />
       <div className={styles.header}>
         <img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
-        <img src={require('./assets/dog.png')} alt="Dog That Works" role="presentation" />
-        <img src={require('./assets/dog.jpg')} alt="Dog That Does Not Work" role="presentation" />
         <h1>{config.app.title}</h1>
       </div>
       <hr />
