@@ -177,6 +177,7 @@
     "not ie <= 8"
   ],
   "jest": {
+    "setupFiles": ["<rootDir>/tools/jest/setup.js"],
     "collectCoverageFrom": [
       "src/containers/**/*.js",
       "src/components/**/*.js",
@@ -230,7 +231,8 @@
     "coveralls": "^2.13.1",
     "cross-spawn": "^5.1.0",
     "css-loader": "^0.28.7",
-    "enzyme": "^2.9.1",
+    "enzyme": "3.0.0",
+    "enzyme-adapter-react-15": "^1.0.0",
     "eslint": "^4.6.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-loader": "^1.9.0",
