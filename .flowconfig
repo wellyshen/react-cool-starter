@@ -2,7 +2,7 @@
 <PROJECT_ROOT>/build/.*
 <PROJECT_ROOT>/.*/__tests__/.*
 ; Ignore stylelint errors
-.*/node_modules/stylelint/.*
+.*/node_modules/stylelint/lib/.*
 ; Ignore react-helmet errors
 .*/node_modules/react-helmet/node_modules/fbjs/lib/.*
 ; Ignore react-router errors

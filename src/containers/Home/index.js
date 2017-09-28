@@ -18,8 +18,7 @@ type Props = {
 };
 
 // Export this for unit testing more easily
-// $FlowFixMe: it's an error
-export class Home extends PureComponent {
+export class Home extends PureComponent<Props> {
   props: Props;
 
   static defaultProps: {
