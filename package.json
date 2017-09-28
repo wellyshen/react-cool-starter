@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -39,24 +39,21 @@
     "start": "better-npm-run start",
     "start:production": "yarn build && yarn start:prod",
     "start:prod": "better-npm-run start:prod",
-    "build": "yarn build:client && yarn build:server",
-    "build:client": "yarn clean:client && better-npm-run build:client",
-    "build:server": "yarn clean:server && better-npm-run build:server",
+    "build": "yarn clean:build && better-npm-run build",
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "flow": "better-npm-run flow",
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
-    "clean:all": "yarn clean:client && yarn clean:server && yarn clean:test",
-    "clean:client": "better-npm-run clean:client",
-    "clean:server": "better-npm-run clean:server",
+    "clean:all": "yarn clean:build && yarn clean:test",
+    "clean:build": "better-npm-run clean:build",
     "clean:test": "better-npm-run clean:test",
     "coveralls": "better-npm-run coveralls && yarn clean:test"
   },
   "betterScripts": {
     "start": {
-      "command": "nodemon ./index.js --exec babel-node",
+      "command": "nodemon ./index.js",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
@@ -71,14 +68,11 @@
         "PORT": 8080
       }
     },
-    "build:client": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/webpack.client.babel.js",
+    "build": {
+      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
-    },
-    "build:server": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/webpack.server.babel.js"
     },
     "lint:js": {
       "command": "eslint ./src ./tools ./index.js"
@@ -95,11 +89,8 @@
         "NODE_ENV": "test"
       }
     },
-    "clean:client": {
-      "command": "rimraf ./build/public/assets"
-    },
-    "clean:server": {
-      "command": "rimraf ./build/server.js ./build/server.js.map"
+    "clean:build": {
+      "command": "rimraf ./public/assets"
     },
     "clean:test": {
       "command": "rimraf ./coverage"
@@ -194,13 +185,13 @@
     "axios": "^0.16.2",
     "babel-polyfill": "^6.26.0",
     "chalk": "^2.1.0",
-    "compression": "^1.7.0",
+    "compression": "1.7.1",
     "express": "^4.15.5",
-    "helmet": "^3.8.1",
+    "helmet": "3.8.2",
     "history": "^4.7.2",
     "hpp": "^0.2.2",
     "lodash": "^4.17.4",
-    "morgan": "^1.8.2",
+    "morgan": "1.9.0",
     "opn": "^5.1.0",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
@@ -214,7 +205,7 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "serialize-javascript": "^1.4.0",
-    "serve-favicon": "^2.4.4",
+    "serve-favicon": "2.4.5",
     "webpack-isomorphic-tools": "^3.0.5"
   },
   "devDependencies": {
@@ -222,7 +213,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "8.0.0",
-    "babel-jest": "^21.0.2",
+    "babel-jest": "21.2.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-preset-env": "^1.6.0",
@@ -230,7 +221,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babili-webpack-plugin": "^0.1.2",
     "better-npm-run": "^0.1.0",
-    "coveralls": "^2.13.1",
+    "coveralls": "2.13.2",
     "cross-spawn": "^5.1.0",
     "css-loader": "^0.28.7",
     "enzyme": "3.0.0",
@@ -247,8 +238,8 @@
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^3.4.2",
     "imports-loader": "^0.7.1",
-    "jest": "^21.1.0",
-    "nock": "^9.0.21",
+    "jest": "21.2.1",
+    "nock": "9.0.22",
     "node-sass": "^4.5.3",
     "nodemon": "^1.12.1",
     "postcss": "^6.0.12",
@@ -265,7 +256,6 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0",
-    "webpack-hot-middleware": "^2.19.1",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-hot-middleware": "^2.19.1"
   }
 }
