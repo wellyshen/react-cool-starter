@@ -3,6 +3,16 @@
 <PROJECT_ROOT>/.*/__tests__/.*
 ; Ignore stylelint errors
 .*/node_modules/stylelint/.*
+; Ignore react-helmet errors
+.*/node_modules/react-helmet/node_modules/fbjs/lib/.*
+; Ignore react-router errors
+.*/node_modules/react-router/node_modules/fbjs/lib/.*
+; Ignore react-router-dom errors
+.*/node_modules/react-router-dom/node_modules/fbjs/lib/.*
+; Ignore react-router-redux errors
+.*/node_modules/react-router-redux/node_modules/fbjs/lib/.*
+; Ignore redbox-react errors
+.*/node_modules/redbox-react/node_modules/fbjs/lib/.*
 
 [include]
 
