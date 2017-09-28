@@ -95,9 +95,9 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `yarn <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Bundles the app to `./build` and run it on the production server at `localhost:8080`.
+`start:production`|Files bundled to `./public/assets` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Remove the previous bundled stuff and bundle it to `./public/assets`.
+`build`|Remove the previous bundled files and bundle it to `./public/assets`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
@@ -105,7 +105,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `test`|Run testing once (with code coverage reports).
 `test:watch`|Run testing on every test file change.
 `clean:all`|Remove the client/server bundled stuff and the coverage report.
-`clean:build`|Remove the `./public/assets` folder to clean the client bundled stuff.
+`clean:build`|Remove the `./public/assets` folder to clean the client bundled files.
 `clean:test`|Remove the `./coverage` folder to clean the code coverage report.
 
 
@@ -115,7 +115,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 
 ```
 .
-├── public                            # Express server static path / Webpack bundled output
+├── public                            # Express server static path/Webpack bundled output
 │   └── favicon.ico                   # Favicon is placed in the same path with the main HTML page       
 ├── src                               # App source code
 │   ├── config                        # App configuration settings
@@ -308,7 +308,7 @@ render() {
 }
 ```
 
-Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.js`):
+Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.babel.js`):
 
 ```javascript
 import './styles.scss';
@@ -451,7 +451,7 @@ Note: If you don't want to use Flow, just remove the `/* @flow */` comment and r
 
 ### JavaScript and Style Lint
 
-[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want them be activated during developing, you can turn off those from `./tools/webpack/config.js` and do the manually checking by `yarn lint`.
+[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want them be activated during developing, you can turn off those from `./tools/webpack/config.babel.js` and do the manually checking by `yarn lint`.
 
 
 ### Unit Tests
