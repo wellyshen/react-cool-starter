@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { hydrate, unmountComponentAtNode } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
@@ -18,7 +18,7 @@ const mountNode = document.getElementById('react-view');
 const renderApp = () => {
   const App = require('./containers/App').default;
 
-  render(
+  hydrate(
     <AppContainer>
       <Provider store={store}>
         <ConnectedRouter history={history}>
@@ -38,7 +38,7 @@ if (module.hot) {
     } catch (error) {
       const RedBox = require('redbox-react').default;
 
-      render(<RedBox error={error} />, mountNode);
+      hydrate(<RedBox error={error} />, mountNode);
     }
   };
 

@@ -3,10 +3,6 @@
 <PROJECT_ROOT>/.*/__tests__/.*
 ; Ignore stylelint errors
 .*/node_modules/stylelint/.*
-; Ignore nock errors
-.*/node_modules/nock/.*
-; Ignore prop-types errors
-.*/node_modules/prop-types/node_modules/fbjs/lib/.*
 
 [include]
 
@@ -40,4 +36,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.52.0
+^0.55.0

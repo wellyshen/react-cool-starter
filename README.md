@@ -97,9 +97,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
 `start:production`|Bundles the app to `./build` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Remove the previous client and server bundled stuff and bundle them to `./build`.
-`build:client`|Remove the previous client bundled stuff and bundle it to `./build/public/assets`.
-`build:server`|Remove the previous server bundled stuff and bundle it to `./build`.
+`build`|Remove the previous bundled stuff and bundle it to `./public/assets`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
@@ -107,8 +105,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `test`|Run testing once (with code coverage reports).
 `test:watch`|Run testing on every test file change.
 `clean:all`|Remove the client/server bundled stuff and the coverage report.
-`clean:client`|Remove the `./build/public/assets` folder to clean the client bundled stuff.
-`clean:server`|Remove the server bundled stuff from the `./build` folder.
+`clean:build`|Remove the `./public/assets` folder to clean the client bundled stuff.
 `clean:test`|Remove the `./coverage` folder to clean the code coverage report.
 
 
@@ -118,9 +115,8 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 
 ```
 .
-├── build                             # Webpack bundled files will be placed into it
-│   └── public                        # The Express server static path
-│       └── favicon.ico               # Favicon is placed in the same path with the main HTML page       
+├── public                            # Express server static path / Webpack bundled output
+│   └── favicon.ico                   # Favicon is placed in the same path with the main HTML page       
 ├── src                               # App source code
 │   ├── config                        # App configuration settings
 │   │   ├── default.js                # Default settings
@@ -141,10 +137,8 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── flow                          # Flow types, interface, module aliasing definitions
 │   ├── openBrowser                   # Utility for opening Google Chrome
 │   ├── jest                          # Jest CSS modules and assets mocks settings
-│   ├── webpack                       # Webpack configuration settings
-│   │   ├── config.js                 # Configuration for CSS modules, vendor registering
-│   │   ├── webpack.client.babel.js   # Webpack configuration for client
-│   │   ├── webpack.server.babel.js   # Webpack configuration for server
+│   ├── webpack                       # Webpack settings
+│   │   ├── config.babel.js           # Webpack configuration
 │   │   └── WIT.config.js             # Webpack Isomorphic Tools configuration file        
 └── index.js                          # App entry point
 ```
@@ -498,7 +492,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
-* If you encounter the checksum error like following, try to restart the server to solve the it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
+* If you encounter the markup mismatch error like following, try to restart the server to solve it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
 
 > React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
 
