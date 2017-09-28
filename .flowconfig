@@ -5,6 +5,8 @@
 .*/node_modules/stylelint/.*
 ; Ignore nock errors
 .*/node_modules/nock/.*
+; Ignore prop-types errors
+.*/node_modules/prop-types/node_modules/fbjs/lib/.*
 
 [include]
 

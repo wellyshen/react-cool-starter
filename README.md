@@ -521,3 +521,19 @@ In the `./package.json` script:
 
 // ...
 ```
+
+* If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to package.json
+
+```
+"linebreak-style": 0
+```
+
+So it will look like:
+
+```
+// ...
+ "rules": {
+      "linebreak-style": 0,
+      "global-require": 0,
+// ...
+```
