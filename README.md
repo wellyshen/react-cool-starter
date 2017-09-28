@@ -488,7 +488,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-* If you get the the following message during developing, try to run `yarn build:client` to create the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles, image etc.) working on universal rendering.
+* If you get the the following message during developing, try to run `yarn build` to create the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles, image etc.) working on universal rendering.
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
