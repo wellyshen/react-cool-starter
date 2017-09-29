@@ -219,15 +219,13 @@ module.exports = {
     ],
   },
   plugins: getPlugins(),
-  // Where to resolve our loaders
   resolveLoader: {
-    modules: ['src', 'node_modules'],
+    // Use loaders without the -loader suffix
     moduleExtensions: ['-loader'],
   },
   resolve: {
     modules: ['src', 'node_modules'],
     descriptionFiles: ['package.json'],
-    moduleExtensions: ['-loader'],
     extensions: ['.js', '.jsx', '.json'],
   },
   // Some libraries import Node modules but don't use them in the browser.
