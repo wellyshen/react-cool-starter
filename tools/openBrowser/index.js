@@ -1,10 +1,8 @@
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 const chalk = require('chalk');
@@ -48,11 +46,18 @@ function executeNodeScript(scriptPath, url) {
   child.on('close', (code) => {
     if (code !== 0) {
       console.log();
-      console.log(chalk.red('The script specified as BROWSER environment variable failed.'));
+      console.log(
+        chalk.red(
+          'The script specified as BROWSER environment variable failed.',
+        ),
+      );
       console.log(`${chalk.cyan(scriptPath)} exited with code ${code}.`);
       console.log();
+
+      return; // eslint-disable-line no-useless-return
     }
   });
+
   return true;
 }
 
@@ -62,7 +67,8 @@ function startBrowserProcess(browser, url) {
   // Chrome with AppleScript. This lets us reuse an
   // existing tab when possible instead of creating a new one.
   const shouldTryOpenChromeWithAppleScript =
-    process.platform === 'darwin' && (typeof browser !== 'string' || browser === OSX_CHROME);
+    process.platform === 'darwin' &&
+    (typeof browser !== 'string' || browser === OSX_CHROME);
 
   if (shouldTryOpenChromeWithAppleScript) {
     try {
