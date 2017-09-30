@@ -432,15 +432,15 @@ class Home extends PureComponent {  // Use PureComponent instead of Component
 
 ### Type Checking by Flow
 
-[Flow](https://flowtype.org/docs/react.html), a static type checker for javascript. It adds static typing to javascript to improve developer productivity and code quality. In particular, static typing offers benefits like early error checking, which helps you avoid certain kinds of runtime failures, and code intelligence, which aids code maintenance, navigation, transformation, and optimization.
+[Flow](https://flow.org), a static type checker for javascript. It adds static typing to javascript to improve developer productivity and code quality. In particular, static typing offers benefits like early error checking, which helps you avoid certain kinds of runtime failures, and code intelligence, which aids code maintenance, navigation, transformation, and optimization.
 
 Flow’s static analysis makes building web apps with React safe by tracking the types of props and state. Flow understands which props are required and also supports default props.
 
 I love to write React, Redux with Flow, I know it's not easy to learn at the beginning. But trust me, it's worth to learn. There're some useful instructions that I can give you as below:
 
-* If you are new to Flow, [five simple examples](https://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs.
+* If you are new to Flow, check the official [docs](https://flow.org/en/docs/) to understand it.
 
-* Learn how to use Flow with React Component's props and state, you can learn from [here](https://flowtype.org/docs/react.html).
+* Learn how to use Flow with React Component's props and state, you can learn from [here](https://flow.org/en/docs/react/components/).
 
 * Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
 
