@@ -438,7 +438,7 @@ Flow’s static analysis makes building web apps with React safe by tracking the
 
 I love to write React, Redux with Flow, I know it's not easy to learn at the beginning. But trust me, it's worth to learn. There're some useful instructions that I can give you as below:
 
-* If you are new to Flow, check the official [docs](https://flow.org/en/docs/) to understand it.
+* If you are new to Flow, read the official [docs](https://flow.org/en/docs/) to understand it.
 
 * Learn how to use Flow with React Component's props and state, you can learn from [here](https://flow.org/en/docs/react/components/).
 
