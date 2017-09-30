@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import type { StatelessFunctionalComponent, Element } from 'react';
+import type { Element } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import _ from 'lodash';
@@ -12,7 +12,7 @@ import routes from '../../routes';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-const App: StatelessFunctionalComponent<{}> = () => {
+const App = (): Element<'div'> => {
   // Use it when sub routes are added to any route it'll work
   const routeWithSubRoutes = (route): Element<typeof Route> => (
     <Route
