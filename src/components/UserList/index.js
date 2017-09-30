@@ -1,13 +1,14 @@
 /* @flow */
 
 import React from 'react';
+import type { StatelessFunctionalComponent, Element } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 
 type Props = { list: Array<Object> };
 
-const UserList = ({ list }: Props) => (
+const UserList: StatelessFunctionalComponent<Props> = ({ list }: Props): Element<'div'> => (
   <div className={styles.UserList}>
     <h4>User List</h4>
     <ul>
@@ -19,12 +20,5 @@ const UserList = ({ list }: Props) => (
     </ul>
   </div>
 );
-
-UserList.defaultProps = {
-  list: {
-    id: '',
-    name: '',
-  },
-};
 
 export default UserList;

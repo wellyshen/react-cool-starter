@@ -1,6 +1,7 @@
 /* @flow */
 
 import React from 'react';
+import type { StatelessFunctionalComponent, Element } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import _ from 'lodash';
@@ -11,9 +12,9 @@ import routes from '../../routes';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-export default () => {
+const App: StatelessFunctionalComponent<{}> = () => {
   // Use it when sub routes are added to any route it'll work
-  const routeWithSubRoutes = route => (
+  const routeWithSubRoutes = (route): Element<typeof Route> => (
     <Route
       key={_.uniqueId()}
       exact={route.exact || false}
@@ -33,9 +34,9 @@ export default () => {
         <h1>{config.app.title}</h1>
       </div>
       <hr />
-      <Switch>
-        {routes.map(route => routeWithSubRoutes(route))}
-      </Switch>
+      <Switch>{routes.map(route => routeWithSubRoutes(route))}</Switch>
     </div>
   );
 };
+
+export default App;

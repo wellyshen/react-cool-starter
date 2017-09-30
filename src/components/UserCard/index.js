@@ -1,12 +1,12 @@
 /* @flow */
 
 import React from 'react';
-
+import type { StatelessFunctionalComponent, Element } from 'react';
 import styles from './styles.scss';
 
 type Props = { info: Object };
 
-const UserCard = ({ info }: Props) => (
+const UserCard: StatelessFunctionalComponent<Props> = ({ info }: Props): Element<'div'> => (
   <div className={styles.UserCard}>
     <h4>User Card</h4>
     <ul>
@@ -17,14 +17,5 @@ const UserCard = ({ info }: Props) => (
     </ul>
   </div>
 );
-
-UserCard.defaultProps = {
-  info: {
-    name: '',
-    phone: '',
-    email: '',
-    website: '',
-  },
-};
 
 export default UserCard;
