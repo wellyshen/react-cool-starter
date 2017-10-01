@@ -20,12 +20,6 @@ type Props = {
 
 // Export this for unit testing more easily
 export class UserInfo extends PureComponent<Props> {
-  static defaultProps: {
-    userInfo: {},
-    match: { params: { id: '' } },
-    fetchUserIfNeeded: () => {},
-  };
-
   componentDidMount() {
     const { fetchUserIfNeeded, match: { params } } = this.props;
 
