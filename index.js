@@ -13,8 +13,6 @@ global.__DEV__ = process.env.NODE_ENV !== 'production';
 const dirRoot = require('path').join(process.cwd());
 
 // Settings of webpack-isomorphic-tools
-global.webpackIsomorphicTools = new WebpackIsomorphicTools(
-  require('./tools/webpack/WIT.config')
-).server(dirRoot, () => {
+global.webpackIsomorphicTools = new WebpackIsomorphicTools(require('./tools/webpack/WIT.config')).server(dirRoot, () => {
   require('./src/server');
 });
