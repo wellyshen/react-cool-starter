@@ -39,8 +39,6 @@ const getPlugins = () => {
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
     // Setup global variables for client
     new webpack.DefinePlugin({
-      __CLIENT__: true,
-      __SERVER__: false,
       __DEV__: isDev,
     }),
     new webpack.NoEmitOnErrorsPlugin(),

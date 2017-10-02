@@ -3,8 +3,6 @@
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 
 // Setup global variables for server
-global.__CLIENT__ = false;
-global.__SERVER__ = true;
 global.__DISABLE_SSR__ = false; // Disable server side render here
 global.__DEV__ = process.env.NODE_ENV !== 'production';
 
