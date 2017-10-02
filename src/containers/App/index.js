@@ -1,6 +1,7 @@
 /* @flow */
 
 import React from 'react';
+import type { Element } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import _ from 'lodash';
@@ -11,16 +12,16 @@ import routes from '../../routes';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-export default () => {
+const App = (): Element<'div'> => {
   // Use it when sub routes are added to any route it'll work
-  const routeWithSubRoutes = route => (
+  const routeWithSubRoutes = (route): Element<typeof Route> => (
     <Route
       key={_.uniqueId()}
       exact={route.exact || false}
       path={route.path}
       render={props => (
         // Pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
+        <route.component {...props} routes={route.routes || null} />
       )}
     />
   );
@@ -33,9 +34,9 @@ export default () => {
         <h1>{config.app.title}</h1>
       </div>
       <hr />
-      <Switch>
-        {routes.map(route => routeWithSubRoutes(route))}
-      </Switch>
+      <Switch>{routes.map(route => routeWithSubRoutes(route))}</Switch>
     </div>
   );
 };
+
+export default App;

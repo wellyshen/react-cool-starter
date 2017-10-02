@@ -2,13 +2,22 @@
 <PROJECT_ROOT>/build/.*
 <PROJECT_ROOT>/.*/__tests__/.*
 ; Ignore stylelint errors
-.*/node_modules/stylelint/.*
-; Ignore nock errors
-.*/node_modules/nock/.*
+.*/node_modules/stylelint/lib/.*
+; Ignore react-helmet errors
+.*/node_modules/react-helmet/node_modules/fbjs/lib/.*
+; Ignore react-router errors
+.*/node_modules/react-router/node_modules/fbjs/lib/.*
+; Ignore react-router-dom errors
+.*/node_modules/react-router-dom/node_modules/fbjs/lib/.*
+; Ignore react-router-redux errors
+.*/node_modules/react-router-redux/node_modules/fbjs/lib/.*
+; Ignore redbox-react errors
+.*/node_modules/redbox-react/node_modules/fbjs/lib/.*
 
 [include]
 
 [libs]
+./node_modules/fbjs/flow/lib/dev.js
 ; The app's global variables are declared here
 tools/flow/definitions
 
@@ -19,6 +28,7 @@ module.system=haste
 
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
+unsafe.enable_getters_and_setters=true
 
 munge_underscores=false
 
@@ -36,4 +46,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.49.1
+^0.56.0

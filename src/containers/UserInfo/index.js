@@ -2,6 +2,7 @@
 /* @flow */
 
 import React, { PureComponent } from 'react';
+import type { Element } from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -18,22 +19,14 @@ type Props = {
 };
 
 // Export this for unit testing more easily
-export class UserInfo extends PureComponent {
-  props: Props;
-
-  static defaultProps: {
-    userInfo: {},
-    match: { params: { id: '' } },
-    fetchUserIfNeeded: () => {},
-  };
-
+export class UserInfo extends PureComponent<Props> {
   componentDidMount() {
     const { fetchUserIfNeeded, match: { params } } = this.props;
 
     fetchUserIfNeeded(params.id);
   }
 
-  renderUserCard = () => {
+  renderUserCard = (): Element<'p' | typeof UserCard> => {
     const { userInfo, match: { params } } = this.props;
     const userInfoById = userInfo[params.id];
 

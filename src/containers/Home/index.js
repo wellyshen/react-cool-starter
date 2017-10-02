@@ -2,6 +2,7 @@
 /* @flow */
 
 import React, { PureComponent } from 'react';
+import type { Element } from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
@@ -11,32 +12,22 @@ import type { Home as HomeType, Dispatch, Reducer } from '../../types';
 import UserList from '../../components/UserList';
 import styles from './styles.scss';
 
-type Props = {
-  home: HomeType,
-  fetchUsersIfNeeded: () => void,
-};
+type Props = { home: HomeType, fetchUsersIfNeeded: () => void };
 
 // Export this for unit testing more easily
-export class Home extends PureComponent {
-  props: Props;
-
-  static defaultProps: {
-    home: {
-      readyStatus: 'USERS_INVALID',
-      list: null,
-    },
-    fetchUsersIfNeeded: () => {},
-  };
-
+export class Home extends PureComponent<Props> {
   componentDidMount() {
     this.props.fetchUsersIfNeeded();
   }
 
-  renderUserList = () => {
+  renderUserList = (): Element<'p' | typeof UserList> => {
     const { home } = this.props;
 
-    if (!home.readyStatus || home.readyStatus === action.USERS_INVALID ||
-      home.readyStatus === action.USERS_REQUESTING) {
+    if (
+      !home.readyStatus ||
+      home.readyStatus === action.USERS_INVALID ||
+      home.readyStatus === action.USERS_REQUESTING
+    ) {
       return <p>Loading...</p>;
     }
 
@@ -45,7 +36,7 @@ export class Home extends PureComponent {
     }
 
     return <UserList list={home.list} />;
-  }
+  };
 
   render() {
     return (

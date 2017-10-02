@@ -1,8 +1,8 @@
 # <div align="center"><img src="https://cloud.githubusercontent.com/assets/21308003/18472722/9fae90f6-79eb-11e6-8e42-ebca5e9b5cc9.png" height="250px" alt="Banner" /></div>
 
-A simple but feature rich starter boilerplate for creating your own  [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 2](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See section [**“Features”**](#features) for more other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own  [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
-I will improve the starter boilerplate continuously and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
+I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
 > 👻 I'm curious what this starter boilerplate helps you guys do anything? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
 
@@ -15,7 +15,7 @@ I will improve the starter boilerplate continuously and keep all of the technolo
 
 ## Real Case Study
 
-* [BECK Friends](https://www.beckfriends.com/) is an international deliver service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
+* [BECK Friends](https://www.beckfriends.com/) is an international delivery service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
 
 
 ## Features
@@ -27,7 +27,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [React Router v4](https://reacttraining.com/react-router/) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
 * [Express](https://expressjs.com/) server.
-* [Webpack 2](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
+* [Webpack 3](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 * [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
@@ -55,18 +55,18 @@ Really cool starter boilerplate with the most popular technologies:
 
 ## Who's the starter for?
 
-This starter is for those who with basic knowledge of React and have the need for building a server-sdie app. In other words, it's not for newbie. If you're new to React and wihtout the need of server-sdie, I'd recommand you to give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
+This starter is for those who with basic knowledge of React and have the need for building a server-side app. In other words, it's not for a newbie. If you're new to React or you don't need a server-side rendering app, I'd recommend you give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
 
 
 ## Requirements
 
-* [node](https://nodejs.org/en/) >= 5.0
+* [node](https://nodejs.org/en/) >= 6.0
 * [npm](https://www.npmjs.com/) >= 3.0
 
 
 ## Getting Started
 
-**1. You can start by clone the repository on your local machine by running:**
+**1. You can start by cloning the repository on your local machine by running:**
 
 ```bash
 git clone https://github.com/wellyshen/react-cool-starter.git
@@ -95,11 +95,9 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `yarn <script>`|Description
 ------------------|-----------
 `start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Bundles the app to `./build` and run it on the production server at `localhost:8080`.
+`start:production`|Bundle files to `./public/assets` and run it on the production server at `localhost:8080`.
 `start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Remove the previous client and server bundled stuff and bundle them to `./build`.
-`build:client`|Remove the previous client bundled stuff and bundle it to `./build/public/assets`.
-`build:server`|Remove the previous server bundled stuff and bundle it to `./build`.
+`build`|Remove the previous bundled files and bundle it to `./public/assets`.
 `lint`|Lint all `.js` and `.scss` files.
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
@@ -107,20 +105,18 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `test`|Run testing once (with code coverage reports).
 `test:watch`|Run testing on every test file change.
 `clean:all`|Remove the client/server bundled stuff and the coverage report.
-`clean:client`|Remove the `./build/public/assets` folder to clean the client bundled stuff.
-`clean:server`|Remove the server bundled stuff from the `./build` folder.
+`clean:build`|Remove the `./public/assets` folder to clean the client bundled files.
 `clean:test`|Remove the `./coverage` folder to clean the code coverage report.
 
 
 ## App Structure
 
-Here is the structure of the app, which serve as generally accepted guidelines and patterns for building scalable apps.
+Here is the structure of the app, which serves as generally accepted guidelines and patterns for building scalable apps.
 
 ```
 .
-├── build                             # Webpack bundled files will be placed into it
-│   └── public                        # The Express server static path
-│       └── favicon.ico               # Favicon is placed in the same path with the main HTML page       
+├── public                            # Express server static path/Webpack bundled output
+│   └── favicon.ico                   # Favicon is placed in the same path with the main HTML page       
 ├── src                               # App source code
 │   ├── config                        # App configuration settings
 │   │   ├── default.js                # Default settings
@@ -141,18 +137,16 @@ Here is the structure of the app, which serve as generally accepted guidelines a
 │   ├── flow                          # Flow types, interface, module aliasing definitions
 │   ├── openBrowser                   # Utility for opening Google Chrome
 │   ├── jest                          # Jest CSS modules and assets mocks settings
-│   ├── webpack                       # Webpack configuration settings
-│   │   ├── config.js                 # Configuration for CSS modules, vendor registering
-│   │   ├── webpack.client.babel.js   # Webpack configuration for client
-│   │   ├── webpack.server.babel.js   # Webpack configuration for server
+│   ├── webpack                       # Webpack settings
+│   │   ├── config.babel.js           # Webpack configuration
 │   │   └── WIT.config.js             # Webpack Isomorphic Tools configuration file        
 └── index.js                          # App entry point
 ```
 
 
-## Server Side Security and Performance
+## Server-Side Security and Performance
 
-Concerning to the security and performance for Express in production, I already setup some middlewares for you:
+Concerning the security and performance of Express in production, I already setup some middleware for you:
 
 * [helmet](https://github.com/helmetjs/helmet) - Helps secure Express server with various HTTP headers.
 * [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
@@ -163,7 +157,7 @@ Note: It's just a basic protected mechanism for your app, you can see the [secur
 
 ## Setup Redux DevTools Extension
 
-The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow the installation guide to use it:
+The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow these installation guides to use it:
 
 **For Chrome**
 * from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
@@ -204,6 +198,13 @@ export default [
     exact: true,
     // Add your route component here
     component: MyRouteComponent,
+    // Add your sub route component here
+    routes: [
+      {
+        path: '/myPath/mySubPath',
+        component: MySubRouteComponent
+      }
+    ]
     // ...
   },
   // Setup other routes...
@@ -242,13 +243,15 @@ app.get('*', (req, res) => {
 
   // Here's the method for loading data on server-side
   const loadBranchData = () => {
-    const branch = matchRoutes(routes, req.url);
+    const promises = [];
 
-    const promises = branch.map(({ route, match }) => {
-      // Dispatch the action(s) through the loadData method of "./src/routes.js"
-      if (route.loadData) return route.loadData(store.dispath, match.params);
+    routes.some((route) => {
+      const match = matchPath(req.url, route);
 
-      return Promise.resolve(null);
+      // $FlowFixMe: the params of pre-load actions are dynamic
+      if (match && route.loadData) promises.push(route.loadData(store.dispatch, match.params));
+
+      return match;
     });
 
     return Promise.all(promises);
@@ -305,7 +308,7 @@ render() {
 }
 ```
 
-Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.js`):
+Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.babel.js`):
 
 ```javascript
 import './styles.scss';
@@ -429,15 +432,15 @@ class Home extends PureComponent {  // Use PureComponent instead of Component
 
 ### Type Checking by Flow
 
-[Flow](https://flowtype.org/docs/react.html), a static type checker for javascript. It adds static typing to javascript to improve developer productivity and code quality. In particular, static typing offers benefits like early error checking, which helps you avoid certain kinds of runtime failures, and code intelligence, which aids code maintenance, navigation, transformation, and optimization.
+[Flow](https://flow.org), a static type checker for javascript. It adds static typing to javascript to improve developer productivity and code quality. In particular, static typing offers benefits like early error checking, which helps you avoid certain kinds of runtime failures, and code intelligence, which aids code maintenance, navigation, transformation, and optimization.
 
 Flow’s static analysis makes building web apps with React safe by tracking the types of props and state. Flow understands which props are required and also supports default props.
 
 I love to write React, Redux with Flow, I know it's not easy to learn at the beginning. But trust me, it's worth to learn. There're some useful instructions that I can give you as below:
 
-* If you are new to Flow, [five simple examples](https://flowtype.org/docs/five-simple-examples.html) can get you started writing Flow programs.
+* If you are new to Flow, read the official [docs](https://flow.org/en/docs/) to understand it.
 
-* Learn how to use Flow with React Component's props and state, you can learn from [here](https://flowtype.org/docs/react.html).
+* Learn how to use Flow with React Component's props and state, you can learn from [here](https://flow.org/en/docs/react/components/).
 
 * Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
 
@@ -448,7 +451,7 @@ Note: If you don't want to use Flow, just remove the `/* @flow */` comment and r
 
 ### JavaScript and Style Lint
 
-[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want them be activated during developing, you can turn off those from `./tools/webpack/config.js` and do the manually checking by `yarn lint`.
+[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want them be activated during developing, you can turn off those from `./tools/webpack/config.babel.js` and do the manually checking by `yarn lint`.
 
 
 ### Unit Tests
@@ -485,10 +488,44 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-If you get the the following message during developing, try to run `yarn build:client` to create the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles, image etc.) working on universal rendering.
+* If you get the the following message during developing, try to run `yarn build` to create the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles, image etc.) working on universal rendering.
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
-If you run the example of the app. And you encounter the checksum error like below, try to restart the server to solve the it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
+* If you encounter the markup mismatch error, try to restart the server to solve it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
 
-> React attempted to use reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server.
+* If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following.
+
+In the `./package.json` script:
+
+```
+// ...
+
+"start:prod": {
+  "command": "node ./index.js",
+  "env": {
+    "NODE_PATH": "./src",
+    "NODE_ENV": "production",
+    "PORT": 8080,
+    "BROWSER": "none"   // Add this node variable to turn off the open browser util
+  }
+},
+
+// ...
+```
+
+* If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to package.json
+
+```
+"linebreak-style": 0
+```
+
+So it will look like:
+
+```
+// ...
+ "rules": {
+      "linebreak-style": 0,
+      "global-require": 0,
+// ...
+```
