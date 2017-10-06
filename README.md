@@ -76,7 +76,7 @@ cd react-cool-starter
 **2. Install all of the dependencies:**
 
 ```bash
-yarn install
+yarn
 ```
 
 **3. Start to run it:**
