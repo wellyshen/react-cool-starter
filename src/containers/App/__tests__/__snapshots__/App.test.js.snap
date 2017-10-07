@@ -4,9 +4,7 @@ exports[`<App /> renders 1`] = `
 <div
   className="App"
 >
-  <div
-    className="header"
-  >
+  <div>
     <img
       alt="Logo"
       role="presentation"
