@@ -100,20 +100,17 @@
     }
   },
   "babel": {
-    "presets": [
-      "env",
-      "react",
-      "stage-0"
-    ]
+    "presets": ["env", "react", "stage-0"],
+    "env": {
+      "production": {
+        "plugins": ["transform-remove-console"]
+      }
+    }
   },
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb",
-    "plugins": [
-      "react",
-      "jsx-a11y",
-      "import"
-    ],
+    "plugins": ["react", "jsx-a11y", "import"],
     "env": {
       "browser": true,
       "node": true,
@@ -218,6 +215,7 @@
     "babel-jest": "21.2.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-istanbul": "^4.1.5",
+    "babel-plugin-transform-remove-console": "^6.8.5",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

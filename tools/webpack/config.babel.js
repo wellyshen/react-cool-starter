@@ -143,6 +143,7 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['env', { modules: false }], 'react', 'stage-0'],
+          env: { production: { plugins: ['transform-remove-console'] } },
           plugins: ['react-hot-loader/babel'],
         },
       },
