@@ -29,7 +29,7 @@ const App = (): Element<'div'> => {
   return (
     <div className={styles.App}>
       <Helmet {...config.app} />
-      <div className={styles.header}>
+      <div>
         <img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
         <h1>{config.app.title}</h1>
       </div>
