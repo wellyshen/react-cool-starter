@@ -31,9 +31,7 @@ const shouldFetchUsers = (state: Reducer): boolean => {
   // or your reducer hot reloading won't updated on the view
   if (__DEV__) return true;
 
-  const home = state.home;
-
-  if (home.readyStatus === USERS_SUCCESS) return false; // Preventing double fetching data
+  if (state.home.readyStatus === USERS_SUCCESS) return false; // Preventing double fetching data
 
   return true;
 };

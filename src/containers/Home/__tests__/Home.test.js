@@ -13,7 +13,7 @@ import { Home } from '../index';
 
 describe('<Home />', () => {
   const tree = (props, actions) => renderer.create(
-    <StaticRouter location={''} context={{}}>
+    <StaticRouter context={{}}>
       <Home {...props} {...actions} />
     </StaticRouter>,
   ).toJSON();
@@ -28,7 +28,7 @@ describe('<Home />', () => {
     };
 
     mount(
-      <StaticRouter location={''} context={{}}>
+      <StaticRouter context={{}}>
         <Home {...props} {...actions} />
       </StaticRouter>,
     );

@@ -6,7 +6,7 @@
  */
 
 const chalk = require('chalk');
-const execSync = require('child_process').execSync;
+const execSync = require('child_process').execSync; // eslint-disable-line prefer-destructuring
 const spawn = require('cross-spawn');
 const opn = require('opn');
 

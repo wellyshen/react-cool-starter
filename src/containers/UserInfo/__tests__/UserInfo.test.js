@@ -12,7 +12,7 @@ import { UserInfo } from '../index';
 
 describe('<UserInfo />', () => {
   const tree = (props, actions) => renderer.create(
-    <StaticRouter location={''} context={{}}>
+    <StaticRouter context={{}}>
       <UserInfo {...props} {...actions} />
     </StaticRouter>,
   ).toJSON();
@@ -26,7 +26,7 @@ describe('<UserInfo />', () => {
     const actions = { fetchUserIfNeeded: mockAction };
 
     mount(
-      <StaticRouter location={''} context={{}}>
+      <StaticRouter context={{}}>
         <UserInfo {...props} {...actions} />
       </StaticRouter>,
     );

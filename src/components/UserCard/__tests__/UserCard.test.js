@@ -13,7 +13,7 @@ describe('<UserCard />', () => {
       website: 'www.test.com',
     };
     const tree = renderer.create(
-      <StaticRouter location={''} context={{}}>
+      <StaticRouter context={{}}>
         <UserCard info={mockData} />
       </StaticRouter>,
     ).toJSON();

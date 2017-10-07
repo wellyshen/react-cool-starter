@@ -16,7 +16,7 @@ describe('<App />', () => {
 
     const tree = renderer.create(
       <Provider store={fakeStore}>
-        <StaticRouter location={''} context={{}}>
+        <StaticRouter context={{}}>
           <App />
         </StaticRouter>
       </Provider>,
