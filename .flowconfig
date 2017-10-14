@@ -1,8 +1,6 @@
 [ignore]
 <PROJECT_ROOT>/build/.*
 <PROJECT_ROOT>/.*/__tests__/.*
-; Ignore stylelint errors
-.*/node_modules/stylelint/lib/.*
 ; Ignore react-helmet errors
 .*/node_modules/react-helmet/node_modules/fbjs/lib/.*
 ; Ignore react-router errors
@@ -46,4 +44,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.56.0
+^0.57.2

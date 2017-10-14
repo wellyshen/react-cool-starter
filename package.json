@@ -100,17 +100,27 @@
     }
   },
   "babel": {
-    "presets": ["env", "react", "stage-0"],
+    "presets": [
+      "env",
+      "react",
+      "stage-0"
+    ],
     "env": {
       "production": {
-        "plugins": ["transform-remove-console"]
+        "plugins": [
+          "transform-remove-console"
+        ]
       }
     }
   },
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb",
-    "plugins": ["react", "jsx-a11y", "import"],
+    "plugins": [
+      "react",
+      "jsx-a11y",
+      "import"
+    ],
     "env": {
       "browser": true,
       "node": true,
@@ -185,8 +195,8 @@
     "babel-polyfill": "^6.26.0",
     "chalk": "^2.1.0",
     "compression": "1.7.1",
-    "express": "4.16.1",
-    "helmet": "3.8.2",
+    "express": "4.16.2",
+    "helmet": "3.9.0",
     "history": "^4.7.2",
     "hpp": "^0.2.2",
     "lodash": "^4.17.4",
@@ -196,7 +206,7 @@
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "react-helmet": "^5.2.0",
-    "react-hot-loader": "^3.0.0-beta.6",
+    "react-hot-loader": "3.0.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "5.0.0-alpha.6",
@@ -234,7 +244,7 @@
     "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "3.0.1",
     "file-loader": "1.1.5",
-    "flow-bin": "0.56.0",
+    "flow-bin": "0.57.2",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^3.4.2",
     "jest": "21.2.1",
@@ -242,7 +252,7 @@
     "node-sass": "^4.5.3",
     "nodemon": "^1.12.1",
     "postcss": "6.0.13",
-    "postcss-loader": "^2.0.6",
+    "postcss-loader": "2.0.8",
     "raf": "3.4.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "16.0.0",
@@ -254,7 +264,7 @@
     "stylelint-config-standard": "^17.0.0",
     "stylelint-webpack-plugin": "^0.9.0",
     "url-loader": "0.6.2",
-    "webpack": "^3.6.0",
+    "webpack": "3.7.1",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.19.1"
   }
