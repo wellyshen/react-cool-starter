@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const BabiliPlugin = require('babili-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
@@ -82,7 +83,15 @@ const getPlugins = () => {
       new BabiliPlugin(),
       new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
-      new webpack.optimize.ModuleConcatenationPlugin() // eslint-disable-line comma-dangle
+      new webpack.optimize.ModuleConcatenationPlugin(),
+      new CompressionPlugin({
+        asset: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
+        threshold: 10240,
+        minRatio: 0.8,
+        deleteOriginalAssets: true,
+      }) // eslint-disable-line comma-dangle
     );
   }
 
