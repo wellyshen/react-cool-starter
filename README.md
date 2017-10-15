@@ -492,7 +492,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
-* If you encounter the markup mismatch error, try to restart the server to solve it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server)
+* If you encounter the markup mismatch error, try to restart the server to solve it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server).
 
 * If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following.
 
@@ -514,7 +514,7 @@ In the `./package.json` script:
 // ...
 ```
 
-* If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to package.json
+* If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to `./package.json`.
 
 ```
 "linebreak-style": 0
