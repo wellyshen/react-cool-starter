@@ -531,7 +531,7 @@ So it will look like:
 ```
 
 
-## ToDo...
+## Todo...
 
 Currently, I'm busying for my side-project, which is a workout app wrote by [react-native](https://facebook.github.io/react-native/). But there's a feature which will be included in this starter in the near future:
 
