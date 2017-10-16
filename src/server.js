@@ -74,7 +74,7 @@ app.get('*', (req, res) => {
     const promises = [];
 
     routes.some((route) => {
-      const match = matchPath(req.url, route);
+      const match = matchPath(req.path, route);
 
       // $FlowFixMe: the params of pre-load actions are dynamic
       if (match && route.loadData) promises.push(route.loadData(store.dispatch, match.params));
