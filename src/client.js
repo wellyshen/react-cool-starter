@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-// $FlowFixMe: it's an error
+// $FlowFixMe: it's not an error
 import { hydrate, unmountComponentAtNode } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
