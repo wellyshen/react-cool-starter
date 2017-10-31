@@ -7,6 +7,7 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
+import RedBox from 'redbox-react';
 
 import configureStore from './redux/store';
 
@@ -20,7 +21,7 @@ const renderApp = () => {
   const App = require('./containers/App').default;
 
   hydrate(
-    <AppContainer>
+    <AppContainer errorReporter={({ error }) => <RedBox error={error} />}>
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <App />
@@ -37,8 +38,6 @@ if (module.hot) {
     try {
       renderApp();
     } catch (error) {
-      const RedBox = require('redbox-react').default;
-
       hydrate(<RedBox error={error} />, mountNode);
     }
   };
