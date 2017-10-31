@@ -46,6 +46,7 @@ if (__DEV__) {
     hot: true,
     noInfo: true,
     stats: 'errors-only',
+    serverSideRender: true,
   }));
 
   app.use(require('webpack-hot-middleware')(compiler));
