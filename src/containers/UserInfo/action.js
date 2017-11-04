@@ -15,12 +15,16 @@ export const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
 export const fetchUser = (userId: string, axios: any, URL: string = API_URL): ThunkAction =>
-  (dispatch: Dispatch) => {
+  async (dispatch: Dispatch) => {
     dispatch({ type: USER_REQUESTING, userId });
 
-    return axios.get(`${URL}/${userId}`)
-      .then(res => dispatch({ type: USER_SUCCESS, userId, data: res.data }))
-      .catch(err => dispatch({ type: USER_FAILURE, userId, err: err.message }));
+    try {
+      const res = await axios.get(`${URL}/${userId}`);
+
+      dispatch({ type: USER_SUCCESS, userId, data: res.data });
+    } catch (err) {
+      dispatch({ type: USER_FAILURE, userId, err: err.message });
+    }
   };
 
 // Using for preventing dobule fetching data

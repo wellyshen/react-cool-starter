@@ -35,7 +35,6 @@ const vendor = [
   'redbox-react',
   'chalk',
   'lodash',
-  'babel-polyfill', // Support promise for IE browser (for prod)
 ];
 
 // Setting the plugins for development/prodcution
@@ -101,7 +100,6 @@ const getPlugins = () => {
 const getEntry = () => {
   // For development
   let entry = [
-    'babel-polyfill', // Support promise for IE browser (for dev)
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
     './src/client.js',
@@ -151,8 +149,8 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['env', { modules: false }], 'react', 'stage-0'],
+          plugins: ['transform-runtime', 'react-hot-loader/babel'],
           env: { production: { plugins: ['transform-remove-console'] } },
-          plugins: ['react-hot-loader/babel'],
         },
       },
       {

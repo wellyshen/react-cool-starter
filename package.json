@@ -105,6 +105,9 @@
       "react",
       "stage-0"
     ],
+    "plugins": [
+      "transform-runtime"
+    ],
     "env": {
       "production": {
         "plugins": [
@@ -173,6 +176,7 @@
   },
   "browserslist": [
     "last 2 versions",
+    "safari >= 7",
     "not ie <= 8"
   ],
   "jest": {
@@ -192,7 +196,8 @@
   },
   "dependencies": {
     "axios": "0.17.0",
-    "babel-polyfill": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-runtime": "^6.26.0",
     "chalk": "2.3.0",
     "compression": "1.7.1",
     "express": "4.16.2",
@@ -220,12 +225,12 @@
   "devDependencies": {
     "autoprefixer": "7.1.6",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
     "babel-eslint": "8.0.1",
     "babel-jest": "21.2.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-transform-remove-console": "^6.8.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
