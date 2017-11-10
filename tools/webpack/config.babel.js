@@ -88,7 +88,6 @@ const getPlugins = () => {
         test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
         threshold: 10240,
         minRatio: 0.8,
-        deleteOriginalAssets: true,
       }) // eslint-disable-line comma-dangle
     );
   }
