@@ -1,5 +1,5 @@
 [ignore]
-<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/public/.*
 <PROJECT_ROOT>/.*/__tests__/.*
 ; Ignore react-helmet errors
 .*/node_modules/react-helmet/node_modules/fbjs/lib/.*
@@ -44,4 +44,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.58.0
+^0.59.0

@@ -492,7 +492,9 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
-* If you encounter the markup mismatch error, try to restart the server to solve it. (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server).
+* If you encounter the markup mismatches error (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
+  1. Restart the server to solve it.
+  2. Or for v16.1.0 up, you can use `suppressHydrationWarning` attribute for intentional client/server text mismatches ([#11126](https://github.com/facebook/react/pull/11126)).
 
 * If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following.
 
