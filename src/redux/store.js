@@ -10,18 +10,13 @@ import type { Store } from '../types';
 import rootReducer from './reducers';
 
 export default (history: Object, initialState: Object = {}): Store => {
-  const middlewares = [
-    thunk.withExtraArgument(axios),
-    routerMiddleware(history),
-  ];
-
-  const enhancers = [
+  const middlewares = [thunk.withExtraArgument(axios), routerMiddleware(history)];
+  const composeEnhancers = (typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+  const enhancers = composeEnhancers(
     applyMiddleware(...middlewares),
-    __DEV__ && typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ?
-      window.devToolsExtension() : f => f,
-  ];
-
-  const store: Store = createStore(rootReducer, initialState, compose(...enhancers));
+    // Other store enhancers if any
+  );
+  const store: Store = createStore(rootReducer, initialState, enhancers);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
