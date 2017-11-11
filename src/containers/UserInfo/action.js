@@ -7,23 +7,19 @@ import type {
   Reducer,
 } from '../../types';
 
-export const USER_REQUESTING = 'USER_REQUESTING';
-export const USER_FAILURE = 'USER_FAILURE';
-export const USER_SUCCESS = 'USER_SUCCESS';
-
 export const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
 export const fetchUser = (userId: string, axios: any, URL: string = API_URL): ThunkAction =>
   async (dispatch: Dispatch) => {
-    dispatch({ type: USER_REQUESTING, userId });
+    dispatch({ type: 'USER_REQUESTING', userId });
 
     try {
       const res = await axios.get(`${URL}/${userId}`);
 
-      dispatch({ type: USER_SUCCESS, userId, data: res.data });
+      dispatch({ type: 'USER_SUCCESS', userId, data: res.data });
     } catch (err) {
-      dispatch({ type: USER_FAILURE, userId, err: err.message });
+      dispatch({ type: 'USER_FAILURE', userId, err: err.message });
     }
   };
 
@@ -37,7 +33,7 @@ const shouldFetchUser = (state: Reducer, userId: string): boolean => {
   const userInfo = state.userInfo[userId];
 
   // Preventing dobule fetching data in production
-  if (userInfo && userInfo.readyStatus === USER_SUCCESS) return false;
+  if (userInfo && userInfo.readyStatus === 'USER_SUCCESS') return false;
 
   return true;
 };

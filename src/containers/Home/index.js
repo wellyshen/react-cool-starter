@@ -24,13 +24,13 @@ export class Home extends PureComponent<Props> {
 
     if (
       !home.readyStatus ||
-      home.readyStatus === action.USERS_INVALID ||
-      home.readyStatus === action.USERS_REQUESTING
+      home.readyStatus === 'USERS_INVALID' ||
+      home.readyStatus === 'USERS_REQUESTING'
     ) {
       return <p>Loading...</p>;
     }
 
-    if (home.readyStatus === action.USERS_FAILURE) {
+    if (home.readyStatus === 'USERS_FAILURE') {
       return <p>Oops, Failed to load list!</p>;
     }
 

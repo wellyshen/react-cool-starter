@@ -3,12 +3,6 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { StaticRouter } from 'react-router-dom';
 
-import {
-  USERS_INVALID,
-  USERS_REQUESTING,
-  USERS_FAILURE,
-  USERS_SUCCESS,
-} from '../action';
 import { Home } from '../index';
 
 describe('<Home />', () => {
@@ -38,7 +32,7 @@ describe('<Home />', () => {
 
   test('renders the loading status if data invalid', () => {
     const props = {
-      home: { readyStatus: USERS_INVALID },
+      home: { readyStatus: 'USERS_INVALID' },
     };
     const actions = { fetchUsersIfNeeded: () => {} };
 
@@ -47,7 +41,7 @@ describe('<Home />', () => {
 
   test('renders the loading status if requesting data', () => {
     const props = {
-      home: { readyStatus: USERS_REQUESTING },
+      home: { readyStatus: 'USERS_REQUESTING' },
     };
     const actions = { fetchUsersIfNeeded: () => {} };
 
@@ -56,7 +50,7 @@ describe('<Home />', () => {
 
   test('renders an error if loading failed', () => {
     const props = {
-      home: { readyStatus: USERS_FAILURE },
+      home: { readyStatus: 'USERS_FAILURE' },
     };
     const actions = { fetchUsersIfNeeded: () => {} };
 
@@ -66,7 +60,7 @@ describe('<Home />', () => {
   test('renders the <UserList /> if loading was successful', () => {
     const props = {
       home: {
-        readyStatus: USERS_SUCCESS,
+        readyStatus: 'USERS_SUCCESS',
         list: [{ id: '1', name: 'Welly' }],
       },
     };

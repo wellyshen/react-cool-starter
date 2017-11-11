@@ -29,11 +29,11 @@ export class UserInfo extends PureComponent<Props> {
     const { userInfo, match: { params } } = this.props;
     const userInfoById = userInfo[params.id];
 
-    if (!userInfoById || userInfoById.readyStatus === action.USER_REQUESTING) {
+    if (!userInfoById || userInfoById.readyStatus === 'USER_REQUESTING') {
       return <p>Loading...</p>;
     }
 
-    if (userInfoById.readyStatus === action.USER_FAILURE) {
+    if (userInfoById.readyStatus === 'USER_FAILURE') {
       return <p>Oops, Failed to load info!</p>;
     }
 

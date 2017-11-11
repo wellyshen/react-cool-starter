@@ -4,12 +4,7 @@ import axios from 'axios';
 import httpAdapter from 'axios/lib/adapters/http';
 import nock from 'nock';
 
-import {
-  fetchUsers,
-  USERS_REQUESTING,
-  USERS_FAILURE,
-  USERS_SUCCESS,
-} from '../action';
+import { fetchUsers } from '../action';
 
 const host = 'http://localhost';
 
@@ -30,8 +25,8 @@ describe('fetch users data', () => {
       .reply(200, response);
 
     const expectedActions = [
-      { type: USERS_REQUESTING },
-      { type: USERS_SUCCESS, data: response },
+      { type: 'USERS_REQUESTING' },
+      { type: 'USERS_SUCCESS', data: response },
     ];
     const store = mockStore({ list: null });
 
@@ -45,8 +40,8 @@ describe('fetch users data', () => {
       .replyWithError(errorMessage);
 
     const expectedActions = [
-      { type: USERS_REQUESTING },
-      { type: USERS_FAILURE, err: errorMessage },
+      { type: 'USERS_REQUESTING' },
+      { type: 'USERS_FAILURE', err: errorMessage },
     ];
     const store = mockStore({ err: null });
 

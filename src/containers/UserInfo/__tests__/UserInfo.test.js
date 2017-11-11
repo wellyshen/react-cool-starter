@@ -3,11 +3,6 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { StaticRouter } from 'react-router-dom';
 
-import {
-  USER_REQUESTING,
-  USER_FAILURE,
-  USER_SUCCESS,
-} from '../action';
 import { UserInfo } from '../index';
 
 describe('<UserInfo />', () => {
@@ -46,7 +41,7 @@ describe('<UserInfo />', () => {
 
   test('renders the loading status if requesting data', () => {
     const props = {
-      userInfo: { 1: { readyStatus: USER_REQUESTING } },
+      userInfo: { 1: { readyStatus: 'USER_REQUESTING' } },
       match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: () => {} };
@@ -56,7 +51,7 @@ describe('<UserInfo />', () => {
 
   test('renders an error if loading failed', () => {
     const props = {
-      userInfo: { 1: { readyStatus: USER_FAILURE } },
+      userInfo: { 1: { readyStatus: 'USER_FAILURE' } },
       match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: () => {} };
@@ -68,7 +63,7 @@ describe('<UserInfo />', () => {
     const props = {
       userInfo: {
         1: {
-          readyStatus: USER_SUCCESS,
+          readyStatus: 'USER_SUCCESS',
           info: {
             name: 'Welly',
             phone: '007',

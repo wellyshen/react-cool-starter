@@ -1,9 +1,4 @@
 import reducer from '../reducer';
-import {
-  USER_REQUESTING,
-  USER_FAILURE,
-  USER_SUCCESS,
-} from '../action';
 
 describe('user data reducer', () => {
   test('should handle the initial state', () => {
@@ -13,22 +8,22 @@ describe('user data reducer', () => {
   test('should handle USER_REQUESTING', () => {
     expect(
       reducer(undefined, {
-        type: USER_REQUESTING,
+        type: 'USER_REQUESTING',
         userId: '1',
       }),
-    ).toEqual({ 1: { readyStatus: USER_REQUESTING } });
+    ).toEqual({ 1: { readyStatus: 'USER_REQUESTING' } });
   });
 
   test('should handle USER_FAILURE', () => {
     expect(
       reducer(undefined, {
-        type: USER_FAILURE,
+        type: 'USER_FAILURE',
         userId: '1',
         err: 'Oops! Something went wrong.',
       }),
     ).toEqual({
       1: {
-        readyStatus: USER_FAILURE,
+        readyStatus: 'USER_FAILURE',
         err: 'Oops! Something went wrong.',
       },
     });
@@ -37,7 +32,7 @@ describe('user data reducer', () => {
   test('should handle USER_SUCCESS', () => {
     expect(
       reducer(undefined, {
-        type: USER_SUCCESS,
+        type: 'USER_SUCCESS',
         userId: '1',
         data: {
           name: 'Welly',
@@ -48,7 +43,7 @@ describe('user data reducer', () => {
       }),
     ).toEqual({
       1: {
-        readyStatus: USER_SUCCESS,
+        readyStatus: 'USER_SUCCESS',
         info: {
           name: 'Welly',
           phone: '007',
