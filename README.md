@@ -241,7 +241,7 @@ The action(s) will be dispatched through `./src/server.js` on server-side:
 app.get('*', (req, res) => {
   // ...
 
-  // Here's the method for loading data on server-side
+  // Here's the method for loading data from server-side
   const loadBranchData = () => {
     const promises = [];
 

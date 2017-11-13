@@ -70,8 +70,8 @@ app.get('*', (req, res) => {
     return;
   }
 
-  // Load data on server-side
-  const loadBranchData = () => {
+  // Here's the method for loading data from server-side
+  const loadBranchData = (): Promise<*> | Object => {
     const promises = [];
 
     routes.some((route) => {
@@ -86,9 +86,11 @@ app.get('*', (req, res) => {
     return Promise.all(promises);
   };
 
-  // Send response after all the action(s) are dispathed
-  loadBranchData()
-    .then(() => {
+  (async () => {
+    try {
+      // Load data from server-side first
+      await loadBranchData();
+
       // Setup React-Router server-side rendering
       const routerContext = {};
       const htmlContent = renderToString(
@@ -113,12 +115,12 @@ app.get('*', (req, res) => {
 
       // Pass the route and initial state into html template
       res.status(status).send(renderHtml(store, htmlContent));
-    })
-    .catch((err) => {
+    } catch (err) {
       res.status(404).send('Not Found :(');
 
       console.error(`==> 😭  Rendering routes error: ${err}`);
-    });
+    }
+  })();
 });
 
 if (port) {
