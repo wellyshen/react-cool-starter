@@ -135,6 +135,9 @@
       "global-require": 0,
       "no-underscore-dangle": 0,
       "no-console": 0,
+      "jsx-a11y/anchor-is-valid": ["error", {
+        "specialLink": ["to"]
+      }],
       "react/jsx-filename-extension": [
         1,
         {
