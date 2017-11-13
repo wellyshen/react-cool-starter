@@ -14,7 +14,7 @@ const UserList = ({ list }: Props): Element<'div'> => (
     <ul>
       {list.map(user => (
         <li key={user.id}>
-          <Link // eslint-disable-line jsx-a11y/anchor-is-valid
+          <Link
             to={`/UserInfo/${user.id}`}
           >
             {user.name}
