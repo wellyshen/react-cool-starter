@@ -1,6 +1,6 @@
 /* @flow */
 
-import _ from 'lodash';
+import fp from 'lodash/fp';
 
 import type { Home, Action } from '../../types';
 
@@ -15,14 +15,16 @@ const initialState = {
 export default (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case 'USERS_REQUESTING':
-      return _.assign({}, state, { readyStatus: 'USERS_REQUESTING' });
+      return fp.assign(state, {
+        readyStatus: 'USERS_REQUESTING',
+      });
     case 'USERS_FAILURE':
-      return _.assign({}, state, {
+      return fp.assign(state, {
         readyStatus: 'USERS_FAILURE',
         err: action.err,
       });
     case 'USERS_SUCCESS':
-      return _.assign({}, state, {
+      return fp.assign(state, {
         readyStatus: 'USERS_SUCCESS',
         list: action.data,
       });
