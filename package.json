@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.5.6",
+  "version": "2.5.7",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -103,7 +103,8 @@
     "presets": [
       "env",
       "react",
-      "stage-0"
+      "stage-0",
+      "flow"
     ],
     "plugins": [
       "transform-runtime",
@@ -246,6 +247,7 @@
     "babel-plugin-transform-remove-console": "^6.8.5",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babili-webpack-plugin": "^0.1.2",
