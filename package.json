@@ -272,7 +272,7 @@
     "image-webpack-loader": "^3.4.2",
     "jest": "21.2.1",
     "nock": "9.1.0",
-    "node-sass": "4.6.1",
+    "node-sass": "4.7.1",
     "nodemon": "^1.12.1",
     "postcss": "6.0.14",
     "postcss-loader": "2.0.8",

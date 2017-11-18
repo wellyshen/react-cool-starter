@@ -147,7 +147,7 @@ Concerning the security and performance of Express in production, I already setu
 * [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
 * [compression](https://github.com/expressjs/compression) - Gzip compression support for speeding up Express server responses.
 
-Note: It's just a basic protected mechanism for your app, you can see the [security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
+> Note: It's just a basic protected mechanism for your app, you can see the [security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
 
 
 ## Setup Redux DevTools Extension
@@ -441,7 +441,7 @@ I love to write React, Redux with Flow, I know it's not easy to learn at the beg
 
 Moreover, often you will want to use third-party libraries. For these circumstances, Flow supports the concept of a "libdef" ("Library Definition") which allows you to describe the interface and types of the library separate from the library and without needing to add types to or change the library itself. You can write a libdef file yourself if you need to or use [flow-typed](https://flowtype.org/docs/third-party.html#using-flow-typed), which is a repository of third-party library interface definitions for use with Flow.
 
-Note: If you don't want to use Flow, just remove the `/* @flow */` comment and related typing definitions from each javascript file.
+> Note: If you don't want to use Flow, just remove the `/* @flow */` comment and related typing definitions from each javascript file.
 
 
 ### JavaScript and Style Lint
