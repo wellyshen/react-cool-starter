@@ -14,7 +14,7 @@ const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./WIT.config')).development(isDev);
 
 // Disable CSSModules here
-const CSSModules = true;
+const CSSModules = false;
 // Disable js lint error terminating here
 const eslint = true;
 // Disable style lint error terminating here

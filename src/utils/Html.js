@@ -50,7 +50,7 @@ const Html = ({ store, htmlContent }: Props): Element<'html'> => {
               dangerouslySetInnerHTML={{
                  __html:
                    // $FlowFixMe: It's not an issue
-                  require('../theme/normalize.css')._style +
+                  require('antd/dist/antd.css')._style +
                   // $FlowFixMe: It's not an issue
                   require('../containers/App/styles.scss')._style +
                   // $FlowFixMe: It's not an issue
