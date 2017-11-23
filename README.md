@@ -10,7 +10,7 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 ## Real Case Study
 
-* [BECK Friends](https://www.beckfriends.com/) is an international delivery service, which is built base on this starter boilerplate. Congrats for successful migrating to React.
+* [BECK Friends](https://www.beckfriends.com/) is an international delivery service, which is built based on this starter boilerplate. Congrats for successful migrating to React.
 
 
 ## Features
