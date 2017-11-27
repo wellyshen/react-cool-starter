@@ -78,7 +78,7 @@ const getPlugins = () => {
     );
   } else {
     plugins.push( // For production
-      new MinifyPlugin(),
+      new MinifyPlugin({}, { test: /\.jsx?$/, comments: false }),
       new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
       new webpack.optimize.ModuleConcatenationPlugin(),
