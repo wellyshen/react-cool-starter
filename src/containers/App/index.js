@@ -13,8 +13,9 @@ import '../../theme/normalize.css';
 import styles from './styles.scss';
 
 const App = (): Element<'div'> => {
-  // Use it when sub routes are added to any route it'll work
-  const routeWithSubRoutes = (route): Element<typeof Route> => (
+  // wrap <Route> and use this everywhere instead, then when
+  // sub routes are added to any route it'll work
+  const RouteWithSubRoutes = (route): Element<typeof Route> => (
     <Route
       key={_.uniqueId()}
       exact={route.exact || false}
@@ -34,7 +35,7 @@ const App = (): Element<'div'> => {
         <h1>{config.app.title}</h1>
       </div>
       <hr />
-      <Switch>{routes.map(route => routeWithSubRoutes(route))}</Switch>
+      <Switch>{routes.map(route => RouteWithSubRoutes(route))}</Switch>
     </div>
   );
 };
