@@ -1,7 +1,7 @@
 /* @flow */
 
 // Use babel-register to precompile ES6 syntax
-require('babel-core/register');
+require('babel-register');
 
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 

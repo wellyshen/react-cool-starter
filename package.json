@@ -211,6 +211,7 @@
   "dependencies": {
     "axios": "0.17.1",
     "babel-core": "^6.26.0",
+    "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "chalk": "2.3.0",
     "compression": "1.7.1",
