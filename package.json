@@ -81,7 +81,7 @@
       "command": "stylelint \"./src/**/*.scss\" --syntax scss"
     },
     "flow": {
-      "command": "flow; test $? -eq 0 -o $? -eq 2"
+      "command": "flow"
     },
     "test": {
       "command": "jest --coverage",
