@@ -274,7 +274,7 @@
     "jest": "21.2.1",
     "nock": "9.1.4",
     "node-sass": "4.7.2",
-    "nodemon": "^1.12.1",
+    "nodemon": "1.12.4",
     "postcss": "6.0.14",
     "postcss-loader": "2.0.9",
     "raf": "3.4.0",
@@ -288,7 +288,7 @@
     "stylelint-config-standard": "18.0.0",
     "stylelint-webpack-plugin": "^0.9.0",
     "url-loader": "0.6.2",
-    "webpack": "3.9.1",
+    "webpack": "3.10.0",
     "webpack-dev-middleware": "1.12.2",
     "webpack-hot-middleware": "2.21.0"
   }
