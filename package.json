@@ -274,7 +274,7 @@
     "jest": "21.2.1",
     "nock": "9.1.4",
     "node-sass": "4.7.2",
-    "nodemon": "1.12.4",
+    "nodemon": "1.12.5",
     "postcss": "6.0.14",
     "postcss-loader": "2.0.9",
     "raf": "3.4.0",

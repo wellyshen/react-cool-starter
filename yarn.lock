@@ -5898,9 +5898,9 @@ node-status-codes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/node-status-codes/-/node-status-codes-1.0.0.tgz#5ae5541d024645d32a58fcddc9ceecea7ae3ac2f"
 
-nodemon@1.12.4:
-  version "1.12.4"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.12.4.tgz#b3cedad2845ee27298aa889b903b2e324fe57cda"
+nodemon@1.12.5:
+  version "1.12.5"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.12.5.tgz#bd34afa1aa855f1996b561147848519f136de620"
   dependencies:
     chokidar "^1.7.0"
     debug "^2.6.8"
