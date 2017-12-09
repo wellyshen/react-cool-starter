@@ -446,7 +446,18 @@ Moreover, often you will want to use third-party libraries. For these circumstan
 
 ### JavaScript and Style Lint
 
-[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you don't want them be activated during developing, you can turn off those from `./tools/webpack/config.babel.js` and do the manually checking by `yarn lint`.
+[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you want them to terminate webpack build process while an error occurs, you can enable those from `./tools/webpack/config.babel.js` (Default: false):
+
+```javascript
+// ...
+
+// Enable build process terminated while there's an eslint error
+const eslint = true;
+// Enable build process terminated while there's an stylelint error
+const stylelint = true;
+
+// ...
+```
 
 
 ### Unit Tests

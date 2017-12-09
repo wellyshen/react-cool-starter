@@ -15,10 +15,10 @@ const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('.
 
 // Disable CSSModules here
 const CSSModules = true;
-// Disable js lint error terminating here
-const eslint = true;
-// Disable style lint error terminating here
-const stylelint = true;
+// Enable build process terminated while there's an eslint error
+const eslint = false;
+// Enable build process terminated while there's an stylelint error
+const stylelint = false;
 // Register vendors here
 const vendor = [
   'react',
@@ -56,7 +56,7 @@ const getPlugins = () => {
       },
     }),
     // Style lint
-    new StyleLintPlugin({ syntax: 'scss', failOnError: stylelint }),
+    new StyleLintPlugin({ failOnError: stylelint }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
     // Setup global variables for client
