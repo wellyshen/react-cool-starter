@@ -14,7 +14,7 @@ import styles from './styles.scss';
 type Props = {
   userInfo: UserInfoType,
   match: Object,
-  fetchUserIfNeeded: (id: string) => void,
+  fetchUserIfNeeded: (id: string) => void
 };
 
 // Export this for unit testing more easily
@@ -38,7 +38,7 @@ export class UserInfo extends PureComponent<Props> {
     }
 
     return <UserCard info={userInfoById.info} />;
-  }
+  };
 
   render() {
     return (
@@ -53,8 +53,8 @@ export class UserInfo extends PureComponent<Props> {
 const connector: Connector<{}, Props> = connect(
   ({ userInfo }: Reducer) => ({ userInfo }),
   (dispatch: Dispatch) => ({
-    fetchUserIfNeeded: (id: string) => dispatch(action.fetchUserIfNeeded(id)),
-  }),
+    fetchUserIfNeeded: (id: string) => dispatch(action.fetchUserIfNeeded(id))
+  })
 );
 
 export default connector(UserInfo);

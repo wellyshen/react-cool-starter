@@ -1,25 +1,26 @@
 /* @flow */
+/* eslint-disable no-use-before-define */
 
 import type { Store as ReduxStore } from 'redux';
 
 export type Home = {
   +readyStatus: string,
   +err: any,
-  +list: Array<Object>,
+  +list: Array<Object>
 };
 
 export type UserInfo = {
   +[userId: string]: {
     +readyStatus: string,
     +err: any,
-    +info: Object,
-  },
+    +info: Object
+  }
 };
 
 export type Reducer = {
   +home: Home,
   +userInfo: UserInfo,
-  +router: any,
+  +router: any
 };
 
 export type Action =
@@ -31,8 +32,9 @@ export type Action =
   | { type: 'USER_FAILURE', userId: string, err: any };
 
 export type Store = ReduxStore<Reducer, Action>;
-// eslint-disable-next-line no-use-before-define
-export type Dispatch = (action: Action | ThunkAction | PromiseAction | Array<Action>) => any;
+export type Dispatch = (
+  action: Action | ThunkAction | PromiseAction | Array<Action>
+) => any;
 export type GetState = () => Reducer;
 export type ThunkAction = (dispatch: Dispatch, getState: GetState) => any;
 export type PromiseAction = Promise<Action>;

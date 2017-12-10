@@ -10,10 +10,16 @@ import type { Store } from '../types';
 import rootReducer from './reducers';
 
 export default (history: Object, initialState: Object = {}): Store => {
-  const middlewares = [thunk.withExtraArgument(axios), routerMiddleware(history)];
-  const composeEnhancers = (typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+  const middlewares = [
+    thunk.withExtraArgument(axios),
+    routerMiddleware(history)
+  ];
+  const composeEnhancers =
+    (typeof window === 'object' &&
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+    compose;
   const enhancers = composeEnhancers(
-    applyMiddleware(...middlewares),
+    applyMiddleware(...middlewares)
     // Other store enhancers if any
   );
   const store: Store = createStore(rootReducer, initialState, enhancers);
@@ -26,7 +32,9 @@ export default (history: Object, initialState: Object = {}): Store => {
 
         store.replaceReducer(nextReducer);
       } catch (error) {
-        console.error(chalk.red(`==> 😭  Reducer hot reloading error ${error}`));
+        console.error(
+          chalk.red(`==> 😭  Reducer hot reloading error ${error}`)
+        );
       }
     });
   }

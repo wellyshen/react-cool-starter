@@ -1,27 +1,24 @@
 /* @flow */
 
-import type {
-  Dispatch,
-  GetState,
-  ThunkAction,
-  Reducer,
-} from '../../types';
+import type { Dispatch, GetState, ThunkAction, Reducer } from '../../types';
 
 export const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
-export const fetchUsers = (axios: any, URL: string = API_URL): ThunkAction =>
-  async (dispatch: Dispatch) => {
-    dispatch({ type: 'USERS_REQUESTING' });
+export const fetchUsers = (
+  axios: any,
+  URL: string = API_URL
+): ThunkAction => async (dispatch: Dispatch) => {
+  dispatch({ type: 'USERS_REQUESTING' });
 
-    try {
-      const res = await axios.get(URL);
+  try {
+    const res = await axios.get(URL);
 
-      dispatch({ type: 'USERS_SUCCESS', data: res.data });
-    } catch (err) {
-      dispatch({ type: 'USERS_FAILURE', err: err.message });
-    }
-  };
+    dispatch({ type: 'USERS_SUCCESS', data: res.data });
+  } catch (err) {
+    dispatch({ type: 'USERS_FAILURE', err: err.message });
+  }
+};
 
 // Preventing dobule fetching data
 /* istanbul ignore next */
@@ -36,14 +33,17 @@ const shouldFetchUsers = (state: Reducer): boolean => {
 };
 
 /* istanbul ignore next */
-export const fetchUsersIfNeeded = (): ThunkAction =>
-  (dispatch: Dispatch, getState: GetState, axios: any) => {
+export const fetchUsersIfNeeded = (): ThunkAction => (
+  dispatch: Dispatch,
+  getState: GetState,
+  axios: any
+) => {
+  /* istanbul ignore next */
+  if (shouldFetchUsers(getState())) {
     /* istanbul ignore next */
-    if (shouldFetchUsers(getState())) {
-      /* istanbul ignore next */
-      return dispatch(fetchUsers(axios));
-    }
+    return dispatch(fetchUsers(axios));
+  }
 
-    /* istanbul ignore next */
-    return null;
-  };
+  /* istanbul ignore next */
+  return null;
+};

@@ -16,7 +16,7 @@ const OSX_CHROME = 'google chrome';
 const Actions = Object.freeze({
   NONE: 0,
   BROWSER: 1,
-  SCRIPT: 2,
+  SCRIPT: 2
 });
 
 function getBrowserEnv() {
@@ -41,12 +41,16 @@ function getBrowserEnv() {
 function executeNodeScript(scriptPath, url) {
   const extraArgs = process.argv.slice(2);
   const child = spawn('node', [scriptPath, ...extraArgs, url], {
-    stdio: 'inherit',
+    stdio: 'inherit'
   });
-  child.on('close', (code) => {
+  child.on('close', code => {
     if (code !== 0) {
       console.log();
-      console.log(chalk.red('The script specified as BROWSER environment variable failed.'));
+      console.log(
+        chalk.red(
+          'The script specified as BROWSER environment variable failed.'
+        )
+      );
       console.log(`${chalk.cyan(scriptPath)} exited with code ${code}.`);
       console.log();
 
@@ -63,7 +67,8 @@ function startBrowserProcess(browser, url) {
   // Chrome with AppleScript. This lets us reuse an
   // existing tab when possible instead of creating a new one.
   const shouldTryOpenChromeWithAppleScript =
-    process.platform === 'darwin' && (typeof browser !== 'string' || browser === OSX_CHROME);
+    process.platform === 'darwin' &&
+    (typeof browser !== 'string' || browser === OSX_CHROME);
 
   if (shouldTryOpenChromeWithAppleScript) {
     try {
@@ -72,7 +77,7 @@ function startBrowserProcess(browser, url) {
       execSync('ps cax | grep "Google Chrome"');
       execSync(`osascript openChrome.applescript "${encodeURI(url)}"`, {
         cwd: __dirname,
-        stdio: 'ignore',
+        stdio: 'ignore'
       });
       return true;
     } catch (err) {

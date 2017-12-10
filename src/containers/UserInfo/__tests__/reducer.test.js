@@ -9,8 +9,8 @@ describe('user data reducer', () => {
     expect(
       reducer(undefined, {
         type: 'USER_REQUESTING',
-        userId: '1',
-      }),
+        userId: '1'
+      })
     ).toEqual({ 1: { readyStatus: 'USER_REQUESTING' } });
   });
 
@@ -19,13 +19,13 @@ describe('user data reducer', () => {
       reducer(undefined, {
         type: 'USER_FAILURE',
         userId: '1',
-        err: 'Oops! Something went wrong.',
-      }),
+        err: 'Oops! Something went wrong.'
+      })
     ).toEqual({
       1: {
         readyStatus: 'USER_FAILURE',
-        err: 'Oops! Something went wrong.',
-      },
+        err: 'Oops! Something went wrong.'
+      }
     });
   });
 
@@ -38,9 +38,9 @@ describe('user data reducer', () => {
           name: 'Welly',
           phone: '007',
           email: 'test@gmail.com',
-          website: 'www.test.com',
-        },
-      }),
+          website: 'www.test.com'
+        }
+      })
     ).toEqual({
       1: {
         readyStatus: 'USER_SUCCESS',
@@ -48,9 +48,9 @@ describe('user data reducer', () => {
           name: 'Welly',
           phone: '007',
           email: 'test@gmail.com',
-          website: 'www.test.com',
-        },
-      },
+          website: 'www.test.com'
+        }
+      }
     });
   });
 });

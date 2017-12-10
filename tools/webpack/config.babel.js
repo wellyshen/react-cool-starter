@@ -11,7 +11,9 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
 
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./WIT.config')).development(isDev);
+const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(
+  require('./WIT.config')
+).development(isDev);
 
 // Disable CSSModules here
 const CSSModules = true;
@@ -34,7 +36,7 @@ const vendor = [
   'axios',
   'redbox-react',
   'chalk',
-  'lodash',
+  'lodash'
 ];
 
 // Setting the plugins for development/prodcution
@@ -45,15 +47,15 @@ const getPlugins = () => {
       filename: '[name].[contenthash:8].css',
       allChunks: true,
       disable: isDev, // Disable css extracting on development
-      ignoreOrder: CSSModules,
+      ignoreOrder: CSSModules
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
         // Javascript lint
         eslint: { failOnError: eslint },
         debug: isDev,
-        minimize: !isDev,
-      },
+        minimize: !isDev
+      }
     }),
     // Style lint
     new StyleLintPlugin({ failOnError: stylelint }),
@@ -63,13 +65,14 @@ const getPlugins = () => {
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,
-      __DEV__: isDev,
+      __DEV__: isDev
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    webpackIsomorphicToolsPlugin,
+    webpackIsomorphicToolsPlugin
   ];
 
-  if (isDev) { // For development
+  if (isDev) {
+    // For development
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       // Prints more readable module names in the browser console on HMR updates
@@ -77,17 +80,21 @@ const getPlugins = () => {
       new webpack.IgnorePlugin(/webpack-stats\.json$/) // eslint-disable-line comma-dangle
     );
   } else {
-    plugins.push( // For production
+    plugins.push(
+      // For production
       new MinifyPlugin({}, { test: /\.jsx?$/, comments: false }),
       new webpack.HashedModuleIdsPlugin(),
-      new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: Infinity
+      }),
       new webpack.optimize.ModuleConcatenationPlugin(),
       new CompressionPlugin({
         asset: '[path].gz[query]',
         algorithm: 'gzip',
         test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
         threshold: 10240,
-        minRatio: 0.8,
+        minRatio: 0.8
       }) // eslint-disable-line comma-dangle
     );
   }
@@ -101,7 +108,7 @@ const getEntry = () => {
   let entry = [
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
-    './src/client.js',
+    './src/client.js'
   ];
 
   // For prodcution
@@ -109,7 +116,7 @@ const getEntry = () => {
     entry = {
       main: './src/client.js',
       // Register vendors here
-      vendor,
+      vendor
     };
   }
 
@@ -130,7 +137,7 @@ module.exports = {
     // Don't use chunkhash in development it will increase compilation time
     filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
     chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash:8].chunk.js',
-    pathinfo: isDev,
+    pathinfo: isDev
   },
   module: {
     rules: [
@@ -138,7 +145,7 @@ module.exports = {
         test: /\.jsx?$/,
         enforce: 'pre',
         exclude: /node_modules/,
-        loader: 'eslint',
+        loader: 'eslint'
       },
       {
         test: /\.jsx?$/,
@@ -149,8 +156,8 @@ module.exports = {
           babelrc: false,
           presets: [['env', { modules: false }], 'react', 'stage-0', 'flow'],
           plugins: ['transform-runtime', 'react-hot-loader/babel', 'lodash'],
-          env: { production: { plugins: ['transform-remove-console'] } },
-        },
+          env: { production: { plugins: ['transform-remove-console'] } }
+        }
       },
       {
         test: /\.css$/,
@@ -167,12 +174,12 @@ module.exports = {
                 // or the style will flick when page first loaded
                 context: path.join(process.cwd(), './src'),
                 localIdentName: '[name]__[local]--[hash:base64:5]',
-                minimize: !isDev,
-              },
+                minimize: !isDev
+              }
             },
-            { loader: 'postcss', options: { sourceMap: true } },
-          ],
-        }),
+            { loader: 'postcss', options: { sourceMap: true } }
+          ]
+        })
       },
       {
         test: /\.(scss|sass)$/,
@@ -187,8 +194,8 @@ module.exports = {
                 modules: CSSModules,
                 context: path.join(process.cwd(), './src'),
                 localIdentName: '[name]__[local]--[hash:base64:5]',
-                minimize: !isDev,
-              },
+                minimize: !isDev
+              }
             },
             { loader: 'postcss', options: { sourceMap: true } },
             {
@@ -196,16 +203,16 @@ module.exports = {
               options: {
                 outputStyle: 'expanded',
                 sourceMap: true,
-                sourceMapContents: !isDev,
-              },
-            },
-          ],
-        }),
+                sourceMapContents: !isDev
+              }
+            }
+          ]
+        })
       },
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
         loader: 'url',
-        options: { limit: 10000 },
+        options: { limit: 10000 }
       },
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
@@ -213,26 +220,26 @@ module.exports = {
         use: [
           {
             loader: 'url',
-            options: { limit: 10240 },
+            options: { limit: 10240 }
           },
           // Using for image optimization
           {
             loader: 'image-webpack',
-            options: { bypassOnDebug: true },
-          },
-        ],
-      },
-    ],
+            options: { bypassOnDebug: true }
+          }
+        ]
+      }
+    ]
   },
   plugins: getPlugins(),
   resolveLoader: {
     // Use loaders without the -loader suffix
-    moduleExtensions: ['-loader'],
+    moduleExtensions: ['-loader']
   },
   resolve: {
     modules: ['src', 'node_modules'],
     descriptionFiles: ['package.json'],
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json']
   },
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
@@ -242,6 +249,6 @@ module.exports = {
     fs: 'empty',
     vm: 'empty',
     net: 'empty',
-    tls: 'empty',
-  },
+    tls: 'empty'
+  }
 };

@@ -9,5 +9,5 @@ import userInfo from '../containers/UserInfo/reducer';
 export default combineReducers({
   home,
   userInfo,
-  router,
+  router
 });

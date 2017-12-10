@@ -50,8 +50,8 @@ export class Home extends PureComponent<Props> {
 const connector: Connector<{}, Props> = connect(
   ({ home }: Reducer) => ({ home }),
   (dispatch: Dispatch) => ({
-    fetchUsersIfNeeded: () => dispatch(action.fetchUsersIfNeeded()),
-  }),
+    fetchUsersIfNeeded: () => dispatch(action.fetchUsersIfNeeded())
+  })
 );
 
 export default connector(Home);

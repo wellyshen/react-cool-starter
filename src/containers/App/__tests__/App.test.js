@@ -11,16 +11,18 @@ describe('<App />', () => {
       default: () => {},
       subscribe: () => {},
       dispatch: () => {},
-      getState: () => ({ home: () => {} }),
+      getState: () => ({ home: () => {} })
     };
 
-    const tree = renderer.create(
-      <Provider store={fakeStore}>
-        <StaticRouter context={{}}>
-          <App />
-        </StaticRouter>
-      </Provider>,
-    ).toJSON();
+    const tree = renderer
+      .create(
+        <Provider store={fakeStore}>
+          <StaticRouter context={{}}>
+            <App />
+          </StaticRouter>
+        </Provider>
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });

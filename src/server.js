@@ -41,13 +41,15 @@ if (__DEV__) {
 
   const compiler = webpack(webpackConfig);
 
-  app.use(require('webpack-dev-middleware')(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-    hot: true,
-    noInfo: true,
-    stats: { colors: true },
-    serverSideRender: true,
-  }));
+  app.use(
+    require('webpack-dev-middleware')(compiler, {
+      publicPath: webpackConfig.output.publicPath,
+      hot: true,
+      noInfo: true,
+      stats: { colors: true },
+      serverSideRender: true
+    })
+  );
 
   app.use(require('webpack-hot-middleware')(compiler));
 }
@@ -58,8 +60,11 @@ app.get('*', (req, res) => {
 
   const history = createHistory();
   const store = configureStore(history);
-  const renderHtml = (store, htmlContent) => { // eslint-disable-line no-shadow
-    const html = renderToStaticMarkup(<Html store={store} htmlContent={htmlContent} />);
+  // eslint-disable-next-line no-shadow
+  const renderHtml = (store, htmlContent) => {
+    const html = renderToStaticMarkup(
+      <Html store={store} htmlContent={htmlContent} />
+    );
 
     return `<!doctype html>${html}`;
   };
@@ -74,11 +79,12 @@ app.get('*', (req, res) => {
   const loadBranchData = (): Promise<*> | Object => {
     const promises = [];
 
-    routes.some((route) => {
+    routes.some(route => {
       const match = matchPath(req.path, route);
 
-      // $FlowFixMe: the params of pre-load actions are dynamic
-      if (match && route.loadData) promises.push(route.loadData(store.dispatch, match.params));
+      if (match && route.loadData)
+        // $FlowFixMe: the params of pre-load actions are dynamic
+        promises.push(route.loadData(store.dispatch, match.params));
 
       return match;
     });
@@ -98,7 +104,7 @@ app.get('*', (req, res) => {
           <StaticRouter location={req.url} context={routerContext}>
             <App />
           </StaticRouter>
-        </Provider>,
+        </Provider>
       );
 
       // Check if the render result contains a redirect, if so we need to set
@@ -124,7 +130,7 @@ app.get('*', (req, res) => {
 });
 
 if (port) {
-  app.listen(port, host, (err) => {
+  app.listen(port, host, err => {
     const url = `http://${host}:${port}`;
 
     if (err) console.error(`==> 😭  OMG!!! ${err}`);
@@ -135,5 +141,7 @@ if (port) {
     require('../tools/openBrowser')(url);
   });
 } else {
-  console.error(chalk.red('==> 😭  OMG!!! No PORT environment variable has been specified'));
+  console.error(
+    chalk.red('==> 😭  OMG!!! No PORT environment variable has been specified')
+  );
 }

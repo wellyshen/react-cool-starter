@@ -17,7 +17,9 @@ describe('fetch users data', () => {
   const response = [{ id: '1', name: 'Welly' }];
   const errorMessage = 'Request failed with status code 404';
 
-  afterEach(() => { nock.disableNetConnect(); });
+  afterEach(() => {
+    nock.disableNetConnect();
+  });
 
   test('creates USERS_SUCCESS when fetching users has been done', () => {
     nock(host)
@@ -26,12 +28,13 @@ describe('fetch users data', () => {
 
     const expectedActions = [
       { type: 'USERS_REQUESTING' },
-      { type: 'USERS_SUCCESS', data: response },
+      { type: 'USERS_SUCCESS', data: response }
     ];
     const store = mockStore({ list: null });
 
-    store.dispatch(fetchUsers(axios, `${host}/test`))
-      .then(() => { expect(store.getActions()).toEqual(expectedActions); });
+    store.dispatch(fetchUsers(axios, `${host}/test`)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 
   test('creates USERS_FAILURE when fail to fetch users', () => {
@@ -41,11 +44,12 @@ describe('fetch users data', () => {
 
     const expectedActions = [
       { type: 'USERS_REQUESTING' },
-      { type: 'USERS_FAILURE', err: errorMessage },
+      { type: 'USERS_FAILURE', err: errorMessage }
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(fetchUsers(axios, `${host}/test`))
-      .then(() => { expect(store.getActions()).toEqual(expectedActions); });
+    store.dispatch(fetchUsers(axios, `${host}/test`)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
   });
 });

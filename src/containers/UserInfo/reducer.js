@@ -11,22 +11,22 @@ export default (state: State = {}, action: Action): State => {
     case 'USER_REQUESTING':
       return _.assign(state, {
         [action.userId]: {
-          readyStatus: 'USER_REQUESTING',
-        },
+          readyStatus: 'USER_REQUESTING'
+        }
       });
     case 'USER_FAILURE':
       return _.assign(state, {
         [action.userId]: {
           readyStatus: 'USER_FAILURE',
-          err: action.err,
-        },
+          err: action.err
+        }
       });
     case 'USER_SUCCESS':
       return _.assign(state, {
         [action.userId]: {
           readyStatus: 'USER_SUCCESS',
-          info: action.data,
-        },
+          info: action.data
+        }
       });
     default:
       return state;
