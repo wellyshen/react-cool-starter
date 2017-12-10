@@ -100,6 +100,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 `lint:js`|Lint all `.js` files.
 `lint:style`|Lint all `.scss` files.
 `flow`|Run type checking for `.js` files.
+`flow:stop`|Stop type checking.
 `test`|Run testing once (with code coverage reports).
 `test:watch`|Run testing on every test file change.
 `clean:all`|Remove the client/server bundled stuff and the coverage report.

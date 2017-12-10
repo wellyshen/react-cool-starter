@@ -44,6 +44,7 @@
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "flow": "better-npm-run flow",
+    "flow:stop": "better-npm-run flow:stop",
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
     "clean:all": "yarn clean:build && yarn clean:test",
@@ -82,6 +83,9 @@
     },
     "flow": {
       "command": "flow"
+    },
+    "flow:stop": {
+      "command": "flow stop"
     },
     "test": {
       "command": "jest --coverage",
