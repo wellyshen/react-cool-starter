@@ -61,6 +61,11 @@ Really cool starter boilerplate with the most popular technologies:
 This starter is for those who with basic knowledge of React and have the need for building a server-side app. In other words, it's not for a newbie. If you're new to React or you don't need a server-side rendering app, I'd recommend you give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
 
 
+## Docker-ise Supported
+
+This starter also supports Docker-ise. If you need it check the [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
+
+
 ## Requirements
 
 * [node](https://nodejs.org/en/) >= 6.0
