@@ -1,8 +1,7 @@
 {
   "name": "react-cool-starter",
   "version": "2.8.0",
-  "description":
-    "A starter boilerplate for an universal web application with the best development experience and best practices.",
+  "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
     "node": ">=6.0",
@@ -71,8 +70,7 @@
       }
     },
     "build": {
-      "command":
-        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
@@ -106,18 +104,38 @@
     }
   },
   "babel": {
-    "presets": ["env", "react", "stage-0", "flow"],
-    "plugins": ["transform-runtime", "lodash"],
+    "presets": [
+      "env",
+      "react",
+      "stage-0",
+      "flow"
+    ],
+    "plugins": [
+      "transform-runtime",
+      "lodash"
+    ],
     "env": {
       "production": {
-        "plugins": ["transform-remove-console"]
+        "plugins": [
+          "transform-remove-console"
+        ]
       }
     }
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": ["plugin:lodash-fp/recommended", "airbnb", "prettier"],
-    "plugins": ["react", "jsx-a11y", "import", "lodash-fp", "prettier"],
+    "extends": [
+      "plugin:lodash-fp/recommended",
+      "airbnb",
+      "prettier"
+    ],
+    "plugins": [
+      "react",
+      "jsx-a11y",
+      "import",
+      "lodash-fp",
+      "prettier"
+    ],
     "env": {
       "browser": true,
       "node": true,
@@ -131,13 +149,18 @@
       "jsx-a11y/anchor-is-valid": [
         "error",
         {
-          "specialLink": ["to"]
+          "specialLink": [
+            "to"
+          ]
         }
       ],
       "react/jsx-filename-extension": [
         1,
         {
-          "extensions": [".js", ".jsx"]
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
         }
       ],
       "import/no-extraneous-dependencies": [
@@ -147,7 +170,12 @@
         }
       ],
       "function-paren-newline": 0,
-      "prettier/prettier": ["error", { "singleQuote": true }]
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true
+        }
+      ]
     },
     "globals": {
       "__CLIENT__": true,
@@ -164,14 +192,24 @@
       "selector-pseudo-class-no-unknown": [
         true,
         {
-          "ignorePseudoClasses": ["global", "local"]
+          "ignorePseudoClasses": [
+            "global",
+            "local"
+          ]
         }
       ]
     }
   },
-  "browserslist": ["last 2 versions", "safari >= 7", "not ie <= 8"],
+  "browserslist": [
+    "last 2 versions",
+    "safari >= 7",
+    "not ie <= 8"
+  ],
   "jest": {
-    "setupFiles": ["raf/polyfill", "<rootDir>/tools/jest/setup.js"],
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/tools/jest/setup.js"
+    ],
     "collectCoverageFrom": [
       "src/containers/**/*.js",
       "src/components/**/*.js",
@@ -179,8 +217,7 @@
     ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/tools/jest/assetMock.js"
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
     }
   },
   "dependencies": {
@@ -234,7 +271,7 @@
     "css-loader": "^0.28.7",
     "enzyme": "3.2.0",
     "enzyme-adapter-react-16": "1.1.0",
-    "eslint": "4.13.0",
+    "eslint": "4.13.1",
     "eslint-config-airbnb": "16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-loader": "^1.9.0",
@@ -254,7 +291,7 @@
     "nodemon": "1.12.5",
     "postcss": "6.0.14",
     "postcss-loader": "2.0.9",
-    "prettier": "^1.9.1",
+    "prettier": "1.9.2",
     "raf": "3.4.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "16.2.0",
