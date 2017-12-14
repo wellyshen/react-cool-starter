@@ -46,7 +46,7 @@ if (__DEV__) {
       publicPath: webpackConfig.output.publicPath,
       hot: true,
       noInfo: true,
-      stats: { colors: true },
+      stats: 'minimal',
       serverSideRender: true
     })
   );
