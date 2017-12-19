@@ -201,8 +201,8 @@
   },
   "browserslist": [
     "last 2 versions",
-    "safari >= 7",
-    "not ie <= 8"
+    "ie >= 11",
+    "safari >= 7"
   ],
   "jest": {
     "setupFiles": [
