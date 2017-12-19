@@ -1,6 +1,8 @@
 /* @flow */
 /* eslint-disable */
 
+// Allows you to use the full set of ES6 features (place it before anything else)
+require('babel-polyfill');
 // Use babel-register to precompile ES6 syntax
 require('babel-register');
 

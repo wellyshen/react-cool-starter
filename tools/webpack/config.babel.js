@@ -1,4 +1,4 @@
-'use strict'; // eslint-disable-line
+"use strict"; // eslint-disable-line
 
 const path = require('path');
 const webpack = require('webpack');
@@ -106,6 +106,8 @@ const getPlugins = () => {
 const getEntry = () => {
   // For development
   let entry = [
+    // Allows you to use the full set of ES6 features in development (place it before anything else)
+    'babel-polyfill',
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
     './src/client.js'
@@ -128,7 +130,7 @@ module.exports = {
   name: 'client',
   target: 'web',
   cache: isDev,
-  devtool: isDev ? 'cheap-module-eval-source-map' : 'hidden-source-map',
+  devtool: isDev ? 'cheap-module-source-map' : 'hidden-source-map',
   context: path.join(process.cwd()),
   entry: getEntry(),
   output: {
@@ -155,7 +157,7 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [['env', { modules: false }], 'react', 'stage-0', 'flow'],
-          plugins: ['transform-runtime', 'react-hot-loader/babel', 'lodash'],
+          plugins: ['react-hot-loader/babel', 'lodash'],
           env: { production: { plugins: ['transform-remove-console'] } }
         }
       },
