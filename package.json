@@ -174,7 +174,7 @@
       ]
     }
   },
-  "browserslist": ["last 2 versions", "ie >= 11", "safari >= 7"],
+  "browserslist": ["last 2 versions", "ie 11", "safari >= 7"],
   "jest": {
     "setupFiles": ["raf/polyfill", "<rootDir>/tools/jest/setup.js"],
     "collectCoverageFrom": [
