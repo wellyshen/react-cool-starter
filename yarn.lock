@@ -33,22 +33,6 @@
   dependencies:
     "@babel/types" "7.0.0-beta.31"
 
-"@babel/plugin-syntax-flow@7.0.0-beta.35":
-  version "7.0.0-beta.35"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-flow/-/plugin-syntax-flow-7.0.0-beta.35.tgz#424f2c99c24cc0432def3afb898c8b80bfcc269e"
-
-"@babel/plugin-transform-flow-strip-types@7.0.0-beta.35":
-  version "7.0.0-beta.35"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-flow-strip-types/-/plugin-transform-flow-strip-types-7.0.0-beta.35.tgz#c7811c6be36a9829c01e12d37e7efbc76a5c14c6"
-  dependencies:
-    "@babel/plugin-syntax-flow" "7.0.0-beta.35"
-
-"@babel/preset-flow@^7.0.0-beta.35":
-  version "7.0.0-beta.35"
-  resolved "https://registry.yarnpkg.com/@babel/preset-flow/-/preset-flow-7.0.0-beta.35.tgz#3f67f6160bc14418f1dc3535416c3f7ce3fd395b"
-  dependencies:
-    "@babel/plugin-transform-flow-strip-types" "7.0.0-beta.35"
-
 "@babel/template@7.0.0-beta.31":
   version "7.0.0-beta.31"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.31.tgz#577bb29389f6c497c3e7d014617e7d6713f68bda"
