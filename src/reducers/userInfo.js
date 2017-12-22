@@ -2,7 +2,7 @@
 
 import _ from 'lodash/fp';
 
-import type { UserInfo, Action } from '../../types';
+import type { UserInfo, Action } from '../types';
 
 type State = UserInfo;
 

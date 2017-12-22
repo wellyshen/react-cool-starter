@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 
-import type { Store } from '../types';
+import type { Store } from './types';
 import rootReducer from './reducers';
 
 export default (history: Object, initialState: Object = {}): Store => {

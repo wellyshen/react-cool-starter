@@ -1,8 +1,8 @@
-import reducer from '../reducer';
+import home from '../home';
 
-describe('users data reducer', () => {
+describe('users data home', () => {
   test('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual({
+    expect(home(undefined, {})).toEqual({
       readyStatus: 'USERS_INVALID',
       err: null,
       list: []
@@ -11,7 +11,7 @@ describe('users data reducer', () => {
 
   test('should handle USERS_REQUESTING', () => {
     expect(
-      reducer(undefined, {
+      home(undefined, {
         type: 'USERS_REQUESTING',
         err: null,
         data: []
@@ -25,7 +25,7 @@ describe('users data reducer', () => {
 
   test('should handle USERS_FAILURE', () => {
     expect(
-      reducer(undefined, {
+      home(undefined, {
         type: 'USERS_FAILURE',
         err: 'Oops! Something went wrong.',
         data: []
@@ -39,7 +39,7 @@ describe('users data reducer', () => {
 
   test('should handle USERS_SUCCESS', () => {
     expect(
-      reducer(undefined, {
+      home(undefined, {
         type: 'USERS_SUCCESS',
         err: null,
         data: [{ id: '1', name: 'Welly' }]

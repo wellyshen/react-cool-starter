@@ -1,13 +1,13 @@
-import reducer from '../reducer';
+import userInfo from '../userInfo';
 
-describe('user data reducer', () => {
+describe('user data userInfo', () => {
   test('should handle the initial state', () => {
-    expect(reducer(undefined, {})).toEqual({});
+    expect(userInfo(undefined, {})).toEqual({});
   });
 
   test('should handle USER_REQUESTING', () => {
     expect(
-      reducer(undefined, {
+      userInfo(undefined, {
         type: 'USER_REQUESTING',
         userId: '1'
       })
@@ -16,7 +16,7 @@ describe('user data reducer', () => {
 
   test('should handle USER_FAILURE', () => {
     expect(
-      reducer(undefined, {
+      userInfo(undefined, {
         type: 'USER_FAILURE',
         userId: '1',
         err: 'Oops! Something went wrong.'
@@ -31,7 +31,7 @@ describe('user data reducer', () => {
 
   test('should handle USER_SUCCESS', () => {
     expect(
-      reducer(undefined, {
+      userInfo(undefined, {
         type: 'USER_SUCCESS',
         userId: '1',
         data: {

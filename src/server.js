@@ -14,7 +14,7 @@ import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
 import createHistory from 'history/createMemoryHistory';
-import configureStore from './redux/store';
+import configureStore from './configStore';
 import Html from './utils/Html';
 import App from './containers/App';
 import routes from './routes';

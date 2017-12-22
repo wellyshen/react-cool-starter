@@ -9,7 +9,7 @@ import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
 import RedBox from 'redbox-react';
 
-import configureStore from './redux/store';
+import configureStore from './configStore';
 
 // Get initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;

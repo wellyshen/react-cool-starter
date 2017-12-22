@@ -1,8 +1,8 @@
 /* @flow */
 
-import type { Dispatch, GetState, ThunkAction, Reducer } from '../../types';
+import type { Dispatch, GetState, ThunkAction, Reducer } from '../types';
 
-export const API_URL = 'https://jsonplaceholder.typicode.com/users';
+const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
 export const fetchUsers = (

@@ -1,8 +1,8 @@
 /* @flow */
 
 import type { Dispatch } from './types';
-import { fetchUsersIfNeeded } from './containers/Home/action';
-import { fetchUserIfNeeded } from './containers/UserInfo/action';
+import { fetchUsersIfNeeded } from './actions/users';
+import { fetchUserIfNeeded } from './actions/user';
 import HomePage from './containers/Home';
 import UserInfoPage from './containers/UserInfo';
 import NotFoundPage from './containers/NotFound';
