@@ -138,7 +138,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── utils                       # App-wide utils (e.g. HTML component)  
 │   ├── theme                       # App-wide style and vendor CSS framework
 │   ├── types                       # Flow types for reducer, action, state, store
-│   │── configStore.js              # Configure and instrument Redux store
+│   │── configureStore.js           # Configure and instrument Redux store
 │   ├── client.js                   # App bootstrap and rendering (webpack entry)
 │   ├── routes.js                   # Routes configuration for both client and server side
 │   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
