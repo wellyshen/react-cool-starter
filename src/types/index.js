@@ -3,6 +3,9 @@
 
 import type { Store as ReduxStore } from 'redux';
 
+import type { Reducers } from '../reducers';
+
+// Reducers
 export type Home = {
   +readyStatus: string,
   +err: any,
@@ -17,12 +20,11 @@ export type UserInfo = {
   }
 };
 
-export type Reducer = {
-  +home: Home,
-  +userInfo: UserInfo,
-  +router: any
-};
+// State
+type $ExtractFunctionReturn = <V>(v: (...args: any) => V) => V; // eslint-disable-line no-undef
+export type ReduxState = $ObjMap<Reducers, $ExtractFunctionReturn>; // eslint-disable-line no-undef
 
+// Action
 export type Action =
   | { type: 'USERS_REQUESTING' }
   | { type: 'USERS_SUCCESS', data: Array<Object> }
@@ -31,10 +33,12 @@ export type Action =
   | { type: 'USER_SUCCESS', userId: string, data: Object }
   | { type: 'USER_FAILURE', userId: string, err: any };
 
-export type Store = ReduxStore<Reducer, Action>;
 export type Dispatch = (
   action: Action | ThunkAction | PromiseAction | Array<Action>
 ) => any;
-export type GetState = () => Reducer;
+export type GetState = () => ReduxState;
 export type ThunkAction = (dispatch: Dispatch, getState: GetState) => any;
 export type PromiseAction = Promise<Action>;
+
+// Store
+export type Store = ReduxStore<ReduxState, Action>;

@@ -1,6 +1,6 @@
 /* @flow */
 
-import type { Dispatch, GetState, ThunkAction, Reducer } from '../types';
+import type { Dispatch, GetState, ThunkAction, ReduxState } from '../types';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
@@ -22,7 +22,7 @@ export const fetchUsers = (
 
 // Preventing dobule fetching data
 /* istanbul ignore next */
-const shouldFetchUsers = (state: Reducer): boolean => {
+const shouldFetchUsers = (state: ReduxState): boolean => {
   // In development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
   if (__DEV__) return true;

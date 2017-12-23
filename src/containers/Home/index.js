@@ -7,7 +7,7 @@ import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import * as actionUsers from '../../actions/users';
-import type { Home as HomeType, Dispatch, Reducer } from '../../types';
+import type { Home as HomeType, Dispatch, ReduxState } from '../../types';
 import UserList from '../../components/UserList';
 import styles from './styles.scss';
 
@@ -48,7 +48,7 @@ export class Home extends PureComponent<Props> {
 }
 
 const connector: Connector<{}, Props> = connect(
-  ({ home }: Reducer) => ({ home }),
+  ({ home }: ReduxState) => ({ home }),
   (dispatch: Dispatch) => ({
     fetchUsersIfNeeded: () => dispatch(actionUsers.fetchUsersIfNeeded())
   })

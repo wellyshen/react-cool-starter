@@ -124,32 +124,32 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 
 ```
 .
-├── public                            # Express server static path/Webpack bundled output
-│   └── favicon.ico                   # Favicon is placed in the same path with the main HTML page       
-├── src                               # App source code
-│   ├── config                        # App configuration settings
-│   │   ├── default.js                # Default settings
-│   │   ├── index.js                  # Configuration entry point
-│   │   └── prod.js                   # Production settings (overrides the default settings)
-│   ├── components                    # Reusable components (including scss/testing files)
-│   ├── containers                    # Container components (including assets/action/reducer/scss/testing files)
-│   ├── utils                         # App-wide utils (e.g. HTML component)
-│   ├── redux                         # Redux related configuration scripts
-│   │   ├── reducers.js               # The root reducer (registry and injection)
-│   │   └── store.js                  # Configure and instrument Redux store   
-│   ├── theme                         # App-wide style and vendor CSS framework
-│   ├── types                         # Flow types for actions, reducers and more
-│   ├── client.js                     # App bootstrap and rendering (webpack entry)
-│   ├── routes.js                     # Routes configuration for both client and server side
-│   └── server.js                     # Express server (with webpack dev/hot middlewares)                  
-├── tools                             # Project related configurations (testing/build etc.)
-│   ├── flow                          # Flow types, interface, module aliasing definitions
-│   ├── openBrowser                   # Utility for opening Google Chrome
-│   ├── jest                          # Jest CSS modules and assets mocks settings
-│   ├── webpack                       # Webpack settings
-│   │   ├── config.babel.js           # Webpack configuration
-│   │   └── WIT.config.js             # Webpack Isomorphic Tools configuration file        
-└── index.js                          # App entry point
+├── public                          # Express server static path/Webpack bundled output
+│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page       
+├── src                             # App source code
+│   ├── config                      # App configuration settings
+│   │   ├── default.js              # Default settings
+│   │   ├── index.js                # Configuration entry point
+│   │   └── prod.js                 # Production settings (overrides the default settings)
+│   ├── components                  # Reusable components (including scss/testing files)
+│   ├── containers                  # Container components (including scss/testing files)
+│   ├── actions                     # Redux actions (including testing files)
+│   ├── reducers                    # Redux reducers (including testing files)
+│   ├── utils                       # App-wide utils (e.g. HTML component)  
+│   ├── theme                       # App-wide style and vendor CSS framework
+│   ├── types                       # Flow types for reducer, action, state, store
+│   │── configStore.js              # Configure and instrument Redux store
+│   ├── client.js                   # App bootstrap and rendering (webpack entry)
+│   ├── routes.js                   # Routes configuration for both client and server side
+│   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
+├── tools                           # Project related configurations (testing/build etc.)
+│   ├── flow                        # Flow types, interface, module aliasing definitions
+│   ├── openBrowser                 # Utility for opening Google Chrome
+│   ├── jest                        # Jest CSS modules and assets mocks settings
+│   ├── webpack                     # Webpack settings
+│   │   ├── config.babel.js         # Webpack configuration
+│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file        
+└── index.js                        # App entry point
 ```
 
 
@@ -449,7 +449,7 @@ I love to write React, Redux with Flow, I know it's not easy to learn at the beg
 
 * If you are new to Flow, read the official [docs](https://flow.org/en/docs/) to understand it.
 
-* Learn how to use Flow with React Component's props and state, you can learn from [here](https://flow.org/en/docs/react/components/).
+* Learn how to use Flow with React from [here](https://flow.org/en/docs/react/).
 
 * Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
 

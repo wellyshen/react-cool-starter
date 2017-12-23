@@ -7,7 +7,11 @@ import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import * as usersAction from '../../actions/user';
-import type { UserInfo as UserInfoType, Dispatch, Reducer } from '../../types';
+import type {
+  UserInfo as UserInfoType,
+  Dispatch,
+  ReduxState
+} from '../../types';
 import UserCard from '../../components/UserCard';
 import styles from './styles.scss';
 
@@ -51,7 +55,7 @@ export class UserInfo extends PureComponent<Props> {
 }
 
 const connector: Connector<{}, Props> = connect(
-  ({ userInfo }: Reducer) => ({ userInfo }),
+  ({ userInfo }: ReduxState) => ({ userInfo }),
   (dispatch: Dispatch) => ({
     fetchUserIfNeeded: (id: string) =>
       dispatch(usersAction.fetchUserIfNeeded(id))

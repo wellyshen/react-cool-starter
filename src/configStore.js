@@ -21,7 +21,7 @@ export default (history: Object, initialState: Object = {}): Store => {
     applyMiddleware(...middlewares)
     // Other store enhancers if any
   );
-  const store: Store = createStore(rootReducer, initialState, enhancers);
+  const store = createStore(rootReducer, initialState, enhancers);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
@@ -31,7 +31,7 @@ export default (history: Object, initialState: Object = {}): Store => {
 
         store.replaceReducer(nextReducer);
       } catch (error) {
-        console.error(`==> 😭  Reducer hot reloading error ${error}`);
+        console.error(`==> 😭  ReduxState hot reloading error ${error}`);
       }
     });
   }
