@@ -77,8 +77,6 @@ const Html = ({ store, htmlContent }: Props): Element<'html'> => {
               `window.__INITIAL_STATE__=${serialize(store.getState())};`
           }}
         />
-        {/* Allows you to use ES6 features on IE */}
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
         {_.keys(assets.javascript)
           .reverse() // Reverse the order of scripts for accessing vendor.js first
           .map(script => (
