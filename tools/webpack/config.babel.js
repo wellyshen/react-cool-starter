@@ -79,7 +79,7 @@ const getPlugins = () => {
       new webpack.HotModuleReplacementPlugin(),
       // Prints more readable module names in the browser console on HMR updates
       new webpack.NamedModulesPlugin(),
-      new webpack.IgnorePlugin(/webpack-stats\.json$/) // eslint-disable-line comma-dangle
+      new webpack.IgnorePlugin(/webpack-stats\.json$/)
     );
   } else {
     plugins.push(
@@ -97,7 +97,7 @@ const getPlugins = () => {
         test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
         threshold: 10240,
         minRatio: 0.8
-      }) // eslint-disable-line comma-dangle
+      })
     );
   }
 
