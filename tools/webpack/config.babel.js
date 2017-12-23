@@ -37,7 +37,6 @@ const vendor = [
   'react-helmet',
   'axios',
   'redbox-react',
-  'chalk',
   'lodash'
 ];
 
