@@ -23,6 +23,8 @@ const eslint = false;
 const stylelint = false;
 // Register vendors here
 const vendor = [
+  // Allows you to use the full set of ES6 features on client-side (place it before anything else)
+  'babel-polyfill',
   'react',
   'react-dom',
   'redux',
@@ -106,7 +108,7 @@ const getPlugins = () => {
 const getEntry = () => {
   // For development
   let entry = [
-    // Allows you to use the full set of ES6 features in development (place it before anything else)
+    // Allows you to use the full set of ES6 features on client-side (place it before anything else)
     'babel-polyfill',
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
