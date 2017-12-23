@@ -5872,9 +5872,9 @@ mime@1.4.1, mime@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
 
-mime@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-2.0.3.tgz#4353337854747c48ea498330dc034f9f4bbbcc0b"
+mime@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.1.0.tgz#1022a5ada445aa30686e4059abaea83d0b4e8f9c"
 
 mimic-fn@^1.0.0:
   version "1.1.0"
@@ -6141,9 +6141,9 @@ node-status-codes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/node-status-codes/-/node-status-codes-1.0.0.tgz#5ae5541d024645d32a58fcddc9ceecea7ae3ac2f"
 
-nodemon@1.14.2:
-  version "1.14.2"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.14.2.tgz#3e17ee110ce917c523a0065d5ac166f4135c5a06"
+nodemon@1.14.3:
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.14.3.tgz#f08d66726fb9876d76956b57cc91624793de4dbb"
   dependencies:
     chokidar "^1.7.0"
     debug "^2.6.8"
@@ -9169,13 +9169,13 @@ webidl-conversions@^4.0.1, webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
-webpack-dev-middleware@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-2.0.2.tgz#cbfaf5477e2179a2be0a989752acaa9bbd38b02c"
+webpack-dev-middleware@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-2.0.3.tgz#44e15480ec58d275417ac4d93a0126c7b72450bd"
   dependencies:
     loud-rejection "^1.6.0"
     memory-fs "~0.4.1"
-    mime "^2.0.3"
+    mime "^2.1.0"
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
     url-join "^2.0.2"
