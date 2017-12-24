@@ -124,7 +124,7 @@ app.get('*', (req, res) => {
     } catch (err) {
       res.status(404).send('Not Found :(');
 
-      console.error(`==> 😭  Rendering routes error: ${err}`);
+      console.error(chalk.red(`==> 😭  Rendering routes error: ${err}`));
     }
   })();
 });
@@ -133,7 +133,7 @@ if (port) {
   app.listen(port, host, err => {
     const url = `http://${host}:${port}`;
 
-    if (err) console.error(`==> 😭  OMG!!! ${err}`);
+    if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
 
     console.info(chalk.green(`==> 🌎  Listening at ${url}`));
 
