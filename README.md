@@ -555,6 +555,7 @@ So it will look like:
 
 ## Todo...
 
-Currently, I'm busying for my side-project, which is a workout app wrote by [react-native](https://facebook.github.io/react-native/). But there's a feature which will be included in this starter in the near future:
+There're some features (or updates) which will be included in this starter in the near future:
 
 - [ ] Dynamic routing & async reducer - Loading a route and its redux store only when need.
+- [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
