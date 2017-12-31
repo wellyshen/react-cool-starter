@@ -9,17 +9,15 @@
 
 > 🎉 My react-native app [LeadFit](https://itunes.apple.com/app/id1321807247) has been released on App Store, which is a workout app. Welcome to try, it's free!
 
-A simple but feature rich starter boilerplate for creating your own  [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
 > 👻 I'm curious what this starter boilerplate helps you guys do anything? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
 
-
 ## Real Case Study
 
 * [BECK Friends](https://www.beckfriends.com/) is an international delivery service, which is built based on this starter boilerplate. Congrats for successful migrating to React.
-
 
 ## Features
 
@@ -55,22 +53,18 @@ Really cool starter boilerplate with the most popular technologies:
 * Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
 * [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
 
-
 ## Who's the starter for?
 
 This starter is for those who with basic knowledge of React and have the need for building a server-side app. In other words, it's not for a newbie. If you're new to React or you don't need a server-side rendering app, I'd recommend you give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
-
 
 ## Docker-ise Supported
 
 This starter also supports Docker-ise. If you need it check the [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
 
-
 ## Requirements
 
 * [node](https://nodejs.org/en/) >= 6.0
 * [npm](https://www.npmjs.com/) >= 3.0
-
 
 ## Getting Started
 
@@ -95,28 +89,26 @@ yarn start:production    # Building bundle and running production server
 
 Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
 
-
 ## NPM Script Commands
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platform. All of the scripts are listed as following:
 
-`yarn <script>`|Description
-------------------|-----------
-`start`|Run your app on the development server at `localhost:3000`. HMR will be enabled.
-`start:production`|Bundle files to `./public/assets` and run it on the production server at `localhost:8080`.
-`start:prod`|Run your app on the production server only at `localhost:8080`.
-`build`|Remove the previous bundled files and bundle it to `./public/assets`.
-`lint`|Lint all `.js` and `.scss` files.
-`lint:js`|Lint all `.js` files (Use `--fix` to auto fix eslint errors).
-`lint:style`|Lint all `.scss` files (Use `--fix` to auto fix stylelint errors).
-`flow`|Run type checking for `.js` files.
-`flow:stop`|Stop type checking.
-`test`|Run testing once (with code coverage reports).
-`test:watch`|Run testing on every test file change.
-`clean:all`|Remove the client/server bundled stuff and the coverage report.
-`clean:build`|Remove the `./public/assets` folder to clean the client bundled files.
-`clean:test`|Remove the `./coverage` folder to clean the code coverage report.
-
+| `yarn <script>`    | Description                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------------ |
+| `start`            | Run your app on the development server at `localhost:3000`. HMR will be enabled.           |
+| `start:production` | Bundle files to `./public/assets` and run it on the production server at `localhost:8080`. |
+| `start:prod`       | Run your app on the production server only at `localhost:8080`.                            |
+| `build`            | Remove the previous bundled files and bundle it to `./public/assets`.                      |
+| `lint`             | Lint all `.js` and `.scss` files.                                                          |
+| `lint:js`          | Lint all `.js` files (Use `--fix` to auto fix eslint errors).                              |
+| `lint:style`       | Lint all `.scss` files (Use `--fix` to auto fix stylelint errors).                         |
+| `flow`             | Run type checking for `.js` files.                                                         |
+| `flow:stop`        | Stop type checking.                                                                        |
+| `test`             | Run testing once (with code coverage reports).                                             |
+| `test:watch`       | Run testing on every test file change.                                                     |
+| `clean:all`        | Remove the client/server bundled stuff and the coverage report.                            |
+| `clean:build`      | Remove the `./public/assets` folder to clean the client bundled files.                     |
+| `clean:test`       | Remove the `./coverage` folder to clean the code coverage report.                          |
 
 ## App Structure
 
@@ -125,7 +117,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 ```
 .
 ├── public                          # Express server static path/Webpack bundled output
-│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page       
+│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
 ├── src                             # App source code
 │   ├── config                      # App configuration settings
 │   │   ├── default.js              # Default settings
@@ -141,17 +133,16 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   │── configureStore.js           # Configure and instrument Redux store
 │   ├── client.js                   # App bootstrap and rendering (webpack entry)
 │   ├── routes.js                   # Routes configuration for both client and server side
-│   └── server.js                   # Express server (with webpack dev/hot middlewares)                  
+│   └── server.js                   # Express server (with webpack dev/hot middlewares)
 ├── tools                           # Project related configurations (testing/build etc.)
 │   ├── flow                        # Flow types, interface, module aliasing definitions
 │   ├── openBrowser                 # Utility for opening Google Chrome
 │   ├── jest                        # Jest CSS modules and assets mocks settings
 │   ├── webpack                     # Webpack settings
 │   │   ├── config.babel.js         # Webpack configuration
-│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file        
+│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file
 └── index.js                        # App entry point
 ```
-
 
 ## Server-Side Security and Performance
 
@@ -163,26 +154,28 @@ Concerning the security and performance of Express in production, I already setu
 
 > Note: It's just a basic protected mechanism for your app, you can see the [security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
 
-
 ## Setup Redux DevTools Extension
 
 The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow these installation guides to use it:
 
 **For Chrome**
+
 * from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
 * or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`;
 * or run it in dev mode with `npm i && npm start` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
 
 **For Firefox**
+
 * from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/remotedev/);
 * or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
 
 **For Electron**
+
 * just specify `REDUX_DEVTOOLS` in [`electron-devtools-installer`](https://github.com/GPMDP/electron-devtools-installer).
 
 **For other browsers and non-browser environment**
-* use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
+* use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
 ## Overview
 
@@ -215,11 +208,10 @@ export default [
       }
     ]
     // ...
-  },
+  }
   // Setup other routes...
 ];
 ```
-
 
 ### Data Fetching from Server-side
 
@@ -233,11 +225,12 @@ Register the action(s) in `./src/routes.js`, which have to be called from server
 export default [
   {
     // ...
-    loadData: (dispatch) => Promise.all([
-      // Register your server-side call action(s) here
-      dispatch(myReduxAction()),
-    ]),
-  },
+    loadData: dispatch =>
+      Promise.all([
+        // Register your server-side call action(s) here
+        dispatch(myReduxAction())
+      ])
+  }
   // ...
 ];
 ```
@@ -254,11 +247,12 @@ app.get('*', (req, res) => {
   const loadBranchData = (): Promise<*> | Object => {
     const promises = [];
 
-    routes.some((route) => {
+    routes.some(route => {
       const match = matchPath(req.url, route);
 
       // $FlowFixMe: the params of pre-load actions are dynamic
-      if (match && route.loadData) promises.push(route.loadData(store.dispatch, match.params));
+      if (match && route.loadData)
+        promises.push(route.loadData(store.dispatch, match.params));
 
       return match;
     });
@@ -280,7 +274,6 @@ componentDidMount() {
   this.props.myReduxAction();
 }
 ```
-
 
 ### Managing Title, Meta, Styles and Scripts
 
@@ -337,13 +330,11 @@ render() {
 By the way, if you want to use your based style or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
 
 ```javascript
-import '../../theme/normalize.css';   // Import a vendor stylesheet here
-import styles from './styles.scss';   // Import your based stylesheet here
+import '../../theme/normalize.css'; // Import a vendor stylesheet here
+import styles from './styles.scss'; // Import your based stylesheet here
 
 export default routes => {
-
   // ...
-
 };
 ```
 
@@ -389,7 +380,9 @@ import styles from './styles.scss';
 
 return (
   <div>
-    <div><i className={styles.iconUser}></i> Welly</div>
+    <div>
+      <i className={styles.iconUser} /> Welly
+    </div>
   </div>
 );
 
@@ -400,10 +393,11 @@ import './font-awesome.css';
 
 return (
   <div>
-    <div><i className="fa fa-user"></i> Welly</div>
+    <div>
+      <i className="fa fa-user" /> Welly
+    </div>
   </div>
 );
-
 ```
 
 For using CSS modules, you have to set the proper font path in your scss/sass file:
@@ -416,7 +410,6 @@ $fa-font-path:"../node_modules/font-awesome/fonts";
   @extend .fa-user;
 }
 ```
-
 
 ### Boost App Performance by Shallow Compare
 
@@ -431,13 +424,11 @@ import React, { PureComponent } from 'react';
 
 // ...
 
-class Home extends PureComponent {  // Use PureComponent instead of Component
-
+class Home extends PureComponent {
+  // Use PureComponent instead of Component
   // ...
-
 }
 ```
-
 
 ### Type Checking by Flow
 
@@ -457,7 +448,6 @@ Moreover, often you will want to use third-party libraries. For these circumstan
 
 > Note: If you don't want to use Flow, just remove the `/* @flow */` comment and related typing definitions from each javascript file.
 
-
 ### JavaScript and Style Lint
 
 [JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you want them to terminate webpack build process while an error occurs, you can enable those from `./tools/webpack/config.babel.js` (Default: false):
@@ -472,7 +462,6 @@ const stylelint = true;
 
 // ...
 ```
-
 
 ### Unit Tests
 
@@ -505,7 +494,6 @@ By the way, Jest built-in code coverage reports, the report files are generated 
 
 You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code in a javascript file to skip code coverage.
 
-
 ## Troubleshooting
 
 * If you get the the following message during developing, try to run `yarn build` to create the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles, image etc.) working on universal rendering.
@@ -513,6 +501,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 > webpack-isomorphic-tools (waiting for the first webpack build to finish)
 
 * If you encounter the markup mismatches error (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
+
   * Restart the server to solve it.
   * Or for v16.1.0 up, you can use `suppressHydrationWarning` attribute for intentional client/server text mismatches ([#11126](https://github.com/facebook/react/pull/11126)).
 
@@ -552,10 +541,9 @@ So it will look like:
 // ...
 ```
 
-
 ## Todo...
 
 There're some features (or updates) which will be included in this starter in the near future:
 
-- [ ] Dynamic routing & async reducer - Loading a route and its redux store only when need.
-- [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
+* [ ] Dynamic routing & async reducer - Loading a route and its redux store only when need.
+* [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
