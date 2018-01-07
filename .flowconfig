@@ -7,8 +7,6 @@
 .*/node_modules/react-router/node_modules/fbjs/lib/.*
 ; Ignore react-router-dom errors
 .*/node_modules/react-router-dom/node_modules/fbjs/lib/.*
-; Ignore react-router-redux errors
-.*/node_modules/react-router-redux/node_modules/fbjs/lib/.*
 ; Ignore redbox-react errors
 .*/node_modules/redbox-react/node_modules/fbjs/lib/.*
 
@@ -43,4 +41,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.62.0
+^0.63.1
