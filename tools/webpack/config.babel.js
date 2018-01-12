@@ -36,8 +36,7 @@ const vendor = [
   'react-router-redux',
   'react-helmet',
   'axios',
-  'redbox-react',
-  'lodash'
+  'redbox-react'
 ];
 
 // Setting the plugins for development/prodcution
