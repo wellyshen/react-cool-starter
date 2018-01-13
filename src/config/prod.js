@@ -1,7 +1,7 @@
-const _ = require('lodash/fp');
+const _merge = require('lodash/fp/merge');
 
 const defaultConfig = require('./default');
 
-module.exports = _.merge(defaultConfig, {
+module.exports = _merge(defaultConfig, {
   // Over write default settings here...
 });
