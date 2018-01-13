@@ -39,6 +39,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
 * [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 * [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
+* [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
 * [Flow](https://flowtype.org/) as the static type checker for javascript.
@@ -99,6 +100,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 | `start:production` | Bundle files to `./public/assets` and run it on the production server at `localhost:8080`. |
 | `start:prod`       | Run your app on the production server only at `localhost:8080`.                            |
 | `build`            | Remove the previous bundled files and bundle it to `./public/assets`.                      |
+| `build:stats`      | Viusalize the contents of all your bundles.                                                |
 | `lint`             | Lint all `.js` and `.scss` files.                                                          |
 | `lint:js`          | Lint all `.js` files (Use `--fix` to auto fix eslint errors).                              |
 | `lint:style`       | Lint all `.scss` files (Use `--fix` to auto fix stylelint errors).                         |

@@ -1,4 +1,4 @@
-"use strict"; // eslint-disable-line
+'use strict'; // eslint-disable-line
 
 const path = require('path');
 const webpack = require('webpack');
@@ -6,6 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer') // eslint-disable-line prefer-destructuring
+  .BundleAnalyzerPlugin;
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv !== 'production';
@@ -95,6 +97,9 @@ const getPlugins = () => {
         test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
         threshold: 10240,
         minRatio: 0.8
+      }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: process.env.STATS === 'true' ? 'server' : 'disabled'
       })
     );
   }
