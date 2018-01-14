@@ -90,6 +90,8 @@ yarn start:production    # Building bundle and running production server
 
 Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
 
+> Note: You can change the port number that you want from `./package.json`.
+
 ## NPM Script Commands
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platform. All of the scripts are listed as following:
