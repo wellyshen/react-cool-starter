@@ -98,8 +98,11 @@ const getPlugins = () => {
         threshold: 10240,
         minRatio: 0.8
       }),
+      // Visualizing all of the webpack bundles
+      // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
+      // for more configurations
       new BundleAnalyzerPlugin({
-        analyzerMode: process.env.STATS === 'true' ? 'server' : 'disabled'
+        analyzerMode: process.env.STATS === 'enabled' ? 'server' : 'disabled'
       })
     );
   }
