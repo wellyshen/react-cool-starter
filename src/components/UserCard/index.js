@@ -1,12 +1,11 @@
 /* @flow */
 
 import React from 'react';
-import type { Element } from 'react';
 import styles from './styles.scss';
 
 type Props = { info: Object };
 
-const UserCard = ({ info }: Props): Element<'div'> => (
+const UserCard = ({ info }: Props) => (
   <div className={styles.UserCard}>
     <h4>User Card</h4>
     <ul>

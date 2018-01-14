@@ -1,7 +1,6 @@
 /* @flow */
 
 import React from 'react';
-import type { Element } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import _ from 'lodash/fp';
@@ -12,10 +11,10 @@ import routes from '../../routes';
 import '../../theme/normalize.css';
 import styles from './styles.scss';
 
-const App = (): Element<'div'> => {
+const App = () => {
   // wrap <Route> and use this everywhere instead, then when
   // sub routes are added to any route it'll work
-  const RouteWithSubRoutes = (route): Element<typeof Route> => (
+  const RouteWithSubRoutes = route => (
     <Route
       key={_.uniqueId()}
       exact={route.exact || false}
