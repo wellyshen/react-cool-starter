@@ -1,11 +1,18 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { StaticRouter } from 'react-router-dom';
 
 import NotFound from '../index';
 
 describe('<NotFound />', () => {
   test('renders', () => {
-    const tree = renderer.create(<NotFound />).toJSON();
+    const tree = renderer
+      .create(
+        <StaticRouter context={{}}>
+          <NotFound />
+        </StaticRouter>
+      )
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });
