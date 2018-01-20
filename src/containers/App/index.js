@@ -3,6 +3,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import { hot } from 'react-hot-loader';
 import _ from 'lodash/fp';
 
 import config from '../../config';
@@ -43,4 +44,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default hot(module)(App);

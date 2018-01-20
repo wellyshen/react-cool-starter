@@ -9,7 +9,7 @@
 
 > 🎉 My react-native app [LeadFit](https://itunes.apple.com/app/id1321807247) has been released on App Store, which is a workout app. Welcome to try, it's free!
 
-A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
 
@@ -30,7 +30,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [Express](https://expressjs.com/) server.
 * [Webpack 3](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
-* [React Hot Loader 3](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
+* [React Hot Loader 4](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 * [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
 * [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
 * [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.

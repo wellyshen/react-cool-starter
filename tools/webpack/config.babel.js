@@ -32,7 +32,6 @@ const vendor = [
   'redux',
   'react-redux',
   'redux-thunk',
-  'react-hot-loader',
   'react-router-dom',
   'history',
   'react-router-redux',
@@ -116,7 +115,6 @@ const getEntry = () => {
   let entry = [
     // Allows you to use the full set of ES6 features on client-side (place it before anything else)
     'babel-polyfill',
-    'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
     './src/client.js'
   ];
