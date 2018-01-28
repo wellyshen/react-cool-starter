@@ -36,8 +36,7 @@ const vendor = [
   'history',
   'react-router-redux',
   'react-helmet',
-  'axios',
-  'redbox-react'
+  'axios'
 ];
 
 // Setting the plugins for development/prodcution
