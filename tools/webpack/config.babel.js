@@ -10,7 +10,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer') // eslint-disabl
   .BundleAnalyzerPlugin;
 
 const nodeEnv = process.env.NODE_ENV || 'development';
-const isDev = nodeEnv !== 'production';
+const isDev = nodeEnv === 'development';
 
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(
@@ -100,7 +100,7 @@ const getPlugins = () => {
       // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
       // for more configurations
       new BundleAnalyzerPlugin({
-        analyzerMode: process.env.STATS === 'enabled' ? 'server' : 'disabled'
+        analyzerMode: process.env.NODE_ENV === 'stats' ? 'server' : 'disabled'
       })
     );
   }

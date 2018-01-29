@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.11.1",
+  "version": "2.11.2",
   "description":
     "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
@@ -75,16 +75,14 @@
       "command":
         "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
-        "NODE_ENV": "production",
-        "STATS": "disabled"
+        "NODE_ENV": "production"
       }
     },
     "build:stats": {
       "command":
         "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
-        "NODE_ENV": "production",
-        "STATS": "enabled"
+        "NODE_ENV": "stats"
       }
     },
     "lint:js": {
