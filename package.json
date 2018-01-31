@@ -293,5 +293,8 @@
     "webpack-bundle-analyzer": "^2.9.2",
     "webpack-dev-middleware": "2.0.4",
     "webpack-hot-middleware": "2.21.0"
+  },
+  "resolutions": {
+    "webpack-sources": "1.0.1"
   }
 }
