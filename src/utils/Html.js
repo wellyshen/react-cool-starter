@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+
 import React from 'react';
 import type { Element } from 'react';
 import Helmet from 'react-helmet';
@@ -46,7 +48,6 @@ const Html = ({ store, htmlContent }: Props): Element<'html'> => {
         {/* I put all of the styles here to smoothen the flick */}
         {_.keys(assets.styles).length === 0 ? (
           <style
-            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html:
                 require('../theme/normalize.css')._style +
@@ -64,13 +65,11 @@ const Html = ({ store, htmlContent }: Props): Element<'html'> => {
         <div
           id="react-view"
           // Rendering the route, which passed from server-side
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: htmlContent || '' }}
         />
 
         <script
           // Store the initial state into window
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html:
               store &&
