@@ -1,18 +1,16 @@
 'use strict'; // eslint-disable-line
 
-const path = require('path');
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer') // eslint-disable-line prefer-destructuring
-  .BundleAnalyzerPlugin;
+import path from 'path';
+import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
+import MinifyPlugin from 'babel-minify-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import WebpackIsomorphicToolsPlugin from 'webpack-isomorphic-tools/plugin';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
-
-const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(
   require('./WIT.config')
 ).development(isDev);
@@ -136,10 +134,10 @@ module.exports = {
   target: 'web',
   cache: isDev,
   devtool: isDev ? 'cheap-module-source-map' : 'hidden-source-map',
-  context: path.join(process.cwd()),
+  context: path.resolve(process.cwd()),
   entry: getEntry(),
   output: {
-    path: path.join(process.cwd(), './public/assets'),
+    path: path.resolve(process.cwd(), 'public/assets'),
     publicPath: '/assets/',
     // Don't use chunkhash in development it will increase compilation time
     filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
@@ -184,7 +182,7 @@ module.exports = {
                 modules: CSSModules,
                 // "context" and "localIdentName" need to be the same with server config,
                 // or the style will flick when page first loaded
-                context: path.join(process.cwd(), './src'),
+                context: path.resolve(process.cwd(), 'src'),
                 localIdentName: '[name]__[local]--[hash:base64:5]',
                 minimize: !isDev
               }
@@ -204,7 +202,7 @@ module.exports = {
                 importLoaders: 2,
                 sourceMap: true,
                 modules: CSSModules,
-                context: path.join(process.cwd(), './src'),
+                context: path.resolve(process.cwd(), 'src'),
                 localIdentName: '[name]__[local]--[hash:base64:5]',
                 minimize: !isDev
               }

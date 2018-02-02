@@ -193,7 +193,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. You can setup your routes in `./src/routes.js`. For example:
 
 ```javascript
-import MyRouteComponent from './containers/MyRouteComponent';
+import { MyRouteComponent } from './containers';
 
 // ...
 

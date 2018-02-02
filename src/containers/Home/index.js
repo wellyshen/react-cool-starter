@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 
 import * as actionUsers from '../../actions/users';
 import type { Home as HomeType, Dispatch, ReduxState } from '../../types';
-import UserList from '../../components/UserList';
+import { UserList } from '../../components';
 import styles from './styles.scss';
 
 type Props = { home: HomeType, fetchUsersIfNeeded: () => void };

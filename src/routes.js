@@ -3,9 +3,7 @@
 import type { Dispatch } from './types';
 import { fetchUsersIfNeeded } from './actions/users';
 import { fetchUserIfNeeded } from './actions/user';
-import HomePage from './containers/Home';
-import UserInfoPage from './containers/UserInfo';
-import NotFoundPage from './containers/NotFound';
+import { HomePage, UserInfoPage, NotFoundPage } from './containers';
 
 export default [
   {

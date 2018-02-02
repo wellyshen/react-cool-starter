@@ -11,7 +11,7 @@ import type {
   Dispatch,
   ReduxState
 } from '../../types';
-import UserCard from '../../components/UserCard';
+import { UserCard } from '../../components';
 import styles from './styles.scss';
 
 type Props = {

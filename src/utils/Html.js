@@ -4,11 +4,11 @@ import React from 'react';
 import type { Element } from 'react';
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
-import _ from 'lodash/fp';
+import _ from 'lodash';
 
 import type { Store } from '../types';
 
-type Props = { store: Store, htmlContent?: string };
+type Props = { store: Store, htmlContent: string };
 
 const Html = ({ store, htmlContent }: Props): Element<'html'> => {
   // Should be declared after "renderToStaticMarkup()" of "../server.js" or it won't work
@@ -69,7 +69,7 @@ const Html = ({ store, htmlContent }: Props): Element<'html'> => {
         />
 
         <script
-          // Store the initial state into window
+          // Storing the initial state into window
           dangerouslySetInnerHTML={{
             __html:
               store &&
@@ -77,7 +77,7 @@ const Html = ({ store, htmlContent }: Props): Element<'html'> => {
           }}
         />
         {_.keys(assets.javascript)
-          .reverse() // Reverse the order of scripts for accessing vendor.js first
+          .reverse() // Reversing the order of scripts for accessing vendor.js first
           .map(script => (
             <script key={_.uniqueId()} src={assets.javascript[script]} />
           ))}
@@ -86,7 +86,5 @@ const Html = ({ store, htmlContent }: Props): Element<'html'> => {
     </html>
   );
 };
-
-Html.defaultProps = { htmlContent: '' };
 
 export default Html;

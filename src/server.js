@@ -61,7 +61,7 @@ app.get('*', (req, res) => {
   const history = createHistory();
   const store = configureStore(history);
   // eslint-disable-next-line no-shadow
-  const renderHtml = (store, htmlContent) => {
+  const renderHtml = (store, htmlContent = '') => {
     const html = renderToStaticMarkup(
       <Html store={store} htmlContent={htmlContent} />
     );
