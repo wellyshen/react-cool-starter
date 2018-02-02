@@ -22,6 +22,7 @@ export default [
       Promise.all([dispatch(fetchUserIfNeeded(params.id))])
   },
   {
+    path: '*',
     component: NotFoundPage
   }
 ];
