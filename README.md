@@ -548,8 +548,8 @@ So it will look like:
 
 ## Todo...
 
-There're some features (or updates) which will be included in this starter in the near future:
+There're some features (updates) which will be included in this starter in the near future:
 
-* [ ] Dynamic routing & async reducer - Loading a route and its redux store only when need.
+* [ ] Code splitting for routes and reducers.
 * [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
 * [ ] Upgrade to [Webpack 4](https://github.com/webpack/webpack/milestone/15) as soon as the stable version released.
