@@ -27,9 +27,7 @@ export class Home extends PureComponent<Props> {
       home.readyStatus === 'USERS_REQUESTING'
     ) {
       return <p>Loading...</p>;
-    }
-
-    if (home.readyStatus === 'USERS_FAILURE') {
+    } else if (home.readyStatus === 'USERS_FAILURE') {
       return <p>Oops, Failed to load list!</p>;
     }
 

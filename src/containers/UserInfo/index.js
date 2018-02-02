@@ -34,9 +34,7 @@ export class UserInfo extends PureComponent<Props> {
 
     if (!userInfoById || userInfoById.readyStatus === 'USER_REQUESTING') {
       return <p>Loading...</p>;
-    }
-
-    if (userInfoById.readyStatus === 'USER_FAILURE') {
+    } else if (userInfoById.readyStatus === 'USER_FAILURE') {
       return <p>Oops, Failed to load info!</p>;
     }
 

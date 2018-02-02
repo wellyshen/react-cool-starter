@@ -1,7 +1,6 @@
 /* eslint-disable react/no-danger */
 
 import React from 'react';
-import type { Element } from 'react';
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
 import _ from 'lodash';
@@ -10,7 +9,7 @@ import type { Store } from '../types';
 
 type Props = { store: Store, htmlContent: string };
 
-const Html = ({ store, htmlContent }: Props): Element<'html'> => {
+const Html = ({ store, htmlContent }: Props) => {
   // Should be declared after "renderToStaticMarkup()" of "../server.js" or it won't work
   const head = Helmet.renderStatic();
   const attrs = head.htmlAttributes.toComponent();
