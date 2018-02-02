@@ -19,7 +19,7 @@ const App = () => {
     <Route
       key={_.uniqueId()}
       exact={route.exact || false}
-      path={route.path}
+      path={route.path || null}
       render={props => (
         // Pass the sub-routes down to keep nesting
         <route.component {...props} routes={route.routes || null} />

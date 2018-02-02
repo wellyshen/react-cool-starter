@@ -64,7 +64,7 @@ const Html = ({ store, htmlContent }: Props) => {
         <div
           id="react-view"
           // Rendering the route, which passed from server-side
-          dangerouslySetInnerHTML={{ __html: htmlContent || '' }}
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
 
         <script
