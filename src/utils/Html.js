@@ -33,7 +33,7 @@ const Html = ({ store, htmlContent }: Props) => {
         {head.meta.toComponent()}
         {head.link.toComponent()}
 
-        {/* Styles will be presented in production with webpack extract text plugin */}
+        {/* Rendering bundled styles into <link> tag on production */}
         {_.keys(assets.styles).map(style => (
           <link
             key={_.uniqueId()}
@@ -43,7 +43,7 @@ const Html = ({ store, htmlContent }: Props) => {
             type="text/css"
           />
         ))}
-        {/* Styles will be presented in development mode */}
+        {/* Rendering bundled styles into <style> tag on development */}
         {/* I put all of the styles here to smoothen the flick */}
         {_.keys(assets.styles).length === 0 ? (
           <style
@@ -75,8 +75,9 @@ const Html = ({ store, htmlContent }: Props) => {
               `window.__INITIAL_STATE__=${serialize(store.getState())};`
           }}
         />
+        {/* Rendering bundled scripts into <script> tag */}
         {_.keys(assets.javascript)
-          .reverse() // Reversing the order of scripts for accessing vendor.js first
+          .reverse() // Correcting the ordering of the scripts
           .map(script => (
             <script key={_.uniqueId()} src={assets.javascript[script]} />
           ))}

@@ -94,7 +94,7 @@ app.get('*', (req, res) => {
 
   (async () => {
     try {
-      // Load data from server-side first
+      // Loading data from server-side first
       await loadBranchData();
 
       // Setup React-Router server-side rendering
@@ -119,7 +119,7 @@ app.get('*', (req, res) => {
       // Checking is page is 404
       const status = routerContext.status === '404' ? 404 : 200;
 
-      // Pass the route and initial state into html template
+      // Passing the route and initial state into html template
       res.status(status).send(renderHtml(store, htmlContent));
     } catch (err) {
       res.status(404).send('Not Found :(');
