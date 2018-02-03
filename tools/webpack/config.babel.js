@@ -71,7 +71,7 @@ const getPlugins = () => {
   ];
 
   if (isDev) {
-    // For development
+    // Development
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       // Prints more readable module names in the browser console on HMR updates
@@ -80,7 +80,7 @@ const getPlugins = () => {
     );
   } else {
     plugins.push(
-      // For production
+      // Production
       new MinifyPlugin({}, { test: /\.jsx?$/, comments: false }),
       new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({
@@ -181,8 +181,6 @@ module.exports = {
                 importLoaders: 1,
                 sourceMap: true,
                 modules: CSSModules,
-                // "context" and "localIdentName" need to be the same with server config,
-                // or the style will flick when page first loaded
                 context: path.resolve(process.cwd(), 'src'),
                 localIdentName: '[name]__[local]--[hash:base64:5]',
                 minimize: !isDev
@@ -244,7 +242,7 @@ module.exports = {
   },
   plugins: getPlugins(),
   resolveLoader: {
-    // Use loaders without the -loader suffix
+    // Using loaders without the -loader suffix
     moduleExtensions: ['-loader']
   },
   resolve: {

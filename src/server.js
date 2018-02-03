@@ -29,7 +29,7 @@ app.use(hpp());
 // Compress all requests
 app.use(compression());
 
-// Use morgan for http request debug (only show error)
+// Using morgan for http request debug (only show error)
 app.use(morgan('dev', { skip: (req, res) => res.statusCode < 400 }));
 app.use(favicon(path.join(process.cwd(), './public/favicon.ico')));
 app.use(express.static(path.join(process.cwd(), './public')));
@@ -97,17 +97,17 @@ app.get('*', (req, res) => {
       // Loading data from server-side first
       await loadBranchData();
 
-      // Setup React-Router server-side rendering
       const routerContext = {};
       const htmlContent = renderToString(
         <Provider store={store}>
+          {/* Setup React-Router server-side rendering */}
           <StaticRouter location={req.url} context={routerContext}>
             <App />
           </StaticRouter>
         </Provider>
       );
 
-      // Check if the render result contains a redirect, if so we need to set
+      // Checking if the render result contains a redirect, if so we need to set
       // the specific status and redirect header and end the response
       if (routerContext.url) {
         res.status(301).setHeader('Location', routerContext.url);
