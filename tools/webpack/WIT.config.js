@@ -2,8 +2,8 @@ const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
 module.exports = {
   // debug: true,
-  // webpack_assets_file_path: 'webpack-assets.json',
-  // webpack_stats_file_path: 'webpack-stats.json',
+  webpack_assets_file_path: 'public/webpack-assets.json',
+  webpack_stats_file_path: 'public/webpack-stats.json',
   assets: {
     images: {
       extensions: ['png', 'jpg', 'jpeg', 'gif'],
