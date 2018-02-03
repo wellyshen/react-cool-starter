@@ -76,11 +76,9 @@ const Html = ({ store, htmlContent }: Props) => {
           }}
         />
         {/* Rendering bundled scripts into <script> tag */}
-        {_.keys(assets.javascript)
-          .reverse() // Correcting the ordering of the scripts
-          .map(script => (
-            <script key={_.uniqueId()} src={assets.javascript[script]} />
-          ))}
+        {_.map(assets.javascript, script => (
+          <script key={_.uniqueId()} src={assets.javascript[script]} />
+        ))}
         {head.script.toComponent()}
       </body>
     </html>

@@ -120,9 +120,9 @@ const getEntry = () => {
   // For prodcution
   if (!isDev) {
     entry = {
-      main: './src/client.js',
       // Register vendors here
-      vendor
+      vendor,
+      main: './src/client.js'
     };
   }
 
