@@ -64,7 +64,7 @@ const getPlugins = () => {
       __CLIENT__: true,
       __SERVER__: false,
       __DEV__: isDev,
-      __DISABLE_SSR__
+      __DISABLE_SSR__: false
     }),
     new webpack.NoEmitOnErrorsPlugin(),
     webpackIsomorphicToolsPlugin
