@@ -54,7 +54,7 @@ export default (store: Store, htmlContent: string = '') => {
         }
       </head>
       <body>
-        <!-- Rendering the route, which passed from server-side -->
+        <!-- Rendering the router, which passed from server-side -->
         <div id="react-view">${htmlContent}</div>
 
         <!-- Storing the initial state into window -->
