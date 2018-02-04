@@ -21,16 +21,15 @@ export const fetchUser = (
   }
 };
 
-// Using for preventing dobule fetching data
 /* istanbul ignore next */
 const shouldFetchUser = (state: ReduxState, userId: string): boolean => {
-  // In development, we will allow action dispatching
+  // On development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
   if (__DEV__) return true;
 
   const userInfo = state.userInfo[userId];
 
-  // Preventing dobule fetching data in production
+  // Fetching data once on production
   if (userInfo && userInfo.readyStatus === 'USER_SUCCESS') return false;
 
   return true;

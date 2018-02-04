@@ -8,14 +8,14 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
-import { renderToString, renderToStaticMarkup } from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import chalk from 'chalk';
 
 import createHistory from 'history/createMemoryHistory';
 import configureStore from './configureStore';
-import Html from './utils/Html';
+import renderHtml from './utils/renderHtml';
 import App from './containers/App';
 import routes from './routes';
 import { port, host } from './config';
@@ -60,14 +60,6 @@ app.get('*', (req, res) => {
 
   const history = createHistory();
   const store = configureStore(history);
-  // eslint-disable-next-line no-shadow
-  const renderHtml = (store, htmlContent = '') => {
-    const html = renderToStaticMarkup(
-      <Html store={store} htmlContent={htmlContent} />
-    );
-
-    return `<!doctype html>${html}`;
-  };
 
   // If __DISABLE_SSR__ = true, disable server side rendering
   if (__DISABLE_SSR__) {
