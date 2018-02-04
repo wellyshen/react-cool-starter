@@ -76,7 +76,7 @@ const Html = ({ store, htmlContent }: Props) => {
           }}
         />
         {/* Rendering bundled scripts into <script> tag */}
-        {_.map(assets.javascript, script => (
+        {_.keys(assets.javascript).map(script => (
           <script key={_.uniqueId()} src={assets.javascript[script]} />
         ))}
         {head.script.toComponent()}
