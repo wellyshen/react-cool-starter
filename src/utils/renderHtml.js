@@ -4,7 +4,11 @@ import _ from 'lodash';
 
 import type { Store } from '../types';
 
-export default (store: Store, htmlContent: string = '') => {
+export default (
+  store: Store,
+  htmlContent: string = '',
+  loadableStateTag: string = ''
+) => {
   // react-helmet should be declared after "renderToStaticMarkup()" of "../server.js" or it won't work
   const helmet = Helmet.renderStatic();
   const assets = webpackIsomorphicTools.assets();
@@ -27,7 +31,7 @@ export default (store: Store, htmlContent: string = '') => {
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
 
-        <!-- Rendering bundled styles into <link> tag on production -->
+        <!-- Inserting bundled styles into <link> tag on production -->
         ${_.keys(assets.styles).map(
           style =>
             `<link href="${
@@ -35,7 +39,7 @@ export default (store: Store, htmlContent: string = '') => {
             }" media="screen, projection" rel="stylesheet" type="text/css">`
         )}
 
-        <!-- Rendering bundled styles into <style> tag on development -->
+        <!-- Inserting bundled styles into <style> tag on development -->
         <!-- I put all of the styles here to smoothen the flick -->
         ${
           _.keys(assets.styles).length === 0
@@ -47,22 +51,27 @@ export default (store: Store, htmlContent: string = '') => {
                   require('../containers/UserInfo/styles.scss')._style +
                   require('../containers/NotFound/styles.scss')._style +
                   require('../components/UserList/styles.scss')._style +
-                  require('../components/UserCard/styles.scss')._style}
+                  require('../components/UserCard/styles.scss')._style +
+                  require('../components/Error/styles.scss')._style +
+                  require('../components/Loading/styles.scss')._style}
               </style>
             `
             : ''
         }
       </head>
       <body>
-        <!-- Rendering the router, which passed from server-side -->
+        <!-- Inserting the router, which passed from server-side -->
         <div id="react-view">${htmlContent}</div>
+
+        <!-- Inserting loadableState's script tag into page (loadable-components setup) -->
+        ${loadableStateTag}
 
         <!-- Storing the initial state into window -->
         <script>
           ${store && `window.__INITIAL_STATE__=${serialize(store.getState())};`}
         </script>
 
-        <!-- Rendering bundled scripts into <script> tag -->
+        <!-- Inserting bundled scripts into <script> tag -->
         ${_.keys(assets.javascript)
           .reverse() // Reversing scripts to get correct ordering
           .map(

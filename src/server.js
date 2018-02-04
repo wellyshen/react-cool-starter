@@ -11,6 +11,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { getLoadableState } from 'loadable-components/server';
 import chalk from 'chalk';
 
 import createHistory from 'history/createMemoryHistory';
@@ -90,7 +91,7 @@ app.get('*', (req, res) => {
       await loadBranchData();
 
       const routerContext = {};
-      const htmlContent = renderToString(
+      const AppComponent = (
         <Provider store={store}>
           {/* Setup React-Router server-side rendering */}
           <StaticRouter location={req.url} context={routerContext}>
@@ -108,11 +109,18 @@ app.get('*', (req, res) => {
         return;
       }
 
-      // Checking is page is 404
-      const status = routerContext.status === '404' ? 404 : 200;
+      // Extracting loadable state from application tree (loadable-components setup)
+      getLoadableState(app).then(loadableState => {
+        // Checking page status
+        const status = routerContext.status === '404' ? 404 : 200;
+        const htmlContent = renderToString(AppComponent);
+        const loadableStateTag = loadableState.getScriptTag();
 
-      // Passing the route and initial state into html template
-      res.status(status).send(renderHtml(store, htmlContent));
+        // Passing the route and initial state into html template
+        res
+          .status(status)
+          .send(renderHtml(store, htmlContent, loadableStateTag));
+      });
     } catch (err) {
       res.status(404).send('Not Found :(');
 

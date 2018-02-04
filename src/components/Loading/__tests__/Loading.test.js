@@ -2,14 +2,14 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { StaticRouter } from 'react-router-dom';
 
-import NotFound from '../NotFound';
+import Loading from '../index';
 
-describe('<NotFound />', () => {
+describe('<Loading />', () => {
   test('renders', () => {
     const tree = renderer
       .create(
         <StaticRouter context={{}}>
-          <NotFound />
+          <Loading />
         </StaticRouter>
       )
       .toJSON();

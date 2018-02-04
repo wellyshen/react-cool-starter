@@ -34,6 +34,7 @@ const vendor = [
   'history',
   'react-router-redux',
   'react-helmet',
+  'loadable-components',
   'axios'
 ];
 
@@ -166,7 +167,11 @@ module.exports = {
             'stage-0',
             'flow'
           ],
-          plugins: ['react-hot-loader/babel', 'lodash'],
+          plugins: [
+            'react-hot-loader/babel',
+            'loadable-components/babel',
+            'lodash'
+          ],
           env: { production: { plugins: ['transform-remove-console'] } }
         }
       },

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> renders 1`] = `
+<div
+  className="Error"
+>
+  <p>
+    Oops! 
+    Hi I'm error
+  </p>
+</div>
+`;

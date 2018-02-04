@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { StaticRouter } from 'react-router-dom';
 
-import { UserInfo } from '../index';
+import { UserInfo } from '../UserInfo';
 
 describe('<UserInfo />', () => {
   const tree = (props, actions) =>

@@ -23,6 +23,7 @@
     "webpack v3",
     "es6",
     "flow",
+    "code-splitting",
     "hot reloading",
     "babel",
     "postcss",
@@ -125,7 +126,7 @@
       "stage-0",
       "flow"
     ],
-    "plugins": ["lodash"],
+    "plugins": ["loadable-components/babel", "dynamic-import-node", "lodash"],
     "env": {
       "production": {
         "plugins": ["transform-remove-console"]
@@ -220,6 +221,7 @@
     "helmet": "3.10.0",
     "history": "^4.7.2",
     "hpp": "^0.2.2",
+    "loadable-components": "^1.0.2",
     "lodash": "4.17.5",
     "morgan": "1.9.0",
     "opn": "5.2.0",
@@ -245,6 +247,7 @@
     "babel-jest": "22.1.0",
     "babel-loader": "^7.1.2",
     "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-lodash": "3.3.2",
     "babel-plugin-transform-remove-console": "6.9.0",

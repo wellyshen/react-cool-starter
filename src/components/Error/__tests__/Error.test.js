@@ -2,14 +2,15 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { StaticRouter } from 'react-router-dom';
 
-import NotFound from '../NotFound';
+import Error from '../index';
 
-describe('<NotFound />', () => {
+describe('<Error />', () => {
   test('renders', () => {
+    const mockData = { message: "Hi I'm error" };
     const tree = renderer
       .create(
         <StaticRouter context={{}}>
-          <NotFound />
+          <Error error={mockData} />
         </StaticRouter>
       )
       .toJSON();

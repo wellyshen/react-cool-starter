@@ -18,7 +18,7 @@ exports[`<App /> renders 1`] = `
   </div>
   <hr />
   <div
-    className="Home"
+    className="Loading"
   >
     <p>
       Loading...

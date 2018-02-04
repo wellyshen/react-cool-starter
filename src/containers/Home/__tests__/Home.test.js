@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { StaticRouter } from 'react-router-dom';
 
-import { Home } from '../index';
+import { Home } from '../Home';
 
 describe('<Home />', () => {
   const tree = (props, actions) =>
