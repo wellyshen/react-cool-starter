@@ -6,7 +6,7 @@ import Error from '../index';
 
 describe('<Error />', () => {
   test('renders', () => {
-    const mockData = { message: "Hi I'm error" };
+    const mockData = { message: 'Error is here' };
     const tree = renderer
       .create(
         <StaticRouter context={{}}>

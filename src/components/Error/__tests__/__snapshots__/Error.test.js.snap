@@ -6,7 +6,7 @@ exports[`<Error /> renders 1`] = `
 >
   <p>
     Oops! 
-    Hi I'm error
+    Error is here
   </p>
 </div>
 `;

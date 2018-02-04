@@ -110,7 +110,7 @@ app.get('*', (req, res) => {
       }
 
       // Extracting loadable state from application tree (loadable-components setup)
-      getLoadableState(app).then(loadableState => {
+      getLoadableState(AppComponent).then(loadableState => {
         // Checking page status
         const status = routerContext.status === '404' ? 404 : 200;
         const htmlContent = renderToString(AppComponent);
