@@ -55,18 +55,12 @@ if (__DEV__) {
   app.use(require('webpack-hot-middleware')(compiler));
 }
 
-// Register server-side rendering middleware
+// Registering server-side rendering middleware
 app.get('*', (req, res) => {
   if (__DEV__) webpackIsomorphicTools.refresh();
 
   const history = createHistory();
   const store = configureStore(history);
-
-  // If __DISABLE_SSR__ = true, disable server side rendering
-  if (__DISABLE_SSR__) {
-    res.send(renderHtml(store));
-    return;
-  }
 
   // Here's the method for loading data from server-side
   const loadBranchData = (): Promise<*> | Object => {
@@ -137,7 +131,7 @@ if (port) {
 
     console.info(chalk.green(`==> 🌎  Listening at ${url}`));
 
-    // Open Chrome
+    // Opening Chrome
     require('../tools/openBrowser')(url);
   });
 } else {
