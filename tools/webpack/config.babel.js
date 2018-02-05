@@ -19,7 +19,7 @@ const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(
 const CSSModules = true;
 // Enable build process terminated while there's an eslint error
 const eslint = false;
-// Enable build process terminated while there's an stylelint error
+// Enable build process terminated while there's a stylelint error
 const stylelint = false;
 // Register vendors here
 const vendor = [

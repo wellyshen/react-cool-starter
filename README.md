@@ -10,11 +10,11 @@
 
 > 🎉 My react-native app [LeadFit](https://itunes.apple.com/app/id1321807247) now available on App Store, which is a workout app. Welcome to try, it's free!
 
-A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.mtjf14xy5) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/) [Flow](https://flowtype.org/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
-I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 😉
+I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
-> 👻 I'm curious what this starter boilerplate helps you guys do anything? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
+> 👻 I'm curious what kind of app that you guys building via this starter? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
 
 ## Real Case Study
 
@@ -24,7 +24,7 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 Really cool starter boilerplate with the most popular technologies:
 
-* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9#.aug1ngj77) rendering with async data fetching.
+* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering with async data fetching.
 * [React](https://facebook.github.io/react/) as the view.
 * [React Router v4](https://reacttraining.com/react-router/) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
@@ -37,6 +37,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 * [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
+* [loadable-components](https://github.com/smooth-code/loadable-components) makes React code splitting easy. Reduce your bundle size without stress.
 * [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
 * [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 * [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
@@ -61,7 +62,7 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 ## Docker-ise Supported
 
-This starter also supports Docker-ise. If you need it check the [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
+We also support Docker-ise. If you need it check the [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
 
 ## Requirements
 
@@ -193,23 +194,23 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. You can setup your routes in `./src/routes.js`. For example:
 
 ```javascript
-import { MyRouteComponent } from './containers';
+import RouteComponent from './containers/RouteComponent';
 
 // ...
 
 export default [
   {
     // Define your route path
-    path: '/myPath',
+    path: '/TopPath',
     // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
     // Add your route component here
-    component: MyRouteComponent,
+    component: RouteComponent,
     // Add your sub route component here
     routes: [
       {
-        path: '/myPath/mySubPath',
-        component: MySubRouteComponent
+        path: '/TopPath/SubPath',
+        component: SubRouteComponent
       }
     ]
     // ...
@@ -220,7 +221,7 @@ export default [
 
 ### Data Fetching from Server-side
 
-Just write Redux actions and stores as normal (read the [Redux](http://redux.js.org/docs/basics/) guide if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
+Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org/) docs if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
 Register the action(s) in `./src/routes.js`, which have to be called from server-sdie:
 
@@ -249,13 +250,12 @@ app.get('*', (req, res) => {
   // ...
 
   // Here's the method for loading data from server-side
-  const loadBranchData = (): Promise<*> | Object => {
+  const loadBranchData = (): Promise<any> | Object => {
     const promises = [];
 
     routes.some(route => {
       const match = matchPath(req.url, route);
 
-      // $FlowFixMe: the params of pre-load actions are dynamic
       if (match && route.loadData)
         promises.push(route.loadData(store.dispatch, match.params));
 
@@ -279,6 +279,41 @@ componentDidMount() {
   this.props.myReduxAction();
 }
 ```
+
+### Code Splitting
+
+One great feature of the web is that you don’t have to make your visitors download the entire app before they can use it. You can think of code splitting as incrementally downloading the app. It divides your code into small pieces called “chunks” to reduce the size of bundle loaded by user. Reducing the size of a chunk makes it load and run faster.
+
+To accomplish this, I integrate [loadable-components](https://github.com/smooth-code/loadable-components) into this starter. The reason I choose the library is because its design philosophy of SSR. It works seamless with the starter rather than others. Let’s see how we split our app by route:
+
+I use the following folder/file structure:
+
+```
+ |- containers
+    |- AsyncRouteComponent
+       |- index.js          // Wrap the route component as async component
+       |- RouteComponent.js // The route component
+```
+
+The `index.js` will be:
+
+```javascript
+import loadable from 'loadable-components';
+
+import { Error, Loading } from '../../components';
+
+export default loadable(
+  () => import('./AsyncRouteComponent'), // Import your async route component here
+  {
+    ErrorComponent: Error, // Error component for displaying error message
+    LoadingComponent: Loading // Loading component will be displayed when the component is being loaded
+  }
+);
+```
+
+Then you can [setup](### Adding Routes) the route as usual.
+
+> Note: I just show a general case route-based splitting, however you can even split your app by component-based depends on your need. For more advanced configuration you can refer to the [docs](https://github.com/smooth-code/loadable-components) of loadable-components.
 
 ### Managing Title, Meta, Styles and Scripts
 
@@ -343,22 +378,24 @@ export default routes => {
 };
 ```
 
-For the better development experience, don't forget to include those files in the `./src/utils/Html.js`, for example:
+For the better development experience, don't forget to include those files in the `./src/utils/renderHtml.js`, for example:
 
 ```javascript
 // ...
 
-  {
-    _.keys(assets.styles).length === 0 ?
-      <style
-        dangerouslySetInnerHTML={{ __html:
+  ${
+    _.keys(assets.styles).length === 0
+      ? `
+        <style>
           // Include the vendor CSS framework and your own style here
-          require('../theme/normalize.css')._style +
-          require('../containers/App/styles.scss')._style +
-          // Other styles...
-        }}
-      />
-      : null
+          ${
+            require('../theme/normalize.css')._style +
+            require('../containers/App/styles.scss')._style +
+            // Other styles...
+          }
+        </style>
+      `
+      : ''
   }
 
 // ...
@@ -462,7 +499,7 @@ Moreover, often you will want to use third-party libraries. For these circumstan
 
 // Enable build process terminated while there's an eslint error
 const eslint = true;
-// Enable build process terminated while there's an stylelint error
+// Enable build process terminated while there's a stylelint error
 const stylelint = true;
 
 // ...
@@ -470,7 +507,7 @@ const stylelint = true;
 
 ### Unit Tests
 
-The starter use [Jest](https://facebook.github.io/jest/) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapshot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very powerful for testing React component. Give it a try, you'll be impressed.
+This starter use [Jest](https://facebook.github.io/jest/) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapshot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very powerful for testing React component. Give it a try, you'll be impressed.
 
 I also use [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. The unit tests focus on three parts as below:
 
@@ -550,6 +587,6 @@ So it will look like:
 
 There're some features (updates) which will be included in this starter in the near future:
 
-* [ ] Code splitting for routes and reducers.
+* [ ] Code splitting for reducers.
 * [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
 * [ ] Upgrade to [Webpack 4](https://github.com/webpack/webpack/milestone/15) as soon as the stable version released.

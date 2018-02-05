@@ -63,7 +63,7 @@ app.get('*', (req, res) => {
   const store = configureStore(history);
 
   // Here's the method for loading data from server-side
-  const loadBranchData = (): Promise<*> | Object => {
+  const loadBranchData = (): Promise<any> | Object => {
     const promises = [];
 
     routes.some(route => {
