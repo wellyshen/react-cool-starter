@@ -109,7 +109,7 @@ const getPlugins = () => {
 
 // Setting the entry for development/prodcution
 const getEntry = () => {
-  // For development
+  // Development
   let entry = [
     // Allows you to use the full set of ES6 features on client-side (place it before anything else)
     'babel-polyfill',
@@ -117,7 +117,7 @@ const getEntry = () => {
     './src/client.js'
   ];
 
-  // For prodcution
+  // Prodcution
   if (!isDev) {
     entry = {
       main: './src/client.js',
