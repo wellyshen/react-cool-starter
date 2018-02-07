@@ -1,5 +1,6 @@
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
+import { minify } from 'html-minifier';
 import _ from 'lodash';
 
 import type { Store } from '../types';
@@ -13,7 +14,7 @@ export default (
   const helmet = Helmet.renderStatic();
   const assets = webpackIsomorphicTools.assets();
 
-  return `
+  const html = `
     <!doctype html>
     <html ${helmet.htmlAttributes.toString()}>
       <head>
@@ -82,4 +83,17 @@ export default (
       </body>
     </html>
   `;
+
+  // Minify html, refer to "https://github.com/kangax/html-minifier" for more configuration
+  const minifyConfig = {
+    collapseWhitespace: true,
+    removeComments: true,
+    trimCustomFragments: true,
+    minifyCSS: true,
+    minifyJS: true,
+    minifyURLs: true
+  };
+
+  // Only minify for production
+  return !__DEV__ ? minify(html, minifyConfig) : html;
 };
