@@ -5,6 +5,7 @@ import type { Dispatch, GetState, ThunkAction, ReduxState } from '../types';
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
+/* istanbul ignore next */
 export const fetchUsers = (
   axios: any,
   URL: string = API_URL

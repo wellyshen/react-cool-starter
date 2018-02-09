@@ -10,9 +10,9 @@ const NotFound = () => (
   <Route
     render={(props: Object) => {
       const { staticContext } = props;
-      if (staticContext) {
-        staticContext.status = '404';
-      }
+
+      if (staticContext) staticContext.status = '404';
+
       return (
         <div className={styles.NotFound}>
           <Helmet title="Oops" />
