@@ -252,6 +252,7 @@
     "loadable-components": "1.1.1",
     "lodash": "4.17.5",
     "morgan": "1.9.0",
+    "normalize.css": "^8.0.0",
     "opn": "5.2.0",
     "prop-types": "^15.6.0",
     "react": "16.2.0",

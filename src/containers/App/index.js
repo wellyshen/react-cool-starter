@@ -9,7 +9,7 @@ import _ from 'lodash';
 import config from '../../config';
 import routes from '../../routes';
 // Import your global styles here
-import '../../theme/normalize.css';
+import '../../../node_modules/normalize.css/normalize.css';
 import styles from './styles.scss';
 
 const App = () => {
