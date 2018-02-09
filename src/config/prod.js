@@ -1,3 +1,5 @@
+/* @flow */
+
 const merge = require('lodash/fp/merge');
 
 const defaultConfig = require('./default');
