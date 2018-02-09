@@ -201,7 +201,7 @@ import RouteComponent from './containers/RouteComponent';
 export default [
   {
     // Define your route path
-    path: '/TopPath',
+    path: '/myPath',
     // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
     // Add your route component here
@@ -209,7 +209,7 @@ export default [
     // Add your sub route component here
     routes: [
       {
-        path: '/TopPath/SubPath',
+        path: '/myPath/mySubPath',
         component: SubRouteComponent
       }
     ]
@@ -275,7 +275,7 @@ On client-side, don't forget to invoke the action(s) in `componentDidMount`. Thi
 
 ```javascript
 componentDidMount() {
-  // Invoke your redux action(s) for client rendering
+  // Invoke your redux action(s) for client-side rendering
   this.props.myReduxAction();
 }
 ```
@@ -284,7 +284,7 @@ componentDidMount() {
 
 One great feature of the web is that you don’t have to make your visitors download the entire app before they can use it. You can think of code splitting as incrementally downloading the app. It divides your code into small pieces called “chunks” to reduce the size of bundle loaded by user. Reducing the size of a chunk makes it load and run faster.
 
-To accomplish this, I integrate [loadable-components](https://github.com/smooth-code/loadable-components) into this starter. The reason I choose the library is because its design philosophy of SSR. It works seamless with the starter rather than others. Let’s see how we split our app by route:
+To accomplish this, I integrate [loadable-components](https://github.com/smooth-code/loadable-components) into this starter. The reason I choose the library is because of its design philosophy of SSR. It works seamless with the starter rather than others. Let’s see how we split our app by route and reducer for production environment:
 
 I use the following folder/file structure:
 
@@ -300,7 +300,11 @@ The `index.js` will be:
 ```javascript
 import loadable from 'loadable-components';
 
+import reducerInjector from '../../utils/reducerInjector';
+import myReducer from '../../reducers/myReducer';
 import { Error, Loading } from '../../components';
+
+reducerInjector.inject('reducerName', myReducer); // Inject your reducer here
 
 export default loadable(
   () => import('./AsyncRouteComponent'), // Import your async route component here
@@ -311,7 +315,7 @@ export default loadable(
 );
 ```
 
-Then you can [setup](### Adding Routes) the route as usual.
+Then you can [setup](#adding-routes) the route as usual.
 
 > Note: I just show a general case route-based splitting, however you can even split your app by component-based depends on your need. For more advanced configuration you can refer to the [docs](https://github.com/smooth-code/loadable-components) of loadable-components.
 
@@ -587,6 +591,5 @@ So it will look like:
 
 There're some features (updates) which will be included in this starter in the near future:
 
-* [ ] Code splitting for reducers.
 * [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
 * [ ] Upgrade to [Webpack 4](https://github.com/webpack/webpack/milestone/15) as soon as the stable version released.

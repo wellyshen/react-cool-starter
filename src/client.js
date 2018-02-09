@@ -11,12 +11,12 @@ import { loadComponents } from 'loadable-components';
 import configureStore from './configureStore';
 import App from './containers/App';
 
-// Getting the initial state from server-side rendering
+// Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
 const history = createHistory();
 const store = configureStore(history, initialState);
 
-// Loading all components needed before starting rendering (loadable-components setup)
+// Load all components needed before starting rendering (loadable-components setup)
 loadComponents().then(() => {
   hydrate(
     <Provider store={store}>

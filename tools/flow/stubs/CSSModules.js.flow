@@ -1,4 +1,4 @@
 /* @flow */
 
-// Decalre CSS modules type for flow checking
+// Declare CSS modules type for flow
 declare export default { [key: string]: string };
