@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV === 'development') {
+if (__DEV__) {
   module.exports = require('./default');
 } else {
   module.exports = require('./prod');
