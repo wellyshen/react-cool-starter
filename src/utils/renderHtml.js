@@ -75,7 +75,7 @@ export default (
 
         <!-- Insert bundled scripts into <script> tag -->
         ${_.keys(assets.javascript)
-          .reverse() // Reversing scripts to get correct ordering
+          .reverse() // Reverse scripts to get correct ordering
           .map(
             script => `<script src="${assets.javascript[script]}"></script>`
           )}
