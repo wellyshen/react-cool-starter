@@ -6705,6 +6705,10 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
+normalize.css@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.0.tgz#14ac5e461612538a4ce9be90a7da23f86e718493"
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -7833,14 +7837,15 @@ react-helmet@^5.2.0:
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
 
-react-hot-loader@4.0.0-beta.18:
-  version "4.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.0.0-beta.18.tgz#5a3d1b5bd813633380b88c0c660019dbf638975d"
+react-hot-loader@4.0.0-beta.21:
+  version "4.0.0-beta.21"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.0.0-beta.21.tgz#46a0345621f1a03cb3c1c6dc130f153fa66e5bae"
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
     hoist-non-react-statics "^2.3.1"
-    react-stand-in "^4.0.0-beta.18"
+    prop-types "^15.6.0"
+    react-stand-in "^4.0.0-beta.21"
 
 react-reconciler@^0.7.0:
   version "0.7.0"
@@ -7900,9 +7905,9 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-stand-in@^4.0.0-beta.18:
-  version "4.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/react-stand-in/-/react-stand-in-4.0.0-beta.18.tgz#67d83309ae5d95526a2d1124beaa7ab093085cb2"
+react-stand-in@^4.0.0-beta.21:
+  version "4.0.0-beta.21"
+  resolved "https://registry.yarnpkg.com/react-stand-in/-/react-stand-in-4.0.0-beta.21.tgz#fb694e465cb20fab7f36d3284f82b68bbd7a657e"
   dependencies:
     shallowequal "^1.0.2"
 

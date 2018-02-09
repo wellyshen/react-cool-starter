@@ -5,6 +5,7 @@ import type { Dispatch, GetState, ThunkAction, ReduxState } from '../types';
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
+/* istanbul ignore next */
 export const fetchUsers = (
   axios: any,
   URL: string = API_URL
@@ -14,8 +15,10 @@ export const fetchUsers = (
   try {
     const res = await axios.get(URL);
 
+    /* istanbul ignore next */
     dispatch({ type: 'USERS_SUCCESS', data: res.data });
   } catch (err) {
+    /* istanbul ignore next */
     dispatch({ type: 'USERS_FAILURE', err: err.message });
   }
 };

@@ -1,7 +1,7 @@
 /* @flow */
 
-import HomePage from './Home';
-import UserInfoPage from './UserInfo';
-import NotFoundPage from './NotFound';
-
-export { HomePage, UserInfoPage, NotFoundPage };
+if (__DEV__) {
+  module.exports = require('./dev');
+} else {
+  module.exports = require('./prod');
+}

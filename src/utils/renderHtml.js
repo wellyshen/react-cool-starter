@@ -46,7 +46,8 @@ export default (
           _.keys(assets.styles).length === 0
             ? `
               <style>
-                ${require('../theme/normalize.css')._style +
+                ${require('../../node_modules/normalize.css/normalize.css')
+                  ._style +
                   require('../containers/App/styles.scss')._style +
                   require('../containers/Home/styles.scss')._style +
                   require('../containers/UserInfo/styles.scss')._style +
