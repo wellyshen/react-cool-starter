@@ -14,8 +14,10 @@ export const fetchUsers = (
   try {
     const res = await axios.get(URL);
 
+    /* istanbul ignore next */
     dispatch({ type: 'USERS_SUCCESS', data: res.data });
   } catch (err) {
+    /* istanbul ignore next */
     dispatch({ type: 'USERS_FAILURE', err: err.message });
   }
 };

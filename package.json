@@ -204,8 +204,14 @@
       "__DEV__": true
     },
     "collectCoverageFrom": [
-      "src/containers/**/*.js",
+      "src/containers/App/App.js",
+      "src/containers/Home/Home.js",
+      "src/containers/UserInfo/UserInfo.js",
+      "src/containers/NotFound/NotFound.js",
       "src/components/**/*.js",
+      "src/actions/**/*.js",
+      "src/reducers/**/*.js",
+      "!src/reducers/index.js",
       "!src/**/__tests__"
     ],
     "moduleNameMapper": {

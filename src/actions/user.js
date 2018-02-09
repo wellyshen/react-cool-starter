@@ -15,8 +15,10 @@ export const fetchUser = (
   try {
     const res = await axios.get(`${URL}/${userId}`);
 
+    /* istanbul ignore next */
     dispatch({ type: 'USER_SUCCESS', userId, data: res.data });
   } catch (err) {
+    /* istanbul ignore next */
     dispatch({ type: 'USER_FAILURE', userId, err: err.message });
   }
 };
