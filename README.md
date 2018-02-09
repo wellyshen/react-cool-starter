@@ -133,7 +133,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── containers                  # Container components (including scss/testing files)
 │   ├── actions                     # Redux actions (including testing files)
 │   ├── reducers                    # Redux reducers (including testing files)
-│   ├── utils                       # App-wide utils (e.g. HTML template)  
+│   ├── utils                       # App-wide utils (e.g. HTML template, reducer injector etc.)  
 │   ├── theme                       # App-wide style and vendor CSS framework
 │   ├── types                       # Flow types for reducer, action, state, store
 │   │── configureStore.js           # Configure and instrument Redux store
