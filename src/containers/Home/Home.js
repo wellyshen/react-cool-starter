@@ -52,4 +52,5 @@ const connector: Connector<{}, Props> = connect(
   })
 );
 
+// Enable hot reloading for async componet
 export default hot(module)(connector(Home));
