@@ -1,7 +1,6 @@
 import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
 import { minify } from 'html-minifier';
-import _ from 'lodash';
 
 import type { Store } from '../types';
 
@@ -33,7 +32,7 @@ export default (
         ${helmet.link.toString()}
 
         <!-- Insert bundled styles into <link> tag on production -->
-        ${_.keys(assets.styles).map(
+        ${Object.keys(assets.styles).map(
           style =>
             `<link href="${
               assets.styles[style]
@@ -43,7 +42,7 @@ export default (
         <!-- Insert bundled styles into <style> tag on development -->
         <!-- I put all of the styles here to smoothen the flick -->
         ${
-          _.keys(assets.styles).length === 0
+          Object.keys(assets.styles).length === 0
             ? `
               <style>
                 ${require('../../node_modules/normalize.css/normalize.css')
@@ -74,7 +73,7 @@ export default (
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
-        ${_.keys(assets.javascript)
+        ${Object.keys(assets.javascript)
           .reverse() // Reverse scripts to get correct ordering
           .map(
             script => `<script src="${assets.javascript[script]}"></script>`
