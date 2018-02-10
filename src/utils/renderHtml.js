@@ -32,7 +32,7 @@ export default (
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
 
-        <!-- Insert bundled styles into <link> tag on production -->
+        <!-- Inserting bundled styles into <link> tag on production -->
         ${_.keys(assets.styles).map(
           style =>
             `<link href="${
@@ -40,7 +40,7 @@ export default (
             }" media="screen, projection" rel="stylesheet" type="text/css">`
         )}
 
-        <!-- Insert bundled styles into <style> tag on development -->
+        <!-- Inserting bundled styles into <style> tag on development -->
         <!-- I put all of the styles here to smoothen the flick -->
         ${
           _.keys(assets.styles).length === 0
@@ -62,20 +62,20 @@ export default (
         }
       </head>
       <body>
-        <!-- Insert the router, which passed from server-side -->
+        <!-- Inserting the router, which passed from server-side -->
         <div id="react-view">${htmlContent}</div>
 
-        <!-- Insert loadableState's script tag into page (loadable-components setup) -->
+        <!-- Inserting loadableState's script tag into page (loadable-components setup) -->
         ${loadableStateTag}
 
-        <!-- Store the initial state into window -->
+        <!-- Storing the initial state into window -->
         <script>
           ${store && `window.__INITIAL_STATE__=${serialize(store.getState())};`}
         </script>
 
-        <!-- Insert bundled scripts into <script> tag -->
+        <!-- Inserting bundled scripts into <script> tag -->
         ${_.keys(assets.javascript)
-          .reverse() // Reverse scripts to get correct ordering
+          .reverse() // Reversing scripts to get correct ordering
           .map(
             script => `<script src="${assets.javascript[script]}"></script>`
           )}

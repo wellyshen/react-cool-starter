@@ -1,6 +1,6 @@
 /* @flow */
 
-// Use async components on production to support code splitting
+// Using async components on production to support code splitting
 
 import HomePage from './Home';
 import UserInfoPage from './UserInfo';

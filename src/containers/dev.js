@@ -1,6 +1,6 @@
 /* @flow */
 
-// Disable async components on developmemt to enable hot reloading
+// Using sync components on developmemt to support hot reloading
 
 import HomePage from './Home/Home';
 import UserInfoPage from './UserInfo/UserInfo';

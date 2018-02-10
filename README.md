@@ -133,7 +133,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── containers                  # Container components (including scss/testing files)
 │   ├── actions                     # Redux actions (including testing files)
 │   ├── reducers                    # Redux reducers (including testing files)
-│   ├── utils                       # App-wide utils (e.g. HTML template, reducer injector etc.)  
+│   ├── utils                       # App-wide utils (e.g. HTML template)  
 │   ├── theme                       # App-wide style and vendor CSS framework
 │   ├── types                       # Flow types for reducer, action, state, store
 │   │── configureStore.js           # Configure and instrument Redux store
@@ -201,7 +201,7 @@ import RouteComponent from './containers/RouteComponent';
 export default [
   {
     // Define your route path
-    path: '/myPath',
+    path: '/TopPath',
     // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
     // Add your route component here
@@ -209,7 +209,7 @@ export default [
     // Add your sub route component here
     routes: [
       {
-        path: '/myPath/mySubPath',
+        path: '/TopPath/SubPath',
         component: SubRouteComponent
       }
     ]
@@ -275,7 +275,7 @@ On client-side, don't forget to invoke the action(s) in `componentDidMount`. Thi
 
 ```javascript
 componentDidMount() {
-  // Invoke your redux action(s) for client-side rendering
+  // Invoke your redux action(s) for client rendering
   this.props.myReduxAction();
 }
 ```
@@ -284,7 +284,7 @@ componentDidMount() {
 
 One great feature of the web is that you don’t have to make your visitors download the entire app before they can use it. You can think of code splitting as incrementally downloading the app. It divides your code into small pieces called “chunks” to reduce the size of bundle loaded by user. Reducing the size of a chunk makes it load and run faster.
 
-To accomplish this, I integrate [loadable-components](https://github.com/smooth-code/loadable-components) into this starter. The reason I choose the library is because of its design philosophy of SSR. It works seamless with the starter rather than others. Let’s see how we split our app by **dynamic routing** and **async reducer** for production environment:
+To accomplish this, I integrate [loadable-components](https://github.com/smooth-code/loadable-components) into this starter. The reason I choose the library is because of its design philosophy of SSR. It works seamless with the starter rather than others. Let’s see how we split our app by route:
 
 I use the following folder/file structure:
 
@@ -300,11 +300,7 @@ The `index.js` will be:
 ```javascript
 import loadable from 'loadable-components';
 
-import reducerInjector from '../../utils/reducerInjector';
-import myReducer from '../../reducers/myReducer';
 import { Error, Loading } from '../../components';
-
-reducerInjector.inject('reducerName', myReducer); // Inject your reducer here
 
 export default loadable(
   () => import('./AsyncRouteComponent'), // Import your async route component here
@@ -591,5 +587,6 @@ So it will look like:
 
 There're some features (updates) which will be included in this starter in the near future:
 
+* [ ] Code splitting for reducers.
 * [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
 * [ ] Upgrade to [Webpack 4](https://github.com/webpack/webpack/milestone/15) as soon as the stable version released.

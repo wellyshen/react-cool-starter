@@ -38,7 +38,7 @@ const vendor = [
   'axios'
 ];
 
-// Set plugins for development/prodcution
+// Setting the plugins for development/prodcution
 const getPlugins = () => {
   // Common
   const plugins = [
@@ -95,7 +95,7 @@ const getPlugins = () => {
         threshold: 10240,
         minRatio: 0.8
       }),
-      // Visualize all of the webpack bundles
+      // Visualizing all of the webpack bundles
       // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
       // for more configurations
       new BundleAnalyzerPlugin({
@@ -107,7 +107,7 @@ const getPlugins = () => {
   return plugins;
 };
 
-// Set the entry for development/prodcution
+// Setting the entry for development/prodcution
 const getEntry = () => {
   // Development
   let entry = [
@@ -129,7 +129,7 @@ const getEntry = () => {
   return entry;
 };
 
-// Webpack configuration
+// Setting webpack config
 module.exports = {
   name: 'client',
   target: 'web',
@@ -140,7 +140,7 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), 'public/assets'),
     publicPath: '/assets/',
-    // Don't use chunkhash on development it will increase compilation time
+    // Don't use chunkhash in development it will increase compilation time
     filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
     chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash:8].chunk.js',
     pathinfo: isDev
@@ -235,7 +235,7 @@ module.exports = {
             loader: 'url',
             options: { limit: 10240 }
           },
-          // Image optimizatizing
+          // Using for image optimization
           {
             loader: 'image-webpack',
             options: { bypassOnDebug: true }
@@ -246,7 +246,7 @@ module.exports = {
   },
   plugins: getPlugins(),
   resolveLoader: {
-    // Allows loaders without the -loader suffix
+    // Using loaders without the -loader suffix
     moduleExtensions: ['-loader']
   },
   resolve: {

@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.3.0",
+  "version": "2.2.4",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -278,7 +278,7 @@
     "webpack-isomorphic-tools": "^3.0.5"
   },
   "devDependencies": {
-    "autoprefixer": "7.2.5",
+    "autoprefixer": "7.2.6",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "8.2.1",
