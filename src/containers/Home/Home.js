@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
 import Helmet from 'react-helmet';
+import { hot } from 'react-hot-loader';
 
 import * as actionUsers from '../../actions/users';
 import type { Home as HomeType, Dispatch, ReduxState } from '../../types';
@@ -51,4 +52,4 @@ const connector: Connector<{}, Props> = connect(
   })
 );
 
-export default connector(Home);
+export default hot(module)(connector(Home));

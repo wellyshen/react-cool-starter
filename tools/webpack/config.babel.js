@@ -38,7 +38,7 @@ const vendor = [
   'axios'
 ];
 
-// Setting the plugins for development/prodcution
+// Setup the plugins for development/prodcution
 const getPlugins = () => {
   // Common
   const plugins = [
@@ -95,7 +95,7 @@ const getPlugins = () => {
         threshold: 10240,
         minRatio: 0.8
       }),
-      // Visualizing all of the webpack bundles
+      // Visualize all of the webpack bundles
       // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
       // for more configurations
       new BundleAnalyzerPlugin({
@@ -107,7 +107,7 @@ const getPlugins = () => {
   return plugins;
 };
 
-// Setting the entry for development/prodcution
+// Setup the entry for development/prodcution
 const getEntry = () => {
   // Development
   let entry = [
@@ -129,7 +129,7 @@ const getEntry = () => {
   return entry;
 };
 
-// Setting webpack config
+// Webpack configuration
 module.exports = {
   name: 'client',
   target: 'web',
@@ -246,7 +246,7 @@ module.exports = {
   },
   plugins: getPlugins(),
   resolveLoader: {
-    // Using loaders without the -loader suffix
+    // Use loaders without the -loader suffix
     moduleExtensions: ['-loader']
   },
   resolve: {

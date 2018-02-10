@@ -32,7 +32,7 @@ export default (
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
 
-        <!-- Inserting bundled styles into <link> tag on production -->
+        <!-- Insert bundled styles into <link> tag on production -->
         ${_.keys(assets.styles).map(
           style =>
             `<link href="${
@@ -40,7 +40,7 @@ export default (
             }" media="screen, projection" rel="stylesheet" type="text/css">`
         )}
 
-        <!-- Inserting bundled styles into <style> tag on development -->
+        <!-- Insert bundled styles into <style> tag on development -->
         <!-- I put all of the styles here to smoothen the flick -->
         ${
           _.keys(assets.styles).length === 0
@@ -62,20 +62,20 @@ export default (
         }
       </head>
       <body>
-        <!-- Inserting the router, which passed from server-side -->
+        <!-- Insert the router, which passed from server-side -->
         <div id="react-view">${htmlContent}</div>
 
-        <!-- Inserting loadableState's script tag into page (loadable-components setup) -->
+        <!-- Insert loadableState's script tag into page (loadable-components setup) -->
         ${loadableStateTag}
 
-        <!-- Storing the initial state into window -->
+        <!-- Store the initial state into window -->
         <script>
           ${store && `window.__INITIAL_STATE__=${serialize(store.getState())};`}
         </script>
 
-        <!-- Inserting bundled scripts into <script> tag -->
+        <!-- Insert bundled scripts into <script> tag -->
         ${_.keys(assets.javascript)
-          .reverse() // Reversing scripts to get correct ordering
+          .reverse() // Reverse scripts to get correct ordering
           .map(
             script => `<script src="${assets.javascript[script]}"></script>`
           )}
@@ -85,7 +85,7 @@ export default (
     </html>
   `;
 
-  // Minify html, refer to "https://github.com/kangax/html-minifier" for more configuration
+  // html-minifier configuration, refer to "https://github.com/kangax/html-minifier" for more configuration
   const minifyConfig = {
     collapseWhitespace: true,
     removeComments: true,
@@ -95,6 +95,6 @@ export default (
     minifyURLs: true
   };
 
-  // Only minify for production
-  return !__DEV__ ? minify(html, minifyConfig) : html;
+  // Minify html on production
+  return __DEV__ ? html : minify(html, minifyConfig);
 };

@@ -23,14 +23,14 @@ import { port, host } from './config';
 
 const app = express();
 
-// Using helmet to secure Express with various HTTP headers
+// Use helmet to secure Express with various HTTP headers
 app.use(helmet());
 // Prevent HTTP parameter pollution.
 app.use(hpp());
 // Compress all requests
 app.use(compression());
 
-// Using morgan for http request debug (only show error)
+// Use morgan for http request debug (only show error)
 app.use(morgan('dev', { skip: (req, res) => res.statusCode < 400 }));
 app.use(favicon(path.join(process.cwd(), './public/favicon.ico')));
 app.use(express.static(path.join(process.cwd(), './public')));
@@ -55,14 +55,14 @@ if (__DEV__) {
   app.use(require('webpack-hot-middleware')(compiler));
 }
 
-// Registering server-side rendering middleware
+// Register server-side rendering middleware
 app.get('*', (req, res) => {
   if (__DEV__) webpackIsomorphicTools.refresh();
 
   const history = createHistory();
   const store = configureStore(history);
 
-  // Here's the method for loading data from server-side
+  // The method for loading data from server-side
   const loadBranchData = (): Promise<any> | Object => {
     const promises = [];
 
@@ -81,7 +81,7 @@ app.get('*', (req, res) => {
 
   (async () => {
     try {
-      // Loading data from server-side first
+      // Load data from server-side first
       await loadBranchData();
 
       const routerContext = {};
@@ -94,7 +94,7 @@ app.get('*', (req, res) => {
         </Provider>
       );
 
-      // Checking if the render result contains a redirect, if so we need to set
+      // Check if the render result contains a redirect, if so we need to set
       // the specific status and redirect header and end the response
       if (routerContext.url) {
         res.status(301).setHeader('Location', routerContext.url);
@@ -103,14 +103,14 @@ app.get('*', (req, res) => {
         return;
       }
 
-      // Extracting loadable state from application tree (loadable-components setup)
+      // Extract loadable state from application tree (loadable-components setup)
       getLoadableState(AppComponent).then(loadableState => {
-        // Checking page status
+        // Check page status
         const status = routerContext.status === '404' ? 404 : 200;
         const htmlContent = renderToString(AppComponent);
         const loadableStateTag = loadableState.getScriptTag();
 
-        // Passing the route and initial state into html template
+        // Pass the route and initial state into html template
         res
           .status(status)
           .send(renderHtml(store, htmlContent, loadableStateTag));
@@ -131,7 +131,7 @@ if (port) {
 
     console.info(chalk.green(`==> 🌎  Listening at ${url}`));
 
-    // Opening Chrome
+    // Open Chrome
     require('../tools/openBrowser')(url);
   });
 } else {
