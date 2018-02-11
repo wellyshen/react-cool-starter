@@ -19,7 +19,7 @@ export default (history: Object, initialState: Object = {}): Store => {
     compose;
   const enhancers = composeEnhancers(
     applyMiddleware(...middlewares)
-    // Other store enhancers if any
+    // Add other enhancers here
   );
   const store = createStore(rootReducer, initialState, enhancers);
 
