@@ -2,9 +2,9 @@
 
 import loadable from 'loadable-components';
 
-import { Error, Loading } from '../../components';
+import { ErrorDisplay, Loading } from '../../components';
 
 export default loadable(() => import('./NotFound'), {
-  ErrorComponent: Error,
+  ErrorComponent: ErrorDisplay,
   LoadingComponent: Loading
 });

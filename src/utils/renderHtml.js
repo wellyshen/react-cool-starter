@@ -53,7 +53,7 @@ export default (
                   require('../containers/NotFound/styles.scss')._style +
                   require('../components/UserList/styles.scss')._style +
                   require('../components/UserCard/styles.scss')._style +
-                  require('../components/Error/styles.scss')._style +
+                  require('../components/ErrorDisplay/styles.scss')._style +
                   require('../components/Loading/styles.scss')._style}
               </style>
             `
