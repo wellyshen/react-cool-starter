@@ -3,15 +3,15 @@
 import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import axios from 'axios';
 
 import type { Store } from './types';
 import rootReducer from './reducers';
 
 export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
-    thunk.withExtraArgument(axios),
+    thunk,
     routerMiddleware(history)
+    // Add other middlewares here
   ];
   const composeEnhancers =
     (typeof window === 'object' &&

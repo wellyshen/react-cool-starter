@@ -32,7 +32,7 @@ describe('fetch users data', () => {
     ];
     const store = mockStore({ list: null });
 
-    store.dispatch(fetchUsers(axios, `${host}/test`)).then(() => {
+    store.dispatch(fetchUsers(`${host}/test`)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -48,7 +48,7 @@ describe('fetch users data', () => {
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(fetchUsers(axios, `${host}/test`)).then(() => {
+    store.dispatch(fetchUsers(`${host}/test`)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

@@ -1,5 +1,7 @@
 /* @flow */
 
+import axios from 'axios';
+
 import type { Dispatch, GetState, ThunkAction, ReduxState } from '../types';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
@@ -8,7 +10,6 @@ const API_URL = 'https://jsonplaceholder.typicode.com/users';
 /* istanbul ignore next */
 export const fetchUser = (
   userId: string,
-  axios: any,
   URL: string = API_URL
 ): ThunkAction => async (dispatch: Dispatch) => {
   dispatch({ type: 'USER_REQUESTING', userId });
@@ -41,13 +42,12 @@ const shouldFetchUser = (state: ReduxState, userId: string): boolean => {
 /* istanbul ignore next */
 export const fetchUserIfNeeded = (userId: string): ThunkAction => (
   dispatch: Dispatch,
-  getState: GetState,
-  axios: any
+  getState: GetState
 ) => {
   /* istanbul ignore next */
   if (shouldFetchUser(getState(), userId)) {
     /* istanbul ignore next */
-    return dispatch(fetchUser(userId, axios));
+    return dispatch(fetchUser(userId));
   }
 
   /* istanbul ignore next */

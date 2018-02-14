@@ -38,7 +38,7 @@ describe('fetch user data', () => {
     ];
     const store = mockStore({ info: null });
 
-    store.dispatch(fetchUser('test', axios, host)).then(() => {
+    store.dispatch(fetchUser('test', host)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -54,7 +54,7 @@ describe('fetch user data', () => {
     ];
     const store = mockStore({ err: null });
 
-    store.dispatch(fetchUser('test', axios, host)).then(() => {
+    store.dispatch(fetchUser('test', host)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
