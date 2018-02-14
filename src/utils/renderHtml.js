@@ -1,21 +1,16 @@
-import Helmet from 'react-helmet';
 import serialize from 'serialize-javascript';
 import { minify } from 'html-minifier';
 
-import type { Store } from '../types';
-
 export default (
-  store: Store,
-  htmlContent: string = '',
-  loadableStateTag: string = ''
-) => {
-  // react-helmet should be declared after "renderToStaticMarkup()" of "../server.js" or it won't work
-  const helmet = Helmet.renderStatic();
-  const assets = webpackIsomorphicTools.assets();
-
+  head: Object,
+  assets: Object,
+  htmlContent: string,
+  initialState: Object,
+  loadableStateTag: string
+): string => {
   const html = `
     <!doctype html>
-    <html ${helmet.htmlAttributes.toString()}>
+    <html ${head.htmlAttributes.toString()}>
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,10 +21,10 @@ export default (
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="shortcut icon" href="/favicon.ico">
 
-        ${helmet.title.toString()}
-        ${helmet.base.toString()}
-        ${helmet.meta.toString()}
-        ${helmet.link.toString()}
+        ${head.title.toString()}
+        ${head.base.toString()}
+        ${head.meta.toString()}
+        ${head.link.toString()}
 
         <!-- Insert bundled styles into <link> tag on production -->
         ${Object.keys(assets.styles).map(
@@ -69,7 +64,7 @@ export default (
 
         <!-- Store the initial state into window -->
         <script>
-          ${store && `window.__INITIAL_STATE__=${serialize(store.getState())};`}
+          window.__INITIAL_STATE__=${serialize(initialState)};
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
@@ -79,7 +74,7 @@ export default (
             script => `<script src="${assets.javascript[script]}"></script>`
           )}
 
-        ${helmet.script.toString()}
+        ${head.script.toString()}
       </body>
     </html>
   `;

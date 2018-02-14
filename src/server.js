@@ -12,6 +12,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { getLoadableState } from 'loadable-components/server';
+import Helmet from 'react-helmet';
 import chalk from 'chalk';
 
 import createHistory from 'history/createMemoryHistory';
@@ -23,20 +24,21 @@ import { port, host } from './config';
 
 const app = express();
 
-// Use helmet to secure Express with various HTTP headers
-app.use(helmet());
-// Prevent HTTP parameter pollution.
-app.use(hpp());
-// Compress all requests
-app.use(compression());
-
 // Use morgan for http request debug (only show error)
 app.use(morgan('dev', { skip: (req, res) => res.statusCode < 400 }));
 app.use(favicon(path.join(process.cwd(), './public/favicon.ico')));
 app.use(express.static(path.join(process.cwd(), './public')));
 
-// Run express as webpack dev server
-if (__DEV__) {
+if (!__DEV__) {
+  // Use helmet to secure Express with various HTTP headers
+  app.use(helmet());
+  // Prevent HTTP parameter pollution.
+  app.use(hpp());
+  // Compress all requests
+  app.use(compression());
+} else {
+  /* Run express as webpack dev server */
+
   const webpack = require('webpack');
   const webpackConfig = require('../tools/webpack/config.babel');
 
@@ -105,15 +107,27 @@ app.get('*', (req, res) => {
 
       // Extract loadable state from application tree (loadable-components setup)
       getLoadableState(AppComponent).then(loadableState => {
+        const head = Helmet.renderStatic();
+        const assets = webpackIsomorphicTools.assets();
+        const htmlContent = renderToString(AppComponent);
+        const initialState = store.getState();
+        const loadableStateTag = loadableState.getScriptTag();
+
         // Check page status
         const status = routerContext.status === '404' ? 404 : 200;
-        const htmlContent = renderToString(AppComponent);
-        const loadableStateTag = loadableState.getScriptTag();
 
         // Pass the route and initial state into html template
         res
           .status(status)
-          .send(renderHtml(store, htmlContent, loadableStateTag));
+          .send(
+            renderHtml(
+              head,
+              assets,
+              htmlContent,
+              initialState,
+              loadableStateTag
+            )
+          );
       });
     } catch (err) {
       res.status(404).send('Not Found :(');
