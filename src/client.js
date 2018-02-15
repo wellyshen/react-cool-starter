@@ -8,7 +8,7 @@ import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
 import { loadComponents } from 'loadable-components';
 
-import configureStore from './configureStore';
+import configureStore from './helpers/configureStore';
 import App from './containers/App';
 
 // Get the initial state from server-side rendering

@@ -17,8 +17,8 @@ import Helmet from 'react-helmet';
 import chalk from 'chalk';
 
 import createHistory from 'history/createMemoryHistory';
-import configureStore from './configureStore';
-import renderHtml from './utils/renderHtml';
+import configureStore from './helpers/configureStore';
+import renderHtml from './helpers/renderHtml';
 import App from './containers/App';
 import routes from './routes';
 import { port, host } from './config';

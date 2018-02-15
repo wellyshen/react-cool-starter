@@ -133,10 +133,9 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── containers                  # Container components (including scss/testing files)
 │   ├── actions                     # Redux actions (including testing files)
 │   ├── reducers                    # Redux reducers (including testing files)
-│   ├── utils                       # App-wide utils (e.g. HTML template)  
+│   ├── helpers                     # App-wide helpers (e.g. configure Redux store, HTML template etc.)  
 │   ├── theme                       # App-wide style and vendor CSS framework
 │   ├── types                       # Flow types for reducer, action, state, store
-│   │── configureStore.js           # Configure and instrument Redux store
 │   ├── client.js                   # App bootstrap and rendering (webpack entry)
 │   ├── routes.js                   # Routes configuration for both client and server side
 │   └── server.js                   # Express server (with webpack dev/hot middlewares)
@@ -379,7 +378,7 @@ export default routes => {
 };
 ```
 
-For the better development experience, don't forget to include those files in the `./src/utils/renderHtml.js`, for example:
+For the better development experience, don't forget to include those files in the `./src/helpers/renderHtml.js`, for example:
 
 ```javascript
 // ...
