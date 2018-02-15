@@ -29,6 +29,7 @@ const vendor = [
   'react-redux',
   'redux-thunk',
   'react-router-dom',
+  'react-router-config',
   'history',
   'react-router-redux',
   'react-helmet',

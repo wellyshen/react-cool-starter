@@ -1,7 +1,7 @@
 /* @flow */
 
-import HomePage from './Home';
-import UserInfoPage from './UserInfo';
-import NotFoundPage from './NotFound';
+import Home from './Home';
+import UserInfo from './UserInfo';
+import NotFound from './NotFound';
 
-export { HomePage, UserInfoPage, NotFoundPage };
+export { Home, UserInfo, NotFound };

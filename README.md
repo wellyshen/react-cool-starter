@@ -249,18 +249,16 @@ The action(s) will be dispatched through `./src/server.js` on server-side:
 app.get('*', (req, res) => {
   // ...
 
-  // Here's the method for loading data from server-side
-  const loadBranchData = (): Promise<any> | Object => {
-    const promises = [];
+  // The method for loading data from server-side
+  const loadBranchData = (): Promise<any> => {
+    const branch = matchRoutes(routes, req.path);
 
-    routes.some(route => {
-      const match = matchPath(req.url, route);
-
-      if (match && route.loadData)
-        promises.push(route.loadData(store.dispatch, match.params));
-
-      return match;
-    });
+    const promises = branch.map(
+      ({ route, match }) =>
+        route.loadData
+          ? route.loadData(store.dispatch, match.params)
+          : Promise.resolve(null)
+    );
 
     return Promise.all(promises);
   };

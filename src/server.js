@@ -9,7 +9,8 @@ import hpp from 'hpp';
 import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter, matchPath } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom';
+import { matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import { getLoadableState } from 'loadable-components/server';
 import Helmet from 'react-helmet';
@@ -65,18 +66,15 @@ app.get('*', (req, res) => {
   const store = configureStore(history);
 
   // The method for loading data from server-side
-  const loadBranchData = (): Promise<any> | Object => {
-    const promises = [];
+  const loadBranchData = (): Promise<any> => {
+    const branch = matchRoutes(routes, req.path);
 
-    routes.some(route => {
-      const match = matchPath(req.path, route);
-
-      if (match && route.loadData)
-        // $FlowFixMe: the params of pre-load actions are dynamic
-        promises.push(route.loadData(store.dispatch, match.params));
-
-      return match;
-    });
+    const promises = branch.map(
+      ({ route, match }) =>
+        route.loadData
+          ? route.loadData(store.dispatch, match.params)
+          : Promise.resolve(null)
+    );
 
     return Promise.all(promises);
   };
