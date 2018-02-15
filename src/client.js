@@ -6,10 +6,11 @@ import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
+import { renderRoutes } from 'react-router-config';
 import { loadComponents } from 'loadable-components';
 
 import configureStore from './helpers/configureStore';
-import App from './containers/App';
+import routes from './routes';
 
 // Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
@@ -21,7 +22,7 @@ loadComponents().then(() => {
   hydrate(
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <App />
+        {renderRoutes(routes)}
       </ConnectedRouter>
     </Provider>,
     document.getElementById('react-view')

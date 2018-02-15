@@ -6,12 +6,13 @@ import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
 import config from '../../config';
-import routes from '../../routes';
 // Import your global styles here
 import '../../../node_modules/normalize.css/normalize.css';
 import styles from './styles.scss';
 
-const App = () => (
+type Props = { route: Object };
+
+const App = ({ route }: Props) => (
   <div className={styles.App}>
     <Helmet {...config.app} />
     <div className={styles.header}>
@@ -19,7 +20,8 @@ const App = () => (
       <h1>{config.app.title}</h1>
     </div>
     <hr />
-    {renderRoutes(routes)}
+    {/* child routes won't render without this */}
+    {renderRoutes(route.routes)}
   </div>
 );
 

@@ -190,7 +190,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Adding Routes
 
-This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. You can setup your routes in `./src/routes.js`. For example:
+This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.js`. For example:
 
 ```javascript
 import RouteComponent from './containers/RouteComponent';
@@ -214,7 +214,7 @@ export default [
     ]
     // ...
   }
-  // Setup other routes...
+  // Setup other route components...
 ];
 ```
 

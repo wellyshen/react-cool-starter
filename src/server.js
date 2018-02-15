@@ -10,7 +10,7 @@ import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { matchRoutes } from 'react-router-config';
+import { renderRoutes, matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import { getLoadableState } from 'loadable-components/server';
 import Helmet from 'react-helmet';
@@ -19,7 +19,6 @@ import chalk from 'chalk';
 import createHistory from 'history/createMemoryHistory';
 import configureStore from './helpers/configureStore';
 import renderHtml from './helpers/renderHtml';
-import App from './containers/App';
 import routes from './routes';
 import { port, host } from './config';
 
@@ -89,7 +88,7 @@ app.get('*', (req, res) => {
         <Provider store={store}>
           {/* Setup React-Router server-side rendering */}
           <StaticRouter location={req.url} context={routerContext}>
-            <App />
+            {renderRoutes(routes)}
           </StaticRouter>
         </Provider>
       );
