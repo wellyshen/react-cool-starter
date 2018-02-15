@@ -233,7 +233,7 @@ export default [
     path: '/TopPath',
     exact: true,
     component: RouteComponent,
-    // Actions in the loadData function will be feteched from server-side
+    // Actions in the loadData function will be fetched from server-side
     loadData: dispatch =>
       Promise.all([
         // Register your pre-fetched action(s) here
@@ -252,7 +252,7 @@ The action(s) will be dispatched through `./src/server.js` on server-side:
 app.get('*', (req, res) => {
   // ...
 
-  // The method for loading data from server-side
+  // Here's the method for loading data from server-side
   const loadBranchData = (): Promise<any> => {
     const branch = matchRoutes(routes, req.path);
 
