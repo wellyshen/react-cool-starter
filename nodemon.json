@@ -4,6 +4,6 @@
     "index.js",
     "tools/webpack/",
     "src/server.js",
-    "src/utils/renderHtml.js"
+    "src/helpers/renderHtml.js"
   ]
 }
