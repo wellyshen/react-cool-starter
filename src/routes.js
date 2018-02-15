@@ -3,7 +3,7 @@
 import type { Dispatch } from './types';
 import { fetchUsersIfNeeded } from './actions/users';
 import { fetchUserIfNeeded } from './actions/user';
-import { App, Home, UserInfo, NotFound } from './containers';
+import { App, asyncHome, asyncUserInfo, NotFound } from './containers';
 
 export default [
   {
@@ -12,7 +12,7 @@ export default [
       {
         path: '/',
         exact: true,
-        component: Home, // Add your route here
+        component: asyncHome, // Add your route here
         loadData: (dispatch: Dispatch) =>
           Promise.all([
             dispatch(fetchUsersIfNeeded())
@@ -21,7 +21,7 @@ export default [
       },
       {
         path: '/UserInfo/:id',
-        component: UserInfo,
+        component: asyncUserInfo,
         loadData: (dispatch: Dispatch, params: Object) =>
           Promise.all([dispatch(fetchUserIfNeeded(params.id))])
       },

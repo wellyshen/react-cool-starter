@@ -1,8 +1,8 @@
 /* @flow */
 
 import App from './App';
-import Home from './Home';
-import UserInfo from './UserInfo';
+import asyncHome from './Home';
+import asyncUserInfo from './UserInfo';
 import NotFound from './NotFound';
 
-export { App, Home, UserInfo, NotFound };
+export { App, asyncHome, asyncUserInfo, NotFound };
