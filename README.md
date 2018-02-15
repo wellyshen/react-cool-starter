@@ -230,10 +230,13 @@ Register the action(s) in `./src/routes.js`, which have to be called from server
 
 export default [
   {
-    // ...
+    path: '/TopPath',
+    exact: true,
+    component: RouteComponent,
+    // Actions in the loadData function will be feteched from server-side
     loadData: dispatch =>
       Promise.all([
-        // Register your server-side call action(s) here
+        // Register your pre-fetched action(s) here
         dispatch(myReduxAction())
       ])
   }
