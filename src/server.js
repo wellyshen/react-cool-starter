@@ -83,11 +83,11 @@ app.get('*', (req, res) => {
       // Load data from server-side first
       await loadBranchData();
 
-      const routerContext = {};
+      const staticContext = {};
       const AppComponent = (
         <Provider store={store}>
           {/* Setup React-Router server-side rendering */}
-          <StaticRouter location={req.url} context={routerContext}>
+          <StaticRouter location={req.url} context={staticContext}>
             {renderRoutes(routes)}
           </StaticRouter>
         </Provider>
@@ -95,8 +95,8 @@ app.get('*', (req, res) => {
 
       // Check if the render result contains a redirect, if so we need to set
       // the specific status and redirect header and end the response
-      if (routerContext.url) {
-        res.status(301).setHeader('Location', routerContext.url);
+      if (staticContext.url) {
+        res.status(301).setHeader('Location', staticContext.url);
         res.end();
 
         return;
@@ -111,7 +111,7 @@ app.get('*', (req, res) => {
         const loadableStateTag = loadableState.getScriptTag();
 
         // Check page status
-        const status = routerContext.status === '404' ? 404 : 200;
+        const status = staticContext.status === '404' ? 404 : 200;
 
         // Pass the route and initial state into html template
         res

@@ -18,7 +18,7 @@ describe('<App />', () => {
       .create(
         <Provider store={fakeStore}>
           <StaticRouter context={{}}>
-            <App />
+            <App route={{}} />
           </StaticRouter>
         </Provider>
       )

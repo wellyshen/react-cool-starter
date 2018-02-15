@@ -136,7 +136,7 @@
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": ["plugin:lodash-fp/recommended", "airbnb", "prettier"],
-    "plugins": ["react", "jsx-a11y", "import", "lodash-fp", "prettier"],
+    "plugins": ["lodash-fp", "react", "jsx-a11y", "import", "prettier"],
     "env": {
       "browser": true,
       "node": true,

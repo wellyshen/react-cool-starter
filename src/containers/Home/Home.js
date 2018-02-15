@@ -1,8 +1,10 @@
 /* @flow */
 
 import React, { PureComponent } from 'react';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import type { Connector } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
@@ -53,4 +55,4 @@ const connector: Connector<{}, Props> = connect(
 );
 
 // Enable hot reloading for async componet
-export default hot(module)(connector(Home));
+export default compose(hot(module), withRouter, connector)(Home);
