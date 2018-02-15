@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 
+import routes from '../../../routes';
 import App from '../index';
 
 describe('<App />', () => {
@@ -18,7 +19,7 @@ describe('<App />', () => {
       .create(
         <Provider store={fakeStore}>
           <StaticRouter context={{}}>
-            <App route={{}} />
+            <App route={routes[0]} />
           </StaticRouter>
         </Provider>
       )
