@@ -24,21 +24,20 @@ import { port, host } from './config';
 
 const app = express();
 
-// Use morgan for http request debug (only show error)
+// Use helmet to secure Express with various HTTP headers
+app.use(helmet());
+// Prevent HTTP parameter pollution.
+app.use(hpp());
+// Compress all requests
+app.use(compression());
+
+// Use morgan for http request debug (show errors only)
 app.use(morgan('dev', { skip: (req, res) => res.statusCode < 400 }));
 app.use(favicon(path.join(process.cwd(), './public/favicon.ico')));
 app.use(express.static(path.join(process.cwd(), './public')));
 
-if (!__DEV__) {
-  // Use helmet to secure Express with various HTTP headers
-  app.use(helmet());
-  // Prevent HTTP parameter pollution.
-  app.use(hpp());
-  // Compress all requests
-  app.use(compression());
-} else {
-  /* Run express as webpack dev server */
-
+// Run express as webpack dev server
+if (__DEV__) {
   const webpack = require('webpack');
   const webpackConfig = require('../tools/webpack/config.babel');
 
@@ -87,7 +86,7 @@ app.get('*', (req, res) => {
       const AppComponent = (
         <Provider store={store}>
           {/* Setup React-Router server-side rendering */}
-          <StaticRouter location={req.url} context={staticContext}>
+          <StaticRouter location={req.path} context={staticContext}>
             {renderRoutes(routes)}
           </StaticRouter>
         </Provider>

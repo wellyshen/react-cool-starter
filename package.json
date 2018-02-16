@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.2.13",
+  "version": "2.2.14",
   "description":
     "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
@@ -290,7 +290,7 @@
     "jest": "22.3.0",
     "nock": "9.1.6",
     "node-sass": "4.7.2",
-    "nodemon": "1.14.12",
+    "nodemon": "1.15.0",
     "postcss": "6.0.18",
     "postcss-loader": "2.1.0",
     "prettier": "1.10.2",
@@ -300,7 +300,7 @@
     "redux-mock-store": "1.5.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
-    "style-loader": "0.20.1",
+    "style-loader": "0.20.2",
     "stylelint": "8.4.0",
     "stylelint-config-standard": "18.0.0",
     "stylelint-webpack-plugin": "0.10.2",
