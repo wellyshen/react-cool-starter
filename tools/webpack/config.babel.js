@@ -185,7 +185,7 @@ module.exports = {
                 sourceMap: true,
                 modules: CSSModules,
                 context: path.resolve(process.cwd(), 'src'),
-                localIdentName: '[name]__[local]--[hash:base64:5]',
+                localIdentName: '[name]__[local]__[hash:base64:5]',
                 minimize: !isDev
               }
             },
@@ -205,7 +205,7 @@ module.exports = {
                 sourceMap: true,
                 modules: CSSModules,
                 context: path.resolve(process.cwd(), 'src'),
-                localIdentName: '[name]__[local]--[hash:base64:5]',
+                localIdentName: '[name]__[local]__[hash:base64:5]',
                 minimize: !isDev
               }
             },
