@@ -6,7 +6,7 @@ import type { UserInfo, Action } from '../types';
 
 type State = UserInfo;
 
-export default function userInfo(state: State = {}, action: Action): State {
+export default (state: State = {}, action: Action): State => {
   switch (action.type) {
     case 'USER_REQUESTING':
       return fp.assign(state, {
@@ -31,4 +31,4 @@ export default function userInfo(state: State = {}, action: Action): State {
     default:
       return state;
   }
-}
+};

@@ -12,10 +12,7 @@ const initialState = {
   list: []
 };
 
-export default function home(
-  state: State = initialState,
-  action: Action
-): State {
+export default (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case 'USERS_REQUESTING':
       return fp.assign(state, {
@@ -34,4 +31,4 @@ export default function home(
     default:
       return state;
   }
-}
+};
