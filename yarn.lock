@@ -2232,9 +2232,9 @@ compressible@~2.0.11:
   dependencies:
     mime-db ">= 1.29.0 < 2"
 
-compression-webpack-plugin@1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-1.1.6.tgz#450808fe143b4c5216a14f0c315c47bec3d83cec"
+compression-webpack-plugin@1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-1.1.7.tgz#b0dfb97cf1d26baab997b584b8c36fe91872abe2"
   dependencies:
     async "^2.4.1"
     cacache "^10.0.1"
@@ -3856,9 +3856,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@0.65.0:
-  version "0.65.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.65.0.tgz#64ffeca27211c786e2d68508c65686ba1b8a2169"
+flow-bin@0.66.0:
+  version "0.66.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.66.0.tgz#a96dde7015dc3343fd552a7b4963c02be705ca26"
 
 flush-write-stream@^1.0.0:
   version "1.0.2"

@@ -14,7 +14,7 @@ global.__SERVER__ = true;
 global.__DEV__ = process.env.NODE_ENV === 'development';
 
 // This should be the same with webpack context
-const dirRoot = require('path').join(process.cwd());
+const dirRoot = require('path').resolve(process.cwd());
 
 // Setup webpack-isomorphic-tools
 global.webpackIsomorphicTools = new WebpackIsomorphicTools(
