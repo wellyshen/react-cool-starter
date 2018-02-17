@@ -1,5 +1,4 @@
 /* @flow */
-/* eslint-disable */
 
 // Allows you to use the full set of ES6 features on server-side (place it before anything else)
 require('babel-polyfill');
