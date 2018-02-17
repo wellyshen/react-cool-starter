@@ -31,13 +31,15 @@ app.use(hpp());
 // Compress all requests
 app.use(compression());
 
-// Use morgan for http request debug (show errors only)
+// Use for http request debug (show errors only)
 app.use(morgan('dev', { skip: (req, res) => res.statusCode < 400 }));
 app.use(favicon(path.resolve(process.cwd(), 'public/favicon.ico')));
-app.use(express.static(path.resolve(process.cwd(), 'public')));
 
-// Run express as webpack dev server
-if (__DEV__) {
+if (!__DEV__) {
+  app.use(express.static(path.resolve(process.cwd(), 'public')));
+} else {
+  /* Run express as webpack dev server */
+
   const webpack = require('webpack');
   const webpackConfig = require('../tools/webpack/config.babel');
 
