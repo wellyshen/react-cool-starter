@@ -8,7 +8,7 @@ import styles from './styles.scss';
 
 type Props = { list: Array<Object> };
 
-const UserList = ({ list }: Props) => (
+export default ({ list }: Props) => (
   <div className={styles.UserList}>
     <h4>User List</h4>
     <ul>
@@ -20,5 +20,3 @@ const UserList = ({ list }: Props) => (
     </ul>
   </div>
 );
-
-export default UserList;
