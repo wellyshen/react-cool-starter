@@ -26,7 +26,7 @@ export default (
         ${head.meta.toString()}
         ${head.link.toString()}
 
-        <!-- Insert bundled styles into <link> tag on production -->
+        <!-- Insert bundled styles into <link> tag in production -->
         ${Object.keys(assets.styles).map(
           style =>
             `<link href="${
@@ -34,7 +34,7 @@ export default (
             }" media="screen, projection" rel="stylesheet" type="text/css">`
         )}
 
-        <!-- Insert bundled styles into <style> tag on development -->
+        <!-- Insert bundled styles into <style> tag in development -->
         <!-- I put all of the styles here to smoothen the flick -->
         ${
           Object.keys(assets.styles).length === 0
@@ -91,6 +91,6 @@ export default (
     minifyURLs: true
   };
 
-  // Minify html on production
+  // Minify html in production
   return __DEV__ ? html : minify(html, minifyConfig);
 };

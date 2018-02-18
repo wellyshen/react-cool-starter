@@ -27,13 +27,13 @@ export const fetchUser = (
 
 /* istanbul ignore next */
 const shouldFetchUser = (state: ReduxState, userId: string): boolean => {
-  // On development, we will allow action dispatching
+  // In development, we will allow action dispatching
   // or your reducer hot reloading won't updated on the view
   if (__DEV__) return true;
 
   const userInfo = state.userInfo[userId];
 
-  // Fetching data once on production
+  // Fetching data once in production
   if (userInfo && userInfo.readyStatus === 'USER_SUCCESS') return false;
 
   return true;

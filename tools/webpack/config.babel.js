@@ -226,7 +226,7 @@ module.exports = {
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
         loader: 'url',
-        options: { limit: 10000 }
+        options: { limit: 10240 }
       },
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
