@@ -51,6 +51,7 @@ if (!__DEV__) {
   app.use(
     require('webpack-dev-middleware')(compiler, {
       publicPath: webpackConfig.output.publicPath,
+      headers: { 'Access-Control-Allow-Origin': '*' },
       hot: true,
       noInfo: true,
       stats: 'minimal',
