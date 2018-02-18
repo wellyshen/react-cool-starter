@@ -47,7 +47,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [Flow](https://flowtype.org/) as the static type checker for javascript.
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb + Prettier).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
-* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
+* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
 * Split vendor's libraries from client bundle.
 * No other view engines, just javascript based HTML rendering component.

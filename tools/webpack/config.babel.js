@@ -4,6 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
+import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import WebpackIsomorphicToolsPlugin from 'webpack-isomorphic-tools/plugin';
 
@@ -66,6 +67,7 @@ const getPlugins = () => {
       __DEV__: isDev
     }),
     new webpack.NoEmitOnErrorsPlugin(),
+    new FriendlyErrorsWebpackPlugin(),
     webpackIsomorphicToolsPlugin
   ];
 
