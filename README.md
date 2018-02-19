@@ -545,9 +545,9 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-* If you get the the following message during developing, try to run `yarn build` to create the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles, image etc.) working on universal rendering.
+* If you get the the following message in prodcution, try to run `yarn build` to re-generate the `assets.json` file for enable related assets (e.g. javascript, styles etc.) working on universal rendering.
 
-> webpack-isomorphic-tools (waiting for the first webpack build to finish)
+> Failed to load resource: the server responded with a status of 404 (Not Found)
 
 * If you encounter the markup mismatches error (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
 
