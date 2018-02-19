@@ -149,7 +149,8 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── webpack                     # Webpack settings
 │   │   ├── config.babel.js         # Webpack configuration
 │   │   └── hooks.js                # Assets require hooks
-└── index.js                        # App entry point
+├── index.js                        # App entry point
+└── postcss.config.js               # PostCSS configuration
 ```
 
 ## Server-Side Security and Performance
