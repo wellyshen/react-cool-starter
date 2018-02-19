@@ -6,13 +6,9 @@ import MinifyPlugin from 'babel-minify-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import WebpackIsomorphicToolsPlugin from 'webpack-isomorphic-tools/plugin';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
-const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(
-  require('./WIT.config')
-).development(isDev);
 
 // Disable CSSModules here
 const CSSModules = true;
@@ -53,9 +49,7 @@ const getPlugins = () => {
         // Javascript lint
         eslint: { failOnError: eslint },
         debug: isDev,
-        minimize: !isDev,
-        // Setup for accessing css/scss by webpack-isomorphic-tools
-        context: path.resolve(process.cwd(), 'src')
+        minimize: !isDev
       }
     }),
     // Style lint
@@ -69,8 +63,7 @@ const getPlugins = () => {
       __DEV__: isDev
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new FriendlyErrorsWebpackPlugin(),
-    webpackIsomorphicToolsPlugin
+    new FriendlyErrorsWebpackPlugin()
   ];
 
   if (isDev) {
@@ -229,7 +222,7 @@ module.exports = {
         options: { limit: 10240 }
       },
       {
-        test: webpackIsomorphicToolsPlugin.regular_expression('images'),
+        test: /\.(gif|png|jpe?g|svg)$/i,
         // Any image below or equal to 10K will be converted to inline base64 instead
         use: [
           {

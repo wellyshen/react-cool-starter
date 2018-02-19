@@ -69,8 +69,6 @@ if (!__DEV__) {
 
 // Register server-side rendering middleware
 app.get('*', (req, res) => {
-  if (__DEV__) webpackIsomorphicTools.refresh();
-
   const history = createHistory();
   const store = configureStore(history);
 
@@ -120,7 +118,6 @@ app.get('*', (req, res) => {
       // Extract loadable state from application tree (loadable-components setup)
       getLoadableState(AppComponent).then(loadableState => {
         const head = Helmet.renderStatic();
-        const assets = webpackIsomorphicTools.assets();
         const htmlContent = renderToString(AppComponent);
         const initialState = store.getState();
         const loadableStateTag = loadableState.getScriptTag();
@@ -129,17 +126,15 @@ app.get('*', (req, res) => {
         const status = staticContext.status === '404' ? 404 : 200;
 
         // Pass the route and initial state into html template
-        res
-          .status(status)
-          .send(
-            renderHtml(
-              head,
-              assets,
-              htmlContent,
-              initialState,
-              loadableStateTag
-            )
-          );
+        res.status(status).send(
+          renderHtml(
+            head,
+            // assets,
+            htmlContent,
+            initialState,
+            loadableStateTag
+          )
+        );
       });
     } catch (err) {
       res.status(404).send('Not Found :(');

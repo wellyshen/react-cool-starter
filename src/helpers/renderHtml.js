@@ -3,7 +3,7 @@ import { minify } from 'html-minifier';
 
 export default (
   head: Object,
-  assets: Object,
+  // assets: Object,
   htmlContent: string,
   initialState: Object,
   loadableStateTag: string
@@ -27,33 +27,8 @@ export default (
         ${head.link.toString()}
 
         <!-- Insert bundled styles into <link> tag in production -->
-        ${Object.keys(assets.styles).map(
-          style =>
-            `<link href="${
-              assets.styles[style]
-            }" media="screen, projection" rel="stylesheet" type="text/css">`
-        )}
+        <link href="assets/main.css" media="screen, projection" rel="stylesheet" type="text/css">
 
-        <!-- Insert bundled styles into <style> tag in development -->
-        <!-- I put all of the styles here to smoothen the flick -->
-        ${
-          Object.keys(assets.styles).length === 0
-            ? `
-              <style>
-                ${require('../../node_modules/normalize.css/normalize.css')
-                  ._style +
-                  require('../containers/App/styles.scss')._style +
-                  require('../containers/Home/styles.scss')._style +
-                  require('../containers/UserInfo/styles.scss')._style +
-                  require('../containers/NotFound/styles.scss')._style +
-                  require('../components/UserList/styles.scss')._style +
-                  require('../components/UserCard/styles.scss')._style +
-                  require('../components/ErrorDisplay/styles.scss')._style +
-                  require('../components/Loading/styles.scss')._style}
-              </style>
-            `
-            : ''
-        }
       </head>
       <body>
         <!-- Insert the router, which passed from server-side -->
@@ -70,11 +45,7 @@ export default (
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
-        ${Object.keys(assets.javascript)
-          .reverse() // Reverse scripts to get correct ordering
-          .map(
-            script => `<script src="${assets.javascript[script]}"></script>`
-          )}
+        <script src="assets/main.js"></script>
 
         ${head.script.toString()}
       </body>
