@@ -40,8 +40,9 @@ Really cool starter boilerplate with the most popular technologies:
 * [loadable-components](https://github.com/smooth-code/loadable-components) makes React code splitting easy. Reduce your bundle size without stress.
 * [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 * [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
-* [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for universal usage.
-* [asset-require-hook](https://github.com/aribouius/asset-require-hook) allows your assets files required during runtime for universal usage.
+* [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for SSR.
+* [asset-require-hook](https://github.com/aribouius/asset-require-hook) allows your assets files required during runtime for SSR.
+* [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plugin#why-is-this-useful) generates assets with hash so you can use them for SSR.
 * [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
