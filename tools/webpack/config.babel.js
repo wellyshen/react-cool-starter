@@ -172,49 +172,53 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style',
-          use: [
-            {
-              loader: 'css',
-              options: {
-                importLoaders: 1,
-                sourceMap: true,
-                modules: CSSModules,
-                localIdentName: '[name]__[local]__[hash:base64:5]',
-                minimize: !isDev
-              }
-            },
-            { loader: 'postcss', options: { sourceMap: true } }
-          ]
-        })
+        loader: ['extracted-loader'].concat(
+          ExtractTextPlugin.extract({
+            fallback: 'style',
+            use: [
+              {
+                loader: 'css',
+                options: {
+                  importLoaders: 1,
+                  sourceMap: true,
+                  modules: CSSModules,
+                  localIdentName: '[name]__[local]__[hash:base64:5]',
+                  minimize: !isDev
+                }
+              },
+              { loader: 'postcss', options: { sourceMap: true } }
+            ]
+          })
+        )
       },
       {
         test: /\.(scss|sass)$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style',
-          use: [
-            {
-              loader: 'css',
-              options: {
-                importLoaders: 2,
-                sourceMap: true,
-                modules: CSSModules,
-                localIdentName: '[name]__[local]__[hash:base64:5]',
-                minimize: !isDev
+        loader: ['extracted-loader'].concat(
+          ExtractTextPlugin.extract({
+            fallback: 'style',
+            use: [
+              {
+                loader: 'css',
+                options: {
+                  importLoaders: 2,
+                  sourceMap: true,
+                  modules: CSSModules,
+                  localIdentName: '[name]__[local]__[hash:base64:5]',
+                  minimize: !isDev
+                }
+              },
+              { loader: 'postcss', options: { sourceMap: true } },
+              {
+                loader: 'sass',
+                options: {
+                  outputStyle: 'expanded',
+                  sourceMap: true,
+                  sourceMapContents: !isDev
+                }
               }
-            },
-            { loader: 'postcss', options: { sourceMap: true } },
-            {
-              loader: 'sass',
-              options: {
-                outputStyle: 'expanded',
-                sourceMap: true,
-                sourceMapContents: !isDev
-              }
-            }
-          ]
-        })
+            ]
+          })
+        )
       },
       {
         test: /\.(woff2?|ttf|eot|svg)$/,

@@ -3864,6 +3864,10 @@ extract-text-webpack-plugin@3.0.2:
     schema-utils "^0.3.0"
     webpack-sources "^1.0.1"
 
+extracted-loader@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/extracted-loader/-/extracted-loader-1.0.6.tgz#df214c4062e6c75a19056ca64d003a2cc4c7d13e"
+
 extsprintf@1.3.0, extsprintf@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.3.0.tgz#96918440e3041a7a414f8c52e3c574eb3c3e1e05"

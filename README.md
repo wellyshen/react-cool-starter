@@ -38,9 +38,10 @@ Really cool starter boilerplate with the most popular technologies:
 * [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
 * [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 * [loadable-components](https://github.com/smooth-code/loadable-components) makes React code splitting easy. Reduce your bundle size without stress.
-* [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools) to allow require() work for statics both on client and server.
 * [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 * [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
+* [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for universal usage.
+* [asset-require-hook](https://github.com/aribouius/asset-require-hook) allows your assets files required during runtime for universal usage.
 * [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
 * [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 * [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
@@ -145,8 +146,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── openBrowser                 # Utility for opening Google Chrome
 │   ├── jest                        # Jest CSS modules and assets mocks settings
 │   ├── webpack                     # Webpack settings
-│   │   ├── config.babel.js         # Webpack configuration
-│   │   └── WIT.config.js           # Webpack Isomorphic Tools configuration file
+│   │   └── config.babel.js         # Webpack configuration
 └── index.js                        # App entry point
 ```
 
