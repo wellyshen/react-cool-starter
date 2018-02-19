@@ -13,7 +13,10 @@ export default [
         path: '/',
         exact: true,
         component: asyncHome, // Add your route here
-        loadData: () => [fetchUsersIfNeeded()]
+        loadData: () => [
+          fetchUsersIfNeeded()
+          // Add other pre-fetched actions here
+        ]
       },
       {
         path: '/UserInfo/:id',

@@ -86,6 +86,7 @@ app.get('*', (req, res) => {
             .map(item => store.dispatch(item))
         );
       }
+
       return Promise.resolve(null);
     });
 

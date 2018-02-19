@@ -47,7 +47,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [Flow](https://flowtype.org/) as the static type checker for javascript.
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb + Prettier).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
-* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
+* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
 * Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
 * Split vendor's libraries from client bundle.
 * No other view engines, just javascript based HTML rendering component.
@@ -234,11 +234,10 @@ export default [
     exact: true,
     component: RouteComponent,
     // Actions in the loadData function will be fetched from server-side
-    loadData: dispatch =>
-      Promise.all([
-        // Register your pre-fetched action(s) here
-        dispatch(myReduxAction())
-      ])
+    loadData: () => [
+      myReduxAction()
+      // Add other pre-fetched actions here
+    ]
   }
   // ...
 ];
@@ -256,12 +255,17 @@ app.get('*', (req, res) => {
   const loadBranchData = (): Promise<any> => {
     const branch = matchRoutes(routes, req.path);
 
-    const promises = branch.map(
-      ({ route, match }) =>
-        route.loadData
-          ? route.loadData(store.dispatch, match.params)
-          : Promise.resolve(null)
-    );
+    const promises = branch.map(({ route, match }) => {
+      if (route.loadData) {
+        return Promise.all(
+          route
+            .loadData({ params: match.params, getState: store.getState })
+            .map(item => store.dispatch(item))
+        );
+      }
+
+      return Promise.resolve(null);
+    });
 
     return Promise.all(promises);
   };
