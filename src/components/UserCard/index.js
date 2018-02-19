@@ -6,7 +6,7 @@ import styles from './styles.scss';
 
 type Props = { info: Object };
 
-const UserCard = ({ info }: Props) => (
+export default ({ info }: Props) => (
   <div className={styles.UserCard}>
     <h4>User Card</h4>
     <ul>
@@ -17,5 +17,3 @@ const UserCard = ({ info }: Props) => (
     </ul>
   </div>
 );
-
-export default UserCard;
