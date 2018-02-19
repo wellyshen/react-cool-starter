@@ -78,12 +78,16 @@ app.get('*', (req, res) => {
   const loadBranchData = (): Promise<any> => {
     const branch = matchRoutes(routes, req.path);
 
-    const promises = branch.map(
-      ({ route, match }) =>
-        route.loadData
-          ? route.loadData(store.dispatch, match.params)
-          : Promise.resolve(null)
-    );
+    const promises = branch.map(({ route, match }) => {
+      if (route.loadData) {
+        return Promise.all(
+          route
+            .loadData({ params: match.params, getState: store.getState })
+            .map(item => store.dispatch(item))
+        );
+      }
+      return Promise.resolve(null);
+    });
 
     return Promise.all(promises);
   };
