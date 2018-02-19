@@ -44,6 +44,7 @@ const getPlugins = () => {
       path: path.resolve(process.cwd(), 'public')
     }),
     new ExtractTextPlugin({
+      // Don't use hash in development, we need the persistent for "renderHtml.js"
       filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
       allChunks: true,
       ignoreOrder: CSSModules
