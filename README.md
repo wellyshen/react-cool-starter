@@ -545,7 +545,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-* If you get the the following message in prodcution, try to run `yarn build` to re-generate the `assets.json` file for enable related assets (e.g. javascript, styles etc.) working on universal rendering.
+* If you get the the following message in prodcution, try to run `yarn build` or `yarn start:prodcution` to re-generate the necessary `assets.json` file for enable related assets (e.g. javascript, styles etc.) working on universal rendering.
 
 > Failed to load resource: the server responded with a status of 404 (Not Found)
 
