@@ -1,6 +1,6 @@
 /* @flow */
 
-import type { Dispatch } from './types';
+// import type { Dispatch } from './types';
 import { fetchUsersIfNeeded } from './actions/users';
 import { fetchUserIfNeeded } from './actions/user';
 import { App, asyncHome, asyncUserInfo, NotFound } from './containers';
@@ -13,17 +13,12 @@ export default [
         path: '/',
         exact: true,
         component: asyncHome, // Add your route here
-        loadData: (dispatch: Dispatch) =>
-          Promise.all([
-            dispatch(fetchUsersIfNeeded())
-            // Register other server-side pre-fetched action here
-          ])
+        loadData: () => [fetchUsersIfNeeded()]
       },
       {
         path: '/UserInfo/:id',
         component: asyncUserInfo,
-        loadData: (dispatch: Dispatch, params: Object) =>
-          Promise.all([dispatch(fetchUserIfNeeded(params.id))])
+        loadData: ({ params }: Object) => [fetchUserIfNeeded(params.id)]
       },
       {
         component: NotFound
