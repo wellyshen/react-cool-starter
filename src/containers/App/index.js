@@ -7,7 +7,7 @@ import { hot } from 'react-hot-loader';
 
 import config from '../../config';
 // Import your global styles here
-import '../../../node_modules/normalize.css/normalize.css';
+// import '../../../node_modules/normalize.css/normalize.css';
 import styles from './styles.scss';
 
 type Props = { route: Object };

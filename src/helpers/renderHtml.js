@@ -27,7 +27,7 @@ export default (
         ${head.link.toString()}
 
         <!-- Insert bundled styles into <link> tag in production -->
-        <link href="assets/main.css" media="screen, projection" rel="stylesheet" type="text/css">
+        <link href="/assets/main.css" media="screen, projection" rel="stylesheet" type="text/css">
 
       </head>
       <body>
@@ -45,7 +45,7 @@ export default (
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
-        <script src="assets/main.js"></script>
+        <script src="/assets/main.js"></script>
 
         ${head.script.toString()}
       </body>

@@ -39,9 +39,8 @@ const getPlugins = () => {
   // Common
   const plugins = [
     new ExtractTextPlugin({
-      filename: '[name].[contenthash:8].css',
+      filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
       allChunks: true,
-      disable: isDev, // Disable css extracting on development
       ignoreOrder: CSSModules
     }),
     new webpack.LoaderOptionsPlugin({
@@ -49,7 +48,8 @@ const getPlugins = () => {
         // Javascript lint
         eslint: { failOnError: eslint },
         debug: isDev,
-        minimize: !isDev
+        minimize: !isDev,
+        context: path.resolve(process.cwd(), 'src')
       }
     }),
     // Style lint
@@ -222,7 +222,7 @@ module.exports = {
         options: { limit: 10240 }
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|webp)$/i,
         // Any image below or equal to 10K will be converted to inline base64 instead
         use: [
           {
