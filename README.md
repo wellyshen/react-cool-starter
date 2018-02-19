@@ -126,7 +126,8 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 ```
 .
 ├── public                          # Express server static path/Webpack bundled output
-│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
+│   ├── favicon.ico                 # Favicon is placed in the same path with the main HTML page
+│   └── assets.json                 # A json file with the paths of the bundled assets
 ├── src                             # App source code
 │   ├── config                      # App configuration settings
 │   │   ├── default.js              # Default settings
