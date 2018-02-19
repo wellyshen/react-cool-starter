@@ -229,7 +229,7 @@ module.exports = {
         options: { limit: 10240 }
       },
       {
-        test: /\.(gif|png|jpe?g|webp)$/i,
+        test: /\.(gif|png|jpe?g|webp)$/,
         // Any image below or equal to 10K will be converted to inline base64 instead
         use: [
           {
