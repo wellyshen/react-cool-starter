@@ -39,10 +39,7 @@ const vendor = [
 const getPlugins = () => {
   // Common
   const plugins = [
-    new AssetsPlugin({
-      filename: 'assets.json',
-      path: path.resolve(process.cwd(), 'public')
-    }),
+    new AssetsPlugin({ path: path.resolve(process.cwd(), 'public') }),
     new ExtractTextPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
       filename: isDev ? '[name].css' : '[name].[contenthash:8].css',

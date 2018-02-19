@@ -126,8 +126,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 ```
 .
 ├── public                          # Express server static path/Webpack bundled output
-│   ├── favicon.ico                 # Favicon is placed in the same path with the main HTML page
-│   └── assets.json                 # A json file with the paths of the bundled assets
+│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
 ├── src                             # App source code
 │   ├── config                      # App configuration settings
 │   │   ├── default.js              # Default settings
@@ -546,9 +545,10 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-* If you get the the following message in prodcution, try to run `yarn build` or `yarn start:prodcution` to re-generate the `assets.json` file for enable related assets (e.g. javascript, styles etc.) working on universal rendering.
+* If you get the the following errors, try to run `yarn build` to re-generate the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles etc.) working on universal rendering.
 
-> Failed to load resource: the server responded with a status of 404 (Not Found)
+  * > Cannot find module '../public/assets.json'
+  * > Failed to load resource: the server responded with a status of 404 (Not Found)
 
 * If you encounter the markup mismatches error (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
 

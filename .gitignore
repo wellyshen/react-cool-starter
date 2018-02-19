@@ -4,3 +4,4 @@
 coverage
 node_modules
 public/assets
+public/webpack-assets.json
