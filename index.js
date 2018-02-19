@@ -15,6 +15,7 @@ const sass = require('node-sass');
 const path = require('path');
 
 require('css-modules-require-hook')({
+  // Must use the same pattern with your webpack config
   generateScopedName: '[name]__[local]__[hash:base64:5]',
   extensions: ['.css', '.scss', '.sass'],
   preprocessCss: (data, filename) =>
@@ -22,7 +23,7 @@ require('css-modules-require-hook')({
       data,
       file: filename
     }).css,
-  // Must the same with the "context" of webpack LoaderOptionsPlugin
+  // Must be the same with the "context" of webpack LoaderOptionsPlugin
   // see here: https://github.com/css-modules/css-modules-require-hook/issues/86
   rootDir: path.resolve(process.cwd(), 'src'),
   devMode: __DEV__

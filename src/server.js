@@ -20,6 +20,8 @@ import createHistory from 'history/createMemoryHistory';
 import configureStore from './helpers/configureStore';
 import renderHtml from './helpers/renderHtml';
 import routes from './routes';
+// $FlowFixMe: isn't an issue
+import assets from '../public/assets.json';
 import { port, host } from './config';
 
 const app = express();
@@ -126,15 +128,17 @@ app.get('*', (req, res) => {
         const status = staticContext.status === '404' ? 404 : 200;
 
         // Pass the route and initial state into html template
-        res.status(status).send(
-          renderHtml(
-            head,
-            // assets,
-            htmlContent,
-            initialState,
-            loadableStateTag
-          )
-        );
+        res
+          .status(status)
+          .send(
+            renderHtml(
+              head,
+              assets,
+              htmlContent,
+              initialState,
+              loadableStateTag
+            )
+          );
       });
     } catch (err) {
       res.status(404).send('Not Found :(');

@@ -3,7 +3,7 @@ import { minify } from 'html-minifier';
 
 export default (
   head: Object,
-  // assets: Object,
+  assets: Object,
   htmlContent: string,
   initialState: Object,
   loadableStateTag: string
@@ -26,8 +26,20 @@ export default (
         ${head.meta.toString()}
         ${head.link.toString()}
 
-        <!-- Insert bundled styles into <link> tag in production -->
-        <link href="/assets/main.css" media="screen, projection" rel="stylesheet" type="text/css">
+        <!-- In development, use the pre-defined style (becasue it no hash) -->
+        <!-- In production, insert bundled styles into <link> tag -->
+        ${
+          __DEV__
+            ? '<link href="/assets/main.css" media="screen, projection" rel="stylesheet" type="text/css">'
+            : Object.keys(assets).map(
+                key =>
+                  assets[key].css
+                    ? `<link href="${
+                        assets[key].css
+                      }" media="screen, projection" rel="stylesheet" type="text/css">`
+                    : ''
+              )
+        }
 
       </head>
       <body>
@@ -44,8 +56,15 @@ export default (
           window.__INITIAL_STATE__=${serialize(initialState)};
         </script>
 
-        <!-- Insert bundled scripts into <script> tag -->
-        <script src="/assets/main.js"></script>
+        <!-- In development, use the pre-defined script (becasue it no hash) -->
+        <!-- In production, insert bundled scripts into <script> tag -->
+        ${
+          __DEV__
+            ? '<script src="/assets/main.js"></script>'
+            : Object.keys(assets)
+                .reverse() // Reverse scripts to get correct ordering
+                .map(key => `<script src="${assets[key].js}"></script>`)
+        }
 
         ${head.script.toString()}
       </body>

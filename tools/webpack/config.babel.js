@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import AssetsPlugin from 'assets-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
@@ -38,6 +39,10 @@ const vendor = [
 const getPlugins = () => {
   // Common
   const plugins = [
+    new AssetsPlugin({
+      filename: 'assets.json',
+      path: path.resolve(process.cwd(), 'public')
+    }),
     new ExtractTextPlugin({
       filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
       allChunks: true,
