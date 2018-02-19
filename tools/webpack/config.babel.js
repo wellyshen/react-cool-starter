@@ -53,7 +53,9 @@ const getPlugins = () => {
         // Javascript lint
         eslint: { failOnError: eslint },
         debug: isDev,
-        minimize: !isDev
+        minimize: !isDev,
+        // Setup for accessing css/scss by webpack-isomorphic-tools
+        context: path.resolve(process.cwd(), 'src')
       }
     }),
     // Style lint
@@ -186,7 +188,6 @@ module.exports = {
                 importLoaders: 1,
                 sourceMap: true,
                 modules: CSSModules,
-                context: path.resolve(process.cwd(), 'src'),
                 localIdentName: '[name]__[local]__[hash:base64:5]',
                 minimize: !isDev
               }
@@ -206,7 +207,6 @@ module.exports = {
                 importLoaders: 2,
                 sourceMap: true,
                 modules: CSSModules,
-                context: path.resolve(process.cwd(), 'src'),
                 localIdentName: '[name]__[local]__[hash:base64:5]',
                 minimize: !isDev
               }
