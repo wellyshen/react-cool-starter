@@ -256,7 +256,7 @@
     }
   },
   "dependencies": {
-    "axios": "0.17.1",
+    "axios": "0.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
     "chalk": "2.3.1",
@@ -289,8 +289,8 @@
     "autoprefixer": "8.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "8.2.1",
-    "babel-jest": "22.2.2",
+    "babel-eslint": "8.2.2",
+    "babel-jest": "22.4.0",
     "babel-loader": "^7.1.2",
     "babel-minify-webpack-plugin": "0.3.0",
     "babel-plugin-dynamic-import-node": "^1.2.0",
@@ -327,7 +327,7 @@
     "html-minifier": "^3.5.9",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "4.1.0",
-    "jest": "22.3.0",
+    "jest": "22.4.0",
     "nock": "9.1.6",
     "node-sass": "4.7.2",
     "nodemon": "1.15.1",

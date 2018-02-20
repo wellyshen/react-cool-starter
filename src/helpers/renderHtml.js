@@ -8,6 +8,11 @@ export default (
   initialState: Object,
   loadableStateTag: string
 ): string => {
+  // Use pre-defined assets for development to prevent html from inserting wrong styles / scripts
+  const envAssets = __DEV__
+    ? { main: { js: '/assets/main.js', css: '/assets/main.css' } }
+    : assets;
+
   const html = `
     <!doctype html>
     <html ${head.htmlAttributes.toString()}>
@@ -26,20 +31,15 @@ export default (
         ${head.meta.toString()}
         ${head.link.toString()}
 
-        <!-- In development, use the pre-defined style (becasue it no hash) -->
-        <!-- In production, insert bundled styles into <link> tag -->
-        ${
-          __DEV__
-            ? '<link href="/assets/main.css" media="screen, projection" rel="stylesheet" type="text/css">'
-            : Object.keys(assets).map(
-                key =>
-                  assets[key].css
-                    ? `<link href="${
-                        assets[key].css
-                      }" media="screen, projection" rel="stylesheet" type="text/css">`
-                    : ''
-              )
-        }
+        <!-- Insert bundled styles into <link> tag -->
+        ${Object.keys(envAssets).map(
+          key =>
+            envAssets[key].css
+              ? `<link href="${
+                  envAssets[key].css
+                }" media="screen, projection" rel="stylesheet" type="text/css">`
+              : ''
+        )}
 
       </head>
       <body>
@@ -56,15 +56,10 @@ export default (
           window.__INITIAL_STATE__=${serialize(initialState)};
         </script>
 
-        <!-- In development, use the pre-defined script (becasue it no hash) -->
-        <!-- In production, insert bundled scripts into <script> tag -->
-        ${
-          __DEV__
-            ? '<script src="/assets/main.js"></script>'
-            : Object.keys(assets)
-                .reverse() // Reverse scripts to get correct ordering
-                .map(key => `<script src="${assets[key].js}"></script>`)
-        }
+        <!-- Insert bundled scripts into <script> tag -->
+        ${Object.keys(envAssets)
+          .reverse() // Reverse scripts to get correct ordering
+          .map(key => `<script src="${envAssets[key].js}"></script>`)}
 
         ${head.script.toString()}
       </body>
