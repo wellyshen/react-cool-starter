@@ -1,52 +1,11 @@
 /* @flow */
 
-import axios from 'axios';
-
-import type { Dispatch, GetState, ThunkAction, ReduxState } from '../types';
-
-const API_URL = 'https://jsonplaceholder.typicode.com/users';
-
-// Export this for unit testing more easily
 /* istanbul ignore next */
-export const fetchUsers = (URL: string = API_URL): ThunkAction => async (
-  dispatch: Dispatch
-) => {
-  dispatch({ type: 'USERS_REQUESTING' });
-
-  try {
-    const res = await axios.get(URL);
-
-    /* istanbul ignore next */
-    dispatch({ type: 'USERS_SUCCESS', data: res.data });
-  } catch (err) {
-    /* istanbul ignore next */
-    dispatch({ type: 'USERS_FAILURE', err: err.message });
-  }
-};
+export const fetchUsers = () => ({
+  types: 'USERS',
+  url: '/users',
+  method: 'get'
+});
 
 /* istanbul ignore next */
-const shouldFetchUsers = (state: ReduxState): boolean => {
-  // In development, we will allow action dispatching
-  // or your reducer hot reloading won't updated on the view
-  if (__DEV__) return true;
-
-  // Fetching data once in production
-  if (state.home.readyStatus === 'USERS_SUCCESS') return false;
-
-  return true;
-};
-
-/* istanbul ignore next */
-export const fetchUsersIfNeeded = (): ThunkAction => (
-  dispatch: Dispatch,
-  getState: GetState
-) => {
-  /* istanbul ignore next */
-  if (shouldFetchUsers(getState())) {
-    /* istanbul ignore next */
-    return dispatch(fetchUsers());
-  }
-
-  /* istanbul ignore next */
-  return null;
-};
+export const fetchUsersIfNeeded = () => fetchUsers();

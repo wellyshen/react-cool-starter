@@ -9,16 +9,18 @@ import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
 import * as actionUsers from '../../actions/users';
-import type { Home as HomeType, Dispatch, ReduxState } from '../../types';
+import type { Home as HomeType, ReduxState } from '../../types';
 import { UserList } from '../../components';
 import styles from './styles.scss';
 
-type Props = { home: HomeType, fetchUsersIfNeeded: () => void };
+type Props = { home: HomeType, fetchUsers: () => void };
 
 // Export this for unit testing more easily
 export class Home extends PureComponent<Props> {
   componentDidMount() {
-    this.props.fetchUsersIfNeeded();
+    if (this.props.home.readyStatus !== 'USERS_SUCCESS') {
+      this.props.fetchUsers();
+    }
   }
 
   renderUserList = () => {
@@ -49,9 +51,9 @@ export class Home extends PureComponent<Props> {
 
 const connector: Connector<{}, Props> = connect(
   ({ home }: ReduxState) => ({ home }),
-  (dispatch: Dispatch) => ({
-    fetchUsersIfNeeded: () => dispatch(actionUsers.fetchUsersIfNeeded())
-  })
+  {
+    fetchUsers: actionUsers.fetchUsers
+  }
 );
 
 // Enable hot reloading for async componet
