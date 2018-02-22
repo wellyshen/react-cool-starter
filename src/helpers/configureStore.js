@@ -20,6 +20,8 @@ export default (history: Object, initialState: Object = {}): Store => {
         return next(action);
       }
 
+      const headers = {};
+      const { method, url } = action;
       next({
         ...action,
         type: `${action.types}_REQUESTING`
@@ -28,8 +30,9 @@ export default (history: Object, initialState: Object = {}): Store => {
         return (async () => {
           const res = await axios({
             baseURL: config.baseURL,
-            method: action.method,
-            url: action.url
+            method,
+            url,
+            headers
           });
           return next({
             ...action,
