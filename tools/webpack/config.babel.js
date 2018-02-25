@@ -130,9 +130,6 @@ const getEntry = () => {
 
 // Webpack configuration
 module.exports = {
-  name: 'client',
-  target: 'web',
-  cache: isDev,
   devtool: isDev ? 'cheap-module-source-map' : 'hidden-source-map',
   context: path.resolve(process.cwd()),
   entry: getEntry(),
@@ -246,6 +243,7 @@ module.exports = {
     ]
   },
   plugins: getPlugins(),
+  /* Advanced configuration */
   resolveLoader: {
     // Use loaders without the -loader suffix
     moduleExtensions: ['-loader']
@@ -255,6 +253,7 @@ module.exports = {
     descriptionFiles: ['package.json'],
     extensions: ['.js', '.jsx', '.json']
   },
+  cache: isDev,
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   // https://webpack.github.io/docs/configuration.html#node
