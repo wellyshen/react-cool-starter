@@ -34,13 +34,18 @@ export default (history: Object, initialState: Object = {}): Store => {
       })
         .then(res => {
           next({
+            ...action,
             type: `${action.types}_SUCCESS`,
             data: res.data
           });
           return Promise.resolve(res);
         })
         .catch(error => {
-          next({ type: `${action.types}_FAILURE`, data: error.message });
+          next({
+            ...action,
+            type: `${action.types}_FAILURE`,
+            data: error.message
+          });
           return Promise.reject(error);
         });
     }
