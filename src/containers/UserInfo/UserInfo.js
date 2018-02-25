@@ -9,26 +9,23 @@ import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
 import * as usersAction from '../../actions/user';
-import type {
-  UserInfo as UserInfoType,
-  Dispatch,
-  ReduxState
-} from '../../types';
+import type { UserInfo as UserInfoType, ReduxState } from '../../types';
 import { UserCard } from '../../components';
 import styles from './styles.scss';
 
 type Props = {
   userInfo: UserInfoType,
   match: Object,
-  fetchUserIfNeeded: (id: string) => void
+  fetchUser: (id: string) => void
 };
 
 // Export this for unit testing more easily
 export class UserInfo extends PureComponent<Props> {
   componentDidMount() {
-    const { fetchUserIfNeeded, match } = this.props;
-
-    fetchUserIfNeeded(match.params.id);
+    const { fetchUser, match } = this.props;
+    if (!this.props.userInfo[match.params.id]) {
+      fetchUser(match.params.id);
+    }
   }
 
   renderUserCard = () => {
@@ -56,10 +53,9 @@ export class UserInfo extends PureComponent<Props> {
 
 const connector: Connector<{}, Props> = connect(
   ({ userInfo }: ReduxState) => ({ userInfo }),
-  (dispatch: Dispatch) => ({
-    fetchUserIfNeeded: (id: string) =>
-      dispatch(usersAction.fetchUserIfNeeded(id))
-  })
+  {
+    fetchUser: usersAction.fetchUser
+  }
 );
 
 // Enable hot reloading for async componet

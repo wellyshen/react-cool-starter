@@ -13,5 +13,6 @@ module.exports = {
         content: 'The best react universal starter boilerplate in the world.'
       }
     ]
-  }
+  },
+  baseURL: 'https://jsonplaceholder.typicode.com'
 };
