@@ -26,43 +26,23 @@ export default (history: Object, initialState: Object = {}): Store => {
         ...action,
         type: `${action.types}_REQUESTING`
       });
-      try {
-        return (async () => {
-          const res = await axios({
-            baseURL: config.baseURL,
-            method,
-            url,
-            headers
-          });
-          return next({
-            ...action,
+      return axios({
+        baseURL: config.baseURL,
+        method,
+        url,
+        headers
+      })
+        .then(res => {
+          next({
             type: `${action.types}_SUCCESS`,
             data: res.data
           });
-        })();
-      } catch (error) {
-        return next({
-          ...action,
-          type: `${action.types}_FAILURE`,
-          data: error.message
+          return Promise.resolve(res);
+        })
+        .catch(error => {
+          next({ type: `${action.types}_FAILURE`, data: error.message });
+          return Promise.reject(error);
         });
-      }
-      // return axios({
-      // baseURL: config.baseURL,
-      //   method: action.method,
-      //   url: action.url
-      // })
-      //   .then(res => {
-      //     next({
-      //       type: `${action.types}_SUCCESS`,
-      //       data: res.data
-      //     });
-      //     return Promise.resolve(res);
-      //   })
-      //   .catch(error => {
-      //     next({ type: `${action.types}_FAILURE`, data: error.message });
-      //     return Promise.reject(error);
-      //   });
     }
     // Add other middlewares here
   ];
