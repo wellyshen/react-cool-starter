@@ -34,16 +34,6 @@ exports[`<Home /> renders the <UserList /> if loading was successful 1`] = `
 </div>
 `;
 
-exports[`<Home /> renders the loading status if data invalid 1`] = `
-<div
-  className="Home"
->
-  <p>
-    Loading...
-  </p>
-</div>
-`;
-
 exports[`<Home /> renders the loading status if requesting data 1`] = `
 <div
   className="Home"

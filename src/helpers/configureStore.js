@@ -2,8 +2,7 @@
 
 import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import axios from 'axios';
-import config from 'config';
+import { simpleActionMiddleware } from 'helpers/storeMiddlewares';
 
 import type { Store } from '../types';
 import rootReducer from '../reducers';
@@ -11,44 +10,7 @@ import rootReducer from '../reducers';
 export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
     routerMiddleware(history),
-    ({ dispatch, getState }) => next => action => {
-      if (typeof action === 'function') {
-        return action(dispatch, getState);
-      }
-
-      if (!action.types) {
-        return next(action);
-      }
-
-      const headers = {};
-      const { method, url } = action;
-      next({
-        ...action,
-        type: `${action.types}_REQUESTING`
-      });
-      return axios({
-        baseURL: config.baseURL,
-        method,
-        url,
-        headers
-      })
-        .then(res => {
-          next({
-            ...action,
-            type: `${action.types}_SUCCESS`,
-            data: res.data
-          });
-          return Promise.resolve(res);
-        })
-        .catch(error => {
-          next({
-            ...action,
-            type: `${action.types}_FAILURE`,
-            data: error.message
-          });
-          return Promise.reject(error);
-        });
-    }
+    simpleActionMiddleware
     // Add other middlewares here
   ];
   const composeEnhancers =

@@ -15,13 +15,13 @@ describe('<UserInfo />', () => {
       )
       .toJSON();
 
-  test('should call fetchUserIfNeeded when componentDidMount', () => {
+  test('should call fetchUser when componentDidMount', () => {
     const mockAction = jest.fn();
     const props = {
       userInfo: {},
       match: { params: { id: 1 } }
     };
-    const actions = { fetchUserIfNeeded: mockAction };
+    const actions = { fetchUser: mockAction };
 
     mount(
       <StaticRouter context={{}}>
@@ -37,7 +37,7 @@ describe('<UserInfo />', () => {
       userInfo: {},
       match: { params: { id: 1 } }
     };
-    const actions = { fetchUserIfNeeded: () => {} };
+    const actions = { fetchUser: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
@@ -47,7 +47,7 @@ describe('<UserInfo />', () => {
       userInfo: { 1: { readyStatus: 'USER_REQUESTING' } },
       match: { params: { id: 1 } }
     };
-    const actions = { fetchUserIfNeeded: () => {} };
+    const actions = { fetchUser: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
@@ -57,7 +57,7 @@ describe('<UserInfo />', () => {
       userInfo: { 1: { readyStatus: 'USER_FAILURE' } },
       match: { params: { id: 1 } }
     };
-    const actions = { fetchUserIfNeeded: () => {} };
+    const actions = { fetchUser: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
@@ -77,7 +77,7 @@ describe('<UserInfo />', () => {
       },
       match: { params: { id: 1 } }
     };
-    const actions = { fetchUserIfNeeded: () => {} };
+    const actions = { fetchUser: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });

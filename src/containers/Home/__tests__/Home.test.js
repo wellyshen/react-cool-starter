@@ -15,13 +15,13 @@ describe('<Home />', () => {
       )
       .toJSON();
 
-  test('should call fetchUsersIfNeeded when componentDidMount', () => {
+  test('should call fetchUsers when componentDidMount', () => {
     const mockAction = jest.fn();
     const props = {
       home: {}
     };
     const actions = {
-      fetchUsersIfNeeded: mockAction
+      fetchUsers: mockAction
     };
 
     mount(
@@ -33,20 +33,11 @@ describe('<Home />', () => {
     expect(mockAction).toHaveBeenCalled();
   });
 
-  test('renders the loading status if data invalid', () => {
-    const props = {
-      home: { readyStatus: 'USERS_INVALID' }
-    };
-    const actions = { fetchUsersIfNeeded: () => {} };
-
-    expect(tree(props, actions)).toMatchSnapshot();
-  });
-
   test('renders the loading status if requesting data', () => {
     const props = {
       home: { readyStatus: 'USERS_REQUESTING' }
     };
-    const actions = { fetchUsersIfNeeded: () => {} };
+    const actions = { fetchUsers: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
@@ -55,7 +46,7 @@ describe('<Home />', () => {
     const props = {
       home: { readyStatus: 'USERS_FAILURE' }
     };
-    const actions = { fetchUsersIfNeeded: () => {} };
+    const actions = { fetchUsers: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
@@ -67,7 +58,7 @@ describe('<Home />', () => {
         list: [{ id: '1', name: 'Welly' }]
       }
     };
-    const actions = { fetchUsersIfNeeded: () => {} };
+    const actions = { fetchUsers: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });

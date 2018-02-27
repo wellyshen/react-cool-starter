@@ -1,17 +1,17 @@
 import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 import axios from 'axios';
 import httpAdapter from 'axios/lib/adapters/http';
 import nock from 'nock';
 
 import { fetchUser } from '../user';
+import { simpleActionMiddleware } from '../../helpers/storeMiddlewares';
 
 const host = 'http://localhost';
 
 axios.defaults.host = host;
 axios.defaults.adapter = httpAdapter;
 
-const mockStore = configureMockStore([thunk]);
+const mockStore = configureMockStore([simpleActionMiddleware]);
 
 describe('fetch user data', () => {
   const userId = 'test';
@@ -38,7 +38,7 @@ describe('fetch user data', () => {
     ];
     const store = mockStore({ info: null });
 
-    store.dispatch(fetchUser('test', host)).then(() => {
+    store.dispatch(fetchUser(userId)).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
