@@ -2,7 +2,7 @@
 
 import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { simpleActionMiddleware } from 'helpers/storeMiddlewares';
+import { simpleActionMiddleware } from './storeMiddlewares';
 
 import type { Store } from '../types';
 import rootReducer from '../reducers';
