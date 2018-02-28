@@ -103,7 +103,7 @@ app.get('*', (req, res) => {
       let currentValue;
       const unsubscribe = store.subscribe(() => {
         let previousValue = currentValue;
-        currentValue = store.getState().home.requesting;
+        currentValue = store.getState().server.requesting;
         if ((previousValue !== currentValue) && (previousValue && currentValue === false)) {
           unsubscribe();
           const initialState = store.getState();
