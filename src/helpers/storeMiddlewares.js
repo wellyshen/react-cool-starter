@@ -15,6 +15,10 @@ export const simpleActionMiddleware = ({
 
   const headers = {};
   const { method, url } = action;
+  dispatch({
+    type: 'REQUESTING_SERVER',
+    data: true
+  });
   next({
     ...action,
     type: `${action.types}_REQUESTING`
@@ -26,6 +30,10 @@ export const simpleActionMiddleware = ({
     headers
   })
     .then(res => {
+      dispatch({
+        type: 'REQUESTING_SERVER',
+        data: false
+      });
       next({
         ...action,
         type: `${action.types}_SUCCESS`,
@@ -34,6 +42,10 @@ export const simpleActionMiddleware = ({
       return Promise.resolve(res);
     })
     .catch(error => {
+      dispatch({
+        type: 'REQUESTING_SERVER',
+        data: false
+      });
       next({
         ...action,
         type: `${action.types}_FAILURE`,
