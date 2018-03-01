@@ -15,14 +15,17 @@ export const simpleActionMiddleware = ({
 
   const headers = {};
   const { method, url } = action;
-  dispatch({
-    type: 'REQUESTING_SERVER',
-    data: true
-  });
+
   next({
     ...action,
     type: `${action.types}_REQUESTING`
   });
+  if (!getState().server.requesting && __SERVER__) {
+    dispatch({
+      type: 'REQUESTING_SERVER',
+      data: true
+    });
+  }
   return axios({
     baseURL: config.baseURL,
     method,
@@ -30,27 +33,31 @@ export const simpleActionMiddleware = ({
     headers
   })
     .then(res => {
-      dispatch({
-        type: 'REQUESTING_SERVER',
-        data: false
-      });
       next({
         ...action,
         type: `${action.types}_SUCCESS`,
         data: res.data
       });
+      if (getState().server.requesting && __SERVER__) {
+        dispatch({
+          type: 'REQUESTING_SERVER',
+          data: false
+        });
+      }
       return Promise.resolve(res);
     })
     .catch(error => {
-      dispatch({
-        type: 'REQUESTING_SERVER',
-        data: false
-      });
       next({
         ...action,
         type: `${action.types}_FAILURE`,
         data: error.message
       });
+      if (getState().server.requesting && __SERVER__) {
+        dispatch({
+          type: 'REQUESTING_SERVER',
+          data: false
+        });
+      }
       return Promise.reject(error);
     });
 };

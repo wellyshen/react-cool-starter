@@ -100,13 +100,14 @@ app.get('*', (req, res) => {
 
       // Check page status
       const status = staticContext.status === '404' ? 404 : 200;
+      // Subscribe store for load all datas in componentWillMount and then renderHtml
       let currentValue;
       const unsubscribe = store.subscribe(() => {
+        const state = store.getState();
         let previousValue = currentValue;
-        currentValue = store.getState().server.requesting;
+        currentValue = state.server.requesting;
         if ((previousValue !== currentValue) && (previousValue && currentValue === false)) {
           unsubscribe();
-          const initialState = store.getState();
           const head = Helmet.renderStatic();
           const htmlContent = renderToString(AppComponent);
           const loadableStateTag = loadableState.getScriptTag();
@@ -118,7 +119,7 @@ app.get('*', (req, res) => {
               head,
               assets,
               htmlContent,
-              initialState,
+              state,
               loadableStateTag
             )
           );
