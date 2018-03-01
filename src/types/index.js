@@ -20,6 +20,10 @@ export type UserInfo = {
   }
 };
 
+export type Server = {
+  +info: Boolean
+};
+
 // State
 type $ExtractFunctionReturn = <V>(v: (...args: any) => V) => V; // eslint-disable-line no-undef
 export type ReduxState = $ObjMap<Reducers, $ExtractFunctionReturn>; // eslint-disable-line no-undef

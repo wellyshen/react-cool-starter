@@ -2,9 +2,9 @@
 
 import fp from 'lodash/fp';
 
-import type { Home, Action } from '../types';
+import type { Server, Action } from '../types';
 
-type State = Home;
+type State = Server;
 
 const initialState = {
   requesting: false
