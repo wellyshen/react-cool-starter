@@ -21,7 +21,7 @@ type Props = {
 
 // Export this for unit testing more easily
 export class UserInfo extends PureComponent<Props> {
-  componentDidMount() {
+  componentWillMount() {
     const { fetchUser, match } = this.props;
     if (!this.props.userInfo[match.params.id]) {
       fetchUser(match.params.id);

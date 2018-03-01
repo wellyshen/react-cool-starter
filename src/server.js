@@ -11,7 +11,7 @@ import favicon from 'serve-favicon';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { renderRoutes, matchRoutes } from 'react-router-config';
+import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import { getLoadableState } from 'loadable-components/server';
 import Helmet from 'react-helmet';
@@ -74,79 +74,75 @@ if (!__DEV__) {
 app.get('*', (req, res) => {
   const history = createHistory();
   const store = configureStore(history);
+  try {
 
-  // The method for loading data from server-side
-  const loadBranchData = (): Promise<any> => {
-    const branch = matchRoutes(routes, req.path);
+    const staticContext = {};
+    const AppComponent = (
+      <Provider store={store}>
+        {/* Setup React-Router server-side rendering */}
+        <StaticRouter location={req.path} context={staticContext}>
+          {renderRoutes(routes)}
+        </StaticRouter>
+      </Provider>
+    );
 
-    const promises = branch.map(({ route, match }) => {
-      if (route.loadData) {
-        return Promise.all(
-          route
-            .loadData({ params: match.params, getState: store.getState })
-            .map(item => store.dispatch(item))
-        );
-      }
+    // Check if the render result contains a redirect, if so we need to set
+    // the specific status and redirect header and end the response
+    if (staticContext.url) {
+      res.status(301).setHeader('Location', staticContext.url);
+      res.end();
 
-      return Promise.resolve(null);
-    });
-
-    return Promise.all(promises);
-  };
-
-  (async () => {
-    try {
-      // Load data from server-side first
-      await loadBranchData();
-
-      const staticContext = {};
-      const AppComponent = (
-        <Provider store={store}>
-          {/* Setup React-Router server-side rendering */}
-          <StaticRouter location={req.path} context={staticContext}>
-            {renderRoutes(routes)}
-          </StaticRouter>
-        </Provider>
-      );
-
-      // Check if the render result contains a redirect, if so we need to set
-      // the specific status and redirect header and end the response
-      if (staticContext.url) {
-        res.status(301).setHeader('Location', staticContext.url);
-        res.end();
-
-        return;
-      }
-
-      // Extract loadable state from application tree (loadable-components setup)
-      getLoadableState(AppComponent).then(loadableState => {
-        const head = Helmet.renderStatic();
-        const htmlContent = renderToString(AppComponent);
-        const initialState = store.getState();
-        const loadableStateTag = loadableState.getScriptTag();
-
-        // Check page status
-        const status = staticContext.status === '404' ? 404 : 200;
-
-        // Pass the route and initial state into html template
-        res
-          .status(status)
-          .send(
-            renderHtml(
-              head,
-              assets,
-              htmlContent,
-              initialState,
-              loadableStateTag
-            )
-          );
-      });
-    } catch (err) {
-      res.status(404).send('Not Found :(');
-
-      console.error(chalk.red(`==> 😭  Rendering routes error: ${err}`));
+      return;
     }
-  })();
+
+
+
+    // Extract loadable state from application tree (loadable-components setup)
+    getLoadableState(AppComponent).then(loadableState => {
+
+      const renderApp = () => {
+        const head = Helmet.renderStatic();
+        const initialState = store.getState();
+        const htmlContent = renderToString(AppComponent);
+        const loadableStateTag = loadableState.getScriptTag();
+        // Pass the route and initial state into html template
+        return res
+        .status(status)
+        .send(
+          renderHtml(
+            head,
+            assets,
+            htmlContent,
+            initialState,
+            loadableStateTag
+          )
+        );
+      };
+
+      // Check page status
+      const status = staticContext.status === '404' ? 404 : 200;
+      // Subscribe store for load all datas in componentWillMount and then renderHtml
+      if (store.getState().server.requesting) {
+        let currentValue;
+        const unsubscribe = store.subscribe(() => {
+          const state = store.getState();
+          let previousValue = currentValue;
+          currentValue = state.server.requesting;
+          if ((previousValue !== currentValue) && (previousValue && currentValue === false)) {
+            unsubscribe();
+            return renderApp();
+          }
+        });
+    } else {
+      return renderApp();
+    }
+
+    });
+  } catch (err) {
+    res.status(404).send('Not Found :(');
+
+    console.error(chalk.red(`==> 😭  Rendering routes error: ${err}`));
+  }
 });
 
 if (port) {

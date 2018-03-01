@@ -17,7 +17,7 @@ type Props = { home: HomeType, fetchUsers: () => void };
 
 // Export this for unit testing more easily
 export class Home extends PureComponent<Props> {
-  componentDidMount() {
+  componentWillMount() {
     if (this.props.home.readyStatus !== 'USERS_SUCCESS') {
       this.props.fetchUsers();
     }

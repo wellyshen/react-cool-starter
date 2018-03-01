@@ -5,10 +5,12 @@ import { routerReducer as router } from 'react-router-redux';
 
 import home from './home';
 import userInfo from './userInfo';
+import server from './server.reducer';
 
 const reducers = {
   home,
   userInfo,
+  server,
   router
 };
 
