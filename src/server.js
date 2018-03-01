@@ -95,36 +95,47 @@ app.get('*', (req, res) => {
       return;
     }
 
+
+
     // Extract loadable state from application tree (loadable-components setup)
     getLoadableState(AppComponent).then(loadableState => {
+
+      const renderApp = () => {
+        const head = Helmet.renderStatic();
+        const initialState = store.getState();
+        const htmlContent = renderToString(AppComponent);
+        const loadableStateTag = loadableState.getScriptTag();
+        // Pass the route and initial state into html template
+        return res
+        .status(status)
+        .send(
+          renderHtml(
+            head,
+            assets,
+            htmlContent,
+            initialState,
+            loadableStateTag
+          )
+        );
+      };
 
       // Check page status
       const status = staticContext.status === '404' ? 404 : 200;
       // Subscribe store for load all datas in componentWillMount and then renderHtml
-      let currentValue;
-      const unsubscribe = store.subscribe(() => {
-        const state = store.getState();
-        let previousValue = currentValue;
-        currentValue = state.server.requesting;
-        if ((previousValue !== currentValue) && (previousValue && currentValue === false)) {
-          unsubscribe();
-          const head = Helmet.renderStatic();
-          const htmlContent = renderToString(AppComponent);
-          const loadableStateTag = loadableState.getScriptTag();
-          // Pass the route and initial state into html template
-          return res
-          .status(status)
-          .send(
-            renderHtml(
-              head,
-              assets,
-              htmlContent,
-              state,
-              loadableStateTag
-            )
-          );
-        }
-      });
+      if (store.getState().server.requesting) {
+        let currentValue;
+        const unsubscribe = store.subscribe(() => {
+          const state = store.getState();
+          let previousValue = currentValue;
+          currentValue = state.server.requesting;
+          if ((previousValue !== currentValue) && (previousValue && currentValue === false)) {
+            unsubscribe();
+            return renderApp();
+          }
+        });
+    } else {
+      return renderApp();
+    }
 
     });
   } catch (err) {
