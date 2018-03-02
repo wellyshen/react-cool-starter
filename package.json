@@ -137,7 +137,7 @@
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": ["plugin:lodash-fp/recommended", "airbnb", "prettier"],
-    "plugins": ["lodash-fp", "react", "jsx-a11y", "import", "prettier"],
+    "plugins": ["lodash-fp", "react", "prettier"],
     "settings": {
       "import/resolver": {
         "webpack": {
@@ -153,6 +153,7 @@
     },
     "rules": {
       "global-require": 0,
+      "no-console": 0,
       "no-underscore-dangle": 0,
       "function-paren-newline": 0,
       "react/jsx-filename-extension": [
