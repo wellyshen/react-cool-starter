@@ -154,7 +154,6 @@
     "rules": {
       "global-require": 0,
       "no-underscore-dangle": 0,
-      "no-console": 0,
       "function-paren-newline": 0,
       "react/jsx-filename-extension": [
         1,
