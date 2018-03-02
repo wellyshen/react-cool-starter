@@ -152,12 +152,12 @@
       "es6": true
     },
     "rules": {
-      "global-require": 0,
-      "no-console": 0,
-      "no-underscore-dangle": 0,
-      "function-paren-newline": 0,
+      "global-require": "off",
+      "no-console": "off",
+      "no-underscore-dangle": "off",
+      "function-paren-newline": "off",
       "react/jsx-filename-extension": [
-        1,
+        "error",
         {
           "extensions": [".js", ".jsx"]
         }
@@ -174,8 +174,8 @@
           "specialLink": ["to"]
         }
       ],
-      "lodash-fp/use-fp": 0,
-      "lodash-fp/consistent-name": 0,
+      "lodash-fp/use-fp": "off",
+      "lodash-fp/consistent-name": "off",
       "prettier/prettier": [
         "error",
         {
