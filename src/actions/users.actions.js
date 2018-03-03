@@ -8,4 +8,9 @@ export const fetchUser = (userId: string) => ({
   userId
 });
 
-export const fetchUserIfNeeded = (params: string) => fetchUser(params);
+/* istanbul ignore next */
+export const fetchUsers = () => ({
+  types: 'USERS',
+  url: '/users',
+  method: 'get'
+});

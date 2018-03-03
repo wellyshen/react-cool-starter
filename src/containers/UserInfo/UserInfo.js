@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
-import * as usersAction from '../../actions/user';
+import * as usersAction from '../../actions/users.actions';
 import type { UserInfo as UserInfoType, ReduxState } from '../../types';
 import { UserCard } from '../../components';
 import styles from './styles.scss';
