@@ -15,7 +15,7 @@ describe('<UserInfo />', () => {
       )
       .toJSON();
 
-  test('should call fetchUser when componentDidMount', () => {
+  test('should call fetchUser when componentWillMount', () => {
     const mockAction = jest.fn();
     const props = {
       userInfo: {},

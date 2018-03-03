@@ -9,34 +9,34 @@ import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
 import * as actionUsers from '../../actions/users.actions';
-import type { Home as HomeType, ReduxState } from '../../types';
+import type { Users as UsersType, ReduxState } from '../../types';
 import { UserList } from '../../components';
 import styles from './styles.scss';
 
-type Props = { home: HomeType, fetchUsers: () => void };
+type Props = { users: UsersType, fetchUsers: () => void };
 
 // Export this for unit testing more easily
 export class Home extends PureComponent<Props> {
   componentWillMount() {
-    if (this.props.home.readyStatus !== 'USERS_SUCCESS') {
+    if (this.props.users.readyStatus !== 'USERS_SUCCESS') {
       this.props.fetchUsers();
     }
   }
 
   renderUserList = () => {
-    const { home } = this.props;
+    const { users } = this.props;
 
     if (
-      !home.readyStatus ||
-      home.readyStatus === 'USERS_INVALID' ||
-      home.readyStatus === 'USERS_REQUESTING'
+      !users.readyStatus ||
+      users.readyStatus === 'USERS_INVALID' ||
+      users.readyStatus === 'USERS_REQUESTING'
     ) {
       return <p>Loading...</p>;
-    } else if (home.readyStatus === 'USERS_FAILURE') {
+    } else if (users.readyStatus === 'USERS_FAILURE') {
       return <p>Oops, Failed to load list!</p>;
     }
 
-    return <UserList list={home.list} />;
+    return <UserList list={users.list} />;
   };
 
   render() {
@@ -50,7 +50,7 @@ export class Home extends PureComponent<Props> {
 }
 
 const connector: Connector<{}, Props> = connect(
-  ({ home }: ReduxState) => ({ home }),
+  ({ users }: ReduxState) => ({ users }),
   {
     fetchUsers: actionUsers.fetchUsers
   }

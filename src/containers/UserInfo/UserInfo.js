@@ -9,12 +9,12 @@ import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
 
 import * as usersAction from '../../actions/users.actions';
-import type { UserInfo as UserInfoType, ReduxState } from '../../types';
+import type { Users as UsersType, ReduxState } from '../../types';
 import { UserCard } from '../../components';
 import styles from './styles.scss';
 
 type Props = {
-  userInfo: UserInfoType,
+  userInfo: UsersType,
   match: Object,
   fetchUser: (id: string) => void
 };
@@ -52,7 +52,7 @@ export class UserInfo extends PureComponent<Props> {
 }
 
 const connector: Connector<{}, Props> = connect(
-  ({ userInfo }: ReduxState) => ({ userInfo }),
+  ({ users }: ReduxState) => ({ userInfo: users.userInfo }),
   {
     fetchUser: usersAction.fetchUser
   }

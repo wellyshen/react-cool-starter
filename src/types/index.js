@@ -6,17 +6,16 @@ import type { Store as ReduxStore } from 'redux';
 import type { Reducers } from '../reducers';
 
 // Reducers
-export type Home = {
+export type Users = {
   +readyStatus: string,
   +err: any,
-  +list: Array<Object>
-};
-
-export type UserInfo = {
-  +[userId: string]: {
-    +readyStatus: string,
-    +err: any,
-    +info: Object
+  +list: Array<Object>,
+  +userInfo: {
+    +[userId: string]: {
+      +readyStatus: string,
+      +err: any,
+      +info: Object
+    }
   }
 };
 

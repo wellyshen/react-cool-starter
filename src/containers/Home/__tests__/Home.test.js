@@ -15,10 +15,12 @@ describe('<Home />', () => {
       )
       .toJSON();
 
-  test('should call fetchUsers when componentDidMount', () => {
+  test('should call fetchUsers when componentWillMount', () => {
     const mockAction = jest.fn();
     const props = {
-      home: {}
+      users: {
+        readyStatus: 'USERS_INVALID'
+      }
     };
     const actions = {
       fetchUsers: mockAction
@@ -35,7 +37,7 @@ describe('<Home />', () => {
 
   test('renders the loading status if requesting data', () => {
     const props = {
-      home: { readyStatus: 'USERS_REQUESTING' }
+      users: { readyStatus: 'USERS_REQUESTING' }
     };
     const actions = { fetchUsers: () => {} };
 
@@ -44,7 +46,7 @@ describe('<Home />', () => {
 
   test('renders an error if loading failed', () => {
     const props = {
-      home: { readyStatus: 'USERS_FAILURE' }
+      users: { readyStatus: 'USERS_FAILURE' }
     };
     const actions = { fetchUsers: () => {} };
 
@@ -53,7 +55,7 @@ describe('<Home />', () => {
 
   test('renders the <UserList /> if loading was successful', () => {
     const props = {
-      home: {
+      users: {
         readyStatus: 'USERS_SUCCESS',
         list: [{ id: '1', name: 'Welly' }]
       }
