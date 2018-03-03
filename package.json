@@ -209,7 +209,8 @@
   "jest": {
     "setupFiles": ["raf/polyfill", "<rootDir>/tools/jest/setup.js"],
     "globals": {
-      "__DEV__": true
+      "__DEV__": true,
+      "__SERVER__": false
     },
     "collectCoverageFrom": [
       "src/containers/App/App.js",
