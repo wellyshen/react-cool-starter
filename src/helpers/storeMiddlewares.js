@@ -20,7 +20,6 @@ export const simpleActionMiddleware = ({
     ...action,
     type: `${action.types}_REQUESTING`
   });
-  console.log(getState());
   if (!getState().server.requesting && __SERVER__) {
     dispatch({
       type: 'REQUESTING_SERVER',
