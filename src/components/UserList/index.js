@@ -12,9 +12,9 @@ export default ({ list }: Props) => (
   <div className={styles.UserList}>
     <h4>User List</h4>
     <ul>
-      {list.map(user => (
-        <li key={user.id}>
-          <Link to={`/UserInfo/${user.id}`}>{user.name}</Link>
+      {list.map(({ id, name }) => (
+        <li key={id}>
+          <Link to={`/UserInfo/${id}`}>{name}</Link>
         </li>
       ))}
     </ul>
