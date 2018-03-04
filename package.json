@@ -205,7 +205,6 @@
       ]
     }
   },
-  "browserslist": ["> 1%", "last 2 versions", "ie >= 11", "safari >= 7"],
   "jest": {
     "setupFiles": ["raf/polyfill", "<rootDir>/tools/jest/setup.js"],
     "globals": {
@@ -228,6 +227,16 @@
         "<rootDir>/tools/jest/assetMock.js"
     }
   },
+  "nodemonConfig": {
+    "watch": [
+      "package.json",
+      "index.js",
+      "tools/webpack/",
+      "src/server.js",
+      "src/helpers/renderHtml.js"
+    ]
+  },
+  "browserslist": ["> 1%", "last 2 versions", "ie >= 11", "safari >= 7"],
   "dependencies": {
     "axios": "0.18.0",
     "babel-polyfill": "^6.26.0",

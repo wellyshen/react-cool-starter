@@ -1,9 +1,0 @@
-{
-  "watch": [
-    "package.json",
-    "index.js",
-    "tools/webpack/",
-    "src/server.js",
-    "src/helpers/renderHtml.js"
-  ]
-}
