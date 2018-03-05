@@ -109,7 +109,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 | `start:production` | Bundle files to `./public/assets` and run it on the production server at `localhost:8080`. |
 | `start:prod`       | Run your app on the production server only at `localhost:8080`.                            |
 | `build`            | Remove the previous bundled files and bundle it to `./public/assets`.                      |
-| `build:stats`      | Viusalize the contents of all your bundles.                                                |
+| `analyze`          | Viusalize the contents of all your bundles.                                                |
 | `lint`             | Lint all `.js` and `.scss` files.                                                          |
 | `lint:js`          | Lint all `.js` files (Use `--fix` to auto fix eslint errors).                              |
 | `lint:style`       | Lint all `.scss` files (Use `--fix` to auto fix stylelint errors).                         |

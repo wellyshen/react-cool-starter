@@ -1,7 +1,8 @@
 {
   "name": "react-cool-starter",
   "version": "2.3.0",
-  "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
+  "description":
+    "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
     "node": ">=6.0",
@@ -42,7 +43,7 @@
     "start:production": "yarn build && yarn start:prod",
     "start:prod": "better-npm-run start:prod",
     "build": "yarn clean:build && better-npm-run build",
-    "build:stats": "yarn clean:build && better-npm-run build:stats",
+    "analyze": "yarn clean:build && better-npm-run analyze",
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
@@ -73,15 +74,17 @@
       }
     },
     "build": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command":
+        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
     },
-    "build:stats": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+    "analyze": {
+      "command":
+        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
-        "NODE_ENV": "stats"
+        "NODE_ENV": "analyze"
       }
     },
     "lint:js": {
@@ -124,31 +127,17 @@
       "stage-0",
       "flow"
     ],
-    "plugins": [
-      "loadable-components/babel",
-      "dynamic-import-node",
-      "lodash"
-    ],
+    "plugins": ["loadable-components/babel", "dynamic-import-node", "lodash"],
     "env": {
       "production": {
-        "plugins": [
-          "transform-remove-console"
-        ]
+        "plugins": ["transform-remove-console"]
       }
     }
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": [
-      "plugin:lodash-fp/recommended",
-      "airbnb",
-      "prettier"
-    ],
-    "plugins": [
-      "lodash-fp",
-      "react",
-      "prettier"
-    ],
+    "extends": ["plugin:lodash-fp/recommended", "airbnb", "prettier"],
+    "plugins": ["lodash-fp", "react", "prettier"],
     "settings": {
       "import/resolver": {
         "webpack": {
@@ -170,10 +159,7 @@
       "react/jsx-filename-extension": [
         "error",
         {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
+          "extensions": [".js", ".jsx"]
         }
       ],
       "import/no-extraneous-dependencies": [
@@ -185,9 +171,7 @@
       "jsx-a11y/anchor-is-valid": [
         "error",
         {
-          "specialLink": [
-            "to"
-          ]
+          "specialLink": ["to"]
         }
       ],
       "lodash-fp/use-fp": "off",
@@ -205,9 +189,7 @@
       "__DEV__": true
     }
   },
-  "eslintIgnore": [
-    "tools/flow"
-  ],
+  "eslintIgnore": ["tools/flow"],
   "stylelint": {
     "extends": [
       "stylelint-config-standard",
@@ -218,19 +200,13 @@
       "selector-pseudo-class-no-unknown": [
         true,
         {
-          "ignorePseudoClasses": [
-            "global",
-            "local"
-          ]
+          "ignorePseudoClasses": ["global", "local"]
         }
       ]
     }
   },
   "jest": {
-    "setupFiles": [
-      "raf/polyfill",
-      "<rootDir>/tools/jest/setup.js"
-    ],
+    "setupFiles": ["raf/polyfill", "<rootDir>/tools/jest/setup.js"],
     "globals": {
       "__DEV__": true
     },
@@ -247,7 +223,8 @@
     ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/tools/jest/assetMock.js"
     }
   },
   "nodemonConfig": {
@@ -259,10 +236,7 @@
       "src/helpers/renderHtml.js"
     ]
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
+  "browserslist": ["> 1%", "last 2 versions"],
   "dependencies": {
     "axios": "0.18.0",
     "babel-polyfill": "^6.26.0",

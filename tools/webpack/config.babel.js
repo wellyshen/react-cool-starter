@@ -98,7 +98,7 @@ const getPlugins = () => {
       // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
       // for more configurations
       new BundleAnalyzerPlugin({
-        analyzerMode: process.env.NODE_ENV === 'stats' ? 'server' : 'disabled'
+        analyzerMode: process.env.NODE_ENV === 'analyze' ? 'server' : 'disabled'
       })
     );
   }
