@@ -3,7 +3,6 @@
 import React, { PureComponent } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import type { Connector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import { hot } from 'react-hot-loader';
@@ -47,7 +46,7 @@ export class Home extends PureComponent<Props> {
   }
 }
 
-const connector: Connector<{}, Props> = connect(
+const connector = connect(
   ({ home }: ReduxState) => ({ home }),
   (dispatch: Dispatch) => ({
     fetchUsersIfNeeded: () => dispatch(actionUsers.fetchUsersIfNeeded())
