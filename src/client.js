@@ -42,7 +42,7 @@ if (module.hot) {
     try {
       const nextRoutes = require('./routes').default;
 
-      store.replaceReducer(nextRoutes);
+      render(nextRoutes);
     } catch (error) {
       console.error(`==> 😭  Routes hot reloading error ${error}`);
     }
