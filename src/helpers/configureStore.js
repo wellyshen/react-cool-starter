@@ -31,7 +31,7 @@ export default (history: Object, initialState: Object = {}): Store => {
 
         store.replaceReducer(nextReducer);
       } catch (error) {
-        console.error(`==> 😭  ReduxState hot reloading error ${error}`);
+        console.error(`==> 😭  Reducer hot reloading error ${error}`);
       }
     });
   }

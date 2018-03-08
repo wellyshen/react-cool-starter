@@ -36,9 +36,15 @@ loadComponents().then(() => {
   render(routes);
 });
 
-// Webpack Hot Module Replacement API
 if (module.hot) {
+  // Enable webpack hot module replacement for routes
   module.hot.accept('./routes', () => {
-    render(require('./routes').default);
+    try {
+      const nextRoutes = require('./routes').default;
+
+      store.replaceReducer(nextRoutes);
+    } catch (error) {
+      console.error(`==> 😭  Routes hot reloading error ${error}`);
+    }
   });
 }
