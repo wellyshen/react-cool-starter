@@ -20,7 +20,7 @@ const stylelint = false;
 // Register vendors here
 const vendor = [
   // Allows you to use the full set of ES6 features on client-side (place it before anything else)
-  'babel-polyfill',
+  '@babel/polyfill',
   'react',
   'react-dom',
   'redux',
@@ -111,7 +111,7 @@ const getEntry = () => {
   // Development
   let entry = [
     // Allows you to use the full set of ES6 features on client-side (place it before anything else)
-    'babel-polyfill',
+    '@babel/polyfill',
     'webpack-hot-middleware/client?reload=true',
     './src/client.js'
   ];
@@ -157,10 +157,10 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [
-            ['env', { modules: false, useBuiltIns: true }],
-            'react',
-            'stage-0',
-            'flow'
+            ['@babel/preset-env', { modules: false, useBuiltIns: 'entry' }],
+            '@babel/preset-react',
+            '@babel/preset-stage-0',
+            '@babel/preset-flow'
           ],
           plugins: [
             'react-hot-loader/babel',
