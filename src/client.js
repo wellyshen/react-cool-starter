@@ -3,6 +3,7 @@
 import React from 'react';
 // $FlowFixMe: isn't an issue
 import { hydrate } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
@@ -17,14 +18,27 @@ const initialState = window.__INITIAL_STATE__;
 const history = createHistory();
 const store = configureStore(history, initialState);
 
-// Load all components needed before starting rendering (loadable-components setup)
-loadComponents().then(() => {
+const render = (Routes: Array<Object>) => {
   hydrate(
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        {renderRoutes(routes)}
-      </ConnectedRouter>
-    </Provider>,
+    <AppContainer>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          {renderRoutes(Routes)}
+        </ConnectedRouter>
+      </Provider>
+    </AppContainer>,
     document.getElementById('react-view')
   );
+};
+
+// Load all components needed before starting rendering (loadable-components setup)
+loadComponents().then(() => {
+  render(routes);
 });
+
+// Webpack Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./routes', () => {
+    render(require('./routes').default);
+  });
+}
