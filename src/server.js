@@ -18,7 +18,7 @@ import Helmet from 'react-helmet';
 import chalk from 'chalk';
 
 import createHistory from 'history/createMemoryHistory';
-import configureStore from './helpers/configureStore';
+import configureStore from './redux/configureStore';
 import renderHtml from './helpers/renderHtml';
 import routes from './routes';
 // $FlowFixMe: isn't an issue

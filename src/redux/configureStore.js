@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { simpleActionMiddleware } from './storeMiddlewares';
 
 import type { Store } from '../types';
-import rootReducer from '../reducers';
+import rootReducer from './reducers';
 
 export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
@@ -25,9 +25,9 @@ export default (history: Object, initialState: Object = {}): Store => {
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
+    module.hot.accept('./reducers', () => {
       try {
-        const nextReducer = require('../reducers').default;
+        const nextReducer = require('./reducers').default;
 
         store.replaceReducer(nextReducer);
       } catch (error) {

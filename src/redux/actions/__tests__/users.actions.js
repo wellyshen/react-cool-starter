@@ -4,7 +4,7 @@ import httpAdapter from 'axios/lib/adapters/http';
 import nock from 'nock';
 
 import { fetchUsers, fetchUser } from '../users.actions';
-import { simpleActionMiddleware } from '../../helpers/storeMiddlewares';
+import { simpleActionMiddleware } from '../../storeMiddlewares';
 
 const host = 'http://localhost';
 

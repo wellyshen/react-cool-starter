@@ -2,7 +2,7 @@
 
 import fp from 'lodash/fp';
 
-import type { Server, Action } from '../types';
+import type { Server, Action } from '../../types';
 
 type State = Server;
 
