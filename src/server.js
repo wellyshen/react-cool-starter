@@ -12,7 +12,6 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { renderRoutes, matchRoutes } from 'react-router-config';
-import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { getLoadableState } from 'loadable-components/server';
 import Helmet from 'react-helmet';
@@ -102,14 +101,12 @@ app.get('*', (req, res) => {
 
       const staticContext = {};
       const AppComponent = (
-        <AppContainer>
-          <Provider store={store}>
-            {/* Setup React-Router server-side rendering */}
-            <StaticRouter location={req.path} context={staticContext}>
-              {renderRoutes(routes)}
-            </StaticRouter>
-          </Provider>
-        </AppContainer>
+        <Provider store={store}>
+          {/* Setup React-Router server-side rendering */}
+          <StaticRouter location={req.path} context={staticContext}>
+            {renderRoutes(routes)}
+          </StaticRouter>
+        </Provider>
       );
 
       // Check if the render result contains a redirect, if so we need to set
