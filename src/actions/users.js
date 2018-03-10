@@ -14,10 +14,10 @@ export const fetchUsers = (URL: string = API_URL): ThunkAction => async (
   dispatch({ type: 'USERS_REQUESTING' });
 
   try {
-    const res = await axios.get(URL);
+    const { data } = await axios.get(URL);
 
     /* istanbul ignore next */
-    dispatch({ type: 'USERS_SUCCESS', data: res.data });
+    dispatch({ type: 'USERS_SUCCESS', data });
   } catch (err) {
     /* istanbul ignore next */
     dispatch({ type: 'USERS_FAILURE', err: err.message });
