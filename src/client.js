@@ -9,9 +9,11 @@ import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
 import { renderRoutes } from 'react-router-config';
 import { loadComponents } from 'loadable-components';
+import { MuiThemeProvider } from 'material-ui/styles';
 
 import configureStore from './helpers/configureStore';
 import routes from './routes';
+import materialTheme from './theme/materialTheme';
 
 // Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
@@ -23,7 +25,9 @@ const render = (Routes: Array<Object>) => {
     <AppContainer>
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          {renderRoutes(Routes)}
+          <MuiThemeProvider theme={materialTheme}>
+            {renderRoutes(Routes)}
+          </MuiThemeProvider>
         </ConnectedRouter>
       </Provider>
     </AppContainer>,

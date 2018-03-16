@@ -3,7 +3,7 @@
 // import type { Dispatch } from './types';
 import { fetchUsersIfNeeded } from './actions/users';
 import { fetchUserIfNeeded } from './actions/user';
-import { App, asyncHome, asyncUserInfo, NotFound } from './containers';
+import { App, asyncHome, asyncUserInfo, Login, NotFound } from './containers';
 
 export default [
   {
@@ -17,6 +17,10 @@ export default [
           fetchUsersIfNeeded()
           // Add other pre-fetched actions here
         ]
+      },
+      {
+        path: '/login',
+        component: Login
       },
       {
         path: '/UserInfo/:id',

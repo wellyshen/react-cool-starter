@@ -9,6 +9,7 @@ require('babel-register');
 global.__CLIENT__ = false;
 global.__SERVER__ = true;
 global.__DEV__ = process.env.NODE_ENV === 'development';
+global.window = undefined;
 
 // Run assets require hooks
 require('./tools/webpack/hooks')();
