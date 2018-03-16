@@ -10,7 +10,7 @@
 
 > 🎉 My react-native app [LeadFit](https://itunes.apple.com/app/id1321807247) now available on App Store, which is a workout app. Welcome to try, it's free!
 
-A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/), [Flow](https://flowtype.org/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 4](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/), [Flow](https://flowtype.org/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
@@ -29,7 +29,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [React Router v4](https://reacttraining.com/react-router/) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
 * [Express](https://expressjs.com/) server.
-* [Webpack 3](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
+* [Webpack 4](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [React Hot Loader 4](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 * [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
@@ -599,5 +599,3 @@ So it will look like:
 There're some features (updates) which will be included in this starter in the near future:
 
 * [ ] Code splitting for reducers.
-* [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
-* [ ] Upgrade to [Webpack 4](https://github.com/webpack/webpack/milestone/15) as soon as the stable version released.
