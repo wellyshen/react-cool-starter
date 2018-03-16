@@ -3,6 +3,7 @@
 import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import { loadingBarMiddleware } from 'react-redux-loading-bar';
 
 import type { Store } from '../types';
 import rootReducer from '../reducers';
@@ -18,7 +19,12 @@ export default (history: Object, initialState: Object = {}): Store => {
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
     compose;
   const enhancers = composeEnhancers(
-    applyMiddleware(...middlewares)
+    applyMiddleware(
+      ...middlewares,
+      loadingBarMiddleware({
+        promiseTypeSuffixes: ['REQUESTING', 'SUCCESS', 'FAILURE']
+      })
+    )
     // Add other enhancers here
   );
   const store = createStore(rootReducer, initialState, enhancers);

@@ -16,6 +16,9 @@ import { Provider } from 'react-redux';
 import { getLoadableState } from 'loadable-components/server';
 import Helmet from 'react-helmet';
 import chalk from 'chalk';
+import { SheetsRegistry } from 'react-jss/lib/jss';
+import JssProvider from 'react-jss/lib/JssProvider';
+import { MuiThemeProvider, createGenerateClassName } from 'material-ui/styles';
 
 import createHistory from 'history/createMemoryHistory';
 import configureStore from './helpers/configureStore';
@@ -24,6 +27,7 @@ import routes from './routes';
 // $FlowFixMe: isn't an issue
 import assets from '../public/webpack-assets.json';
 import { port, host } from './config';
+import materialTheme from './theme/materialTheme';
 
 const app = express();
 
@@ -99,12 +103,20 @@ app.get('*', (req, res) => {
       // Load data from server-side first
       await loadBranchData();
 
+      // Create a sheetsRegistry instance.
+      const sheetsRegistry = new SheetsRegistry();
+      const generateClassName = createGenerateClassName();
+
       const staticContext = {};
       const AppComponent = (
         <Provider store={store}>
           {/* Setup React-Router server-side rendering */}
           <StaticRouter location={req.path} context={staticContext}>
-            {renderRoutes(routes)}
+            <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
+              <MuiThemeProvider theme={materialTheme} sheetsManager={new Map()}>
+                {renderRoutes(routes)}
+              </MuiThemeProvider>
+            </JssProvider>
           </StaticRouter>
         </Provider>
       );
@@ -125,6 +137,9 @@ app.get('*', (req, res) => {
         const initialState = store.getState();
         const loadableStateTag = loadableState.getScriptTag();
 
+        // Grab the CSS from our sheetsRegistry.
+        const materialCss = sheetsRegistry.toString();
+
         // Check page status
         const status = staticContext.status === '404' ? 404 : 200;
 
@@ -137,7 +152,8 @@ app.get('*', (req, res) => {
               assets,
               htmlContent,
               initialState,
-              loadableStateTag
+              loadableStateTag,
+              materialCss
             )
           );
       });

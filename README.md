@@ -57,6 +57,7 @@ Really cool starter boilerplate with the most popular technologies:
 * 404 error page and redirect handling.
 * Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
 * [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
+* [Material-UI](https://material-ui-next.com/) as ui framework.
 
 ## Who's the Starter for?
 
@@ -461,6 +462,25 @@ $fa-font-path:"../node_modules/font-awesome/fonts";
   @extend .fa;
   @extend .fa-user;
 }
+```
+
+### Material-UI with server-side render 😎 [material-ui server-rendering](https://material-ui-next.com/guides/server-rendering/)
+
+Configuration file variables of global material-ui styles ./src/theme/materialTheme.js:
+
+```
+import { blueGrey, red } from 'material-ui/colors/index';
+import { createMuiTheme } from 'material-ui/styles/index';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: blueGrey,
+    accent: red,
+    type: 'light'
+  }
+});
+
+export default theme;
 ```
 
 ### Boost App Performance by Shallow Compare

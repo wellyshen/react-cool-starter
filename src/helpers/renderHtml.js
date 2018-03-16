@@ -6,7 +6,8 @@ export default (
   assets: Object,
   htmlContent: string,
   initialState: Object,
-  loadableStateTag: string
+  loadableStateTag: string,
+  materialCss: string
 ): string => {
   // Use pre-defined assets for development to prevent html from inserting wrong styles / scripts
   const envAssets = __DEV__
@@ -25,6 +26,8 @@ export default (
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
         ${head.title.toString()}
         ${head.base.toString()}
@@ -32,19 +35,22 @@ export default (
         ${head.link.toString()}
 
         <!-- Insert bundled styles into <link> tag -->
-        ${Object.keys(envAssets).map(
-          key =>
+        ${Object.keys(envAssets)
+    .map(
+      key =>
+        envAssets[key].css
+          ? `<link href="${
             envAssets[key].css
-              ? `<link href="${
-                  envAssets[key].css
-                }" media="screen, projection" rel="stylesheet" type="text/css">`
-              : ''
-        )}
+            }" media="screen, projection" rel="stylesheet" type="text/css">`
+          : ''
+    )
+    .join('')}
 
       </head>
       <body>
         <!-- Insert the router, which passed from server-side -->
         <div id="react-view">${htmlContent}</div>
+        <style id="jss-server-side">${materialCss}</style>
 
         <!-- Insert loadableState's script tag into page (loadable-components setup) -->
         ${loadableStateTag}
@@ -58,8 +64,9 @@ export default (
 
         <!-- Insert bundled scripts into <script> tag -->
         ${Object.keys(envAssets)
-          .reverse() // Reverse scripts to get correct ordering
-          .map(key => `<script src="${envAssets[key].js}"></script>`)}
+    .reverse() // Reverse scripts to get correct ordering
+    .map(key => `<script src="${envAssets[key].js}"></script>`)
+    .join('')}
 
         ${head.script.toString()}
       </body>

@@ -1,8 +1,7 @@
 {
   "name": "react-cool-starter",
   "version": "2.3.1",
-  "description":
-    "A starter boilerplate for an universal web application with the best development experience and best practices.",
+  "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
     "node": ">=6.0",
@@ -29,7 +28,8 @@
     "postcss",
     "jest",
     "unit testing",
-    "performance optimizing"
+    "performance optimizing",
+    "material-ui"
   ],
   "author": "WellyShen <hivoid19@gmail.com> (https://github.com/wellyshen)",
   "license": "MIT",
@@ -74,15 +74,13 @@
       }
     },
     "build": {
-      "command":
-        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
     },
     "analyze": {
-      "command":
-        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "analyze"
       }
@@ -127,17 +125,31 @@
       "stage-0",
       "flow"
     ],
-    "plugins": ["loadable-components/babel", "dynamic-import-node", "lodash"],
+    "plugins": [
+      "loadable-components/babel",
+      "dynamic-import-node",
+      "lodash"
+    ],
     "env": {
       "production": {
-        "plugins": ["transform-remove-console"]
+        "plugins": [
+          "transform-remove-console"
+        ]
       }
     }
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": ["plugin:lodash-fp/recommended", "airbnb", "prettier"],
-    "plugins": ["lodash-fp", "react", "prettier"],
+    "extends": [
+      "plugin:lodash-fp/recommended",
+      "airbnb",
+      "prettier"
+    ],
+    "plugins": [
+      "lodash-fp",
+      "react",
+      "prettier"
+    ],
     "settings": {
       "import/resolver": {
         "webpack": {
@@ -159,7 +171,10 @@
       "react/jsx-filename-extension": [
         "error",
         {
-          "extensions": [".js", ".jsx"]
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
         }
       ],
       "import/no-extraneous-dependencies": [
@@ -171,7 +186,9 @@
       "jsx-a11y/anchor-is-valid": [
         "error",
         {
-          "specialLink": ["to"]
+          "specialLink": [
+            "to"
+          ]
         }
       ],
       "lodash-fp/use-fp": "off",
@@ -189,7 +206,9 @@
       "__DEV__": true
     }
   },
-  "eslintIgnore": ["tools/flow"],
+  "eslintIgnore": [
+    "tools/flow"
+  ],
   "stylelint": {
     "extends": [
       "stylelint-config-standard",
@@ -200,13 +219,19 @@
       "selector-pseudo-class-no-unknown": [
         true,
         {
-          "ignorePseudoClasses": ["global", "local"]
+          "ignorePseudoClasses": [
+            "global",
+            "local"
+          ]
         }
       ]
     }
   },
   "jest": {
-    "setupFiles": ["raf/polyfill", "<rootDir>/tools/jest/setup.js"],
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/tools/jest/setup.js"
+    ],
     "globals": {
       "__DEV__": true
     },
@@ -223,14 +248,19 @@
     ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/tools/jest/assetMock.js"
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
     }
   },
   "nodemonConfig": {
-    "watch": ["src/server.js", "src/helpers/renderHtml.js"]
+    "watch": [
+      "src/server.js",
+      "src/helpers/renderHtml.js"
+    ]
   },
-  "browserslist": ["> 1%", "last 2 versions"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
@@ -243,6 +273,8 @@
     "hpp": "^0.2.2",
     "loadable-components": "^1.1.1",
     "lodash": "^4.17.5",
+    "material-ui": "^1.0.0-beta.37",
+    "material-ui-icons": "^1.0.0-beta.36",
     "morgan": "^1.9.0",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
@@ -250,7 +282,9 @@
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.0.0",
+    "react-jss": "^8.3.5",
     "react-redux": "^5.0.7",
+    "react-redux-loading-bar": "^3.1.2",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
