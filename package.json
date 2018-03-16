@@ -1,8 +1,7 @@
 {
   "name": "react-cool-starter",
-  "version": "2.3.1",
-  "description":
-    "A starter boilerplate for an universal web application with the best development experience and best practices.",
+  "version": "2.4.0",
+  "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
     "node": ">=6.0",
@@ -20,7 +19,7 @@
     "redux",
     "react router v4",
     "express",
-    "webpack v3",
+    "webpack v4",
     "es6",
     "flow",
     "code splitting",
@@ -74,15 +73,13 @@
       }
     },
     "build": {
-      "command":
-        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
     },
     "analyze": {
-      "command":
-        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "analyze"
       }
@@ -135,7 +132,9 @@
     ],
     "env": {
       "production": {
-        "plugins": ["transform-remove-console"]
+        "plugins": [
+          "transform-remove-console"
+        ]
       }
     }
   },
@@ -147,7 +146,11 @@
       "prettier",
       "prettier/react"
     ],
-    "plugins": ["lodash-fp", "react", "prettier"],
+    "plugins": [
+      "lodash-fp",
+      "react",
+      "prettier"
+    ],
     "settings": {
       "import/resolver": {
         "webpack": {
@@ -169,7 +172,10 @@
       "react/jsx-filename-extension": [
         "error",
         {
-          "extensions": [".js", ".jsx"]
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
         }
       ],
       "import/no-extraneous-dependencies": [
@@ -181,7 +187,9 @@
       "jsx-a11y/anchor-is-valid": [
         "error",
         {
-          "specialLink": ["to"]
+          "specialLink": [
+            "to"
+          ]
         }
       ],
       "lodash-fp/use-fp": "off",
@@ -199,7 +207,9 @@
       "__DEV__": true
     }
   },
-  "eslintIgnore": ["tools/flow"],
+  "eslintIgnore": [
+    "tools/flow"
+  ],
   "stylelint": {
     "extends": [
       "stylelint-config-standard",
@@ -210,13 +220,19 @@
       "selector-pseudo-class-no-unknown": [
         true,
         {
-          "ignorePseudoClasses": ["global", "local"]
+          "ignorePseudoClasses": [
+            "global",
+            "local"
+          ]
         }
       ]
     }
   },
   "jest": {
-    "setupFiles": ["raf/polyfill", "<rootDir>/tools/jest/setup.js"],
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/tools/jest/setup.js"
+    ],
     "globals": {
       "__DEV__": true
     },
@@ -233,14 +249,19 @@
     ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/tools/jest/assetMock.js"
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
     }
   },
   "nodemonConfig": {
-    "watch": ["src/server.js", "src/helpers/renderHtml.js"]
+    "watch": [
+      "src/server.js",
+      "src/helpers/renderHtml.js"
+    ]
   },
-  "browserslist": ["> 1%", "last 2 versions"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.42",
     "@babel/register": "^7.0.0-beta.42",
@@ -283,7 +304,6 @@
     "babel-eslint": "^8.2.2",
     "babel-jest": "^23.0.0-alpha.0",
     "babel-loader": "^8.0.0-beta.0",
-    "babel-minify-webpack-plugin": "^0.3.0",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-lodash": "^3.3.2",
@@ -306,7 +326,7 @@
     "eslint-plugin-lodash-fp": "^2.1.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.4.0",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "extracted-loader": "^1.0.7",
     "file-loader": "^1.1.11",
     "flow-bin": "^0.68.0",
@@ -333,10 +353,11 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-webpack-plugin": "^0.10.3",
     "url-loader": "^1.0.1",
-    "webpack": "^3.11.0",
+    "webpack": "^4.1.1",
     "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-cli": "^2.0.12",
     "webpack-dashboard": "^1.1.1",
-    "webpack-dev-middleware": "^2.0.6",
+    "webpack-dev-middleware": "^3.0.1",
     "webpack-hot-middleware": "^2.21.2"
   },
   "resolutions": {

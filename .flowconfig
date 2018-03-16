@@ -2,6 +2,9 @@
 <PROJECT_ROOT>/public/.*
 <PROJECT_ROOT>/.*/__tests__/.*
 
+; Ignore webpack-cli
+.*/node_modules/webpack-cli/.*
+
 [include]
 
 [libs]

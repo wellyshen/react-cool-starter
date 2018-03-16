@@ -2,8 +2,8 @@ import path from 'path';
 import webpack from 'webpack';
 import AssetsPlugin from 'assets-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import StyleLintPlugin from 'stylelint-webpack-plugin';
-import MinifyPlugin from 'babel-minify-webpack-plugin';
+// TODO: Waiting for it support webpack 4
+// import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -16,10 +16,12 @@ const CSSModules = true;
 // Enable build process terminated while there's an eslint error
 const eslint = false;
 // Enable build process terminated while there's a stylelint error
-const stylelint = false;
+// TODO: Waiting for it support webpack 4
+// const stylelint = false;
 // Register vendors here
 const vendor = [
-  // Allows you to use the full set of ES6 features on client-side (place it before anything else)
+  // Allows you to use the full set of ES6 features on client-side
+  // place it before anything else
   '@babel/polyfill',
   'react',
   'react-dom',
@@ -47,14 +49,16 @@ const getPlugins = () => {
       ignoreOrder: CSSModules
     }),
     new webpack.LoaderOptionsPlugin({
+      // Must set the context for css-loader or style will mis-match in SSR
+      rootContext: path.resolve(process.cwd(), 'src'),
       options: {
         debug: isDev,
-        minimize: !isDev,
-        context: path.resolve(process.cwd(), 'src')
+        minimize: !isDev
       }
     }),
     // Style lint
-    new StyleLintPlugin({ failOnError: stylelint }),
+    // TODO: Waiting for it support webpack 4
+    // new StyleLintPlugin({ failOnError: stylelint }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
     // Setup global variables for client
@@ -63,28 +67,16 @@ const getPlugins = () => {
       __SERVER__: false,
       __DEV__: isDev
     }),
-    new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrorsWebpackPlugin()
   ];
 
   if (isDev) {
     // Development
-    plugins.push(
-      new webpack.HotModuleReplacementPlugin(),
-      // Prints more readable module names in the browser console on HMR updates
-      new webpack.NamedModulesPlugin(),
-      new webpack.IgnorePlugin(/webpack-stats\.json$/)
-    );
+    plugins.push(new webpack.HotModuleReplacementPlugin());
   } else {
     plugins.push(
       // Production
-      new MinifyPlugin({}, { test: /\.jsx?$/, comments: false }),
       new webpack.HashedModuleIdsPlugin(),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        minChunks: Infinity
-      }),
-      new webpack.optimize.ModuleConcatenationPlugin(),
       new CompressionPlugin({
         asset: '[path].gz[query]',
         algorithm: 'gzip',
@@ -128,7 +120,7 @@ const getEntry = () => {
 
 // Webpack configuration
 module.exports = {
-  // mode: isDev,
+  mode: isDev ? 'development' : 'production',
   devtool: isDev ? 'cheap-module-source-map' : 'hidden-source-map',
   context: path.resolve(process.cwd()),
   entry: getEntry(),
