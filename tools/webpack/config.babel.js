@@ -48,8 +48,6 @@ const getPlugins = () => {
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
-        // Javascript lint
-        eslint: { failOnError: eslint },
         debug: isDev,
         minimize: !isDev,
         context: path.resolve(process.cwd(), 'src')
@@ -130,6 +128,7 @@ const getEntry = () => {
 
 // Webpack configuration
 module.exports = {
+  // mode: isDev,
   devtool: isDev ? 'cheap-module-source-map' : 'hidden-source-map',
   context: path.resolve(process.cwd()),
   entry: getEntry(),
@@ -144,10 +143,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
         enforce: 'pre',
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint'
+        loader: 'eslint',
+        options: { failOnError: eslint }
       },
       {
         test: /\.jsx?$/,
