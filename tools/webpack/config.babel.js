@@ -48,14 +48,6 @@ const getPlugins = () => {
       allChunks: true,
       ignoreOrder: CSSModules
     }),
-    new webpack.LoaderOptionsPlugin({
-      // Must set the context for css-loader or style will mis-match in SSR
-      rootContext: path.resolve(process.cwd(), 'src'),
-      options: {
-        debug: isDev,
-        minimize: !isDev
-      }
-    }),
     // Style lint
     // TODO: Waiting for it support webpack 4
     // new StyleLintPlugin({ failOnError: stylelint }),
@@ -157,9 +149,10 @@ module.exports = {
                 loader: 'css',
                 options: {
                   importLoaders: 1,
-                  sourceMap: true,
                   modules: CSSModules,
                   localIdentName: '[name]__[local]__[hash:base64:5]',
+                  context: path.resolve(process.cwd(), 'src'),
+                  sourceMap: true,
                   minimize: !isDev
                 }
               },
@@ -178,9 +171,10 @@ module.exports = {
                 loader: 'css',
                 options: {
                   importLoaders: 2,
-                  sourceMap: true,
                   modules: CSSModules,
                   localIdentName: '[name]__[local]__[hash:base64:5]',
+                  context: path.resolve(process.cwd(), 'src'),
+                  sourceMap: true,
                   minimize: !isDev
                 }
               },
