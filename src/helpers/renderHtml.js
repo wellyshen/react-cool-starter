@@ -32,14 +32,16 @@ export default (
         ${head.link.toString()}
 
         <!-- Insert bundled styles into <link> tag -->
-        ${Object.keys(envAssets).map(
-          key =>
-            envAssets[key].css
-              ? `<link href="${
-                  envAssets[key].css
-                }" media="screen, projection" rel="stylesheet" type="text/css">`
-              : ''
-        )}
+        ${Object.keys(envAssets)
+          .map(
+            key =>
+              envAssets[key].css
+                ? `<link href="${
+                    envAssets[key].css
+                  }" media="screen, projection" rel="stylesheet" type="text/css">`
+                : ''
+          )
+          .join('')}
 
       </head>
       <body>
@@ -59,7 +61,8 @@ export default (
         <!-- Insert bundled scripts into <script> tag -->
         ${Object.keys(envAssets)
           .reverse() // Reverse scripts to get correct ordering
-          .map(key => `<script src="${envAssets[key].js}"></script>`)}
+          .map(key => `<script src="${envAssets[key].js}"></script>`)
+          .join('')}
 
         ${head.script.toString()}
       </body>
