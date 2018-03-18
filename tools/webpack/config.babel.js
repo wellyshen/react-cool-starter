@@ -18,24 +18,6 @@ const eslint = false;
 // Enable build process terminated while there's a stylelint error
 // TODO: Waiting for it support webpack 4
 // const stylelint = false;
-// Register vendors here
-const vendor = [
-  // Allows you to use the full set of ES6 features on client-side
-  // place it before anything else
-  '@babel/polyfill',
-  'react',
-  'react-dom',
-  'redux',
-  'react-redux',
-  'redux-thunk',
-  'react-router-dom',
-  'react-router-config',
-  'history',
-  'react-router-redux',
-  'react-helmet',
-  'loadable-components',
-  'axios'
-];
 
 // Setup the plugins for development/prodcution
 const getPlugins = () => {
@@ -91,21 +73,10 @@ const getPlugins = () => {
 // Setup the entry for development/prodcution
 const getEntry = () => {
   // Development
-  let entry = [
-    // Allows you to use the full set of ES6 features on client-side (place it before anything else)
-    '@babel/polyfill',
-    'webpack-hot-middleware/client?reload=true',
-    './src/client.js'
-  ];
+  let entry = ['webpack-hot-middleware/client?reload=true', './src/client.js'];
 
   // Prodcution
-  if (!isDev) {
-    entry = {
-      main: './src/client.js',
-      // Register vendors here
-      vendor
-    };
-  }
+  if (!isDev) entry = ['./src/client.js'];
 
   return entry;
 };
@@ -116,6 +87,12 @@ module.exports = {
   devtool: isDev ? 'cheap-module-source-map' : 'hidden-source-map',
   context: path.resolve(process.cwd()),
   entry: getEntry(),
+  optimization: {
+    splitChunks: {
+      // Auto split vendor modules in production only
+      chunks: isDev ? 'async' : 'all'
+    }
+  },
   output: {
     path: path.resolve(process.cwd(), 'public/assets'),
     publicPath: '/assets/',

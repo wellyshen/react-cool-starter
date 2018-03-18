@@ -1,7 +1,5 @@
 /* @flow */
 
-// Allows you to use the full set of ES6 features on server-side (place it before anything else)
-require('@babel/polyfill');
 // Allows you to precompile ES6 syntax
 require('@babel/register');
 
