@@ -330,7 +330,7 @@
     "file-loader": "^1.1.11",
     "flow-bin": "^0.68.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
-    "html-minifier": "^3.5.11",
+    "html-minifier": "^3.5.12",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^4.2.0",
     "jest": "^23.0.0-alpha.0",
