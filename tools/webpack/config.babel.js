@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import AssetsPlugin from 'assets-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 // TODO: Waiting for it support webpack 4
 // import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
@@ -24,11 +24,12 @@ const getPlugins = () => {
   // Common
   const plugins = [
     new AssetsPlugin({ path: path.resolve(process.cwd(), 'public') }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
-      filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
-      allChunks: true,
-      ignoreOrder: CSSModules
+      filename: isDev ? '[name].css' : '[name].[chunkhash:8].css',
+      chunkFilename: isDev
+        ? '[name].chunk.css'
+        : '[name].[chunkhash:8].chunk.css'
     }),
     // Style lint
     // TODO: Waiting for it support webpack 4
@@ -133,55 +134,47 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ['extracted-loader'].concat(
-          ExtractTextPlugin.extract({
-            fallback: 'style',
-            use: [
-              {
-                loader: 'css',
-                options: {
-                  importLoaders: 1,
-                  modules: CSSModules,
-                  localIdentName: '[name]__[local]__[hash:base64:5]',
-                  context: path.resolve(process.cwd(), 'src'),
-                  sourceMap: true,
-                  minimize: !isDev
-                }
-              },
-              { loader: 'postcss', options: { sourceMap: true } }
-            ]
-          })
-        )
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css',
+            options: {
+              importLoaders: 1,
+              modules: CSSModules,
+              localIdentName: '[name]__[local]__[hash:base64:5]',
+              context: path.resolve(process.cwd(), 'src'),
+              sourceMap: true,
+              minimize: !isDev
+            }
+          },
+          { loader: 'postcss', options: { sourceMap: true } }
+        ]
       },
       {
         test: /\.(scss|sass)$/,
-        loader: ['extracted-loader'].concat(
-          ExtractTextPlugin.extract({
-            fallback: 'style',
-            use: [
-              {
-                loader: 'css',
-                options: {
-                  importLoaders: 2,
-                  modules: CSSModules,
-                  localIdentName: '[name]__[local]__[hash:base64:5]',
-                  context: path.resolve(process.cwd(), 'src'),
-                  sourceMap: true,
-                  minimize: !isDev
-                }
-              },
-              { loader: 'postcss', options: { sourceMap: true } },
-              {
-                loader: 'sass',
-                options: {
-                  outputStyle: 'expanded',
-                  sourceMap: true,
-                  sourceMapContents: !isDev
-                }
-              }
-            ]
-          })
-        )
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css',
+            options: {
+              importLoaders: 2,
+              modules: CSSModules,
+              localIdentName: '[name]__[local]__[hash:base64:5]',
+              context: path.resolve(process.cwd(), 'src'),
+              sourceMap: true,
+              minimize: !isDev
+            }
+          },
+          { loader: 'postcss', options: { sourceMap: true } },
+          {
+            loader: 'sass',
+            options: {
+              outputStyle: 'expanded',
+              sourceMap: true,
+              sourceMapContents: !isDev
+            }
+          }
+        ]
       },
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
