@@ -26,10 +26,10 @@ const getPlugins = () => {
     new AssetsPlugin({ path: path.resolve(process.cwd(), 'public') }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
-      filename: isDev ? '[name].css' : '[name].[chunkhash:8].css',
+      filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
       chunkFilename: isDev
         ? '[name].chunk.css'
-        : '[name].[chunkhash:8].chunk.css'
+        : '[name].[contenthash:8].chunk.css'
     }),
     // Style lint
     // TODO: Waiting for it support webpack 4
