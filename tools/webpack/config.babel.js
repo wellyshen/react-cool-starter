@@ -2,8 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import AssetsPlugin from 'assets-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-// TODO: Waiting for it support webpack 4
-// import StyleLintPlugin from 'stylelint-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -16,8 +15,7 @@ const CSSModules = true;
 // Enable build process terminated while there's an eslint error
 const eslint = false;
 // Enable build process terminated while there's a stylelint error
-// TODO: Waiting for it support webpack 4
-// const stylelint = false;
+const stylelint = false;
 
 // Setup the plugins for development/prodcution
 const getPlugins = () => {
@@ -31,9 +29,8 @@ const getPlugins = () => {
         ? '[name].chunk.css'
         : '[name].[chunkhash:8].chunk.css'
     }),
-    // Style lint
-    // TODO: Waiting for it support webpack 4
-    // new StyleLintPlugin({ failOnError: stylelint }),
+    // Stylelint
+    new StyleLintPlugin({ failOnError: stylelint }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
     // Setup global variables for client
@@ -105,6 +102,7 @@ module.exports = {
   module: {
     rules: [
       {
+        // Eslint
         enforce: 'pre',
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -189,8 +187,8 @@ module.exports = {
             loader: 'url',
             options: { limit: 10240 }
           },
-          // Using for image optimization
           {
+            // Image optimization
             loader: 'image-webpack',
             options: { bypassOnDebug: true }
           }
