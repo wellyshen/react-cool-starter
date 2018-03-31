@@ -66,7 +66,6 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 * Simplfied action creator version: [simple-action](https://github.com/wellyshen/react-cool-starter/tree/simple-action) branch.
 * Docker-ise support: [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
-* [webpack-isomorphic-tools](https://github.com/catamphetamine/webpack-isomorphic-tools) version: [webpack-isomorphic-tools](https://github.com/wellyshen/react-cool-starter/tree/webpack-isomorphic-tools) branch.
 
 ## Requirements
 
