@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 
-import routes from '../../../routes';
+import routes from '../../routes';
 import App from '../index';
 
 describe('<App />', () => {

@@ -134,7 +134,8 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   │   ├── index.js                # Configuration entry point
 │   │   └── prod.js                 # Production settings (overrides the default settings)
 │   ├── components                  # Reusable components (including scss/testing files)
-│   ├── containers                  # Container components (including scss/testing files)
+│   ├── pages                       # Page components (including scss/testing files)
+│   ├── app                         # App root component (including scss/testing files)
 │   ├── actions                     # Redux actions (including testing files)
 │   ├── reducers                    # Redux reducers (including testing files)
 │   ├── helpers                     # App-wide helpers (e.g. configure Redux store, HTML template etc.)  
@@ -198,7 +199,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.js`. For example:
 
 ```javascript
-import RouteComponent from './containers/RouteComponent';
+import RouteComponent from './pages/RouteComponent';
 
 // ...
 
@@ -298,10 +299,10 @@ To accomplish this, I integrate [loadable-components](https://github.com/smooth-
 I use the following folder/file structure:
 
 ```
- |- containers
+ |- pages
     |- AsyncRouteComponent
-       |- index.js          // Wrap the route component as async component
-       |- RouteComponent.js // The route component
+       |- index.js            // Wrap the route component as async component
+       |- RouteComponent.js   // The route component
 ```
 
 The `index.js` will be:
@@ -326,7 +327,7 @@ Then you can [setup](#adding-routes) the route as usual.
 
 ### Managing Title, Meta, Styles and Scripts
 
-The parent `App.js` defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) documents for more info.
+The `./src/app/index.js` (app root component) defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) documents for more info.
 
 ### App config
 
@@ -376,38 +377,17 @@ render() {
 }
 ```
 
-By the way, if you want to use your based style or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
+By the way, if you want to use vendor CSS frameworks or global styles, just import it through the `./src/app/index.js` file (app root component). For example:
 
 ```javascript
 import '../../theme/normalize.css'; // Import a vendor stylesheet here
 import styles from './styles.scss'; // Import your based stylesheet here
 
+// ...
+
 export default routes => {
   // ...
 };
-```
-
-For the better development experience, don't forget to include those files in the `./src/helpers/renderHtml.js`, for example:
-
-```javascript
-// ...
-
-  ${
-    _.keys(assets.styles).length === 0
-      ? `
-        <style>
-          // Include the vendor CSS framework and your own style here
-          ${
-            require('../theme/normalize.css')._style +
-            require('../containers/App/styles.scss')._style +
-            // Other styles...
-          }
-        </style>
-      `
-      : ''
-  }
-
-// ...
 ```
 
 ### Image and Font
@@ -532,7 +512,7 @@ By the way, Jest built-in code coverage reports, the report files are generated 
 
   "jest": {
     "collectCoverageFrom": [
-      "src/containers/**/*.js",   // Define the files, which want to be covered
+      "src/pages/**/*.js",        // Define the files, which want to be covered
       "src/components/**/*.js",
       "!src/**/__tests__"         // The files will be ignored by code coverage
     ],
