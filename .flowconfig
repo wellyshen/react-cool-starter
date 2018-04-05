@@ -2,8 +2,8 @@
 <PROJECT_ROOT>/public/.*
 <PROJECT_ROOT>/.*/__tests__/.*
 
-; Ignore webpack-cli
-.*/node_modules/webpack-cli/.*
+; Ignore config-chain
+.*/node_modules/config-chain/test/broken.json
 
 [include]
 
