@@ -8,7 +8,8 @@ export default (
   initialState: Object,
   loadableStateTag: string
 ): string => {
-  // Use pre-defined assets for development to prevent html from inserting wrong styles / scripts
+  // Use pre-defined assets to make sure using the correct script/style in development
+  // "main" is the default webpack generating file name
   const envAssets = __DEV__
     ? { main: { js: '/assets/main.js', css: '/assets/main.css' } }
     : assets;
@@ -60,7 +61,6 @@ export default (
 
         <!-- Insert bundled scripts into <script> tag -->
         ${Object.keys(envAssets)
-          .reverse() // Reverse scripts to get correct ordering
           .map(key => `<script src="${envAssets[key].js}"></script>`)
           .join('')}
 

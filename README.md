@@ -10,7 +10,7 @@
 
 > 🎉 My react-native app [LeadFit](https://itunes.apple.com/app/id1321807247) now available on App Store, which is a workout app. Welcome to try, it's free!
 
-A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 3](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/), [Flow](https://flowtype.org/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 4](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/), [Flow](https://flowtype.org/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
@@ -29,7 +29,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [React Router v4](https://reacttraining.com/react-router/) as the router.
 * [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
 * [Express](https://expressjs.com/) server.
-* [Webpack 3](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
+* [Webpack 4](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
 * [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 * [React Hot Loader 4](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 * [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
@@ -66,7 +66,6 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 * Simplfied action creator version: [simple-action](https://github.com/wellyshen/react-cool-starter/tree/simple-action) branch.
 * Docker-ise support: [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
-* [webpack-isomorphic-tools](https://github.com/catamphetamine/webpack-isomorphic-tools) version: [webpack-isomorphic-tools](https://github.com/wellyshen/react-cool-starter/tree/webpack-isomorphic-tools) branch.
 
 ## Requirements
 
@@ -105,7 +104,6 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 | `yarn <script>`    | Description                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------ |
 | `start`            | Run your app on the development server at `localhost:3000`. HMR will be enabled.           |
-| `start:dashboard`  | The same with `start` and webpack bundle info will be turned into dashboard mode.          |
 | `start:production` | Bundle files to `./public/assets` and run it on the production server at `localhost:8080`. |
 | `start:prod`       | Run your app on the production server only at `localhost:8080`.                            |
 | `build`            | Remove the previous bundled files and bundle it to `./public/assets`.                      |
@@ -135,7 +133,8 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   │   ├── index.js                # Configuration entry point
 │   │   └── prod.js                 # Production settings (overrides the default settings)
 │   ├── components                  # Reusable components (including scss/testing files)
-│   ├── containers                  # Container components (including scss/testing files)
+│   ├── pages                       # Page components (including scss/testing files)
+│   ├── app                         # App root component (including scss/testing files)
 │   ├── actions                     # Redux actions (including testing files)
 │   ├── reducers                    # Redux reducers (including testing files)
 │   ├── helpers                     # App-wide helpers (e.g. configure Redux store, HTML template etc.)  
@@ -199,7 +198,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.js`. For example:
 
 ```javascript
-import RouteComponent from './containers/RouteComponent';
+import RouteComponent from './pages/RouteComponent';
 
 // ...
 
@@ -299,10 +298,10 @@ To accomplish this, I integrate [loadable-components](https://github.com/smooth-
 I use the following folder/file structure:
 
 ```
- |- containers
+ |- pages
     |- AsyncRouteComponent
-       |- index.js          // Wrap the route component as async component
-       |- RouteComponent.js // The route component
+       |- index.js            // Wrap the route component as async component
+       |- RouteComponent.js   // The route component
 ```
 
 The `index.js` will be:
@@ -327,7 +326,7 @@ Then you can [setup](#adding-routes) the route as usual.
 
 ### Managing Title, Meta, Styles and Scripts
 
-The parent `App.js` defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) documents for more info.
+The `./src/app/index.js` (app root component) defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) documents for more info.
 
 ### App config
 
@@ -377,38 +376,17 @@ render() {
 }
 ```
 
-By the way, if you want to use your based style or a vendor CSS framework, just import it through the `./src/containers/App/index.js` file, for example:
+By the way, if you want to use vendor CSS frameworks or global styles, just import it through the `./src/app/index.js` file (app root component). For example:
 
 ```javascript
 import '../../theme/normalize.css'; // Import a vendor stylesheet here
 import styles from './styles.scss'; // Import your based stylesheet here
 
+// ...
+
 export default routes => {
   // ...
 };
-```
-
-For the better development experience, don't forget to include those files in the `./src/helpers/renderHtml.js`, for example:
-
-```javascript
-// ...
-
-  ${
-    _.keys(assets.styles).length === 0
-      ? `
-        <style>
-          // Include the vendor CSS framework and your own style here
-          ${
-            require('../theme/normalize.css')._style +
-            require('../containers/App/styles.scss')._style +
-            // Other styles...
-          }
-        </style>
-      `
-      : ''
-  }
-
-// ...
 ```
 
 ### Image and Font
@@ -533,7 +511,7 @@ By the way, Jest built-in code coverage reports, the report files are generated 
 
   "jest": {
     "collectCoverageFrom": [
-      "src/containers/**/*.js",   // Define the files, which want to be covered
+      "src/pages/**/*.js",        // Define the files, which want to be covered
       "src/components/**/*.js",
       "!src/**/__tests__"         // The files will be ignored by code coverage
     ],
@@ -594,10 +572,17 @@ So it will look like:
 // ...
 ```
 
-## Todo...
+## Known Issues
+
+There're some 3rd party issues related to the version of webpack v4. Please be patient for them:
+
+* For deprecated warning of `(node:31249) DeprecationWarning: Tapable.plugin is deprecated. Use new API on '.hooks' instead` is caused from [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plugin) and there's a [open issue](https://github.com/kossnocorp/assets-webpack-plugin/issues/86) for it.
+
+* HMR doesn't work for style. Because of I use (mini-css-extract-plugin)[https://github.com/webpack-contrib/mini-css-extract-plugin] to instead of [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin). And it'll [support HMR](https://github.com/webpack-contrib/mini-css-extract-plugin#mini-css-extract-plugin) soon.
+
+## To Do...
 
 There're some features (updates) which will be included in this starter in the near future:
 
+* [ ] Using (webpack-dashboard)[https://github.com/FormidableLabs/webpack-dashboard] for better DX. Now it not fully support webpack v4 yet.
 * [ ] Code splitting for reducers.
-* [ ] Upgrade to [Babel 7](https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7) as soon as the stable version released.
-* [ ] Upgrade to [Webpack 4](https://github.com/webpack/webpack/milestone/15) as soon as the stable version released.

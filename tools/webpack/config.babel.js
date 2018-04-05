@@ -1,9 +1,8 @@
 import path from 'path';
 import webpack from 'webpack';
 import AssetsPlugin from 'assets-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
-import MinifyPlugin from 'babel-minify-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -17,45 +16,20 @@ const CSSModules = true;
 const eslint = false;
 // Enable build process terminated while there's a stylelint error
 const stylelint = false;
-// Register vendors here
-const vendor = [
-  // Allows you to use the full set of ES6 features on client-side (place it before anything else)
-  'babel-polyfill',
-  'react',
-  'react-dom',
-  'redux',
-  'react-redux',
-  'redux-thunk',
-  'react-router-dom',
-  'react-router-config',
-  'history',
-  'react-router-redux',
-  'react-helmet',
-  'loadable-components',
-  'axios'
-];
 
 // Setup the plugins for development/prodcution
 const getPlugins = () => {
   // Common
   const plugins = [
     new AssetsPlugin({ path: path.resolve(process.cwd(), 'public') }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
-      filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
-      allChunks: true,
-      ignoreOrder: CSSModules
+      filename: isDev ? '[name].css' : '[name].[chunkhash:8].css',
+      chunkFilename: isDev
+        ? '[name].chunk.css'
+        : '[name].[chunkhash:8].chunk.css'
     }),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        // Javascript lint
-        eslint: { failOnError: eslint },
-        debug: isDev,
-        minimize: !isDev,
-        context: path.resolve(process.cwd(), 'src')
-      }
-    }),
-    // Style lint
+    // Stylelint
     new StyleLintPlugin({ failOnError: stylelint }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
@@ -65,28 +39,16 @@ const getPlugins = () => {
       __SERVER__: false,
       __DEV__: isDev
     }),
-    new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrorsWebpackPlugin()
   ];
 
   if (isDev) {
     // Development
-    plugins.push(
-      new webpack.HotModuleReplacementPlugin(),
-      // Prints more readable module names in the browser console on HMR updates
-      new webpack.NamedModulesPlugin(),
-      new webpack.IgnorePlugin(/webpack-stats\.json$/)
-    );
+    plugins.push(new webpack.HotModuleReplacementPlugin());
   } else {
     plugins.push(
       // Production
-      new MinifyPlugin({}, { test: /\.jsx?$/, comments: false }),
       new webpack.HashedModuleIdsPlugin(),
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        minChunks: Infinity
-      }),
-      new webpack.optimize.ModuleConcatenationPlugin(),
       new CompressionPlugin({
         asset: '[path].gz[query]',
         algorithm: 'gzip',
@@ -109,30 +71,26 @@ const getPlugins = () => {
 // Setup the entry for development/prodcution
 const getEntry = () => {
   // Development
-  let entry = [
-    // Allows you to use the full set of ES6 features on client-side (place it before anything else)
-    'babel-polyfill',
-    'webpack-hot-middleware/client?reload=true',
-    './src/client.js'
-  ];
+  let entry = ['webpack-hot-middleware/client?reload=true', './src/client.js'];
 
   // Prodcution
-  if (!isDev) {
-    entry = {
-      main: './src/client.js',
-      // Register vendors here
-      vendor
-    };
-  }
+  if (!isDev) entry = ['./src/client.js'];
 
   return entry;
 };
 
 // Webpack configuration
 module.exports = {
+  mode: isDev ? 'development' : 'production',
   devtool: isDev ? 'cheap-module-source-map' : 'hidden-source-map',
   context: path.resolve(process.cwd()),
   entry: getEntry(),
+  optimization: {
+    splitChunks: {
+      // Auto split vendor modules in production only
+      chunks: isDev ? 'async' : 'all'
+    }
+  },
   output: {
     path: path.resolve(process.cwd(), 'public/assets'),
     publicPath: '/assets/',
@@ -144,10 +102,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        // Eslint
         enforce: 'pre',
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint'
+        loader: 'eslint',
+        options: { failOnError: eslint }
       },
       {
         test: /\.jsx?$/,
@@ -157,10 +117,10 @@ module.exports = {
           cacheDirectory: isDev,
           babelrc: false,
           presets: [
-            ['env', { modules: false, useBuiltIns: true }],
-            'react',
-            'stage-0',
-            'flow'
+            ['@babel/preset-env', { modules: false, useBuiltIns: 'usage' }],
+            '@babel/preset-react',
+            '@babel/preset-stage-0',
+            '@babel/preset-flow'
           ],
           plugins: [
             'react-hot-loader/babel',
@@ -172,53 +132,47 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ['extracted-loader'].concat(
-          ExtractTextPlugin.extract({
-            fallback: 'style',
-            use: [
-              {
-                loader: 'css',
-                options: {
-                  importLoaders: 1,
-                  sourceMap: true,
-                  modules: CSSModules,
-                  localIdentName: '[name]__[local]__[hash:base64:5]',
-                  minimize: !isDev
-                }
-              },
-              { loader: 'postcss', options: { sourceMap: true } }
-            ]
-          })
-        )
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css',
+            options: {
+              importLoaders: 1,
+              modules: CSSModules,
+              localIdentName: '[name]__[local]__[hash:base64:5]',
+              context: path.resolve(process.cwd(), 'src'),
+              sourceMap: true,
+              minimize: !isDev
+            }
+          },
+          { loader: 'postcss', options: { sourceMap: true } }
+        ]
       },
       {
         test: /\.(scss|sass)$/,
-        loader: ['extracted-loader'].concat(
-          ExtractTextPlugin.extract({
-            fallback: 'style',
-            use: [
-              {
-                loader: 'css',
-                options: {
-                  importLoaders: 2,
-                  sourceMap: true,
-                  modules: CSSModules,
-                  localIdentName: '[name]__[local]__[hash:base64:5]',
-                  minimize: !isDev
-                }
-              },
-              { loader: 'postcss', options: { sourceMap: true } },
-              {
-                loader: 'sass',
-                options: {
-                  outputStyle: 'expanded',
-                  sourceMap: true,
-                  sourceMapContents: !isDev
-                }
-              }
-            ]
-          })
-        )
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css',
+            options: {
+              importLoaders: 2,
+              modules: CSSModules,
+              localIdentName: '[name]__[local]__[hash:base64:5]',
+              context: path.resolve(process.cwd(), 'src'),
+              sourceMap: true,
+              minimize: !isDev
+            }
+          },
+          { loader: 'postcss', options: { sourceMap: true } },
+          {
+            loader: 'sass',
+            options: {
+              outputStyle: 'expanded',
+              sourceMap: true,
+              sourceMapContents: !isDev
+            }
+          }
+        ]
       },
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
@@ -233,8 +187,8 @@ module.exports = {
             loader: 'url',
             options: { limit: 10240 }
           },
-          // Using for image optimization
           {
+            // Image optimization
             loader: 'image-webpack',
             options: { bypassOnDebug: true }
           }

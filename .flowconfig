@@ -2,6 +2,9 @@
 <PROJECT_ROOT>/public/.*
 <PROJECT_ROOT>/.*/__tests__/.*
 
+; Ignore webpack-cli
+.*/node_modules/webpack-cli/.*
+
 [include]
 
 [libs]
@@ -31,4 +34,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.66.0
+^0.69.0

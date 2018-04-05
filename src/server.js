@@ -45,11 +45,9 @@ if (!__DEV__) {
 
   const webpack = require('webpack');
   const webpackConfig = require('../tools/webpack/config.babel');
-  const DashboardPlugin = require('webpack-dashboard/plugin');
   const compiler = webpack(webpackConfig);
 
   compiler.apply(new webpack.ProgressPlugin());
-  compiler.apply(new DashboardPlugin());
 
   app.use(
     require('webpack-dev-middleware')(compiler, {

@@ -1,7 +1,6 @@
 /* @flow */
 
 import React from 'react';
-// $FlowFixMe: isn't an issue
 import { hydrate } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
@@ -27,6 +26,7 @@ const render = (Routes: Array<Object>) => {
         </ConnectedRouter>
       </Provider>
     </AppContainer>,
+    // $FlowFixMe: isn't an issue
     document.getElementById('react-view')
   );
 };

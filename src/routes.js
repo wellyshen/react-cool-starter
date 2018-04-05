@@ -3,7 +3,8 @@
 // import type { Dispatch } from './types';
 import { fetchUsersIfNeeded } from './actions/users';
 import { fetchUserIfNeeded } from './actions/user';
-import { App, asyncHome, asyncUserInfo, NotFound } from './containers';
+import App from './app';
+import { asyncHome, asyncUserInfo, NotFound } from './pages';
 
 export default [
   {
