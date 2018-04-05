@@ -584,5 +584,5 @@ There're some 3rd party issues related to the version of webpack v4. Please be p
 
 There're some features (updates) which will be included in this starter in the near future:
 
-* [ ] Using (webpack-dashboard)[https://github.com/FormidableLabs/webpack-dashboard] for better DX. Now it not fully support webpack v4 yet.
+* [ ] Using [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard) for better DX. Now it not fully support webpack v4 yet.
 * [ ] Code splitting for reducers.
