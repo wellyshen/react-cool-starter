@@ -104,7 +104,6 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 | `yarn <script>`    | Description                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------ |
 | `start`            | Run your app on the development server at `localhost:3000`. HMR will be enabled.           |
-| `start:dashboard`  | The same with `start` and webpack bundle info will be turned into dashboard mode.          |
 | `start:production` | Bundle files to `./public/assets` and run it on the production server at `localhost:8080`. |
 | `start:prod`       | Run your app on the production server only at `localhost:8080`.                            |
 | `build`            | Remove the previous bundled files and bundle it to `./public/assets`.                      |
@@ -573,8 +572,17 @@ So it will look like:
 // ...
 ```
 
-## Todo...
+## Known Issues
+
+There're some 3rd party issues related to the version of webpack v4. Please be patient for them:
+
+* For deprecated warning of `(node:31249) DeprecationWarning: Tapable.plugin is deprecated. Use new API on '.hooks' instead` is caused from [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plugin) and there's a [open issue](https://github.com/kossnocorp/assets-webpack-plugin/issues/86) for it.
+
+* HMR doesn't work for style. Because of I use (mini-css-extract-plugin)[https://github.com/webpack-contrib/mini-css-extract-plugin] to instead of [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin). And it'll [support HMR](https://github.com/webpack-contrib/mini-css-extract-plugin#mini-css-extract-plugin) soon.
+
+## To Do...
 
 There're some features (updates) which will be included in this starter in the near future:
 
+* [ ] Using (webpack-dashboard)[https://github.com/FormidableLabs/webpack-dashboard] for better DX. Now it not fully support webpack v4 yet.
 * [ ] Code splitting for reducers.

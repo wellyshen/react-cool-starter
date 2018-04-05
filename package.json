@@ -330,7 +330,7 @@
     "eslint-plugin-react": "^7.4.0",
     "file-loader": "^1.1.11",
     "flow-bin": "^0.69.0",
-    "friendly-errors-webpack-plugin": "^1.6.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-minifier": "^3.5.13",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^4.2.0",
@@ -358,7 +358,6 @@
     "webpack": "^4.5.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.14",
-    "webpack-dashboard": "^1.1.1",
     "webpack-dev-middleware": "^3.1.1",
     "webpack-hot-middleware": "^2.21.2"
   },
