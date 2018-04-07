@@ -139,7 +139,7 @@ module.exports = {
             options: {
               importLoaders: 1,
               modules: CSSModules,
-              localIdentName: '[name]__[local]__[hash:base64:5]',
+              localIdentName: '[name]__[local]--[hash:base64:5]',
               context: path.resolve(process.cwd(), 'src'),
               sourceMap: true,
               minimize: !isDev
@@ -157,7 +157,7 @@ module.exports = {
             options: {
               importLoaders: 2,
               modules: CSSModules,
-              localIdentName: '[name]__[local]__[hash:base64:5]',
+              localIdentName: '[name]__[local]--[hash:base64:5]',
               context: path.resolve(process.cwd(), 'src'),
               sourceMap: true,
               minimize: !isDev
