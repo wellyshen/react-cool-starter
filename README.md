@@ -574,11 +574,7 @@ So it will look like:
 
 ## Known Issues
 
-There're some 3rd party issues related to the version of webpack v4. Please be patient for them:
-
-* For deprecated warning of `(node:31249) DeprecationWarning: Tapable.plugin is deprecated. Use new API on '.hooks' instead` is caused from [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plugin) and there's a [open issue](https://github.com/kossnocorp/assets-webpack-plugin/issues/86) for it.
-
-* HMR doesn't work for style. Because of I use (mini-css-extract-plugin)[https://github.com/webpack-contrib/mini-css-extract-plugin] to instead of [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin). And it'll [support HMR](https://github.com/webpack-contrib/mini-css-extract-plugin#mini-css-extract-plugin) soon.
+HMR doesn't work for style. Because of I use (mini-css-extract-plugin)[https://github.com/webpack-contrib/mini-css-extract-plugin] to instead of [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin). And it'll [support HMR](https://github.com/webpack-contrib/mini-css-extract-plugin#mini-css-extract-plugin) soon.
 
 ## To Do...
 
