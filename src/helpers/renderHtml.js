@@ -8,10 +8,9 @@ export default (
   initialState: Object,
   loadableStateTag: string
 ): string => {
-  // Use pre-defined assets to make sure using the correct script/style in development
-  // "main" is the default webpack generating file name
+  // Use pre-defined assets in development. "main" is the default webpack generated name.
   const envAssets = __DEV__
-    ? { main: { js: '/assets/main.js', css: '/assets/main.css' } }
+    ? { js: '/assets/main.js', css: '/assets/main.css' }
     : assets;
 
   const html = `
@@ -36,9 +35,9 @@ export default (
         ${Object.keys(envAssets)
           .map(
             key =>
-              envAssets[key].css
+              key.substr(key.length - 3) === 'css'
                 ? `<link href="${
-                    envAssets[key].css
+                    envAssets[key]
                   }" media="screen, projection" rel="stylesheet" type="text/css">`
                 : ''
           )
@@ -61,7 +60,12 @@ export default (
 
         <!-- Insert bundled scripts into <script> tag -->
         ${Object.keys(envAssets)
-          .map(key => `<script src="${envAssets[key].js}"></script>`)
+          .map(
+            key =>
+              key.substr(key.length - 2) === 'js'
+                ? `<script src="${envAssets[key]}"></script>`
+                : ''
+          )
           .join('')}
 
         ${head.script.toString()}

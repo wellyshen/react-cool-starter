@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import AssetsPlugin from 'assets-webpack-plugin';
+import ManifestPlugin from 'webpack-manifest-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
@@ -21,7 +21,10 @@ const stylelint = false;
 const getPlugins = () => {
   // Common
   const plugins = [
-    new AssetsPlugin({ path: path.resolve(process.cwd(), 'public') }),
+    new ManifestPlugin({
+      fileName: path.resolve(process.cwd(), 'public/webpack-assets.json'),
+      filter: file => file.isInitial
+    }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
       filename: isDev ? '[name].css' : '[name].[chunkhash:8].css',
