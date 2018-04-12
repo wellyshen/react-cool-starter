@@ -31,7 +31,10 @@ export class UserInfo extends PureComponent<Props> {
   }
 
   renderUserCard = () => {
-    const { userInfo, match: { params } } = this.props;
+    const {
+      userInfo,
+      match: { params }
+    } = this.props;
     const userInfoById = userInfo[params.id];
 
     if (!userInfoById || userInfoById.readyStatus === 'USER_REQUESTING') {
