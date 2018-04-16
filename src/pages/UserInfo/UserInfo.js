@@ -5,7 +5,6 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
-import { hot } from 'react-hot-loader';
 
 import * as usersAction from '../../actions/user';
 import type {
@@ -64,5 +63,4 @@ const connector = connect(
   })
 );
 
-// Enable hot reloading for async componet
-export default compose(hot(module), withRouter, connector)(UserInfo);
+export default compose(withRouter, connector)(UserInfo);

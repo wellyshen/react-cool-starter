@@ -3,15 +3,16 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
 import Helmet from 'react-helmet';
+import { hot } from 'react-hot-loader';
 
 import config from '../config';
 // Import your global styles here
-// import '../../../node_modules/normalize.css/normalize.css';
+import 'normalize.css/normalize.css'; // eslint-disable-line import/first
 import styles from './styles.scss';
 
 type Props = { route: Object };
 
-export default ({ route }: Props) => (
+const App = ({ route }: Props) => (
   <div className={styles.App}>
     <Helmet {...config.app} />
     <div className={styles.header}>
@@ -23,3 +24,5 @@ export default ({ route }: Props) => (
     {renderRoutes(route.routes)}
   </div>
 );
+
+export default hot(module)(App);
