@@ -574,7 +574,7 @@ So it will look like:
 
 ## Known Issues
 
-HMR doesn't work for style. Because of I use (mini-css-extract-plugin)[https://github.com/webpack-contrib/mini-css-extract-plugin] to instead of [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin). And it'll [support HMR](https://github.com/webpack-contrib/mini-css-extract-plugin#mini-css-extract-plugin) soon.
+HMR doesn't work for style. Because of I use [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to instead of [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin). And it'll [support HMR](https://github.com/webpack-contrib/mini-css-extract-plugin#mini-css-extract-plugin) soon.
 
 ## To Do...
 
