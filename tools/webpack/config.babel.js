@@ -4,6 +4,7 @@ import ManifestPlugin from 'webpack-manifest-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
+import ImageminPlugin from 'imagemin-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
@@ -58,6 +59,11 @@ const getPlugins = () => {
         test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
         threshold: 10240,
         minRatio: 0.8
+      }),
+      // Plugin to compress images with imagemin
+      // Check "https://github.com/Klathmon/imagemin-webpack-plugin" for more configurations
+      new ImageminPlugin({
+        pngquant: { quality: '95-100' }
       }),
       // Visualize all of the webpack bundles
       // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
@@ -185,17 +191,8 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g|webp)$/,
         // Any image below or equal to 10K will be converted to inline base64 instead
-        use: [
-          {
-            loader: 'url',
-            options: { limit: 10240 }
-          },
-          {
-            // Image optimization
-            loader: 'image-webpack',
-            options: { bypassOnDebug: true }
-          }
-        ]
+        loader: 'url',
+        options: { limit: 10240 }
       }
     ]
   },

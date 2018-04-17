@@ -50,7 +50,7 @@ Really cool starter boilerplate with the most popular technologies:
 * [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb + Prettier).
 * [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 * CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
-* Image (with [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader) for optimizing) and Font support.
+* Image (with [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin) for compressing images with imagemin)and Font support.
 * Split vendor's libraries from client bundle.
 * No other view engines, just javascript based HTML rendering component.
 * Shared app config between development and production.

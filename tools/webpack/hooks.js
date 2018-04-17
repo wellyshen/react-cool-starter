@@ -26,6 +26,8 @@ module.exports = () => {
   // Images
   require('asset-require-hook')({
     extensions: ['gif', 'jpg', 'jpeg', 'png', 'webp'],
+    // Must use the same "publicPath" with webpack configuration
+    publicPath: '/assets/',
     limit: 10240
   });
 
