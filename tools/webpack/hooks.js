@@ -25,15 +25,19 @@ module.exports = () => {
 
   // Images
   require('asset-require-hook')({
+    // Must use the same option with webpack's configuration
     extensions: ['gif', 'jpg', 'jpeg', 'png', 'webp'],
-    // Must use the same "publicPath" with webpack configuration
     publicPath: '/assets/',
-    limit: 10240
+    limit: 10240,
+    name: '[name].[hash:8].[ext]'
   });
 
   // Fonts
   require('asset-require-hook')({
+    // Must use the same option with webpack's configuration
     extensions: ['woff', 'woff2', 'ttf', 'eot', 'svg'],
-    limit: 10240
+    publicPath: '/assets/',
+    limit: 10240,
+    name: '[name].[hash:8].[ext]'
   });
 };

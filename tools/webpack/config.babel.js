@@ -186,13 +186,13 @@ module.exports = {
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
         loader: 'url',
-        options: { limit: 10240 }
+        options: { limit: 10240, name: '[name].[hash:8].[ext]' }
       },
       {
         test: /\.(gif|png|jpe?g|webp)$/,
         // Any image below or equal to 10K will be converted to inline base64 instead
         loader: 'url',
-        options: { limit: 10240 }
+        options: { limit: 10240, name: '[name].[hash:8].[ext]' }
       }
     ]
   },
