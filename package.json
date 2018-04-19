@@ -274,7 +274,7 @@
     "helmet": "^3.12.0",
     "history": "^4.7.2",
     "hpp": "^0.2.2",
-    "loadable-components": "^1.3.0",
+    "loadable-components": "^1.4.0",
     "lodash": "^4.17.5",
     "morgan": "^1.9.0",
     "normalize.css": "^8.0.0",
@@ -282,14 +282,14 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
-    "react-hot-loader": "^4.0.1",
+    "react-hot-loader": "^4.1.0",
     "react-redux": "^5.0.7",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
-    "redux": "^3.7.2",
+    "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
-    "serialize-javascript": "^1.4.0",
+    "serialize-javascript": "^1.5.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
@@ -351,15 +351,15 @@
     "stylelint": "^9.2.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-config-standard": "^18.2.0",
-    "stylelint-scss": "^3.0.0",
+    "stylelint-scss": "^3.0.1",
     "stylelint-webpack-plugin": "^0.10.4",
     "url-loader": "^1.0.1",
-    "webpack": "^4.5.0",
+    "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.14",
     "webpack-dev-middleware": "^3.1.2",
-    "webpack-hot-middleware": "^2.22.0",
-    "webpack-manifest-plugin": "^2.0.0"
+    "webpack-hot-middleware": "^2.22.1",
+    "webpack-manifest-plugin": "^2.0.1"
   },
   "resolutions": {
     "webpack-sources": "^1.1.0"
