@@ -282,7 +282,7 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
-    "react-hot-loader": "^4.1.0",
+    "react-hot-loader": "^4.1.1",
     "react-redux": "^5.0.7",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
@@ -356,7 +356,7 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
-    "webpack-cli": "^2.0.14",
+    "webpack-cli": "^2.0.15",
     "webpack-dev-middleware": "^3.1.2",
     "webpack-hot-middleware": "^2.22.1",
     "webpack-manifest-plugin": "^2.0.1"
