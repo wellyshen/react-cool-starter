@@ -1,7 +1,8 @@
 {
   "name": "react-cool-starter",
   "version": "2.4.2",
-  "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
+  "description":
+    "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
     "node": ">=6.0",
@@ -73,13 +74,15 @@
       }
     },
     "build": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command":
+        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "production"
       }
     },
     "analyze": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command":
+        "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "analyze"
       }
@@ -114,26 +117,15 @@
   },
   "babel": {
     "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "useBuiltIns": "usage"
-        }
-      ],
+      ["@babel/preset-env", { "useBuiltIns": "usage" }],
       "@babel/preset-react",
-      "@babel/preset-stage-0",
+      ["@babel/preset-stage-0", { "decoratorsLegacy": true }],
       "@babel/preset-flow"
     ],
-    "plugins": [
-      "loadable-components/babel",
-      "dynamic-import-node",
-      "lodash"
-    ],
+    "plugins": ["loadable-components/babel", "dynamic-import-node", "lodash"],
     "env": {
       "production": {
-        "plugins": [
-          "transform-remove-console"
-        ]
+        "plugins": ["transform-remove-console"]
       }
     }
   },
@@ -145,11 +137,7 @@
       "prettier",
       "prettier/react"
     ],
-    "plugins": [
-      "lodash-fp",
-      "react",
-      "prettier"
-    ],
+    "plugins": ["lodash-fp", "react", "prettier"],
     "settings": {
       "import/resolver": {
         "webpack": {
@@ -171,10 +159,7 @@
       "react/jsx-filename-extension": [
         "error",
         {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
+          "extensions": [".js", ".jsx"]
         }
       ],
       "import/no-extraneous-dependencies": [
@@ -186,9 +171,7 @@
       "jsx-a11y/anchor-is-valid": [
         "error",
         {
-          "specialLink": [
-            "to"
-          ]
+          "specialLink": ["to"]
         }
       ],
       "lodash-fp/use-fp": "off",
@@ -206,36 +189,26 @@
       "__DEV__": true
     }
   },
-  "eslintIgnore": [
-    "tools/flow"
-  ],
+  "eslintIgnore": ["tools/flow"],
   "stylelint": {
     "extends": [
       "stylelint-config-standard",
       "stylelint-config-recommended-scss",
       "./node_modules/prettier-stylelint/config.js"
     ],
-    "plugins": [
-      "stylelint-scss"
-    ],
+    "plugins": ["stylelint-scss"],
     "rules": {
       "string-quotes": "single",
       "selector-pseudo-class-no-unknown": [
         true,
         {
-          "ignorePseudoClasses": [
-            "global",
-            "local"
-          ]
+          "ignorePseudoClasses": ["global", "local"]
         }
       ]
     }
   },
   "jest": {
-    "setupFiles": [
-      "raf/polyfill",
-      "<rootDir>/tools/jest/setup.js"
-    ],
+    "setupFiles": ["raf/polyfill", "<rootDir>/tools/jest/setup.js"],
     "globals": {
       "__DEV__": true
     },
@@ -252,37 +225,32 @@
     ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/tools/jest/assetMock.js"
     }
   },
   "nodemonConfig": {
-    "watch": [
-      "src/server.js",
-      "src/helpers/renderHtml.js"
-    ]
+    "watch": ["src/server.js", "src/helpers/renderHtml.js"]
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
+  "browserslist": ["> 1%", "last 2 versions"],
   "dependencies": {
-    "@babel/register": "^7.0.0-beta.44",
+    "@babel/register": "^7.0.0-beta.46",
     "axios": "^0.18.0",
-    "chalk": "^2.4.0",
+    "chalk": "^2.4.1",
     "compression": "^1.7.2",
     "express": "^4.16.3",
     "helmet": "^3.12.0",
     "history": "^4.7.2",
     "hpp": "^0.2.2",
     "loadable-components": "^1.4.0",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.10",
     "morgan": "^1.9.0",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
-    "react-hot-loader": "^4.1.1",
+    "react-hot-loader": "^4.1.2",
     "react-redux": "^5.0.7",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
@@ -293,12 +261,12 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.44",
-    "@babel/core": "^7.0.0-beta.44",
-    "@babel/preset-env": "^7.0.0-beta.44",
-    "@babel/preset-flow": "^7.0.0-beta.44",
-    "@babel/preset-react": "^7.0.0-beta.44",
-    "@babel/preset-stage-0": "^7.0.0-beta.44",
+    "@babel/cli": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-flow": "^7.0.0-beta.46",
+    "@babel/preset-react": "^7.0.0-beta.46",
+    "@babel/preset-stage-0": "^7.0.0-beta.46",
     "asset-require-hook": "^1.2.0",
     "autoprefixer": "^8.3.0",
     "babel-core": "^7.0.0-0",
@@ -336,7 +304,7 @@
     "jest": "^23.0.0-alpha.0",
     "mini-css-extract-plugin": "^0.4.0",
     "nock": "^9.2.5",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.9.0",
     "nodemon": "^1.17.3",
     "opn": "^5.3.0",
     "postcss": "^6.0.21",
