@@ -22,7 +22,7 @@ import configureStore from './helpers/configureStore';
 import renderHtml from './helpers/renderHtml';
 import routes from './routes';
 // $FlowFixMe: isn't an issue
-import assets from '../public/webpack-assets.json';
+import assets from '../public/webpack-assets';
 import { port, host } from './config';
 
 const app = express();
