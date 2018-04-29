@@ -8,7 +8,7 @@ const path = require('path');
 module.exports = () => {
   // CSS modules
   require('css-modules-require-hook')({
-    // Must use the same pattern with your webpack config
+    // Must use the same pattern with your webpack config and postcss configuration
     generateScopedName: '[name]__[local]--[hash:base64:5]',
     extensions: ['.css', '.scss', '.sass'],
     prepend: [require('autoprefixer')({ grid: true })],
