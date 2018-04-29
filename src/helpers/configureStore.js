@@ -13,8 +13,10 @@ export default (history: Object, initialState: Object = {}): Store => {
     routerMiddleware(history)
     // Add other middlewares here
   ];
+  // Use Redux DevTools Extension in development
   const composeEnhancers =
-    (typeof window === 'object' &&
+    (__DEV__ &&
+      typeof window === 'object' &&
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
     compose;
   const enhancers = composeEnhancers(
