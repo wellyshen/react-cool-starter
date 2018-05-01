@@ -18,8 +18,6 @@ module.exports = () => {
         data,
         file: filename
       }).css,
-    // Must be the same with the "context" of webpack LoaderOptionsPlugin
-    // see here: https://github.com/css-modules/css-modules-require-hook/issues/86
     rootDir: path.resolve(process.cwd(), 'src'),
     devMode: __DEV__
   });

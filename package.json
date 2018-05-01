@@ -361,10 +361,10 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
-    "webpack-cli": "^2.0.15",
+    "webpack-cli": "^2.1.2",
     "webpack-dev-middleware": "^3.1.3",
     "webpack-hot-middleware": "^2.22.1",
-    "webpack-manifest-plugin": "^2.0.1"
+    "webpack-manifest-plugin": "^2.0.2"
   },
   "resolutions": {
     "webpack-sources": "^1.1.0"
