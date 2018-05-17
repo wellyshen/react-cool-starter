@@ -38,7 +38,6 @@
   "homepage": "https://github.com/wellyshen/react-cool-starter",
   "scripts": {
     "start": "better-npm-run start",
-    "start:dashboard": "webpack-dashboard yarn start",
     "start:production": "yarn build && yarn start:prod",
     "start:prod": "better-npm-run start:prod",
     "build": "yarn clean:build && better-npm-run build",
