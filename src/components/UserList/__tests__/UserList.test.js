@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { StaticRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 import UserList from '../index';
 
@@ -9,9 +9,9 @@ describe('<UserList />', () => {
     const mockData = [{ id: '1', name: 'Welly' }];
     const tree = renderer
       .create(
-        <StaticRouter context={{}}>
+        <MemoryRouter>
           <UserList list={mockData} />
-        </StaticRouter>
+        </MemoryRouter>
       )
       .toJSON();
 

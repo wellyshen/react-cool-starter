@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { StaticRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 import NotFound from '../index';
 
@@ -8,9 +8,9 @@ describe('<NotFound />', () => {
   test('renders', () => {
     const tree = renderer
       .create(
-        <StaticRouter context={{}}>
+        <MemoryRouter>
           <NotFound />
-        </StaticRouter>
+        </MemoryRouter>
       )
       .toJSON();
 

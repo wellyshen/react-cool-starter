@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { StaticRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 import UserCard from '../index';
 
@@ -14,9 +14,9 @@ describe('<UserCard />', () => {
     };
     const tree = renderer
       .create(
-        <StaticRouter context={{}}>
+        <MemoryRouter>
           <UserCard info={mockData} />
-        </StaticRouter>
+        </MemoryRouter>
       )
       .toJSON();
 

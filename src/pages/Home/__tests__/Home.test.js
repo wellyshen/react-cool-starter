@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import { StaticRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 import { Home } from '../Home';
 
@@ -9,9 +9,9 @@ describe('<Home />', () => {
   const tree = (props, actions) =>
     renderer
       .create(
-        <StaticRouter context={{}}>
+        <MemoryRouter>
           <Home {...props} {...actions} />
-        </StaticRouter>
+        </MemoryRouter>
       )
       .toJSON();
 
@@ -25,9 +25,9 @@ describe('<Home />', () => {
     };
 
     mount(
-      <StaticRouter context={{}}>
+      <MemoryRouter>
         <Home {...props} {...actions} />
-      </StaticRouter>
+      </MemoryRouter>
     );
 
     expect(mockAction).toHaveBeenCalled();

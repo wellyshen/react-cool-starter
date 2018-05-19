@@ -1,9 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import { StaticRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
-import routes from '../../routes';
 import App from '../index';
 
 describe('<App />', () => {
@@ -14,13 +13,26 @@ describe('<App />', () => {
       dispatch: () => {},
       getState: () => ({ home: () => {} })
     };
+    const fakeRoute = {
+      routes: [
+        {
+          path: '/',
+          exact: true,
+          component: () => (
+            <div>
+              <h1>This is Home!</h1>
+            </div>
+          )
+        }
+      ]
+    };
 
     const tree = renderer
       .create(
         <Provider store={fakeStore}>
-          <StaticRouter context={{}}>
-            <App route={routes[0]} />
-          </StaticRouter>
+          <MemoryRouter>
+            <App route={fakeRoute} />
+          </MemoryRouter>
         </Provider>
       )
       .toJSON();

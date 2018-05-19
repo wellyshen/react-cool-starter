@@ -17,12 +17,10 @@ exports[`<App /> renders 1`] = `
     </h1>
   </div>
   <hr />
-  <div
-    className="Loading"
-  >
-    <p>
-      Loading...
-    </p>
+  <div>
+    <h1>
+      This is Home!
+    </h1>
   </div>
 </div>
 `;

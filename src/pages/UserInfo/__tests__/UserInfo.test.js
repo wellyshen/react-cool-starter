@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import { StaticRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 import { UserInfo } from '../UserInfo';
 
@@ -9,9 +9,9 @@ describe('<UserInfo />', () => {
   const tree = (props, actions) =>
     renderer
       .create(
-        <StaticRouter context={{}}>
+        <MemoryRouter>
           <UserInfo {...props} {...actions} />
-        </StaticRouter>
+        </MemoryRouter>
       )
       .toJSON();
 
@@ -24,9 +24,9 @@ describe('<UserInfo />', () => {
     const actions = { fetchUserIfNeeded: mockAction };
 
     mount(
-      <StaticRouter context={{}}>
+      <MemoryRouter>
         <UserInfo {...props} {...actions} />
-      </StaticRouter>
+      </MemoryRouter>
     );
 
     expect(mockAction).toHaveBeenCalled();

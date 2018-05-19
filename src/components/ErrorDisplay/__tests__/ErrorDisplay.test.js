@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { StaticRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 import ErrorDisplay from '../index';
 
@@ -9,9 +9,9 @@ describe('<ErrorDisplay />', () => {
     const mockData = { message: 'Error!' };
     const tree = renderer
       .create(
-        <StaticRouter context={{}}>
+        <MemoryRouter>
           <ErrorDisplay error={mockData} />
-        </StaticRouter>
+        </MemoryRouter>
       )
       .toJSON();
 
