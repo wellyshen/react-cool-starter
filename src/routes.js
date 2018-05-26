@@ -1,8 +1,6 @@
 /* @flow */
 
-// import type { Dispatch } from './types';
-import { fetchUsersIfNeeded } from './actions/users';
-import { fetchUserIfNeeded } from './actions/user';
+import { usersAction, userAction } from './actions';
 import App from './app';
 import { asyncHome, asyncUserInfo, NotFound } from './pages';
 
@@ -15,14 +13,16 @@ export default [
         exact: true,
         component: asyncHome, // Add your route here
         loadData: () => [
-          fetchUsersIfNeeded()
+          usersAction.fetchUsersIfNeeded()
           // Add other pre-fetched actions here
         ]
       },
       {
         path: '/UserInfo/:id',
         component: asyncUserInfo,
-        loadData: ({ params }: Object) => [fetchUserIfNeeded(params.id)]
+        loadData: ({ params }: Object) => [
+          userAction.fetchUserIfNeeded(params.id)
+        ]
       },
       {
         component: NotFound

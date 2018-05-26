@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
-import * as usersAction from '../../actions/user';
+import { userAction } from '../../actions';
 import type {
   UserInfo as UserInfoType,
   Dispatch,
@@ -59,7 +59,7 @@ const connector = connect(
   ({ userInfo }: ReduxState) => ({ userInfo }),
   (dispatch: Dispatch) => ({
     fetchUserIfNeeded: (id: string) =>
-      dispatch(usersAction.fetchUserIfNeeded(id))
+      dispatch(userAction.fetchUserIfNeeded(id))
   })
 );
 

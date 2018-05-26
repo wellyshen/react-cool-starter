@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
-import * as actionUsers from '../../actions/users';
+import { usersAction } from '../../actions';
 import type { Home as HomeType, Dispatch, ReduxState } from '../../types';
 import { UserList } from '../../components';
 import styles from './styles.scss';
@@ -48,7 +48,7 @@ export class Home extends PureComponent<Props> {
 const connector = connect(
   ({ home }: ReduxState) => ({ home }),
   (dispatch: Dispatch) => ({
-    fetchUsersIfNeeded: () => dispatch(actionUsers.fetchUsersIfNeeded())
+    fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded())
   })
 );
 
