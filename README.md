@@ -137,7 +137,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── app                         # App root component (including scss/testing files)
 │   ├── actions                     # Redux actions (including testing files)
 │   ├── reducers                    # Redux reducers (including testing files)
-│   ├── helpers                     # App-wide helpers (e.g. configure Redux store, HTML template etc.)  
+│   ├── utils                       # App-wide utils (e.g. configure Redux store, HTML template etc.)  
 │   ├── theme                       # App-wide style and vendor CSS framework
 │   ├── types                       # Flow types for reducer, action, state, store
 │   ├── client.js                   # App bootstrap and rendering (webpack entry)

@@ -18,8 +18,8 @@ import Helmet from 'react-helmet';
 import chalk from 'chalk';
 
 import createHistory from 'history/createMemoryHistory';
-import configureStore from './helpers/configureStore';
-import renderHtml from './helpers/renderHtml';
+import configureStore from './utils/configureStore';
+import renderHtml from './utils/renderHtml';
 import routes from './routes';
 // $FlowFixMe: isn't an issue
 import assets from '../public/webpack-assets.json';
