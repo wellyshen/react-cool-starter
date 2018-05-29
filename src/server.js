@@ -16,6 +16,7 @@ import { Provider } from 'react-redux';
 import { getLoadableState } from 'loadable-components/server';
 import Helmet from 'react-helmet';
 import chalk from 'chalk';
+import openBrowser from 'react-dev-utils/openBrowser';
 
 import createHistory from 'history/createMemoryHistory';
 import configureStore from './utils/configureStore';
@@ -155,8 +156,9 @@ if (port) {
 
     console.info(chalk.green(`==> 🌎  Listening at ${url}`));
 
-    // Open Chrome
-    require('../tools/openBrowser')(url);
+    // Open browser
+    if (openBrowser(url))
+      console.info(chalk.green("==> 🖥️  Opened on your browser's tab!"));
   });
 } else {
   console.error(

@@ -18,45 +18,45 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 ## Real Case Study
 
-* [BECK Friends](https://www.beckfriends.com/) is an international delivery service, which is built based on this starter boilerplate. Congrats for successful migrating to React.
+- [BECK Friends](https://www.beckfriends.com/) is an international delivery service, which is built based on this starter boilerplate. Congrats for successful migrating to React.
 
 ## Features
 
 Really cool starter boilerplate with the most popular technologies:
 
-* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering with async data fetching.
-* [React](https://facebook.github.io/react/) as the view.
-* [React Router v4](https://reacttraining.com/react-router/) as the router.
-* [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
-* [Express](https://expressjs.com/) server.
-* [Webpack 4](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
-* [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
-* [React Hot Loader 4](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
-* [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
-* [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
-* [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
-* [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
-* [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
-* [loadable-components](https://github.com/smooth-code/loadable-components) makes React code splitting easy. Reduce your bundle size without stress.
-* [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
-* [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
-* [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for SSR.
-* [asset-require-hook](https://github.com/aribouius/asset-require-hook) allows your assets files required during runtime for SSR.
-* [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plugin#why-is-this-useful) generates assets with hash so you can use them for SSR.
-* [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
-* [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
-* [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
-* [Flow](https://flowtype.org/) as the static type checker for javascript.
-* [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb + Prettier).
-* [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
-* CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
-* Image (with [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin) for compressing images with imagemin) and Font support.
-* Split vendor's libraries from client bundle.
-* No other view engines, just javascript based HTML rendering component.
-* Shared app config between development and production.
-* 404 error page and redirect handling.
-* Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
-* [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
+- [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering with async data fetching.
+- [React](https://facebook.github.io/react/) as the view.
+- [React Router v4](https://reacttraining.com/react-router/) as the router.
+- [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
+- [Express](https://expressjs.com/) server.
+- [Webpack 4](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
+- [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
+- [React Hot Loader 4](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
+- [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
+- [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
+- [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
+- [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
+- [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
+- [loadable-components](https://github.com/smooth-code/loadable-components) makes React code splitting easy. Reduce your bundle size without stress.
+- [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
+- [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
+- [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for SSR.
+- [asset-require-hook](https://github.com/aribouius/asset-require-hook) allows your assets files required during runtime for SSR.
+- [assets-webpack-plugin](https://github.com/kossnocorp/assets-webpack-plugin#why-is-this-useful) generates assets with hash so you can use them for SSR.
+- [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
+- [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
+- [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
+- [Flow](https://flowtype.org/) as the static type checker for javascript.
+- [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb + Prettier).
+- [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
+- CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
+- Image (with [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin) for compressing images with imagemin) and Font support.
+- Split vendor's libraries from client bundle.
+- No other view engines, just javascript based HTML rendering component.
+- Shared app config between development and production.
+- 404 error page and redirect handling.
+- Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
+- [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
 
 ## Who's the Starter for?
 
@@ -64,13 +64,13 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 ## Some Feature Branches
 
-* Simplfied action creator version: [simple-action](https://github.com/wellyshen/react-cool-starter/tree/simple-action) branch.
-* Docker-ise support: [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
+- Simplfied action creator version: [simple-action](https://github.com/wellyshen/react-cool-starter/tree/simple-action) branch.
+- Docker-ise support: [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
 
 ## Requirements
 
-* [node](https://nodejs.org/en/) >= 6.0
-* [npm](https://www.npmjs.com/) >= 3.0
+- [node](https://nodejs.org/en/) >= 6.0
+- [npm](https://www.npmjs.com/) >= 3.0
 
 ## Getting Started
 
@@ -145,7 +145,6 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   └── server.js                   # Express server (with webpack dev/hot middlewares)
 ├── tools                           # Project related configurations (testing/build etc.)
 │   ├── flow                        # Flow types, interface, module aliasing definitions
-│   ├── openBrowser                 # Utility for opening Google Chrome
 │   ├── jest                        # Jest CSS modules and assets mocks settings
 │   ├── webpack                     # Webpack settings
 │   │   ├── config.babel.js         # Webpack configuration
@@ -158,9 +157,9 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 
 Concerning the security and performance of Express in production, I already setup some middleware for you:
 
-* [helmet](https://github.com/helmetjs/helmet) - Helps secure Express server with various HTTP headers.
-* [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
-* [compression](https://github.com/expressjs/compression) - Gzip compression support for speeding up Express server responses.
+- [helmet](https://github.com/helmetjs/helmet) - Helps secure Express server with various HTTP headers.
+- [hpp](https://github.com/analog-nico/hpp) - Express middleware to protect against HTTP Parameter Pollution attacks.
+- [compression](https://github.com/expressjs/compression) - Gzip compression support for speeding up Express server responses.
 
 > Note: It's just a basic protected mechanism for your app, you can see the [security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
 
@@ -170,22 +169,22 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 **For Chrome**
 
-* from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
-* or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`;
-* or run it in dev mode with `npm i && npm start` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
+- from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
+- or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`;
+- or run it in dev mode with `npm i && npm start` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
 
 **For Firefox**
 
-* from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/remotedev/);
-* or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
+- from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/remotedev/);
+- or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
 
 **For Electron**
 
-* just specify `REDUX_DEVTOOLS` in [`electron-devtools-installer`](https://github.com/GPMDP/electron-devtools-installer).
+- just specify `REDUX_DEVTOOLS` in [`electron-devtools-installer`](https://github.com/GPMDP/electron-devtools-installer).
 
 **For other browsers and non-browser environment**
 
-* use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
+- use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
 ## Overview
 
@@ -468,11 +467,11 @@ Flow’s static analysis makes building web apps with React safe by tracking the
 
 I love to write React, Redux with Flow, I know it's not easy to learn at the beginning. But trust me, it's worth to learn. There're some useful instructions that I can give you as below:
 
-* If you are new to Flow, read the official [docs](https://flow.org/en/docs/) to understand it.
+- If you are new to Flow, read the official [docs](https://flow.org/en/docs/) to understand it.
 
-* Learn how to use Flow with React from [here](https://flow.org/en/docs/react/).
+- Learn how to use Flow with React from [here](https://flow.org/en/docs/react/).
 
-* Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
+- Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
 
 Moreover, often you will want to use third-party libraries. For these circumstances, Flow supports the concept of a "libdef" ("Library Definition") which allows you to describe the interface and types of the library separate from the library and without needing to add types to or change the library itself. You can write a libdef file yourself if you need to or use [flow-typed](https://github.com/flowtype/flow-typed), which is a repository of third-party library interface definitions for use with Flow.
 
@@ -499,9 +498,9 @@ This starter use [Jest](https://facebook.github.io/jest/) as the testing engine.
 
 I also use [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. The unit tests focus on three parts as below:
 
-* React Components
-* Actions
-* Reducers
+- React Components
+- Actions
+- Reducers
 
 By the way, Jest built-in code coverage reports, the report files are generated in `./coverage` folder. You can configure `./package.json` to define which files that you want to cover. For example:
 
@@ -526,17 +525,17 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ## Troubleshooting
 
-* If you get the the following errors, try to run `yarn build` to re-generate the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles etc.) working on universal rendering.
+- If you get the the following errors, try to run `yarn build` to re-generate the necessary `webpack-assets.json` file for enable related assets (e.g. javascript, styles etc.) working on universal rendering.
 
-  * > Cannot find module '../public/assets.json'
-  * > Failed to load resource: the server responded with a status of 404 (Not Found)
+  - > Cannot find module '../public/assets.json'
+  - > Failed to load resource: the server responded with a status of 404 (Not Found)
 
-* If you encounter the markup mismatches error (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
+- If you encounter the markup mismatches error (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
 
-  * Restart the server to solve it.
-  * Or for v16.1.0 up, you can use `suppressHydrationWarning` attribute for intentional client/server text mismatches ([#11126](https://github.com/facebook/react/pull/11126)).
+  - Restart the server to solve it.
+  - Or for v16.1.0 up, you can use `suppressHydrationWarning` attribute for intentional client/server text mismatches ([#11126](https://github.com/facebook/react/pull/11126)).
 
-* If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following.
+- If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following.
 
 In the `./package.json` script:
 
@@ -549,14 +548,14 @@ In the `./package.json` script:
     "NODE_PATH": "./src",
     "NODE_ENV": "production",
     "PORT": 8080,
-    "BROWSER": "none"   // Add this node variable to turn off the open browser util
+    "BROWSER": "none"   // Add this node variable to turn off the function of open browser automatically
   }
 },
 
 // ...
 ```
 
-* If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to `./package.json`.
+- If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to `./package.json`.
 
 ```
 "linebreak-style": 0
@@ -580,5 +579,5 @@ HMR doesn't work for style. Because of I use [mini-css-extract-plugin](https://g
 
 There're some features (updates) which will be included in this starter in the near future:
 
-* [ ] Using [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard) for better DX. Now it not fully support webpack v4 yet.
-* [ ] Code splitting for reducers.
+- [ ] Using [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard) for better DX. Now it not fully support webpack v4 yet.
+- [ ] Code splitting for reducers.

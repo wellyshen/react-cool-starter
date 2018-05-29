@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.4.2",
+  "version": "2.5.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -299,6 +299,7 @@
     "opn": "^5.3.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
+    "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.2.0",
