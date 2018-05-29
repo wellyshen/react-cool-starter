@@ -63,4 +63,7 @@ const connector = connect(
   })
 );
 
-export default compose(withRouter, connector)(UserInfo);
+export default compose(
+  withRouter,
+  connector
+)(UserInfo);

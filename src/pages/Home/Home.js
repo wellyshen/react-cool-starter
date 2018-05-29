@@ -52,4 +52,7 @@ const connector = connect(
   })
 );
 
-export default compose(withRouter, connector)(Home);
+export default compose(
+  withRouter,
+  connector
+)(Home);

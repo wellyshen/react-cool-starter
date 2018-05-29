@@ -28,10 +28,8 @@ const getPlugins = () => {
     }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
-      filename: isDev ? '[name].css' : '[name].[chunkhash:8].css',
-      chunkFilename: isDev
-        ? '[name].chunk.css'
-        : '[name].[chunkhash:8].chunk.css'
+      filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
+      chunkFilename: isDev ? '[id].chunk.css' : '[id].[contenthash:8].chunk.css'
     }),
     // Stylelint
     new StyleLintPlugin({ failOnError: stylelint }),
@@ -105,7 +103,7 @@ module.exports = {
     publicPath: '/assets/',
     // Don't use chunkhash in development it will increase compilation time
     filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
-    chunkFilename: isDev ? '[name].chunk.js' : '[name].[chunkhash:8].chunk.js',
+    chunkFilename: isDev ? '[id].chunk.js' : '[id].[chunkhash:8].chunk.js',
     pathinfo: isDev
   },
   module: {
