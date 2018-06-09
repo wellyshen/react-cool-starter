@@ -91,7 +91,8 @@ yarn
 **3. Start to run it:**
 
 ```bash
-yarn start:production    # Building bundle and running production server
+yarn build  # Building bundle
+yarn start  # Running production server
 ```
 
 Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
@@ -104,9 +105,8 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 
 | `yarn <script>`    | Description                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------ |
-| `start`            | Run your app on the development server at `localhost:3000`. HMR will be enabled.           |
-| `start:production` | Bundle files to `./public/assets` and run it on the production server at `localhost:8080`. |
-| `start:prod`       | Run your app on the production server only at `localhost:8080`.                            |
+| `start:dev`        | Run your app on the development server at `localhost:3000`. HMR will be enabled.           |
+| `start`            | Run your app on the production server only at `localhost:8080`.                            |
 | `build`            | Remove the previous bundled files and bundle it to `./public/assets`.                      |
 | `analyze`          | Viusalize the contents of all your bundles.                                                |
 | `lint`             | Lint all `.js` and `.scss` files.                                                          |
@@ -578,7 +578,6 @@ HMR doesn't work for style. Because of I use [mini-css-extract-plugin](https://g
 
 ## To Do...
 
-There're some features (updates) which will be included in this starter in the near future:
+There's a features (updates) which will be included in this starter in the near future:
 
-- [ ] Using [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard) for better DX. Now it not fully support webpack v4 yet.
 - [ ] Code splitting for reducers.
