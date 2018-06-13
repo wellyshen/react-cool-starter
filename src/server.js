@@ -30,7 +30,7 @@ const app = express();
 
 // Use helmet to secure Express with various HTTP headers
 app.use(helmet());
-// Prevent HTTP parameter pollution.
+// Prevent HTTP parameter pollution
 app.use(hpp());
 // Compress all requests
 app.use(compression());
