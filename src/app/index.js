@@ -20,7 +20,7 @@ const App = ({ route }: Props) => (
       <h1>{config.app.title}</h1>
     </div>
     <hr />
-    {/* child routes won't render without this */}
+    {/* Child routes won't render without this */}
     {renderRoutes(route.routes)}
   </div>
 );

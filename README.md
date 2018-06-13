@@ -105,7 +105,7 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 
 | `yarn <script>`    | Description                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------ |
-| `start:dev`        | Run your app on the development server at `localhost:3000`. HMR will be enabled.           |
+| `dev`              | Run your app on the development server at `localhost:3000`. HMR will be enabled.           |
 | `start`            | Run your app on the production server only at `localhost:8080`.                            |
 | `build`            | Remove the previous bundled files and bundle it to `./public/assets`.                      |
 | `analyze`          | Viusalize the contents of all your bundles.                                                |

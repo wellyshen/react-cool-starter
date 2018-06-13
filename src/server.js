@@ -2,7 +2,7 @@
 /* @flow */
 
 import path from 'path';
-import morgan from 'morgan';
+import logger from 'morgan';
 import express from 'express';
 import compression from 'compression';
 import helmet from 'helmet';
@@ -36,7 +36,7 @@ app.use(hpp());
 app.use(compression());
 
 // Use for http request debug (show errors only)
-app.use(morgan('dev', { skip: (req, res) => res.statusCode < 400 }));
+app.use(logger('dev', { skip: (req, res) => res.statusCode < 400 }));
 app.use(favicon(path.resolve(process.cwd(), 'public/favicon.ico')));
 
 if (!__DEV__) {
