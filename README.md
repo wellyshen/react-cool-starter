@@ -103,22 +103,22 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platform. All of the scripts are listed as following:
 
-| `yarn <script>`    | Description                                                                                |
-| ------------------ | ------------------------------------------------------------------------------------------ |
-| `dev`              | Run your app on the development server at `localhost:3000`. HMR will be enabled.           |
-| `start`            | Run your app on the production server only at `localhost:8080`.                            |
-| `build`            | Remove the previous bundled files and bundle it to `./public/assets`.                      |
-| `analyze`          | Viusalize the contents of all your bundles.                                                |
-| `lint`             | Lint all `.js` and `.scss` files.                                                          |
-| `lint:js`          | Lint all `.js` files (Use `--fix` to auto fix eslint errors).                              |
-| `lint:style`       | Lint all `.scss` files (Use `--fix` to auto fix stylelint errors).                         |
-| `flow`             | Run type checking for `.js` files.                                                         |
-| `flow:stop`        | Stop type checking.                                                                        |
-| `test`             | Run testing once (with code coverage reports).                                             |
-| `test:watch`       | Run testing on every test file change.                                                     |
-| `clean:all`        | Remove the client/server bundled stuff and the coverage report.                            |
-| `clean:build`      | Remove the `./public/assets` folder to clean the client bundled files.                     |
-| `clean:test`       | Remove the `./coverage` folder to clean the code coverage report.                          |
+| `yarn <script>` | Description                                                                      |
+| --------------- | -------------------------------------------------------------------------------- |
+| `dev`           | Run your app on the development server at `localhost:3000`. HMR will be enabled. |
+| `start`         | Run your app on the production server only at `localhost:8080`.                  |
+| `build`         | Remove the previous bundled files and bundle it to `./public/assets`.            |
+| `analyze`       | Viusalize the contents of all your bundles.                                      |
+| `lint`          | Lint all `.js` and `.scss` files.                                                |
+| `lint:js`       | Lint all `.js` files (Use `--fix` to auto fix eslint errors).                    |
+| `lint:style`    | Lint all `.scss` files (Use `--fix` to auto fix stylelint errors).               |
+| `flow`          | Run type checking for `.js` files.                                               |
+| `flow:stop`     | Stop type checking.                                                              |
+| `test`          | Run testing once (with code coverage reports).                                   |
+| `test:watch`    | Run testing on every test file change.                                           |
+| `clean`         | Remove the client/server bundled stuff and the coverage report.                  |
+| `clean:build`   | Remove the `./public/assets` folder to clean the client bundled files.           |
+| `clean:test`    | Remove the `./coverage` folder to clean the code coverage report.                |
 
 ## App Structure
 
@@ -138,7 +138,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── app                         # App root component (including scss/testing files)
 │   ├── actions                     # Redux actions (including testing files)
 │   ├── reducers                    # Redux reducers (including testing files)
-│   ├── utils                       # App-wide utils (e.g. configure Redux store, HTML template etc.)  
+│   ├── utils                       # App-wide utils (e.g. configure Redux store, HTML template etc.)
 │   ├── theme                       # App-wide style and vendor CSS framework
 │   ├── types                       # Flow types for reducer, action, state, store
 │   ├── client.js                   # App bootstrap and rendering (webpack entry)

@@ -48,7 +48,7 @@
     "flow:stop": "better-npm-run flow:stop",
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
-    "clean:all": "yarn clean:build && yarn clean:test",
+    "clean": "yarn clean:build && yarn clean:test",
     "clean:build": "better-npm-run clean:build",
     "clean:test": "better-npm-run clean:test",
     "coveralls": "better-npm-run coveralls && yarn clean:test"
