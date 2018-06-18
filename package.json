@@ -261,7 +261,7 @@
   "nodemonConfig": {
     "watch": [
       "src/server.js",
-      "src/helpers/renderHtml.js"
+      "src/utils/renderHtml.js"
     ]
   },
   "browserslist": [
