@@ -16,7 +16,9 @@ type Props = { home: HomeType, fetchUsersIfNeeded: () => void };
 // Export this for unit testing more easily
 export class Home extends PureComponent<Props> {
   componentDidMount() {
-    this.props.fetchUsersIfNeeded();
+    const { fetchUsersIfNeeded } = this.props;
+
+    fetchUsersIfNeeded();
   }
 
   renderUserList = () => {
@@ -28,7 +30,8 @@ export class Home extends PureComponent<Props> {
       home.readyStatus === 'USERS_REQUESTING'
     ) {
       return <p>Loading...</p>;
-    } else if (home.readyStatus === 'USERS_FAILURE') {
+    }
+    if (home.readyStatus === 'USERS_FAILURE') {
       return <p>Oops, Failed to load list!</p>;
     }
 
