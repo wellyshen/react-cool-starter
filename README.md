@@ -197,7 +197,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.js`. For example:
 
-```javascript
+```js
 import RouteComponent from './pages/RouteComponent';
 
 // ...
@@ -229,7 +229,7 @@ Just write Redux actions and stores as normal (read the [Redux](https://redux.js
 
 Register the action(s) in `./src/routes.js`, which have to be called from server-sdie:
 
-```javascript
+```js
 // ...
 
 export default [
@@ -249,7 +249,7 @@ export default [
 
 The action(s) will be dispatched through `./src/server.js` on server-side:
 
-```javascript
+```js
 // ...
 
 app.get('*', (req, res) => {
@@ -282,7 +282,7 @@ app.get('*', (req, res) => {
 
 On client-side, don't forget to invoke the action(s) in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action(s) to figure out if fetches for data need to be made or not:
 
-```javascript
+```js
 componentDidMount() {
   // Invoke your redux action(s) for client rendering
   this.props.myReduxAction();
@@ -306,7 +306,7 @@ I use the following folder/file structure:
 
 The `index.js` will be:
 
-```javascript
+```js
 import loadable from 'loadable-components';
 
 import { Error, Loading } from '../../components';
@@ -334,7 +334,7 @@ You can store app settings under `./src/config`. By default the `default.js` wil
 
 You can access the correct config with:
 
-```javascript
+```js
 import config from './config';
 ```
 
@@ -344,7 +344,7 @@ The starter supports CSS, SASS and [CSS modules](https://github.com/css-Modules/
 
 With CSS modules:
 
-```javascript
+```js
 import styles from './styles.scss';
 
 // ...
@@ -361,7 +361,7 @@ render() {
 
 Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.babel.js`):
 
-```javascript
+```js
 import './styles.scss';
 
 // ...
@@ -378,7 +378,7 @@ render() {
 
 By the way, if you want to use vendor CSS frameworks or global styles, just import it through the `./src/app/index.js` file (app root component). For example:
 
-```javascript
+```js
 import '../../theme/normalize.css'; // Import a vendor stylesheet here
 import styles from './styles.scss'; // Import your based stylesheet here
 
@@ -395,14 +395,14 @@ It's super easy to render the image and font both on client and server, the usag
 
 Using image:
 
-```javascript
+```js
 // Require an image
 <img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
 ```
 
 Using font-awesome:
 
-```javascript
+```js
 // With CSS modules
 import styles from './styles.scss';
 
@@ -449,7 +449,7 @@ React.PureComponent is exactly like React.Component but implements `shouldCompon
 
 How we implemented the optimizing:
 
-```javascript
+```js
 import React, { PureComponent } from 'react';
 
 // ...
@@ -482,7 +482,7 @@ Moreover, often you will want to use third-party libraries. For these circumstan
 
 [JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you want them to terminate webpack build process while an error occurs, you can enable those from `./tools/webpack/config.babel.js` (Default: false):
 
-```javascript
+```js
 // ...
 
 // Enable build process terminated while there's an eslint error
