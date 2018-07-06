@@ -126,7 +126,10 @@ module.exports = {
           presets: [
             ['@babel/preset-env', { modules: false, useBuiltIns: 'usage' }],
             '@babel/preset-react',
-            ['@babel/preset-stage-0', { decoratorsLegacy: true }],
+            [
+              '@babel/preset-stage-0',
+              { decoratorsLegacy: true, pipelineProposal: 'minimal' }
+            ],
             '@babel/preset-flow'
           ],
           plugins: [
