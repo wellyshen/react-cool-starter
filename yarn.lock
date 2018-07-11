@@ -2219,8 +2219,8 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000858"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000858.tgz#153c9348350641dc624d150ec174262c2ad985e5"
+  version "1.0.30000865"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000865.tgz#82ffb64d40f7567620aac02d3a632079689abc6b"
 
 caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000856:
   version "1.0.30000858"
@@ -2863,18 +2863,16 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@^0.28.11:
-  version "0.28.11"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.11.tgz#c3f9864a700be2711bb5a2462b2389b1a392dab7"
+css-loader@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-1.0.0.tgz#9f46aaa5ca41dbe31860e3b62b8e23c42916bf56"
   dependencies:
     babel-code-frame "^6.26.0"
     css-selector-tokenizer "^0.7.0"
-    cssnano "^3.10.0"
     icss-utils "^2.1.0"
     loader-utils "^1.0.2"
     lodash.camelcase "^4.3.0"
-    object-assign "^4.1.1"
-    postcss "^5.0.6"
+    postcss "^6.0.23"
     postcss-modules-extract-imports "^1.2.0"
     postcss-modules-local-by-default "^1.2.0"
     postcss-modules-scope "^1.1.0"
@@ -3509,7 +3507,11 @@ ejs@^2.5.7:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
 
-electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.47:
+electron-to-chromium@^1.2.7:
+  version "1.3.52"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.52.tgz#d2d9f1270ba4a3b967b831c40ef71fb4d9ab5ce0"
+
+electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.47:
   version "1.3.50"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.50.tgz#7438b76f92b41b919f3fbdd350fbd0757dacddf7"
 
@@ -6535,6 +6537,13 @@ known-css-properties@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.6.1.tgz#31b5123ad03d8d1a3f36bd4155459c981173478b"
 
+last-call-webpack-plugin@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/last-call-webpack-plugin/-/last-call-webpack-plugin-3.0.0.tgz#9742df0e10e3cf46e5c0381c2de90d3a7a2d7555"
+  dependencies:
+    lodash "^4.17.5"
+    webpack-sources "^1.1.0"
+
 latest-version@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/latest-version/-/latest-version-3.1.0.tgz#a205383fea322b33b5ae3b18abee0dc2f356ee15"
@@ -7747,6 +7756,13 @@ optimist@^0.6.1:
     minimist "~0.0.1"
     wordwrap "~0.0.2"
 
+optimize-css-assets-webpack-plugin@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-4.0.3.tgz#4f714e276b279700892c4a6202b7e22812d6f683"
+  dependencies:
+    cssnano "^3.10.0"
+    last-call-webpack-plugin "^3.0.0"
+
 optionator@^0.8.1, optionator@^0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
@@ -8491,7 +8507,7 @@ postcss@6.0.22:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.16:
+postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.8, postcss@^5.2.16:
   version "5.2.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   dependencies:

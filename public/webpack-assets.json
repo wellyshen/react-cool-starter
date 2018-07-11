@@ -1,10 +1,8 @@
 {
-  "vendors~main.css": "/assets/2.b7e6fbfb.chunk.css",
-  "vendors~main.js": "/assets/2.e61868e9.chunk.js",
-  "vendors~main.css.map": "/assets/2.b7e6fbfb.chunk.css.map",
-  "vendors~main.js.map": "/assets/2.e61868e9.chunk.js.map",
-  "main.css": "/assets/main.ea57329f.css",
-  "main.js": "/assets/main.b9453356.js",
-  "main.css.map": "/assets/main.ea57329f.css.map",
-  "main.js.map": "/assets/main.b9453356.js.map"
+  "vendors~main.css": "/assets/0.fec759bc.chunk.css",
+  "vendors~main.js": "/assets/0.5c9b5293.chunk.js",
+  "vendors~main.js.map": "/assets/0.5c9b5293.chunk.js.map",
+  "main.css": "/assets/main.f1573851.css",
+  "main.js": "/assets/main.abf22821.js",
+  "main.js.map": "/assets/main.abf22821.js.map"
 }

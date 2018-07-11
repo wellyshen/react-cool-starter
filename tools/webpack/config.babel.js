@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import ImageminPlugin from 'imagemin-webpack-plugin';
@@ -58,6 +59,8 @@ const getPlugins = () => {
         threshold: 10240,
         minRatio: 0.8
       }),
+      // Minimizing style for production
+      new OptimizeCssAssetsPlugin(),
       // Plugin to compress images with imagemin
       // Check "https://github.com/Klathmon/imagemin-webpack-plugin" for more configurations
       new ImageminPlugin({
