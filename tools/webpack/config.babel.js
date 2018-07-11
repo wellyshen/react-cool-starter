@@ -151,8 +151,7 @@ module.exports = {
               modules: CSSModules,
               localIdentName: '[name]__[local]--[hash:base64:5]',
               context: path.resolve(process.cwd(), 'src'),
-              sourceMap: true,
-              minimize: !isDev
+              sourceMap: true
             }
           },
           { loader: 'postcss', options: { sourceMap: true } }
@@ -169,8 +168,7 @@ module.exports = {
               modules: CSSModules,
               localIdentName: '[name]__[local]--[hash:base64:5]',
               context: path.resolve(process.cwd(), 'src'),
-              sourceMap: true,
-              minimize: !isDev
+              sourceMap: true
             }
           },
           { loader: 'postcss', options: { sourceMap: true } },
