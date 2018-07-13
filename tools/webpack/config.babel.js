@@ -138,6 +138,7 @@ module.exports = {
           plugins: [
             'react-hot-loader/babel',
             'loadable-components/babel',
+            '@babel/plugin-external-helpers',
             'lodash'
           ],
           env: { production: { plugins: ['transform-remove-console'] } }
