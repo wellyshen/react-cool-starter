@@ -1,11 +1,11 @@
 {
   "name": "react-cool-starter",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
-    "node": ">=6.0",
-    "npm": ">=3.0"
+    "node": ">=8",
+    "npm": ">=5"
   },
   "repository": {
     "type": "git",
@@ -345,9 +345,9 @@
     "jest": "^23.4.1",
     "mini-css-extract-plugin": "^0.4.1",
     "nock": "^9.4.2",
-    "nodemon": "^1.18.1",
+    "nodemon": "^1.18.2",
     "npm-run-all": "^4.1.3",
-    "optimize-css-assets-webpack-plugin": "^4.0.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss": "^6.0.23",
     "postcss-loader": "^2.1.6",
     "prettier": "^1.13.7",
