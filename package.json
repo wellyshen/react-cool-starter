@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -145,11 +145,13 @@
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": [
+      "plugin:lodash/recommended",
       "airbnb",
       "prettier",
       "prettier/react"
     ],
     "plugins": [
+      "lodash",
       "react",
       "prettier"
     ],
@@ -195,6 +197,8 @@
           ]
         }
       ],
+      "lodash/import-scope": "off",
+      "lodash/prefer-noop": "off",
       "prettier/prettier": [
         "error",
         {
@@ -330,6 +334,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-lodash": "^2.7.0",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.9.1",
     "file-loader": "^1.1.11",

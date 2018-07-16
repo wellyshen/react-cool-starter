@@ -16,7 +16,7 @@ export default (history: Object, initialState: Object = {}): Store => {
   // Use Redux DevTools Extension in development
   const composeEnhancers =
     (__DEV__ &&
-      typeof window === 'object' &&
+      typeof window !== 'undefined' &&
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
     compose;
   const enhancers = composeEnhancers(
