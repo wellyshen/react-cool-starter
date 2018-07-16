@@ -1,9 +1,9 @@
 /* @flow */
 
-const fp = require('lodash/fp');
+const _ = require('lodash');
 
 const defaultConfig = require('./default');
 
-module.exports = fp.merge(defaultConfig, {
+module.exports = _.merge(defaultConfig, {
   // Over write default settings here...
 });

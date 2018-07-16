@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import ManifestPlugin from 'webpack-manifest-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import ImageminPlugin from 'imagemin-webpack-plugin';
@@ -61,6 +62,8 @@ const getPlugins = () => {
       }),
       // Minimizing style for production
       new OptimizeCssAssetsPlugin(),
+      // Smaller modular Lodash build
+      new LodashModuleReplacementPlugin(),
       // Plugin to compress images with imagemin
       // Check "https://github.com/Klathmon/imagemin-webpack-plugin" for more configurations
       new ImageminPlugin({
@@ -138,10 +141,13 @@ module.exports = {
           plugins: [
             'react-hot-loader/babel',
             'loadable-components/babel',
-            '@babel/plugin-external-helpers',
             'lodash'
           ],
-          env: { production: { plugins: ['transform-remove-console'] } }
+          env: {
+            production: {
+              plugins: ['transform-remove-console']
+            }
+          }
         }
       },
       {
