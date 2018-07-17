@@ -3,7 +3,6 @@
 import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import _ from 'lodash';
 
 import type { Store } from '../types';
 import rootReducer from '../reducers';
@@ -17,7 +16,7 @@ export default (history: Object, initialState: Object = {}): Store => {
   // Use Redux DevTools Extension in development
   const composeEnhancers =
     (__DEV__ &&
-      _.isObject(window) &&
+      typeof window !== 'undefined' &&
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
     compose;
   const enhancers = composeEnhancers(

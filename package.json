@@ -199,6 +199,7 @@
       ],
       "lodash/import-scope": "off",
       "lodash/prefer-noop": "off",
+      "lodash/prefer-lodash-typecheck": "off",
       "prettier/prettier": [
         "error",
         {
