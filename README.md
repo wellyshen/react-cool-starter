@@ -48,8 +48,9 @@ Really cool starter boilerplate with the most popular technologies:
 - [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 - [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
 - [Flow](https://flowtype.org/) as the static type checker for javascript.
-- [ESLint](http://eslint.org/) to maintain a consistent javascript code style (Airbnb + Prettier).
+- [ESLint](http://eslint.org/) to maintain a consistent javascript code style (With Airbnb configuration).
 - [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
+- [Prettier](https://prettier.io/) to format javascript and css/scss code.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
 - Image (with [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin) for compressing images with imagemin) and Font support.
 - Split vendor's libraries from client bundle.
@@ -110,8 +111,8 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 | `build`         | Remove the previous bundled files and bundle it to `./public/assets`.            |
 | `analyze`       | Viusalize the contents of all your bundles.                                      |
 | `lint`          | Lint all `.js` and `.scss` files.                                                |
-| `lint:js`       | Lint all `.js` files (Use `--fix` to auto fix eslint errors).                    |
-| `lint:style`    | Lint all `.scss` files (Use `--fix` to auto fix stylelint errors).               |
+| `lint:js`       | Lint all `.js` files (With `--fix` to auto fix eslint errors).                   |
+| `lint:style`    | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
 | `flow`          | Run type checking for `.js` files.                                               |
 | `flow:stop`     | Stop type checking.                                                              |
 | `test`          | Run testing once (with code coverage reports).                                   |
@@ -198,14 +199,14 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 This starter use [React Router v4](https://reacttraining.com/react-router/) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.js`. For example:
 
 ```js
-import RouteComponent from './pages/RouteComponent';
+import RouteComponent from "./pages/RouteComponent";
 
 // ...
 
 export default [
   {
     // Define your route path
-    path: '/TopPath',
+    path: "/TopPath",
     // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
     // Add your route component here
@@ -213,7 +214,7 @@ export default [
     // Add your sub route component here
     routes: [
       {
-        path: '/TopPath/SubPath',
+        path: "/TopPath/SubPath",
         component: SubRouteComponent
       }
     ]
@@ -234,7 +235,7 @@ Register the action(s) in `./src/routes.js`, which have to be called from server
 
 export default [
   {
-    path: '/TopPath',
+    path: "/TopPath",
     exact: true,
     component: RouteComponent,
     // Actions in the loadData function will be fetched from server-side
@@ -252,7 +253,7 @@ The action(s) will be dispatched through `./src/server.js` on server-side:
 ```js
 // ...
 
-app.get('*', (req, res) => {
+app.get("*", (req, res) => {
   // ...
 
   // Here's the method for loading data from server-side
@@ -307,12 +308,12 @@ I use the following folder/file structure:
 The `index.js` will be:
 
 ```js
-import loadable from 'loadable-components';
+import loadable from "loadable-components";
 
-import { Error, Loading } from '../../components';
+import { Error, Loading } from "../../components";
 
 export default loadable(
-  () => import('./AsyncRouteComponent'), // Import your async route component here
+  () => import("./AsyncRouteComponent"), // Import your async route component here
   {
     ErrorComponent: Error, // Error component for displaying error message
     LoadingComponent: Loading // Loading component will be displayed when the component is being loaded
@@ -335,7 +336,7 @@ You can store app settings under `./src/config`. By default the `default.js` wil
 You can access the correct config with:
 
 ```js
-import config from './config';
+import config from "./config";
 ```
 
 ### Styles
@@ -379,8 +380,8 @@ render() {
 By the way, if you want to use vendor CSS frameworks or global styles, just import it through the `./src/app/index.js` file (app root component). For example:
 
 ```js
-import '../../theme/normalize.css'; // Import a vendor stylesheet here
-import styles from './styles.scss'; // Import your based stylesheet here
+import "../../theme/normalize.css"; // Import a vendor stylesheet here
+import styles from "./styles.scss"; // Import your based stylesheet here
 
 // ...
 
@@ -397,14 +398,14 @@ Using image:
 
 ```js
 // Require an image
-<img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
+<img src={require("./assets/logo.svg")} alt="Logo" role="presentation" />
 ```
 
 Using font-awesome:
 
 ```js
 // With CSS modules
-import styles from './styles.scss';
+import styles from "./styles.scss";
 
 // ...
 
@@ -417,7 +418,7 @@ return (
 );
 
 // Without CSS modules
-import './font-awesome.css';
+import "./font-awesome.css";
 
 // ...
 
@@ -450,7 +451,7 @@ React.PureComponent is exactly like React.Component but implements `shouldCompon
 How we implemented the optimizing:
 
 ```js
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 
 // ...
 
@@ -480,18 +481,7 @@ Moreover, often you will want to use third-party libraries. For these circumstan
 
 ### JavaScript and Style Lint
 
-[JavaScript lint](https://github.com/MoOx/eslint-loader) and [style lint](https://github.com/JaKXz/stylelint-webpack-plugin) are included into webpack compiling for runtime checking. If you want them to terminate webpack build process while an error occurs, you can enable those from `./tools/webpack/config.babel.js` (Default: false):
-
-```js
-// ...
-
-// Enable build process terminated while there's an eslint error
-const eslint = true;
-// Enable build process terminated while there's a stylelint error
-const stylelint = true;
-
-// ...
-```
+[ESLint](http://eslint.org/) (With Airbnb configuration), [StyleLint](http://stylelint.io/), [Prettier](https://prettier.io/) and [lint-staged](https://github.com/okonet/lint-staged) are integrated into this starter to maintain a consistent javascript and style code style and give you a elegant code formatting. You can configure your lint rules through `./package.json` file.
 
 ### Unit Tests
 

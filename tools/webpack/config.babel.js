@@ -4,7 +4,6 @@ import ManifestPlugin from 'webpack-manifest-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
-import StyleLintPlugin from 'stylelint-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import ImageminPlugin from 'imagemin-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
@@ -15,10 +14,6 @@ const isDev = nodeEnv === 'development';
 
 // Disable CSSModules here
 const CSSModules = true;
-// Enable build process terminated while there's an eslint error
-const eslint = false;
-// Enable build process terminated while there's a stylelint error
-const stylelint = false;
 
 // Setup the plugins for development/prodcution
 const getPlugins = () => {
@@ -33,8 +28,6 @@ const getPlugins = () => {
       filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
       chunkFilename: isDev ? '[id].chunk.css' : '[id].[contenthash:8].chunk.css'
     }),
-    // Stylelint
-    new StyleLintPlugin({ failOnError: stylelint }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
     // Setup global variables for client
@@ -114,14 +107,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        // Eslint
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'eslint',
-        options: { failOnError: eslint }
-      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
