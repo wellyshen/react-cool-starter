@@ -103,10 +103,10 @@
       }
     },
     "clean:build": {
-      "command": "rm -rf ./public/assets"
+      "command": "rimraf ./public/assets"
     },
     "clean:test": {
-      "command": "rm -rf ./coverage"
+      "command": "rimraf ./coverage"
     },
     "coveralls": {
       "command": "cat ./coverage/lcov.info | coveralls"
@@ -322,6 +322,7 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
+    "rimraf": "^2.6.2",
     "serialize-javascript": "^1.5.0",
     "serve-favicon": "^2.5.0"
   },
