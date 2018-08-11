@@ -12,8 +12,8 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
 
-// Disable CSSModules here
-const CSSModules = true;
+// Enable/disable css modules here
+const USE_CSS_MODULES = true;
 
 // Setup the plugins for development/prodcution
 const getPlugins = () => {
@@ -140,7 +140,7 @@ module.exports = {
             loader: 'css',
             options: {
               importLoaders: 1,
-              modules: CSSModules,
+              modules: USE_CSS_MODULES,
               localIdentName: '[name]__[local]--[hash:base64:5]',
               context: path.resolve(process.cwd(), 'src'),
               sourceMap: true
@@ -157,7 +157,7 @@ module.exports = {
             loader: 'css',
             options: {
               importLoaders: 2,
-              modules: CSSModules,
+              modules: USE_CSS_MODULES,
               localIdentName: '[name]__[local]--[hash:base64:5]',
               context: path.resolve(process.cwd(), 'src'),
               sourceMap: true
