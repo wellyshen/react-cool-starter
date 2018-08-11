@@ -8,6 +8,7 @@ import { hot } from 'react-hot-loader';
 import config from '../config';
 // Import your global styles here
 import 'normalize.css/normalize.css'; // eslint-disable-line import/first
+import '../theme/root.scss';
 import styles from './styles.scss';
 
 type Props = { route: Object };
