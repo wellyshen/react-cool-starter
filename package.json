@@ -225,7 +225,7 @@
   ],
   "stylelint": {
     "extends": [
-      "stylelint-config-standard",
+      "stylelint-config-recommended",
       "stylelint-config-recommended-scss",
       "./node_modules/prettier-stylelint/config.js"
     ],
@@ -370,8 +370,8 @@
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "stylelint": "^9.4.0",
+    "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^3.2.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.16.5",
