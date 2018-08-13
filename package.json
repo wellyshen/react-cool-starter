@@ -225,9 +225,9 @@
   ],
   "stylelint": {
     "extends": [
-      "stylelint-config-recommended",
+      "stylelint-config-standard",
       "stylelint-config-recommended-scss",
-      "./node_modules/prettier-stylelint/config.js"
+      "stylelint-config-prettier"
     ],
     "plugins": [
       "stylelint-scss"
@@ -363,15 +363,15 @@
     "postcss": "^7.0.2",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.14.2",
-    "prettier-stylelint": "^0.4.2",
     "raf": "^3.4.0",
     "react-test-renderer": "^16.4.2",
     "redux-mock-store": "^1.5.3",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "stylelint": "^9.4.0",
-    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^3.2.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.16.5",
