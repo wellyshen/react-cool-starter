@@ -57,7 +57,7 @@
   },
   "betterScripts": {
     "dev": {
-      "command": "nodemon ./index.js",
+      "command": "nodemon .",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
@@ -65,7 +65,7 @@
       }
     },
     "start": {
-      "command": "node ./index.js",
+      "command": "node .",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
@@ -264,8 +264,7 @@
       "!src/pages/index.js",
       "!src/pages/Home/index.js",
       "!src/pages/UserInfo/index.js",
-      "!src/reducers/index.js",
-      "!src/**/__tests__"
+      "!src/reducers/index.js"
     ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
@@ -303,8 +302,8 @@
     "helmet": "^3.13.0",
     "history": "^4.7.2",
     "hpp": "^0.2.2",
-    "html-minifier": "^3.5.19",
-    "loadable-components": "^2.2.2",
+    "html-minifier": "^3.5.20",
+    "loadable-components": "^2.2.3",
     "lodash": "^4.17.10",
     "morgan": "^1.9.0",
     "node-sass": "^4.9.3",
@@ -335,7 +334,7 @@
     "compression-webpack-plugin": "^1.1.11",
     "coveralls": "^3.0.2",
     "css-loader": "^1.0.0",
-    "enzyme": "^3.4.1",
+    "enzyme": "^3.4.4",
     "enzyme-adapter-react-16": "^1.2.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -347,7 +346,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.0",
     "file-loader": "^1.1.11",
-    "flow-bin": "^0.78.0",
+    "flow-bin": "^0.79.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
@@ -368,12 +367,12 @@
     "redux-mock-store": "^1.5.3",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
-    "stylelint": "^9.4.0",
+    "stylelint": "^9.5.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^3.3.0",
-    "url-loader": "^1.1.0",
+    "url-loader": "^1.1.1",
     "webpack": "^4.16.5",
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",

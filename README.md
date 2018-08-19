@@ -503,7 +503,7 @@ By the way, Jest built-in code coverage reports, the report files are generated 
     "collectCoverageFrom": [
       "src/pages/**/*.js",        // Define the files, which want to be covered
       "src/components/**/*.js",
-      "!src/**/__tests__"         // The files will be ignored by code coverage
+      "!src/pages/index.js"       // The files will be ignored by code coverage
     ],
     // Other configurations
   },
