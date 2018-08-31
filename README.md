@@ -104,22 +104,23 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platform. All of the scripts are listed as following:
 
-| `yarn <script>` | Description                                                                      |
-| --------------- | -------------------------------------------------------------------------------- |
-| `dev`           | Run your app on the development server at `localhost:3000`. HMR will be enabled. |
-| `start`         | Run your app on the production server only at `localhost:8080`.                  |
-| `build`         | Remove the previous bundled files and bundle it to `./public/assets`.            |
-| `analyze`       | Viusalize the contents of all your bundles.                                      |
-| `lint`          | Lint all `.js` and `.scss` files.                                                |
-| `lint:js`       | Lint all `.js` files (With `--fix` to auto fix eslint errors).                   |
-| `lint:style`    | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
-| `flow`          | Run type checking for `.js` files.                                               |
-| `flow:stop`     | Stop type checking.                                                              |
-| `test`          | Run testing once (with code coverage reports).                                   |
-| `test:watch`    | Run testing on every test file change.                                           |
-| `clean`         | Remove the client/server bundled stuff and the coverage report.                  |
-| `clean:build`   | Remove the `./public/assets` folder to clean the client bundled files.           |
-| `clean:test`    | Remove the `./coverage` folder to clean the code coverage report.                |
+| `yarn <script>`        | Description                                                                      |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| `dev`                  | Run your app on the development server at `localhost:3000`. HMR will be enabled. |
+| `start`                | Run your app on the production server only at `localhost:8080`.                  |
+| `build`                | Remove the previous bundled files and bundle it to `./public/assets`.            |
+| `analyze`              | Visualize the contents of all your bundles.                                      |
+| `lint`                 | Lint all `.js` and `.scss` files.                                                |
+| `lint:js`              | Lint all `.js` files (With `--fix` to auto fix eslint errors).                   |
+| `lint:style`           | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
+| `flow`                 | Run type checking for `.js` files.                                               |
+| `flow:stop`            | Stop type checking.                                                              |
+| `test`                 | Run testing once (with code coverage reports).                                   |
+| `test:watch`           | Run testing on every test file change.                                           |
+| `test:update-snapshot` | Update jest snapshot.                                                            |
+| `clean`                | Remove the client/server bundled stuff and the coverage report.                  |
+| `clean:build`          | Remove the `./public/assets` folder to clean the client bundled files.           |
+| `clean:test`           | Remove the `./coverage` folder to clean the code coverage report.                |
 
 ## App Structure
 
@@ -444,7 +445,7 @@ $fa-font-path:"../node_modules/font-awesome/fonts";
 
 ### Boost App Performance by Shallow Compare
 
-If your React component's render() function renders the same result given the same props and state, you can use [React.PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent) for a performance boost.
+If your React component's render() function renders the same result given the same props and state, you can use [React.PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) for a performance boost.
 
 React.PureComponent is exactly like React.Component but implements `shouldComponentUpdate()` with a shallow prop and state comparison. See the [Optimizing Performance](https://facebook.github.io/react/docs/optimizing-performance.html#examples) topic for more info.
 
