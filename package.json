@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.5.6",
+  "version": "2.5.7",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -80,7 +80,7 @@
       }
     },
     "analyze": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+      "command": "webpack -p --progress --hide-modules --config ./tools/webpack/config.babel.js",
       "env": {
         "NODE_ENV": "analyze"
       }
@@ -382,6 +382,6 @@
     "webpack-manifest-plugin": "^2.0.3"
   },
   "resolutions": {
-    "webpack-sources": "^1.1.0"
+    "webpack-sources": "^1.2.0"
   }
 }
