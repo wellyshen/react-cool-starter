@@ -206,6 +206,7 @@
         }
       ],
       "lodash/prefer-lodash-method": "off",
+      "lodash/prefer-lodash-typecheck": "off",
       "lodash/import-scope": "off",
       "lodash/prefer-noop": "off",
       "prettier/prettier": [
