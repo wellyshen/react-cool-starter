@@ -89,7 +89,7 @@
       "command": "eslint --fix ."
     },
     "lint:style": {
-      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\""
+      "command": "stylelint --fix \"./**/*.css, ./**/*.scss, !coverage\""
     },
     "flow": {
       "command": "flow"
