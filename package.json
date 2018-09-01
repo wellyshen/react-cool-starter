@@ -86,10 +86,10 @@
       }
     },
     "lint:js": {
-      "command": "eslint --fix ./src ./tools ./index.js"
+      "command": "eslint --fix ."
     },
     "lint:style": {
-      "command": "stylelint --fix \"./src/**/*.scss\""
+      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\""
     },
     "flow": {
       "command": "flow"
