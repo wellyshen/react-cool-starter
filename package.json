@@ -348,7 +348,7 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.0",
     "file-loader": "^2.0.0",
-    "flow-bin": "^0.79.1",
+    "flow-bin": "^0.80.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
@@ -379,7 +379,7 @@
     "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "^3.2.0",
-    "webpack-hot-middleware": "^2.22.3",
+    "webpack-hot-middleware": "^2.23.0",
     "webpack-manifest-plugin": "^2.0.3"
   },
   "resolutions": {
