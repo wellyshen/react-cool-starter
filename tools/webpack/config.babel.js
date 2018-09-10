@@ -47,11 +47,8 @@ const getPlugins = () => {
       // Production
       new webpack.HashedModuleIdsPlugin(),
       new CompressionPlugin({
-        asset: '[path].gz[query]',
-        algorithm: 'gzip',
         test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
-        threshold: 10240,
-        minRatio: 0.8
+        threshold: 10240
       }),
       // Minimizing style for production
       new OptimizeCssAssetsPlugin(),
