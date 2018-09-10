@@ -1,8 +1,6 @@
 /* @flow */
 
-import UserList from './UserList';
-import UserCard from './UserCard';
-import ErrorDisplay from './ErrorDisplay';
-import Loading from './Loading';
-
-export { UserList, UserCard, ErrorDisplay, Loading };
+export UserList from './UserList';
+export UserCard from './UserCard';
+export ErrorDisplay from './ErrorDisplay';
+export Loading from './Loading';
