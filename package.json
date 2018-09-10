@@ -140,8 +140,7 @@
       "loadable-components/babel",
       "dynamic-import-node",
       "lodash",
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-export-default-from"
+      "@babel/plugin-proposal-class-properties"
     ],
     "env": {
       "production": {
@@ -329,7 +328,6 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",

@@ -120,8 +120,7 @@ module.exports = {
             'react-hot-loader/babel',
             'loadable-components/babel',
             'lodash',
-            '@babel/plugin-proposal-class-properties',
-            '@babel/plugin-proposal-export-default-from'
+            '@babel/plugin-proposal-class-properties'
           ],
           env: {
             production: {

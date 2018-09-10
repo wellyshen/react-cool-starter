@@ -1,5 +1,5 @@
 /* @flow */
 
-export asyncHome from './Home';
-export asyncUserInfo from './UserInfo';
-export NotFound from './NotFound';
+export { default as asyncHome } from './Home';
+export { default as asyncUserInfo } from './UserInfo';
+export { default as NotFound } from './NotFound';

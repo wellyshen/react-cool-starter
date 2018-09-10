@@ -1,6 +1,6 @@
 /* @flow */
 
-export UserList from './UserList';
-export UserCard from './UserCard';
-export ErrorDisplay from './ErrorDisplay';
-export Loading from './Loading';
+export { default as UserList } from './UserList';
+export { default as UserCard } from './UserCard';
+export { default as ErrorDisplay } from './ErrorDisplay';
+export { default as Loading } from './Loading';
