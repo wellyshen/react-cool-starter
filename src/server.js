@@ -1,4 +1,3 @@
-/* eslint-disable */
 /* @flow */
 
 import path from 'path';
