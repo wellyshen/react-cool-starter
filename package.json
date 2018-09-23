@@ -145,7 +145,8 @@
     "env": {
       "production": {
         "plugins": [
-          "transform-remove-console"
+          "transform-remove-console",
+          "transform-react-remove-prop-types"
         ]
       }
     }
@@ -333,6 +334,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
     "babel-plugin-istanbul": "^5.0.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.18",
     "compression-webpack-plugin": "^2.0.0",
     "coveralls": "^3.0.2",
     "css-loader": "^1.0.0",

@@ -35,13 +35,15 @@ const getPlugins = () => {
       __CLIENT__: true,
       __SERVER__: false,
       __DEV__: isDev
-    }),
-    new FriendlyErrorsWebpackPlugin()
+    })
   ];
 
   if (isDev) {
     // Development
-    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin(),
+      new FriendlyErrorsWebpackPlugin()
+    );
   } else {
     plugins.push(
       // Production
@@ -124,7 +126,10 @@ module.exports = {
           ],
           env: {
             production: {
-              plugins: ['transform-remove-console']
+              plugins: [
+                'transform-remove-console',
+                'transform-react-remove-prop-types'
+              ]
             }
           }
         }
