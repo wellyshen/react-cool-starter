@@ -137,6 +137,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
+          'css-hot-loader',
           MiniCssExtractPlugin.loader,
           {
             loader: 'css',
@@ -154,6 +155,7 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         use: [
+          'css-hot-loader',
           MiniCssExtractPlugin.loader,
           {
             loader: 'css',
