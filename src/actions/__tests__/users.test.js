@@ -21,7 +21,7 @@ describe('fetch users data', () => {
     nock.disableNetConnect();
   });
 
-  test('creates USERS_SUCCESS when fetching users has been done', () => {
+  it('creates USERS_SUCCESS when fetching users has been done', () => {
     nock(host)
       .get('/test')
       .reply(200, response);
@@ -37,7 +37,7 @@ describe('fetch users data', () => {
     });
   });
 
-  test('creates USERS_FAILURE when fail to fetch users', () => {
+  it('creates USERS_FAILURE when fail to fetch users', () => {
     nock(host)
       .get('/test')
       .replyWithError(errorMessage);

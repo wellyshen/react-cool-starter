@@ -1,11 +1,11 @@
 import userInfo from '../userInfo';
 
 describe('user data userInfo', () => {
-  test('should handle the initial state', () => {
+  it('should handle the initial state', () => {
     expect(userInfo(undefined, {})).toEqual({});
   });
 
-  test('should handle USER_REQUESTING', () => {
+  it('should handle USER_REQUESTING', () => {
     expect(
       userInfo(undefined, {
         type: 'USER_REQUESTING',
@@ -14,7 +14,7 @@ describe('user data userInfo', () => {
     ).toEqual({ 1: { readyStatus: 'USER_REQUESTING' } });
   });
 
-  test('should handle USER_FAILURE', () => {
+  it('should handle USER_FAILURE', () => {
     expect(
       userInfo(undefined, {
         type: 'USER_FAILURE',
@@ -29,7 +29,7 @@ describe('user data userInfo', () => {
     });
   });
 
-  test('should handle USER_SUCCESS', () => {
+  it('should handle USER_SUCCESS', () => {
     expect(
       userInfo(undefined, {
         type: 'USER_SUCCESS',

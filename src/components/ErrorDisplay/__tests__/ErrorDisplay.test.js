@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import ErrorDisplay from '../index';
 
 describe('<ErrorDisplay />', () => {
-  test('renders', () => {
+  it('renders', () => {
     const mockData = { message: 'Error!' };
     const tree = renderer
       .create(

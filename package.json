@@ -327,12 +327,12 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.1.0",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
-    "babel-loader": "^8.0.2",
+    "babel-loader": "^8.0.4",
     "babel-plugin-istanbul": "^5.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.18",
     "compression-webpack-plugin": "^2.0.0",
@@ -348,7 +348,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-lodash": "^3.1.0",
-    "eslint-plugin-prettier": "^2.7.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.0",
     "file-loader": "^2.0.0",
     "flow-bin": "^0.81.0",
@@ -380,7 +380,7 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-bundle-analyzer": "^3.0.2",
-    "webpack-cli": "^3.1.1",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.2",
     "webpack-manifest-plugin": "^2.0.4"
