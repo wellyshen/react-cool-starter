@@ -137,7 +137,7 @@
       "@babel/preset-flow"
     ],
     "plugins": [
-      "loadable-components/babel",
+      "react-loadable/babel",
       "dynamic-import-node",
       "lodash",
       "@babel/plugin-proposal-class-properties"
@@ -286,6 +286,7 @@
   ],
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
@@ -306,7 +307,6 @@
     "history": "^4.7.2",
     "hpp": "^0.2.2",
     "html-minifier": "^3.5.20",
-    "loadable-components": "^2.2.3",
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "node-sass": "^4.9.3",
@@ -317,6 +317,7 @@
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.3.11",
+    "react-loadable": "^5.5.0",
     "react-redux": "^5.0.7",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.3.1",

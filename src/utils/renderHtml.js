@@ -5,15 +5,14 @@ import { minify } from 'html-minifier';
 
 export default (
   head: Object,
-  assets: Object,
+  bundles: string[],
   htmlContent: string,
-  initialState: Object,
-  loadableStateTag: string
+  initialState: Object
 ): string => {
   // Use pre-defined assets in development. "main" is the default webpack generated name.
-  const envAssets = __DEV__
-    ? { js: '/assets/main.js', css: '/assets/main.css' }
-    : assets;
+
+  const styles = bundles.filter(file => file.endsWith('.css'));
+  const scripts = bundles.filter(file => file.endsWith('.js'));
 
   const html = `
     <!doctype html>
@@ -21,6 +20,13 @@ export default (
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        ${styles
+          .map(s => `<link rel="preload" href="${s}" as="style" />`)
+          .join('')}
+        ${scripts
+          .map(s => `<link rel="preload" href="${s}" as="script" />`)
+          .join('')}
+
         <!--[if IE]>
           <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
         <![endif]-->
@@ -34,24 +40,18 @@ export default (
         ${head.link.toString()}
 
         <!-- Insert bundled styles into <link> tag -->
-        ${Object.keys(envAssets)
+        ${styles
           .map(
-            key =>
-              key.substr(key.length - 3) === 'css'
-                ? `<link href="${
-                    envAssets[key]
-                  }" media="screen, projection" rel="stylesheet" type="text/css">`
-                : ''
+            file =>
+              `<link href="${file}" media="screen, projection" rel="stylesheet" type="text/css">`
           )
           .join('')}
-
       </head>
       <body>
         <!-- Insert the router, which passed from server-side -->
         <div id="react-view">${htmlContent}</div>
 
-        <!-- Insert loadableState's script tag into page (loadable-components setup) -->
-        ${loadableStateTag}
+        <!-- Insert loadableModulestate's script tag into page (loadable-components setup) -->
 
         <!-- Store the initial state into window -->
         <script>
@@ -61,14 +61,7 @@ export default (
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
-        ${Object.keys(envAssets)
-          .map(
-            key =>
-              key.substr(key.length - 2) === 'js'
-                ? `<script src="${envAssets[key]}"></script>`
-                : ''
-          )
-          .join('')}
+        ${scripts.map(file => `<script src="${file}"></script>`).join('')}
 
         ${head.script.toString()}
       </body>

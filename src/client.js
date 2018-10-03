@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter } from 'react-router-redux';
 import { renderRoutes } from 'react-router-config';
-import { loadComponents } from 'loadable-components';
+import Loadable from 'react-loadable';
 
 import configureStore from './utils/configureStore';
 import routes from './routes';
@@ -31,10 +31,8 @@ const render = (Routes: Array<Object>) => {
   );
 };
 
-// Load all components needed before starting rendering (loadable-components setup)
-loadComponents().then(() => {
-  render(routes);
-});
+// react-loadable setup
+Loadable.preloadReady().then(() => render(routes));
 
 if (module.hot) {
   // Enable webpack hot module replacement for routes
