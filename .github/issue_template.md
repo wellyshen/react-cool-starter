@@ -9,6 +9,6 @@ Tell me what should happen.
 Tell me what happens instead.
 
 ### Your Environment
-* Clint OS
+* Client OS
 * Browser and its version
 * Version of node
