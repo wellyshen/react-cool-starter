@@ -37,7 +37,6 @@ Really cool starter boilerplate with the most popular technologies:
 - [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
 - [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
 - [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
-- [react-router-redux](https://github.com/reactjs/react-router-redux) to keep your router in sync with Redux state.
 - [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 - [loadable-components](https://github.com/smooth-code/loadable-components) makes React code splitting easy. Reduce your bundle size without stress.
 - [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
@@ -64,11 +63,6 @@ Really cool starter boilerplate with the most popular technologies:
 ## Who's the Starter for?
 
 This starter is for those who with basic knowledge of React and have the need for building a server-side app. In other words, it's not for a newbie. If you're new to React or you don't need a server-side rendering app, I'd recommend you give [create-react-app](https://github.com/facebookincubator/create-react-app) a try.
-
-## Some Feature Branches
-
-- Simplfied action creator version: [simple-action](https://github.com/wellyshen/react-cool-starter/tree/simple-action) branch.
-- Docker-ise support: [docker](https://github.com/wellyshen/react-cool-starter/tree/docker) branch.
 
 ## Requirements
 

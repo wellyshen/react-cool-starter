@@ -1,16 +1,14 @@
 /* @flow */
 
-import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 import type { Store } from '../types';
 import rootReducer from '../reducers';
 
-export default (history: Object, initialState: Object = {}): Store => {
+export default (initialState: Object = {}): Store => {
   const middlewares = [
-    thunk,
-    routerMiddleware(history)
+    thunk
     // Add other middlewares here
   ];
   // Use Redux DevTools Extension in development

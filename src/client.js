@@ -4,8 +4,7 @@ import React from 'react';
 import { hydrate } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter } from 'react-router-redux';
+import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import { loadComponents } from 'loadable-components';
 
@@ -14,16 +13,13 @@ import routes from './routes';
 
 // Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
-const history = createHistory();
-const store = configureStore(history, initialState);
+const store = configureStore(initialState);
 
 const render = (Routes: Array<Object>) => {
   hydrate(
     <AppContainer>
       <Provider store={store}>
-        <ConnectedRouter history={history}>
-          {renderRoutes(Routes)}
-        </ConnectedRouter>
+        <BrowserRouter>{renderRoutes(Routes)}</BrowserRouter>
       </Provider>
     </AppContainer>,
     // $FlowFixMe: isn't an issue

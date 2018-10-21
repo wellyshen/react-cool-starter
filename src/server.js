@@ -17,7 +17,6 @@ import Helmet from 'react-helmet';
 import chalk from 'chalk';
 import openBrowser from 'react-dev-utils/openBrowser';
 
-import createHistory from 'history/createMemoryHistory';
 import configureStore from './utils/configureStore';
 import renderHtml from './utils/renderHtml';
 import routes from './routes';
@@ -70,8 +69,7 @@ if (!__DEV__) {
 
 // Register server-side rendering middleware
 app.get('*', (req, res) => {
-  const history = createHistory();
-  const store = configureStore(history);
+  const store = configureStore();
 
   // The method for loading data from server-side
   const loadBranchData = (): Promise<any> => {
