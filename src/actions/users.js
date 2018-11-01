@@ -26,11 +26,6 @@ export const fetchUsers = (URL: string = API_URL): ThunkAction => async (
 
 /* istanbul ignore next */
 const shouldFetchUsers = (state: ReduxState): boolean => {
-  // In development, we will allow action dispatching
-  // or your reducer hot reloading won't updated on the view
-  if (__DEV__) return true;
-
-  // Fetching data once in production
   if (state.home.readyStatus === 'USERS_SUCCESS') return false;
 
   return true;

@@ -126,17 +126,20 @@ app.get('*', (req, res) => {
 
       // Check page status
       const status = staticContext.status === '404' ? 404 : 200;
-      let assets = ['/assets/main.js', '/assets/main.css'];
+
+      // $FlowFixMe: isn't an issue
+      const loadableManifest = require('../public/loadable-assets.json');
+      const bundles = getBundles(loadableManifest, modules);
+      let assets = bundles.map(({ publicPath }) => `${publicPath}`);
+
       if (!__DEV__) {
         // $FlowFixMe: isn't an issue
         const webpackManifest = require('../public/webpack-assets.json');
-        // $FlowFixMe: isn't an issue
-        const loadableManifest = require('../public/loadable-assets.json');
-        const bundles = getBundles(loadableManifest, modules);
         assets = Object.keys(webpackManifest)
           .map(key => webpackManifest[key])
           .concat(bundles.map(({ publicPath }) => `${publicPath}`));
       }
+
       // Pass the route and initial state into html template
       res
         .status(status)
