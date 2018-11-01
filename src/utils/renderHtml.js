@@ -54,10 +54,7 @@ export default (
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
-        ${scripts
-          .reverse()
-          .map(file => `<script src="${file}"></script>`)
-          .join('')}
+        ${scripts.map(file => `<script src="${file}"></script>`).join('')}
 
         ${head.script.toString()}
       </body>
