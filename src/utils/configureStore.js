@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import type { Store } from '../types';
 import rootReducer from '../reducers';
 
-export default (history, initialState: Object = {}): Store => {
+export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
     routerMiddleware(history),
     thunk
