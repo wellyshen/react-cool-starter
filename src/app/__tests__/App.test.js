@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import App from '../index';
 
 describe('<App />', () => {
-  test('renders', () => {
+  it('renders', () => {
     const fakeStore = {
       default: () => {},
       subscribe: () => {},

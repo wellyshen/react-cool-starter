@@ -15,7 +15,7 @@ describe('<Home />', () => {
       )
       .toJSON();
 
-  test('should call fetchUsersIfNeeded when componentDidMount', () => {
+  it('should call fetchUsersIfNeeded when componentDidMount', () => {
     const mockAction = jest.fn();
     const props = {
       home: {}
@@ -33,7 +33,7 @@ describe('<Home />', () => {
     expect(mockAction).toHaveBeenCalled();
   });
 
-  test('renders the loading status if data invalid', () => {
+  it('renders the loading status if data invalid', () => {
     const props = {
       home: { readyStatus: 'USERS_INVALID' }
     };
@@ -42,7 +42,7 @@ describe('<Home />', () => {
     expect(tree(props, actions)).toMatchSnapshot();
   });
 
-  test('renders the loading status if requesting data', () => {
+  it('renders the loading status if requesting data', () => {
     const props = {
       home: { readyStatus: 'USERS_REQUESTING' }
     };
@@ -51,7 +51,7 @@ describe('<Home />', () => {
     expect(tree(props, actions)).toMatchSnapshot();
   });
 
-  test('renders an error if loading failed', () => {
+  it('renders an error if loading failed', () => {
     const props = {
       home: { readyStatus: 'USERS_FAILURE' }
     };
@@ -60,7 +60,7 @@ describe('<Home />', () => {
     expect(tree(props, actions)).toMatchSnapshot();
   });
 
-  test('renders the <UserList /> if loading was successful', () => {
+  it('renders the <UserList /> if loading was successful', () => {
     const props = {
       home: {
         readyStatus: 'USERS_SUCCESS',

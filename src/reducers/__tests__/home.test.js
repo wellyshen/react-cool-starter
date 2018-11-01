@@ -1,7 +1,7 @@
 import home from '../home';
 
 describe('users data home', () => {
-  test('should return the initial state', () => {
+  it('should return the initial state', () => {
     expect(home(undefined, {})).toEqual({
       readyStatus: 'USERS_INVALID',
       err: null,
@@ -9,7 +9,7 @@ describe('users data home', () => {
     });
   });
 
-  test('should handle USERS_REQUESTING', () => {
+  it('should handle USERS_REQUESTING', () => {
     expect(
       home(undefined, {
         type: 'USERS_REQUESTING',
@@ -23,7 +23,7 @@ describe('users data home', () => {
     });
   });
 
-  test('should handle USERS_FAILURE', () => {
+  it('should handle USERS_FAILURE', () => {
     expect(
       home(undefined, {
         type: 'USERS_FAILURE',
@@ -37,7 +37,7 @@ describe('users data home', () => {
     });
   });
 
-  test('should handle USERS_SUCCESS', () => {
+  it('should handle USERS_SUCCESS', () => {
     expect(
       home(undefined, {
         type: 'USERS_SUCCESS',

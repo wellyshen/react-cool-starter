@@ -2,19 +2,20 @@
 
 import React from 'react';
 import { hydrate } from 'react-dom';
+import { createBrowserHistory } from 'history';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter } from 'react-router-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import Loadable from 'react-loadable';
 
 import configureStore from './utils/configureStore';
 import routes from './routes';
 
+const history = createBrowserHistory();
 // Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
-const history = createHistory();
 const store = configureStore(history, initialState);
 
 const render = (Routes: Array<Object>) => {
@@ -22,7 +23,7 @@ const render = (Routes: Array<Object>) => {
     <AppContainer>
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          {renderRoutes(Routes)}
+          <BrowserRouter>{renderRoutes(Routes)}</BrowserRouter>
         </ConnectedRouter>
       </Provider>
     </AppContainer>,

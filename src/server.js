@@ -18,8 +18,8 @@ import { getBundles } from 'react-loadable/webpack';
 import Helmet from 'react-helmet';
 import chalk from 'chalk';
 import openBrowser from 'react-dev-utils/openBrowser';
+import { createMemoryHistory } from 'history';
 
-import createHistory from 'history/createMemoryHistory';
 import configureStore from './utils/configureStore';
 import renderHtml from './utils/renderHtml';
 import routes from './routes';
@@ -71,7 +71,7 @@ if (!__DEV__) {
 
 // Register server-side rendering middleware
 app.get('*', (req, res) => {
-  const history = createHistory();
+  const history = createMemoryHistory();
   const store = configureStore(history);
 
   // The method for loading data from server-side

@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import UserList from '../index';
 
 describe('<UserList />', () => {
-  test('renders', () => {
+  it('renders', () => {
     const mockData = [{ id: '1', name: 'Welly' }];
     const tree = renderer
       .create(

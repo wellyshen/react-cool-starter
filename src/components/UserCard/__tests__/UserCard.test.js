@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import UserCard from '../index';
 
 describe('<UserCard />', () => {
-  test('renders', () => {
+  it('renders', () => {
     const mockData = {
       name: 'Welly',
       phone: '007',

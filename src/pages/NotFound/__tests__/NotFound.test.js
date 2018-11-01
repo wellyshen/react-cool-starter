@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import NotFound from '../index';
 
 describe('<NotFound />', () => {
-  test('renders', () => {
+  it('renders', () => {
     const tree = renderer
       .create(
         <MemoryRouter>
