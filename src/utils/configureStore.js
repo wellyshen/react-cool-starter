@@ -1,13 +1,15 @@
 /* @flow */
 
 import { createStore, applyMiddleware, compose } from 'redux';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
 
 import type { Store } from '../types';
 import rootReducer from '../reducers';
 
-export default (initialState: Object = {}): Store => {
+export default (history, initialState: Object = {}): Store => {
   const middlewares = [
+    routerMiddleware(history),
     thunk
     // Add other middlewares here
   ];
@@ -21,7 +23,11 @@ export default (initialState: Object = {}): Store => {
     applyMiddleware(...middlewares)
     // Add other enhancers here
   );
-  const store = createStore(rootReducer, initialState, enhancers);
+  const store = createStore(
+    connectRouter(history)(rootReducer),
+    initialState,
+    enhancers
+  );
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

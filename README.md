@@ -29,9 +29,10 @@ Really cool starter boilerplate with the most popular technologies:
 - [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering with async data fetching.
 - [React](https://facebook.github.io/react/) as the view.
 - [React Router v4](https://reacttraining.com/react-router/) as the router.
+- [Connected React Router](https://github.com/supasate/connected-react-router) to bind Redux with React Router. Refer to [doc](https://github.com/supasate/connected-react-router/blob/master/FAQ.md#how-to-navigate-with-redux-action) to see how it works.
 - [Redux](https://github.com/reactjs/redux)'s futuristic [Flux](https://facebook.github.io/react/blog/2014/05/06/flux.html) implementation.
 - [Express](https://expressjs.com/) server.
-- [Webpack 4](https://webpack.js.org/) for bundling and [**"Tree-Shaking"**](https://webpack.js.org/guides/tree-shaking/) support.
+- [Webpack 4](https://webpack.js.org/) for app bundling.
 - [Babel](https://babeljs.io/) for ES6 and ES7 transpiling.
 - [React Hot Loader 4](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 - [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
