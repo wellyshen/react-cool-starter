@@ -1,10 +1,10 @@
 /* @flow */
 
-import loadable from 'loadable-components';
+import Loadable from 'react-loadable';
 
-import { ErrorDisplay, Loading } from '../../components';
+import { Loading } from '../../components';
 
-export default loadable(() => import('./Home'), {
-  ErrorComponent: ErrorDisplay,
-  LoadingComponent: Loading
+export default Loadable({
+  loader: () => import('./Home'),
+  loading: Loading
 });

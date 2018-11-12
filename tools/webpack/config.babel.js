@@ -8,6 +8,7 @@ import CompressionPlugin from 'compression-webpack-plugin';
 import ImageminPlugin from 'imagemin-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { ReactLoadablePlugin } from 'react-loadable/webpack';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
@@ -22,6 +23,9 @@ const getPlugins = () => {
     new ManifestPlugin({
       fileName: path.resolve(process.cwd(), 'public/webpack-assets.json'),
       filter: file => file.isInitial
+    }),
+    new ReactLoadablePlugin({
+      filename: 'public/loadable-assets.json'
     }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
@@ -120,9 +124,10 @@ module.exports = {
           ],
           plugins: [
             'react-hot-loader/babel',
-            'loadable-components/babel',
+            'react-loadable/babel',
             'lodash',
-            '@babel/plugin-proposal-class-properties'
+            '@babel/plugin-proposal-class-properties',
+            '@babel/plugin-syntax-dynamic-import'
           ],
           env: {
             production: {

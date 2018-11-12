@@ -12,7 +12,9 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { renderRoutes, matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
-import { getLoadableState } from 'loadable-components/server';
+import Loadable from 'react-loadable';
+import { getBundles } from 'react-loadable/webpack';
+
 import Helmet from 'react-helmet';
 import chalk from 'chalk';
 import openBrowser from 'react-dev-utils/openBrowser';
@@ -22,7 +24,6 @@ import configureStore from './utils/configureStore';
 import renderHtml from './utils/renderHtml';
 import routes from './routes';
 // $FlowFixMe: isn't an issue
-import assets from '../public/webpack-assets.json';
 import { port, host } from './config';
 
 const app = express();
@@ -97,14 +98,17 @@ app.get('*', (req, res) => {
       // Load data from server-side first
       await loadBranchData();
 
+      const modules = [];
       const staticContext = {};
       const AppComponent = (
-        <Provider store={store}>
-          {/* Setup React-Router server-side rendering */}
-          <StaticRouter location={req.path} context={staticContext}>
-            {renderRoutes(routes)}
-          </StaticRouter>
-        </Provider>
+        <Loadable.Capture report={moduleName => modules.push(moduleName)}>
+          <Provider store={store}>
+            {/* Setup React-Router server-side rendering */}
+            <StaticRouter location={req.path} context={staticContext}>
+              {renderRoutes(routes)}
+            </StaticRouter>
+          </Provider>
+        </Loadable.Capture>
       );
 
       // Check if the render result contains a redirect, if so we need to set
@@ -116,29 +120,30 @@ app.get('*', (req, res) => {
         return;
       }
 
-      // Extract loadable state from application tree (loadable-components setup)
-      getLoadableState(AppComponent).then(loadableState => {
-        const head = Helmet.renderStatic();
-        const htmlContent = renderToString(AppComponent);
-        const initialState = store.getState();
-        const loadableStateTag = loadableState.getScriptTag();
+      const head = Helmet.renderStatic();
+      const initialState = store.getState();
+      const htmlContent = renderToString(AppComponent);
 
-        // Check page status
-        const status = staticContext.status === '404' ? 404 : 200;
+      // Check page status
+      const status = staticContext.status === '404' ? 404 : 200;
 
-        // Pass the route and initial state into html template
-        res
-          .status(status)
-          .send(
-            renderHtml(
-              head,
-              assets,
-              htmlContent,
-              initialState,
-              loadableStateTag
-            )
-          );
-      });
+      // $FlowFixMe: isn't an issue
+      const loadableManifest = require('../public/loadable-assets.json');
+      const bundles = getBundles(loadableManifest, modules);
+      let assets = bundles.map(({ publicPath }) => `${publicPath}`);
+
+      if (!__DEV__) {
+        // $FlowFixMe: isn't an issue
+        const webpackManifest = require('../public/webpack-assets.json');
+        assets = Object.keys(webpackManifest)
+          .map(key => webpackManifest[key])
+          .concat(bundles.map(({ publicPath }) => `${publicPath}`));
+      }
+
+      // Pass the route and initial state into html template
+      res
+        .status(status)
+        .send(renderHtml(head, assets, htmlContent, initialState));
     } catch (err) {
       res.status(404).send('Not Found :(');
 
@@ -148,16 +153,18 @@ app.get('*', (req, res) => {
 });
 
 if (port) {
-  app.listen(port, host, err => {
-    const url = `http://${host}:${port}`;
+  Loadable.preloadAll().then(() => {
+    app.listen(port, host, err => {
+      const url = `http://${host}:${port}`;
 
-    if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
+      if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
 
-    console.info(chalk.green(`==> 🌎  Listening at ${url}`));
+      console.info(chalk.green(`==> 🌎  Listening at ${url}`));
 
-    // Open browser
-    if (openBrowser(url))
-      console.info(chalk.green("==> 🖥️  Opened on your browser's tab!"));
+      // Open browser
+      if (openBrowser(url))
+        console.info(chalk.green("==> 🖥️  Opened on your browser's tab!"));
+    });
   });
 } else {
   console.error(
