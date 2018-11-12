@@ -1,6 +1,7 @@
 /* @flow */
 
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 
 import home from './home';
 import userInfo from './userInfo';
@@ -11,4 +12,5 @@ const reducers = {
 };
 
 export type Reducers = typeof reducers;
-export default combineReducers(reducers);
+export default (history: Object) =>
+  combineReducers({ router: connectRouter(history), ...reducers });

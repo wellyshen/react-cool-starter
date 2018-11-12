@@ -39,7 +39,7 @@ Really cool starter boilerplate with the most popular technologies:
 - [axios](https://github.com/mzabriskie/axios) for universal data fetching/rehydration on the client.
 - [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 - [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
-- [loadable-components](https://github.com/smooth-code/loadable-components) makes React code splitting easy. Reduce your bundle size without stress.
+- [react-loadable](https://github.com/jamiebuilds/react-loadable) to lazy load component when needed in app. Reduce your bundle size without stress.
 - [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 - [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
 - [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for SSR.

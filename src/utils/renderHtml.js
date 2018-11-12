@@ -5,14 +5,12 @@ import { minify } from 'html-minifier';
 
 export default (
   head: Object,
-  bundles: string[],
+  assets: Array,
   htmlContent: string,
   initialState: Object
 ): string => {
-  // Use pre-defined assets in development. "main" is the default webpack generated name.
-
-  const styles = bundles.filter(file => file.endsWith('.css'));
-  const scripts = bundles.filter(file => file.endsWith('.js'));
+  const styles = assets.filter(file => file.endsWith('.css'));
+  const scripts = assets.filter(file => file.endsWith('.js'));
 
   const html = `
     <!doctype html>
@@ -43,8 +41,6 @@ export default (
       <body>
         <!-- Insert the router, which passed from server-side -->
         <div id="react-view">${htmlContent}</div>
-
-        <!-- Insert loadableModulestate's script tag into page (loadable-components setup) -->
 
         <!-- Store the initial state into window -->
         <script>

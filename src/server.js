@@ -23,7 +23,6 @@ import { createMemoryHistory } from 'history';
 import configureStore from './utils/configureStore';
 import renderHtml from './utils/renderHtml';
 import routes from './routes';
-// $FlowFixMe: isn't an issue
 import { port, host } from './config';
 
 const app = express();

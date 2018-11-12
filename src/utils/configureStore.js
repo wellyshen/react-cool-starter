@@ -1,11 +1,11 @@
 /* @flow */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
 
 import type { Store } from '../types';
-import rootReducer from '../reducers';
+import createRootReducer from '../reducers';
 
 export default (history: Object, initialState: Object = {}): Store => {
   const middlewares = [
@@ -24,7 +24,7 @@ export default (history: Object, initialState: Object = {}): Store => {
     // Add other enhancers here
   );
   const store = createStore(
-    connectRouter(history)(rootReducer),
+    createRootReducer(history),
     initialState,
     enhancers
   );
@@ -33,9 +33,9 @@ export default (history: Object, initialState: Object = {}): Store => {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
       try {
-        const nextReducer = require('../reducers').default;
+        const createNextReducer = require('../reducers').default;
 
-        store.replaceReducer(nextReducer);
+        store.replaceReducer(createNextReducer(history));
       } catch (error) {
         console.error(`==> 😭  Reducer hot reloading error ${error}`);
       }
