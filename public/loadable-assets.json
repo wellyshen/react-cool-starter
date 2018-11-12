@@ -899,58 +899,58 @@
       "publicPath": "/assets/main.js"
     }
   ],
-  "schedule": [
+  "scheduler": [
     {
-      "id": "./node_modules/schedule/index.js",
-      "name": "./node_modules/schedule/index.js",
+      "id": "./node_modules/scheduler/index.js",
+      "name": "./node_modules/scheduler/index.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/schedule/index.js",
-      "name": "./node_modules/schedule/index.js",
+      "id": "./node_modules/scheduler/index.js",
+      "name": "./node_modules/scheduler/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
   ],
-  "./cjs/schedule.development.js": [
+  "./cjs/scheduler.development.js": [
     {
-      "id": "./node_modules/schedule/cjs/schedule.development.js",
-      "name": "./node_modules/schedule/cjs/schedule.development.js",
+      "id": "./node_modules/scheduler/cjs/scheduler.development.js",
+      "name": "./node_modules/scheduler/cjs/scheduler.development.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/schedule/cjs/schedule.development.js",
-      "name": "./node_modules/schedule/cjs/schedule.development.js",
+      "id": "./node_modules/scheduler/cjs/scheduler.development.js",
+      "name": "./node_modules/scheduler/cjs/scheduler.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
   ],
-  "schedule/tracing": [
+  "scheduler/tracing": [
     {
-      "id": "./node_modules/schedule/tracing.js",
-      "name": "./node_modules/schedule/tracing.js",
+      "id": "./node_modules/scheduler/tracing.js",
+      "name": "./node_modules/scheduler/tracing.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/schedule/tracing.js",
-      "name": "./node_modules/schedule/tracing.js",
+      "id": "./node_modules/scheduler/tracing.js",
+      "name": "./node_modules/scheduler/tracing.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
   ],
-  "./cjs/schedule-tracing.development.js": [
+  "./cjs/scheduler-tracing.development.js": [
     {
-      "id": "./node_modules/schedule/cjs/schedule-tracing.development.js",
-      "name": "./node_modules/schedule/cjs/schedule-tracing.development.js",
+      "id": "./node_modules/scheduler/cjs/scheduler-tracing.development.js",
+      "name": "./node_modules/scheduler/cjs/scheduler-tracing.development.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/schedule/cjs/schedule-tracing.development.js",
-      "name": "./node_modules/schedule/cjs/schedule-tracing.development.js",
+      "id": "./node_modules/scheduler/cjs/scheduler-tracing.development.js",
+      "name": "./node_modules/scheduler/cjs/scheduler-tracing.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -1275,52 +1275,52 @@
   ],
   "react-is": [
     {
-      "id": "./node_modules/react-redux/node_modules/react-is/index.js",
-      "name": "./node_modules/react-redux/node_modules/react-is/index.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
       "id": "./node_modules/react-is/index.js",
       "name": "./node_modules/react-is/index.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/react-redux/node_modules/react-is/index.js",
-      "name": "./node_modules/react-redux/node_modules/react-is/index.js",
+      "id": "./node_modules/react-router/node_modules/react-is/index.js",
+      "name": "./node_modules/react-router/node_modules/react-is/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-is/index.js",
+      "name": "./node_modules/react-is/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./node_modules/react-is/index.js",
-      "name": "./node_modules/react-is/index.js",
+      "id": "./node_modules/react-router/node_modules/react-is/index.js",
+      "name": "./node_modules/react-router/node_modules/react-is/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
   ],
   "./cjs/react-is.development.js": [
     {
-      "id": "./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js",
-      "name": "./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
       "id": "./node_modules/react-is/cjs/react-is.development.js",
       "name": "./node_modules/react-is/cjs/react-is.development.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js",
-      "name": "./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js",
+      "id": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-is/cjs/react-is.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./node_modules/react-is/cjs/react-is.development.js",
-      "name": "./node_modules/react-is/cjs/react-is.development.js",
+      "id": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }

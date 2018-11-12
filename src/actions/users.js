@@ -37,10 +37,7 @@ export const fetchUsersIfNeeded = (): ThunkAction => (
   getState: GetState
 ) => {
   /* istanbul ignore next */
-  if (shouldFetchUsers(getState())) {
-    /* istanbul ignore next */
-    return dispatch(fetchUsers());
-  }
+  if (shouldFetchUsers(getState())) return dispatch(fetchUsers());
 
   /* istanbul ignore next */
   return null;

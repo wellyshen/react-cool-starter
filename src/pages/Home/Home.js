@@ -28,12 +28,11 @@ export class Home extends PureComponent<Props> {
       !home.readyStatus ||
       home.readyStatus === 'USERS_INVALID' ||
       home.readyStatus === 'USERS_REQUESTING'
-    ) {
+    )
       return <p>Loading...</p>;
-    }
-    if (home.readyStatus === 'USERS_FAILURE') {
+
+    if (home.readyStatus === 'USERS_FAILURE')
       return <p>Oops, Failed to load list!</p>;
-    }
 
     return <UserList list={home.list} />;
   };

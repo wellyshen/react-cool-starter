@@ -8,16 +8,16 @@ import styles from './styles.scss';
 import type { LoadingProps } from '../../types';
 
 const loading = ({ pastDelay, error }: LoadingProps) => {
-  if (error) {
+  if (error)
     return <ErrorDisplay error={new Error('Failed to load component')} />;
-  }
-  if (pastDelay) {
+
+  if (pastDelay)
     return (
       <div className={styles.Loading}>
         <p>Loading...</p>
       </div>
     );
-  }
+
   return null;
 };
 
