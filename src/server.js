@@ -119,24 +119,34 @@ app.get('*', (req, res) => {
         return;
       }
 
+      // Check page status
+      const status = staticContext.status === '404' ? 404 : 200;
+
       const head = Helmet.renderStatic();
       const initialState = store.getState();
       const htmlContent = renderToString(AppComponent);
 
-      // Check page status
-      const status = staticContext.status === '404' ? 404 : 200;
-
       // $FlowFixMe: isn't an issue
       const loadableManifest = require('../public/loadable-assets.json');
       const bundles = getBundles(loadableManifest, modules);
-      let assets = bundles.map(({ publicPath }) => `${publicPath}`);
+      let assets = bundles
+        .map(({ publicPath }) =>
+          !publicPath.includes('main') ? publicPath : ''
+        )
+        // In development, main.css and main.js are webpack default file bundling name
+        // we put these files into assets with publicPath
+        .concat(['/assets/main.css', '/assets/main.js']);
 
       if (!__DEV__) {
         // $FlowFixMe: isn't an issue
         const webpackManifest = require('../public/webpack-assets.json');
-        assets = Object.keys(webpackManifest)
-          .map(key => webpackManifest[key])
-          .concat(bundles.map(({ publicPath }) => `${publicPath}`));
+        assets = bundles
+          .map(({ publicPath }) => publicPath)
+          .concat(
+            Object.keys(webpackManifest)
+              .map(key => webpackManifest[key])
+              .reverse()
+          );
       }
 
       // Pass the route and initial state into html template

@@ -36,7 +36,7 @@ export default (
             file =>
               `<link href="${file}" media="screen, projection" rel="stylesheet" type="text/css">`
           )
-          .join('')}
+          .join('\n')}
       </head>
       <body>
         <!-- Insert the router, which passed from server-side -->
@@ -50,7 +50,7 @@ export default (
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
-        ${scripts.map(file => `<script src="${file}"></script>`).join('')}
+        ${scripts.map(file => `<script src="${file}"></script>`).join('\n')}
 
         ${head.script.toString()}
       </body>
