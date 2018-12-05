@@ -67,8 +67,8 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 ## Requirements
 
-- [node](https://nodejs.org/en/) >= 8.0
-- [npm](https://www.npmjs.com/) >= 5.0
+- [node](https://nodejs.org/en/) >= 10.0
+- [npm](https://www.npmjs.com/) >= 6.0
 
 ## Getting Started
 
