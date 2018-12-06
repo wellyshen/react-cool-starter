@@ -114,30 +114,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
-        options: {
-          cacheDirectory: isDev,
-          babelrc: false,
-          presets: [
-            ['@babel/preset-env', { modules: false, useBuiltIns: 'usage' }],
-            '@babel/preset-react',
-            '@babel/preset-flow'
-          ],
-          plugins: [
-            'react-hot-loader/babel',
-            'react-loadable/babel',
-            'lodash',
-            '@babel/plugin-proposal-class-properties',
-            '@babel/plugin-syntax-dynamic-import'
-          ],
-          env: {
-            production: {
-              plugins: [
-                'transform-remove-console',
-                'transform-react-remove-prop-types'
-              ]
-            }
-          }
-        }
+        options: { cacheDirectory: isDev }
       },
       {
         test: /\.css$/,

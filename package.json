@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -145,10 +145,12 @@
       "@babel/preset-flow"
     ],
     "plugins": [
+      "react-hot-loader/babel",
       "react-loadable/babel",
       "dynamic-import-node",
       "lodash",
-      "@babel/plugin-proposal-class-properties"
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-syntax-dynamic-import"
     ],
     "env": {
       "production": {
@@ -357,7 +359,7 @@
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-lodash": "^5.0.0",
+    "eslint-plugin-lodash": "^5.1.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.0",
     "file-loader": "^2.0.0",
@@ -386,9 +388,9 @@
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-config-standard": "^18.2.0",
-    "stylelint-scss": "^3.4.0",
+    "stylelint-scss": "^3.4.1",
     "url-loader": "^1.1.2",
-    "webpack": "^4.27.0",
+    "webpack": "^4.27.1",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
