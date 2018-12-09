@@ -7,7 +7,7 @@ import styles from './styles.scss';
 
 import type { LoadingProps } from '../../types';
 
-const loading = ({ pastDelay, error }: LoadingProps) => {
+export default ({ pastDelay, error }: LoadingProps) => {
   if (error)
     return <ErrorDisplay error={new Error('Failed to load component')} />;
 
@@ -20,5 +20,3 @@ const loading = ({ pastDelay, error }: LoadingProps) => {
 
   return null;
 };
-
-export default loading;

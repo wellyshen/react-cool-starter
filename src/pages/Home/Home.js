@@ -47,14 +47,16 @@ export class Home extends PureComponent<Props> {
   }
 }
 
-const connector = connect(
-  ({ home }: ReduxState) => ({ home }),
-  (dispatch: Dispatch) => ({
-    fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded())
-  })
-);
+const mapStateToProps = ({ home }: ReduxState) => ({ home });
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded())
+});
 
 export default compose(
   withRouter,
-  connector
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(Home);

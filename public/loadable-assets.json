@@ -23,6 +23,18 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/_getRawTag.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_getRawTag.js",
+      "name": "./node_modules/lodash/_getRawTag.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/_getRawTag.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/_getRawTag.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "undefined": [
@@ -33,55 +45,55 @@
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?7d45",
+      "id": 1,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?11c0",
+      "id": 2,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?67d7",
+      "id": 3,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?22d7",
+      "id": 4,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?3e79",
+      "id": 5,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?25b8",
+      "id": 6,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?1bac",
+      "id": 7,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?9172",
+      "id": 8,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?5fe7",
+      "id": 9,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
@@ -93,58 +105,118 @@
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?7d45",
+      "id": 1,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?11c0",
+      "id": 2,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?67d7",
+      "id": 3,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?22d7",
+      "id": 4,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?3e79",
+      "id": 5,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?25b8",
+      "id": 6,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?1bac",
+      "id": 7,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?9172",
+      "id": 8,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?5fe7",
+      "id": 9,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": 0,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 1,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 2,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 3,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 4,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 5,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 6,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 7,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 8,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": 9,
+      "name": null,
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../webpack/buildin/module.js": [
@@ -159,6 +231,12 @@
       "name": "./node_modules/webpack/buildin/module.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack/buildin/module.js",
+      "name": "./node_modules/webpack/buildin/module.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "querystring": [
@@ -173,6 +251,12 @@
       "name": "./node_modules/querystring-es3/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/querystring-es3/index.js",
+      "name": "./node_modules/querystring-es3/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./decode": [
@@ -187,6 +271,12 @@
       "name": "./node_modules/querystring-es3/decode.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/querystring-es3/decode.js",
+      "name": "./node_modules/querystring-es3/decode.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./encode": [
@@ -201,6 +291,12 @@
       "name": "./node_modules/querystring-es3/encode.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/querystring-es3/encode.js",
+      "name": "./node_modules/querystring-es3/encode.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "strip-ansi": [
@@ -215,6 +311,12 @@
       "name": "./node_modules/webpack-hot-middleware/node_modules/strip-ansi/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack-hot-middleware/node_modules/strip-ansi/index.js",
+      "name": "./node_modules/webpack-hot-middleware/node_modules/strip-ansi/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "ansi-regex": [
@@ -229,6 +331,12 @@
       "name": "./node_modules/webpack-hot-middleware/node_modules/ansi-regex/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack-hot-middleware/node_modules/ansi-regex/index.js",
+      "name": "./node_modules/webpack-hot-middleware/node_modules/ansi-regex/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./client-overlay": [
@@ -243,6 +351,12 @@
       "name": "./node_modules/webpack-hot-middleware/client-overlay.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack-hot-middleware/client-overlay.js",
+      "name": "./node_modules/webpack-hot-middleware/client-overlay.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "ansi-html": [
@@ -257,6 +371,12 @@
       "name": "./node_modules/ansi-html/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/ansi-html/index.js",
+      "name": "./node_modules/ansi-html/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "html-entities": [
@@ -271,6 +391,12 @@
       "name": "./node_modules/html-entities/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/html-entities/index.js",
+      "name": "./node_modules/html-entities/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./lib/xml-entities.js": [
@@ -285,6 +411,12 @@
       "name": "./node_modules/html-entities/lib/xml-entities.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/html-entities/lib/xml-entities.js",
+      "name": "./node_modules/html-entities/lib/xml-entities.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./lib/html4-entities.js": [
@@ -299,6 +431,12 @@
       "name": "./node_modules/html-entities/lib/html4-entities.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/html-entities/lib/html4-entities.js",
+      "name": "./node_modules/html-entities/lib/html4-entities.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./lib/html5-entities.js": [
@@ -313,6 +451,12 @@
       "name": "./node_modules/html-entities/lib/html5-entities.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/html-entities/lib/html5-entities.js",
+      "name": "./node_modules/html-entities/lib/html5-entities.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./process-update": [
@@ -327,6 +471,12 @@
       "name": "./node_modules/webpack-hot-middleware/process-update.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack-hot-middleware/process-update.js",
+      "name": "./node_modules/webpack-hot-middleware/process-update.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./src/client.js": [
@@ -341,6 +491,12 @@
       "name": "./src/client.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/client.js",
+      "name": "./src/client.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../node_modules/webpack/buildin/harmony-module.js": [
@@ -355,6 +511,12 @@
       "name": "./node_modules/webpack/buildin/harmony-module.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack/buildin/harmony-module.js",
+      "name": "./node_modules/webpack/buildin/harmony-module.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-hot-loader": [
@@ -369,6 +531,12 @@
       "name": "./node_modules/react-hot-loader/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-hot-loader/index.js",
+      "name": "./node_modules/react-hot-loader/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./dist/react-hot-loader.production.min.js": [
@@ -383,6 +551,12 @@
       "name": "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js",
+      "name": "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react": [
@@ -397,6 +571,12 @@
       "name": "./node_modules/react/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react/index.js",
+      "name": "./node_modules/react/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./cjs/react.development.js": [
@@ -411,6 +591,12 @@
       "name": "./node_modules/react/cjs/react.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react/cjs/react.development.js",
+      "name": "./node_modules/react/cjs/react.development.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "object-assign": [
@@ -425,6 +611,12 @@
       "name": "./node_modules/object-assign/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/object-assign/index.js",
+      "name": "./node_modules/object-assign/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "prop-types/checkPropTypes": [
@@ -439,6 +631,12 @@
       "name": "./node_modules/prop-types/checkPropTypes.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/prop-types/checkPropTypes.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./lib/ReactPropTypesSecret": [
@@ -453,6 +651,12 @@
       "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./dist/react-hot-loader.development.js": [
@@ -467,6 +671,12 @@
       "name": "./node_modules/react-hot-loader/dist/react-hot-loader.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-hot-loader/dist/react-hot-loader.development.js",
+      "name": "./node_modules/react-hot-loader/dist/react-hot-loader.development.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "shallowequal": [
@@ -481,6 +691,12 @@
       "name": "./node_modules/shallowequal/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/shallowequal/index.js",
+      "name": "./node_modules/shallowequal/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "fast-levenshtein": [
@@ -495,6 +711,12 @@
       "name": "./node_modules/fast-levenshtein/levenshtein.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/fast-levenshtein/levenshtein.js",
+      "name": "./node_modules/fast-levenshtein/levenshtein.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "!!webpack amd define": [
@@ -509,6 +731,12 @@
       "name": "./node_modules/webpack/buildin/amd-define.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack/buildin/amd-define.js",
+      "name": "./node_modules/webpack/buildin/amd-define.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "!!webpack amd options": [
@@ -523,6 +751,12 @@
       "name": "./node_modules/webpack/buildin/amd-options.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack/buildin/amd-options.js",
+      "name": "./node_modules/webpack/buildin/amd-options.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "prop-types": [
@@ -537,6 +771,12 @@
       "name": "./node_modules/prop-types/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/index.js",
+      "name": "./node_modules/prop-types/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./factoryWithTypeCheckers": [
@@ -551,6 +791,12 @@
       "name": "./node_modules/prop-types/factoryWithTypeCheckers.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-lifecycles-compat": [
@@ -565,6 +811,12 @@
       "name": "./node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js",
+      "name": "./node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "hoist-non-react-statics": [
@@ -591,6 +843,18 @@
       "name": "./node_modules/react-redux/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js",
+      "name": "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js",
+      "name": "./node_modules/react-redux/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-dom": [
@@ -605,6 +869,12 @@
       "name": "./node_modules/react-dom/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-dom/index.js",
+      "name": "./node_modules/react-dom/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./cjs/react-dom.development.js": [
@@ -619,6 +889,12 @@
       "name": "./node_modules/react-dom/cjs/react-dom.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-dom/cjs/react-dom.development.js",
+      "name": "./node_modules/react-dom/cjs/react-dom.development.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "scheduler": [
@@ -633,6 +909,12 @@
       "name": "./node_modules/scheduler/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/scheduler/index.js",
+      "name": "./node_modules/scheduler/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./cjs/scheduler.development.js": [
@@ -647,6 +929,12 @@
       "name": "./node_modules/scheduler/cjs/scheduler.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/scheduler/cjs/scheduler.development.js",
+      "name": "./node_modules/scheduler/cjs/scheduler.development.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "scheduler/tracing": [
@@ -661,6 +949,12 @@
       "name": "./node_modules/scheduler/tracing.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/scheduler/tracing.js",
+      "name": "./node_modules/scheduler/tracing.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./cjs/scheduler-tracing.development.js": [
@@ -675,6 +969,12 @@
       "name": "./node_modules/scheduler/cjs/scheduler-tracing.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/scheduler/cjs/scheduler-tracing.development.js",
+      "name": "./node_modules/scheduler/cjs/scheduler-tracing.development.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "history": [
@@ -713,6 +1013,24 @@
       "name": "./node_modules/react-router-dom/node_modules/history/esm/history.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/history/es/index.js",
+      "name": "./node_modules/history/es/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/history/esm/history.js",
+      "name": "./node_modules/react-router/node_modules/history/esm/history.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/history/esm/history.js",
+      "name": "./node_modules/react-router-dom/node_modules/history/esm/history.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./createBrowserHistory": [
@@ -727,6 +1045,12 @@
       "name": "./node_modules/history/es/createBrowserHistory.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/history/es/createBrowserHistory.js",
+      "name": "./node_modules/history/es/createBrowserHistory.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "warning": [
@@ -741,6 +1065,12 @@
       "name": "./node_modules/warning/browser.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/warning/browser.js",
+      "name": "./node_modules/warning/browser.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "invariant": [
@@ -755,6 +1085,12 @@
       "name": "./node_modules/invariant/browser.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/invariant/browser.js",
+      "name": "./node_modules/invariant/browser.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./LocationUtils": [
@@ -769,6 +1105,12 @@
       "name": "./node_modules/history/es/LocationUtils.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/history/es/LocationUtils.js",
+      "name": "./node_modules/history/es/LocationUtils.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "resolve-pathname": [
@@ -783,6 +1125,12 @@
       "name": "./node_modules/resolve-pathname/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/resolve-pathname/index.js",
+      "name": "./node_modules/resolve-pathname/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "value-equal": [
@@ -797,6 +1145,12 @@
       "name": "./node_modules/value-equal/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/value-equal/index.js",
+      "name": "./node_modules/value-equal/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./PathUtils": [
@@ -811,6 +1165,12 @@
       "name": "./node_modules/history/es/PathUtils.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/history/es/PathUtils.js",
+      "name": "./node_modules/history/es/PathUtils.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./createTransitionManager": [
@@ -825,6 +1185,12 @@
       "name": "./node_modules/history/es/createTransitionManager.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/history/es/createTransitionManager.js",
+      "name": "./node_modules/history/es/createTransitionManager.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./DOMUtils": [
@@ -839,6 +1205,12 @@
       "name": "./node_modules/history/es/DOMUtils.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/history/es/DOMUtils.js",
+      "name": "./node_modules/history/es/DOMUtils.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./createHashHistory": [
@@ -853,6 +1225,12 @@
       "name": "./node_modules/history/es/createHashHistory.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/history/es/createHashHistory.js",
+      "name": "./node_modules/history/es/createHashHistory.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./createMemoryHistory": [
@@ -867,6 +1245,12 @@
       "name": "./node_modules/history/es/createMemoryHistory.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/history/es/createMemoryHistory.js",
+      "name": "./node_modules/history/es/createMemoryHistory.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-redux": [
@@ -881,6 +1265,12 @@
       "name": "./node_modules/react-redux/es/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/index.js",
+      "name": "./node_modules/react-redux/es/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./components/Provider": [
@@ -895,6 +1285,12 @@
       "name": "./node_modules/react-redux/es/components/Provider.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/components/Provider.js",
+      "name": "./node_modules/react-redux/es/components/Provider.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "@babel/runtime/helpers/esm/inheritsLoose": [
@@ -909,6 +1305,12 @@
       "name": "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js",
+      "name": "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../utils/PropTypes": [
@@ -923,6 +1325,12 @@
       "name": "./node_modules/react-redux/es/utils/PropTypes.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/utils/PropTypes.js",
+      "name": "./node_modules/react-redux/es/utils/PropTypes.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../utils/warning": [
@@ -937,6 +1345,12 @@
       "name": "./node_modules/react-redux/es/utils/warning.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/utils/warning.js",
+      "name": "./node_modules/react-redux/es/utils/warning.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./components/connectAdvanced": [
@@ -951,6 +1365,12 @@
       "name": "./node_modules/react-redux/es/components/connectAdvanced.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/components/connectAdvanced.js",
+      "name": "./node_modules/react-redux/es/components/connectAdvanced.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "@babel/runtime/helpers/esm/assertThisInitialized": [
@@ -965,6 +1385,12 @@
       "name": "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js",
+      "name": "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "@babel/runtime/helpers/esm/extends": [
@@ -979,6 +1405,12 @@
       "name": "./node_modules/@babel/runtime/helpers/esm/extends.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/extends.js",
+      "name": "./node_modules/@babel/runtime/helpers/esm/extends.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "@babel/runtime/helpers/esm/objectWithoutPropertiesLoose": [
@@ -993,6 +1425,12 @@
       "name": "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js",
+      "name": "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-is": [
@@ -1031,6 +1469,24 @@
       "name": "./node_modules/react-router/node_modules/react-is/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/hoist-non-react-statics/node_modules/react-is/index.js",
+      "name": "./node_modules/react-redux/node_modules/hoist-non-react-statics/node_modules/react-is/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/react-is/index.js",
+      "name": "./node_modules/react-is/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/react-is/index.js",
+      "name": "./node_modules/react-router/node_modules/react-is/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./cjs/react-is.development.js": [
@@ -1069,6 +1525,24 @@
       "name": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-redux/node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-is/cjs/react-is.development.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../utils/Subscription": [
@@ -1083,6 +1557,12 @@
       "name": "./node_modules/react-redux/es/utils/Subscription.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/utils/Subscription.js",
+      "name": "./node_modules/react-redux/es/utils/Subscription.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./connect/connect": [
@@ -1097,6 +1577,12 @@
       "name": "./node_modules/react-redux/es/connect/connect.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/connect/connect.js",
+      "name": "./node_modules/react-redux/es/connect/connect.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../utils/shallowEqual": [
@@ -1111,6 +1597,12 @@
       "name": "./node_modules/react-redux/es/utils/shallowEqual.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/utils/shallowEqual.js",
+      "name": "./node_modules/react-redux/es/utils/shallowEqual.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./mapDispatchToProps": [
@@ -1125,6 +1617,12 @@
       "name": "./node_modules/react-redux/es/connect/mapDispatchToProps.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/connect/mapDispatchToProps.js",
+      "name": "./node_modules/react-redux/es/connect/mapDispatchToProps.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "redux": [
@@ -1139,6 +1637,12 @@
       "name": "./node_modules/redux/es/redux.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/redux/es/redux.js",
+      "name": "./node_modules/redux/es/redux.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "symbol-observable": [
@@ -1153,6 +1657,12 @@
       "name": "./node_modules/symbol-observable/es/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/symbol-observable/es/index.js",
+      "name": "./node_modules/symbol-observable/es/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../../webpack/buildin/global.js": [
@@ -1167,6 +1677,12 @@
       "name": "./node_modules/webpack/buildin/global.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack/buildin/global.js",
+      "name": "./node_modules/webpack/buildin/global.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./ponyfill.js": [
@@ -1181,6 +1697,12 @@
       "name": "./node_modules/symbol-observable/es/ponyfill.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/symbol-observable/es/ponyfill.js",
+      "name": "./node_modules/symbol-observable/es/ponyfill.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./wrapMapToProps": [
@@ -1195,6 +1717,12 @@
       "name": "./node_modules/react-redux/es/connect/wrapMapToProps.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/connect/wrapMapToProps.js",
+      "name": "./node_modules/react-redux/es/connect/wrapMapToProps.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../utils/verifyPlainObject": [
@@ -1209,6 +1737,12 @@
       "name": "./node_modules/react-redux/es/utils/verifyPlainObject.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/utils/verifyPlainObject.js",
+      "name": "./node_modules/react-redux/es/utils/verifyPlainObject.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isPlainObject": [
@@ -1223,6 +1757,12 @@
       "name": "./node_modules/react-redux/es/utils/isPlainObject.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/utils/isPlainObject.js",
+      "name": "./node_modules/react-redux/es/utils/isPlainObject.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./mapStateToProps": [
@@ -1237,6 +1777,12 @@
       "name": "./node_modules/react-redux/es/connect/mapStateToProps.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/connect/mapStateToProps.js",
+      "name": "./node_modules/react-redux/es/connect/mapStateToProps.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./mergeProps": [
@@ -1251,6 +1797,12 @@
       "name": "./node_modules/react-redux/es/connect/mergeProps.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/connect/mergeProps.js",
+      "name": "./node_modules/react-redux/es/connect/mergeProps.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./selectorFactory": [
@@ -1265,6 +1817,12 @@
       "name": "./node_modules/react-redux/es/connect/selectorFactory.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/connect/selectorFactory.js",
+      "name": "./node_modules/react-redux/es/connect/selectorFactory.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./verifySubselectors": [
@@ -1279,6 +1837,12 @@
       "name": "./node_modules/react-redux/es/connect/verifySubselectors.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/es/connect/verifySubselectors.js",
+      "name": "./node_modules/react-redux/es/connect/verifySubselectors.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "connected-react-router": [
@@ -1293,6 +1857,12 @@
       "name": "./node_modules/connected-react-router/lib/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/index.js",
+      "name": "./node_modules/connected-react-router/lib/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./createAll": [
@@ -1307,6 +1877,12 @@
       "name": "./node_modules/connected-react-router/lib/createAll.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/createAll.js",
+      "name": "./node_modules/connected-react-router/lib/createAll.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./actions": [
@@ -1333,6 +1909,18 @@
       "name": "./src/actions/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/actions.js",
+      "name": "./node_modules/connected-react-router/lib/actions.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/actions/index.js",
+      "name": "./src/actions/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./ConnectedRouter": [
@@ -1347,6 +1935,12 @@
       "name": "./node_modules/connected-react-router/lib/ConnectedRouter.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/ConnectedRouter.js",
+      "name": "./node_modules/connected-react-router/lib/ConnectedRouter.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-router": [
@@ -1361,6 +1955,12 @@
       "name": "./node_modules/react-router/esm/react-router.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/esm/react-router.js",
+      "name": "./node_modules/react-router/esm/react-router.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "create-react-context": [
@@ -1375,6 +1975,12 @@
       "name": "./node_modules/create-react-context/lib/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/create-react-context/lib/index.js",
+      "name": "./node_modules/create-react-context/lib/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./implementation": [
@@ -1389,6 +1995,12 @@
       "name": "./node_modules/create-react-context/lib/implementation.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/create-react-context/lib/implementation.js",
+      "name": "./node_modules/create-react-context/lib/implementation.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "gud": [
@@ -1403,6 +2015,12 @@
       "name": "./node_modules/gud/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/gud/index.js",
+      "name": "./node_modules/gud/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "fbjs/lib/warning": [
@@ -1417,6 +2035,12 @@
       "name": "./node_modules/fbjs/lib/warning.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/warning.js",
+      "name": "./node_modules/fbjs/lib/warning.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./emptyFunction": [
@@ -1431,6 +2055,12 @@
       "name": "./node_modules/fbjs/lib/emptyFunction.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/fbjs/lib/emptyFunction.js",
+      "name": "./node_modules/fbjs/lib/emptyFunction.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "tiny-warning": [
@@ -1445,6 +2075,12 @@
       "name": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
+      "name": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "tiny-invariant": [
@@ -1459,6 +2095,12 @@
       "name": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
+      "name": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "path-to-regexp": [
@@ -1473,6 +2115,12 @@
       "name": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
+      "name": "./node_modules/react-router/node_modules/path-to-regexp/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "isarray": [
@@ -1487,6 +2135,12 @@
       "name": "./node_modules/react-router/node_modules/isarray/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/isarray/index.js",
+      "name": "./node_modules/react-router/node_modules/isarray/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./reducer": [
@@ -1501,6 +2155,12 @@
       "name": "./node_modules/connected-react-router/lib/reducer.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/reducer.js",
+      "name": "./node_modules/connected-react-router/lib/reducer.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./middleware": [
@@ -1515,6 +2175,12 @@
       "name": "./node_modules/connected-react-router/lib/middleware.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/middleware.js",
+      "name": "./node_modules/connected-react-router/lib/middleware.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./selectors": [
@@ -1529,6 +2195,12 @@
       "name": "./node_modules/connected-react-router/lib/selectors.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/selectors.js",
+      "name": "./node_modules/connected-react-router/lib/selectors.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./structure/plain": [
@@ -1543,6 +2215,12 @@
       "name": "./node_modules/connected-react-router/lib/structure/plain/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/structure/plain/index.js",
+      "name": "./node_modules/connected-react-router/lib/structure/plain/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./getIn": [
@@ -1557,6 +2235,12 @@
       "name": "./node_modules/connected-react-router/lib/structure/plain/getIn.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/connected-react-router/lib/structure/plain/getIn.js",
+      "name": "./node_modules/connected-react-router/lib/structure/plain/getIn.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-router-dom": [
@@ -1571,6 +2255,12 @@
       "name": "./node_modules/react-router-dom/esm/react-router-dom.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router-dom/esm/react-router-dom.js",
+      "name": "./node_modules/react-router-dom/esm/react-router-dom.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-router-config": [
@@ -1585,6 +2275,12 @@
       "name": "./node_modules/react-router-config/esm/react-router-config.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router-config/esm/react-router-config.js",
+      "name": "./node_modules/react-router-config/esm/react-router-config.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-loadable": [
@@ -1599,6 +2295,12 @@
       "name": "./node_modules/react-loadable/lib/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-loadable/lib/index.js",
+      "name": "./node_modules/react-loadable/lib/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./utils/configureStore": [
@@ -1613,6 +2315,12 @@
       "name": "./src/utils/configureStore.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/utils/configureStore.js",
+      "name": "./src/utils/configureStore.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "redux-thunk": [
@@ -1627,6 +2335,12 @@
       "name": "./node_modules/redux-thunk/es/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/redux-thunk/es/index.js",
+      "name": "./node_modules/redux-thunk/es/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../reducers": [
@@ -1641,6 +2355,12 @@
       "name": "./src/reducers/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/reducers/index.js",
+      "name": "./src/reducers/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "core-js/modules/web.dom.iterable": [
@@ -1655,6 +2375,12 @@
       "name": "./node_modules/core-js/modules/web.dom.iterable.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/web.dom.iterable.js",
+      "name": "./node_modules/core-js/modules/web.dom.iterable.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "core-js/modules/es6.array.iterator": [
@@ -1669,6 +2395,12 @@
       "name": "./node_modules/core-js/modules/es6.array.iterator.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.array.iterator.js",
+      "name": "./node_modules/core-js/modules/es6.array.iterator.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_add-to-unscopables": [
@@ -1683,6 +2415,12 @@
       "name": "./node_modules/core-js/modules/_add-to-unscopables.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_add-to-unscopables.js",
+      "name": "./node_modules/core-js/modules/_add-to-unscopables.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_wks": [
@@ -1697,6 +2435,12 @@
       "name": "./node_modules/core-js/modules/_wks.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_wks.js",
+      "name": "./node_modules/core-js/modules/_wks.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_shared": [
@@ -1711,6 +2455,12 @@
       "name": "./node_modules/core-js/modules/_shared.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_shared.js",
+      "name": "./node_modules/core-js/modules/_shared.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_core": [
@@ -1725,6 +2475,12 @@
       "name": "./node_modules/core-js/modules/_core.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_core.js",
+      "name": "./node_modules/core-js/modules/_core.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_global": [
@@ -1739,6 +2495,12 @@
       "name": "./node_modules/core-js/modules/_global.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_global.js",
+      "name": "./node_modules/core-js/modules/_global.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_library": [
@@ -1753,6 +2515,12 @@
       "name": "./node_modules/core-js/modules/_library.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_library.js",
+      "name": "./node_modules/core-js/modules/_library.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_uid": [
@@ -1767,6 +2535,12 @@
       "name": "./node_modules/core-js/modules/_uid.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_uid.js",
+      "name": "./node_modules/core-js/modules/_uid.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_hide": [
@@ -1781,6 +2555,12 @@
       "name": "./node_modules/core-js/modules/_hide.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_hide.js",
+      "name": "./node_modules/core-js/modules/_hide.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_object-dp": [
@@ -1795,6 +2575,12 @@
       "name": "./node_modules/core-js/modules/_object-dp.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-dp.js",
+      "name": "./node_modules/core-js/modules/_object-dp.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_an-object": [
@@ -1809,6 +2595,12 @@
       "name": "./node_modules/core-js/modules/_an-object.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_an-object.js",
+      "name": "./node_modules/core-js/modules/_an-object.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_is-object": [
@@ -1823,6 +2615,12 @@
       "name": "./node_modules/core-js/modules/_is-object.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_is-object.js",
+      "name": "./node_modules/core-js/modules/_is-object.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_ie8-dom-define": [
@@ -1837,6 +2635,12 @@
       "name": "./node_modules/core-js/modules/_ie8-dom-define.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_ie8-dom-define.js",
+      "name": "./node_modules/core-js/modules/_ie8-dom-define.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_descriptors": [
@@ -1851,6 +2655,12 @@
       "name": "./node_modules/core-js/modules/_descriptors.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_descriptors.js",
+      "name": "./node_modules/core-js/modules/_descriptors.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_fails": [
@@ -1865,6 +2675,12 @@
       "name": "./node_modules/core-js/modules/_fails.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_fails.js",
+      "name": "./node_modules/core-js/modules/_fails.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_dom-create": [
@@ -1879,6 +2695,12 @@
       "name": "./node_modules/core-js/modules/_dom-create.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_dom-create.js",
+      "name": "./node_modules/core-js/modules/_dom-create.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_to-primitive": [
@@ -1893,6 +2715,12 @@
       "name": "./node_modules/core-js/modules/_to-primitive.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_to-primitive.js",
+      "name": "./node_modules/core-js/modules/_to-primitive.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_property-desc": [
@@ -1907,6 +2735,12 @@
       "name": "./node_modules/core-js/modules/_property-desc.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_property-desc.js",
+      "name": "./node_modules/core-js/modules/_property-desc.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_iter-step": [
@@ -1921,6 +2755,12 @@
       "name": "./node_modules/core-js/modules/_iter-step.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_iter-step.js",
+      "name": "./node_modules/core-js/modules/_iter-step.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_iterators": [
@@ -1935,6 +2775,12 @@
       "name": "./node_modules/core-js/modules/_iterators.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_iterators.js",
+      "name": "./node_modules/core-js/modules/_iterators.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_to-iobject": [
@@ -1949,6 +2795,12 @@
       "name": "./node_modules/core-js/modules/_to-iobject.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_to-iobject.js",
+      "name": "./node_modules/core-js/modules/_to-iobject.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_iobject": [
@@ -1963,6 +2815,12 @@
       "name": "./node_modules/core-js/modules/_iobject.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_iobject.js",
+      "name": "./node_modules/core-js/modules/_iobject.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_cof": [
@@ -1977,6 +2835,12 @@
       "name": "./node_modules/core-js/modules/_cof.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_cof.js",
+      "name": "./node_modules/core-js/modules/_cof.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_defined": [
@@ -1991,6 +2855,12 @@
       "name": "./node_modules/core-js/modules/_defined.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_defined.js",
+      "name": "./node_modules/core-js/modules/_defined.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_iter-define": [
@@ -2005,6 +2875,12 @@
       "name": "./node_modules/core-js/modules/_iter-define.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_iter-define.js",
+      "name": "./node_modules/core-js/modules/_iter-define.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_export": [
@@ -2019,6 +2895,12 @@
       "name": "./node_modules/core-js/modules/_export.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_export.js",
+      "name": "./node_modules/core-js/modules/_export.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_redefine": [
@@ -2033,6 +2915,12 @@
       "name": "./node_modules/core-js/modules/_redefine.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_redefine.js",
+      "name": "./node_modules/core-js/modules/_redefine.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_has": [
@@ -2047,6 +2935,12 @@
       "name": "./node_modules/core-js/modules/_has.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_has.js",
+      "name": "./node_modules/core-js/modules/_has.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_ctx": [
@@ -2061,6 +2955,12 @@
       "name": "./node_modules/core-js/modules/_ctx.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_ctx.js",
+      "name": "./node_modules/core-js/modules/_ctx.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_a-function": [
@@ -2075,6 +2975,12 @@
       "name": "./node_modules/core-js/modules/_a-function.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_a-function.js",
+      "name": "./node_modules/core-js/modules/_a-function.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_iter-create": [
@@ -2089,6 +2995,12 @@
       "name": "./node_modules/core-js/modules/_iter-create.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_iter-create.js",
+      "name": "./node_modules/core-js/modules/_iter-create.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_object-create": [
@@ -2103,6 +3015,12 @@
       "name": "./node_modules/core-js/modules/_object-create.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-create.js",
+      "name": "./node_modules/core-js/modules/_object-create.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_object-dps": [
@@ -2117,6 +3035,12 @@
       "name": "./node_modules/core-js/modules/_object-dps.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-dps.js",
+      "name": "./node_modules/core-js/modules/_object-dps.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_object-keys": [
@@ -2131,6 +3055,12 @@
       "name": "./node_modules/core-js/modules/_object-keys.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-keys.js",
+      "name": "./node_modules/core-js/modules/_object-keys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_object-keys-internal": [
@@ -2145,6 +3075,12 @@
       "name": "./node_modules/core-js/modules/_object-keys-internal.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-keys-internal.js",
+      "name": "./node_modules/core-js/modules/_object-keys-internal.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_array-includes": [
@@ -2159,6 +3095,12 @@
       "name": "./node_modules/core-js/modules/_array-includes.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_array-includes.js",
+      "name": "./node_modules/core-js/modules/_array-includes.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_to-length": [
@@ -2173,6 +3115,12 @@
       "name": "./node_modules/core-js/modules/_to-length.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_to-length.js",
+      "name": "./node_modules/core-js/modules/_to-length.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_to-integer": [
@@ -2187,6 +3135,12 @@
       "name": "./node_modules/core-js/modules/_to-integer.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_to-integer.js",
+      "name": "./node_modules/core-js/modules/_to-integer.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_to-absolute-index": [
@@ -2201,6 +3155,12 @@
       "name": "./node_modules/core-js/modules/_to-absolute-index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_to-absolute-index.js",
+      "name": "./node_modules/core-js/modules/_to-absolute-index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_shared-key": [
@@ -2215,6 +3175,12 @@
       "name": "./node_modules/core-js/modules/_shared-key.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_shared-key.js",
+      "name": "./node_modules/core-js/modules/_shared-key.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_enum-bug-keys": [
@@ -2229,6 +3195,12 @@
       "name": "./node_modules/core-js/modules/_enum-bug-keys.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_enum-bug-keys.js",
+      "name": "./node_modules/core-js/modules/_enum-bug-keys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_html": [
@@ -2243,6 +3215,12 @@
       "name": "./node_modules/core-js/modules/_html.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_html.js",
+      "name": "./node_modules/core-js/modules/_html.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_set-to-string-tag": [
@@ -2257,6 +3235,12 @@
       "name": "./node_modules/core-js/modules/_set-to-string-tag.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_set-to-string-tag.js",
+      "name": "./node_modules/core-js/modules/_set-to-string-tag.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_object-gpo": [
@@ -2271,6 +3255,12 @@
       "name": "./node_modules/core-js/modules/_object-gpo.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gpo.js",
+      "name": "./node_modules/core-js/modules/_object-gpo.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_to-object": [
@@ -2285,6 +3275,12 @@
       "name": "./node_modules/core-js/modules/_to-object.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_to-object.js",
+      "name": "./node_modules/core-js/modules/_to-object.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "core-js/modules/es6.object.keys": [
@@ -2299,6 +3295,12 @@
       "name": "./node_modules/core-js/modules/es6.object.keys.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.object.keys.js",
+      "name": "./node_modules/core-js/modules/es6.object.keys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_object-sap": [
@@ -2313,6 +3315,12 @@
       "name": "./node_modules/core-js/modules/_object-sap.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-sap.js",
+      "name": "./node_modules/core-js/modules/_object-sap.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./home": [
@@ -2327,6 +3335,12 @@
       "name": "./src/reducers/home.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/reducers/home.js",
+      "name": "./src/reducers/home.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "lodash/assign": [
@@ -2341,6 +3355,12 @@
       "name": "./node_modules/lodash/assign.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/assign.js",
+      "name": "./node_modules/lodash/assign.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_assignValue": [
@@ -2355,6 +3375,12 @@
       "name": "./node_modules/lodash/_assignValue.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_assignValue.js",
+      "name": "./node_modules/lodash/_assignValue.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseAssignValue": [
@@ -2369,6 +3395,12 @@
       "name": "./node_modules/lodash/_baseAssignValue.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseAssignValue.js",
+      "name": "./node_modules/lodash/_baseAssignValue.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_defineProperty": [
@@ -2383,6 +3415,12 @@
       "name": "./node_modules/lodash/_defineProperty.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_defineProperty.js",
+      "name": "./node_modules/lodash/_defineProperty.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_getNative": [
@@ -2397,6 +3435,12 @@
       "name": "./node_modules/lodash/_getNative.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_getNative.js",
+      "name": "./node_modules/lodash/_getNative.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseIsNative": [
@@ -2411,6 +3455,12 @@
       "name": "./node_modules/lodash/_baseIsNative.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseIsNative.js",
+      "name": "./node_modules/lodash/_baseIsNative.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isFunction": [
@@ -2425,6 +3475,12 @@
       "name": "./node_modules/lodash/isFunction.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isFunction.js",
+      "name": "./node_modules/lodash/isFunction.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseGetTag": [
@@ -2451,6 +3507,18 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/_baseGetTag.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseGetTag.js",
+      "name": "./node_modules/lodash/_baseGetTag.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/_baseGetTag.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/_baseGetTag.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_Symbol": [
@@ -2477,6 +3545,18 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/_Symbol.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_Symbol.js",
+      "name": "./node_modules/lodash/_Symbol.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/_Symbol.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/_Symbol.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_root": [
@@ -2503,6 +3583,18 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/_root.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_root.js",
+      "name": "./node_modules/lodash/_root.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/_root.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/_root.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_freeGlobal": [
@@ -2529,6 +3621,18 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_freeGlobal.js",
+      "name": "./node_modules/lodash/_freeGlobal.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "webpack-hot-middleware/client?reload=true": [
@@ -2543,6 +3647,12 @@
       "name": "./node_modules/webpack-hot-middleware/client.js?reload=true",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true",
+      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_objectToString": [
@@ -2569,6 +3679,18 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/_objectToString.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_objectToString.js",
+      "name": "./node_modules/lodash/_objectToString.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/_objectToString.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/_objectToString.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isObject": [
@@ -2595,6 +3717,18 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/isObject.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isObject.js",
+      "name": "./node_modules/lodash/isObject.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/isObject.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/isObject.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_isMasked": [
@@ -2609,6 +3743,12 @@
       "name": "./node_modules/lodash/_isMasked.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_isMasked.js",
+      "name": "./node_modules/lodash/_isMasked.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_coreJsData": [
@@ -2623,6 +3763,12 @@
       "name": "./node_modules/lodash/_coreJsData.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_coreJsData.js",
+      "name": "./node_modules/lodash/_coreJsData.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_toSource": [
@@ -2637,6 +3783,12 @@
       "name": "./node_modules/lodash/_toSource.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_toSource.js",
+      "name": "./node_modules/lodash/_toSource.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_getValue": [
@@ -2651,6 +3803,12 @@
       "name": "./node_modules/lodash/_getValue.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_getValue.js",
+      "name": "./node_modules/lodash/_getValue.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./eq": [
@@ -2665,6 +3823,12 @@
       "name": "./node_modules/lodash/eq.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/eq.js",
+      "name": "./node_modules/lodash/eq.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_copyObject": [
@@ -2679,6 +3843,12 @@
       "name": "./node_modules/lodash/_copyObject.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_copyObject.js",
+      "name": "./node_modules/lodash/_copyObject.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_createAssigner": [
@@ -2693,6 +3863,12 @@
       "name": "./node_modules/lodash/_createAssigner.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_createAssigner.js",
+      "name": "./node_modules/lodash/_createAssigner.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseRest": [
@@ -2707,6 +3883,12 @@
       "name": "./node_modules/lodash/_baseRest.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseRest.js",
+      "name": "./node_modules/lodash/_baseRest.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./identity": [
@@ -2721,6 +3903,12 @@
       "name": "./node_modules/lodash/identity.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/identity.js",
+      "name": "./node_modules/lodash/identity.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_overRest": [
@@ -2735,6 +3923,12 @@
       "name": "./node_modules/lodash/_overRest.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_overRest.js",
+      "name": "./node_modules/lodash/_overRest.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_apply": [
@@ -2749,6 +3943,12 @@
       "name": "./node_modules/lodash/_apply.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_apply.js",
+      "name": "./node_modules/lodash/_apply.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_setToString": [
@@ -2763,6 +3963,12 @@
       "name": "./node_modules/lodash/_setToString.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_setToString.js",
+      "name": "./node_modules/lodash/_setToString.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseSetToString": [
@@ -2777,6 +3983,12 @@
       "name": "./node_modules/lodash/_baseSetToString.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseSetToString.js",
+      "name": "./node_modules/lodash/_baseSetToString.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./constant": [
@@ -2791,6 +4003,12 @@
       "name": "./node_modules/lodash/constant.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/constant.js",
+      "name": "./node_modules/lodash/constant.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_shortOut": [
@@ -2805,6 +4023,12 @@
       "name": "./node_modules/lodash/_shortOut.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_shortOut.js",
+      "name": "./node_modules/lodash/_shortOut.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_isIterateeCall": [
@@ -2819,6 +4043,12 @@
       "name": "./node_modules/lodash/_isIterateeCall.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_isIterateeCall.js",
+      "name": "./node_modules/lodash/_isIterateeCall.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isArrayLike": [
@@ -2833,6 +4063,12 @@
       "name": "./node_modules/lodash/isArrayLike.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isArrayLike.js",
+      "name": "./node_modules/lodash/isArrayLike.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isLength": [
@@ -2847,6 +4083,12 @@
       "name": "./node_modules/lodash/isLength.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isLength.js",
+      "name": "./node_modules/lodash/isLength.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_isIndex": [
@@ -2861,6 +4103,12 @@
       "name": "./node_modules/lodash/_isIndex.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_isIndex.js",
+      "name": "./node_modules/lodash/_isIndex.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_isPrototype": [
@@ -2875,6 +4123,12 @@
       "name": "./node_modules/lodash/_isPrototype.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_isPrototype.js",
+      "name": "./node_modules/lodash/_isPrototype.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./keys": [
@@ -2889,6 +4143,12 @@
       "name": "./node_modules/lodash/keys.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/keys.js",
+      "name": "./node_modules/lodash/keys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_arrayLikeKeys": [
@@ -2903,6 +4163,12 @@
       "name": "./node_modules/lodash/_arrayLikeKeys.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_arrayLikeKeys.js",
+      "name": "./node_modules/lodash/_arrayLikeKeys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseTimes": [
@@ -2917,6 +4183,12 @@
       "name": "./node_modules/lodash/_baseTimes.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseTimes.js",
+      "name": "./node_modules/lodash/_baseTimes.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isArguments": [
@@ -2931,6 +4203,12 @@
       "name": "./node_modules/lodash/isArguments.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isArguments.js",
+      "name": "./node_modules/lodash/isArguments.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseIsArguments": [
@@ -2945,6 +4223,12 @@
       "name": "./node_modules/lodash/_baseIsArguments.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseIsArguments.js",
+      "name": "./node_modules/lodash/_baseIsArguments.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isObjectLike": [
@@ -2971,6 +4255,18 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/isObjectLike.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isObjectLike.js",
+      "name": "./node_modules/lodash/isObjectLike.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/isObjectLike.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/isObjectLike.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isArray": [
@@ -2985,6 +4281,12 @@
       "name": "./node_modules/lodash/isArray.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isArray.js",
+      "name": "./node_modules/lodash/isArray.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isBuffer": [
@@ -2999,6 +4301,12 @@
       "name": "./node_modules/lodash/isBuffer.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isBuffer.js",
+      "name": "./node_modules/lodash/isBuffer.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./stubFalse": [
@@ -3013,6 +4321,12 @@
       "name": "./node_modules/lodash/stubFalse.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/stubFalse.js",
+      "name": "./node_modules/lodash/stubFalse.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isTypedArray": [
@@ -3027,6 +4341,12 @@
       "name": "./node_modules/lodash/isTypedArray.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/isTypedArray.js",
+      "name": "./node_modules/lodash/isTypedArray.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseIsTypedArray": [
@@ -3041,6 +4361,12 @@
       "name": "./node_modules/lodash/_baseIsTypedArray.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseIsTypedArray.js",
+      "name": "./node_modules/lodash/_baseIsTypedArray.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseUnary": [
@@ -3055,6 +4381,12 @@
       "name": "./node_modules/lodash/_baseUnary.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseUnary.js",
+      "name": "./node_modules/lodash/_baseUnary.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_nodeUtil": [
@@ -3069,6 +4401,12 @@
       "name": "./node_modules/lodash/_nodeUtil.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_nodeUtil.js",
+      "name": "./node_modules/lodash/_nodeUtil.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_baseKeys": [
@@ -3083,6 +4421,12 @@
       "name": "./node_modules/lodash/_baseKeys.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_baseKeys.js",
+      "name": "./node_modules/lodash/_baseKeys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_nativeKeys": [
@@ -3097,6 +4441,12 @@
       "name": "./node_modules/lodash/_nativeKeys.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_nativeKeys.js",
+      "name": "./node_modules/lodash/_nativeKeys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_overArg": [
@@ -3111,6 +4461,12 @@
       "name": "./node_modules/lodash/_overArg.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/lodash/_overArg.js",
+      "name": "./node_modules/lodash/_overArg.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./userInfo": [
@@ -3125,6 +4481,12 @@
       "name": "./src/reducers/userInfo.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/reducers/userInfo.js",
+      "name": "./src/reducers/userInfo.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./routes": [
@@ -3139,6 +4501,12 @@
       "name": "./src/routes.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/routes.js",
+      "name": "./src/routes.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./users": [
@@ -3153,6 +4521,12 @@
       "name": "./src/actions/users.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/actions/users.js",
+      "name": "./src/actions/users.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "core-js/modules/es6.promise": [
@@ -3167,6 +4541,12 @@
       "name": "./node_modules/core-js/modules/es6.promise.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.promise.js",
+      "name": "./node_modules/core-js/modules/es6.promise.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_classof": [
@@ -3181,6 +4561,12 @@
       "name": "./node_modules/core-js/modules/_classof.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_classof.js",
+      "name": "./node_modules/core-js/modules/_classof.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_an-instance": [
@@ -3195,6 +4581,12 @@
       "name": "./node_modules/core-js/modules/_an-instance.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_an-instance.js",
+      "name": "./node_modules/core-js/modules/_an-instance.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_for-of": [
@@ -3209,6 +4601,12 @@
       "name": "./node_modules/core-js/modules/_for-of.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_for-of.js",
+      "name": "./node_modules/core-js/modules/_for-of.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_iter-call": [
@@ -3223,6 +4621,12 @@
       "name": "./node_modules/core-js/modules/_iter-call.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_iter-call.js",
+      "name": "./node_modules/core-js/modules/_iter-call.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_is-array-iter": [
@@ -3237,6 +4641,12 @@
       "name": "./node_modules/core-js/modules/_is-array-iter.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_is-array-iter.js",
+      "name": "./node_modules/core-js/modules/_is-array-iter.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./core.get-iterator-method": [
@@ -3251,6 +4661,12 @@
       "name": "./node_modules/core-js/modules/core.get-iterator-method.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/core.get-iterator-method.js",
+      "name": "./node_modules/core-js/modules/core.get-iterator-method.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_species-constructor": [
@@ -3265,6 +4681,12 @@
       "name": "./node_modules/core-js/modules/_species-constructor.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_species-constructor.js",
+      "name": "./node_modules/core-js/modules/_species-constructor.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_task": [
@@ -3279,6 +4701,12 @@
       "name": "./node_modules/core-js/modules/_task.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_task.js",
+      "name": "./node_modules/core-js/modules/_task.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_invoke": [
@@ -3293,6 +4721,12 @@
       "name": "./node_modules/core-js/modules/_invoke.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_invoke.js",
+      "name": "./node_modules/core-js/modules/_invoke.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_microtask": [
@@ -3307,6 +4741,12 @@
       "name": "./node_modules/core-js/modules/_microtask.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_microtask.js",
+      "name": "./node_modules/core-js/modules/_microtask.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_new-promise-capability": [
@@ -3321,6 +4761,12 @@
       "name": "./node_modules/core-js/modules/_new-promise-capability.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_new-promise-capability.js",
+      "name": "./node_modules/core-js/modules/_new-promise-capability.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_perform": [
@@ -3335,6 +4781,12 @@
       "name": "./node_modules/core-js/modules/_perform.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_perform.js",
+      "name": "./node_modules/core-js/modules/_perform.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_user-agent": [
@@ -3349,6 +4801,12 @@
       "name": "./node_modules/core-js/modules/_user-agent.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_user-agent.js",
+      "name": "./node_modules/core-js/modules/_user-agent.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_promise-resolve": [
@@ -3363,6 +4821,12 @@
       "name": "./node_modules/core-js/modules/_promise-resolve.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_promise-resolve.js",
+      "name": "./node_modules/core-js/modules/_promise-resolve.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_redefine-all": [
@@ -3377,6 +4841,12 @@
       "name": "./node_modules/core-js/modules/_redefine-all.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_redefine-all.js",
+      "name": "./node_modules/core-js/modules/_redefine-all.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_set-species": [
@@ -3391,6 +4861,12 @@
       "name": "./node_modules/core-js/modules/_set-species.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_set-species.js",
+      "name": "./node_modules/core-js/modules/_set-species.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_iter-detect": [
@@ -3405,6 +4881,12 @@
       "name": "./node_modules/core-js/modules/_iter-detect.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_iter-detect.js",
+      "name": "./node_modules/core-js/modules/_iter-detect.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "regenerator-runtime/runtime": [
@@ -3419,6 +4901,12 @@
       "name": "./node_modules/regenerator-runtime/runtime.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/regenerator-runtime/runtime.js",
+      "name": "./node_modules/regenerator-runtime/runtime.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "axios": [
@@ -3433,6 +4921,12 @@
       "name": "./node_modules/axios/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/index.js",
+      "name": "./node_modules/axios/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./lib/axios": [
@@ -3447,6 +4941,12 @@
       "name": "./node_modules/axios/lib/axios.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/axios.js",
+      "name": "./node_modules/axios/lib/axios.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./utils": [
@@ -3461,6 +4961,12 @@
       "name": "./node_modules/axios/lib/utils.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/utils.js",
+      "name": "./node_modules/axios/lib/utils.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./helpers/bind": [
@@ -3475,6 +4981,12 @@
       "name": "./node_modules/axios/lib/helpers/bind.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/bind.js",
+      "name": "./node_modules/axios/lib/helpers/bind.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "is-buffer": [
@@ -3489,6 +5001,12 @@
       "name": "./node_modules/is-buffer/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/is-buffer/index.js",
+      "name": "./node_modules/is-buffer/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./core/Axios": [
@@ -3503,6 +5021,12 @@
       "name": "./node_modules/axios/lib/core/Axios.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/core/Axios.js",
+      "name": "./node_modules/axios/lib/core/Axios.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./defaults": [
@@ -3517,6 +5041,12 @@
       "name": "./node_modules/axios/lib/defaults.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/defaults.js",
+      "name": "./node_modules/axios/lib/defaults.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../../node_modules/process/browser.js": [
@@ -3531,6 +5061,12 @@
       "name": "./node_modules/process/browser.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/process/browser.js",
+      "name": "./node_modules/process/browser.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./helpers/normalizeHeaderName": [
@@ -3545,6 +5081,12 @@
       "name": "./node_modules/axios/lib/helpers/normalizeHeaderName.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/normalizeHeaderName.js",
+      "name": "./node_modules/axios/lib/helpers/normalizeHeaderName.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./adapters/xhr": [
@@ -3559,6 +5101,12 @@
       "name": "./node_modules/axios/lib/adapters/xhr.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/adapters/xhr.js",
+      "name": "./node_modules/axios/lib/adapters/xhr.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../core/settle": [
@@ -3573,6 +5121,12 @@
       "name": "./node_modules/axios/lib/core/settle.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/core/settle.js",
+      "name": "./node_modules/axios/lib/core/settle.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../core/createError": [
@@ -3587,6 +5141,12 @@
       "name": "./node_modules/axios/lib/core/createError.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/core/createError.js",
+      "name": "./node_modules/axios/lib/core/createError.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./enhanceError": [
@@ -3601,6 +5161,12 @@
       "name": "./node_modules/axios/lib/core/enhanceError.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/core/enhanceError.js",
+      "name": "./node_modules/axios/lib/core/enhanceError.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../helpers/buildURL": [
@@ -3615,6 +5181,12 @@
       "name": "./node_modules/axios/lib/helpers/buildURL.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/buildURL.js",
+      "name": "./node_modules/axios/lib/helpers/buildURL.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../helpers/parseHeaders": [
@@ -3629,6 +5201,12 @@
       "name": "./node_modules/axios/lib/helpers/parseHeaders.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/parseHeaders.js",
+      "name": "./node_modules/axios/lib/helpers/parseHeaders.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../helpers/isURLSameOrigin": [
@@ -3643,6 +5221,12 @@
       "name": "./node_modules/axios/lib/helpers/isURLSameOrigin.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/isURLSameOrigin.js",
+      "name": "./node_modules/axios/lib/helpers/isURLSameOrigin.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../helpers/btoa": [
@@ -3657,6 +5241,12 @@
       "name": "./node_modules/axios/lib/helpers/btoa.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/btoa.js",
+      "name": "./node_modules/axios/lib/helpers/btoa.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../helpers/cookies": [
@@ -3671,6 +5261,12 @@
       "name": "./node_modules/axios/lib/helpers/cookies.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/cookies.js",
+      "name": "./node_modules/axios/lib/helpers/cookies.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./InterceptorManager": [
@@ -3685,6 +5281,12 @@
       "name": "./node_modules/axios/lib/core/InterceptorManager.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/core/InterceptorManager.js",
+      "name": "./node_modules/axios/lib/core/InterceptorManager.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./dispatchRequest": [
@@ -3699,6 +5301,12 @@
       "name": "./node_modules/axios/lib/core/dispatchRequest.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/core/dispatchRequest.js",
+      "name": "./node_modules/axios/lib/core/dispatchRequest.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./transformData": [
@@ -3713,6 +5321,12 @@
       "name": "./node_modules/axios/lib/core/transformData.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/core/transformData.js",
+      "name": "./node_modules/axios/lib/core/transformData.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./cancel/isCancel": [
@@ -3727,6 +5341,12 @@
       "name": "./node_modules/axios/lib/cancel/isCancel.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/cancel/isCancel.js",
+      "name": "./node_modules/axios/lib/cancel/isCancel.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../helpers/isAbsoluteURL": [
@@ -3741,6 +5361,12 @@
       "name": "./node_modules/axios/lib/helpers/isAbsoluteURL.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/isAbsoluteURL.js",
+      "name": "./node_modules/axios/lib/helpers/isAbsoluteURL.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./../helpers/combineURLs": [
@@ -3755,6 +5381,12 @@
       "name": "./node_modules/axios/lib/helpers/combineURLs.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/combineURLs.js",
+      "name": "./node_modules/axios/lib/helpers/combineURLs.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./cancel/Cancel": [
@@ -3769,6 +5401,12 @@
       "name": "./node_modules/axios/lib/cancel/Cancel.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/cancel/Cancel.js",
+      "name": "./node_modules/axios/lib/cancel/Cancel.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./cancel/CancelToken": [
@@ -3783,6 +5421,12 @@
       "name": "./node_modules/axios/lib/cancel/CancelToken.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/cancel/CancelToken.js",
+      "name": "./node_modules/axios/lib/cancel/CancelToken.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./helpers/spread": [
@@ -3797,6 +5441,12 @@
       "name": "./node_modules/axios/lib/helpers/spread.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/axios/lib/helpers/spread.js",
+      "name": "./node_modules/axios/lib/helpers/spread.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./user": [
@@ -3811,6 +5461,12 @@
       "name": "./src/actions/user.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/actions/user.js",
+      "name": "./src/actions/user.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./app": [
@@ -3825,6 +5481,12 @@
       "name": "./src/app/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/app/index.js",
+      "name": "./src/app/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-helmet": [
@@ -3839,6 +5501,12 @@
       "name": "./node_modules/react-helmet/lib/Helmet.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/lib/Helmet.js",
+      "name": "./node_modules/react-helmet/lib/Helmet.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "react-side-effect": [
@@ -3853,6 +5521,12 @@
       "name": "./node_modules/react-side-effect/lib/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-side-effect/lib/index.js",
+      "name": "./node_modules/react-side-effect/lib/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "exenv": [
@@ -3867,6 +5541,12 @@
       "name": "./node_modules/exenv/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/exenv/index.js",
+      "name": "./node_modules/exenv/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "deep-equal": [
@@ -3881,6 +5561,12 @@
       "name": "./node_modules/deep-equal/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/deep-equal/index.js",
+      "name": "./node_modules/deep-equal/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./lib/keys.js": [
@@ -3895,6 +5581,12 @@
       "name": "./node_modules/deep-equal/lib/keys.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/deep-equal/lib/keys.js",
+      "name": "./node_modules/deep-equal/lib/keys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./lib/is_arguments.js": [
@@ -3909,6 +5601,12 @@
       "name": "./node_modules/deep-equal/lib/is_arguments.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/deep-equal/lib/is_arguments.js",
+      "name": "./node_modules/deep-equal/lib/is_arguments.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./HelmetUtils.js": [
@@ -3923,6 +5621,12 @@
       "name": "./node_modules/react-helmet/lib/HelmetUtils.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/lib/HelmetUtils.js",
+      "name": "./node_modules/react-helmet/lib/HelmetUtils.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./HelmetConstants.js": [
@@ -3937,6 +5641,12 @@
       "name": "./node_modules/react-helmet/lib/HelmetConstants.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/lib/HelmetConstants.js",
+      "name": "./node_modules/react-helmet/lib/HelmetConstants.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../config": [
@@ -3951,6 +5661,12 @@
       "name": "./src/config/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/config/index.js",
+      "name": "./src/config/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./default": [
@@ -3965,6 +5681,12 @@
       "name": "./src/config/default.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/config/default.js",
+      "name": "./src/config/default.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "normalize.css/normalize.css": [
@@ -3979,6 +5701,158 @@
       "name": "./node_modules/normalize.css/normalize.css",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/normalize.css/normalize.css",
+      "name": "./node_modules/normalize.css/normalize.css",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./styles.scss": [
+    {
+      "id": "./src/pages/NotFound/styles.scss",
+      "name": "./src/pages/NotFound/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/app/styles.scss",
+      "name": "./src/app/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/UserList/styles.scss",
+      "name": "./src/components/UserList/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/pages/UserInfo/styles.scss",
+      "name": "./src/pages/UserInfo/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/UserCard/styles.scss",
+      "name": "./src/components/UserCard/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/ErrorDisplay/styles.scss",
+      "name": "./src/components/ErrorDisplay/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/Loading/styles.scss",
+      "name": "./src/components/Loading/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/pages/Home/styles.scss",
+      "name": "./src/pages/Home/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/pages/NotFound/styles.scss",
+      "name": "./src/pages/NotFound/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/app/styles.scss",
+      "name": "./src/app/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/UserList/styles.scss",
+      "name": "./src/components/UserList/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/UserInfo/styles.scss",
+      "name": "./src/pages/UserInfo/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/UserCard/styles.scss",
+      "name": "./src/components/UserCard/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/ErrorDisplay/styles.scss",
+      "name": "./src/components/ErrorDisplay/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/Loading/styles.scss",
+      "name": "./src/components/Loading/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/Home/styles.scss",
+      "name": "./src/pages/Home/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/NotFound/styles.scss",
+      "name": "./src/pages/NotFound/styles.scss",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/app/styles.scss",
+      "name": "./src/app/styles.scss",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/components/UserList/styles.scss",
+      "name": "./src/components/UserList/styles.scss",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/pages/UserInfo/styles.scss",
+      "name": "./src/pages/UserInfo/styles.scss",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/components/UserCard/styles.scss",
+      "name": "./src/components/UserCard/styles.scss",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/components/ErrorDisplay/styles.scss",
+      "name": "./src/components/ErrorDisplay/styles.scss",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/components/Loading/styles.scss",
+      "name": "./src/components/Loading/styles.scss",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/pages/Home/styles.scss",
+      "name": "./src/pages/Home/styles.scss",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "!../css-hot-loader/hotModuleReplacement.js": [
@@ -3993,6 +5867,12 @@
       "name": "./node_modules/css-hot-loader/hotModuleReplacement.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/hotModuleReplacement.js",
+      "name": "./node_modules/css-hot-loader/hotModuleReplacement.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "normalize-url": [
@@ -4007,6 +5887,12 @@
       "name": "./node_modules/normalize-url/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/normalize-url/index.js",
+      "name": "./node_modules/normalize-url/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "url": [
@@ -4021,6 +5907,12 @@
       "name": "./node_modules/url/url.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/url/url.js",
+      "name": "./node_modules/url/url.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "punycode": [
@@ -4035,6 +5927,12 @@
       "name": "./node_modules/punycode/punycode.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/punycode/punycode.js",
+      "name": "./node_modules/punycode/punycode.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./util": [
@@ -4049,6 +5947,12 @@
       "name": "./node_modules/url/util.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/url/util.js",
+      "name": "./node_modules/url/util.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "query-string": [
@@ -4063,6 +5967,12 @@
       "name": "./node_modules/query-string/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/query-string/index.js",
+      "name": "./node_modules/query-string/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "strict-uri-encode": [
@@ -4077,6 +5987,12 @@
       "name": "./node_modules/strict-uri-encode/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/strict-uri-encode/index.js",
+      "name": "./node_modules/strict-uri-encode/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "prepend-http": [
@@ -4091,6 +6007,12 @@
       "name": "./node_modules/prepend-http/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/prepend-http/index.js",
+      "name": "./node_modules/prepend-http/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "sort-keys": [
@@ -4105,6 +6027,12 @@
       "name": "./node_modules/sort-keys/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/sort-keys/index.js",
+      "name": "./node_modules/sort-keys/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "is-plain-obj": [
@@ -4119,6 +6047,12 @@
       "name": "./node_modules/is-plain-obj/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/is-plain-obj/index.js",
+      "name": "./node_modules/is-plain-obj/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "lodash/debounce": [
@@ -4133,6 +6067,12 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/debounce.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/debounce.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/debounce.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./now": [
@@ -4147,6 +6087,12 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/now.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/now.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/now.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./toNumber": [
@@ -4161,6 +6107,12 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/toNumber.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/toNumber.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/toNumber.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./isSymbol": [
@@ -4175,104 +6127,32 @@
       "name": "./node_modules/css-hot-loader/node_modules/lodash/isSymbol.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/isSymbol.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/isSymbol.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
-  "./styles.scss": [
+  "./NotFound": [
     {
-      "id": "./src/app/styles.scss",
-      "name": "./src/app/styles.scss",
+      "id": "./src/pages/NotFound/index.js",
+      "name": "./src/pages/NotFound/index.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/components/UserList/styles.scss",
-      "name": "./src/components/UserList/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/components/UserCard/styles.scss",
-      "name": "./src/components/UserCard/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/components/ErrorDisplay/styles.scss",
-      "name": "./src/components/ErrorDisplay/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/components/Loading/styles.scss",
-      "name": "./src/components/Loading/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/Home/styles.scss",
-      "name": "./src/pages/Home/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/UserInfo/styles.scss",
-      "name": "./src/pages/UserInfo/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/NotFound/styles.scss",
-      "name": "./src/pages/NotFound/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/app/styles.scss",
-      "name": "./src/app/styles.scss",
+      "id": "./src/pages/NotFound/index.js",
+      "name": "./src/pages/NotFound/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "./src/components/UserList/styles.scss",
-      "name": "./src/components/UserList/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/components/UserCard/styles.scss",
-      "name": "./src/components/UserCard/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/components/ErrorDisplay/styles.scss",
-      "name": "./src/components/ErrorDisplay/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/components/Loading/styles.scss",
-      "name": "./src/components/Loading/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/pages/Home/styles.scss",
-      "name": "./src/pages/Home/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/pages/UserInfo/styles.scss",
-      "name": "./src/pages/UserInfo/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/pages/NotFound/styles.scss",
-      "name": "./src/pages/NotFound/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
+      "id": "./src/pages/NotFound/index.js",
+      "name": "./src/pages/NotFound/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./assets/logo.svg": [
@@ -4287,6 +6167,12 @@
       "name": "./src/app/assets/logo.svg",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/app/assets/logo.svg",
+      "name": "./src/app/assets/logo.svg",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./pages": [
@@ -4301,6 +6187,12 @@
       "name": "./src/pages/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/index.js",
+      "name": "./src/pages/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./Home": [
@@ -4327,6 +6219,18 @@
       "name": "./src/pages/Home/Home.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/Home/index.js",
+      "name": "./src/pages/Home/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/pages/Home/Home.js",
+      "name": "./src/pages/Home/Home.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "../../components": [
@@ -4341,6 +6245,12 @@
       "name": "./src/components/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/index.js",
+      "name": "./src/components/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./UserList": [
@@ -4355,6 +6265,12 @@
       "name": "./src/components/UserList/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/UserList/index.js",
+      "name": "./src/components/UserList/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "core-js/modules/es6.function.name": [
@@ -4369,6 +6285,12 @@
       "name": "./node_modules/core-js/modules/es6.function.name.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.function.name.js",
+      "name": "./node_modules/core-js/modules/es6.function.name.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./UserCard": [
@@ -4383,270 +6305,12 @@
       "name": "./src/components/UserCard/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
-    }
-  ],
-  "./ErrorDisplay": [
-    {
-      "id": "./src/components/ErrorDisplay/index.js",
-      "name": "./src/components/ErrorDisplay/index.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/components/ErrorDisplay/index.js",
-      "name": "./src/components/ErrorDisplay/index.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./Loading": [
-    {
-      "id": "./src/components/Loading/index.js",
-      "name": "./src/components/Loading/index.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/components/Loading/index.js",
-      "name": "./src/components/Loading/index.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "core-js/modules/es7.symbol.async-iterator": [
-    {
-      "id": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
-      "name": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
-      "name": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_wks-define": [
-    {
-      "id": "./node_modules/core-js/modules/_wks-define.js",
-      "name": "./node_modules/core-js/modules/_wks-define.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_wks-define.js",
-      "name": "./node_modules/core-js/modules/_wks-define.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_wks-ext": [
-    {
-      "id": "./node_modules/core-js/modules/_wks-ext.js",
-      "name": "./node_modules/core-js/modules/_wks-ext.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_wks-ext.js",
-      "name": "./node_modules/core-js/modules/_wks-ext.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "core-js/modules/es6.symbol": [
-    {
-      "id": "./node_modules/core-js/modules/es6.symbol.js",
-      "name": "./node_modules/core-js/modules/es6.symbol.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/es6.symbol.js",
-      "name": "./node_modules/core-js/modules/es6.symbol.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_meta": [
-    {
-      "id": "./node_modules/core-js/modules/_meta.js",
-      "name": "./node_modules/core-js/modules/_meta.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_meta.js",
-      "name": "./node_modules/core-js/modules/_meta.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_enum-keys": [
-    {
-      "id": "./node_modules/core-js/modules/_enum-keys.js",
-      "name": "./node_modules/core-js/modules/_enum-keys.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_enum-keys.js",
-      "name": "./node_modules/core-js/modules/_enum-keys.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_object-gops": [
-    {
-      "id": "./node_modules/core-js/modules/_object-gops.js",
-      "name": "./node_modules/core-js/modules/_object-gops.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_object-gops.js",
-      "name": "./node_modules/core-js/modules/_object-gops.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_object-pie": [
-    {
-      "id": "./node_modules/core-js/modules/_object-pie.js",
-      "name": "./node_modules/core-js/modules/_object-pie.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_object-pie.js",
-      "name": "./node_modules/core-js/modules/_object-pie.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_is-array": [
-    {
-      "id": "./node_modules/core-js/modules/_is-array.js",
-      "name": "./node_modules/core-js/modules/_is-array.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_is-array.js",
-      "name": "./node_modules/core-js/modules/_is-array.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_object-gopn-ext": [
-    {
-      "id": "./node_modules/core-js/modules/_object-gopn-ext.js",
-      "name": "./node_modules/core-js/modules/_object-gopn-ext.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_object-gopn-ext.js",
-      "name": "./node_modules/core-js/modules/_object-gopn-ext.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_object-gopn": [
-    {
-      "id": "./node_modules/core-js/modules/_object-gopn.js",
-      "name": "./node_modules/core-js/modules/_object-gopn.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_object-gopn.js",
-      "name": "./node_modules/core-js/modules/_object-gopn.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_object-gopd": [
-    {
-      "id": "./node_modules/core-js/modules/_object-gopd.js",
-      "name": "./node_modules/core-js/modules/_object-gopd.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_object-gopd.js",
-      "name": "./node_modules/core-js/modules/_object-gopd.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "core-js/modules/es6.object.set-prototype-of": [
-    {
-      "id": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
-      "name": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
-      "name": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_set-proto": [
-    {
-      "id": "./node_modules/core-js/modules/_set-proto.js",
-      "name": "./node_modules/core-js/modules/_set-proto.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_set-proto.js",
-      "name": "./node_modules/core-js/modules/_set-proto.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./UserInfo": [
-    {
-      "id": "./src/pages/UserInfo/index.js",
-      "name": "./src/pages/UserInfo/index.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/UserInfo/UserInfo.js",
-      "name": "./src/pages/UserInfo/UserInfo.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/UserInfo/index.js",
-      "name": "./src/pages/UserInfo/index.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/pages/UserInfo/UserInfo.js",
-      "name": "./src/pages/UserInfo/UserInfo.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "core-js/modules/es6.regexp.match": [
-    {
-      "id": "./node_modules/core-js/modules/es6.regexp.match.js",
-      "name": "./node_modules/core-js/modules/es6.regexp.match.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/es6.regexp.match.js",
-      "name": "./node_modules/core-js/modules/es6.regexp.match.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
+      "id": "./src/components/UserCard/index.js",
+      "name": "./src/components/UserCard/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
   "./_fix-re-wks": [
@@ -4661,20 +6325,390 @@
       "name": "./node_modules/core-js/modules/_fix-re-wks.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_fix-re-wks.js",
+      "name": "./node_modules/core-js/modules/_fix-re-wks.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ],
-  "./NotFound": [
+  "./ErrorDisplay": [
     {
-      "id": "./src/pages/NotFound/index.js",
-      "name": "./src/pages/NotFound/index.js",
+      "id": "./src/components/ErrorDisplay/index.js",
+      "name": "./src/components/ErrorDisplay/index.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/pages/NotFound/index.js",
-      "name": "./src/pages/NotFound/index.js",
+      "id": "./src/components/ErrorDisplay/index.js",
+      "name": "./src/components/ErrorDisplay/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/ErrorDisplay/index.js",
+      "name": "./src/components/ErrorDisplay/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "core-js/modules/es6.regexp.match": [
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.match.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.match.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.match.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.match.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.match.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.match.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./Loading": [
+    {
+      "id": "./src/components/Loading/index.js",
+      "name": "./src/components/Loading/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/Loading/index.js",
+      "name": "./src/components/Loading/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/Loading/index.js",
+      "name": "./src/components/Loading/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./UserInfo": [
+    {
+      "id": "./src/pages/UserInfo/UserInfo.js",
+      "name": "./src/pages/UserInfo/UserInfo.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/pages/UserInfo/index.js",
+      "name": "./src/pages/UserInfo/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/pages/UserInfo/UserInfo.js",
+      "name": "./src/pages/UserInfo/UserInfo.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/UserInfo/index.js",
+      "name": "./src/pages/UserInfo/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/UserInfo/UserInfo.js",
+      "name": "./src/pages/UserInfo/UserInfo.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    },
+    {
+      "id": "./src/pages/UserInfo/index.js",
+      "name": "./src/pages/UserInfo/index.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "core-js/modules/es7.symbol.async-iterator": [
+    {
+      "id": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
+      "name": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
+      "name": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
+      "name": "./node_modules/core-js/modules/es7.symbol.async-iterator.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_wks-define": [
+    {
+      "id": "./node_modules/core-js/modules/_wks-define.js",
+      "name": "./node_modules/core-js/modules/_wks-define.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_wks-define.js",
+      "name": "./node_modules/core-js/modules/_wks-define.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_wks-define.js",
+      "name": "./node_modules/core-js/modules/_wks-define.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_wks-ext": [
+    {
+      "id": "./node_modules/core-js/modules/_wks-ext.js",
+      "name": "./node_modules/core-js/modules/_wks-ext.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_wks-ext.js",
+      "name": "./node_modules/core-js/modules/_wks-ext.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_wks-ext.js",
+      "name": "./node_modules/core-js/modules/_wks-ext.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "core-js/modules/es6.symbol": [
+    {
+      "id": "./node_modules/core-js/modules/es6.symbol.js",
+      "name": "./node_modules/core-js/modules/es6.symbol.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.symbol.js",
+      "name": "./node_modules/core-js/modules/es6.symbol.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.symbol.js",
+      "name": "./node_modules/core-js/modules/es6.symbol.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_meta": [
+    {
+      "id": "./node_modules/core-js/modules/_meta.js",
+      "name": "./node_modules/core-js/modules/_meta.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_meta.js",
+      "name": "./node_modules/core-js/modules/_meta.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_meta.js",
+      "name": "./node_modules/core-js/modules/_meta.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_enum-keys": [
+    {
+      "id": "./node_modules/core-js/modules/_enum-keys.js",
+      "name": "./node_modules/core-js/modules/_enum-keys.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_enum-keys.js",
+      "name": "./node_modules/core-js/modules/_enum-keys.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_enum-keys.js",
+      "name": "./node_modules/core-js/modules/_enum-keys.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_object-gops": [
+    {
+      "id": "./node_modules/core-js/modules/_object-gops.js",
+      "name": "./node_modules/core-js/modules/_object-gops.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gops.js",
+      "name": "./node_modules/core-js/modules/_object-gops.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gops.js",
+      "name": "./node_modules/core-js/modules/_object-gops.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_object-pie": [
+    {
+      "id": "./node_modules/core-js/modules/_object-pie.js",
+      "name": "./node_modules/core-js/modules/_object-pie.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-pie.js",
+      "name": "./node_modules/core-js/modules/_object-pie.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-pie.js",
+      "name": "./node_modules/core-js/modules/_object-pie.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_is-array": [
+    {
+      "id": "./node_modules/core-js/modules/_is-array.js",
+      "name": "./node_modules/core-js/modules/_is-array.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_is-array.js",
+      "name": "./node_modules/core-js/modules/_is-array.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_is-array.js",
+      "name": "./node_modules/core-js/modules/_is-array.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_object-gopn-ext": [
+    {
+      "id": "./node_modules/core-js/modules/_object-gopn-ext.js",
+      "name": "./node_modules/core-js/modules/_object-gopn-ext.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gopn-ext.js",
+      "name": "./node_modules/core-js/modules/_object-gopn-ext.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gopn-ext.js",
+      "name": "./node_modules/core-js/modules/_object-gopn-ext.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_object-gopn": [
+    {
+      "id": "./node_modules/core-js/modules/_object-gopn.js",
+      "name": "./node_modules/core-js/modules/_object-gopn.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gopn.js",
+      "name": "./node_modules/core-js/modules/_object-gopn.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gopn.js",
+      "name": "./node_modules/core-js/modules/_object-gopn.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_object-gopd": [
+    {
+      "id": "./node_modules/core-js/modules/_object-gopd.js",
+      "name": "./node_modules/core-js/modules/_object-gopd.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gopd.js",
+      "name": "./node_modules/core-js/modules/_object-gopd.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_object-gopd.js",
+      "name": "./node_modules/core-js/modules/_object-gopd.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "core-js/modules/es6.object.set-prototype-of": [
+    {
+      "id": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
+      "name": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
+      "name": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
+      "name": "./node_modules/core-js/modules/es6.object.set-prototype-of.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
+    }
+  ],
+  "./_set-proto": [
+    {
+      "id": "./node_modules/core-js/modules/_set-proto.js",
+      "name": "./node_modules/core-js/modules/_set-proto.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_set-proto.js",
+      "name": "./node_modules/core-js/modules/_set-proto.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_set-proto.js",
+      "name": "./node_modules/core-js/modules/_set-proto.js",
+      "file": "main.aea0c689778ff0af7477.hot-update.js",
+      "publicPath": "/assets/main.aea0c689778ff0af7477.hot-update.js"
     }
   ]
 }

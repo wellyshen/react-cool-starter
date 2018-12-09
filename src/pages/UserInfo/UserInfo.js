@@ -55,15 +55,16 @@ export class UserInfo extends PureComponent<Props> {
   }
 }
 
-const connector = connect(
-  ({ userInfo }: ReduxState) => ({ userInfo }),
-  (dispatch: Dispatch) => ({
-    fetchUserIfNeeded: (id: string) =>
-      dispatch(userAction.fetchUserIfNeeded(id))
-  })
-);
+const mapStateToProps = ({ userInfo }: ReduxState) => ({ userInfo });
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  fetchUserIfNeeded: (id: string) => dispatch(userAction.fetchUserIfNeeded(id))
+});
 
 export default compose(
   withRouter,
-  connector
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )
 )(UserInfo);
