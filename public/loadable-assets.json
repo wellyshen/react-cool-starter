@@ -1,26 +1,14 @@
 {
-  "./_freeGlobal": [
+  "./home": [
     {
-      "id": "./node_modules/lodash/_freeGlobal.js",
-      "name": "./node_modules/lodash/_freeGlobal.js",
+      "id": "./src/reducers/home.js",
+      "name": "./src/reducers/home.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
-      "name": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/lodash/_freeGlobal.js",
-      "name": "./node_modules/lodash/_freeGlobal.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
-      "name": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
+      "id": "./src/reducers/home.js",
+      "name": "./src/reducers/home.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -429,28 +417,136 @@
   ],
   "prop-types/checkPropTypes": [
     {
-      "id": "./node_modules/prop-types/checkPropTypes.js",
-      "name": "./node_modules/prop-types/checkPropTypes.js",
+      "id": "./node_modules/react/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react/node_modules/prop-types/checkPropTypes.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/prop-types/checkPropTypes.js",
-      "name": "./node_modules/prop-types/checkPropTypes.js",
+      "id": "./node_modules/react-dom/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-dom/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-dom/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-dom/node_modules/prop-types/checkPropTypes.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
   ],
   "./lib/ReactPropTypesSecret": [
     {
-      "id": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
-      "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "id": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-hot-loader/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-hot-loader/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-redux/node_modules/prop-types/lib/ReactPropTypesSecret.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
       "id": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
       "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-router/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-router-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-loadable/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-loadable/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-helmet/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-helmet/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-hot-loader/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-hot-loader/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-redux/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-router/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-router-dom/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-loadable/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-loadable/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/node_modules/prop-types/lib/ReactPropTypesSecret.js",
+      "name": "./node_modules/react-helmet/node_modules/prop-types/lib/ReactPropTypesSecret.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -583,19 +679,103 @@
   ],
   "prop-types": [
     {
+      "id": "./node_modules/react-hot-loader/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-hot-loader/node_modules/prop-types/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-redux/node_modules/prop-types/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
       "id": "./node_modules/prop-types/index.js",
       "name": "./node_modules/prop-types/index.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-router/node_modules/prop-types/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-router-dom/node_modules/prop-types/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-loadable/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-loadable/node_modules/prop-types/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-helmet/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-helmet/node_modules/prop-types/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-hot-loader/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-hot-loader/node_modules/prop-types/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-redux/node_modules/prop-types/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
     },
     {
       "id": "./node_modules/prop-types/index.js",
       "name": "./node_modules/prop-types/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-router/node_modules/prop-types/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-router-dom/node_modules/prop-types/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-loadable/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-loadable/node_modules/prop-types/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/node_modules/prop-types/index.js",
+      "name": "./node_modules/react-helmet/node_modules/prop-types/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
     }
   ],
   "./factoryWithTypeCheckers": [
+    {
+      "id": "./node_modules/react-hot-loader/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-hot-loader/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-redux/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
     {
       "id": "./node_modules/prop-types/factoryWithTypeCheckers.js",
       "name": "./node_modules/prop-types/factoryWithTypeCheckers.js",
@@ -603,8 +783,154 @@
       "publicPath": "/assets/main.css"
     },
     {
+      "id": "./node_modules/react-router/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-router/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-router-dom/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-loadable/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-loadable/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-helmet/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-helmet/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-hot-loader/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-hot-loader/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-redux/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
       "id": "./node_modules/prop-types/factoryWithTypeCheckers.js",
       "name": "./node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-router/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-router-dom/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-loadable/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-loadable/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "name": "./node_modules/react-helmet/node_modules/prop-types/factoryWithTypeCheckers.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
+  "./checkPropTypes": [
+    {
+      "id": "./node_modules/react-hot-loader/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-hot-loader/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-redux/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/prop-types/checkPropTypes.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-router/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-router-dom/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-loadable/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-loadable/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-helmet/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-helmet/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/react-hot-loader/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-hot-loader/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-redux/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-redux/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-router/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-router-dom/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-router-dom/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-loadable/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-loadable/node_modules/prop-types/checkPropTypes.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-helmet/node_modules/prop-types/checkPropTypes.js",
+      "name": "./node_modules/react-helmet/node_modules/prop-types/checkPropTypes.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -1059,6 +1385,12 @@
       "publicPath": "/assets/main.css"
     },
     {
+      "id": "./node_modules/react-is/index.js",
+      "name": "./node_modules/react-is/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
       "id": "./node_modules/react-router/node_modules/react-is/index.js",
       "name": "./node_modules/react-router/node_modules/react-is/index.js",
       "file": "main.css",
@@ -1073,6 +1405,12 @@
     {
       "id": "./node_modules/react-redux/node_modules/react-is/index.js",
       "name": "./node_modules/react-redux/node_modules/react-is/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-is/index.js",
+      "name": "./node_modules/react-is/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
@@ -1097,6 +1435,12 @@
       "publicPath": "/assets/main.css"
     },
     {
+      "id": "./node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-is/cjs/react-is.development.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
       "id": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
       "name": "./node_modules/react-router/node_modules/react-is/cjs/react-is.development.js",
       "file": "main.css",
@@ -1111,6 +1455,12 @@
     {
       "id": "./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js",
       "name": "./node_modules/react-redux/node_modules/react-is/cjs/react-is.development.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/react-is/cjs/react-is.development.js",
+      "name": "./node_modules/react-is/cjs/react-is.development.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
@@ -1361,28 +1711,28 @@
   ],
   "create-react-context": [
     {
-      "id": "./node_modules/create-react-context/lib/index.js",
-      "name": "./node_modules/create-react-context/lib/index.js",
+      "id": "./node_modules/react-router/node_modules/create-react-context/lib/index.js",
+      "name": "./node_modules/react-router/node_modules/create-react-context/lib/index.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/create-react-context/lib/index.js",
-      "name": "./node_modules/create-react-context/lib/index.js",
+      "id": "./node_modules/react-router/node_modules/create-react-context/lib/index.js",
+      "name": "./node_modules/react-router/node_modules/create-react-context/lib/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
   ],
   "./implementation": [
     {
-      "id": "./node_modules/create-react-context/lib/implementation.js",
-      "name": "./node_modules/create-react-context/lib/implementation.js",
+      "id": "./node_modules/react-router/node_modules/create-react-context/lib/implementation.js",
+      "name": "./node_modules/react-router/node_modules/create-react-context/lib/implementation.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/create-react-context/lib/implementation.js",
-      "name": "./node_modules/create-react-context/lib/implementation.js",
+      "id": "./node_modules/react-router/node_modules/create-react-context/lib/implementation.js",
+      "name": "./node_modules/react-router/node_modules/create-react-context/lib/implementation.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -2337,16 +2687,16 @@
       "publicPath": "/assets/main.js"
     }
   ],
-  "./home": [
+  "webpack-hot-middleware/client?reload=true": [
     {
-      "id": "./src/reducers/home.js",
-      "name": "./src/reducers/home.js",
+      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true",
+      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/reducers/home.js",
-      "name": "./src/reducers/home.js",
+      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true",
+      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -2527,16 +2877,28 @@
       "publicPath": "/assets/main.js"
     }
   ],
-  "webpack-hot-middleware/client?reload=true": [
+  "./_freeGlobal": [
     {
-      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true",
-      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true",
+      "id": "./node_modules/lodash/_freeGlobal.js",
+      "name": "./node_modules/lodash/_freeGlobal.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./node_modules/webpack-hot-middleware/client.js?reload=true",
-      "name": "./node_modules/webpack-hot-middleware/client.js?reload=true",
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/lodash/_freeGlobal.js",
+      "name": "./node_modules/lodash/_freeGlobal.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
+      "name": "./node_modules/css-hot-loader/node_modules/lodash/_freeGlobal.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
