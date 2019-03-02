@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, hydrate } from 'react-dom';
 import { createBrowserHistory } from 'history';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
@@ -18,8 +18,8 @@ const history = createBrowserHistory();
 const initialState = window.__INITIAL_STATE__;
 const store = configureStore(history, initialState);
 
-const render = (Routes: Array<Object>, History: Object, Store: Object) => {
-  const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+const renderApp = (Routes: Array<Object>, History: Object, Store: Object) => {
+  const renderMethod = module.hot ? render : hydrate;
   renderMethod(
     <AppContainer>
       <Provider store={Store}>
@@ -34,7 +34,7 @@ const render = (Routes: Array<Object>, History: Object, Store: Object) => {
 };
 
 // react-loadable setup
-Loadable.preloadReady().then(() => render(routes, history, store));
+Loadable.preloadReady().then(() => renderApp(routes, history, store));
 
 if (module.hot) {
   // Enable webpack hot module replacement for routes
