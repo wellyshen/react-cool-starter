@@ -18,12 +18,13 @@ const history = createBrowserHistory();
 const initialState = window.__INITIAL_STATE__;
 const store = configureStore(history, initialState);
 
-const render = (Routes: Array<Object>, History: Object, Store: Object) => {
+const render = (Routes: Array<Object>) => {
   const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+
   renderMethod(
     <AppContainer>
-      <Provider store={Store}>
-        <ConnectedRouter history={History}>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
           <BrowserRouter>{renderRoutes(Routes)}</BrowserRouter>
         </ConnectedRouter>
       </Provider>
@@ -34,7 +35,7 @@ const render = (Routes: Array<Object>, History: Object, Store: Object) => {
 };
 
 // react-loadable setup
-Loadable.preloadReady().then(() => render(routes, history, store));
+Loadable.preloadReady().then(() => render(routes));
 
 if (module.hot) {
   // Enable webpack hot module replacement for routes
@@ -42,7 +43,7 @@ if (module.hot) {
     try {
       const nextRoutes = require('./routes').default;
 
-      render(nextRoutes, history, store);
+      render(nextRoutes);
     } catch (error) {
       console.error(`==> 😭  Routes hot reloading error ${error}`);
     }
