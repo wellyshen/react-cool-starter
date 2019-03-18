@@ -70,6 +70,10 @@ This starter is for those who with basic knowledge of React and have the need fo
 - [node](https://nodejs.org/en/) >= 10.0
 - [npm](https://www.npmjs.com/) >= 6.0
 
+## Looking for Docker?
+
+You can find Docker support version on this [branch](https://github.com/wellyshen/react-cool-starter/tree/docker).
+
 ## Getting Started
 
 **1. You can start by cloning the repository on your local machine by running:**
