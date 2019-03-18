@@ -57,7 +57,10 @@
     "clean": "npm-run-all clean:build clean:test",
     "clean:build": "better-npm-run clean:build",
     "clean:test": "better-npm-run clean:test",
-    "coveralls": "yarn clean:test && better-npm-run coveralls"
+    "coveralls": "yarn clean:test && better-npm-run coveralls",
+    "docker": "yarn docker:build && yarn docker:start",
+    "docker:build": "docker build --rm -t wellyshen/react-cool-starter .",
+    "docker:start": "docker run --rm -it -p 8080:8080 wellyshen/react-cool-starter"
   },
   "betterScripts": {
     "dev": {
