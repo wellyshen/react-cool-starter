@@ -1,5 +1,6 @@
 /* @flow */
 
+import { createBrowserHistory, createMemoryHistory } from 'history';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
@@ -7,7 +8,19 @@ import thunk from 'redux-thunk';
 import type { Store } from '../types';
 import createRootReducer from '../reducers';
 
-export default (history: Object, initialState: Object = {}): Store => {
+type argv = {
+  initialState?: Object,
+  url?: string
+};
+
+export default ({ initialState, url }: argv): Store => {
+  const isServer = typeof window === 'undefined';
+  // Create a history depending on the environment
+  const history = isServer
+    ? createMemoryHistory({
+        initialEntries: [url || '/']
+      })
+    : createBrowserHistory();
   const middlewares = [
     routerMiddleware(history),
     thunk
@@ -15,9 +28,7 @@ export default (history: Object, initialState: Object = {}): Store => {
   ];
   // Use Redux DevTools Extension in development
   const composeEnhancers =
-    (__DEV__ &&
-      typeof window !== 'undefined' &&
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+    (__DEV__ && !isServer && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
     compose;
   const enhancers = composeEnhancers(
     applyMiddleware(...middlewares)
@@ -25,7 +36,7 @@ export default (history: Object, initialState: Object = {}): Store => {
   );
   const store = createStore(
     createRootReducer(history),
-    initialState,
+    initialState || {},
     enhancers
   );
 
@@ -42,5 +53,5 @@ export default (history: Object, initialState: Object = {}): Store => {
     });
   }
 
-  return store;
+  return { store, history };
 };
