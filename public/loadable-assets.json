@@ -21,55 +21,55 @@
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?b1bb",
+      "id": 1,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?7fd0",
+      "id": 2,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?906e",
+      "id": 3,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?5af7",
+      "id": 4,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?a396",
+      "id": 5,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?d464",
+      "id": 6,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?b13f",
+      "id": 7,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?cd3e",
+      "id": 8,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "?f390",
+      "id": 9,
       "name": null,
       "file": "main.css",
       "publicPath": "/assets/main.css"
@@ -81,55 +81,55 @@
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?b1bb",
+      "id": 1,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?7fd0",
+      "id": 2,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?906e",
+      "id": 3,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?5af7",
+      "id": 4,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?a396",
+      "id": 5,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?d464",
+      "id": 6,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?b13f",
+      "id": 7,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?cd3e",
+      "id": 8,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
     },
     {
-      "id": "?f390",
+      "id": 9,
       "name": null,
       "file": "main.js",
       "publicPath": "/assets/main.js"
@@ -2051,90 +2051,6 @@
       "publicPath": "/assets/main.js"
     }
   ],
-  "history": [
-    {
-      "id": "./node_modules/history/esm/history.js",
-      "name": "./node_modules/history/esm/history.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/history/esm/history.js",
-      "name": "./node_modules/history/esm/history.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "@babel/runtime/helpers/esm/extends": [
-    {
-      "id": "./node_modules/@babel/runtime/helpers/esm/extends.js",
-      "name": "./node_modules/@babel/runtime/helpers/esm/extends.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/@babel/runtime/helpers/esm/extends.js",
-      "name": "./node_modules/@babel/runtime/helpers/esm/extends.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "resolve-pathname": [
-    {
-      "id": "./node_modules/resolve-pathname/index.js",
-      "name": "./node_modules/resolve-pathname/index.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/resolve-pathname/index.js",
-      "name": "./node_modules/resolve-pathname/index.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "value-equal": [
-    {
-      "id": "./node_modules/value-equal/index.js",
-      "name": "./node_modules/value-equal/index.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/value-equal/index.js",
-      "name": "./node_modules/value-equal/index.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "tiny-warning": [
-    {
-      "id": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
-      "name": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
-      "name": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "tiny-invariant": [
-    {
-      "id": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
-      "name": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
-      "name": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
   "react-redux": [
     {
       "id": "./node_modules/react-redux/es/index.js",
@@ -2215,6 +2131,20 @@
     {
       "id": "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js",
       "name": "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
+  "@babel/runtime/helpers/esm/extends": [
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/extends.js",
+      "name": "./node_modules/@babel/runtime/helpers/esm/extends.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/@babel/runtime/helpers/esm/extends.js",
+      "name": "./node_modules/@babel/runtime/helpers/esm/extends.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -2359,7 +2289,7 @@
       "publicPath": "/assets/main.js"
     }
   ],
-  "../utils/warning": [
+  "./warning": [
     {
       "id": "./node_modules/react-redux/es/utils/warning.js",
       "name": "./node_modules/react-redux/es/utils/warning.js",
@@ -2537,6 +2467,76 @@
     {
       "id": "./node_modules/fbjs/lib/emptyFunction.js",
       "name": "./node_modules/fbjs/lib/emptyFunction.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
+  "tiny-warning": [
+    {
+      "id": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
+      "name": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
+      "name": "./node_modules/tiny-warning/dist/tiny-warning.esm.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
+  "history": [
+    {
+      "id": "./node_modules/history/esm/history.js",
+      "name": "./node_modules/history/esm/history.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/history/esm/history.js",
+      "name": "./node_modules/history/esm/history.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
+  "resolve-pathname": [
+    {
+      "id": "./node_modules/resolve-pathname/index.js",
+      "name": "./node_modules/resolve-pathname/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/resolve-pathname/index.js",
+      "name": "./node_modules/resolve-pathname/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
+  "value-equal": [
+    {
+      "id": "./node_modules/value-equal/index.js",
+      "name": "./node_modules/value-equal/index.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/value-equal/index.js",
+      "name": "./node_modules/value-equal/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
+  "tiny-invariant": [
+    {
+      "id": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
+      "name": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
+      "name": "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -4373,6 +4373,104 @@
       "publicPath": "/assets/main.js"
     }
   ],
+  "./styles.scss": [
+    {
+      "id": "./src/pages/NotFound/styles.scss",
+      "name": "./src/pages/NotFound/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/app/styles.scss",
+      "name": "./src/app/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/UserList/styles.scss",
+      "name": "./src/components/UserList/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/pages/UserInfo/styles.scss",
+      "name": "./src/pages/UserInfo/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/UserCard/styles.scss",
+      "name": "./src/components/UserCard/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/ErrorDisplay/styles.scss",
+      "name": "./src/components/ErrorDisplay/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/components/Loading/styles.scss",
+      "name": "./src/components/Loading/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/pages/Home/styles.scss",
+      "name": "./src/pages/Home/styles.scss",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./src/pages/NotFound/styles.scss",
+      "name": "./src/pages/NotFound/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/app/styles.scss",
+      "name": "./src/app/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/UserList/styles.scss",
+      "name": "./src/components/UserList/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/UserInfo/styles.scss",
+      "name": "./src/pages/UserInfo/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/UserCard/styles.scss",
+      "name": "./src/components/UserCard/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/ErrorDisplay/styles.scss",
+      "name": "./src/components/ErrorDisplay/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/components/Loading/styles.scss",
+      "name": "./src/components/Loading/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    },
+    {
+      "id": "./src/pages/Home/styles.scss",
+      "name": "./src/pages/Home/styles.scss",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
   "!../css-hot-loader/hotModuleReplacement.js": [
     {
       "id": "./node_modules/css-hot-loader/hotModuleReplacement.js",
@@ -4569,100 +4667,16 @@
       "publicPath": "/assets/main.js"
     }
   ],
-  "./styles.scss": [
+  "./NotFound": [
     {
-      "id": "./src/app/styles.scss",
-      "name": "./src/app/styles.scss",
+      "id": "./src/pages/NotFound/index.js",
+      "name": "./src/pages/NotFound/index.js",
       "file": "main.css",
       "publicPath": "/assets/main.css"
     },
     {
-      "id": "./src/components/UserList/styles.scss",
-      "name": "./src/components/UserList/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/components/UserCard/styles.scss",
-      "name": "./src/components/UserCard/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/components/ErrorDisplay/styles.scss",
-      "name": "./src/components/ErrorDisplay/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/components/Loading/styles.scss",
-      "name": "./src/components/Loading/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/Home/styles.scss",
-      "name": "./src/pages/Home/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/UserInfo/styles.scss",
-      "name": "./src/pages/UserInfo/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/NotFound/styles.scss",
-      "name": "./src/pages/NotFound/styles.scss",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/app/styles.scss",
-      "name": "./src/app/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/components/UserList/styles.scss",
-      "name": "./src/components/UserList/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/components/UserCard/styles.scss",
-      "name": "./src/components/UserCard/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/components/ErrorDisplay/styles.scss",
-      "name": "./src/components/ErrorDisplay/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/components/Loading/styles.scss",
-      "name": "./src/components/Loading/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/pages/Home/styles.scss",
-      "name": "./src/pages/Home/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/pages/UserInfo/styles.scss",
-      "name": "./src/pages/UserInfo/styles.scss",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    },
-    {
-      "id": "./src/pages/NotFound/styles.scss",
-      "name": "./src/pages/NotFound/styles.scss",
+      "id": "./src/pages/NotFound/index.js",
+      "name": "./src/pages/NotFound/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -4777,6 +4791,20 @@
       "publicPath": "/assets/main.js"
     }
   ],
+  "./_flags": [
+    {
+      "id": "./node_modules/core-js/modules/_flags.js",
+      "name": "./node_modules/core-js/modules/_flags.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_flags.js",
+      "name": "./node_modules/core-js/modules/_flags.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
   "./ErrorDisplay": [
     {
       "id": "./src/components/ErrorDisplay/index.js",
@@ -4791,6 +4819,20 @@
       "publicPath": "/assets/main.js"
     }
   ],
+  "./_regexp-exec": [
+    {
+      "id": "./node_modules/core-js/modules/_regexp-exec.js",
+      "name": "./node_modules/core-js/modules/_regexp-exec.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_regexp-exec.js",
+      "name": "./node_modules/core-js/modules/_regexp-exec.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
   "./Loading": [
     {
       "id": "./src/components/Loading/index.js",
@@ -4801,6 +4843,20 @@
     {
       "id": "./src/components/Loading/index.js",
       "name": "./src/components/Loading/index.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
+  "./es6.regexp.exec": [
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.exec.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.exec.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/es6.regexp.exec.js",
+      "name": "./node_modules/core-js/modules/es6.regexp.exec.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }
@@ -5001,6 +5057,20 @@
       "publicPath": "/assets/main.js"
     }
   ],
+  "./_fix-re-wks": [
+    {
+      "id": "./node_modules/core-js/modules/_fix-re-wks.js",
+      "name": "./node_modules/core-js/modules/_fix-re-wks.js",
+      "file": "main.css",
+      "publicPath": "/assets/main.css"
+    },
+    {
+      "id": "./node_modules/core-js/modules/_fix-re-wks.js",
+      "name": "./node_modules/core-js/modules/_fix-re-wks.js",
+      "file": "main.js",
+      "publicPath": "/assets/main.js"
+    }
+  ],
   "./UserInfo": [
     {
       "id": "./src/pages/UserInfo/index.js",
@@ -5079,76 +5149,6 @@
     {
       "id": "./node_modules/core-js/modules/_regexp-exec-abstract.js",
       "name": "./node_modules/core-js/modules/_regexp-exec-abstract.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_fix-re-wks": [
-    {
-      "id": "./node_modules/core-js/modules/_fix-re-wks.js",
-      "name": "./node_modules/core-js/modules/_fix-re-wks.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_fix-re-wks.js",
-      "name": "./node_modules/core-js/modules/_fix-re-wks.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./es6.regexp.exec": [
-    {
-      "id": "./node_modules/core-js/modules/es6.regexp.exec.js",
-      "name": "./node_modules/core-js/modules/es6.regexp.exec.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/es6.regexp.exec.js",
-      "name": "./node_modules/core-js/modules/es6.regexp.exec.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_regexp-exec": [
-    {
-      "id": "./node_modules/core-js/modules/_regexp-exec.js",
-      "name": "./node_modules/core-js/modules/_regexp-exec.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_regexp-exec.js",
-      "name": "./node_modules/core-js/modules/_regexp-exec.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./_flags": [
-    {
-      "id": "./node_modules/core-js/modules/_flags.js",
-      "name": "./node_modules/core-js/modules/_flags.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./node_modules/core-js/modules/_flags.js",
-      "name": "./node_modules/core-js/modules/_flags.js",
-      "file": "main.js",
-      "publicPath": "/assets/main.js"
-    }
-  ],
-  "./NotFound": [
-    {
-      "id": "./src/pages/NotFound/index.js",
-      "name": "./src/pages/NotFound/index.js",
-      "file": "main.css",
-      "publicPath": "/assets/main.css"
-    },
-    {
-      "id": "./src/pages/NotFound/index.js",
-      "name": "./src/pages/NotFound/index.js",
       "file": "main.js",
       "publicPath": "/assets/main.js"
     }

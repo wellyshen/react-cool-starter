@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "2.8.5",
+  "version": "2.8.6",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.js",
   "engines": {
@@ -312,7 +312,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "better-npm-run": "^0.1.1",
     "chalk": "^2.4.2",
-    "compression": "^1.7.3",
+    "compression": "^1.7.4",
     "connected-react-router": "^6.3.2",
     "cross-spawn": "^6.0.5",
     "css-modules-require-hook": "^4.2.3",
