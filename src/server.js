@@ -108,22 +108,11 @@ app.get('*', (req, res) => {
         </Loadable.Capture>
       );
 
-      // Check if the render result contains a redirect, if so we need to set
-      // the specific status and redirect header and end the response
-      if (staticContext.url) {
-        res.status(301).setHeader('Location', staticContext.url);
-        res.end();
-
-        return;
-      }
-
-      // Check page status
-      const status = staticContext.status === '404' ? 404 : 200;
-
-      const head = Helmet.renderStatic();
       const initialState = store.getState();
       const htmlContent = renderToString(AppComponent);
-
+      // head must be placed after "renderToString"
+      // see: https://github.com/nfl/react-helmet#server-usage
+      const head = Helmet.renderStatic();
       // $FlowFixMe: isn't an issue
       const loadableManifest = require('../public/loadable-assets.json');
       const bundles = getBundles(loadableManifest, modules);
@@ -146,6 +135,18 @@ app.get('*', (req, res) => {
               .reverse()
           );
       }
+
+      // Check if the render result contains a redirect, if so we need to set
+      // the specific status and redirect header and end the response
+      if (staticContext.url) {
+        res.status(301).setHeader('Location', staticContext.url);
+        res.end();
+
+        return;
+      }
+
+      // Check page status
+      const status = staticContext.status === '404' ? 404 : 200;
 
       // Pass the route and initial state into html template
       res
