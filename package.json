@@ -138,7 +138,8 @@
       [
         "@babel/preset-env",
         {
-          "useBuiltIns": "usage"
+          "useBuiltIns": "usage",
+          "corejs": "3.0.0"
         }
       ],
       "@babel/preset-react",
@@ -342,7 +343,6 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.0",
@@ -350,6 +350,7 @@
     "babel-plugin-istanbul": "^5.1.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "compression-webpack-plugin": "^2.0.0",
+    "core-js": "3",
     "coveralls": "^3.0.3",
     "css-hot-loader": "^1.4.4",
     "css-loader": "^2.1.1",
