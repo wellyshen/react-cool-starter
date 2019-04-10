@@ -166,7 +166,7 @@
     "extends": [
       "plugin:lodash/recommended",
       "airbnb",
-      "prettier",
+      "plugin:prettier/recommended",
       "prettier/react"
     ],
     "plugins": [
