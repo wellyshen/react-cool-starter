@@ -128,7 +128,9 @@ app.get('*', (req, res) => {
         // $FlowFixMe: isn't an issue
         const webpackManifest = require('../public/webpack-assets.json');
         assets = bundles
-          .map(({ publicPath }) => publicPath)
+          .map(({ publicPath }) =>
+            !publicPath.includes('main') ? publicPath : ''
+          )
           .concat(
             Object.keys(webpackManifest)
               .map(key => webpackManifest[key])
