@@ -29,6 +29,14 @@ export class UserInfo extends PureComponent<Props> {
     fetchUserIfNeeded(match.params.id);
   }
 
+  componentDidUpdate(prevProps: Object) {
+    const { fetchUserIfNeeded, match } = this.props;
+
+    if (prevProps.match.params.id !== match.params.id) {
+      fetchUserIfNeeded(match.params.id);
+    }
+  }
+
   renderUserCard = () => {
     const {
       userInfo,
