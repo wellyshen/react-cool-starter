@@ -116,10 +116,10 @@ app.get('*', (req, res) => {
       // $FlowFixMe: isn't an issue
       const loadableManifest = require('../public/loadable-assets.json');
       const bundles = getBundles(loadableManifest, modules);
+      const mapFn = ({ publicPath }) =>
+        !publicPath.includes('main') ? publicPath : '';
       let assets = bundles
-        .map(({ publicPath }) =>
-          !publicPath.includes('main') ? publicPath : ''
-        )
+        .map(mapFn)
         // In development, main.css and main.js are webpack default file bundling name
         // we put these files into assets with publicPath
         .concat(['/assets/main.css', '/assets/main.js']);
@@ -127,15 +127,11 @@ app.get('*', (req, res) => {
       if (!__DEV__) {
         // $FlowFixMe: isn't an issue
         const webpackManifest = require('../public/webpack-assets.json');
-        assets = bundles
-          .map(({ publicPath }) =>
-            !publicPath.includes('main') ? publicPath : ''
-          )
-          .concat(
-            Object.keys(webpackManifest)
-              .map(key => webpackManifest[key])
-              .reverse()
-          );
+        assets = bundles.map(mapFn).concat(
+          Object.keys(webpackManifest)
+            .map(key => webpackManifest[key])
+            .reverse()
+        );
       }
 
       // Check if the render result contains a redirect, if so we need to set
