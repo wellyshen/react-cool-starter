@@ -122,16 +122,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ],
+    "*.{js,jsx}": "eslint --fix",
     "*.css": "stylelint",
     "*.{scss,sass}": "stylelint --syntax=scss",
-    "*.{json,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{json,md}": "prettier --write"
   },
   "babel": {
     "presets": [
