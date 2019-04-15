@@ -46,7 +46,7 @@
     "start": "better-npm-run start",
     "build": "yarn clean:build && better-npm-run build",
     "analyze": "yarn clean:build && better-npm-run analyze",
-    "lint": "npm-run-all lint:js lint:style",
+    "lint": "npm-run-all --parallel lint:*",
     "lint:js": "better-npm-run lint:js",
     "lint:style": "better-npm-run lint:style",
     "flow": "better-npm-run flow",
@@ -54,7 +54,7 @@
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
     "test:update-snapshot": "yarn test -u",
-    "clean": "npm-run-all clean:build clean:test",
+    "clean": "npm-run-all --parallel clean:*",
     "clean:build": "better-npm-run clean:build",
     "clean:test": "better-npm-run clean:test",
     "coveralls": "yarn clean:test && better-npm-run coveralls"
