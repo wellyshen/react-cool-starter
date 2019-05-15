@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import Loadable from 'react-loadable';
 
@@ -23,7 +22,7 @@ const render = (Routes: Array<Object>) => {
     <AppContainer>
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <BrowserRouter>{renderRoutes(Routes)}</BrowserRouter>
+          {renderRoutes(Routes)}
         </ConnectedRouter>
       </Provider>
     </AppContainer>,
