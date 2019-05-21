@@ -142,7 +142,6 @@
     "plugins": [
       "react-hot-loader/babel",
       "react-loadable/babel",
-      "dynamic-import-node",
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-syntax-dynamic-import"
     ],
