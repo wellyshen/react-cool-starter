@@ -383,8 +383,5 @@
     "webpack-dev-middleware": "^3.6.2",
     "webpack-hot-middleware": "^2.24.4",
     "webpack-manifest-plugin": "^2.0.4"
-  },
-  "resolutions": {
-    "webpack-sources": "^1.2.0"
   }
 }

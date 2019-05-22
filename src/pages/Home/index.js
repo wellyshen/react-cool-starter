@@ -1,7 +1,14 @@
 /* @flow */
+import React from 'react';
 import loadable from '@loadable/component';
-import { Loading } from '../../components';
+import { Loading, ErrorBoundary } from '../../components';
 
-export default loadable(() => import('./Home'), {
+const Home = loadable(() => import('./Home'), {
   fallback: Loading
 });
+
+export default () => (
+  <ErrorBoundary>
+    <Home />
+  </ErrorBoundary>
+);

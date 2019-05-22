@@ -2,7 +2,7 @@
 
 import UserList from './UserList';
 import UserCard from './UserCard';
-import ErrorDisplay from './ErrorDisplay';
+import ErrorBoundary from './ErrorBoundary';
 import Loading from './Loading';
 
-export { UserList, UserCard, ErrorDisplay, Loading };
+export { UserList, UserCard, ErrorBoundary, Loading };

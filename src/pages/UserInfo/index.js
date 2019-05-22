@@ -1,7 +1,14 @@
 /* @flow */
+import React from 'react';
 import loadable from '@loadable/component';
-import { Loading } from '../../components';
+import { Loading, ErrorBoundary } from '../../components';
 
-export default loadable(() => import('./UserInfo'), {
+const UserInfo = loadable(() => import('./UserInfo'), {
   fallback: Loading
 });
+
+export default () => (
+  <ErrorBoundary>
+    <UserInfo />
+  </ErrorBoundary>
+);
