@@ -5,13 +5,10 @@ import { minify } from 'html-minifier';
 
 export default (
   head: Object,
-  assets: Array,
+  extractor: Function,
   htmlContent: string,
   initialState: Object
 ): string => {
-  const styles = assets.filter(file => file.endsWith('.css'));
-  const scripts = assets.filter(file => file.endsWith('.js'));
-
   const html = `
     <!doctype html>
     <html ${head.htmlAttributes.toString()}>
@@ -31,12 +28,8 @@ export default (
         ${head.link.toString()}
 
         <!-- Insert bundled styles into <link> tag -->
-        ${styles
-          .map(
-            file =>
-              `<link href="${file}" media="screen, projection" rel="stylesheet" type="text/css">`
-          )
-          .join('\n')}
+        ${extractor.getLinkTags()}
+        ${extractor.getStyleTags()}
       </head>
       <body>
         <!-- Insert the router, which passed from server-side -->
@@ -50,7 +43,7 @@ export default (
         </script>
 
         <!-- Insert bundled scripts into <script> tag -->
-        ${scripts.map(file => `<script src="${file}"></script>`).join('\n')}
+        ${extractor.getScriptTags()}
 
         ${head.script.toString()}
       </body>

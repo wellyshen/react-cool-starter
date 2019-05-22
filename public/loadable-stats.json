@@ -1,0 +1,472 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.30.0",
+  "hash": "46ff9adf8301c68cf512",
+  "publicPath": "/assets/",
+  "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+  "assetsByChunkName": {
+    "Home": [
+      "Home.chunk.css",
+      "Home.chunk.js"
+    ],
+    "UserInfo": [
+      "UserInfo.chunk.css",
+      "UserInfo.chunk.js"
+    ],
+    "main": [
+      "main.css",
+      "main.js"
+    ],
+    "vendors~Home~UserInfo": "vendors~Home~UserInfo.chunk.js"
+  },
+  "assets": [
+    {
+      "name": "Home.chunk.css",
+      "size": 45,
+      "chunks": [
+        "Home"
+      ],
+      "chunkNames": [
+        "Home"
+      ],
+      "emitted": false
+    },
+    {
+      "name": "Home.chunk.js",
+      "size": 14196,
+      "chunks": [
+        "Home"
+      ],
+      "chunkNames": [
+        "Home"
+      ],
+      "emitted": false
+    },
+    {
+      "name": "UserInfo.chunk.css",
+      "size": 49,
+      "chunks": [
+        "UserInfo"
+      ],
+      "chunkNames": [
+        "UserInfo"
+      ],
+      "emitted": false
+    },
+    {
+      "name": "UserInfo.chunk.js",
+      "size": 27648,
+      "chunks": [
+        "UserInfo"
+      ],
+      "chunkNames": [
+        "UserInfo"
+      ],
+      "emitted": false
+    },
+    {
+      "name": "main.css",
+      "size": 7193,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": false
+    },
+    {
+      "name": "main.js",
+      "size": 2001841,
+      "chunks": [
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": false
+    },
+    {
+      "name": "vendors~Home~UserInfo.chunk.js",
+      "size": 29459,
+      "chunks": [
+        "vendors~Home~UserInfo"
+      ],
+      "chunkNames": [
+        "vendors~Home~UserInfo"
+      ],
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "main.css",
+        "main.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        "main"
+      ],
+      "assets": [
+        "main.css",
+        "main.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "Home": {
+      "chunks": [
+        "vendors~Home~UserInfo",
+        "Home"
+      ],
+      "assets": [
+        "vendors~Home~UserInfo.chunk.js",
+        "Home.chunk.css",
+        "Home.chunk.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "UserInfo": {
+      "chunks": [
+        "vendors~Home~UserInfo",
+        "UserInfo"
+      ],
+      "assets": [
+        "vendors~Home~UserInfo.chunk.js",
+        "UserInfo.chunk.css",
+        "UserInfo.chunk.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "children": [
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--5-2!node_modules/postcss-loader/src/index.js??ref--5-3!node_modules/normalize.css/normalize.css"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/app/styles.scss"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/components/ErrorDisplay/styles.scss"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/components/Loading/styles.scss"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/components/UserCard/styles.scss"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/components/UserList/styles.scss"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/pages/Home/styles.scss"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/pages/NotFound/styles.scss"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/assets/",
+      "outputPath": "C:\\Users\\xD3CODER\\Desktop\\react-cool-starter\\public\\assets",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            "mini-css-extract-plugin"
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/pages/UserInfo/styles.scss"
+    }
+  ]
+}

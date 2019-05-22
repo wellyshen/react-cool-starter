@@ -1,10 +1,7 @@
 /* @flow */
-
-import Loadable from 'react-loadable';
-
+import loadable from '@loadable/component';
 import { Loading } from '../../components';
 
-export default Loadable({
-  loader: () => import('./Home'),
-  loading: Loading
+export default loadable(() => import('./Home'), {
+  fallback: Loading
 });
