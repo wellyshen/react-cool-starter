@@ -89,7 +89,7 @@ const getEntry = () => {
 // Webpack configuration
 module.exports = {
   mode: isDev ? 'development' : 'production',
-  devtool: isDev ? 'eval' : 'hidden-source-map',
+  devtool: isDev ? 'eval-source-map' : 'hidden-source-map',
   context: path.resolve(process.cwd()),
   entry: getEntry(),
   optimization: {
