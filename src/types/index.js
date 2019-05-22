@@ -20,11 +20,6 @@ export type UserInfo = {
   }
 };
 
-export type LoadingProps = {
-  pastDelay: boolean,
-  error: boolean
-};
-
 // State
 type $ExtractFunctionReturn = <V>(v: (...args: any) => V) => V; // eslint-disable-line no-undef
 export type ReduxState = $ObjMap<Reducers, $ExtractFunctionReturn>; // eslint-disable-line no-undef
