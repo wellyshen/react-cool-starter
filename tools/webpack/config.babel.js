@@ -25,7 +25,7 @@ const getPlugins = () => {
     }),
     new LoadablePlugin({
       writeToDisk: true,
-      filename: path.resolve(process.cwd(), 'public/loadable-stats.json')
+      filename: '../loadable-stats.json'
     }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
