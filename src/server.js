@@ -21,7 +21,7 @@ import openBrowser from 'react-dev-utils/openBrowser';
 import configureStore from './utils/configureStore';
 import renderHtml from './utils/renderHtml';
 import routes from './routes';
-import { port, host } from './config';
+import config from './config';
 
 const app = express();
 
@@ -143,9 +143,9 @@ app.get('*', (req, res) => {
   })();
 });
 
-if (port) {
-  app.listen(port, host, err => {
-    const url = `http://${host}:${port}`;
+if (config.port) {
+  app.listen(config.port, config.host, err => {
+    const url = `http://${config.host}:${config.port}`;
 
     if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
 
