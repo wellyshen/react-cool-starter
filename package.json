@@ -141,8 +141,7 @@
     ],
     "plugins": [
       "react-hot-loader/babel",
-      "react-loadable/babel",
-      "dynamic-import-node",
+      "@loadable/babel-plugin",
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-syntax-dynamic-import"
     ],
@@ -291,6 +290,8 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
+    "@loadable/component": "^5.10.1",
+    "@loadable/server": "^5.9.0",
     "asset-require-hook": "^1.2.0",
     "autoprefixer": "^9.5.1",
     "axios": "^0.18.0",
@@ -316,7 +317,6 @@
     "react-dom": "npm:@hot-loader/react-dom",
     "react-helmet": "^5.2.1",
     "react-hot-loader": "^4.8.4",
-    "react-loadable": "^5.5.0",
     "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
     "react-router-config": "^5.0.0",
@@ -328,6 +328,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@loadable/babel-plugin": "^5.10.0",
+    "@loadable/webpack-plugin": "^5.7.1",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
@@ -381,8 +383,5 @@
     "webpack-dev-middleware": "^3.6.2",
     "webpack-hot-middleware": "^2.24.4",
     "webpack-manifest-plugin": "^2.0.4"
-  },
-  "resolutions": {
-    "webpack-sources": "^1.2.0"
   }
 }

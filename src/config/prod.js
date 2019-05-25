@@ -1,9 +1,5 @@
 /* @flow */
 
-const defaultConfig = require('./default');
-
-const prodConfig = {
+export default {
   // Over write default settings here...
 };
-
-module.exports = { ...defaultConfig, ...prodConfig };

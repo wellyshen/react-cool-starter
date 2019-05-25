@@ -1,7 +1,10 @@
 /* @flow */
 
-if (__DEV__) {
-  module.exports = require('./default');
-} else {
-  module.exports = require('./prod');
-}
+import defaultConfig from './default';
+import prodConfig from './prod';
+
+const config = __DEV__
+  ? { ...defaultConfig }
+  : { ...defaultConfig, ...prodConfig };
+
+export default config;

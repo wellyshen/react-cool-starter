@@ -12,8 +12,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { renderRoutes, matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
-import Loadable from 'react-loadable';
-import { getBundles } from 'react-loadable/webpack';
+import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
 
 import Helmet from 'react-helmet';
 import chalk from 'chalk';
@@ -22,7 +21,7 @@ import openBrowser from 'react-dev-utils/openBrowser';
 import configureStore from './utils/configureStore';
 import renderHtml from './utils/renderHtml';
 import routes from './routes';
-import { port, host } from './config';
+import config from './config';
 
 const app = express();
 
@@ -55,6 +54,7 @@ if (!__DEV__) {
       hot: true,
       quiet: true, // Turn it on for friendly-errors-webpack-plugin
       noInfo: true,
+      writeToDisk: true,
       stats: 'minimal',
       serverSideRender: true
     })
@@ -95,17 +95,22 @@ app.get('*', (req, res) => {
       // Load data from server-side first
       await loadBranchData();
 
-      const modules = [];
+      const statsFile = path.resolve(
+        process.cwd(),
+        'public/loadable-stats.json'
+      );
+      const extractor = new ChunkExtractor({ statsFile });
+
       const staticContext = {};
       const AppComponent = (
-        <Loadable.Capture report={moduleName => modules.push(moduleName)}>
+        <ChunkExtractorManager extractor={extractor}>
           <Provider store={store}>
             {/* Setup React-Router server-side rendering */}
             <StaticRouter location={req.path} context={staticContext}>
               {renderRoutes(routes)}
             </StaticRouter>
           </Provider>
-        </Loadable.Capture>
+        </ChunkExtractorManager>
       );
 
       const initialState = store.getState();
@@ -113,26 +118,6 @@ app.get('*', (req, res) => {
       // head must be placed after "renderToString"
       // see: https://github.com/nfl/react-helmet#server-usage
       const head = Helmet.renderStatic();
-      // $FlowFixMe: isn't an issue
-      const loadableManifest = require('../public/loadable-assets.json');
-      const bundles = getBundles(loadableManifest, modules);
-      const mapFn = ({ publicPath }) =>
-        !publicPath.includes('main') ? publicPath : '';
-      let assets = bundles
-        .map(mapFn)
-        // In development, main.css and main.js are webpack default file bundling name
-        // we put these files into assets with publicPath
-        .concat(['/assets/main.css', '/assets/main.js']);
-
-      if (!__DEV__) {
-        // $FlowFixMe: isn't an issue
-        const webpackManifest = require('../public/webpack-assets.json');
-        assets = bundles.map(mapFn).concat(
-          Object.keys(webpackManifest)
-            .map(key => webpackManifest[key])
-            .reverse()
-        );
-      }
 
       // Check if the render result contains a redirect, if so we need to set
       // the specific status and redirect header and end the response
@@ -149,7 +134,7 @@ app.get('*', (req, res) => {
       // Pass the route and initial state into html template
       res
         .status(status)
-        .send(renderHtml(head, assets, htmlContent, initialState));
+        .send(renderHtml(head, extractor, htmlContent, initialState));
     } catch (err) {
       res.status(404).send('Not Found :(');
 
@@ -158,19 +143,17 @@ app.get('*', (req, res) => {
   })();
 });
 
-if (port) {
-  Loadable.preloadAll().then(() => {
-    app.listen(port, host, err => {
-      const url = `http://${host}:${port}`;
+if (config.port) {
+  app.listen(config.port, config.host, err => {
+    const url = `http://${config.host}:${config.port}`;
 
-      if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
+    if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
 
-      console.info(chalk.green(`==> 🌎  Listening at ${url}`));
+    console.info(chalk.green(`==> 🌎  Listening at ${url}`));
 
-      // Open browser
-      if (openBrowser(url))
-        console.info(chalk.green("==> 🖥️  Opened on your browser's tab!"));
-    });
+    // Open browser
+    if (openBrowser(url))
+      console.info(chalk.green("==> 🖥️  Opened on your browser's tab!"));
   });
 } else {
   console.error(

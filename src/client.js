@@ -6,7 +6,7 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { renderRoutes } from 'react-router-config';
-import Loadable from 'react-loadable';
+import { loadableReady } from '@loadable/component';
 
 import configureStore from './utils/configureStore';
 import routes from './routes';
@@ -31,8 +31,10 @@ const render = (Routes: Array<Object>) => {
   );
 };
 
-// react-loadable setup
-Loadable.preloadReady().then(() => render(routes));
+// loadable-component setup
+loadableReady(() => {
+  render(routes);
+});
 
 if (module.hot) {
   // Enable webpack hot module replacement for routes
