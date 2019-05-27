@@ -7,7 +7,7 @@ import CompressionPlugin from 'compression-webpack-plugin';
 import ImageminPlugin from 'imagemin-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { ReactLoadablePlugin } from 'react-loadable/webpack';
+import LoadablePlugin from '@loadable/webpack-plugin';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
@@ -23,8 +23,9 @@ const getPlugins = () => {
       fileName: path.resolve(process.cwd(), 'public/webpack-assets.json'),
       filter: file => file.isInitial
     }),
-    new ReactLoadablePlugin({
-      filename: 'public/loadable-assets.json'
+    new LoadablePlugin({
+      writeToDisk: true,
+      filename: '../loadable-stats.json'
     }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
@@ -88,7 +89,7 @@ const getEntry = () => {
 // Webpack configuration
 module.exports = {
   mode: isDev ? 'development' : 'production',
-  devtool: isDev ? 'eval' : 'hidden-source-map',
+  devtool: isDev ? 'eval-source-map' : 'hidden-source-map',
   context: path.resolve(process.cwd()),
   entry: getEntry(),
   optimization: {

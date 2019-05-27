@@ -1,10 +1,14 @@
 /* @flow */
+import React from 'react';
+import loadable from '@loadable/component';
+import { Loading, ErrorBoundary } from '../../components';
 
-import Loadable from 'react-loadable';
-
-import { Loading } from '../../components';
-
-export default Loadable({
-  loader: () => import('./Home'),
-  loading: Loading
+const Home = loadable(() => import('./Home'), {
+  fallback: <Loading />
 });
+
+export default () => (
+  <ErrorBoundary>
+    <Home />
+  </ErrorBoundary>
+);
