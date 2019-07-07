@@ -1,8 +1,9 @@
 import path from 'path';
 import webpack from 'webpack';
 import ManifestPlugin from 'webpack-manifest-plugin';
+import TerserJSPlugin from 'terser-webpack-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import ImageminPlugin from 'imagemin-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
@@ -30,7 +31,7 @@ const getPlugins = () => {
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
       filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
-      chunkFilename: isDev ? '[id].chunk.css' : '[id].[contenthash:8].chunk.css'
+      chunkFilename: isDev ? '[id].css' : '[id].[contenthash:8].css'
     }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
@@ -56,8 +57,6 @@ const getPlugins = () => {
         test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
         threshold: 10240
       }),
-      // Minimizing style for production
-      new OptimizeCssAssetsPlugin(),
       // Plugin to compress images with imagemin
       // Check "https://github.com/Klathmon/imagemin-webpack-plugin" for more configurations
       new ImageminPlugin({
@@ -93,6 +92,7 @@ module.exports = {
   context: path.resolve(process.cwd()),
   entry: getEntry(),
   optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     splitChunks: {
       // Auto split vendor modules in production only
       chunks: isDev ? 'async' : 'all'
@@ -103,7 +103,7 @@ module.exports = {
     publicPath: '/assets/',
     // Don't use chunkhash in development it will increase compilation time
     filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
-    chunkFilename: isDev ? '[id].chunk.js' : '[id].[chunkhash:8].chunk.js',
+    chunkFilename: isDev ? '[id].js' : '[id].[chunkhash:8].js',
     pathinfo: isDev
   },
   module: {
@@ -117,15 +117,22 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'css-hot',
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+              // If hmr does not work, this is a forceful method
+              reloadAll: true
+            }
+          },
           {
             loader: 'css',
             options: {
               importLoaders: 1,
-              modules: USE_CSS_MODULES,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
-              context: path.resolve(process.cwd(), 'src'),
+              modules: USE_CSS_MODULES && {
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                context: path.resolve(process.cwd(), 'src')
+              },
               sourceMap: true
             }
           },
@@ -135,15 +142,21 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         use: [
-          'css-hot',
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+              reloadAll: true
+            }
+          },
           {
             loader: 'css',
             options: {
               importLoaders: 2,
-              modules: USE_CSS_MODULES,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
-              context: path.resolve(process.cwd(), 'src'),
+              modules: USE_CSS_MODULES && {
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                context: path.resolve(process.cwd(), 'src')
+              },
               sourceMap: true
             }
           },

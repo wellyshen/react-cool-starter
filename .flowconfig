@@ -5,8 +5,6 @@
 ; Ignore config-chain
 .*/node_modules/config-chain/test/broken.json
 
-[include]
-
 [libs]
 ./node_modules/fbjs/flow/lib/dev.js
 ; The app's global variables are declared here
@@ -29,4 +27,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixMeProps
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMeState
 
 [version]
-^0.98.1
+^0.102.0

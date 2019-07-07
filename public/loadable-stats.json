@@ -2,39 +2,39 @@
   "errors": [],
   "warnings": [],
   "version": "4.32.2",
-  "hash": "626e395716a29a37cfd5",
+  "hash": "7bb6c9a6ff926de3b000",
   "publicPath": "/assets/",
   "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
   "assetsByChunkName": {
-    "Home": ["Home.chunk.css", "Home.chunk.js"],
-    "UserInfo": ["UserInfo.chunk.css", "UserInfo.chunk.js"],
+    "Home": ["Home.css", "Home.js"],
+    "UserInfo": ["UserInfo.css", "UserInfo.js"],
     "main": ["main.css", "main.js"]
   },
   "assets": [
     {
-      "name": "Home.chunk.css",
+      "name": "Home.css",
       "size": 45,
       "chunks": ["Home"],
       "chunkNames": ["Home"],
       "emitted": false
     },
     {
-      "name": "Home.chunk.js",
-      "size": 19348,
+      "name": "Home.js",
+      "size": 19523,
       "chunks": ["Home"],
       "chunkNames": ["Home"],
       "emitted": false
     },
     {
-      "name": "UserInfo.chunk.css",
+      "name": "UserInfo.css",
       "size": 49,
       "chunks": ["UserInfo"],
       "chunkNames": ["UserInfo"],
       "emitted": false
     },
     {
-      "name": "UserInfo.chunk.js",
-      "size": 49577,
+      "name": "UserInfo.js",
+      "size": 49756,
       "chunks": ["UserInfo"],
       "chunkNames": ["UserInfo"],
       "emitted": false
@@ -48,7 +48,7 @@
     },
     {
       "name": "main.js",
-      "size": 4811453,
+      "size": 4589556,
       "chunks": ["main"],
       "chunkNames": ["main"],
       "emitted": false
@@ -72,13 +72,13 @@
     },
     "Home": {
       "chunks": ["Home"],
-      "assets": ["Home.chunk.css", "Home.chunk.js"],
+      "assets": ["Home.css", "Home.js"],
       "children": {},
       "childAssets": {}
     },
     "UserInfo": {
       "chunks": ["UserInfo"],
-      "assets": ["UserInfo.chunk.css", "UserInfo.chunk.js"],
+      "assets": ["UserInfo.css", "UserInfo.js"],
       "children": {},
       "childAssets": {}
     }
@@ -109,7 +109,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--5-2!node_modules/postcss-loader/src/index.js??ref--5-3!node_modules/normalize.css/normalize.css"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--5-1!node_modules/postcss-loader/src/index.js??ref--5-2!node_modules/normalize.css/normalize.css"
     },
     {
       "errors": [],
@@ -136,7 +136,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/app/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/lib/loader.js??ref--6-3!src/app/styles.scss"
     },
     {
       "errors": [],
@@ -163,7 +163,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/components/Loading/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/lib/loader.js??ref--6-3!src/components/Loading/styles.scss"
     },
     {
       "errors": [],
@@ -190,7 +190,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/components/UserCard/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/lib/loader.js??ref--6-3!src/components/UserCard/styles.scss"
     },
     {
       "errors": [],
@@ -217,7 +217,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/components/UserList/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/lib/loader.js??ref--6-3!src/components/UserList/styles.scss"
     },
     {
       "errors": [],
@@ -244,7 +244,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/pages/Home/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/lib/loader.js??ref--6-3!src/pages/Home/styles.scss"
     },
     {
       "errors": [],
@@ -271,7 +271,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/pages/NotFound/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/lib/loader.js??ref--6-3!src/pages/NotFound/styles.scss"
     },
     {
       "errors": [],
@@ -298,7 +298,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-2!node_modules/postcss-loader/src/index.js??ref--6-3!node_modules/sass-loader/lib/loader.js??ref--6-4!src/pages/UserInfo/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/lib/loader.js??ref--6-3!src/pages/UserInfo/styles.scss"
     }
   ]
 }
