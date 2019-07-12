@@ -5,7 +5,7 @@ import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
-import ImageminPlugin from 'imagemin-webpack-plugin';
+import ImageMinPlugin from 'imagemin-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import LoadablePlugin from '@loadable/webpack-plugin';
@@ -16,7 +16,7 @@ const isDev = nodeEnv === 'development';
 // Enable/disable css modules here
 const USE_CSS_MODULES = true;
 
-// Setup the plugins for development/prodcution
+// Setup the plugins for development/production
 const getPlugins = () => {
   // Common
   const plugins = [
@@ -59,7 +59,7 @@ const getPlugins = () => {
       }),
       // Plugin to compress images with imagemin
       // Check "https://github.com/Klathmon/imagemin-webpack-plugin" for more configurations
-      new ImageminPlugin({
+      new ImageMinPlugin({
         pngquant: { quality: '95-100' }
       }),
       // Visualize all of the webpack bundles
@@ -74,12 +74,12 @@ const getPlugins = () => {
   return plugins;
 };
 
-// Setup the entry for development/prodcution
+// Setup the entry for development/production
 const getEntry = () => {
   // Development
   let entry = ['webpack-hot-middleware/client?reload=true', './src/client.js'];
 
-  // Prodcution
+  // production
   if (!isDev) entry = ['./src/client.js'];
 
   return entry;
