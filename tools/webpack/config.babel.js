@@ -16,7 +16,7 @@ const isDev = nodeEnv === 'development';
 // Enable/disable css modules here
 const USE_CSS_MODULES = true;
 
-// Setup the plugins for development/prodcution
+// Setup the plugins for development/production
 const getPlugins = () => {
   // Common
   const plugins = [
@@ -74,12 +74,12 @@ const getPlugins = () => {
   return plugins;
 };
 
-// Setup the entry for development/prodcution
+// Setup the entry for development/production
 const getEntry = () => {
   // Development
   let entry = ['webpack-hot-middleware/client?reload=true', './src/client.js'];
 
-  // Prodcution
+  // production
   if (!isDev) entry = ['./src/client.js'];
 
   return entry;
