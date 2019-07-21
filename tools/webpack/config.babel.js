@@ -5,7 +5,7 @@ import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
-import ImageMinPlugin from 'imagemin-webpack-plugin';
+import ImageminPlugin from 'imagemin-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import LoadablePlugin from '@loadable/webpack-plugin';
@@ -59,7 +59,7 @@ const getPlugins = () => {
       }),
       // Plugin to compress images with imagemin
       // Check "https://github.com/Klathmon/imagemin-webpack-plugin" for more configurations
-      new ImageMinPlugin({
+      new ImageminPlugin({
         pngquant: { quality: '95-100' }
       }),
       // Visualize all of the webpack bundles
