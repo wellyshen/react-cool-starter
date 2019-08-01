@@ -7,7 +7,7 @@ const Home = loadable(() => import('./Home'), {
   fallback: <Loading />
 });
 
-export default props => (
+export default (props: { props: Object }) => (
   <ErrorBoundary>
     <Home {...props} />
   </ErrorBoundary>
