@@ -7,8 +7,8 @@ const UserInfo = loadable(() => import('./UserInfo'), {
   fallback: <Loading />
 });
 
-export default () => (
+export default props => (
   <ErrorBoundary>
-    <UserInfo />
+    <UserInfo {...props} />
   </ErrorBoundary>
 );
