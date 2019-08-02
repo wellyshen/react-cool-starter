@@ -1,9 +1,7 @@
 /* @flow */
 
 import React, { PureComponent } from 'react';
-import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
 import { usersAction } from '../../actions';
@@ -53,10 +51,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded())
 });
 
-export default compose(
-  withRouter,
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
 )(Home);

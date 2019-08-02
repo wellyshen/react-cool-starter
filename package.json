@@ -377,7 +377,7 @@
     "stylelint-scss": "^3.9.2",
     "terser-webpack-plugin": "^1.4.1",
     "url-loader": "^2.1.0",
-    "webpack": "^4.38.0",
+    "webpack": "^4.39.0",
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-middleware": "^3.7.0",
