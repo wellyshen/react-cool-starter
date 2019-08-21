@@ -168,6 +168,7 @@
     ],
     "settings": {
       "import/resolver": {
+        "node": {},
         "webpack": {
           "config": "./tools/webpack/config.babel.js"
         }
@@ -184,6 +185,7 @@
       "no-console": "off",
       "no-underscore-dangle": "off",
       "function-paren-newline": "off",
+      "react/jsx-props-no-spreading": "off",
       "react/jsx-filename-extension": [
         "error",
         {
@@ -222,7 +224,8 @@
     }
   },
   "eslintIgnore": [
-    "tools/flow"
+    "tools/flow",
+    "public/assets"
   ],
   "stylelint": {
     "extends": [
@@ -244,7 +247,10 @@
           ]
         }
       ]
-    }
+    },
+    "ignoreFiles": [
+      "public/assets/**/*.scss"
+    ]
   },
   "jest": {
     "setupFiles": [
