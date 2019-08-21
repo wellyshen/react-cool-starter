@@ -9,11 +9,7 @@ type State = {
   errorInfo: { componentStack: string } | null
 };
 
-export default class ErrorBoundary extends React.Component<Props, State> {
-  static defaultProps = {
-    children: null
-  };
-
+class ErrorBoundary extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { error: null, errorInfo: null };
@@ -48,3 +44,9 @@ export default class ErrorBoundary extends React.Component<Props, State> {
     return children || null;
   }
 }
+
+ErrorBoundary.defaultProps = {
+  children: null
+};
+
+export default ErrorBoundary;

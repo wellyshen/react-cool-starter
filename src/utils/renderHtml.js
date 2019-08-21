@@ -1,5 +1,3 @@
-/* eslint-disable lodash/prefer-lodash-method */
-
 import serialize from 'serialize-javascript';
 import { minify } from 'html-minifier';
 
