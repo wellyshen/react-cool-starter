@@ -27,4 +27,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixMeProps
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMeState
 
 [version]
-^0.105.2
+^0.107.0

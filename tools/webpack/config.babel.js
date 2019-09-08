@@ -161,14 +161,7 @@ module.exports = {
             }
           },
           { loader: 'postcss', options: { sourceMap: true } },
-          {
-            loader: 'sass',
-            options: {
-              outputStyle: 'expanded',
-              sourceMap: true,
-              sourceMapContents: !isDev
-            }
-          }
+          { loader: 'sass', options: { sourceMap: true } }
         ]
       },
       {
