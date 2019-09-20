@@ -1,5 +1,3 @@
-/* @flow */
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
@@ -15,7 +13,7 @@ import routes from './routes';
 const initialState = window.__INITIAL_STATE__;
 const { store, history } = configureStore({ initialState });
 
-const render = (Routes: Array<Object>) => {
+const render = Routes => {
   const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 
   renderMethod(
@@ -26,7 +24,6 @@ const render = (Routes: Array<Object>) => {
         </ConnectedRouter>
       </Provider>
     </AppContainer>,
-    // $FlowFixMe: isn't an issue
     document.getElementById('react-view')
   );
 };

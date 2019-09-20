@@ -1,5 +1,3 @@
-/* @flow */
-
 import path from 'path';
 import logger from 'morgan';
 import express from 'express';
@@ -72,7 +70,7 @@ app.get('*', (req, res) => {
   const { store } = configureStore({ url: req.url });
 
   // The method for loading data from server-side
-  const loadBranchData = (): Promise<any> => {
+  const loadBranchData = () => {
     const branch = matchRoutes(routes, req.path);
 
     const promises = branch.map(({ route, match }) => {

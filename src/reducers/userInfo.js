@@ -1,10 +1,4 @@
-/* @flow */
-
-import type { UserInfo, Action } from '../types';
-
-type State = UserInfo;
-
-export default (state: State = {}, action: Action): State => {
+export default (state = {}, action) => {
   switch (action.type) {
     case 'USER_REQUESTING':
       return {

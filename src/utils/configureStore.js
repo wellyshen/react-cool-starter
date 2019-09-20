@@ -1,19 +1,11 @@
-/* @flow */
-
 import { createBrowserHistory, createMemoryHistory } from 'history';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
 
-import type { Store } from '../types';
 import createRootReducer from '../reducers';
 
-type argv = {
-  initialState?: Object,
-  url?: string
-};
-
-export default ({ initialState, url }: argv): Store => {
+export default ({ initialState, url }) => {
   const isServer = typeof window === 'undefined';
   // Create a history depending on the environment
   const history = isServer

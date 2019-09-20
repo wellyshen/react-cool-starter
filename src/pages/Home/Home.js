@@ -1,18 +1,14 @@
-/* @flow */
-
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import { usersAction } from '../../actions';
-import type { Home as HomeType, Dispatch, ReduxState } from '../../types';
 import { UserList } from '../../components';
 import styles from './styles.scss';
 
-type Props = { home: HomeType, fetchUsersIfNeeded: () => void };
-
 // Export this for unit testing more easily
-export class Home extends PureComponent<Props> {
+export class Home extends PureComponent {
   componentDidMount() {
     const { fetchUsersIfNeeded } = this.props;
 
@@ -20,19 +16,19 @@ export class Home extends PureComponent<Props> {
   }
 
   renderUserList = () => {
-    const { home } = this.props;
+    const { readyStatus, list } = this.props;
 
     if (
-      !home.readyStatus ||
-      home.readyStatus === 'USERS_INVALID' ||
-      home.readyStatus === 'USERS_REQUESTING'
+      !readyStatus ||
+      readyStatus === 'USERS_INVALID' ||
+      readyStatus === 'USERS_REQUESTING'
     )
       return <p>Loading...</p>;
 
-    if (home.readyStatus === 'USERS_FAILURE')
+    if (readyStatus === 'USERS_FAILURE')
       return <p>Oops, Failed to load list!</p>;
 
-    return <UserList list={home.list} />;
+    return <UserList list={list} />;
   };
 
   render() {
@@ -45,9 +41,18 @@ export class Home extends PureComponent<Props> {
   }
 }
 
-const mapStateToProps = ({ home }: ReduxState) => ({ home });
+Home.propTypes = {
+  readyStatus: PropTypes.string.isRequired,
+  list: PropTypes.array.isRequired,
+  fetchUsersIfNeeded: PropTypes.func.isRequired
+};
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
+const mapStateToProps = ({ home: { readyStatus, list } }) => ({
+  readyStatus,
+  list
+});
+
+const mapDispatchToProps = dispatch => ({
   fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded())
 });
 

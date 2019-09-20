@@ -1,13 +1,10 @@
-/* @flow */
-
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import styles from './styles.scss';
 
-type Props = { staticContext: Object };
-
-export default ({ staticContext }: Props) => {
+const NotFound = ({ staticContext }) => {
   // We have to check if staticContext exists
   // because it will be undefined if rendered through a BrowserRoute
   /* istanbul ignore next */
@@ -20,3 +17,13 @@ export default ({ staticContext }: Props) => {
     </div>
   );
 };
+
+NotFound.propTypes = {
+  staticContext: PropTypes.object
+};
+
+NotFound.defaultProps = {
+  staticContext: null
+};
+
+export default NotFound;

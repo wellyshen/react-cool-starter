@@ -1,12 +1,9 @@
-/* @flow */
-
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './styles.scss';
 
-type Props = { info: Object };
-
-export default ({ info }: Props) => (
+const UserCard = ({ info }) => (
   <div className={styles.UserCard}>
     <h4>User Card</h4>
     <ul>
@@ -17,3 +14,14 @@ export default ({ info }: Props) => (
     </ul>
   </div>
 );
+
+UserCard.propTypes = {
+  info: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    website: PropTypes.string.isRequired
+  }).isRequired
+};
+
+export default UserCard;

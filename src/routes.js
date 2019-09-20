@@ -1,5 +1,3 @@
-/* @flow */
-
 import { usersAction, userAction } from './actions';
 import App from './app';
 import { asyncHome, asyncUserInfo, NotFound } from './pages';
@@ -20,9 +18,7 @@ export default [
       {
         path: '/UserInfo/:id',
         component: asyncUserInfo,
-        loadData: ({ params }: Object) => [
-          userAction.fetchUserIfNeeded(params.id)
-        ]
+        loadData: ({ params }) => [userAction.fetchUserIfNeeded(params.id)]
       },
       {
         component: NotFound

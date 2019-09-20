@@ -2,33 +2,33 @@
   "errors": [],
   "warnings": [],
   "version": "4.39.3",
-  "hash": "a4de77b527a4ced09b60",
+  "hash": "5397f21d471a4d308226",
   "publicPath": "/assets/",
   "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
   "assetsByChunkName": {
-    "Home": ["0.9b697a86.css", "0.e0493504.js", "0.e0493504.js.map"],
-    "UserInfo": ["1.0316954e.css", "1.16d9f642.js", "1.16d9f642.js.map"],
-    "main": ["main.42f6f00b.css", "main.6d1398ab.js", "main.6d1398ab.js.map"],
+    "Home": ["0.9b697a86.css", "0.973ef812.js", "0.973ef812.js.map"],
+    "UserInfo": ["1.0316954e.css", "1.65de1204.js", "1.65de1204.js.map"],
+    "main": ["main.42f6f00b.css", "main.6cce45d3.js", "main.6cce45d3.js.map"],
     "vendors~main": ["3.293d4b84.css", "3.76736302.js", "3.76736302.js.map"]
   },
   "assets": [
     {
+      "name": "0.973ef812.js",
+      "size": 4381,
+      "chunks": [0],
+      "chunkNames": ["Home"],
+      "emitted": false
+    },
+    {
+      "name": "0.973ef812.js.map",
+      "size": 15625,
+      "chunks": [0],
+      "chunkNames": ["Home"],
+      "emitted": false
+    },
+    {
       "name": "0.9b697a86.css",
       "size": 206,
-      "chunks": [0],
-      "chunkNames": ["Home"],
-      "emitted": false
-    },
-    {
-      "name": "0.e0493504.js",
-      "size": 4375,
-      "chunks": [0],
-      "chunkNames": ["Home"],
-      "emitted": false
-    },
-    {
-      "name": "0.e0493504.js.map",
-      "size": 15482,
       "chunks": [0],
       "chunkNames": ["Home"],
       "emitted": false
@@ -41,15 +41,15 @@
       "emitted": false
     },
     {
-      "name": "1.16d9f642.js",
-      "size": 6127,
+      "name": "1.65de1204.js",
+      "size": 6139,
       "chunks": [1],
       "chunkNames": ["UserInfo"],
       "emitted": false
     },
     {
-      "name": "1.16d9f642.js.map",
-      "size": 17963,
+      "name": "1.65de1204.js.map",
+      "size": 18152,
       "chunks": [1],
       "chunkNames": ["UserInfo"],
       "emitted": false
@@ -90,15 +90,15 @@
       "emitted": false
     },
     {
-      "name": "main.6d1398ab.js",
-      "size": 17824,
+      "name": "main.6cce45d3.js",
+      "size": 17755,
       "chunks": [2],
       "chunkNames": ["main"],
       "emitted": false
     },
     {
-      "name": "main.6d1398ab.js.map",
-      "size": 37398,
+      "name": "main.6cce45d3.js.map",
+      "size": 36335,
       "chunks": [2],
       "chunkNames": ["main"],
       "emitted": false
@@ -113,8 +113,8 @@
         "3.76736302.js",
         "3.76736302.js.map",
         "main.42f6f00b.css",
-        "main.6d1398ab.js",
-        "main.6d1398ab.js.map"
+        "main.6cce45d3.js",
+        "main.6cce45d3.js.map"
       ],
       "children": {},
       "childAssets": {}
@@ -128,21 +128,21 @@
         "3.76736302.js",
         "3.76736302.js.map",
         "main.42f6f00b.css",
-        "main.6d1398ab.js",
-        "main.6d1398ab.js.map"
+        "main.6cce45d3.js",
+        "main.6cce45d3.js.map"
       ],
       "children": {},
       "childAssets": {}
     },
     "Home": {
       "chunks": [0],
-      "assets": ["0.9b697a86.css", "0.e0493504.js", "0.e0493504.js.map"],
+      "assets": ["0.9b697a86.css", "0.973ef812.js", "0.973ef812.js.map"],
       "children": {},
       "childAssets": {}
     },
     "UserInfo": {
       "chunks": [1],
-      "assets": ["1.0316954e.css", "1.16d9f642.js", "1.16d9f642.js.map"],
+      "assets": ["1.0316954e.css", "1.65de1204.js", "1.65de1204.js.map"],
       "children": {},
       "childAssets": {}
     }

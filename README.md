@@ -10,7 +10,7 @@
 
 > 🎉 My react-native app [LeadFit](https://itunes.apple.com/app/id1321807247) now available on App Store, which is a workout app. Welcome to try, it's free!
 
-A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 4](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/), [Flow](https://flowtype.org/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [Node.js](https://nodejs.org/en/), [Express](https://expressjs.com/), [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux) and [React Router v4](https://reacttraining.com/react-router/). Includes all the hot stuff and modern web development tools such as [Webpack 4](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader 4](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
@@ -48,7 +48,7 @@ Really cool starter boilerplate with the most popular technologies:
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
 - [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 - [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for next generation developer experience.
-- [Flow](https://flowtype.org/) as the static type checker for javascript.
+- Typescript (Coming soon...)
 - [ESLint](http://eslint.org/) to maintain a consistent javascript code style (With Airbnb configuration).
 - [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
 - [Prettier](https://prettier.io/) to format javascript and css/scss code.
@@ -113,8 +113,6 @@ I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the 
 | `lint`                 | Lint all `.js` and `.scss` files.                                                |
 | `lint:js`              | Lint all `.js` files (With `--fix` to auto fix eslint errors).                   |
 | `lint:style`           | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
-| `flow`                 | Run type checking for `.js` files.                                               |
-| `flow:stop`            | Stop type checking.                                                              |
 | `test`                 | Run testing once (with code coverage reports).                                   |
 | `test:watch`           | Run testing on every test file change.                                           |
 | `test:update-snapshot` | Update jest snapshot.                                                            |
@@ -142,12 +140,11 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── reducers                    # Redux reducers (including testing files)
 │   ├── utils                       # App-wide utils (e.g. configure Redux store, HTML template etc.)
 │   ├── theme                       # App-wide style and vendor CSS framework
-│   ├── types                       # Flow types for reducer, action, state, store
+│   ├── types                       # Coming soon...
 │   ├── client.js                   # App bootstrap and rendering (webpack entry)
 │   ├── routes.js                   # Routes configuration for both client and server side
 │   └── server.js                   # Express server (with webpack dev/hot middlewares)
 ├── tools                           # Project related configurations (testing/build etc.)
-│   ├── flow                        # Flow types, interface, module aliasing definitions
 │   ├── jest                        # Jest CSS modules and assets mocks settings
 │   ├── webpack                     # Webpack settings
 │   │   ├── config.babel.js         # Webpack configuration
@@ -462,23 +459,9 @@ class Home extends PureComponent {
 }
 ```
 
-### Type Checking by Flow
+### Typescript
 
-[Flow](https://flow.org), a static type checker for javascript. It adds static typing to javascript to improve developer productivity and code quality. In particular, static typing offers benefits like early error checking, which helps you avoid certain kinds of runtime failures, and code intelligence, which aids code maintenance, navigation, transformation, and optimization.
-
-Flow’s static analysis makes building web apps with React safe by tracking the types of props and state. Flow understands which props are required and also supports default props.
-
-I love to write React, Redux with Flow, I know it's not easy to learn at the beginning. But trust me, it's worth to learn. There're some useful instructions that I can give you as below:
-
-- If you are new to Flow, read the official [docs](https://flow.org/en/docs/) to understand it.
-
-- Learn how to use Flow with React from [here](https://flow.org/en/docs/react/).
-
-- Here's [an example](https://github.com/reactjs/redux/tree/master/examples/todos-flow), which shows you the overall concept of integrating Flow with Redux.
-
-Moreover, often you will want to use third-party libraries. For these circumstances, Flow supports the concept of a "libdef" ("Library Definition") which allows you to describe the interface and types of the library separate from the library and without needing to add types to or change the library itself. You can write a libdef file yourself if you need to or use [flow-typed](https://github.com/flowtype/flow-typed), which is a repository of third-party library interface definitions for use with Flow.
-
-> Note: If you don't want to use Flow, just remove the `/* @flow */` comment and related typing definitions from each javascript file.
+Coming soon...
 
 ### JavaScript and Style Lint
 

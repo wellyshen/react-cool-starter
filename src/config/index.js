@@ -1,5 +1,3 @@
-/* @flow */
-
 import defaultConfig from './default';
 import prodConfig from './prod';
 

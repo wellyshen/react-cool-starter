@@ -1,14 +1,10 @@
-/* @flow */
-
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 
-type Props = { list: Array<Object> };
-
-export default ({ list }: Props) => (
+const UserList = ({ list }) => (
   <div className={styles.UserList}>
     <h4>User List</h4>
     <ul>
@@ -20,3 +16,9 @@ export default ({ list }: Props) => (
     </ul>
   </div>
 );
+
+UserList.propTypes = {
+  list: PropTypes.array.isRequired
+};
+
+export default UserList;

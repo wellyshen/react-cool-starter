@@ -11,7 +11,6 @@ services:
   - xvfb
 
 script:
-  - yarn flow
   - yarn lint
   - yarn test
   - yarn build

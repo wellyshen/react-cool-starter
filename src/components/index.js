@@ -1,5 +1,3 @@
-/* @flow */
-
 import UserList from './UserList';
 import UserCard from './UserCard';
 import ErrorBoundary from './ErrorBoundary';

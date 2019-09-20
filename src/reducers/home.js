@@ -1,16 +1,10 @@
-/* @flow */
-
-import type { Home, Action } from '../types';
-
-type State = Home;
-
 const initialState = {
   readyStatus: 'USERS_INVALID',
   err: null,
   list: []
 };
 
-export default (state: State = initialState, action: Action): State => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'USERS_REQUESTING':
       return {

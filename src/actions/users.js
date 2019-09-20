@@ -1,16 +1,10 @@
-/* @flow */
-
 import axios from 'axios';
-
-import type { Dispatch, GetState, ThunkAction, ReduxState } from '../types';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
 /* istanbul ignore next */
-export const fetchUsers = (URL: string = API_URL): ThunkAction => async (
-  dispatch: Dispatch
-) => {
+export const fetchUsers = (URL = API_URL) => async dispatch => {
   dispatch({ type: 'USERS_REQUESTING' });
 
   try {
@@ -25,17 +19,14 @@ export const fetchUsers = (URL: string = API_URL): ThunkAction => async (
 };
 
 /* istanbul ignore next */
-const shouldFetchUsers = (state: ReduxState): boolean => {
+const shouldFetchUsers = state => {
   if (state.home.readyStatus === 'USERS_SUCCESS') return false;
 
   return true;
 };
 
 /* istanbul ignore next */
-export const fetchUsersIfNeeded = (): ThunkAction => (
-  dispatch: Dispatch,
-  getState: GetState
-) => {
+export const fetchUsersIfNeeded = () => (dispatch, getState) => {
   /* istanbul ignore next */
   if (shouldFetchUsers(getState())) return dispatch(fetchUsers());
 

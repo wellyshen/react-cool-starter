@@ -1,5 +1,3 @@
-/* @flow */
-
 /* Require hooks for server-side */
 
 const sass = require('node-sass');

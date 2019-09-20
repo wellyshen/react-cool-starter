@@ -1,33 +1,21 @@
-/* @flow */
-
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import { userAction } from '../../actions';
-import type {
-  UserInfo as UserInfoType,
-  Dispatch,
-  ReduxState
-} from '../../types';
 import { UserCard } from '../../components';
 import styles from './styles.scss';
 
-type Props = {
-  userInfo: UserInfoType,
-  match: Object,
-  fetchUserIfNeeded: (id: string) => void
-};
-
 // Export this for unit testing more easily
-export class UserInfo extends PureComponent<Props> {
+export class UserInfo extends PureComponent {
   componentDidMount() {
     const { fetchUserIfNeeded, match } = this.props;
 
     fetchUserIfNeeded(match.params.id);
   }
 
-  componentDidUpdate(prevProps: Object) {
+  componentDidUpdate(prevProps) {
     const { fetchUserIfNeeded, match } = this.props;
 
     if (prevProps.match.params.id !== match.params.id) {
@@ -61,10 +49,16 @@ export class UserInfo extends PureComponent<Props> {
   }
 }
 
-const mapStateToProps = ({ userInfo }: ReduxState) => ({ userInfo });
+UserInfo.propTypes = {
+  match: PropTypes.object.isRequired,
+  userInfo: PropTypes.object.isRequired,
+  fetchUserIfNeeded: PropTypes.func.isRequired
+};
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  fetchUserIfNeeded: (id: string) => dispatch(userAction.fetchUserIfNeeded(id))
+const mapStateToProps = ({ userInfo }) => ({ userInfo });
+
+const mapDispatchToProps = dispatch => ({
+  fetchUserIfNeeded: id => dispatch(userAction.fetchUserIfNeeded(id))
 });
 
 export default connect(

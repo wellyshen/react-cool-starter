@@ -1,5 +1,3 @@
-/* @flow */
-
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
@@ -11,6 +9,5 @@ const reducers = {
   userInfo
 };
 
-export type Reducers = typeof reducers;
-export default (history: Object) =>
+export default history =>
   combineReducers({ router: connectRouter(history), ...reducers });
