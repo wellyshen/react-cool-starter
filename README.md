@@ -193,7 +193,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 
 ### Functional Components and Hooks
 
-React v16.8 introduced a series of [Hooks](https://reactjs.org/docs/hooks-intro.html), which let you use state and other React features without writing a class. In the starter boilerplate, you can see how I leverage the benefit of functional components + hook APIs to write a demo with clean code.
+React v16.8 introduced a series of [Hooks](https://reactjs.org/docs/hooks-intro.html), which let you use state and other React features without writing a class. In the starter boilerplate, you can see how I leverage the benefit of [functional components](https://reactjs.org/docs/components-and-props.html#function-and-class-components) + hook APIs to write a demo with clean code.
 
 ### Adding Routes
 
@@ -445,9 +445,9 @@ $fa-font-path:"../node_modules/font-awesome/fonts";
 
 ### Boost App Performance
 
-- For React class components. You can use [React.PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) to do shallow prop and state comparison for a performance boost.
+In this starter, you can see I use [React.PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) and [React.memo](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactmemo) to demostrate the basic performance optimizing for React app. The two APIs are used in different ways.
 
-How we implement it:
+- `React.PureComponent` is used for React class components. It can be a performance boost by doing shallow prop and state comparison:
 
 ```js
 import React, { PureComponent } from "react";
@@ -460,9 +460,7 @@ class MyComponent extends PureComponent {
 }
 ```
 
-- For functional components. You can use [React.memo](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactmemo) or [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) to avoid expensive calculations on every render.
-
-How to use `React.memo`:
+- `React.memo` is used for functional components. It plays the same role as `React.PureComponent`:
 
 ```js
 import React, { memo } from "react";
@@ -475,7 +473,7 @@ const MyComponent = memo(props => {
 });
 ```
 
-How to use `useMemo`:
+- In addition, you can also use [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) to avoid expensive calculations on every render:
 
 ```js
 import React, { useMemo } from "react";
@@ -526,8 +524,8 @@ By the way, Jest built-in code coverage reports, the report files are generated 
   // ...
   "jest": {
     "collectCoverageFrom": [
-      "src/pages/**/*.tsx",        // Define the files, which want to be covered
-      "!src/pages/index.ts"        // The files will be ignored by code coverage
+      "src/pages/**/*.tsx",     // Define the files, which want to be covered
+      "!src/pages/index.ts"     // The files will be ignored by code coverage
     ],
     // Other configurations
   },
@@ -538,6 +536,8 @@ By the way, Jest built-in code coverage reports, the report files are generated 
 You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code in a javascript file to skip code coverage.
 
 ## Troubleshooting
+
+- If your app crash due to the error: `Invariant Violation: loadable: SSR requires "@loadable/babel-plugin", please install it` (refer to this [issue](https://github.com/smooth-code/loadable-components/issues/173)). You must use `.js` extension for code-splitting files (e.g. `src/Home/index.js`).
 
 - If you encounter the markup mismatches error (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
 
@@ -556,7 +556,7 @@ In the `./package.json` script:
     "NODE_PATH": "./src",
     "NODE_ENV": "production",
     "PORT": 8080,
-    "BROWSER": "none"    // Add this node variable to turn off the function of open browser automatically
+    "BROWSER": "none"   // Add this node variable to turn off the function of open browser automatically
   }
 },
 // ...
