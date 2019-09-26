@@ -1,7 +1,12 @@
 import serialize from 'serialize-javascript';
 import { minify } from 'html-minifier';
 
-export default (head, extractor, htmlContent, initialState) => {
+export default (
+  head: any,
+  extractor: any,
+  htmlContent: string,
+  initialState: object
+) => {
   const html = `
     <!doctype html>
     <html ${head.htmlAttributes.toString()}>
@@ -19,7 +24,6 @@ export default (head, extractor, htmlContent, initialState) => {
         ${head.base.toString()}
         ${head.meta.toString()}
         ${head.link.toString()}
-
         <!-- Insert bundled styles into <link> tag -->
         ${extractor.getLinkTags()}
         ${extractor.getStyleTags()}
@@ -37,7 +41,6 @@ export default (head, extractor, htmlContent, initialState) => {
 
         <!-- Insert bundled scripts into <script> tag -->
         ${extractor.getScriptTags()}
-
         ${head.script.toString()}
       </body>
     </html>

@@ -3,6 +3,14 @@ require('@babel/register')({
   plugins: ['dynamic-import-node']
 });
 
+declare namespace NodeJS {
+  interface Global {
+    __CLIENT__: boolean;
+    __SERVER__: boolean;
+    __DEV__: boolean;
+  }
+}
+
 // Setup global variables for server-side
 global.__CLIENT__ = false;
 global.__SERVER__ = true;

@@ -3,7 +3,7 @@ import home from '../home';
 describe('users data home', () => {
   it('should return the initial state', () => {
     expect(home(undefined, {})).toEqual({
-      readyStatus: 'USERS_INVALID',
+      readyStatus: 'invalid',
       err: null,
       list: []
     });
@@ -17,7 +17,7 @@ describe('users data home', () => {
         data: []
       })
     ).toEqual({
-      readyStatus: 'USERS_REQUESTING',
+      readyStatus: 'request',
       err: null,
       list: []
     });
@@ -31,7 +31,7 @@ describe('users data home', () => {
         data: []
       })
     ).toEqual({
-      readyStatus: 'USERS_FAILURE',
+      readyStatus: 'failure',
       err: 'Oops! Something went wrong.',
       list: []
     });
@@ -45,7 +45,7 @@ describe('users data home', () => {
         data: [{ id: '1', name: 'Welly' }]
       })
     ).toEqual({
-      readyStatus: 'USERS_SUCCESS',
+      readyStatus: 'success',
       err: null,
       list: [{ id: '1', name: 'Welly' }]
     });

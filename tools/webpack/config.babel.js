@@ -54,7 +54,7 @@ const getPlugins = () => {
       // Production
       new webpack.HashedModuleIdsPlugin(),
       new CompressionPlugin({
-        test: /\.jsx?$|\.css$|\.(scss|sass)$|\.html$/,
+        test: /\.(js|css|html)$/,
         threshold: 10240
       }),
       // Plugin to compress images with imagemin
@@ -77,10 +77,10 @@ const getPlugins = () => {
 // Setup the entry for development/production
 const getEntry = () => {
   // Development
-  let entry = ['webpack-hot-middleware/client?reload=true', './src/client.js'];
+  let entry = ['webpack-hot-middleware/client?reload=true', './src/client.tsx'];
 
   // production
-  if (!isDev) entry = ['./src/client.js'];
+  if (!isDev) entry = ['./src/client.tsx'];
 
   return entry;
 };
@@ -109,10 +109,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
         loader: 'babel',
         options: { cacheDirectory: isDev }
+      },
+      // All output '.js' files will have any sourcemaps re-processed by source-map-loader.
+      // So you can debug your output code as if it was Typescript.
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map'
       },
       {
         test: /\.css$/,
@@ -186,7 +193,7 @@ module.exports = {
   resolve: {
     modules: ['src', 'node_modules'],
     descriptionFiles: ['package.json'],
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
   },
   cache: isDev,
   // Some libraries import Node modules but don't use them in the browser.

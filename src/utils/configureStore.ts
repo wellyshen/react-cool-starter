@@ -5,7 +5,12 @@ import thunk from 'redux-thunk';
 
 import createRootReducer from '../reducers';
 
-export default ({ initialState, url }) => {
+interface Argv {
+  initialState?: object;
+  url?: string;
+}
+
+export default ({ initialState, url }: Argv) => {
   const isServer = typeof window === 'undefined';
   // Create a history depending on the environment
   const history = isServer
@@ -20,6 +25,7 @@ export default ({ initialState, url }) => {
   ];
   // Use Redux DevTools Extension in development
   const composeEnhancers =
+    // @ts-ignore
     (__DEV__ && !isServer && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
     compose;
   const enhancers = composeEnhancers(

@@ -11,7 +11,6 @@ import { StaticRouter } from 'react-router-dom';
 import { renderRoutes, matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
-
 import Helmet from 'react-helmet';
 import chalk from 'chalk';
 import openBrowser from 'react-dev-utils/openBrowser';
@@ -20,6 +19,7 @@ import configureStore from './utils/configureStore';
 import renderHtml from './utils/renderHtml';
 import routes from './routes';
 import config from './config';
+import { MyAction } from './types';
 
 const app = express();
 
@@ -70,15 +70,15 @@ app.get('*', (req, res) => {
   const { store } = configureStore({ url: req.url });
 
   // The method for loading data from server-side
-  const loadBranchData = () => {
+  const loadBranchData = (): Promise<any> => {
+    // @ts-ignore
     const branch = matchRoutes(routes, req.path);
-
-    const promises = branch.map(({ route, match }) => {
+    const promises = branch.map(({ route, match }: any) => {
       if (route.loadData) {
         return Promise.all(
           route
             .loadData({ params: match.params, getState: store.getState })
-            .map(item => store.dispatch(item))
+            .map((item: MyAction) => store.dispatch(item))
         );
       }
 
@@ -99,12 +99,14 @@ app.get('*', (req, res) => {
       );
       const extractor = new ChunkExtractor({ statsFile });
 
-      const staticContext = {};
-      const AppComponent = (
+      const staticContext: any = {};
+      const App = (
         <ChunkExtractorManager extractor={extractor}>
           <Provider store={store}>
             {/* Setup React-Router server-side rendering */}
             <StaticRouter location={req.path} context={staticContext}>
+              {/*
+                // @ts-ignore */}
               {renderRoutes(routes)}
             </StaticRouter>
           </Provider>
@@ -112,7 +114,7 @@ app.get('*', (req, res) => {
       );
 
       const initialState = store.getState();
-      const htmlContent = renderToString(AppComponent);
+      const htmlContent = renderToString(App);
       // head must be placed after "renderToString"
       // see: https://github.com/nfl/react-helmet#server-usage
       const head = Helmet.renderStatic();
@@ -141,20 +143,15 @@ app.get('*', (req, res) => {
   })();
 });
 
-if (config.port) {
-  app.listen(config.port, config.host, err => {
-    const url = `http://${config.host}:${config.port}`;
+// @ts-ignore
+app.listen(config.port, config.host, err => {
+  const url = `http://${config.host}:${config.port}`;
 
-    if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
+  if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
 
-    console.info(chalk.green(`==> 🌎  Listening at ${url}`));
+  console.info(chalk.green(`==> 🌎  Listening at ${url}`));
 
-    // Open browser
-    if (openBrowser(url))
-      console.info(chalk.green("==> 🖥️  Opened on your browser's tab!"));
-  });
-} else {
-  console.error(
-    chalk.red('==> 😭  OMG!!! No PORT environment variable has been specified')
-  );
-}
+  // Open browser
+  if (openBrowser(url))
+    console.info(chalk.green("==> 🖥️  Opened on your browser's tab!"));
+});

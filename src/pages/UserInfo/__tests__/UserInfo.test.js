@@ -44,7 +44,7 @@ describe('<UserInfo />', () => {
 
   it('renders the loading status if requesting data', () => {
     const props = {
-      userInfo: { 1: { readyStatus: 'USER_REQUESTING' } },
+      userInfo: { 1: { readyStatus: 'request' } },
       match: { params: { id: 1 } }
     };
     const actions = { fetchUserIfNeeded: () => {} };
@@ -54,7 +54,7 @@ describe('<UserInfo />', () => {
 
   it('renders an error if loading failed', () => {
     const props = {
-      userInfo: { 1: { readyStatus: 'USER_FAILURE' } },
+      userInfo: { 1: { readyStatus: 'failure' } },
       match: { params: { id: 1 } }
     };
     const actions = { fetchUserIfNeeded: () => {} };
@@ -66,7 +66,7 @@ describe('<UserInfo />', () => {
     const props = {
       userInfo: {
         1: {
-          readyStatus: 'USER_SUCCESS',
+          readyStatus: 'success',
           info: {
             name: 'Welly',
             phone: '007',

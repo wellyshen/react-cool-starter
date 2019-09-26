@@ -2,7 +2,7 @@
   "name": "react-cool-starter",
   "version": "3.0.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
-  "main": "index.js",
+  "main": "index.ts",
   "engines": {
     "node": ">=10",
     "npm": ">=6"
@@ -17,9 +17,9 @@
     "universal",
     "react",
     "redux",
-    "react router v4",
+    "react router",
     "express",
-    "webpack v4",
+    "webpack",
     "es6",
     "typescript",
     "code splitting",
@@ -46,12 +46,14 @@
     "start": "better-npm-run start",
     "build": "yarn clean:build && better-npm-run build",
     "analyze": "yarn clean:build && better-npm-run analyze",
+    "type-check": "better-npm-run type-check",
+    "type-check:watch": "yarn type-check --watch",
     "lint": "npm-run-all --parallel lint:*",
-    "lint:js": "better-npm-run lint:js",
+    "lint:code": "better-npm-run lint:code",
     "lint:style": "better-npm-run lint:style",
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
-    "test:update-snapshot": "yarn test -u",
+    "test:update-snapshot": "yarn test --update-snapshot",
     "clean": "npm-run-all --parallel clean:*",
     "clean:build": "better-npm-run clean:build",
     "clean:test": "better-npm-run clean:test",
@@ -59,7 +61,7 @@
   },
   "betterScripts": {
     "dev": {
-      "command": "nodemon .",
+      "command": "nodemon --exec ts-node --files .",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
@@ -86,7 +88,10 @@
         "NODE_ENV": "analyze"
       }
     },
-    "lint:js": {
+    "type-check": {
+      "command": "tsc --noEmit"
+    },
+    "lint:code": {
       "command": "eslint --fix ."
     },
     "lint:style": {
@@ -114,21 +119,22 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --fix",
-    "*.css": "stylelint",
-    "*.{scss,sass}": "stylelint --syntax=scss",
+    "*.{ts,tsx,js,jsx}": "eslint --fix",
+    "*.css": "stylelint --fix",
+    "*.{scss,sass}": "stylelint --fix --syntax=scss",
     "*.{json,md}": "prettier --write"
   },
   "babel": {
     "presets": [
       [
-        "@babel/preset-env",
+        "@babel/env",
         {
           "useBuiltIns": "usage",
           "corejs": "3.0.0"
         }
       ],
-      "@babel/preset-react"
+      "@babel/typescript",
+      "@babel/react"
     ],
     "plugins": [
       "react-hot-loader/babel",
@@ -139,21 +145,22 @@
     "env": {
       "production": {
         "plugins": [
-          "transform-remove-console",
-          "transform-react-remove-prop-types"
+          "transform-remove-console"
         ]
       }
     }
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "extends": [
       "airbnb",
       "airbnb/hooks",
+      "plugin:@typescript-eslint/recommended",
       "plugin:prettier/recommended",
       "prettier/react"
     ],
     "plugins": [
+      "@typescript-eslint",
       "react",
       "prettier"
     ],
@@ -168,15 +175,11 @@
     "env": {
       "browser": true,
       "node": true,
-      "jest": true,
-      "es6": true
+      "es6": true,
+      "jest": true
     },
     "rules": {
       "global-require": "off",
-      "no-console": "off",
-      "no-underscore-dangle": "off",
-      "function-paren-newline": "off",
-      "react/forbid-prop-types": "off",
       "react/jsx-props-no-spreading": "off",
       "react/jsx-filename-extension": [
         "error",
@@ -187,19 +190,10 @@
           ]
         }
       ],
-      "import/no-cycle": "off",
       "import/no-extraneous-dependencies": [
         "error",
         {
           "devDependencies": true
-        }
-      ],
-      "jsx-a11y/anchor-is-valid": [
-        "error",
-        {
-          "specialLink": [
-            "to"
-          ]
         }
       ],
       "prettier/prettier": [
@@ -207,8 +201,20 @@
         {
           "singleQuote": true
         }
-      ]
+      ],
+      "@typescript-eslint/no-var-requires": "off"
     },
+    "overrides": [
+      {
+        "files": [
+          "*.js",
+          "*.jsx"
+        ],
+        "rules": {
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      }
+    ],
     "globals": {
       "__CLIENT__": true,
       "__SERVER__": true,
@@ -254,17 +260,17 @@
       "__DEV__": true
     },
     "collectCoverageFrom": [
-      "src/app/**/*.js",
-      "src/pages/**/*.js",
-      "src/components/**/*.js",
-      "src/actions/**/*.js",
-      "src/reducers/**/*.js",
-      "!src/actions/index.js",
-      "!src/components/index.js",
-      "!src/pages/index.js",
-      "!src/pages/Home/index.js",
-      "!src/pages/UserInfo/index.js",
-      "!src/reducers/index.js"
+      "src/app/**/*.tsx",
+      "src/pages/**/*.tsx",
+      "src/components/**/*.tsx",
+      "src/actions/**/*.ts",
+      "src/reducers/**/*.ts",
+      "!src/actions/index.ts",
+      "!src/reducers/index.ts",
+      "!src/components/index.ts",
+      "!src/pages/index.ts",
+      "!src/pages/Home/index.tsx",
+      "!src/pages/UserInfo/index.tsx"
     ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
@@ -273,8 +279,8 @@
   },
   "nodemonConfig": {
     "watch": [
-      "src/server.js",
-      "src/utils/renderHtml.js"
+      "src/server.tsx",
+      "src/utils/renderHtml.ts"
     ]
   },
   "browserslist": [
@@ -284,11 +290,11 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.6.0",
-    "@loadable/component": "^5.10.2",
-    "@loadable/server": "^5.10.2",
+    "@babel/register": "^7.6.2",
+    "@loadable/component": "^5.10.3",
+    "@loadable/server": "^5.10.3",
     "asset-require-hook": "^1.2.0",
     "autoprefixer": "^9.6.1",
     "axios": "^0.19.0",
@@ -301,37 +307,55 @@
     "css-modules-require-hook": "^4.2.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "express": "^4.17.1",
-    "helmet": "^3.21.0",
+    "helmet": "^3.21.1",
     "history": "^4.10.1",
     "hpp": "^0.2.2",
     "html-minifier": "^4.0.0",
     "morgan": "^1.9.1",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
-    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dev-utils": "^9.0.4",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-helmet": "^5.2.1",
-    "react-hot-loader": "^4.12.13",
+    "react-hot-loader": "^4.12.14",
     "react-redux": "^7.1.1",
-    "react-router": "^5.0.1",
-    "react-router-config": "^5.0.1",
-    "react-router-dom": "^5.0.1",
+    "react-router": "^5.1.0",
+    "react-router-config": "^5.1.0",
+    "react-router-dom": "^5.1.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "serialize-javascript": "^2.1.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@loadable/babel-plugin": "^5.10.0",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-typescript": "^7.6.0",
+    "@loadable/babel-plugin": "^5.10.3",
     "@loadable/webpack-plugin": "^5.7.1",
-    "babel-eslint": "^10.0.3",
+    "@types/compression": "^1.0.1",
+    "@types/express": "^4.17.1",
+    "@types/helmet": "^0.0.44",
+    "@types/hpp": "^0.2.1",
+    "@types/loadable__component": "^5.10.0",
+    "@types/loadable__server": "^5.9.1",
+    "@types/morgan": "^1.7.37",
+    "@types/react": "^16.9.3",
+    "@types/react-dev-utils": "^9.0.1",
+    "@types/react-dom": "^16.9.1",
+    "@types/react-helmet": "^5.0.10",
+    "@types/react-redux": "^7.1.3",
+    "@types/react-router": "^5.1.0",
+    "@types/react-router-config": "^5.0.1",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/serialize-javascript": "^1.5.0",
+    "@types/serve-favicon": "^2.2.31",
+    "@types/webpack-env": "^1.14.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-istanbul": "^5.2.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "compression-webpack-plugin": "^3.0.0",
     "core-js": "3",
     "coveralls": "^3.0.6",
@@ -352,9 +376,9 @@
     "identity-obj-proxy": "^3.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "jest": "^24.9.0",
-    "lint-staged": "^9.2.5",
+    "lint-staged": "^9.3.0",
     "mini-css-extract-plugin": "^0.8.0",
-    "nock": "^11.3.4",
+    "nock": "^11.3.5",
     "nodemon": "^1.19.2",
     "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -366,18 +390,21 @@
     "redux-mock-store": "^1.5.3",
     "rimraf": "^3.0.0",
     "sass-loader": "^8.0.0",
+    "source-map-loader": "^0.2.4",
     "stylelint": "^11.0.0",
-    "stylelint-config-prettier": "^5.2.0",
-    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-recommended-scss": "^4.0.0",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-scss": "^3.11.0",
+    "stylelint-scss": "^3.11.1",
     "terser-webpack-plugin": "^2.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3",
     "url-loader": "^2.1.0",
-    "webpack": "^4.40.2",
-    "webpack-bundle-analyzer": "^3.5.0",
+    "webpack": "^4.41.0",
+    "webpack-bundle-analyzer": "^3.5.1",
     "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.7.1",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-manifest-plugin": "^2.0.4"
+    "webpack-manifest-plugin": "^2.1.2"
   }
 }

@@ -1,19 +1,23 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
-class ErrorBoundary extends React.Component {
-  constructor(props) {
+type Props = {
+  children?: React.ReactNode;
+};
+type State = {
+  error: Error | null;
+  errorInfo: { componentStack: string } | null;
+};
+
+export default class ErrorBoundary extends PureComponent<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     this.state = { error: null, errorInfo: null };
   }
 
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(error: Error, errorInfo: { componentStack: string }) {
     // Catch errors in any components below and re-render with error message
-    this.setState({
-      error,
-      errorInfo
-    });
+    this.setState({ error, errorInfo });
 
     // You can also log error messages to an error reporting service here
   }
@@ -33,17 +37,7 @@ class ErrorBoundary extends React.Component {
         </details>
       </div>
     ) : (
-      children
+      children || null
     );
   }
 }
-
-ErrorBoundary.propTypes = {
-  children: PropTypes.node
-};
-
-ErrorBoundary.defaultProps = {
-  children: null
-};
-
-export default ErrorBoundary;

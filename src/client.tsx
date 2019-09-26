@@ -13,7 +13,7 @@ import routes from './routes';
 const initialState = window.__INITIAL_STATE__;
 const { store, history } = configureStore({ initialState });
 
-const render = Routes => {
+const render = (Routes: Array<object>) => {
   const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 
   renderMethod(

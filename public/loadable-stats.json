@@ -1,94 +1,61 @@
 {
   "errors": [],
   "warnings": [],
-  "version": "4.40.2",
-  "hash": "1a7dee7b8ebbc44d4b01",
+  "version": "4.41.0",
+  "hash": "67d9c1badf801ec872f7",
   "publicPath": "/assets/",
   "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
   "assetsByChunkName": {
-    "Home": [
-      "Home.css",
-      "Home.js"
-    ],
-    "UserInfo": [
-      "UserInfo.css",
-      "UserInfo.js"
-    ],
-    "main": [
-      "main.css",
-      "main.js"
-    ]
+    "Home": ["Home.css", "Home.js"],
+    "UserInfo": ["UserInfo.css", "UserInfo.js"],
+    "main": ["main.css", "main.js"]
   },
   "assets": [
     {
       "name": "Home.css",
       "size": 45,
-      "chunks": [
-        "Home"
-      ],
-      "chunkNames": [
-        "Home"
-      ],
+      "chunks": ["Home"],
+      "chunkNames": ["Home"],
       "info": {},
       "emitted": false
     },
     {
       "name": "Home.js",
-      "size": 19779,
-      "chunks": [
-        "Home"
-      ],
-      "chunkNames": [
-        "Home"
-      ],
+      "size": 10893,
+      "chunks": ["Home"],
+      "chunkNames": ["Home"],
       "info": {},
       "emitted": false
     },
     {
       "name": "UserInfo.css",
       "size": 49,
-      "chunks": [
-        "UserInfo"
-      ],
-      "chunkNames": [
-        "UserInfo"
-      ],
+      "chunks": ["UserInfo"],
+      "chunkNames": ["UserInfo"],
       "info": {},
       "emitted": false
     },
     {
       "name": "UserInfo.js",
-      "size": 49625,
-      "chunks": [
-        "UserInfo"
-      ],
-      "chunkNames": [
-        "UserInfo"
-      ],
+      "size": 39757,
+      "chunks": ["UserInfo"],
+      "chunkNames": ["UserInfo"],
       "info": {},
       "emitted": false
     },
     {
       "name": "main.css",
       "size": 7190,
-      "chunks": [
-        "main"
-      ],
-      "chunkNames": [
-        "main"
-      ],
+      "chunks": ["main"],
+      "chunkNames": ["main"],
       "info": {},
       "emitted": false
     },
     {
       "name": "main.js",
-      "size": 4833879,
-      "chunks": [
-        "main"
-      ],
-      "chunkNames": [
-        "main"
-      ],
+      "size": 5041463,
+      "chunks": ["main"],
+      "chunkNames": ["main"],
       "info": {},
       "emitted": false
     }
@@ -96,48 +63,28 @@
   "filteredAssets": 0,
   "entrypoints": {
     "main": {
-      "chunks": [
-        "main"
-      ],
-      "assets": [
-        "main.css",
-        "main.js"
-      ],
+      "chunks": ["main"],
+      "assets": ["main.css", "main.js"],
       "children": {},
       "childAssets": {}
     }
   },
   "namedChunkGroups": {
     "main": {
-      "chunks": [
-        "main"
-      ],
-      "assets": [
-        "main.css",
-        "main.js"
-      ],
+      "chunks": ["main"],
+      "assets": ["main.css", "main.js"],
       "children": {},
       "childAssets": {}
     },
     "Home": {
-      "chunks": [
-        "Home"
-      ],
-      "assets": [
-        "Home.css",
-        "Home.js"
-      ],
+      "chunks": ["Home"],
+      "assets": ["Home.css", "Home.js"],
       "children": {},
       "childAssets": {}
     },
     "UserInfo": {
-      "chunks": [
-        "UserInfo"
-      ],
-      "assets": [
-        "UserInfo.css",
-        "UserInfo.js"
-      ],
+      "chunks": ["UserInfo"],
+      "assets": ["UserInfo.css", "UserInfo.js"],
       "children": {},
       "childAssets": {}
     }
@@ -160,24 +107,16 @@
       "filteredAssets": 0,
       "entrypoints": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
       },
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
@@ -190,7 +129,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--5-1!node_modules/postcss-loader/src/index.js??ref--5-2!node_modules/normalize.css/normalize.css"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/normalize.css/normalize.css"
     },
     {
       "errors": [],
@@ -202,24 +141,16 @@
       "filteredAssets": 0,
       "entrypoints": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
       },
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
@@ -232,7 +163,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!src/app/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/app/styles.scss"
     },
     {
       "errors": [],
@@ -244,24 +175,16 @@
       "filteredAssets": 0,
       "entrypoints": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
       },
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
@@ -274,7 +197,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!src/components/Loading/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/components/Loading/styles.scss"
     },
     {
       "errors": [],
@@ -286,24 +209,16 @@
       "filteredAssets": 0,
       "entrypoints": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
       },
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
@@ -316,7 +231,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!src/components/UserCard/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/components/UserCard/styles.scss"
     },
     {
       "errors": [],
@@ -328,24 +243,16 @@
       "filteredAssets": 0,
       "entrypoints": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
       },
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
@@ -358,7 +265,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!src/components/UserList/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/components/UserList/styles.scss"
     },
     {
       "errors": [],
@@ -370,24 +277,16 @@
       "filteredAssets": 0,
       "entrypoints": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
       },
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
@@ -400,7 +299,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!src/pages/Home/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/pages/Home/styles.scss"
     },
     {
       "errors": [],
@@ -412,24 +311,16 @@
       "filteredAssets": 0,
       "entrypoints": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
       },
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
@@ -442,7 +333,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!src/pages/NotFound/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/pages/NotFound/styles.scss"
     },
     {
       "errors": [],
@@ -454,24 +345,16 @@
       "filteredAssets": 0,
       "entrypoints": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
       },
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
+          "chunks": ["mini-css-extract-plugin"],
+          "assets": ["*"],
           "children": {},
           "childAssets": {}
         }
@@ -484,7 +367,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/sass-loader/dist/cjs.js??ref--6-3!src/pages/UserInfo/styles.scss"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/pages/UserInfo/styles.scss"
     }
   ]
 }

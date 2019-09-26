@@ -11,7 +11,7 @@ describe('user data userInfo', () => {
         type: 'USER_REQUESTING',
         userId: '1'
       })
-    ).toEqual({ 1: { readyStatus: 'USER_REQUESTING' } });
+    ).toEqual({ 1: { readyStatus: 'request' } });
   });
 
   it('should handle USER_FAILURE', () => {
@@ -23,7 +23,7 @@ describe('user data userInfo', () => {
       })
     ).toEqual({
       1: {
-        readyStatus: 'USER_FAILURE',
+        readyStatus: 'failure',
         err: 'Oops! Something went wrong.'
       }
     });
@@ -43,7 +43,7 @@ describe('user data userInfo', () => {
       })
     ).toEqual({
       1: {
-        readyStatus: 'USER_SUCCESS',
+        readyStatus: 'success',
         info: {
           name: 'Welly',
           phone: '007',

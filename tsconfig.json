@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "public/assets",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react"
+  },
+  "include": ["index.ts", "src/**/*"]
+}

@@ -1,14 +1,13 @@
 import React from 'react';
 import loadable from '@loadable/component';
-
 import { Loading, ErrorBoundary } from '../../components';
 
-const UserInfo = loadable(() => import('./UserInfo'), {
+const Home = loadable(() => import('./Home'), {
   fallback: <Loading />
 });
 
-export default props => (
+export default (props: any) => (
   <ErrorBoundary>
-    <UserInfo {...props} />
+    <Home {...props} />
   </ErrorBoundary>
 );

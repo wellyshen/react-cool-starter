@@ -18,7 +18,9 @@ export default [
       {
         path: '/UserInfo/:id',
         component: asyncUserInfo,
-        loadData: ({ params }) => [userAction.fetchUserIfNeeded(params.id)]
+        loadData: ({ params }: { params: { id: string } }) => [
+          userAction.fetchUserIfNeeded(params.id)
+        ]
       },
       {
         component: NotFound
