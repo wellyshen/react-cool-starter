@@ -2,15 +2,30 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.0",
-  "hash": "67d9c1badf801ec872f7",
+  "hash": "df0310591f83f16dc129",
   "publicPath": "/assets/",
   "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
   "assetsByChunkName": {
-    "Home": ["Home.css", "Home.js"],
-    "UserInfo": ["UserInfo.css", "UserInfo.js"],
-    "main": ["main.css", "main.js"]
+    "Home": ["Home.css", "Home.js", "Home.b9d9d2230ebbb7e4161f.hot-update.js"],
+    "UserInfo": [
+      "UserInfo.css",
+      "UserInfo.js",
+      "UserInfo.b9d9d2230ebbb7e4161f.hot-update.js"
+    ],
+    "main": ["main.css", "main.js", "main.b9d9d2230ebbb7e4161f.hot-update.js"]
   },
   "assets": [
+    {
+      "name": "Home.b9d9d2230ebbb7e4161f.hot-update.js",
+      "size": 1841,
+      "chunks": ["Home"],
+      "chunkNames": ["Home"],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
     {
       "name": "Home.css",
       "size": 45,
@@ -21,10 +36,21 @@
     },
     {
       "name": "Home.js",
-      "size": 10893,
+      "size": 10951,
       "chunks": ["Home"],
       "chunkNames": ["Home"],
       "info": {},
+      "emitted": false
+    },
+    {
+      "name": "UserInfo.b9d9d2230ebbb7e4161f.hot-update.js",
+      "size": 1893,
+      "chunks": ["UserInfo"],
+      "chunkNames": ["UserInfo"],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
       "emitted": false
     },
     {
@@ -37,10 +63,32 @@
     },
     {
       "name": "UserInfo.js",
-      "size": 39757,
+      "size": 39820,
       "chunks": ["UserInfo"],
       "chunkNames": ["UserInfo"],
       "info": {},
+      "emitted": false
+    },
+    {
+      "name": "b9d9d2230ebbb7e4161f.hot-update.json",
+      "size": 74,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "main.b9d9d2230ebbb7e4161f.hot-update.js",
+      "size": 16944,
+      "chunks": ["main"],
+      "chunkNames": ["main"],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
       "emitted": false
     },
     {
@@ -53,7 +101,7 @@
     },
     {
       "name": "main.js",
-      "size": 5041463,
+      "size": 5041471,
       "chunks": ["main"],
       "chunkNames": ["main"],
       "info": {},
@@ -64,7 +112,11 @@
   "entrypoints": {
     "main": {
       "chunks": ["main"],
-      "assets": ["main.css", "main.js"],
+      "assets": [
+        "main.css",
+        "main.js",
+        "main.b9d9d2230ebbb7e4161f.hot-update.js"
+      ],
       "children": {},
       "childAssets": {}
     }
@@ -72,19 +124,31 @@
   "namedChunkGroups": {
     "main": {
       "chunks": ["main"],
-      "assets": ["main.css", "main.js"],
+      "assets": [
+        "main.css",
+        "main.js",
+        "main.b9d9d2230ebbb7e4161f.hot-update.js"
+      ],
       "children": {},
       "childAssets": {}
     },
     "Home": {
       "chunks": ["Home"],
-      "assets": ["Home.css", "Home.js"],
+      "assets": [
+        "Home.css",
+        "Home.js",
+        "Home.b9d9d2230ebbb7e4161f.hot-update.js"
+      ],
       "children": {},
       "childAssets": {}
     },
     "UserInfo": {
       "chunks": ["UserInfo"],
-      "assets": ["UserInfo.css", "UserInfo.js"],
+      "assets": [
+        "UserInfo.css",
+        "UserInfo.js",
+        "UserInfo.b9d9d2230ebbb7e4161f.hot-update.js"
+      ],
       "children": {},
       "childAssets": {}
     }
@@ -96,278 +160,5 @@
       "debug": false
     }
   },
-  "children": [
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--6-1!node_modules/postcss-loader/src/index.js??ref--6-2!node_modules/normalize.css/normalize.css"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/app/styles.scss"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/components/Loading/styles.scss"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/components/UserCard/styles.scss"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/components/UserList/styles.scss"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/pages/Home/styles.scss"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/pages/NotFound/styles.scss"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/assets/",
-      "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": ["mini-css-extract-plugin"],
-          "assets": ["*"],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js??ref--7-1!node_modules/postcss-loader/src/index.js??ref--7-2!node_modules/sass-loader/dist/cjs.js??ref--7-3!src/pages/UserInfo/styles.scss"
-    }
-  ]
+  "children": []
 }
