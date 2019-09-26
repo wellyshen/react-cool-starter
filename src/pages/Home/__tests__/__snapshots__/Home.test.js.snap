@@ -5,7 +5,7 @@ exports[`<Home /> renders an error if loading failed 1`] = `
   className="Home"
 >
   <p>
-    Loading...
+    Oops, Failed to load list!
   </p>
 </div>
 `;
@@ -14,9 +14,23 @@ exports[`<Home /> renders the <UserList /> if loading was successful 1`] = `
 <div
   className="Home"
 >
-  <p>
-    Loading...
-  </p>
+  <div
+    className="UserList"
+  >
+    <h4>
+      User List
+    </h4>
+    <ul>
+      <li>
+        <a
+          href="/UserInfo/1"
+          onClick={[Function]}
+        >
+          Welly
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
 `;
 

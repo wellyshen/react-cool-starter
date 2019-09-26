@@ -53,7 +53,7 @@
     "lint:style": "better-npm-run lint:style",
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
-    "test:update-snapshot": "yarn test --update-snapshot",
+    "test:update-snapshot": "yarn test -u",
     "clean": "npm-run-all --parallel clean:*",
     "clean:build": "better-npm-run clean:build",
     "clean:test": "better-npm-run clean:test",
@@ -69,7 +69,7 @@
       }
     },
     "start": {
-      "command": "node .",
+      "command": "ts-node --files .",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
@@ -269,8 +269,8 @@
       "!src/reducers/index.ts",
       "!src/components/index.ts",
       "!src/pages/index.ts",
-      "!src/pages/Home/index.tsx",
-      "!src/pages/UserInfo/index.tsx"
+      "!src/pages/Home/index.js",
+      "!src/pages/UserInfo/index.js"
     ],
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",

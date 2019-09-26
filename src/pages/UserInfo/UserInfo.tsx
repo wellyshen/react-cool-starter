@@ -15,7 +15,7 @@ type Props = ReturnType<typeof mapStateToProps> &
   ReturnType<typeof mapDispatchToProps> &
   ownProps;
 
-// Export this for unit testing more easily
+// Export for unit testing
 export const UserInfo = ({ match, userInfo, fetchUserIfNeeded }: Props) => {
   const { id } = match.params;
 

@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ErrorBoundary /> renders 1`] = `null`;
+exports[`<ErrorBoundary /> renders children if no error 1`] = `
+<div>
+  <h1>
+    I am Welly
+  </h1>
+</div>
+`;
+
+exports[`<ErrorBoundary /> renders nothing if no children 1`] = `null`;

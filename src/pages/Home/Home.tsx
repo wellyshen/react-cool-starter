@@ -10,7 +10,7 @@ import styles from './styles.scss';
 type Props = ReturnType<typeof mapStateToProps> &
   ReturnType<typeof mapDispatchToProps>;
 
-// Export this for unit testing more easily
+// Export for unit testing
 export const Home = ({ readyStatus, list, fetchUsersIfNeeded }: Props) => {
   useEffect(() => {
     fetchUsersIfNeeded();

@@ -17,16 +17,11 @@ describe('<Home />', () => {
 
   it('should call fetchUsersIfNeeded when componentDidMount', () => {
     const mockAction = jest.fn();
-    const props = {
-      home: {}
-    };
-    const actions = {
-      fetchUsersIfNeeded: mockAction
-    };
+    const actions = { fetchUsersIfNeeded: mockAction };
 
     mount(
       <MemoryRouter>
-        <Home {...props} {...actions} />
+        <Home {...actions} />
       </MemoryRouter>
     );
 
@@ -34,21 +29,21 @@ describe('<Home />', () => {
   });
 
   it('renders the loading status if data invalid', () => {
-    const props = { home: { readyStatus: 'invalid' } };
+    const props = { readyStatus: 'invalid' };
     const actions = { fetchUsersIfNeeded: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
 
   it('renders the loading status if requesting data', () => {
-    const props = { home: { readyStatus: 'request' } };
+    const props = { readyStatus: 'request' };
     const actions = { fetchUsersIfNeeded: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
 
   it('renders an error if loading failed', () => {
-    const props = { home: { readyStatus: 'failure' } };
+    const props = { readyStatus: 'failure' };
     const actions = { fetchUsersIfNeeded: () => {} };
 
     expect(tree(props, actions)).toMatchSnapshot();
@@ -56,10 +51,8 @@ describe('<Home />', () => {
 
   it('renders the <UserList /> if loading was successful', () => {
     const props = {
-      home: {
-        readyStatus: 'success',
-        list: [{ id: '1', name: 'Welly' }]
-      }
+      readyStatus: 'success',
+      list: [{ id: '1', name: 'Welly' }]
     };
     const actions = { fetchUsersIfNeeded: () => {} };
 
