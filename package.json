@@ -1,8 +1,8 @@
 {
   "name": "react-cool-starter",
-  "version": "2.10.0",
+  "version": "3.0.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
-  "main": "index.js",
+  "main": "index.ts",
   "engines": {
     "node": ">=10",
     "npm": ">=6"
@@ -17,11 +17,11 @@
     "universal",
     "react",
     "redux",
-    "react router v4",
+    "react router",
     "express",
-    "webpack v4",
-    "es6",
-    "flow",
+    "webpack",
+    "es6+",
+    "typescript",
     "code splitting",
     "hot reloading",
     "babel",
@@ -46,11 +46,11 @@
     "start": "better-npm-run start",
     "build": "yarn clean:build && better-npm-run build",
     "analyze": "yarn clean:build && better-npm-run analyze",
+    "type-check": "better-npm-run type-check",
+    "type-check:watch": "yarn type-check --watch",
     "lint": "npm-run-all --parallel lint:*",
-    "lint:js": "better-npm-run lint:js",
+    "lint:code": "better-npm-run lint:code",
     "lint:style": "better-npm-run lint:style",
-    "flow": "better-npm-run flow",
-    "flow:stop": "better-npm-run flow:stop",
     "test": "better-npm-run test",
     "test:watch": "yarn test --watch",
     "test:update-snapshot": "yarn test -u",
@@ -64,7 +64,7 @@
   },
   "betterScripts": {
     "dev": {
-      "command": "nodemon .",
+      "command": "nodemon --exec ts-node --files .",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
@@ -72,7 +72,7 @@
       }
     },
     "start": {
-      "command": "node .",
+      "command": "ts-node --files .",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production",
@@ -91,17 +91,14 @@
         "NODE_ENV": "analyze"
       }
     },
-    "lint:js": {
+    "type-check": {
+      "command": "tsc --noEmit"
+    },
+    "lint:code": {
       "command": "eslint --fix ."
     },
     "lint:style": {
-      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"!coverage\""
-    },
-    "flow": {
-      "command": "flow"
-    },
-    "flow:stop": {
-      "command": "flow stop"
+      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\" \"!coverage\""
     },
     "test": {
       "command": "jest --coverage",
@@ -125,22 +122,21 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint --fix",
-    "*.css": "stylelint",
-    "*.{scss,sass}": "stylelint --syntax=scss",
+    "*.{ts,tsx,js,jsx}": "yarn lint:code",
+    "*.{css,scss,sass}": "yarn lint:style",
     "*.{json,md}": "prettier --write"
   },
   "babel": {
     "presets": [
       [
-        "@babel/preset-env",
+        "@babel/env",
         {
           "useBuiltIns": "usage",
           "corejs": "3.0.0"
         }
       ],
-      "@babel/preset-react",
-      "@babel/preset-flow"
+      "@babel/typescript",
+      "@babel/react"
     ],
     "plugins": [
       "react-hot-loader/babel",
@@ -151,21 +147,22 @@
     "env": {
       "production": {
         "plugins": [
-          "transform-remove-console",
-          "transform-react-remove-prop-types"
+          "transform-remove-console"
         ]
       }
     }
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "extends": [
       "airbnb",
       "airbnb/hooks",
+      "plugin:@typescript-eslint/recommended",
       "plugin:prettier/recommended",
       "prettier/react"
     ],
     "plugins": [
+      "@typescript-eslint",
       "react",
       "prettier"
     ],
@@ -180,37 +177,31 @@
     "env": {
       "browser": true,
       "node": true,
-      "jest": true,
-      "es6": true
+      "es6": true,
+      "jest": true
     },
     "rules": {
       "global-require": "off",
       "no-console": "off",
       "no-underscore-dangle": "off",
-      "function-paren-newline": "off",
+      "react/prop-types": "off",
+      "react-hooks/exhaustive-deps": "off",
       "react/jsx-props-no-spreading": "off",
       "react/jsx-filename-extension": [
         "error",
         {
           "extensions": [
+            ".ts",
+            ".tsx",
             ".js",
             ".jsx"
           ]
         }
       ],
-      "import/no-cycle": "off",
       "import/no-extraneous-dependencies": [
         "error",
         {
           "devDependencies": true
-        }
-      ],
-      "jsx-a11y/anchor-is-valid": [
-        "error",
-        {
-          "specialLink": [
-            "to"
-          ]
         }
       ],
       "prettier/prettier": [
@@ -218,7 +209,13 @@
         {
           "singleQuote": true
         }
-      ]
+      ],
+      "@typescript-eslint/no-namespace": "off",
+      "@typescript-eslint/ban-ts-ignore": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-var-requires": "off"
     },
     "globals": {
       "__CLIENT__": true,
@@ -227,7 +224,6 @@
     }
   },
   "eslintIgnore": [
-    "tools/flow",
     "public/assets"
   ],
   "stylelint": {
@@ -260,33 +256,36 @@
       "raf/polyfill"
     ],
     "setupFilesAfterEnv": [
-      "<rootDir>/tools/jest/setup.js"
+      "<rootDir>/tools/jest/setup.ts"
     ],
     "globals": {
       "__DEV__": true
     },
     "collectCoverageFrom": [
-      "src/app/**/*.js",
-      "src/pages/**/*.js",
-      "src/components/**/*.js",
-      "src/actions/**/*.js",
-      "src/reducers/**/*.js",
-      "!src/actions/index.js",
-      "!src/components/index.js",
-      "!src/pages/index.js",
+      "src/actions/**/*.ts",
+      "src/reducers/**/*.ts",
+      "src/app/**/*.tsx",
+      "src/pages/**/*.tsx",
+      "src/components/**/*.tsx",
+      "!src/actions/index.ts",
+      "!src/reducers/index.ts",
+      "!src/components/index.ts",
+      "!src/pages/index.ts",
       "!src/pages/Home/index.js",
-      "!src/pages/UserInfo/index.js",
-      "!src/reducers/index.js"
+      "!src/pages/UserInfo/index.js"
     ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
     "moduleNameMapper": {
-      ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
+      ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.ts",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.ts"
     }
   },
   "nodemonConfig": {
     "watch": [
-      "src/server.js",
-      "src/utils/renderHtml.js"
+      "src/server.tsx",
+      "src/utils/renderHtml.ts"
     ]
   },
   "browserslist": [
@@ -296,12 +295,13 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.6.0",
-    "@loadable/component": "^5.10.2",
-    "@loadable/server": "^5.10.2",
+    "@babel/preset-typescript": "^7.6.0",
+    "@babel/register": "^7.6.2",
+    "@loadable/babel-plugin": "^5.10.3",
+    "@loadable/component": "^5.10.3",
+    "@loadable/server": "^5.10.3",
     "asset-require-hook": "^1.2.0",
     "autoprefixer": "^9.6.1",
     "axios": "^0.19.0",
@@ -314,37 +314,56 @@
     "css-modules-require-hook": "^4.2.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "express": "^4.17.1",
-    "helmet": "^3.21.0",
-    "history": "^4.9.0",
+    "helmet": "^3.21.1",
+    "history": "^4.10.1",
     "hpp": "^0.2.2",
     "html-minifier": "^4.0.0",
     "morgan": "^1.9.1",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
-    "prop-types": "^15.7.2",
     "react": "^16.9.0",
-    "react-dev-utils": "^9.0.3",
+    "react-dev-utils": "^9.0.4",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-helmet": "^5.2.1",
-    "react-hot-loader": "^4.12.12",
+    "react-hot-loader": "^4.12.14",
     "react-redux": "^7.1.1",
-    "react-router": "^5.0.1",
-    "react-router-config": "^5.0.1",
-    "react-router-dom": "^5.0.1",
+    "react-router": "^5.1.0",
+    "react-router-config": "^5.1.0",
+    "react-router-dom": "^5.1.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "serialize-javascript": "^2.1.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@loadable/babel-plugin": "^5.10.0",
+    "@babel/core": "^7.6.2",
     "@loadable/webpack-plugin": "^5.7.1",
-    "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
+    "@types/compression": "^1.0.1",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/express": "^4.17.1",
+    "@types/helmet": "^0.0.44",
+    "@types/hpp": "^0.2.1",
+    "@types/jest": "^24.0.18",
+    "@types/loadable__component": "^5.10.0",
+    "@types/loadable__server": "^5.9.1",
+    "@types/morgan": "^1.7.37",
+    "@types/react": "^16.9.3",
+    "@types/react-dev-utils": "^9.0.1",
+    "@types/react-dom": "^16.9.1",
+    "@types/react-helmet": "^5.0.11",
+    "@types/react-redux": "^7.1.4",
+    "@types/react-router": "^5.1.0",
+    "@types/react-router-config": "^5.0.1",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/react-test-renderer": "^16.9.0",
+    "@types/redux-mock-store": "^1.0.1",
+    "@types/serialize-javascript": "^1.5.0",
+    "@types/serve-favicon": "^2.2.31",
+    "@types/webpack-env": "^1.14.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
     "babel-loader": "^8.0.6",
-    "babel-plugin-istanbul": "^5.2.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "compression-webpack-plugin": "^3.0.0",
     "core-js": "3",
     "coveralls": "^3.0.6",
@@ -353,22 +372,21 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.2.0",
-    "flow-bin": "^0.107.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "husky": "^3.0.5",
     "identity-obj-proxy": "^3.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "jest": "^24.9.0",
-    "lint-staged": "^9.2.5",
+    "lint-staged": "^9.4.0",
     "mini-css-extract-plugin": "^0.8.0",
-    "nock": "^11.3.3",
+    "nock": "^11.3.5",
     "nodemon": "^1.19.2",
     "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -380,18 +398,22 @@
     "redux-mock-store": "^1.5.3",
     "rimraf": "^3.0.0",
     "sass-loader": "^8.0.0",
-    "stylelint": "^10.1.0",
-    "stylelint-config-prettier": "^5.2.0",
-    "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-config-standard": "^18.3.0",
-    "stylelint-scss": "^3.10.1",
-    "terser-webpack-plugin": "^2.0.1",
+    "source-map-loader": "^0.2.4",
+    "stylelint": "^11.0.0",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-scss": "^3.11.1",
+    "terser-webpack-plugin": "^2.1.1",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3",
     "url-loader": "^2.1.0",
-    "webpack": "^4.39.3",
-    "webpack-bundle-analyzer": "^3.4.1",
-    "webpack-cli": "^3.3.8",
+    "webpack": "^4.41.0",
+    "webpack-bundle-analyzer": "^3.5.2",
+    "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.7.1",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-manifest-plugin": "^2.0.4"
+    "webpack-manifest-plugin": "^2.1.2"
   }
 }
