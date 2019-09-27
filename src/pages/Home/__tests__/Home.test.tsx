@@ -6,10 +6,12 @@ import { MemoryRouter } from 'react-router-dom';
 import { Home } from '../Home';
 
 describe('<Home />', () => {
-  const tree = (props, actions) =>
+  const tree = (props: object, actions: object) =>
     renderer
       .create(
         <MemoryRouter>
+          {/*
+            // @ts-ignore */}
           <Home {...props} {...actions} />
         </MemoryRouter>
       )
@@ -22,7 +24,7 @@ describe('<Home />', () => {
     mount(
       <MemoryRouter>
         {/*
-            //@ts-ignore */}
+          // @ts-ignore */}
         <Home {...actions} />
       </MemoryRouter>
     );

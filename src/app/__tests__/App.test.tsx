@@ -29,6 +29,7 @@ describe('<App />', () => {
 
     const tree = renderer
       .create(
+        // @ts-ignore
         <Provider store={fakeStore}>
           <MemoryRouter>
             <App route={fakeRoute} />

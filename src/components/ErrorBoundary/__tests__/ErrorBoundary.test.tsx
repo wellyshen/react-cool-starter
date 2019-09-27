@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import ErrorBoundary from '../index';
 
 describe('<ErrorBoundary />', () => {
-  const tree = children =>
+  const tree = (children?: React.ReactNode) =>
     renderer
       .create(
         <MemoryRouter>

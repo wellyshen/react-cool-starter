@@ -9,5 +9,5 @@
     "target": "es6",
     "jsx": "react"
   },
-  "include": ["index.ts", "src/**/*"]
+  "include": ["index.ts", "tools/jest", "src/**/*"]
 }

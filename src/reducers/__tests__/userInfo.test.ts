@@ -2,6 +2,7 @@ import userInfo from '../userInfo';
 
 describe('user data userInfo', () => {
   it('should handle the initial state', () => {
+    // @ts-ignore
     expect(userInfo(undefined, {})).toEqual({});
   });
 

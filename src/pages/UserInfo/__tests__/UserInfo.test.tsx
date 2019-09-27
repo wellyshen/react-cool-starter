@@ -6,10 +6,12 @@ import { MemoryRouter } from 'react-router-dom';
 import { UserInfo } from '../UserInfo';
 
 describe('<UserInfo />', () => {
-  const tree = (props, actions) =>
+  const tree = (props: object, actions: object) =>
     renderer
       .create(
         <MemoryRouter>
+          {/*
+            // @ts-ignore */}
           <UserInfo {...props} {...actions} />
         </MemoryRouter>
       )

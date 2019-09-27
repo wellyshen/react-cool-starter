@@ -119,9 +119,8 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": "eslint --fix",
-    "*.css": "stylelint --fix",
-    "*.{scss,sass}": "stylelint --fix --syntax=scss",
+    "*.{ts,tsx,js,jsx}": "yarn lint:code",
+    "*.{css,scss}": "yarn lint:style",
     "*.{json,md}": "prettier --write"
   },
   "babel": {
@@ -254,7 +253,7 @@
       "raf/polyfill"
     ],
     "setupFilesAfterEnv": [
-      "<rootDir>/tools/jest/setup.js"
+      "<rootDir>/tools/jest/setup.ts"
     ],
     "globals": {
       "__DEV__": true
@@ -272,9 +271,12 @@
       "!src/pages/Home/index.js",
       "!src/pages/UserInfo/index.js"
     ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
     "moduleNameMapper": {
-      ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.js",
-      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.js"
+      ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.ts",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.ts"
     }
   },
   "nodemonConfig": {
@@ -334,9 +336,12 @@
     "@loadable/babel-plugin": "^5.10.3",
     "@loadable/webpack-plugin": "^5.7.1",
     "@types/compression": "^1.0.1",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/express": "^4.17.1",
     "@types/helmet": "^0.0.44",
     "@types/hpp": "^0.2.1",
+    "@types/jest": "^24.0.18",
     "@types/loadable__component": "^5.10.0",
     "@types/loadable__server": "^5.9.1",
     "@types/morgan": "^1.7.37",
@@ -348,12 +353,13 @@
     "@types/react-router": "^5.1.0",
     "@types/react-router-config": "^5.0.1",
     "@types/react-router-dom": "^5.1.0",
+    "@types/react-test-renderer": "^16.9.0",
+    "@types/redux-mock-store": "^1.0.1",
     "@types/serialize-javascript": "^1.5.0",
     "@types/serve-favicon": "^2.2.31",
     "@types/webpack-env": "^1.14.0",
     "@typescript-eslint/eslint-plugin": "^2.3.1",
     "@typescript-eslint/parser": "^2.3.1",
-    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-istanbul": "^5.2.0",
     "compression-webpack-plugin": "^3.0.0",
@@ -397,6 +403,7 @@
     "stylelint-config-standard": "^19.0.0",
     "stylelint-scss": "^3.11.1",
     "terser-webpack-plugin": "^2.1.0",
+    "ts-jest": "^24.1.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3",
     "url-loader": "^2.1.0",
