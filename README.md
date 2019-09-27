@@ -27,12 +27,12 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 Really cool starter boilerplate with the most popular technologies:
 
 - [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering with async data fetching.
-- [React](https://facebook.github.io/react/) as the view.
+- [React](https://facebook.github.io/react/) as the view framework.
 - [Redux](https://github.com/reactjs/redux) as the state management.
 - [React Router](https://reacttraining.com/react-router/) as the router.
-- [Connected React Router](https://github.com/supasate/connected-react-router) to bind Redux with React Router. Refer to [doc](https://github.com/supasate/connected-react-router/blob/master/FAQ.md#how-to-navigate-with-redux-action) to see how it works.
+- [Connected React Router](https://github.com/supasate/connected-react-router) to bind Redux with React Router. Refer to [doc](https://github.com/supasate/connected-react-router/blob/master/FAQ.md#frequently-asked-questions) to see how it works.
 - [Express](https://expressjs.com/) server.
-- [Typescript](https://www.typescriptlang.org/) as the static type checker for javascript.
+- [Typescript](https://www.typescriptlang.org/) as the static type checker for Javascript.
 - [Webpack](https://webpack.js.org/) for app bundling.
 - [Babel](https://babeljs.io/) for transpiling ES6+ to ES5.
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
@@ -47,15 +47,16 @@ Really cool starter boilerplate with the most popular technologies:
 - [asset-require-hook](https://github.com/aribouius/asset-require-hook) allows your assets files required during runtime for SSR.
 - [assets-webpack-plugin](https://github.com/ztoben/assets-webpack-plugin) generates assets with hash so you can use them for SSR.
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
+- [helmet](https://github.com/helmetjs/helmet) helps secure Express apps with various HTTP headers.
 - [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 - [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for debugging application's state changes.
-- [ESLint](http://eslint.org/) to maintain a consistent javascript code style (With Airbnb configuration).
+- [ESLint](http://eslint.org/) to maintain a consistent Typescript/Javascript code style (with Airbnb configuration).
 - [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
-- [Prettier](https://prettier.io/) to format javascript and css/scss code.
+- [Prettier](https://prettier.io/) to format code and style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
 - Image (with [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin) for compressing images with imagemin) and Font support.
 - Split vendor's libraries from client bundle.
-- No other view engines, just javascript based HTML rendering component.
+- No other view engines, just Javascript based HTML rendering component.
 - Shared app config between development and production.
 - 404 error page and redirect handling.
 - Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
@@ -102,7 +103,7 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 ## Script Commands
 
-I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platform. All of the scripts are listed as following:
+I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platforms. All of the scripts are listed as following:
 
 | `yarn <script>`        | Description                                                                      |
 | ---------------------- | -------------------------------------------------------------------------------- |
@@ -207,7 +208,7 @@ import RouteComponent from "./pages/RouteComponent";
 export default [
   {
     // Define your route path
-    path: "/TopPath",
+    path: "/top-path",
     // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
     // Add your route component here
@@ -215,7 +216,7 @@ export default [
     // Add your sub route component here
     routes: [
       {
-        path: "/TopPath/SubPath",
+        path: "/top-path/sub-path",
         component: SubRouteComponent
       }
     ]
@@ -227,7 +228,7 @@ export default [
 
 ### Data Fetching from Server-side
 
-Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org/) docs if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
+Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org/) document if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
 Register the action(s) in `./src/routes.tsx`, which have to be called from server-sdie:
 
@@ -236,7 +237,7 @@ Register the action(s) in `./src/routes.tsx`, which have to be called from serve
 
 export default [
   {
-    path: "/TopPath",
+    path: "/top-path",
     exact: true,
     component: RouteComponent,
     // Actions in the loadData function will be fetched from server-side
@@ -282,13 +283,21 @@ app.get("*", (req, res) => {
 // ...
 ```
 
-On client-side, don't forget to invoke the action(s) in `componentDidMount`. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action(s) to figure out if fetches for data need to be made or not:
+In client-side, don't forget to invoke the action(s) in `componentDidMount` or `useEffect` hook. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action(s) to figure out if fetches for data need to be made or not:
 
 ```js
+// If you use React class component
+
 componentDidMount() {
   // Invoke your redux action(s) for client rendering
   this.props.myReduxAction();
 }
+
+// If you use functional component
+
+useEffect(() => {
+  myReduxAction();
+}, [])
 ```
 
 ### Code Splitting
@@ -302,33 +311,38 @@ I use the following folder/file structure:
 ```
  |- pages
     |- AsyncRouteComponent
-       |- index.ts             // Wrap the route component as async component
+       |- index.js             // Wrap the route component as async component
        |- RouteComponent.tsx   // The route component
 ```
 
-The `index.ts` will be:
+The `index.js` will be:
 
 ```js
-import loadable from "loadable-components";
+import loadable from "@loadable/component";
 
 import { Error, Loading } from "../../components";
 
-export default loadable(
-  () => import("./AsyncRouteComponent"), // Import your async route component here
-  {
-    ErrorComponent: Error, // Error component for displaying error message
-    LoadingComponent: Loading // Loading component will be displayed when the component is being loaded
-  }
+// Import your async route component
+const AsyncComponent = loadable(() => import("./AsyncComponent"), {
+  // Loading component will be displayed when the component is being loaded
+  fallback: <Loading />
+});
+
+export default props => (
+  // Wrap an <ErrorBoundary /> to catch the error of <AsyncComponent /> (via "componentDidCatch()" lifecycle)
+  <ErrorBoundary>
+    <AsyncComponent {...props} />
+  </ErrorBoundary>
 );
 ```
 
 Then you can [setup](#adding-routes) the route as usual.
 
-> Note: I just show a general case route-based splitting, however you can even split your app by component-based depends on your need. For more advanced configuration you can refer to the [docs](https://github.com/smooth-code/loadable-components) of loadable-components.
+> Note: I just show a general case route-based splitting, however you can even split your app by component-based depends on your need. For more advanced configuration you can refer to the [document](https://github.com/smooth-code/loadable-components) of loadable-components.
 
 ### Managing Title, Meta, Styles and Scripts
 
-The `./src/app/index.tsx` (app root component) defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) documents for more info.
+The `./src/app/index.tsx` (app root component) defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) document for more info.
 
 ### App config
 
@@ -347,35 +361,33 @@ The starter supports CSS, SASS and [CSS modules](https://github.com/css-Modules/
 With CSS modules:
 
 ```js
-import styles from './styles.scss';
+import styles from "./styles.scss";
 
 // ...
 
-render() {
-  return (
-    <div className={styles.myClass}>   // The className matches one of CSS classes in your SCSS file
-      <Helmet title="My title" />
-      {this.renderUserList()}
-    </div>
-  );
-}
+return (
+  <div className={styles.myClass}>
+    {/* The className matches one of CSS classes in your SCSS file */}
+    <Helmet title="My title" />
+    {this.renderContent()}
+  </div>
+);
 ```
 
 Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.babel.js`):
 
 ```js
-import './styles.scss';
+import "./styles.scss";
 
 // ...
 
-render() {
-  return (
-    <div className="myClass">    // Use the CSS class as normal
-      <Helmet title="My title" />
-      {this.renderUserList()}
-    </div>
-  );
-}
+return (
+  <div className="myClass">
+    {/* Use the CSS class as normal */}
+    <Helmet title="My title" />
+    {this.renderContent()}
+  </div>
+);
 ```
 
 By the way, if you want to use vendor CSS frameworks or global styles, just import it through the `./src/app/index.tsx` file (app root component). For example:
@@ -426,7 +438,7 @@ import "./font-awesome.css";
 return (
   <div>
     <div>
-      <i className="fa fa-user" /> Welly
+      <i className="fa fa-icon" /> Welly
     </div>
   </div>
 );
@@ -437,6 +449,7 @@ For using CSS modules, you have to set the proper font path in your scss/sass fi
 ```
 $fa-font-path:"../node_modules/font-awesome/fonts";
 @import "../node_modules/font-awesome/scss/font-awesome";
+
 .icon-user {
   @extend .fa;
   @extend .fa-user;
@@ -447,7 +460,7 @@ $fa-font-path:"../node_modules/font-awesome/fonts";
 
 In this starter, you can see I use [React.PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) and [React.memo](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactmemo) to demostrate the basic performance optimizing for React app. The two APIs are used in different ways.
 
-- `React.PureComponent` is used for React class components. It can be a performance boost by doing shallow prop and state comparison:
+- `React.PureComponent` is used for React class components. It can do shallow prop and state comparison for a performance boost:
 
 ```js
 import React, { PureComponent } from "react";
@@ -520,7 +533,7 @@ This starter use [Jest](https://facebook.github.io/jest/) as the testing engine.
 
 I also use [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. The unit tests focus on three parts as below:
 
-- React Components
+- Components
 - Actions
 - Reducers
 
@@ -540,18 +553,18 @@ By the way, Jest built-in code coverage reports, the report files are generated 
 }
 ```
 
-You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code in a javascript file to skip code coverage.
+You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code in a Javascript file to skip code coverage.
 
 ## Troubleshooting
 
-- If your app crash due to the error: `Invariant Violation: loadable: SSR requires "@loadable/babel-plugin", please install it` (refer to this [issue](https://github.com/smooth-code/loadable-components/issues/173)). You must use `.js` extension for code-splitting files (e.g. `src/Home/index.js`).
+- If app crash due to the error: `Invariant Violation: loadable: SSR requires "@loadable/babel-plugin", please install it` (refer to this [issue](https://github.com/smooth-code/loadable-components/issues/173)). To solve that, you must use `.js` extension for code-splitting files (e.g. `src/Home/index.js`).
 
-- If you encounter the markup mismatches error (it's a react universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
+- If you encounter the markup mismatches error (it's a React universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
 
   - Restart the server to solve it.
   - Or for v16.1.0 up, you can use `suppressHydrationWarning` attribute for intentional client/server text mismatches ([#11126](https://github.com/facebook/react/pull/11126)).
 
-- If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following.
+- If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following:
 
 In the `./package.json` script:
 
@@ -578,9 +591,9 @@ In the `./package.json` script:
 So it will look like:
 
 ```
-  // ...
-  "rules": {
-    "linebreak-style": 0,
-    "global-require": 0,
-    // Other rules
+// ...
+"rules": {
+  "linebreak-style": 0,
+  "global-require": 0,
+  // Other rules
 ```
