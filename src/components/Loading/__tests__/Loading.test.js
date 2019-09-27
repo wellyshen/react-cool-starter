@@ -9,7 +9,7 @@ describe('<Loading />', () => {
     const tree = renderer
       .create(
         <MemoryRouter>
-          <Loading pastDelay error={false} />
+          <Loading />
         </MemoryRouter>
       )
       .toJSON();

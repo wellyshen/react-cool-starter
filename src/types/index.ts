@@ -28,6 +28,8 @@ export interface AppState {
   router: RouterState;
 }
 
+export type ThunkState = () => AppState;
+
 // Actions
 export const USERS_REQUESTING = 'USERS_REQUESTING';
 export const USERS_SUCCESS = 'USERS_SUCCESS';
@@ -39,15 +41,15 @@ export const USER_FAILURE = 'USER_FAILURE';
 
 export interface UsersAction {
   type: typeof USERS_REQUESTING | typeof USERS_SUCCESS | typeof USERS_FAILURE;
-  data: Array<object>;
-  err: any;
+  data?: Array<object>;
+  err?: any;
 }
 
 export interface UserAction {
   type: typeof USER_REQUESTING | typeof USER_SUCCESS | typeof USER_FAILURE;
   userId: string;
-  data: object;
-  err: any;
+  data?: object;
+  err?: any;
 }
 
 export type MyAction = UsersAction | UserAction;

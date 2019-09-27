@@ -8,13 +8,13 @@ import { fetchUsers } from '../users';
 
 const host = 'http://localhost';
 
-axios.defaults.host = host;
+axios.defaults.baseURL = host;
 axios.defaults.adapter = httpAdapter;
 
 const mockStore = configureMockStore([thunk]);
 
 describe('fetch users data', () => {
-  const response = [{ id: '1', name: 'Welly' }];
+  const response = [{ id: 'test', name: 'Welly' }];
   const errorMessage = 'Request failed with status code 404';
 
   afterEach(() => {

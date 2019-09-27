@@ -21,6 +21,8 @@ describe('<Home />', () => {
 
     mount(
       <MemoryRouter>
+        {/*
+            //@ts-ignore */}
         <Home {...actions} />
       </MemoryRouter>
     );

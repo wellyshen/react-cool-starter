@@ -8,7 +8,7 @@ import { fetchUser } from '../user';
 
 const host = 'http://localhost';
 
-axios.defaults.host = host;
+axios.defaults.baseURL = host;
 axios.defaults.adapter = httpAdapter;
 
 const mockStore = configureMockStore([thunk]);

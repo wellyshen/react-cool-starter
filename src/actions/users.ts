@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 import {
+  ThunkDispatch,
+  ThunkState,
   ThunkAction,
   AppState,
   USERS_REQUESTING,
@@ -12,9 +14,9 @@ const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing more easily
 /* istanbul ignore next */
-export const fetchUsers = (
-  URL: string = API_URL
-): ThunkAction => async dispatch => {
+export const fetchUsers = (URL: string = API_URL) => async (
+  dispatch: ThunkDispatch
+) => {
   dispatch({ type: USERS_REQUESTING });
 
   try {
@@ -36,7 +38,10 @@ const shouldFetchUsers = (state: AppState): boolean => {
 };
 
 /* istanbul ignore next */
-export const fetchUsersIfNeeded = (): ThunkAction => (dispatch, getState) => {
+export const fetchUsersIfNeeded = (): ThunkAction => (
+  dispatch: ThunkDispatch,
+  getState: ThunkState
+) => {
   /* istanbul ignore next */
   if (shouldFetchUsers(getState())) return dispatch(fetchUsers());
 
