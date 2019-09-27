@@ -501,7 +501,14 @@ const MyComponent = props => {
 
 ### Typescript
 
-Coming soon...
+[Typescript](https://www.typescriptlang.org/) is a typed superset of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to Typescript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
+
+Typescript has been integrated with our application to bring the following benefits:
+
+- Type safety for components, reducers, state and actions.
+- Many IDEs support the hints of Typescript, which give us a superior developer experience.
+- Easy refactoring of typed code.
+- In general, more types less bugs. Read this [article](https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b) to know more.
 
 ### Code and Style Lint
 

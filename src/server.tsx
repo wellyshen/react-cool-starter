@@ -11,7 +11,7 @@ import { StaticRouter } from 'react-router-dom';
 import { renderRoutes, matchRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import chalk from 'chalk';
 import openBrowser from 'react-dev-utils/openBrowser';
 

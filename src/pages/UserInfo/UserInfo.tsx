@@ -1,6 +1,6 @@
 import React, { useEffect, memo } from 'react';
 import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import { userAction } from '../../actions';
 import { UserCard } from '../../components';
