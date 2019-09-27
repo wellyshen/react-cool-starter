@@ -20,7 +20,7 @@
     "react router",
     "express",
     "webpack",
-    "es6",
+    "es6+",
     "typescript",
     "code splitting",
     "hot reloading",
@@ -95,7 +95,7 @@
       "command": "eslint --fix ."
     },
     "lint:style": {
-      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"!coverage\""
+      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\" \"!coverage\""
     },
     "test": {
       "command": "jest --coverage",
@@ -120,7 +120,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": "yarn lint:code",
-    "*.{css,scss}": "yarn lint:style",
+    "*.{css,scss,sass}": "yarn lint:style",
     "*.{json,md}": "prettier --write"
   },
   "babel": {
@@ -179,11 +179,15 @@
     },
     "rules": {
       "global-require": "off",
+      "react/prop-types": "off",
+      "react-hooks/exhaustive-deps": "off",
       "react/jsx-props-no-spreading": "off",
       "react/jsx-filename-extension": [
         "error",
         {
           "extensions": [
+            ".ts",
+            ".tsx",
             ".js",
             ".jsx"
           ]
@@ -201,19 +205,12 @@
           "singleQuote": true
         }
       ],
+      "@typescript-eslint/ban-ts-ignore": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/no-var-requires": "off"
     },
-    "overrides": [
-      {
-        "files": [
-          "*.js",
-          "*.jsx"
-        ],
-        "rules": {
-          "@typescript-eslint/explicit-function-return-type": "off"
-        }
-      }
-    ],
     "globals": {
       "__CLIENT__": true,
       "__SERVER__": true,
@@ -259,11 +256,11 @@
       "__DEV__": true
     },
     "collectCoverageFrom": [
+      "src/actions/**/*.ts",
+      "src/reducers/**/*.ts",
       "src/app/**/*.tsx",
       "src/pages/**/*.tsx",
       "src/components/**/*.tsx",
-      "src/actions/**/*.ts",
-      "src/reducers/**/*.ts",
       "!src/actions/index.ts",
       "!src/reducers/index.ts",
       "!src/components/index.ts",
@@ -294,7 +291,9 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
     "@babel/register": "^7.6.2",
+    "@loadable/babel-plugin": "^5.10.3",
     "@loadable/component": "^5.10.3",
     "@loadable/server": "^5.10.3",
     "asset-require-hook": "^1.2.0",
@@ -332,8 +331,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
-    "@babel/preset-typescript": "^7.6.0",
-    "@loadable/babel-plugin": "^5.10.3",
     "@loadable/webpack-plugin": "^5.7.1",
     "@types/compression": "^1.0.1",
     "@types/enzyme": "^3.10.3",
@@ -361,7 +358,6 @@
     "@typescript-eslint/eslint-plugin": "^2.3.1",
     "@typescript-eslint/parser": "^2.3.1",
     "babel-loader": "^8.0.6",
-    "babel-plugin-istanbul": "^5.2.0",
     "compression-webpack-plugin": "^3.0.0",
     "core-js": "3",
     "coveralls": "^3.0.6",
@@ -402,7 +398,7 @@
     "stylelint-config-recommended-scss": "^4.0.0",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-scss": "^3.11.1",
-    "terser-webpack-plugin": "^2.1.0",
+    "terser-webpack-plugin": "^2.1.1",
     "ts-jest": "^24.1.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3",

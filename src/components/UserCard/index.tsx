@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import styles from './styles.scss';
 
@@ -11,7 +11,7 @@ type Props = {
   };
 };
 
-export default ({ info }: Props) => (
+export default memo(({ info }: Props) => (
   <div className={styles.UserCard}>
     <h4>User Card</h4>
     <ul>
@@ -21,4 +21,4 @@ export default ({ info }: Props) => (
       <li>Website: {info.website}</li>
     </ul>
   </div>
-);
+));

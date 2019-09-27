@@ -14,7 +14,7 @@ type Props = ReturnType<typeof mapStateToProps> &
 export const Home = ({ readyStatus, list, fetchUsersIfNeeded }: Props) => {
   useEffect(() => {
     fetchUsersIfNeeded();
-  }, [fetchUsersIfNeeded]);
+  }, []);
 
   const renderUserList = () => {
     if (!readyStatus || readyStatus === 'invalid' || readyStatus === 'request')

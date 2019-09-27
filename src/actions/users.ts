@@ -12,9 +12,9 @@ import {
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
-// Export this for unit testing more easily
+// Export this for unit testing
 /* istanbul ignore next */
-export const fetchUsers = (URL: string = API_URL) => async (
+export const fetchUsers = (URL: string = API_URL): ThunkAction => async (
   dispatch: ThunkDispatch
 ) => {
   dispatch({ type: USERS_REQUESTING });

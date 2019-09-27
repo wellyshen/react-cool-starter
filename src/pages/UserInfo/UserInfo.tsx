@@ -21,7 +21,7 @@ export const UserInfo = ({ match, userInfo, fetchUserIfNeeded }: Props) => {
 
   useEffect(() => {
     fetchUserIfNeeded(id);
-  }, [fetchUserIfNeeded, id]);
+  }, [id]);
 
   const renderUserCard = () => {
     const userInfoById = userInfo[id];
