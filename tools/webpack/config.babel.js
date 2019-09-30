@@ -6,6 +6,7 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import ImageminPlugin from 'imagemin-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import LoadablePlugin from '@loadable/webpack-plugin';
@@ -47,6 +48,8 @@ const getPlugins = () => {
     // Development
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
+      // Runs typescript type checker on a separate process
+      new ForkTsCheckerWebpackPlugin(),
       new FriendlyErrorsWebpackPlugin()
     );
   } else {
