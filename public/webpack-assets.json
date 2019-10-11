@@ -1,4 +1,8 @@
 {
-  "main.css": "/assets/main.css",
-  "main.js": "/assets/main.js"
+  "main.css": "/assets/main.42f6f00b.css",
+  "main.js": "/assets/main.05a673f0.js",
+  "main.js.map": "/assets/main.05a673f0.js.map",
+  "vendors~main.css": "/assets/3.26dec664.css",
+  "vendors~main.js": "/assets/3.8de8a4ca.js",
+  "vendors~main.js.map": "/assets/3.8de8a4ca.js.map"
 }

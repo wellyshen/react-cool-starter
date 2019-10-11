@@ -36,8 +36,8 @@ Really cool starter boilerplate with the most popular technologies:
 - [Webpack](https://webpack.js.org/) for app bundling.
 - [Babel](https://babeljs.io/) for transpiling ES6+ to ES5.
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
-- [nodemon](https://nodemon.io/) to monitor for any changes in your node.js application and automatically restart the server.
-- [axios](https://github.com/mzabriskie/axios) as the Promise-based HTTP client for the browser and node.js.
+- [nodemon](https://nodemon.io/) to monitor for any changes in your Node.js application and automatically restart the server.
+- [axios](https://github.com/mzabriskie/axios) as the Promise-based HTTP client for the browser and Node.js.
 - [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 - [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 - [loadable-component](https://github.com/smooth-code/loadable-components) to lazy load component when needed in app. Reduce your bundle size without stress.
@@ -555,6 +555,37 @@ By the way, Jest built-in code coverage reports, the report files are generated 
 
 You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code in a Javascript file to skip code coverage.
 
+### How to Deploy
+
+To depoly you app to cloud service (e.g. AWS, GCP), you can follow the instructions below.
+
+1. Build then install production dependencies:
+
+```bash
+yarn build                  # Building bundle
+rm -rf node_modules         # After building remove node modules
+yarn install --production   # Then install dependencies only
+```
+
+2. Pack necessary folders/files to your Node.js server:
+
+✅ node_modules
+✅ public
+✅ src
+✅ tools/webpack
+✅ index.ts
+✅ postcss.config.js
+✅ package.json
+✅ tsconfig.json
+
+3. Run your app:
+
+```bash
+yarn start
+```
+
+> Ideally, the above steps can be integrated into your CI. I recommend you to pack the `yarn.lock` for yarn installation via CI.
+
 ## Troubleshooting
 
 - If app crash due to the error: `Invariant Violation: loadable: SSR requires "@loadable/babel-plugin", please install it` (refer to this [issue](https://github.com/smooth-code/loadable-components/issues/173)). To solve that, you must use `.js` extension for code-splitting files (e.g. `src/Home/index.js`).
@@ -563,24 +594,6 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
   - Restart the server to solve it.
   - Or for v16.1.0 up, you can use `suppressHydrationWarning` attribute for intentional client/server text mismatches ([#11126](https://github.com/facebook/react/pull/11126)).
-
-- If you run the starter through a cloud computing service such as AWS EC2 instance etc. and you encounter an `UnhandledPromiseRejectionWarning` like this [issue](https://github.com/wellyshen/react-cool-starter/issues/76). It might caused by the "openBrowser" tool. You can solve the issue like following:
-
-In the `./package.json` script:
-
-```
-// ...
-"start:prod": {
-  "command": "node .",
-  "env": {
-    "NODE_PATH": "./src",
-    "NODE_ENV": "production",
-    "PORT": 8080,
-    "BROWSER": "none"   // Add this node variable to turn off the function of open browser automatically
-  }
-},
-// ...
-```
 
 - If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to `./package.json`.
 
