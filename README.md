@@ -584,7 +584,7 @@ yarn install --production   # Then install dependencies only
 yarn start
 ```
 
-> Ideally, the above steps can be integrated into your CI. I recommend you to pack the `yarn.lock` for yarn installation via CI.
+> Ideally, the above steps can be integrated into your CI. I recommend you to pack the `yarn.lock` for yarn installation by CI.
 
 ## Troubleshooting
 
