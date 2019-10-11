@@ -13,7 +13,6 @@ import { Provider } from 'react-redux';
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
 import { Helmet } from 'react-helmet';
 import chalk from 'chalk';
-import openBrowser from 'react-dev-utils/openBrowser';
 
 import configureStore from './utils/configureStore';
 import renderHtml from './utils/renderHtml';
@@ -150,8 +149,4 @@ app.listen(config.port, config.host, err => {
   if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
 
   console.info(chalk.green(`==> 🌎  Listening at ${url}`));
-
-  // Open browser
-  if (openBrowser(url))
-    console.info(chalk.green("==> 🖥️  Opened on your browser's tab!"));
 });
