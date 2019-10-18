@@ -2,6 +2,7 @@ import React from 'react';
 import { renderRoutes } from 'react-router-config';
 import { Helmet } from 'react-helmet';
 import { hot } from 'react-hot-loader';
+import { Link } from 'react-router-dom';
 
 import config from '../config';
 // Import your global styles here
@@ -15,10 +16,10 @@ interface Route {
 const App = ({ route }: Route) => (
   <div className={styles.App}>
     <Helmet {...config.app} />
-    <div className={styles.header}>
+    <Link to="/" className={styles.header}>
       <img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
       <h1>{config.app.title}</h1>
-    </div>
+    </Link>
     <hr />
     {/* Child routes won't render without this */}
     {renderRoutes(route.routes)}
