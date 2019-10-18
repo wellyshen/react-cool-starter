@@ -9,6 +9,9 @@ body {
   color: $color-white;
 
   .header {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     overflow: auto;
     padding: 15px;
 
