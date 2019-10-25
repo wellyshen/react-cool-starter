@@ -4,8 +4,10 @@ exports[`<App /> renders 1`] = `
 <div
   className="App"
 >
-  <div
+  <a
     className="header"
+    href="/"
+    onClick={[Function]}
   >
     <img
       alt="Logo"
@@ -15,7 +17,7 @@ exports[`<App /> renders 1`] = `
     <h1>
       React Cool Starter
     </h1>
-  </div>
+  </a>
   <hr />
   <div>
     <h1>

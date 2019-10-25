@@ -1,8 +1,8 @@
 {
   "errors": [],
   "warnings": [],
-  "version": "4.41.0",
-  "hash": "272c4d56bf944bf8bf0b",
+  "version": "4.41.2",
+  "hash": "9e24fabef076a35f9bee",
   "publicPath": "/assets/",
   "outputPath": "/Users/welly/Desktop/react-cool-starter/public/assets",
   "assetsByChunkName": {
@@ -37,7 +37,7 @@
     },
     {
       "name": "UserInfo.js",
-      "size": 39726,
+      "size": 40552,
       "chunks": ["UserInfo"],
       "chunkNames": ["UserInfo"],
       "info": {},
@@ -45,7 +45,7 @@
     },
     {
       "name": "main.css",
-      "size": 7190,
+      "size": 7257,
       "chunks": ["main"],
       "chunkNames": ["main"],
       "info": {},
@@ -53,7 +53,7 @@
     },
     {
       "name": "main.js",
-      "size": 5177809,
+      "size": 5184949,
       "chunks": ["main"],
       "chunkNames": ["main"],
       "info": {},
