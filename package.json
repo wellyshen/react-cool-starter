@@ -203,14 +203,25 @@
       "prettier/prettier": [
         "error",
         {
-          "singleQuote": true
+          "singleQuote": true,
+          "trailingComma": "es5"
         }
       ],
       "@typescript-eslint/ban-ts-ignore": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-use-before-define": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/no-var-requires": "off"
+      "@typescript-eslint/no-var-requires": "off",
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "always-multiline",
+          "objects": "always-multiline",
+          "imports": "always-multiline",
+          "exports": "always-multiline",
+          "functions": "never"
+        }
+      ]
     },
     "globals": {
       "__CLIENT__": true,
@@ -366,7 +377,7 @@
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
-    "eslint": "^6.1.0",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.4.0",
     "eslint-import-resolver-webpack": "^0.11.1",
