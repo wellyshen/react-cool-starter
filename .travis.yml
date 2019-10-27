@@ -23,3 +23,6 @@ notifications:
 
 after_success:
   - yarn coveralls
+
+env:
+  - API_URL=https://jsonplaceholder.typicode.com
