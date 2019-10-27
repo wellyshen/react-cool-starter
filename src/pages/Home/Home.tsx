@@ -35,11 +35,11 @@ export const Home = ({ readyStatus, list, fetchUsersIfNeeded }: Props) => {
 
 const mapStateToProps = ({ home: { readyStatus, list } }: AppState) => ({
   readyStatus,
-  list
+  list,
 });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch) => ({
-  fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded())
+  fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded()),
 });
 
 export default connect(

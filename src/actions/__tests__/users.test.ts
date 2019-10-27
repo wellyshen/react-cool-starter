@@ -29,7 +29,7 @@ describe('fetch users data', () => {
 
     const expectedActions = [
       { type: 'USERS_REQUESTING' },
-      { type: 'USERS_SUCCESS', data: response }
+      { type: 'USERS_SUCCESS', data: response },
     ];
     const store = mockStore({ list: null });
 
@@ -46,7 +46,7 @@ describe('fetch users data', () => {
 
     const expectedActions = [
       { type: 'USERS_REQUESTING' },
-      { type: 'USERS_FAILURE', err: errorMessage }
+      { type: 'USERS_FAILURE', err: errorMessage },
     ];
     const store = mockStore({ err: null });
 

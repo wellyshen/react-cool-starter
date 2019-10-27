@@ -21,7 +21,7 @@ describe('<UserInfo />', () => {
     const mockAction = jest.fn();
     const props = {
       userInfo: {},
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: mockAction };
 
@@ -37,7 +37,7 @@ describe('<UserInfo />', () => {
   it('renders the loading status if data invalid', () => {
     const props = {
       userInfo: {},
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: () => {} };
 
@@ -47,7 +47,7 @@ describe('<UserInfo />', () => {
   it('renders the loading status if requesting data', () => {
     const props = {
       userInfo: { 1: { readyStatus: 'request' } },
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: () => {} };
 
@@ -57,7 +57,7 @@ describe('<UserInfo />', () => {
   it('renders an error if loading failed', () => {
     const props = {
       userInfo: { 1: { readyStatus: 'failure' } },
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: () => {} };
 
@@ -73,11 +73,11 @@ describe('<UserInfo />', () => {
             name: 'Welly',
             phone: '007',
             email: 'test@gmail.com',
-            website: 'www.test.com'
-          }
-        }
+            website: 'www.test.com',
+          },
+        },
       },
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: () => {} };
 

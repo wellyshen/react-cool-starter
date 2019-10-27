@@ -10,7 +10,7 @@ describe('user data userInfo', () => {
     expect(
       userInfo(undefined, {
         type: 'USER_REQUESTING',
-        userId: '1'
+        userId: '1',
       })
     ).toEqual({ 1: { readyStatus: 'request' } });
   });
@@ -20,13 +20,13 @@ describe('user data userInfo', () => {
       userInfo(undefined, {
         type: 'USER_FAILURE',
         userId: '1',
-        err: 'Oops! Something went wrong.'
+        err: 'Oops! Something went wrong.',
       })
     ).toEqual({
       1: {
         readyStatus: 'failure',
-        err: 'Oops! Something went wrong.'
-      }
+        err: 'Oops! Something went wrong.',
+      },
     });
   });
 
@@ -39,8 +39,8 @@ describe('user data userInfo', () => {
           name: 'Welly',
           phone: '007',
           email: 'test@gmail.com',
-          website: 'www.test.com'
-        }
+          website: 'www.test.com',
+        },
       })
     ).toEqual({
       1: {
@@ -49,9 +49,9 @@ describe('user data userInfo', () => {
           name: 'Welly',
           phone: '007',
           email: 'test@gmail.com',
-          website: 'www.test.com'
-        }
-      }
+          website: 'www.test.com',
+        },
+      },
     });
   });
 });

@@ -7,7 +7,7 @@ import {
   AppState,
   USERS_REQUESTING,
   USERS_SUCCESS,
-  USERS_FAILURE
+  USERS_FAILURE,
 } from '../types';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
@@ -32,9 +32,7 @@ export const fetchUsers = (URL: string = API_URL): ThunkAction => async (
 
 /* istanbul ignore next */
 const shouldFetchUsers = (state: AppState): boolean => {
-  if (state.home.readyStatus === 'success') return false;
-
-  return true;
+  return state.home.readyStatus !== 'success';
 };
 
 /* istanbul ignore next */

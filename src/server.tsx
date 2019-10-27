@@ -53,13 +53,13 @@ if (!__DEV__) {
       noInfo: true,
       writeToDisk: true,
       stats: 'minimal',
-      serverSideRender: true
+      serverSideRender: true,
     })
   );
 
   app.use(
     require('webpack-hot-middleware')(compiler, {
-      log: false // Turn it off for friendly-errors-webpack-plugin
+      log: false, // Turn it off for friendly-errors-webpack-plugin
     })
   );
 }

@@ -40,7 +40,7 @@ describe('<ErrorBoundary />', () => {
 
     wrapper.setState({
       error: 'Oops! Something went wrong.',
-      errorInfo: { componentStack: 'Somewhere broken :(' }
+      errorInfo: { componentStack: 'Somewhere broken :(' },
     });
 
     expect(wrapper.find('.error-view').exists()).toBeTruthy();

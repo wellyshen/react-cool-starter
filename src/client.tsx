@@ -10,7 +10,7 @@ import configureStore from './utils/configureStore';
 import routes from './routes';
 
 // Get the initial state from server-side rendering
-const initialState = window.__INITIAL_STATE__;
+const initialState = window.__INITIAL_STATE__; // eslint-disable-line
 const { store, history } = configureStore({ initialState });
 
 const render = (Routes: Array<object>) => {

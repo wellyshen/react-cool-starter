@@ -14,10 +14,10 @@ module.exports = () => {
     preprocessCss: (data, filename) =>
       sass.renderSync({
         data,
-        file: filename
+        file: filename,
       }).css,
     rootDir: path.resolve(process.cwd(), 'src'),
-    devMode: __DEV__
+    devMode: __DEV__,
   });
 
   // Images
@@ -26,7 +26,7 @@ module.exports = () => {
     extensions: ['gif', 'jpg', 'jpeg', 'png', 'webp'],
     publicPath: '/assets/',
     limit: 10240,
-    name: '[name].[hash:8].[ext]'
+    name: '[name].[hash:8].[ext]',
   });
 
   // Fonts
@@ -35,6 +35,6 @@ module.exports = () => {
     extensions: ['woff', 'woff2', 'ttf', 'eot', 'svg'],
     publicPath: '/assets/',
     limit: 10240,
-    name: '[name].[hash:8].[ext]'
+    name: '[name].[hash:8].[ext]',
   });
 };

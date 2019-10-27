@@ -20,7 +20,7 @@ describe('fetch user data', () => {
     name: 'Welly',
     phone: '007',
     email: 'test@gmail.com',
-    website: 'www.test.com'
+    website: 'www.test.com',
   };
   const errorMessage = 'Request failed with status code 404';
 
@@ -35,7 +35,7 @@ describe('fetch user data', () => {
 
     const expectedActions = [
       { type: 'USER_REQUESTING', userId },
-      { type: 'USER_SUCCESS', userId, data: response }
+      { type: 'USER_SUCCESS', userId, data: response },
     ];
     const store = mockStore({ info: null });
 
@@ -52,7 +52,7 @@ describe('fetch user data', () => {
 
     const expectedActions = [
       { type: 'USER_REQUESTING', userId },
-      { type: 'USER_FAILURE', userId, err: errorMessage }
+      { type: 'USER_FAILURE', userId, err: errorMessage },
     ];
     const store = mockStore({ err: null });
 

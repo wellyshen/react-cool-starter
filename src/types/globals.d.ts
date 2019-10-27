@@ -1,6 +1,6 @@
-declare const __CLIENT__: boolean;
-declare const __SERVER__: boolean;
-declare const __DEV__: boolean;
+declare const __CLIENT__: boolean; // eslint-disable-line
+declare const __SERVER__: boolean; // eslint-disable-line
+declare const __DEV__: boolean; // eslint-disable-line
 
 declare module '*.css' {
   const content: { [className: string]: string };

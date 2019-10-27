@@ -56,7 +56,7 @@ describe('<Home />', () => {
   it('renders the <UserList /> if loading was successful', () => {
     const props = {
       readyStatus: 'success',
-      list: [{ id: '1', name: 'Welly' }]
+      list: [{ id: '1', name: 'Welly' }],
     };
     const actions = { fetchUsersIfNeeded: () => {} };
 

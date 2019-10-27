@@ -7,7 +7,7 @@ import {
   AppState,
   USER_REQUESTING,
   USER_SUCCESS,
-  USER_FAILURE
+  USER_FAILURE,
 } from '../types';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';
@@ -35,9 +35,7 @@ export const fetchUser = (
 const shouldFetchUser = (state: AppState, userId: string): boolean => {
   const userInfo = state.userInfo[userId];
 
-  if (userInfo && userInfo.readyStatus === 'success') return false;
-
-  return true;
+  return !(userInfo && userInfo.readyStatus === 'success');
 };
 
 /* istanbul ignore next */

@@ -6,7 +6,7 @@ describe('users data home', () => {
     expect(home(undefined, {})).toEqual({
       readyStatus: 'invalid',
       err: null,
-      list: []
+      list: [],
     });
   });
 
@@ -15,12 +15,12 @@ describe('users data home', () => {
       home(undefined, {
         type: 'USERS_REQUESTING',
         err: null,
-        data: []
+        data: [],
       })
     ).toEqual({
       readyStatus: 'request',
       err: null,
-      list: []
+      list: [],
     });
   });
 
@@ -29,12 +29,12 @@ describe('users data home', () => {
       home(undefined, {
         type: 'USERS_FAILURE',
         err: 'Oops! Something went wrong.',
-        data: []
+        data: [],
       })
     ).toEqual({
       readyStatus: 'failure',
       err: 'Oops! Something went wrong.',
-      list: []
+      list: [],
     });
   });
 
@@ -43,12 +43,12 @@ describe('users data home', () => {
       home(undefined, {
         type: 'USERS_SUCCESS',
         err: null,
-        data: [{ id: '1', name: 'Welly' }]
+        data: [{ id: '1', name: 'Welly' }],
       })
     ).toEqual({
       readyStatus: 'success',
       err: null,
-      list: [{ id: '1', name: 'Welly' }]
+      list: [{ id: '1', name: 'Welly' }],
     });
   });
 });
