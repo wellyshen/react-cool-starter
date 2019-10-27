@@ -1,4 +1,5 @@
 import axios from 'axios';
+import config from '../config';
 
 import {
   ThunkDispatch,
@@ -10,7 +11,10 @@ import {
   USER_FAILURE
 } from '../types';
 
-const API_URL = 'https://jsonplaceholder.typicode.com/users';
+const {
+  api: { baseUrl }
+} = config;
+const API_URL = `${baseUrl}/users`;
 
 // Export this for unit testing
 /* istanbul ignore next */
