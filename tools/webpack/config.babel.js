@@ -10,9 +10,11 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import LoadablePlugin from '@loadable/webpack-plugin';
+import getClientEnvironment from './env';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
+const env = getClientEnvironment(isDev ? 'development' : 'production');
 
 // Enable/disable css modules here
 const USE_CSS_MODULES = true;
@@ -40,7 +42,8 @@ const getPlugins = () => {
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,
-      __DEV__: isDev
+      __DEV__: isDev,
+      ...env.stringified
     })
   ];
 
