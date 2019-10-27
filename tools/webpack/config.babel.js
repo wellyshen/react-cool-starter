@@ -143,10 +143,10 @@ module.exports = {
                 localIdentName: '[name]__[local]--[hash:base64:5]',
                 context: path.resolve(process.cwd(), 'src')
               },
-              sourceMap: true
+              sourceMap: isDev
             }
           },
-          { loader: 'postcss', options: { sourceMap: true } }
+          { loader: 'postcss', options: { sourceMap: isDev } }
         ]
       },
       {
@@ -167,11 +167,11 @@ module.exports = {
                 localIdentName: '[name]__[local]--[hash:base64:5]',
                 context: path.resolve(process.cwd(), 'src')
               },
-              sourceMap: true
+              sourceMap: isDev
             }
           },
-          { loader: 'postcss', options: { sourceMap: true } },
-          { loader: 'sass', options: { sourceMap: true } }
+          { loader: 'postcss', options: { sourceMap: isDev } },
+          { loader: 'sass', options: { sourceMap: isDev } }
         ]
       },
       {
