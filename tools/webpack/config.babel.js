@@ -9,6 +9,7 @@ import ImageminPlugin from 'imagemin-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import LoadablePlugin from '@loadable/webpack-plugin';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
@@ -68,6 +69,18 @@ const getPlugins = () => {
       // Visualize all of the webpack bundles
       // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
       // for more configurations
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: {
+            drop_console: true, // eslint-disable-line
+            drop_debugger: true // eslint-disable-line
+          },
+          output: {
+            comments: false,
+            beautify: false
+          }
+        }
+      }),
       new BundleAnalyzerPlugin({
         analyzerMode: process.env.NODE_ENV === 'analyze' ? 'server' : 'disabled'
       })
