@@ -95,7 +95,12 @@ module.exports = {
   context: path.resolve(process.cwd()),
   entry: getEntry(),
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [
+      new TerserJSPlugin({}),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: { discardComments: { removeAll: !isDev } }
+      })
+    ],
     splitChunks: {
       // Auto split vendor modules in production only
       chunks: isDev ? 'async' : 'all'
