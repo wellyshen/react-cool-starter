@@ -309,6 +309,8 @@
     "connected-react-router": "^6.5.2",
     "core-js": "^3.3.4",
     "css-modules-require-hook": "^4.2.3",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
