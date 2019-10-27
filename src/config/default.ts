@@ -1,6 +1,9 @@
 export default {
   host: process.env.NODE_HOST || 'localhost', // Define your host from 'package.json'
   port: process.env.PORT || 8080,
+  api: {
+    baseUrl: process.env.API_URL
+  },
   app: {
     htmlAttributes: { lang: 'en' },
     title: 'React Cool Starter',
