@@ -98,7 +98,9 @@ module.exports = {
     minimizer: [
       new TerserJSPlugin({}),
       new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: { discardComments: { removeAll: !isDev } }
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: !isDev } }]
+        }
       })
     ],
     splitChunks: {
