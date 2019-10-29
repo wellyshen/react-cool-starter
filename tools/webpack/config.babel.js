@@ -95,7 +95,14 @@ module.exports = {
   context: path.resolve(process.cwd()),
   entry: getEntry(),
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [
+      new TerserJSPlugin({}),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: !isDev } }]
+        }
+      })
+    ],
     splitChunks: {
       // Auto split vendor modules in production only
       chunks: isDev ? 'async' : 'all'
@@ -140,7 +147,7 @@ module.exports = {
             options: {
               importLoaders: 1,
               modules: USE_CSS_MODULES && {
-                localIdentName: '[name]__[local]--[hash:base64:5]',
+                localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
                 context: path.resolve(process.cwd(), 'src')
               },
               sourceMap: true
@@ -164,7 +171,7 @@ module.exports = {
             options: {
               importLoaders: 2,
               modules: USE_CSS_MODULES && {
-                localIdentName: '[name]__[local]--[hash:base64:5]',
+                localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
                 context: path.resolve(process.cwd(), 'src')
               },
               sourceMap: true

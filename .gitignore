@@ -3,4 +3,5 @@
 
 coverage
 node_modules
-public/assets
+public/*
+!public/favicon.ico
