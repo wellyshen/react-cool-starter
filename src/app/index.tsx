@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import config from '../config';
 // Import your global styles here
-import 'normalize.css/normalize.css'; // eslint-disable-line import/first
+import 'normalize.css/normalize.css';
 import styles from './styles.scss';
 
 interface Route {

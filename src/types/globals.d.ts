@@ -11,6 +11,14 @@ declare module '*.scss' {
   export default content;
 }
 
+declare namespace NodeJS {
+  interface Global {
+    __CLIENT__: boolean;
+    __SERVER__: boolean;
+    __DEV__: boolean;
+  }
+}
+
 interface Window {
   __INITIAL_STATE__: object;
 }
