@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.ts",
   "engines": {
@@ -250,6 +250,7 @@
     ]
   },
   "jest": {
+    "preset": "ts-jest",
     "setupFiles": [
       "raf/polyfill"
     ],
@@ -272,9 +273,6 @@
       "!src/pages/Home/index.js",
       "!src/pages/UserInfo/index.js"
     ],
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
     "moduleNameMapper": {
       ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.ts",
       ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.ts"
@@ -403,7 +401,7 @@
     "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-recommended-scss": "^4.0.0",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-scss": "^3.12.0",
+    "stylelint-scss": "^3.12.1",
     "terser-webpack-plugin": "^2.2.1",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.4",
