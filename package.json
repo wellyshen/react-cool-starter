@@ -251,9 +251,6 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "setupFiles": [
-      "raf/polyfill"
-    ],
     "setupFilesAfterEnv": [
       "<rootDir>/tools/jest/setup.ts"
     ],
