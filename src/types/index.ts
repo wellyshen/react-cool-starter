@@ -1,6 +1,6 @@
 import { RouterState } from 'connected-react-router';
 import { Action } from 'redux';
-import { ThunkAction, ThunkDispatch } from 'redux-thunk';
+import { ThunkAction as Act, ThunkDispatch as Dispatch } from 'redux-thunk';
 
 // Reducers
 export interface HomeState {
@@ -54,6 +54,6 @@ export interface UserAction {
 
 export type MyAction = UsersAction | UserAction;
 
-export type ThunkAction = ThunkAction<void, AppState, null, Action<string>>;
+export type ThunkAction = Act<void, AppState, null, Action<string>>;
 
-export type ThunkDispatch = ThunkDispatch<AppState, void, MyAction>;
+export type ThunkDispatch = Dispatch<AppState, void, MyAction>;
