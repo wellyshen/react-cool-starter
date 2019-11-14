@@ -1,9 +1,9 @@
 # React Cool Starter 😎
 
-[![Build Status](https://travis-ci.org/wellyshen/react-cool-starter.svg?branch=master&style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
+[![build status](https://travis-ci.org/wellyshen/react-cool-starter/master.svg?style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
 [![dependencies Status](https://david-dm.org/wellyshen/react-cool-starter/status.svg?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter)
 [![devDependencies Status](https://david-dm.org/wellyshen/react-cool-starter/dev-status.svg?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)
-[![Coverage Status](https://coveralls.io/repos/github/wellyshen/react-cool-starter/badge.svg?branch=master&style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
+[![coverage status](https://coveralls.io/repos/github/wellyshen/react-cool-starter/badge.svg?branch=master&style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/wellyshen/react-cool-starter/master/LICENSE)
 [![Twitter URL](https://img.shields.io/twitter/url/https/github.com/erikras/redux-form.svg?style=flat-square)](https://twitter.com/intent/tweet?text=With%20@React-Cool-Starter,%20I%20can%20build%20my%20universal%20web%20app%20easily.%20Thanks,%20@Welly%20Shen!)
