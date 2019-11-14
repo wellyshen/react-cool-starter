@@ -1,6 +1,6 @@
 # React Cool Starter 😎
 
-[![build status](https://travis-ci.org/wellyshen/react-cool-starter/master.svg?style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
+[![build status](https://img.shields.io/travis/wellyshen/react-cool-starter/master.svg?style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
 [![dependencies Status](https://david-dm.org/wellyshen/react-cool-starter/status.svg?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter)
 [![devDependencies Status](https://david-dm.org/wellyshen/react-cool-starter/dev-status.svg?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)
 [![coverage status](https://coveralls.io/repos/github/wellyshen/react-cool-starter/badge.svg?branch=master&style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
