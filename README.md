@@ -142,6 +142,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── actions                     # Redux actions (including testing files)
 │   ├── reducers                    # Redux reducers (including testing files)
 │   ├── utils                       # App-wide utils (e.g. configure Redux store, HTML template etc.)
+│   ├── static                      # Static assets (e.g. images, fonts etc.)
 │   ├── theme                       # App-wide style and vendor CSS framework
 │   ├── types                       # Typescript type declarations for redux and global
 │   ├── client.tsx                  # App bootstrap and rendering (webpack entry)
@@ -569,14 +570,14 @@ yarn install --production   # Then install dependencies only
 
 2. Pack necessary folders/files to your Node.js server:
 
- - ✅ node_modules
- - ✅ public
- - ✅ src
- - ✅ tools/webpack
- - ✅ index.ts
- - ✅ postcss.config.js
- - ✅ package.json
- - ✅ tsconfig.json
+- ✅ node_modules
+- ✅ public
+- ✅ src
+- ✅ tools/webpack
+- ✅ index.ts
+- ✅ postcss.config.js
+- ✅ package.json
+- ✅ tsconfig.json
 
 3. Run your app:
 
