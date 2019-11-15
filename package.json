@@ -63,7 +63,6 @@
     "dev": {
       "command": "nodemon --exec ts-node --files .",
       "env": {
-        "NODE_PATH": "./src",
         "NODE_ENV": "development",
         "PORT": 3000
       }
@@ -71,7 +70,6 @@
     "start": {
       "command": "ts-node --transpile-only --files .",
       "env": {
-        "NODE_PATH": "./src",
         "NODE_ENV": "production",
         "PORT": 8080
       }
