@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "3.2.8",
+  "version": "3.2.9",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.ts",
   "engines": {
@@ -57,10 +57,10 @@
     "clean": "npm-run-all --parallel clean:*",
     "clean:build": "better-npm-run clean:build",
     "clean:test": "better-npm-run clean:test",
-    "coveralls": "yarn clean:test && better-npm-run coveralls",
     "docker": "yarn docker:build && yarn docker:start",
     "docker:build": "docker build --rm -t wellyshen/react-cool-starter .",
-    "docker:start": "docker run --rm -it -p 8080:8080 wellyshen/react-cool-starter"
+    "docker:start": "docker run --rm -it -p 8080:8080 wellyshen/react-cool-starter",
+    "coveralls": "yarn test && better-npm-run coveralls"
   },
   "betterScripts": {
     "dev": {
