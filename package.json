@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "3.2.8",
+  "version": "3.2.9",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.ts",
   "engines": {
@@ -57,7 +57,7 @@
     "clean": "npm-run-all --parallel clean:*",
     "clean:build": "better-npm-run clean:build",
     "clean:test": "better-npm-run clean:test",
-    "coveralls": "yarn clean:test && better-npm-run coveralls"
+    "coveralls": "yarn test && better-npm-run coveralls"
   },
   "betterScripts": {
     "dev": {
