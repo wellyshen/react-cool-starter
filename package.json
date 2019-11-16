@@ -93,7 +93,7 @@
       "command": "eslint --fix . --ext .js,.jsx,.ts,.tsx"
     },
     "lint:style": {
-      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\" \"!coverage\""
+      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\""
     },
     "test": {
       "command": "jest --coverage",
@@ -249,7 +249,8 @@
       ]
     },
     "ignoreFiles": [
-      "public/assets/**/*.css"
+      "public/assets/**/*.css",
+      "coverage/**/*.css"
     ]
   },
   "jest": {
