@@ -103,7 +103,7 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 ## Script Commands
 
-I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platforms. All of the scripts are listed as following:
+I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use environment variables across platforms. All of the scripts are listed as following:
 
 | `yarn <script>`        | Description                                                                      |
 | ---------------------- | -------------------------------------------------------------------------------- |
