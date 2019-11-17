@@ -6,7 +6,7 @@
 [![devDependencies status](https://img.shields.io/david/dev/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![MIT licensed](https://img.shields.io/github/license/wellyshen/react-cool-starter?style=flat-square)](https://raw.githubusercontent.com/wellyshen/react-cool-starter/master/LICENSE)
-[![Twitter URL](https://img.shields.io/twitter/url?style=flat-square&url=https%3A%2F%2Fgithub.com%2Fwellyshen%2Freact-cool-starter)](https://twitter.com/intent/tweet?text=With%20@React-Cool-Starter,%20I%20can%20build%20my%20universal%20web%20app%20easily.%20Thanks,%20@Welly%20Shen%20🤩)
+[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fwellyshen%2Freact-cool-starter)](https://twitter.com/intent/tweet?text=With%20@React-Cool-Starter,%20I%20can%20build%20my%20universal%20web%20app%20easily.%20Thanks,%20@Welly%20Shen%20🤩)
 
 > 🎉 My react-native app [LeadFit](https://itunes.apple.com/app/id1321807247) now available on App Store, which is a workout app. Welcome to try, it's free!
 
@@ -99,7 +99,7 @@ Now the app should be running at [http://localhost:8080/](http://localhost:8080/
 
 ## Script Commands
 
-I use [better-npm-run](https://github.com/benoror/better-npm-run) to manage the scripts in a better way, which also provides the compatibility of cross-platforms. All of the scripts are listed as following:
+I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use environment variables across platforms. All of the scripts are listed as following:
 
 | `yarn <script>`        | Description                                                                      |
 | ---------------------- | -------------------------------------------------------------------------------- |

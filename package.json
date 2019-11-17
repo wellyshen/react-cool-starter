@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "3.2.9",
+  "version": "3.3.0",
   "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
   "main": "index.ts",
   "engines": {
@@ -42,77 +42,25 @@
     "*.sass"
   ],
   "scripts": {
-    "dev": "better-npm-run dev",
-    "start": "better-npm-run start",
-    "build": "yarn clean:build && better-npm-run build",
-    "analyze": "yarn clean:build && better-npm-run analyze",
-    "type-check": "better-npm-run type-check",
+    "dev": "cross-env NODE_ENV=development PORT=3000 nodemon --exec ts-node --files .",
+    "start": "cross-env NODE_ENV=production PORT=8080 ts-node --transpile-only --files .",
+    "build": "yarn clean:build && cross-env NODE_ENV=production webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
+    "analyze": "yarn clean:build && cross-env NODE_ENV=analyze webpack -p --progress --hide-modules --config ./tools/webpack/config.babel.js",
+    "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check --watch",
     "lint": "npm-run-all --parallel lint:*",
-    "lint:code": "better-npm-run lint:code",
-    "lint:style": "better-npm-run lint:style",
-    "test": "better-npm-run test",
+    "lint:code": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
+    "lint:style": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\"",
+    "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "yarn test --watch",
     "test:update-snapshot": "yarn test -u",
     "clean": "npm-run-all --parallel clean:*",
-    "clean:build": "better-npm-run clean:build",
-    "clean:test": "better-npm-run clean:test",
+    "clean:build": "rimraf ./public/assets",
+    "clean:test": "rimraf ./coverage",
     "docker": "yarn docker:build && yarn docker:start",
     "docker:build": "docker build --rm -t wellyshen/react-cool-starter .",
     "docker:start": "docker run --rm -it -p 8080:8080 wellyshen/react-cool-starter",
-    "coveralls": "yarn test && better-npm-run coveralls"
-  },
-  "betterScripts": {
-    "dev": {
-      "command": "nodemon --exec ts-node --files .",
-      "env": {
-        "NODE_ENV": "development",
-        "PORT": 3000
-      }
-    },
-    "start": {
-      "command": "ts-node --transpile-only --files .",
-      "env": {
-        "NODE_ENV": "production",
-        "PORT": 8080
-      }
-    },
-    "build": {
-      "command": "webpack --progress --hide-modules --config ./tools/webpack/config.babel.js",
-      "env": {
-        "NODE_ENV": "production"
-      }
-    },
-    "analyze": {
-      "command": "webpack -p --progress --hide-modules --config ./tools/webpack/config.babel.js",
-      "env": {
-        "NODE_ENV": "analyze"
-      }
-    },
-    "type-check": {
-      "command": "tsc --noEmit"
-    },
-    "lint:code": {
-      "command": "eslint --fix . --ext .js,.jsx,.ts,.tsx"
-    },
-    "lint:style": {
-      "command": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\""
-    },
-    "test": {
-      "command": "jest --coverage",
-      "env": {
-        "NODE_ENV": "test"
-      }
-    },
-    "clean:build": {
-      "command": "rimraf ./public/assets"
-    },
-    "clean:test": {
-      "command": "rimraf ./coverage"
-    },
-    "coveralls": {
-      "command": "cat ./coverage/lcov.info | coveralls"
-    }
+    "coveralls": "yarn test && cat ./coverage/lcov.info | coveralls"
   },
   "husky": {
     "hooks": {
@@ -309,11 +257,11 @@
     "axios": "^0.19.0",
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "better-npm-run": "^0.1.1",
     "chalk": "^3.0.0",
     "compression": "^1.7.4",
     "connected-react-router": "^6.5.2",
     "core-js": "^3.4.1",
+    "cross-env": "^6.0.3",
     "css-modules-require-hook": "^4.2.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "express": "^4.17.1",
@@ -375,7 +323,7 @@
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-prettier": "^6.6.0",
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.18.2",

@@ -42,7 +42,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch) => ({
   fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded())
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(memo(Home));
+export default connect(mapStateToProps, mapDispatchToProps)(memo(Home));
