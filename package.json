@@ -1,7 +1,7 @@
 {
   "name": "react-cool-starter",
   "version": "3.3.0",
-  "description": "A starter boilerplate for an universal web application with the best development experience and best practices.",
+  "description": "A starter boilerplate for a universal web application with the best development experience and best practices.",
   "main": "index.ts",
   "engines": {
     "node": ">=10",
