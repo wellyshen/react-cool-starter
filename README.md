@@ -1,4 +1,4 @@
-# React Cool Starter 😎🐣
+# React Cool Starter
 
 [![build status](https://img.shields.io/travis/wellyshen/react-cool-starter/master.svg?style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
 [![coverage status](https://img.shields.io/coveralls/github/wellyshen/react-cool-starter?style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
