@@ -14,13 +14,13 @@ const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 // Export this for unit testing
 /* istanbul ignore next */
-export const fetchUsers = (URL: string = API_URL): ThunkAction => async (
+export const fetchUsers = (): ThunkAction => async (
   dispatch: ThunkDispatch
 ) => {
   dispatch({ type: USERS_REQUESTING });
 
   try {
-    const { data } = await axios.get(URL);
+    const { data } = await axios.get(API_URL);
 
     /* istanbul ignore next */
     dispatch({ type: USERS_SUCCESS, data });
