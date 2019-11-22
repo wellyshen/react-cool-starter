@@ -1,58 +1,43 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import axios from 'axios';
-// @ts-ignore
-import httpAdapter from 'axios/lib/adapters/http';
-import nock from 'nock';
 
 import { fetchUsers } from '../users';
 
-const host = 'http://localhost';
+jest.mock('axios');
 
-axios.defaults.baseURL = host;
-axios.defaults.adapter = httpAdapter;
+describe('users action', () => {
+  const mockStore = configureMockStore([thunk]);
 
-const mockStore = configureMockStore([thunk]);
-
-describe('fetch users data', () => {
-  const response = [{ id: 'test', name: 'Welly' }];
-  const errorMessage = 'Request failed with status code 404';
-
-  afterEach(() => {
-    nock.disableNetConnect();
-  });
-
-  it('creates USERS_SUCCESS when fetching users has been done', () => {
-    nock(host)
-      .get('/test')
-      .reply(200, response);
-
+  it('creates USERS_SUCCESS when fetching users has been done', async () => {
+    const data = [{ id: 'test', name: 'Welly' }];
+    const store = mockStore({ list: null });
     const expectedActions = [
       { type: 'USERS_REQUESTING' },
-      { type: 'USERS_SUCCESS', data: response }
+      { type: 'USERS_SUCCESS', data }
     ];
-    const store = mockStore({ list: null });
 
     // @ts-ignore
-    store.dispatch(fetchUsers(`${host}/test`)).then(() => {
-      expect(store.getActions()).toEqual(expectedActions);
-    });
+    axios.get.mockResolvedValue({ data });
+
+    // @ts-ignore
+    await store.dispatch(fetchUsers());
+    expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('creates USERS_FAILURE when fail to fetch users', () => {
-    nock(host)
-      .get('/test')
-      .replyWithError(errorMessage);
-
+  it('creates USERS_FAILURE when fail to fetch users', async () => {
+    const errorMessage = 'Request failed with status code 404';
+    const store = mockStore({ err: null });
     const expectedActions = [
       { type: 'USERS_REQUESTING' },
       { type: 'USERS_FAILURE', err: errorMessage }
     ];
-    const store = mockStore({ err: null });
 
     // @ts-ignore
-    store.dispatch(fetchUsers(`${host}/test`)).then(() => {
-      expect(store.getActions()).toEqual(expectedActions);
-    });
+    axios.get.mockRejectedValue({ message: errorMessage });
+
+    // @ts-ignore
+    await store.dispatch(fetchUsers());
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });
