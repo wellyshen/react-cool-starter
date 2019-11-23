@@ -51,7 +51,7 @@
     "type-check:watch": "yarn type-check --watch",
     "lint": "npm-run-all --parallel lint:*",
     "lint:code": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
-    "lint:style": "stylelint --write \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\"",
+    "lint:style": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\"",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "yarn test --watch",
     "test:update-snapshot": "yarn test -u",
@@ -68,7 +68,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": "eslint --fix",
-    "*.{css,scss,sass}": "stylelint --write",
+    "*.{css,scss,sass}": "stylelint --fix",
     "*.{json,md}": "prettier --write"
   },
   "babel": {
