@@ -122,7 +122,7 @@ I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use enviro
 | `test:update`      | Update jest snapshot.                                                            |
 | `clean`            | Remove the client/server bundled stuff and the coverage report.                  |
 | `clean:build`      | Remove the `./public/assets` folder to clean the client bundled files.           |
-| `clean:test`       | Remove the `./coverage` folder to clean the code coverage report.                |
+| `clean:cov`        | Remove the `./coverage` folder to clean the code coverage report.                |
 
 ## App Structure
 
