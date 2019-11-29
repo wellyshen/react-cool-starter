@@ -2,15 +2,10 @@
   "name": "react-cool-starter",
   "version": "3.4.1",
   "description": "A starter boilerplate for a universal web application with the best development experience and best practices.",
-  "main": "index.ts",
-  "engines": {
-    "node": ">=10",
-    "npm": ">=6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wellyshen/react-cool-starter"
-  },
+  "license": "MIT",
+  "homepage": "https://github.com/wellyshen/react-cool-starter",
+  "repository": "https://github.com/wellyshen/react-cool-starter",
+  "bugs": "https://github.com/wellyshen/react-cool-starter/issues",
   "keywords": [
     "starter",
     "boilerpate",
@@ -32,10 +27,10 @@
     "best-practices"
   ],
   "author": "WellyShen <hivoid19@gmail.com> (https://github.com/wellyshen)",
-  "license": "MIT",
-  "homepage": "https://github.com/wellyshen/react-cool-starter",
-  "bugs": {
-    "url": "https://github.com/wellyshen/react-cool-starter/issues"
+  "main": "index.ts",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
   },
   "sideEffects": [
     "*.css",
