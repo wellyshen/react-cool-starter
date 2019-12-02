@@ -77,20 +77,20 @@ You can find Docker support version on this [branch](https://github.com/wellyshe
 
 **1. You can start by cloning the repository on your local machine by running:**
 
-```bash
+```sh
 git clone https://github.com/wellyshen/react-cool-starter.git
 cd react-cool-starter
 ```
 
 **2. Install all of the dependencies:**
 
-```bash
+```sh
 yarn
 ```
 
 **3. Start to run it:**
 
-```bash
+```sh
 yarn build  # Building bundle
 yarn start  # Running production server
 ```
@@ -561,7 +561,7 @@ To depoly you app to cloud service (e.g. AWS, GCP), you can follow the instructi
 
 1. Build then install production dependencies:
 
-```bash
+```sh
 yarn build                  # Building bundle
 rm -rf node_modules         # After building remove node modules
 yarn install --production   # Then install dependencies only
@@ -580,7 +580,7 @@ yarn install --production   # Then install dependencies only
 
 3. Run your app:
 
-```bash
+```sh
 yarn start
 ```
 
