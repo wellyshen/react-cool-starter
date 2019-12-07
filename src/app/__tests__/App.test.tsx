@@ -8,10 +8,10 @@ import App from '../index';
 describe('<App />', () => {
   it('renders', () => {
     const fakeStore = {
-      default: () => {},
-      subscribe: () => {},
-      dispatch: () => {},
-      getState: () => ({ home: () => {} })
+      default: (): void => null,
+      subscribe: (): void => null,
+      dispatch: (): void => null,
+      getState: () => ({ home: (): void => null })
     };
     const fakeRoute = {
       routes: [

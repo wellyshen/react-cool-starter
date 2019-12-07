@@ -34,21 +34,21 @@ describe('<Home />', () => {
 
   it('renders the loading status if data invalid', () => {
     const props = { readyStatus: 'invalid' };
-    const actions = { fetchUsersIfNeeded: () => {} };
+    const actions = { fetchUsersIfNeeded: (): void => null };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
 
   it('renders the loading status if requesting data', () => {
     const props = { readyStatus: 'request' };
-    const actions = { fetchUsersIfNeeded: () => {} };
+    const actions = { fetchUsersIfNeeded: (): void => null };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
 
   it('renders an error if loading failed', () => {
     const props = { readyStatus: 'failure' };
-    const actions = { fetchUsersIfNeeded: () => {} };
+    const actions = { fetchUsersIfNeeded: (): void => null };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
@@ -58,7 +58,7 @@ describe('<Home />', () => {
       readyStatus: 'success',
       list: [{ id: '1', name: 'Welly' }]
     };
-    const actions = { fetchUsersIfNeeded: () => {} };
+    const actions = { fetchUsersIfNeeded: (): void => null };
 
     expect(tree(props, actions)).toMatchSnapshot();
   });
