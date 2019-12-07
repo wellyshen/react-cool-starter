@@ -1,20 +1,20 @@
 # React Cool Starter
 
-[![build status](https://img.shields.io/travis/wellyshen/react-cool-starter/master.svg?style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
-[![coverage status](https://img.shields.io/coveralls/github/wellyshen/react-cool-starter?style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
-[![dependencies status](https://img.shields.io/david/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter)
-[![devDependencies status](https://img.shields.io/david/dev/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![MIT licensed](https://img.shields.io/github/license/wellyshen/react-cool-starter?style=flat-square)](https://raw.githubusercontent.com/wellyshen/react-cool-starter/master/LICENSE)
-[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fwellyshen%2Freact-cool-starter)](https://twitter.com/intent/tweet?text=With%20@React-Cool-Starter,%20I%20can%20build%20my%20universal%20web%20app%20easily.%20Thanks,%20@Welly%20Shen%20🤩)
-
-> 🎉 My react-native app [LeadFit](https://itunes.apple.com/app/id1321807247) now available on App Store, which is a workout app. Welcome to try, it's free!
+> 🎉 [react-cool-img](https://github.com/wellyshen/react-cool-img) is online, which is a lightweight but powerful `<Img />` component for image UX and performance optimization.
 
 A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router/) and [Express](https://expressjs.com/). Includes all the hot stuff and modern web development tools such as [Typescript](https://www.typescriptlang.org/), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
 > 👻 I'm curious what kind of app that you guys building via this starter? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
+
+[![build status](https://img.shields.io/travis/wellyshen/react-cool-starter/master?style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
+[![coverage status](https://img.shields.io/coveralls/github/wellyshen/react-cool-starter?style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
+[![dependencies status](https://img.shields.io/david/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter)
+[![devDependencies status](https://img.shields.io/david/dev/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square)](https://github.com/prettier/prettier)
+[![MIT licensed](https://img.shields.io/github/license/wellyshen/react-cool-starter?style=flat-square)](https://raw.githubusercontent.com/wellyshen/react-cool-starter/master/LICENSE)
+[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fwellyshen%2Freact-cool-starter)](https://twitter.com/intent/tweet?text=With%20@React-Cool-Starter,%20I%20can%20build%20my%20universal%20web%20app%20easily.%20Thanks,%20@Welly%20Shen%20🤩)
 
 ## Real Case Study
 
@@ -34,7 +34,7 @@ Really cool starter boilerplate with the most popular technologies:
 - [Express](https://expressjs.com/) server.
 - [Typescript](https://www.typescriptlang.org/) as the static type checker for Javascript.
 - [Webpack](https://webpack.js.org/) for app bundling.
-- [Babel](https://babeljs.io/) for transpiling ES6+ to ES5.
+- [Babel](https://babeljs.io/) for transpile ES6+ to ES5.
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 - [nodemon](https://nodemon.io/) to monitor for any changes in your Node.js application and automatically restart the server.
 - [axios](https://github.com/mzabriskie/axios) as the Promise-based HTTP client for the browser and Node.js.
@@ -75,20 +75,20 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 **1. You can start by cloning the repository on your local machine by running:**
 
-```bash
+```sh
 git clone https://github.com/wellyshen/react-cool-starter.git
 cd react-cool-starter
 ```
 
 **2. Install all of the dependencies:**
 
-```bash
+```sh
 yarn
 ```
 
 **3. Start to run it:**
 
-```bash
+```sh
 yarn build  # Building bundle
 yarn start  # Running production server
 ```
@@ -118,7 +118,7 @@ I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use enviro
 | `test:update`      | Update jest snapshot.                                                            |
 | `clean`            | Remove the client/server bundled stuff and the coverage report.                  |
 | `clean:build`      | Remove the `./public/assets` folder to clean the client bundled files.           |
-| `clean:test`       | Remove the `./coverage` folder to clean the code coverage report.                |
+| `clean:cov`        | Remove the `./coverage` folder to clean the code coverage report.                |
 | `docker`           | Build then run docker.                                                           |
 | `docker:build`     | Build docker.                                                                    |
 | `docker:start`     | Run docker.                                                                      |
@@ -231,7 +231,7 @@ export default [
 
 Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org/) document if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
-Register the action(s) in `./src/routes.tsx`, which have to be called from server-sdie:
+Register the action(s) in `./src/routes.tsx`, which have to be called from server-side:
 
 ```js
 // ...
@@ -330,7 +330,7 @@ const AsyncComponent = loadable(() => import('./AsyncComponent'), {
 });
 
 export default props => (
-  // Wrap an <ErrorBoundary /> to catch the error of <AsyncComponent /> (via "componentDidCatch()" lifecycle)
+  // Wrap an <ErrorBoundary /> to catch the error of <AsyncComponent /> (via "componentDidCatch()" life cycle)
   <ErrorBoundary>
     <AsyncComponent {...props} />
   </ErrorBoundary>
@@ -469,7 +469,7 @@ import React, { PureComponent } from 'react';
 // ...
 
 class MyComponent extends PureComponent {
-  // Only rerenders if props change
+  // Only re-renders if props change
   // ...
 }
 ```
@@ -482,7 +482,7 @@ import React, { memo } from 'react';
 // ...
 
 const MyComponent = memo(props => {
-  // Only rerenders if props change
+  // Only re-renders if props change
   // ...
 });
 ```
@@ -499,7 +499,7 @@ const MyComponent = props => {
 
   return (
     <div>
-      {/* Only rerenders if "a" change */}
+      {/* Only re-renders if "a" change */}
       {useMemo(
         () => (
           <SomeComponent someProp={a} />
@@ -515,7 +515,7 @@ const MyComponent = props => {
 
 ### Typescript
 
-[Typescript](https://www.typescriptlang.org/) is a typed superset of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to Typescript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
+[Typescript](https://www.typescriptlang.org/) is a typed super-set of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to Typescript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
 
 Typescript has been integrated with our application to bring the following benefits:
 
@@ -558,11 +558,11 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ### How to Deploy
 
-To depoly you app to cloud service (e.g. AWS, GCP), you can follow the instructions below.
+To deploy you app to cloud service (e.g. AWS, GCP), you can follow the instructions below.
 
 1. Build then install production dependencies:
 
-```bash
+```sh
 yarn build                  # Building bundle
 rm -rf node_modules         # After building remove node modules
 yarn install --production   # Then install dependencies only
@@ -581,7 +581,7 @@ yarn install --production   # Then install dependencies only
 
 3. Run your app:
 
-```bash
+```sh
 yarn start
 ```
 
