@@ -15,10 +15,7 @@ module.exports = () => {
     extensions: ['.css', '.scss', '.sass'],
     prepend: [...postcssConfig.plugins],
     preprocessCss: (data, filename) =>
-      sass.renderSync({
-        data,
-        file: filename
-      }).css,
+      sass.renderSync({ data, file: filename }).css,
     rootDir: path.resolve(process.cwd(), 'src'),
     devMode: __DEV__
   });
