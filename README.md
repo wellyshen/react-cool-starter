@@ -34,7 +34,7 @@ Really cool starter boilerplate with the most popular technologies:
 - [Express](https://expressjs.com/) server.
 - [Typescript](https://www.typescriptlang.org/) as the static type checker for Javascript.
 - [Webpack](https://webpack.js.org/) for app bundling.
-- [Babel](https://babeljs.io/) for transpiling ES6+ to ES5.
+- [Babel](https://babeljs.io/) for transpile ES6+ to ES5.
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 - [nodemon](https://nodemon.io/) to monitor for any changes in your Node.js application and automatically restart the server.
 - [axios](https://github.com/mzabriskie/axios) as the Promise-based HTTP client for the browser and Node.js.
@@ -232,7 +232,7 @@ export default [
 
 Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org/) document if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
-Register the action(s) in `./src/routes.tsx`, which have to be called from server-sdie:
+Register the action(s) in `./src/routes.tsx`, which have to be called from server-side:
 
 ```js
 // ...
@@ -331,7 +331,7 @@ const AsyncComponent = loadable(() => import('./AsyncComponent'), {
 });
 
 export default props => (
-  // Wrap an <ErrorBoundary /> to catch the error of <AsyncComponent /> (via "componentDidCatch()" lifecycle)
+  // Wrap an <ErrorBoundary /> to catch the error of <AsyncComponent /> (via "componentDidCatch()" life cycle)
   <ErrorBoundary>
     <AsyncComponent {...props} />
   </ErrorBoundary>
@@ -470,7 +470,7 @@ import React, { PureComponent } from 'react';
 // ...
 
 class MyComponent extends PureComponent {
-  // Only rerenders if props change
+  // Only re-renders if props change
   // ...
 }
 ```
@@ -483,7 +483,7 @@ import React, { memo } from 'react';
 // ...
 
 const MyComponent = memo(props => {
-  // Only rerenders if props change
+  // Only re-renders if props change
   // ...
 });
 ```
@@ -500,7 +500,7 @@ const MyComponent = props => {
 
   return (
     <div>
-      {/* Only rerenders if "a" change */}
+      {/* Only re-renders if "a" change */}
       {useMemo(
         () => (
           <SomeComponent someProp={a} />
@@ -516,7 +516,7 @@ const MyComponent = props => {
 
 ### Typescript
 
-[Typescript](https://www.typescriptlang.org/) is a typed superset of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to Typescript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
+[Typescript](https://www.typescriptlang.org/) is a typed super-set of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to Typescript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
 
 Typescript has been integrated with our application to bring the following benefits:
 
@@ -559,7 +559,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ### How to Deploy
 
-To depoly you app to cloud service (e.g. AWS, GCP), you can follow the instructions below.
+To deploy you app to cloud service (e.g. AWS, GCP), you can follow the instructions below.
 
 1. Build then install production dependencies:
 
