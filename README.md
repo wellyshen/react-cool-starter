@@ -14,6 +14,7 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 [![devDependencies status](https://img.shields.io/david/dev/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4?style=flat-square)](https://github.com/prettier/prettier)
 [![MIT licensed](https://img.shields.io/github/license/wellyshen/react-cool-starter?style=flat-square)](https://raw.githubusercontent.com/wellyshen/react-cool-starter/master/LICENSE)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](https://github.com/wellyshen/react-cool-starter/blob/master/CONTRIBUTING.md)
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fwellyshen%2Freact-cool-starter)](https://twitter.com/intent/tweet?text=With%20@React-Cool-Starter,%20I%20can%20build%20my%20universal%20web%20app%20easily.%20Thanks,%20@Welly%20Shen%20🤩)
 
 ## Real Case Study
@@ -105,20 +106,20 @@ I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use enviro
 | ------------------ | -------------------------------------------------------------------------------- |
 | `dev`              | Run your app on the development server at `localhost:3000`. HMR will be enabled. |
 | `start`            | Run your app on the production server only at `localhost:8080`.                  |
-| `build`            | Remove the previous bundled files and bundle it to `./public/assets`.            |
+| `build`            | Delete the previous bundled files and bundle it to `./public/assets`.            |
 | `analyze`          | Visualize the contents of all your bundles.                                      |
 | `type-check`       | Run type checking for `.tsx?` files.                                             |
-| `type-check:watch` | Run type checking and monitor changed files.                                     |
+| `type-check:watch` | Run an interactive type checking watcher .                                       |
 | `lint`             | Lint all `.tsx?`, `.jsx?` and `.scss` files.                                     |
 | `lint:code`        | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).     |
 | `lint:style`       | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
 | `test`             | Run testing.                                                                     |
 | `test:cov`         | Run testing with code coverage reports.                                          |
-| `test:watch`       | Run testing and monitor changed files.                                           |
+| `test:watch`       | Run an interactive test watcher.                                                 |
 | `test:update`      | Update jest snapshot.                                                            |
-| `clean`            | Remove the client/server bundled stuff and the coverage report.                  |
-| `clean:build`      | Remove the `./public/assets` folder to clean the client bundled files.           |
-| `clean:cov`        | Remove the `./coverage` folder to clean the code coverage report.                |
+| `clean`            | Delete the client/server bundled stuff and the coverage report.                  |
+| `clean:build`      | Delete the `./public/assets` folder to clean the client bundled files.           |
+| `clean:cov`        | Delete the `./coverage` folder to clean the code coverage report.                |
 | `docker`           | Build then run docker.                                                           |
 | `docker:build`     | Build docker.                                                                    |
 | `docker:start`     | Run docker.                                                                      |
