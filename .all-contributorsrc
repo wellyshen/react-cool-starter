@@ -159,6 +159,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "amerllica",
+      "name": "Amer Lotfi Orimi",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10472437?v=4",
+      "profile": "https://twitter.com/amerllica",
+      "contributions": [
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7,
