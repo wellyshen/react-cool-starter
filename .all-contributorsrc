@@ -33,6 +33,25 @@
       ]
     },
     {
+      "login": "jmsherry",
+      "name": "James Sherry",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/697341?v=4",
+      "profile": "https://github.com/jmsherry",
+      "contributions": [
+        "infra",
+        "bug"
+      ]
+    },
+    {
+      "login": "zace",
+      "name": "Zack Pelz",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3301615?v=4",
+      "profile": "https://github.com/zace",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
       "login": "apapacy",
       "name": "apapacy",
       "avatar_url": "https://avatars3.githubusercontent.com/u/4279840?v=4",
