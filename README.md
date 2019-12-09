@@ -630,8 +630,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/jmsherry"><img src="https://avatars1.githubusercontent.com/u/697341?v=4" width="100px;" alt=""/><br /><sub><b>James Sherry</b></sub></a><br /><a href="#infra-jmsherry" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/wellyshen/react-cool-starter/issues?q=author%3Ajmsherry" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/zace"><img src="https://avatars0.githubusercontent.com/u/3301615?v=4" width="100px;" alt=""/><br /><sub><b>Zack Pelz</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=zace" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/apapacy"><img src="https://avatars3.githubusercontent.com/u/4279840?v=4" width="100px;" alt=""/><br /><sub><b>apapacy</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=apapacy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/martin2786"><img src="https://avatars3.githubusercontent.com/u/2111808?v=4" width="100px;" alt=""/><br /><sub><b>martin2786</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=martin2786" title="Documentation">📖</a></td>
   </tr>
 </table>
+
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
