@@ -632,6 +632,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/apapacy"><img src="https://avatars3.githubusercontent.com/u/4279840?v=4" width="100px;" alt=""/><br /><sub><b>apapacy</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=apapacy" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/martin2786"><img src="https://avatars3.githubusercontent.com/u/2111808?v=4" width="100px;" alt=""/><br /><sub><b>martin2786</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=martin2786" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/iamacup"><img src="https://avatars2.githubusercontent.com/u/12894620?v=4" width="100px;" alt=""/><br /><sub><b>iamacup</b></sub></a><br /><a href="#tool-iamacup" title="Tools">🔧</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
