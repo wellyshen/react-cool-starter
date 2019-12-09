@@ -86,6 +86,15 @@
       "contributions": [
         "tool"
       ]
+    },
+    {
+      "login": "bennyn",
+      "name": "Benny Neugebauer",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/469989?v=4",
+      "profile": "http://stackoverflow.com/users/451634/benny-neugebauer",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,
