@@ -650,6 +650,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://w3debugger.com"><img src="https://avatars2.githubusercontent.com/u/6707482?v=4" width="100px;" alt=""/><br /><sub><b>Muhammad Umar</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=w3debugger" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/denny64"><img src="https://avatars1.githubusercontent.com/u/9099997?v=4" width="100px;" alt=""/><br /><sub><b>Denny Vuong</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=denny64" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://mattcarlotta.io"><img src="https://avatars1.githubusercontent.com/u/22607722?v=4" width="100px;" alt=""/><br /><sub><b>Matt Carlotta</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=mattcarlotta" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
