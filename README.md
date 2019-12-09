@@ -635,6 +635,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/iamacup"><img src="https://avatars2.githubusercontent.com/u/12894620?v=4" width="100px;" alt=""/><br /><sub><b>iamacup</b></sub></a><br /><a href="#tool-iamacup" title="Tools">🔧</a></td>
     <td align="center"><a href="http://zhogov.me/"><img src="https://avatars1.githubusercontent.com/u/5165362?v=4" width="100px;" alt=""/><br /><sub><b>Maxim</b></sub></a><br /><a href="#tool-forwardomg" title="Tools">🔧</a></td>
+    <td align="center"><a href="http://stackoverflow.com/users/451634/benny-neugebauer"><img src="https://avatars3.githubusercontent.com/u/469989?v=4" width="100px;" alt=""/><br /><sub><b>Benny Neugebauer</b></sub></a><br /><a href="#translation-bennyn" title="Translation">🌍</a></td>
   </tr>
 </table>
 
