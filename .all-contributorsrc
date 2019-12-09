@@ -106,13 +106,22 @@
       ]
     },
     {
+      "login": "alirezavalizade",
+      "name": "Alireza Valizade",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14992757?v=4",
+      "profile": "https://github.com/alirezavalizade",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "Rid",
       "name": "Grant Millar",
       "avatar_url": "https://avatars2.githubusercontent.com/u/3407496?v=4",
       "profile": "https://github.com/Rid",
       "contributions": [
         "bug"
-      ]
+      [
     }
   ],
   "contributorsPerLine": 7,
