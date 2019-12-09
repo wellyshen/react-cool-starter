@@ -644,6 +644,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/RomanBON"><img src="https://avatars1.githubusercontent.com/u/11601489?v=4" width="100px;" alt=""/><br /><sub><b>rbondarenko</b></sub></a><br /><a href="#example-RomanBON" title="Examples">💡</a></td>
     <td align="center"><a href="https://stackoverflow.com/users/3078890/morteza-tourani"><img src="https://avatars2.githubusercontent.com/u/2953251?v=4" width="100px;" alt=""/><br /><sub><b>Morteza Tourani</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=MortezaT" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.tomkiernan.co.uk"><img src="https://avatars2.githubusercontent.com/u/13321712?v=4" width="100px;" alt=""/><br /><sub><b>Tom Kiernan</b></sub></a><br /><a href="#translation-tomkiernan120" title="Translation">🌍</a></td>
   </tr>
 </table>
 
