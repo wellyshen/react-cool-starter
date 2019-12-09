@@ -6,6 +6,15 @@
   "commit": false,
   "contributors": [
     {
+      "login": "wellyshen",
+      "name": "Welly",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/21308003?v=4",
+      "profile": "https://www.linkedin.com/in/welly-shen-8b43287a/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "Microflow",
       "name": "Microflow",
       "avatar_url": "https://avatars1.githubusercontent.com/u/15410443?v=4",
@@ -174,15 +183,6 @@
       "name": "Muhammad Umar",
       "avatar_url": "https://avatars2.githubusercontent.com/u/6707482?v=4",
       "profile": "https://w3debugger.com",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "wellyshen",
-      "name": "Welly",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/21308003?v=4",
-      "profile": "https://www.linkedin.com/in/welly-shen-8b43287a/",
       "contributions": [
         "code"
       ]
