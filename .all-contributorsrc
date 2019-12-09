@@ -168,6 +168,15 @@
       "contributions": [
         "tool"
       ]
+    },
+    {
+      "login": "w3debugger",
+      "name": "Muhammad Umar",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6707482?v=4",
+      "profile": "https://w3debugger.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
