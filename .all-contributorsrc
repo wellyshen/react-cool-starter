@@ -149,6 +149,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "tomkiernan120",
+      "name": "Tom Kiernan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13321712?v=4",
+      "profile": "http://www.tomkiernan.co.uk",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7,
