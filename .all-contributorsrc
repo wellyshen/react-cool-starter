@@ -197,6 +197,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "mattcarlotta",
+      "name": "Matt Carlotta",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22607722?v=4",
+      "profile": "https://mattcarlotta.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
