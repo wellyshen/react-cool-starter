@@ -104,6 +104,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Rid",
+      "name": "Grant Millar",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3407496?v=4",
+      "profile": "https://github.com/Rid",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
