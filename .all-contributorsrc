@@ -95,6 +95,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "aslapkov",
+      "name": " A. S. Lapkov",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12545211?v=4",
+      "profile": "https://lapkov.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
