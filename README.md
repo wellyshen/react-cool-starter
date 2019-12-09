@@ -646,8 +646,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://nkremer.fr"><img src="https://avatars0.githubusercontent.com/u/14862690?v=4" width="100px;" alt=""/><br /><sub><b>Nathan KREMER</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=xD3CODER" title="Code">💻</a></td>
     <td align="center"><a href="https://twitter.com/amerllica"><img src="https://avatars0.githubusercontent.com/u/10472437?v=4" width="100px;" alt=""/><br /><sub><b>Amer Lotfi Orimi</b></sub></a><br /><a href="#tool-amerllica" title="Tools">🔧</a></td>
     <td align="center"><a href="https://w3debugger.com"><img src="https://avatars2.githubusercontent.com/u/6707482?v=4" width="100px;" alt=""/><br /><sub><b>Muhammad Umar</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=w3debugger" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/welly-shen-8b43287a/"><img src="https://avatars1.githubusercontent.com/u/21308003?v=4" width="100px;" alt=""/><br /><sub><b>Welly</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=wellyshen" title="Code">💻</a></td>
   </tr>
 </table>
+
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
