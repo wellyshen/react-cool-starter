@@ -626,6 +626,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/Microflow"><img src="https://avatars1.githubusercontent.com/u/15410443?v=4" width="100px;" alt=""/><br /><sub><b>Microflow</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=Microflow" title="Documentation">📖</a></td>
     <td align="center"><a href="http://bacchetta.co/"><img src="https://avatars0.githubusercontent.com/u/12591890?v=4" width="100px;" alt=""/><br /><sub><b>Jason Bacchetta</b></sub></a><br /><a href="#tool-jabacchetta" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://github.com/xakep139"><img src="https://avatars2.githubusercontent.com/u/6381023?v=4" width="100px;" alt=""/><br /><sub><b>Nikita Balabaev</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=xakep139" title="Code">💻</a></td>
   </tr>
 </table>
 
