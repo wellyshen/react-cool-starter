@@ -650,7 +650,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://w3debugger.com"><img src="https://avatars2.githubusercontent.com/u/6707482?v=4" width="100px;" alt=""/><br /><sub><b>Muhammad Umar</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=w3debugger" title="Code">💻</a></td>
   </tr>
 </table>
-
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
