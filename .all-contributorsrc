@@ -106,12 +106,57 @@
       ]
     },
     {
+      "login": "alirezavalizade",
+      "name": "Alireza Valizade",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14992757?v=4",
+      "profile": "https://github.com/alirezavalizade",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "Rid",
       "name": "Grant Millar",
       "avatar_url": "https://avatars2.githubusercontent.com/u/3407496?v=4",
       "profile": "https://github.com/Rid",
       "contributions": [
         "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "BJvdA",
+      "name": "Bart",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9120530?v=4",
+      "profile": "https://github.com/BJvdA",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "MortezaT",
+      "name": "Morteza Tourani",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2953251?v=4",
+      "profile": "https://stackoverflow.com/users/3078890/morteza-tourani",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tomkiernan120",
+      "name": "Tom Kiernan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13321712?v=4",
+      "profile": "http://www.tomkiernan.co.uk",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "xD3CODER",
+      "name": "Nathan KREMER",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14862690?v=4",
+      "profile": "https://nkremer.fr",
+      "contributions": [
         "code"
       ]
     }
