@@ -637,7 +637,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://zhogov.me/"><img src="https://avatars1.githubusercontent.com/u/5165362?v=4" width="100px;" alt=""/><br /><sub><b>Maxim</b></sub></a><br /><a href="#tool-forwardomg" title="Tools">🔧</a></td>
     <td align="center"><a href="http://stackoverflow.com/users/451634/benny-neugebauer"><img src="https://avatars3.githubusercontent.com/u/469989?v=4" width="100px;" alt=""/><br /><sub><b>Benny Neugebauer</b></sub></a><br /><a href="#translation-bennyn" title="Translation">🌍</a></td>
     <td align="center"><a href="https://lapkov.com"><img src="https://avatars2.githubusercontent.com/u/12545211?v=4" width="100px;" alt=""/><br /><sub><b> A. S. Lapkov</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=aslapkov" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Rid"><img src="https://avatars2.githubusercontent.com/u/3407496?v=4" width="100px;" alt=""/><br /><sub><b>Grant Millar</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/issues?q=author%3ARid" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/Rid"><img src="https://avatars2.githubusercontent.com/u/3407496?v=4" width="100px;" alt=""/><br /><sub><b>Grant Millar</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/issues?q=author%3ARid" title="Bug reports">🐛</a> <a href="https://github.com/wellyshen/react-cool-starter/commits?author=Rid" title="Code">💻</a></td>
   </tr>
 </table>
 
