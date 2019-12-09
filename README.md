@@ -641,6 +641,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Rid"><img src="https://avatars2.githubusercontent.com/u/3407496?v=4" width="100px;" alt=""/><br /><sub><b>Grant Millar</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/issues?q=author%3ARid" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/BJvdA"><img src="https://avatars3.githubusercontent.com/u/9120530?v=4" width="100px;" alt=""/><br /><sub><b>Bart</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/issues?q=author%3ABJvdA" title="Bug reports">🐛</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/RomanBON"><img src="https://avatars1.githubusercontent.com/u/11601489?v=4" width="100px;" alt=""/><br /><sub><b>rbondarenko</b></sub></a><br /><a href="#example-RomanBON" title="Examples">💡</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
