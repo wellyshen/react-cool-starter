@@ -638,12 +638,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://stackoverflow.com/users/451634/benny-neugebauer"><img src="https://avatars3.githubusercontent.com/u/469989?v=4" width="100px;" alt=""/><br /><sub><b>Benny Neugebauer</b></sub></a><br /><a href="#translation-bennyn" title="Translation">🌍</a></td>
     <td align="center"><a href="https://lapkov.com"><img src="https://avatars2.githubusercontent.com/u/12545211?v=4" width="100px;" alt=""/><br /><sub><b> A. S. Lapkov</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=aslapkov" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/alirezavalizade"><img src="https://avatars0.githubusercontent.com/u/14992757?v=4" width="100px;" alt=""/><br /><sub><b>Alireza Valizade</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=alirezavalizade" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Rid"><img src="https://avatars2.githubusercontent.com/u/3407496?v=4" width="100px;" alt=""/><br /><sub><b>Grant Millar</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/issues?q=author%3ARid" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/BJvdA"><img src="https://avatars3.githubusercontent.com/u/9120530?v=4" width="100px;" alt=""/><br /><sub><b>Bart</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/issues?q=author%3ABJvdA" title="Bug reports">🐛</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/RomanBON"><img src="https://avatars1.githubusercontent.com/u/11601489?v=4" width="100px;" alt=""/><br /><sub><b>rbondarenko</b></sub></a><br /><a href="#example-RomanBON" title="Examples">💡</a></td>
     <td align="center"><a href="https://stackoverflow.com/users/3078890/morteza-tourani"><img src="https://avatars2.githubusercontent.com/u/2953251?v=4" width="100px;" alt=""/><br /><sub><b>Morteza Tourani</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=MortezaT" title="Code">💻</a></td>
     <td align="center"><a href="http://www.tomkiernan.co.uk"><img src="https://avatars2.githubusercontent.com/u/13321712?v=4" width="100px;" alt=""/><br /><sub><b>Tom Kiernan</b></sub></a><br /><a href="#translation-tomkiernan120" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://nkremer.fr"><img src="https://avatars0.githubusercontent.com/u/14862690?v=4" width="100px;" alt=""/><br /><sub><b>Nathan KREMER</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=xD3CODER" title="Code">💻</a></td>
   </tr>
 </table>
 

@@ -149,6 +149,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "xD3CODER",
+      "name": "Nathan KREMER",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14862690?v=4",
+      "profile": "https://nkremer.fr",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
