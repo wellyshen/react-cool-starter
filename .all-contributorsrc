@@ -140,6 +140,15 @@
       "contributions": [
         "example"
       ]
+    },
+    {
+      "login": "MortezaT",
+      "name": "Morteza Tourani",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2953251?v=4",
+      "profile": "https://stackoverflow.com/users/3078890/morteza-tourani",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
