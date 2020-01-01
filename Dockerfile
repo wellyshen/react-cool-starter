@@ -7,6 +7,7 @@ COPY . ./
 RUN yarn build
 
 # Stage 2 - the production environment
-FROM nginx:1.17.4
+RUN npm install pm2 -g
 EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["pm2-runtime", "start", "npm", "--", "start"]
