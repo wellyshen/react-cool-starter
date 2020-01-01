@@ -7,5 +7,6 @@ COPY . ./
 RUN yarn build
 
 # Stage 2 - the production environment
+FROM nginx:1.17.4
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
