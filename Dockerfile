@@ -1,5 +1,5 @@
 # Stage 1 - the build process
-FROM node:12.13.0-alpine as build-deps
+FROM node:12.13.0 as build-deps
 WORKDIR /usr/src/app
 COPY package.json ./
 RUN npm i
