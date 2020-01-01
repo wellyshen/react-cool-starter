@@ -2,9 +2,9 @@
 FROM node:12.13.0 as build-deps
 WORKDIR /usr/src/app
 COPY package.json ./
-RUN npm i
+RUN yarn
 COPY . ./
-RUN npm run build
+RUN yarn build
 
 # Stage 2 - the production environment
 EXPOSE 8080
