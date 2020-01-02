@@ -38,9 +38,9 @@ export default ({ initialState, url }: Argv) => {
     enhancers
   );
 
-  if (module.hot) {
+  if ((module as any).hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
+    (module as any).hot.accept('../reducers', () => {
       try {
         const createNextReducer = require('../reducers').default;
 

@@ -14,7 +14,7 @@ const initialState = window.__INITIAL_STATE__;
 const { store, history } = configureStore({ initialState });
 
 const render = (Routes: Array<object>) => {
-  const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+  const renderMethod = (module as any).hot ? ReactDOM.render : ReactDOM.hydrate;
 
   renderMethod(
     <AppContainer>
@@ -33,9 +33,9 @@ loadableReady(() => {
   render(routes);
 });
 
-if (module.hot) {
+if ((module as any).hot) {
   // Enable webpack hot module replacement for routes
-  module.hot.accept('./routes', () => {
+  (module as any).hot.accept('./routes', () => {
     try {
       const nextRoutes = require('./routes').default;
 
