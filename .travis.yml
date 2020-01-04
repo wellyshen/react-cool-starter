@@ -22,4 +22,4 @@ notifications:
     on_failure: change
 
 after_success:
-  - yarn coveralls
+  - jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js

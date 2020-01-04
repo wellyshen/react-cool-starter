@@ -53,8 +53,7 @@
     "test:update": "yarn test -u",
     "clean": "run-p clean:*",
     "clean:build": "rimraf ./public/assets",
-    "clean:cov": "rimraf ./coverage",
-    "coveralls": "yarn test && cat ./coverage/lcov.info | coveralls"
+    "clean:cov": "rimraf ./coverage"
   },
   "husky": {
     "hooks": {
