@@ -1,20 +1,20 @@
 language: node_js
 
 node_js:
-  - "10"
-  - "11"
-  - "12"
-  - "13"
+  - '10'
+  - '11'
+  - '12'
+  - '13'
 
-sudo: false
-
-services:
-  - xvfb
+cache:
+  yarn: true
+  directories:
+    - node_module
 
 script:
   - yarn type-check
   - yarn lint
-  - yarn test
+  - yarn test:cov
   - yarn build
 
 notifications:
@@ -22,4 +22,4 @@ notifications:
     on_failure: change
 
 after_success:
-  - jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
