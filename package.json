@@ -57,7 +57,7 @@
     "docker": "yarn docker:build && yarn docker:start",
     "docker:build": "docker build --rm -t wellyshen/react-cool-starter .",
     "docker:start": "docker run --rm -it -p 8080:8080 wellyshen/react-cool-starter",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "yarn test:cov && cat ./coverage/lcov.info | coveralls"
   },
   "husky": {
     "hooks": {
