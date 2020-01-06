@@ -14,7 +14,7 @@ cache:
 script:
   - yarn type-check
   - yarn lint
-  - yarn test
+  - yarn test:cov
   - yarn build
 
 notifications:
