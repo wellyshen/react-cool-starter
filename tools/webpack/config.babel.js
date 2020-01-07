@@ -5,7 +5,6 @@ import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
-import ImageminPlugin from 'imagemin-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -59,11 +58,6 @@ const getPlugins = () => {
       new CompressionPlugin({
         test: /\.(js|css|html)$/,
         threshold: 10240
-      }),
-      // Plugin to compress images with imagemin
-      // Check "https://github.com/Klathmon/imagemin-webpack-plugin" for more configurations
-      new ImageminPlugin({
-        pngquant: { quality: '95-100' }
       }),
       // Visualize all of the webpack bundles
       // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
@@ -182,15 +176,22 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff2?|ttf|eot|svg)$/,
-        loader: 'url',
-        options: { limit: 10240, name: '[name].[hash:8].[ext]' }
+        test: /\.(woff2?|ttf|otf|eot)$/,
+        loader: 'file'
       },
       {
-        test: /\.(gif|png|jpe?g|webp)$/,
-        // Any image below or equal to 10K will be converted to inline base64 instead
-        loader: 'url',
-        options: { limit: 10240, name: '[name].[hash:8].[ext]' }
+        test: /\.(gif|png|jpe?g|webp|svg)$/,
+        use: [
+          {
+            // Any image below or equal to 10K will be converted to inline base64 instead
+            loader: 'url',
+            options: { limit: 10 * 1024, name: '[name].[hash:8].[ext]' }
+          },
+          {
+            loader: 'image-webpack',
+            options: { disable: true }
+          }
+        ]
       }
     ]
   },
