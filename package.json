@@ -264,7 +264,7 @@
     "express": "^4.17.1",
     "helmet": "^3.21.2",
     "history": "^4.10.1",
-    "hpp": "^0.2.2",
+    "hpp": "^0.2.3",
     "html-minifier": "^4.0.0",
     "morgan": "^1.9.1",
     "node-sass": "^4.13.0",
