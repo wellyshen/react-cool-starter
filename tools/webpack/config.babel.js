@@ -189,6 +189,7 @@ module.exports = {
           },
           {
             loader: 'image-webpack',
+            // For each optimizer you wish to configure, plz check https://github.com/tcoopman/image-webpack-loader#usage
             options: { disable: true }
           }
         ]
