@@ -257,7 +257,7 @@
     "chalk": "^3.0.0",
     "compression": "^1.7.4",
     "connected-react-router": "^6.6.1",
-    "core-js": "^3.6.1",
+    "core-js": "^3.6.2",
     "cross-env": "^6.0.3",
     "css-modules-require-hook": "^4.2.3",
     "eslint-plugin-react-hooks": "^2.3.0",
