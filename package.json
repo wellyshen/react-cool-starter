@@ -281,7 +281,7 @@
     "redux-thunk": "^2.3.0",
     "serialize-javascript": "^2.1.2",
     "serve-favicon": "^2.5.0",
-    "ts-node": "^8.5.4"
+    "ts-node": "^8.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
