@@ -487,28 +487,36 @@ const MyComponent = memo(props => {
 });
 ```
 
-- In addition, you can also use [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) to avoid expensive calculations on every render:
+- In addition, you can also use React hooks like [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) or [useCallback](https://reactjs.org/docs/hooks-reference.html#usecallback) to avoid expensive calculations on every render:
 
 ```js
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 
-// ...
+// Performance optimizing via useMemo()
+const ParentComponent = props => (
+  <div>
+    {/* Only re-renders if "a" change */}
+    {useMemo(
+      () => (
+        <ChildComponent someProp={a} />
+      ),
+      [a]
+    )}
+  </div>
+);
 
-const MyComponent = props => {
-  // ...
-
-  return (
-    <div>
-      {/* Only re-renders if "a" change */}
-      {useMemo(
-        () => (
-          <SomeComponent someProp={a} />
-        ),
-        [a]
-      )}
-    </div>
-  );
-};
+// Performance optimizing via useCallback()
+const ParentComponent = props => (
+  <div>
+    {/* Return a memorized callback that only changes if "a" changed */}
+    {/* This is useful to prevent child component from unnecessary renders */}
+    <ChildComponent
+      callback={useCallback(() => {
+        doSomething(a);
+      }, [a])}
+    />
+  </div>
+);
 ```
 
 > For more performance optimizing techniques. Please see the [Optimizing Performance](https://reactjs.org/docs/optimizing-performance.html) topic.
@@ -533,6 +541,8 @@ Typescript has been integrated with our application to bring the following benef
 This starter use [Jest](https://facebook.github.io/jest/) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapshot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very powerful for testing React component. Give it a try, you'll be impressed.
 
 I also use [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. The unit tests focus on three parts as below:
+
+> There's another testing utility called [react-testing-library](https://github.com/testing-library/react-testing-library). I have used it in other projects, it's nice and easy to use!
 
 - Components
 - Actions
@@ -651,10 +661,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://mattcarlotta.io"><img src="https://avatars1.githubusercontent.com/u/22607722?v=4" width="100px;" alt=""/><br /><sub><b>Matt Carlotta</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=mattcarlotta" title="Code">💻</a></td>
   </tr>
 </table>
-
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
