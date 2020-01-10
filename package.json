@@ -246,7 +246,7 @@
     "@babel/preset-typescript": "^7.7.7",
     "@babel/register": "^7.7.7",
     "@hot-loader/react-dom": "^16.11.0",
-    "@loadable/babel-plugin": "^5.11.0",
+    "@loadable/babel-plugin": "^5.12.0",
     "@loadable/component": "^5.11.0",
     "@loadable/server": "^5.12.0",
     "asset-require-hook": "^1.2.0",
