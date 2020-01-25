@@ -1,7 +1,7 @@
 import home from '../home';
 
 describe('users data home', () => {
-  it('should return initial state', () => {
+  it('should handle initial state', () => {
     // @ts-ignore
     expect(home(undefined, {})).toEqual({
       readyStatus: 'invalid',
