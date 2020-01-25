@@ -6,7 +6,8 @@ import {
   USERS_FAILURE
 } from '../types';
 
-const initialState: HomeState = {
+// Export for unit testing
+export const initialState: HomeState = {
   readyStatus: 'invalid',
   err: null,
   list: []
