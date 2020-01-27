@@ -327,7 +327,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.14.3",
     "file-loader": "^5.0.2",
-    "fork-ts-checker-webpack-plugin": "^4.0.2",
+    "fork-ts-checker-webpack-plugin": "^4.0.3",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "husky": "^4.2.1",
     "identity-obj-proxy": "^3.0.0",
