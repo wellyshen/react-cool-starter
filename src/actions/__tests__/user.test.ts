@@ -18,7 +18,7 @@ describe('user action', () => {
       email: 'test@gmail.com',
       website: 'www.test.com'
     };
-    const store = mockStore({ info: null });
+    const store = mockStore({});
     const expectedActions = [
       { type: 'USER_REQUESTING', userId },
       { type: 'USER_SUCCESS', userId, data }
@@ -34,7 +34,7 @@ describe('user action', () => {
 
   it('creates USER_FAILURE when fail to fetch user', async () => {
     const errorMessage = 'Request failed with status code 404';
-    const store = mockStore({ err: null });
+    const store = mockStore({});
     const expectedActions = [
       { type: 'USER_REQUESTING', userId },
       { type: 'USER_FAILURE', userId, err: errorMessage }

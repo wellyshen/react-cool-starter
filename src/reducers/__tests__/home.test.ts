@@ -1,19 +1,16 @@
-import home from '../home';
+import { USERS_REQUESTING, USERS_SUCCESS, USERS_FAILURE } from '../../types';
+import home, { initialState } from '../home';
 
 describe('users data home', () => {
-  it('should return the initial state', () => {
+  it('should handle initial state', () => {
     // @ts-ignore
-    expect(home(undefined, {})).toEqual({
-      readyStatus: 'invalid',
-      err: null,
-      list: []
-    });
+    expect(home(undefined, {})).toEqual(initialState);
   });
 
-  it('should handle USERS_REQUESTING', () => {
+  it('should handle USERS_REQUESTING correctly', () => {
     expect(
       home(undefined, {
-        type: 'USERS_REQUESTING',
+        type: USERS_REQUESTING,
         err: null,
         data: []
       })
@@ -24,31 +21,32 @@ describe('users data home', () => {
     });
   });
 
-  it('should handle USERS_FAILURE', () => {
+  it('should handle USERS_FAILURE correctly', () => {
+    const err = 'Oops! Something went wrong.';
     expect(
       home(undefined, {
-        type: 'USERS_FAILURE',
-        err: 'Oops! Something went wrong.',
-        data: []
+        type: USERS_FAILURE,
+        err
       })
     ).toEqual({
+      ...initialState,
       readyStatus: 'failure',
-      err: 'Oops! Something went wrong.',
-      list: []
+      err
     });
   });
 
-  it('should handle USERS_SUCCESS', () => {
+  it('should handle USERS_SUCCESS correctly', () => {
+    const data = [{ id: '1', name: 'Welly' }];
     expect(
       home(undefined, {
-        type: 'USERS_SUCCESS',
+        type: USERS_SUCCESS,
         err: null,
-        data: [{ id: '1', name: 'Welly' }]
+        data
       })
     ).toEqual({
+      ...initialState,
       readyStatus: 'success',
-      err: null,
-      list: [{ id: '1', name: 'Welly' }]
+      list: data
     });
   });
 });

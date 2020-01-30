@@ -11,7 +11,7 @@ describe('users action', () => {
 
   it('creates USERS_SUCCESS when fetching users has been done', async () => {
     const data = [{ id: 'test', name: 'Welly' }];
-    const store = mockStore({ list: null });
+    const store = mockStore({});
     const expectedActions = [
       { type: 'USERS_REQUESTING' },
       { type: 'USERS_SUCCESS', data }
@@ -27,7 +27,7 @@ describe('users action', () => {
 
   it('creates USERS_FAILURE when fail to fetch users', async () => {
     const errorMessage = 'Request failed with status code 404';
-    const store = mockStore({ err: null });
+    const store = mockStore({});
     const expectedActions = [
       { type: 'USERS_REQUESTING' },
       { type: 'USERS_FAILURE', err: errorMessage }

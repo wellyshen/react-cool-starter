@@ -6,6 +6,12 @@ node_js:
   - '12'
   - '13'
 
+branches:
+  only:
+    - master
+    - docker
+    - /^feature.*$/
+
 cache:
   yarn: true
   directories:
@@ -17,9 +23,9 @@ script:
   - yarn test:cov
   - yarn build
 
+after_success:
+  - yarn coveralls
+
 notifications:
   email:
     on_failure: change
-
-after_success:
-  - yarn coveralls
