@@ -297,7 +297,7 @@
     "@types/loadable__server": "^5.9.1",
     "@types/morgan": "^1.7.37",
     "@types/react": "^16.9.19",
-    "@types/react-dev-utils": "^9.0.2",
+    "@types/react-dev-utils": "^9.0.3",
     "@types/react-dom": "^16.9.5",
     "@types/react-helmet": "^5.0.15",
     "@types/react-redux": "^7.1.7",
