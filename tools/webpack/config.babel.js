@@ -82,6 +82,35 @@ const getEntry = () => {
   return entry;
 };
 
+// Loaders for CSS and SASS
+const getStyleLoaders = (sass = false) => {
+  const loaders = [
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        hmr: isDev,
+        // If hmr does not work, this is a forceful method
+        reloadAll: true
+      }
+    },
+    {
+      loader: 'css',
+      options: {
+        importLoaders: sass ? 2 : 1,
+        modules: USE_CSS_MODULES && {
+          localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
+          context: path.resolve(process.cwd(), 'src')
+        },
+        sourceMap: true
+      }
+    },
+    { loader: 'postcss', options: { sourceMap: true } }
+  ];
+  if (sass) loaders.push({ loader: 'sass', options: { sourceMap: true } });
+
+  return loaders;
+};
+
 // Webpack configuration
 module.exports = {
   mode: isDev ? 'development' : 'production',
@@ -127,53 +156,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-              // If hmr does not work, this is a forceful method
-              reloadAll: true
-            }
-          },
-          {
-            loader: 'css',
-            options: {
-              importLoaders: 1,
-              modules: USE_CSS_MODULES && {
-                localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
-                context: path.resolve(process.cwd(), 'src')
-              },
-              sourceMap: true
-            }
-          },
-          { loader: 'postcss', options: { sourceMap: true } }
-        ]
+        use: getStyleLoaders()
       },
       {
         test: /\.(scss|sass)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-              reloadAll: true
-            }
-          },
-          {
-            loader: 'css',
-            options: {
-              importLoaders: 2,
-              modules: USE_CSS_MODULES && {
-                localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
-                context: path.resolve(process.cwd(), 'src')
-              },
-              sourceMap: true
-            }
-          },
-          { loader: 'postcss', options: { sourceMap: true } },
-          { loader: 'sass', options: { sourceMap: true } }
-        ]
+        use: getStyleLoaders(true)
       },
       {
         test: /\.(woff2?|ttf|otf|eot)$/,
