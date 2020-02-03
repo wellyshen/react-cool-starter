@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.scss';
 
-type Props = {
+interface Props {
   list: Array<{ id: string; name: string }>;
-};
+}
 
 export default memo(({ list }: Props) => (
   <div className={styles.UserList}>
