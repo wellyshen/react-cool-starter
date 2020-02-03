@@ -6,11 +6,7 @@ node_js:
   - '12'
   - '13'
 
-branches:
-  only:
-    - master
-    - docker
-    - /^feature.*$/
+if: tag is blank
 
 cache:
   yarn: true
