@@ -2,14 +2,14 @@ import React, { memo } from 'react';
 
 import styles from './styles.scss';
 
-type Props = {
+interface Props {
   info: {
     name: string;
     phone: string;
     email: string;
     website: string;
   };
-};
+}
 
 export default memo(({ info }: Props) => (
   <div className={styles.UserCard}>

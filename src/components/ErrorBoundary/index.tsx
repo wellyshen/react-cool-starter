@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 
-type Props = {
+interface Props {
   children?: React.ReactNode;
-};
-type State = {
+}
+interface State {
   error: Error | null;
   errorInfo: { componentStack: string } | null;
-};
+}
 
 export default class ErrorBoundary extends PureComponent<Props, State> {
   constructor(props: Props) {
