@@ -71,13 +71,12 @@ app.get('*', (req, res) => {
     // @ts-ignore
     const branch = matchRoutes(routes, req.path);
     const promises = branch.map(({ route, match }: any) => {
-      if (route.loadData) {
+      if (route.loadData)
         return Promise.all(
           route
             .loadData({ params: match.params, getState: store.getState })
             .map((item: MyAction) => store.dispatch(item))
         );
-      }
 
       return Promise.resolve(null);
     });
