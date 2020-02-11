@@ -46,20 +46,12 @@ if (__DEV__) {
     require('webpack-dev-middleware')(compiler, {
       publicPath: webpackConfig.output.publicPath,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      hot: true,
-      quiet: true, // Turn it on for friendly-errors-webpack-plugin
-      noInfo: true,
-      writeToDisk: true,
       stats: 'minimal',
       serverSideRender: true
     })
   );
 
-  app.use(
-    require('webpack-hot-middleware')(compiler, {
-      log: false // Turn it off for friendly-errors-webpack-plugin
-    })
-  );
+  app.use(require('webpack-hot-middleware')(compiler));
 }
 
 // Register server-side rendering middleware

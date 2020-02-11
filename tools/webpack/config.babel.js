@@ -6,9 +6,9 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import LoadablePlugin from '@loadable/webpack-plugin';
+import PnpWebpackPlugin from 'pnp-webpack-plugin';
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = nodeEnv === 'development';
@@ -40,7 +40,8 @@ const getPlugins = () => {
       __CLIENT__: true,
       __SERVER__: false,
       __DEV__: isDev
-    })
+    }),
+    PnpWebpackPlugin
   ];
 
   if (isDev) {
@@ -48,8 +49,7 @@ const getPlugins = () => {
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       // Runs typescript type checker on a separate process
-      new ForkTsCheckerWebpackPlugin(),
-      new FriendlyErrorsWebpackPlugin()
+      new ForkTsCheckerWebpackPlugin()
     );
   } else {
     plugins.push(
@@ -181,6 +181,10 @@ module.exports = {
             options: { disable: true }
           }
         ]
+      },
+      {
+        test: /\.js$/,
+        loader: require.resolve('babel-loader')
       }
     ]
   },
@@ -188,7 +192,8 @@ module.exports = {
   /* Advanced configuration */
   resolveLoader: {
     // Use loaders without the -loader suffix
-    moduleExtensions: ['-loader']
+    moduleExtensions: ['-loader'],
+    plugins: [PnpWebpackPlugin.moduleLoader(module)]
   },
   resolve: {
     modules: ['src', 'node_modules'],
