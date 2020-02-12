@@ -39,15 +39,19 @@ if (__DEV__) {
   const webpack = require('webpack');
   const webpackConfig = require('../tools/webpack/config.babel');
   const compiler = webpack(webpackConfig);
+  const instance = require('webpack-dev-middleware')(compiler, {
+    publicPath: webpackConfig.output.publicPath,
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    stats: 'minimal',
+    serverSideRender: true
+  });
 
-  app.use(
-    require('webpack-dev-middleware')(compiler, {
-      publicPath: webpackConfig.output.publicPath,
-      headers: { 'Access-Control-Allow-Origin': '*' },
-      stats: 'minimal',
-      serverSideRender: true
-    })
-  );
+  app.use(instance);
+
+  instance.waitUntilValid(() => {
+    const url = `http://${config.host}:${config.port}`;
+    console.info(chalk.green(`==> 🌎  Listening at ${url}`));
+  });
 
   app.use(require('webpack-hot-middleware')(compiler));
 }
@@ -131,9 +135,5 @@ app.get('*', (req, res) => {
 
 // @ts-ignore
 app.listen(config.port, config.host, err => {
-  const url = `http://${config.host}:${config.port}`;
-
   if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
-
-  console.info(chalk.green(`==> 🌎  Listening at ${url}`));
 });
