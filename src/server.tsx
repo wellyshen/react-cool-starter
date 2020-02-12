@@ -40,8 +40,6 @@ if (__DEV__) {
   const webpackConfig = require('../tools/webpack/config.babel');
   const compiler = webpack(webpackConfig);
 
-  compiler.apply(new webpack.ProgressPlugin());
-
   app.use(
     require('webpack-dev-middleware')(compiler, {
       publicPath: webpackConfig.output.publicPath,
