@@ -170,7 +170,7 @@ Concerning the security and performance of Express in production, I already setu
 
 ## Setup Redux DevTools Extension
 
-The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow these installation guides to use it:
+[Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow these installation guides to use it:
 
 **For Chrome**
 
@@ -184,11 +184,7 @@ The [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-exte
 - from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/);
 - or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
 
-**For Electron**
-
-- just specify `REDUX_DEVTOOLS` in [`electron-devtools-installer`](https://github.com/GPMDP/electron-devtools-installer).
-
-**For other browsers and non-browser environment**
+**For other browsers**
 
 - use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
