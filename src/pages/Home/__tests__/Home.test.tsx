@@ -11,7 +11,7 @@ describe('<Home />', () => {
       .create(
         <MemoryRouter>
           {/*
-            // @ts-ignore */}
+          // @ts-ignore */}
           <Home {...props} {...actions} />
         </MemoryRouter>
       )
@@ -24,7 +24,7 @@ describe('<Home />', () => {
     mount(
       <MemoryRouter>
         {/*
-          // @ts-ignore */}
+        // @ts-ignore */}
         <Home {...actions} />
       </MemoryRouter>
     );

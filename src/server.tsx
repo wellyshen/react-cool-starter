@@ -96,7 +96,7 @@ app.get('*', (req, res) => {
             {/* Setup React-Router server-side rendering */}
             <StaticRouter location={req.path} context={staticContext}>
               {/*
-                // @ts-ignore */}
+              // @ts-ignore */}
               {renderRoutes(routes)}
             </StaticRouter>
           </Provider>

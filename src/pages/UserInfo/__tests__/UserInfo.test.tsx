@@ -11,7 +11,7 @@ describe('<UserInfo />', () => {
       .create(
         <MemoryRouter>
           {/*
-            // @ts-ignore */}
+          // @ts-ignore */}
           <UserInfo {...props} {...actions} />
         </MemoryRouter>
       )
