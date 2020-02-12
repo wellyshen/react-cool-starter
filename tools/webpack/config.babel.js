@@ -41,6 +41,7 @@ const getPlugins = () => {
       __SERVER__: false,
       __DEV__: isDev
     }),
+    new webpack.ProgressPlugin(),
     PnpWebpackPlugin
   ];
 
