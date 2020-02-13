@@ -328,7 +328,7 @@
     "eslint-plugin-react": "^7.18.3",
     "file-loader": "^5.0.2",
     "fork-ts-checker-webpack-plugin": "^4.0.3",
-    "husky": "^4.2.2",
+    "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^6.0.0",
     "jest": "^25.1.0",
