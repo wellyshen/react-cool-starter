@@ -1,5 +1,5 @@
 ---
-name: Feature request
+name: 💡 Feature Request
 about: Create a feature request
 ---
 
@@ -7,7 +7,7 @@ about: Create a feature request
 
 ## Describe the Feature
 
-A clear and concise description of what you want and what your use case is. Why it must be included in this starter (for most developers).
+A clear and concise description of what you want and what your use case is.
 
 ## Describe the Solution You'd Like
 
