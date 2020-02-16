@@ -117,8 +117,8 @@ I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use enviro
 | `lint:code`        | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).     |
 | `lint:style`       | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
 | `test`             | Run testing.                                                                     |
-| `test:cov`         | Run testing with code coverage reports.                                          |
 | `test:watch`       | Run an interactive test watcher.                                                 |
+| `test:cov`         | Run testing with code coverage reports.                                          |
 | `test:update`      | Update jest snapshot.                                                            |
 | `clean`            | Delete the client/server bundled stuff and the coverage report.                  |
 | `clean:build`      | Delete the `./public/assets` folder to clean the client bundled files.           |
@@ -661,6 +661,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
