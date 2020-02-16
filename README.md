@@ -113,8 +113,8 @@ I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use enviro
 | `lint:code`        | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).     |
 | `lint:style`       | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
 | `test`             | Run testing.                                                                     |
-| `test:cov`         | Run testing with code coverage reports.                                          |
 | `test:watch`       | Run an interactive test watcher.                                                 |
+| `test:cov`         | Run testing with code coverage reports.                                          |
 | `test:update`      | Update jest snapshot.                                                            |
 | `clean`            | Delete the client/server bundled stuff and the coverage report.                  |
 | `clean:build`      | Delete the `./public/assets` folder to clean the client bundled files.           |
@@ -649,7 +649,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://stackoverflow.com/users/3078890/morteza-tourani"><img src="https://avatars2.githubusercontent.com/u/2953251?v=4" width="100px;" alt=""/><br /><sub><b>Morteza Tourani</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=MortezaT" title="Code">💻</a></td>
     <td align="center"><a href="http://www.tomkiernan.co.uk"><img src="https://avatars2.githubusercontent.com/u/13321712?v=4" width="100px;" alt=""/><br /><sub><b>Tom Kiernan</b></sub></a><br /><a href="#translation-tomkiernan120" title="Translation">🌍</a></td>
     <td align="center"><a href="https://nkremer.fr"><img src="https://avatars0.githubusercontent.com/u/14862690?v=4" width="100px;" alt=""/><br /><sub><b>Nathan KREMER</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=xD3CODER" title="Code">💻</a></td>
-    <td align="center"><a href="https://twitter.com/amerllica"><img src="https://avatars0.githubusercontent.com/u/10472437?v=4" width="100px;" alt=""/><br /><sub><b>Amer Lotfi Orimi</b></sub></a><br /><a href="#tool-amerllica" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://twitter.com/amerllica"><img src="https://avatars0.githubusercontent.com/u/10472437?v=4" width="100px;" alt=""/><br /><sub><b>Amer Lotfi Orimi</b></sub></a><br /><a href="#tool-amerllica" title="Tools">🔧</a> <a href="https://github.com/wellyshen/react-cool-starter/commits?author=amerllica" title="Code">💻</a></td>
     <td align="center"><a href="https://w3debugger.com"><img src="https://avatars2.githubusercontent.com/u/6707482?v=4" width="100px;" alt=""/><br /><sub><b>Muhammad Umar</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=w3debugger" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/denny64"><img src="https://avatars1.githubusercontent.com/u/9099997?v=4" width="100px;" alt=""/><br /><sub><b>Denny Vuong</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=denny64" title="Documentation">📖</a> <a href="https://github.com/wellyshen/react-cool-starter/commits?author=denny64" title="Code">💻</a></td>
   </tr>
@@ -657,8 +657,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://mattcarlotta.io"><img src="https://avatars1.githubusercontent.com/u/22607722?v=4" width="100px;" alt=""/><br /><sub><b>Matt Carlotta</b></sub></a><br /><a href="https://github.com/wellyshen/react-cool-starter/commits?author=mattcarlotta" title="Code">💻</a></td>
   </tr>
 </table>
+
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -43,7 +43,10 @@ if (__DEV__) {
     publicPath: webpackConfig.output.publicPath,
     headers: { 'Access-Control-Allow-Origin': '*' },
     stats: 'minimal',
-    serverSideRender: true
+    serverSideRender: true,
+    watchOptions: {
+      ignored: /node_modules/,
+    },
   });
 
   app.use(instance);
