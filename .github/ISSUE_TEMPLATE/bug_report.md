@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: 🐛 Bug Report
 about: Create a bug report
 ---
 
@@ -7,7 +7,7 @@ about: Create a bug report
 
 ## Describe the Bug
 
-A clear and concise description of what the bug is. If this's a _usage question_, please **do not post it here**. Post it on [Stack Overflow](https://stackoverflow.com/questions/tagged/reactjs) instead.
+A clear and concise description of what the bug is.
 
 ## How to Reproduce
 
@@ -29,8 +29,7 @@ Add screenshots to help explain your problem.
 
 - OS: [e.g. macOS, Windows]
 - Browser [e.g. Chrome, Safari]
-- Version of react-cool-starter: [e.g. v3.2.4]
-- Version of Node.js: [e.g. v12.13.0]
+- Version of react-cool-img: [e.g. v1.0.0]
 
 ## Additional Information
 
