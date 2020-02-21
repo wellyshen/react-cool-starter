@@ -183,19 +183,12 @@
       "stylelint-config-prettier"
     ],
     "plugins": [
-      "stylelint-scss"
+      "stylelint-scss",
+      "stylelint-prettier"
     ],
     "rules": {
       "string-quotes": "single",
-      "selector-pseudo-class-no-unknown": [
-        true,
-        {
-          "ignorePseudoClasses": [
-            "global",
-            "local"
-          ]
-        }
-      ]
+      "prettier/prettier": true
     },
     "ignoreFiles": [
       "public/assets/**/*.css",
@@ -351,6 +344,7 @@
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.14.2",
     "terser-webpack-plugin": "^2.3.5",
     "ts-jest": "^25.2.0",
