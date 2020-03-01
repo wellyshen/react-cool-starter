@@ -1307,10 +1307,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/loadable__server@^5.9.1":
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/@types/loadable__server/-/loadable__server-5.9.1.tgz#f642704664ae1ff107817d6a8a6fd4ea91e3e3ac"
-  integrity sha512-wxHA1EkDo/vm4EHzXIOLh9nbGeYGHWoESIvCwPBjrD2YGBn2eEdYrBwqgIP905OAhTjUTImZ7DZKI5xpq0Q+vQ==
+"@types/loadable__server@^5.12.0":
+  version "5.12.0"
+  resolved "https://registry.yarnpkg.com/@types/loadable__server/-/loadable__server-5.12.0.tgz#cbf340ee8d73554a14612ed18b85b32c0291e774"
+  integrity sha512-+otAumZ0lBaFRvIDrxo9N0JF0jYqnTam/GboSCBg0DADrovwd903K9OxdU6tTRC8/akxFgNQ7P7YfGElTrBIqQ==
   dependencies:
     "@types/react" "*"
 
