@@ -255,7 +255,7 @@
     "css-modules-require-hook": "^4.2.3",
     "eslint-plugin-react-hooks": "^2.3.0",
     "express": "^4.17.1",
-    "helmet": "^3.21.2",
+    "helmet": "^3.21.3",
     "history": "^4.10.1",
     "hpp": "^0.2.3",
     "html-minifier": "^4.0.0",
