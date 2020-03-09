@@ -251,7 +251,7 @@
     "compression": "^1.7.4",
     "connected-react-router": "^6.7.0",
     "core-js": "^3.6.4",
-    "cross-env": "^7.0.0",
+    "cross-env": "^7.0.2",
     "css-modules-require-hook": "^4.2.3",
     "eslint-plugin-react-hooks": "^2.5.0",
     "express": "^4.17.1",
