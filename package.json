@@ -249,7 +249,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "chalk": "^3.0.0",
     "compression": "^1.7.4",
-    "connected-react-router": "^6.7.0",
+    "connected-react-router": "^6.8.0",
     "core-js": "^3.6.4",
     "cross-env": "^7.0.2",
     "css-modules-require-hook": "^4.2.3",
