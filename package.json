@@ -349,7 +349,7 @@
     "terser-webpack-plugin": "^2.3.5",
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3",
-    "url-loader": "^3.0.0",
+    "url-loader": "^4.0.0",
     "webpack": "^4.42.0",
     "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
