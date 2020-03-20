@@ -237,7 +237,7 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@babel/register": "^7.8.6",
+    "@babel/register": "^7.9.0",
     "@hot-loader/react-dom": "^16.13.0",
     "@loadable/babel-plugin": "^5.12.0",
     "@loadable/component": "^5.12.0",
