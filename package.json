@@ -243,7 +243,7 @@
     "@loadable/component": "^5.12.0",
     "@loadable/server": "^5.12.0",
     "asset-require-hook": "^1.2.0",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.5",
     "axios": "^0.19.2",
     "babel-plugin-dynamic-import-node": "^2.3.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
