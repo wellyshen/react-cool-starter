@@ -350,7 +350,7 @@
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3",
     "url-loader": "^4.0.0",
-    "webpack": "^4.42.0",
+    "webpack": "^4.42.1",
     "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
