@@ -2,7 +2,7 @@
 
 exports[`<UserCard /> renders 1`] = `
 <div
-  className="UserCard"
+  class="UserCard"
 >
   <h4>
     User Card

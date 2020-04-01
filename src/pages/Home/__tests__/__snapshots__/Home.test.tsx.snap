@@ -2,7 +2,7 @@
 
 exports[`<Home /> renders an error if loading failed 1`] = `
 <div
-  className="Home"
+  class="Home"
 >
   <p>
     Oops, Failed to load list!
@@ -12,10 +12,10 @@ exports[`<Home /> renders an error if loading failed 1`] = `
 
 exports[`<Home /> renders the <UserList /> if loading was successful 1`] = `
 <div
-  className="Home"
+  class="Home"
 >
   <div
-    className="UserList"
+    class="UserList"
   >
     <h4>
       User List
@@ -24,7 +24,6 @@ exports[`<Home /> renders the <UserList /> if loading was successful 1`] = `
       <li>
         <a
           href="/UserInfo/1"
-          onClick={[Function]}
         >
           Welly
         </a>
@@ -36,7 +35,7 @@ exports[`<Home /> renders the <UserList /> if loading was successful 1`] = `
 
 exports[`<Home /> renders the loading status if data invalid 1`] = `
 <div
-  className="Home"
+  class="Home"
 >
   <p>
     Loading...
@@ -46,7 +45,7 @@ exports[`<Home /> renders the loading status if data invalid 1`] = `
 
 exports[`<Home /> renders the loading status if requesting data 1`] = `
 <div
-  className="Home"
+  class="Home"
 >
   <p>
     Loading...

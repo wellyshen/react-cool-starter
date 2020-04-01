@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import UserCard from '../index';
@@ -10,15 +10,13 @@ describe('<UserCard />', () => {
       name: 'Welly',
       phone: '007',
       email: 'test@gmail.com',
-      website: 'www.test.com'
+      website: 'www.test.com',
     };
-    const tree = renderer
-      .create(
-        <MemoryRouter>
-          <UserCard info={mockData} />
-        </MemoryRouter>
-      )
-      .toJSON();
+    const tree = render(
+      <MemoryRouter>
+        <UserCard info={mockData} />
+      </MemoryRouter>
+    ).container.firstChild;
 
     expect(tree).toMatchSnapshot();
   });

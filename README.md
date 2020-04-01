@@ -1,6 +1,6 @@
 # React Cool Starter
 
-A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router/) and [Express](https://expressjs.com/). Includes all the hot stuff and modern web development tools such as [Typescript](https://www.typescriptlang.org/), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io/), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest/) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router) and [Express](https://expressjs.com). Includes all the hot stuff and modern web development tools such as [Typescript](https://www.typescriptlang.org), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
@@ -18,25 +18,25 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 ## Real Case Study
 
-- [Rendah Mag](https://www.rendahmag.com/) is a music magazine which exists to bring exposure to an ever-growing community, focusing on the latest Halftime, Beats & Experimental news & releases. Congrats for the amazing product. 🎧 🎉
-- [BECK Friends](https://www.beckfriends.com/) is an international delivery service, which is built based on this starter boilerplate. Congrats for successful migrating to React. 🎉
-- [DealDrop](https://www.dealdrop.com/) is the best place to find verified coupon codes, deals, promos and offers for thousands of stores & brands you love. Never pay full price again 🤑
+- [Rendah Mag](https://www.rendahmag.com) is a music magazine which exists to bring exposure to an ever-growing community, focusing on the latest Halftime, Beats & Experimental news & releases. Congrats for the amazing product. 🎧 🎉
+- [BECK Friends](https://www.beckfriends.com) is an international delivery service, which is built based on this starter boilerplate. Congrats for successful migrating to React. 🎉
+- [DealDrop](https://www.dealdrop.com) is the best place to find verified coupon codes, deals, promos and offers for thousands of stores & brands you love. Never pay full price again 🤑
 
 ## Features
 
 Really cool starter boilerplate with the most popular technologies:
 
 - [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering with async data fetching.
-- [React](https://facebook.github.io/react/) as the view framework.
+- [React](https://facebook.github.io/react) as the view framework.
 - [Redux](https://github.com/reactjs/redux) as the state management.
-- [React Router](https://reacttraining.com/react-router/) as the router.
+- [React Router](https://reacttraining.com/react-router) as the router.
 - [Connected React Router](https://github.com/supasate/connected-react-router) to bind Redux with React Router. Refer to [doc](https://github.com/supasate/connected-react-router/blob/master/FAQ.md#frequently-asked-questions) to see how it works.
-- [Express](https://expressjs.com/) server.
-- [Typescript](https://www.typescriptlang.org/) as the static type checker for Javascript.
-- [Webpack](https://webpack.js.org/) for app bundling.
-- [Babel](https://babeljs.io/) for transpile ES6+ to ES5.
+- [Express](https://expressjs.com) server.
+- [Typescript](https://www.typescriptlang.org) as the static type checker for Javascript.
+- [Webpack](https://webpack.js.org) for app bundling.
+- [Babel](https://babeljs.io) for transpile ES6+ to ES5.
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
-- [nodemon](https://nodemon.io/) to monitor for any changes in your Node.js application and automatically restart the server.
+- [nodemon](https://nodemon.io) to monitor for any changes in your Node.js application and automatically restart the server.
 - [axios](https://github.com/mzabriskie/axios) as the Promise-based HTTP client for the browser and Node.js.
 - [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 - [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
@@ -50,17 +50,17 @@ Really cool starter boilerplate with the most popular technologies:
 - [helmet](https://github.com/helmetjs/helmet) helps secure Express apps with various HTTP headers.
 - [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 - [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for debugging application's state changes.
-- [ESLint](http://eslint.org/) to maintain a consistent Typescript/Javascript code style (with Airbnb configuration).
-- [StyleLint](http://stylelint.io/) to maintain a consistent css/scss code style.
-- [Prettier](https://prettier.io/) to format code and style.
+- [ESLint](http://eslint.org) to maintain a consistent Typescript/Javascript code style (with Airbnb configuration).
+- [StyleLint](http://stylelint.io) to maintain a consistent css/scss code style.
+- [Prettier](https://prettier.io) to format code and style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
 - Image (compressed by [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader)) and Font support.
 - Split vendor's libraries from client bundle.
 - No other view engines, just Javascript based HTML rendering component.
 - Shared app config between development and production.
 - 404 error page and redirect handling.
-- Integrate [Jest](https://facebook.github.io/jest/) with [enzyme](https://github.com/airbnb/enzyme) as the solution for writing unit tests with code coverage support.
-- [Yarn](https://yarnpkg.com/lang/en/) as the package manager.
+- Integrate [Jest](https://facebook.github.io/jest) with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) as the solution for writing unit tests with code coverage support.
+- [Yarn](https://yarnpkg.com/lang/en) as the package manager.
 
 ## Who's the Starter for?
 
@@ -68,8 +68,8 @@ This starter is for those who with basic knowledge of React and have the need fo
 
 ## Requirements
 
-- [node](https://nodejs.org/en/) >= 10.0
-- [npm](https://www.npmjs.com/) >= 6.0
+- [node](https://nodejs.org/en) >= 10.0
+- [npm](https://www.npmjs.com) >= 6.0
 
 ## Looking for Docker?
 
@@ -97,7 +97,7 @@ yarn build  # Building bundle
 yarn start  # Running production server
 ```
 
-Now the app should be running at [http://localhost:8080/](http://localhost:8080/)
+Now the app should be running at [http://localhost:8080](http://localhost:8080)
 
 > Note: You can change the port that you want from `./package.json`.
 
@@ -196,7 +196,7 @@ React v16.8 introduced a series of [Hooks](https://reactjs.org/docs/hooks-intro.
 
 ### Adding Routes
 
-This starter use [React Router](https://reacttraining.com/react-router/) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.tsx`. For example:
+This starter use [React Router](https://reacttraining.com/react-router) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.tsx`. For example:
 
 ```js
 import RouteComponent from './pages/RouteComponent';
@@ -215,18 +215,18 @@ export default [
     routes: [
       {
         path: '/top-path/sub-path',
-        component: SubRouteComponent
-      }
-    ]
+        component: SubRouteComponent,
+      },
+    ],
     // ...
-  }
+  },
   // Setup other route components...
 ];
 ```
 
 ### Data Fetching from Server-side
 
-Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org/) document if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
+Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org) document if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
 Register the action(s) in `./src/routes.tsx`, which have to be called from server-side:
 
@@ -240,10 +240,10 @@ export default [
     component: RouteComponent,
     // Actions in the loadData function will be fetched from server-side
     loadData: () => [
-      myReduxAction()
+      myReduxAction(),
       // Add other pre-fetched actions here
-    ]
-  }
+    ],
+  },
   // ...
 ];
 ```
@@ -265,7 +265,7 @@ app.get('*', (req, res) => {
         return Promise.all(
           route
             .loadData({ params: match.params, getState: store.getState })
-            .map(item => store.dispatch(item))
+            .map((item) => store.dispatch(item))
         );
       }
 
@@ -323,10 +323,10 @@ import { Error, Loading } from '../../components';
 // Import your async route component
 const AsyncComponent = loadable(() => import('./AsyncComponent'), {
   // Loading component will be displayed when the component is being loaded
-  fallback: <Loading />
+  fallback: <Loading />,
 });
 
-export default props => (
+export default (props) => (
   // Wrap an <ErrorBoundary /> to catch the error of <AsyncComponent /> (via "componentDidCatch()" life cycle)
   <ErrorBoundary>
     <AsyncComponent {...props} />
@@ -396,7 +396,7 @@ import styles from './styles.scss'; // Import your based stylesheet here
 
 // ...
 
-export default routes => {
+export default (routes) => {
   // ...
 };
 ```
@@ -478,7 +478,7 @@ import React, { memo } from 'react';
 
 // ...
 
-const MyComponent = memo(props => {
+const MyComponent = memo((props) => {
   // Only re-renders if props change
   // ...
 });
@@ -490,7 +490,7 @@ const MyComponent = memo(props => {
 import React, { useMemo, useCallback } from 'react';
 
 // Performance optimizing via useMemo()
-const ParentComponent = props => (
+const ParentComponent = (props) => (
   <div>
     {/* Only re-renders if "a" change */}
     {useMemo(
@@ -503,7 +503,7 @@ const ParentComponent = props => (
 );
 
 // Performance optimizing via useCallback()
-const ParentComponent = props => (
+const ParentComponent = (props) => (
   <div>
     {/* Return a memorized callback that only changes if "a" changed */}
     {/* This is useful to prevent child component from unnecessary renders */}
@@ -520,7 +520,7 @@ const ParentComponent = props => (
 
 ### Typescript
 
-[Typescript](https://www.typescriptlang.org/) is a typed super-set of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to Typescript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
+[Typescript](https://www.typescriptlang.org) is a typed super-set of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to Typescript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
 
 Typescript has been integrated with our application to bring the following benefits:
 
@@ -531,15 +531,13 @@ Typescript has been integrated with our application to bring the following benef
 
 ### Code and Style Lint
 
-[ESLint](http://eslint.org/) (With Airbnb config), [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [StyleLint](http://stylelint.io/), [Prettier](https://prettier.io/) and [lint-staged](https://github.com/okonet/lint-staged) are integrated into this starter to maintain a consistent code style and give you a elegant code formatting. You can configure your lint rules through `./package.json` file.
+[ESLint](http://eslint.org) (With Airbnb config), [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [StyleLint](http://stylelint.io), [Prettier](https://prettier.io) and [lint-staged](https://github.com/okonet/lint-staged) are integrated into this starter to maintain a consistent code style and give you a elegant code formatting. You can configure your lint rules through `./package.json` file.
 
 ### Unit Tests
 
-This starter use [Jest](https://facebook.github.io/jest/) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapshot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very powerful for testing React component. Give it a try, you'll be impressed.
+This starter use [Jest](https://facebook.github.io/jest) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapshot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very powerful for testing React component. Give it a try, you'll be impressed.
 
-I also use [enzyme](https://github.com/airbnb/enzyme) as the testing utility for React, which makes it easier to assert, manipulate, and traverse your React Components' output. The unit tests focus on three parts as below:
-
-> There's another testing utility called [react-testing-library](https://github.com/testing-library/react-testing-library). I have used it in other projects, it's nice and easy to use!
+We also use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro), which is a simple and complete React DOM testing utilities that encourage good testing practices. The unit testing focus on three parts as below:
 
 - Components
 - Actions

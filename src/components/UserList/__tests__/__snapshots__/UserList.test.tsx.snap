@@ -2,7 +2,7 @@
 
 exports[`<UserList /> renders 1`] = `
 <div
-  className="UserList"
+  class="UserList"
 >
   <h4>
     User List
@@ -11,7 +11,6 @@ exports[`<UserList /> renders 1`] = `
     <li>
       <a
         href="/UserInfo/1"
-        onClick={[Function]}
       >
         Welly
       </a>

@@ -2,7 +2,7 @@
 
 exports[`<Loading /> renders 1`] = `
 <div
-  className="Loading"
+  class="Loading"
 >
   <p>
     Loading...
