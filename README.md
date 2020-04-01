@@ -59,7 +59,7 @@ Really cool starter boilerplate with the most popular technologies:
 - No other view engines, just Javascript based HTML rendering component.
 - Shared app config between development and production.
 - 404 error page and redirect handling.
-- Integrate [Jest](https://facebook.github.io/jest) with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) as the solution for writing unit tests with code coverage support.
+- Integrate [Jest](https://facebook.github.io/jest) with [React Testing Library](https://github.com/testing-library/react-testing-library) as the solution for writing unit tests with code coverage support.
 - [Yarn](https://yarnpkg.com/lang/en) as the package manager.
 
 ## Who's the Starter for?
@@ -533,11 +533,11 @@ Typescript has been integrated with our application to bring the following benef
 
 [ESLint](http://eslint.org) (With Airbnb config), [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [StyleLint](http://stylelint.io), [Prettier](https://prettier.io) and [lint-staged](https://github.com/okonet/lint-staged) are integrated into this starter to maintain a consistent code style and give you a elegant code formatting. You can configure your lint rules through `./package.json` file.
 
-### Unit Tests
+### Unit Testing
 
-This starter use [Jest](https://facebook.github.io/jest) as the testing engine. It runs in a Node environment, so you won't have access to the DOM. In addition, Jest support the feature of [snapshot testing](http://facebook.github.io/jest/docs/snapshot-testing.html#content), which is very powerful for testing React component. Give it a try, you'll be impressed.
+This starter use [Jest](https://facebook.github.io/jest) as the testing framework. We also use [React Testing Library](https://github.com/testing-library/react-testing-library) with [jest-dom](https://github.com/testing-library/jest-dom), give you a simple and complete React DOM testing utilities that encourage good testing practices.
 
-We also use [React Testing Library](https://testing-library.com/docs/react-testing-library/intro), which is a simple and complete React DOM testing utilities that encourage good testing practices. The unit testing focus on three parts as below:
+Jest support the feature of [snapshot testing](https://jestjs.io/docs/en/snapshot-testing), which is very powerful for testing React component. Give it a try, you'll be impressed. The unit testing focus on three parts as below:
 
 - Components
 - Actions
