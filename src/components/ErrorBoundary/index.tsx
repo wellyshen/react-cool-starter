@@ -28,8 +28,7 @@ export default class ErrorBoundary extends PureComponent<Props, State> {
 
     // If there's an error, render error path
     return errorInfo ? (
-      // ".error-view" used by unit testing
-      <div className="error-view">
+      <div data-testid="error-view">
         <h2>Something went wrong.</h2>
         <details style={{ whiteSpace: 'pre-wrap' }}>
           {error && error.toString()}

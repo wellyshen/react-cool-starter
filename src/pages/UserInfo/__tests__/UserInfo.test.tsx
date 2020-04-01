@@ -1,35 +1,28 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { UserInfo } from '../UserInfo';
 
 describe('<UserInfo />', () => {
   const tree = (props: object, actions: object) =>
-    renderer
-      .create(
-        <MemoryRouter>
-          {/*
-          // @ts-ignore */}
-          <UserInfo {...props} {...actions} />
-        </MemoryRouter>
-      )
-      .toJSON();
+    render(
+      <MemoryRouter>
+        {/*
+         // @ts-ignore */}
+        <UserInfo {...props} {...actions} />
+      </MemoryRouter>
+    ).container.firstChild;
 
   it('should call fetchUserIfNeeded when componentDidMount', () => {
     const mockAction = jest.fn();
     const props = {
       userInfo: {},
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: mockAction };
 
-    mount(
-      <MemoryRouter>
-        <UserInfo {...props} {...actions} />
-      </MemoryRouter>
-    );
+    tree(props, actions);
 
     expect(mockAction).toHaveBeenCalled();
   });
@@ -37,7 +30,7 @@ describe('<UserInfo />', () => {
   it('renders the loading status if data invalid', () => {
     const props = {
       userInfo: {},
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: (): void => null };
 
@@ -47,7 +40,7 @@ describe('<UserInfo />', () => {
   it('renders the loading status if requesting data', () => {
     const props = {
       userInfo: { 1: { readyStatus: 'request' } },
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: (): void => null };
 
@@ -57,7 +50,7 @@ describe('<UserInfo />', () => {
   it('renders an error if loading failed', () => {
     const props = {
       userInfo: { 1: { readyStatus: 'failure' } },
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: (): void => null };
 
@@ -73,11 +66,11 @@ describe('<UserInfo />', () => {
             name: 'Welly',
             phone: '007',
             email: 'test@gmail.com',
-            website: 'www.test.com'
-          }
-        }
+            website: 'www.test.com',
+          },
+        },
       },
-      match: { params: { id: 1 } }
+      match: { params: { id: 1 } },
     };
     const actions = { fetchUserIfNeeded: (): void => null };
 

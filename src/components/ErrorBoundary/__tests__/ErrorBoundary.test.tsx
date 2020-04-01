@@ -1,19 +1,16 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import React, { ReactNode } from 'react';
+import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import ErrorBoundary from '../index';
 
 describe('<ErrorBoundary />', () => {
-  const tree = (children?: React.ReactNode) =>
-    renderer
-      .create(
-        <MemoryRouter>
-          <ErrorBoundary>{children}</ErrorBoundary>
-        </MemoryRouter>
-      )
-      .toJSON();
+  const tree = (children?: ReactNode) =>
+    render(
+      <MemoryRouter>
+        <ErrorBoundary>{children}</ErrorBoundary>
+      </MemoryRouter>
+    ).container.firstChild;
 
   it('renders nothing if no children', () => {
     expect(tree()).toMatchSnapshot();
@@ -30,19 +27,10 @@ describe('<ErrorBoundary />', () => {
   });
 
   it('renders error view if an error occurs', () => {
-    const wrapper = mount(
-      <ErrorBoundary>
-        <div>
-          <h1>I am Welly</h1>
-        </div>
-      </ErrorBoundary>
-    );
+    global.console.error = jest.fn();
 
-    wrapper.setState({
-      error: 'Oops! Something went wrong.',
-      errorInfo: { componentStack: 'Somewhere broken :(' }
-    });
+    tree(<div>{new Error()}</div>);
 
-    expect(wrapper.find('.error-view').exists()).toBeTruthy();
+    expect(screen.getByTestId('error-view')).toBeInTheDocument();
   });
 });

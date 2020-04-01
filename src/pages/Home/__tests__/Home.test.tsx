@@ -1,33 +1,24 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { Home } from '../Home';
 
 describe('<Home />', () => {
   const tree = (props: object, actions: object) =>
-    renderer
-      .create(
-        <MemoryRouter>
-          {/*
-          // @ts-ignore */}
-          <Home {...props} {...actions} />
-        </MemoryRouter>
-      )
-      .toJSON();
+    render(
+      <MemoryRouter>
+        {/*
+         // @ts-ignore */}
+        <Home {...props} {...actions} />
+      </MemoryRouter>
+    ).container.firstChild;
 
   it('should call fetchUsersIfNeeded when componentDidMount', () => {
     const mockAction = jest.fn();
     const actions = { fetchUsersIfNeeded: mockAction };
 
-    mount(
-      <MemoryRouter>
-        {/*
-        // @ts-ignore */}
-        <Home {...actions} />
-      </MemoryRouter>
-    );
+    tree({}, actions);
 
     expect(mockAction).toHaveBeenCalled();
   });
@@ -56,7 +47,7 @@ describe('<Home />', () => {
   it('renders the <UserList /> if loading was successful', () => {
     const props = {
       readyStatus: 'success',
-      list: [{ id: '1', name: 'Welly' }]
+      list: [{ id: '1', name: 'Welly' }],
     };
     const actions = { fetchUsersIfNeeded: (): void => null };
 
