@@ -3,14 +3,14 @@ import {
   UsersAction,
   USERS_REQUESTING,
   USERS_SUCCESS,
-  USERS_FAILURE
+  USERS_FAILURE,
 } from '../types';
 
 // Export for unit testing
 export const initialState: HomeState = {
   readyStatus: 'invalid',
   err: null,
-  list: []
+  list: [],
 };
 
 export default (state = initialState, action: UsersAction) => {
@@ -18,19 +18,19 @@ export default (state = initialState, action: UsersAction) => {
     case USERS_REQUESTING:
       return {
         ...state,
-        readyStatus: 'request'
+        readyStatus: 'request',
       };
     case USERS_SUCCESS:
       return {
         ...state,
         readyStatus: 'success',
-        list: action.data
+        list: action.data,
       };
     case USERS_FAILURE:
       return {
         ...state,
         readyStatus: 'failure',
-        err: action.err
+        err: action.err,
       };
     default:
       return state;

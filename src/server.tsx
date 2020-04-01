@@ -137,6 +137,6 @@ app.get('*', (req, res) => {
 });
 
 // @ts-ignore
-app.listen(config.port, config.host, err => {
+app.listen(config.port, config.host, (err) => {
   if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
 });

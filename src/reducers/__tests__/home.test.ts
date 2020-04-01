@@ -12,12 +12,12 @@ describe('users data home', () => {
       home(undefined, {
         type: USERS_REQUESTING,
         err: null,
-        data: []
+        data: [],
       })
     ).toEqual({
       readyStatus: 'request',
       err: null,
-      list: []
+      list: [],
     });
   });
 
@@ -26,12 +26,12 @@ describe('users data home', () => {
     expect(
       home(undefined, {
         type: USERS_FAILURE,
-        err
+        err,
       })
     ).toEqual({
       ...initialState,
       readyStatus: 'failure',
-      err
+      err,
     });
   });
 
@@ -41,12 +41,12 @@ describe('users data home', () => {
       home(undefined, {
         type: USERS_SUCCESS,
         err: null,
-        data
+        data,
       })
     ).toEqual({
       ...initialState,
       readyStatus: 'success',
-      list: data
+      list: data,
     });
   });
 });

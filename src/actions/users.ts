@@ -7,7 +7,7 @@ import {
   AppState,
   USERS_REQUESTING,
   USERS_SUCCESS,
-  USERS_FAILURE
+  USERS_FAILURE,
 } from '../types';
 
 const API_URL = 'https://jsonplaceholder.typicode.com/users';

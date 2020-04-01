@@ -46,7 +46,7 @@ export const UserInfo = ({ match, userInfo, fetchUserIfNeeded }: Props) => {
 const mapStateToProps = ({ userInfo }: AppState) => ({ userInfo });
 
 const mapDispatchToProps = (dispatch: ThunkDispatch) => ({
-  fetchUserIfNeeded: (id: string) => dispatch(userAction.fetchUserIfNeeded(id))
+  fetchUserIfNeeded: (id: string) => dispatch(userAction.fetchUserIfNeeded(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(memo(UserInfo));
