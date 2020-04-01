@@ -11,7 +11,7 @@ describe('user data userInfo', () => {
     expect(
       userInfo(undefined, {
         type: USER_REQUESTING,
-        userId: '1'
+        userId: '1',
       })
     ).toEqual({ 1: { readyStatus: 'request' } });
   });
@@ -22,13 +22,13 @@ describe('user data userInfo', () => {
       userInfo(undefined, {
         type: USER_FAILURE,
         userId: '1',
-        err
+        err,
       })
     ).toEqual({
       1: {
         readyStatus: 'failure',
-        err
-      }
+        err,
+      },
     });
   });
 
@@ -37,19 +37,19 @@ describe('user data userInfo', () => {
       name: 'Welly',
       phone: '007',
       email: 'test@gmail.com',
-      website: 'www.test.com'
+      website: 'www.test.com',
     };
     expect(
       userInfo(undefined, {
         type: USER_SUCCESS,
         userId: '1',
-        data
+        data,
       })
     ).toEqual({
       1: {
         readyStatus: 'success',
-        info: data
-      }
+        info: data,
+      },
     });
   });
 });

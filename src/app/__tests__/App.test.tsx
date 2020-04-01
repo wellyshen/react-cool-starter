@@ -11,7 +11,7 @@ describe('<App />', () => {
       default: (): void => null,
       subscribe: (): void => null,
       dispatch: (): void => null,
-      getState: () => ({ home: (): void => null })
+      getState: () => ({ home: (): void => null }),
     };
     const fakeRoute = {
       routes: [
@@ -22,9 +22,9 @@ describe('<App />', () => {
             <div>
               <h1>Welcome Home!</h1>
             </div>
-          )
-        }
-      ]
+          ),
+        },
+      ],
     };
 
     const tree = renderer

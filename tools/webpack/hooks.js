@@ -17,7 +17,7 @@ module.exports = () => {
     preprocessCss: (data, filename) =>
       sass.renderSync({ data, file: filename }).css,
     rootDir: path.resolve(process.cwd(), 'src'),
-    devMode: __DEV__
+    devMode: __DEV__,
   });
 
   // Images
@@ -26,13 +26,13 @@ module.exports = () => {
     extensions: ['gif', 'jpg', 'jpeg', 'png', 'webp', 'svg'],
     publicPath: '/assets/',
     limit: 10 * 1024,
-    name: '[name].[hash:8].[ext]'
+    name: '[name].[hash:8].[ext]',
   });
 
   // Fonts
   require('asset-require-hook')({
     // Must use the same option with webpack's configuration
     extensions: ['woff', 'woff2', 'ttf', 'otf', 'eot'],
-    publicPath: '/assets/'
+    publicPath: '/assets/',
   });
 };
