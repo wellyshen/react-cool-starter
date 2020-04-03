@@ -351,7 +351,7 @@
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.16.0",
     "terser-webpack-plugin": "^2.3.5",
-    "ts-jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
     "typescript": "^3.8.3",
     "url-loader": "^4.0.0",
     "webpack": "^4.42.1",
