@@ -290,7 +290,7 @@
     "@types/helmet": "^0.0.45",
     "@types/hpp": "^0.2.1",
     "@types/html-minifier": "^3.5.3",
-    "@types/jest": "^25.1.5",
+    "@types/jest": "^25.2.0",
     "@types/loadable__component": "^5.10.0",
     "@types/loadable__server": "^5.12.1",
     "@types/morgan": "^1.9.0",
