@@ -21,6 +21,7 @@ export default (
 
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
+
         ${head.title.toString()}
         ${head.base.toString()}
         ${head.meta.toString()}
