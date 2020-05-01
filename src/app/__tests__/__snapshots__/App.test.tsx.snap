@@ -12,7 +12,6 @@ exports[`<App /> renders 1`] = `
     <img
       alt="Logo"
       role="presentation"
-      src="IMAGE_MOCK"
     />
     <h1>
       React Cool Starter
