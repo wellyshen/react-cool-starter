@@ -8,7 +8,6 @@ import config from '../config';
 // Import your global styles here
 import 'normalize.css/normalize.css';
 import styles from './styles.scss';
-import logo from '../static/logo.svg';
 
 interface Route {
   route: { routes: Array<object> };
@@ -18,7 +17,11 @@ const App = ({ route }: Route) => (
   <div className={styles.App}>
     <Helmet {...config.app} />
     <Link to="/" className={styles.header}>
-      <img src={logo} alt="Logo" role="presentation" />
+      <img
+        src={require('../static/logo.svg').default}
+        alt="Logo"
+        role="presentation"
+      />
       <h1>{config.app.title}</h1>
     </Link>
     <hr />
