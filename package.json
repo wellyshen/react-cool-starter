@@ -184,9 +184,6 @@
   "eslintIgnore": [
     "public/assets"
   ],
-  "prettier": {
-    "singleQuote": true
-  },
   "stylelint": {
     "plugins": [
       "stylelint-scss",
