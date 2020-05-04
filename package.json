@@ -98,13 +98,6 @@
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint",
-      "jest",
-      "jest-dom",
-      "testing-library",
-      "prettier"
-    ],
     "extends": [
       "airbnb",
       "airbnb/hooks",
@@ -116,6 +109,12 @@
       "plugin:prettier/recommended",
       "prettier/@typescript-eslint",
       "prettier/react"
+    ],
+    "plugins": [
+      "@typescript-eslint",
+      "jest",
+      "jest-dom",
+      "testing-library"
     ],
     "settings": {
       "import/parsers": {
