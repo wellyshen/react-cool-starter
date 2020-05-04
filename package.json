@@ -111,7 +111,8 @@
       "@typescript-eslint",
       "jest",
       "jest-dom",
-      "testing-library"
+      "testing-library",
+      "prettier"
     ],
     "settings": {
       "import/parsers": {
