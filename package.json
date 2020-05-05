@@ -68,7 +68,7 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": "eslint --fix",
     "*.{css,scss,sass}": "stylelint --fix",
-    "*.{json,md}": "prettier --write"
+    "*.{json,md,yml}": "prettier --write"
   },
   "babel": {
     "presets": [
