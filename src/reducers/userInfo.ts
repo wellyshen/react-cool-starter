@@ -4,7 +4,7 @@ import {
   USER_REQUESTING,
   USER_SUCCESS,
   USER_FAILURE,
-} from '../types';
+} from "../types";
 
 export default (state: UserInfoState = {}, action: UserAction) => {
   switch (action.type) {
@@ -12,14 +12,14 @@ export default (state: UserInfoState = {}, action: UserAction) => {
       return {
         ...state,
         [action.userId]: {
-          readyStatus: 'request',
+          readyStatus: "request",
         },
       };
     case USER_SUCCESS:
       return {
         ...state,
         [action.userId]: {
-          readyStatus: 'success',
+          readyStatus: "success",
           info: action.data,
         },
       };
@@ -27,7 +27,7 @@ export default (state: UserInfoState = {}, action: UserAction) => {
       return {
         ...state,
         [action.userId]: {
-          readyStatus: 'failure',
+          readyStatus: "failure",
           err: action.err,
         },
       };

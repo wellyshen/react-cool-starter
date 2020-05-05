@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
+import React, { memo } from "react";
 
-import styles from './styles.scss';
+import styles from "./styles.scss";
 
 interface Props {
   info: {

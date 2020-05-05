@@ -1,11 +1,11 @@
-import React, { useEffect, memo } from 'react';
-import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
+import React, { useEffect, memo } from "react";
+import { connect } from "react-redux";
+import { Helmet } from "react-helmet";
 
-import { userAction } from '../../actions';
-import { UserCard } from '../../components';
-import { AppState, ThunkDispatch } from '../../types';
-import styles from './styles.scss';
+import { userAction } from "../../actions";
+import { UserCard } from "../../components";
+import { AppState, ThunkDispatch } from "../../types";
+import styles from "./styles.scss";
 
 // Normal props for the component
 type ownProps = {
@@ -26,10 +26,10 @@ export const UserInfo = ({ match, userInfo, fetchUserIfNeeded }: Props) => {
   const renderUserCard = () => {
     const userInfoById = userInfo[id];
 
-    if (!userInfoById || userInfoById.readyStatus === 'request')
+    if (!userInfoById || userInfoById.readyStatus === "request")
       return <p>Loading...</p>;
 
-    if (userInfoById.readyStatus === 'failure')
+    if (userInfoById.readyStatus === "failure")
       return <p>Oops, Failed to load info!</p>;
 
     return <UserCard info={userInfoById.info} />;

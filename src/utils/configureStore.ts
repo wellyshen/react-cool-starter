@@ -1,9 +1,9 @@
-import { createBrowserHistory, createMemoryHistory } from 'history';
-import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'connected-react-router';
-import thunk from 'redux-thunk';
+import { createBrowserHistory, createMemoryHistory } from "history";
+import { createStore, applyMiddleware, compose } from "redux";
+import { routerMiddleware } from "connected-react-router";
+import thunk from "redux-thunk";
 
-import createRootReducer from '../reducers';
+import createRootReducer from "../reducers";
 
 interface Argv {
   initialState?: object;
@@ -11,11 +11,11 @@ interface Argv {
 }
 
 export default ({ initialState, url }: Argv) => {
-  const isServer = typeof window === 'undefined';
+  const isServer = typeof window === "undefined";
   // Create a history depending on the environment
   const history = isServer
     ? createMemoryHistory({
-        initialEntries: [url || '/'],
+        initialEntries: [url || "/"],
       })
     : createBrowserHistory();
   const middlewares = [
@@ -40,9 +40,9 @@ export default ({ initialState, url }: Argv) => {
 
   if ((module as any).hot) {
     // Enable Webpack hot module replacement for reducers
-    (module as any).hot.accept('../reducers', () => {
+    (module as any).hot.accept("../reducers", () => {
       try {
-        const createNextReducer = require('../reducers').default;
+        const createNextReducer = require("../reducers").default;
 
         store.replaceReducer(createNextReducer(history));
       } catch (error) {

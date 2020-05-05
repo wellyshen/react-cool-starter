@@ -1,12 +1,12 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
-import { MemoryRouter } from 'react-router-dom';
+import React from "react";
+import renderer from "react-test-renderer";
+import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
 
-import App from '../index';
+import App from "../index";
 
-describe('<App />', () => {
-  it('renders', () => {
+describe("<App />", () => {
+  it("renders", () => {
     const fakeStore = {
       default: (): void => null,
       subscribe: (): void => null,
@@ -16,7 +16,7 @@ describe('<App />', () => {
     const fakeRoute = {
       routes: [
         {
-          path: '/',
+          path: "/",
           exact: true,
           component: () => (
             <div>

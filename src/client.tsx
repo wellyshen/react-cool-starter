@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
-import { renderRoutes } from 'react-router-config';
-import { loadableReady } from '@loadable/component';
+import React from "react";
+import ReactDOM from "react-dom";
+import { AppContainer } from "react-hot-loader";
+import { Provider } from "react-redux";
+import { ConnectedRouter } from "connected-react-router";
+import { renderRoutes } from "react-router-config";
+import { loadableReady } from "@loadable/component";
 
-import configureStore from './utils/configureStore';
-import routes from './routes';
+import configureStore from "./utils/configureStore";
+import routes from "./routes";
 
 // Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
@@ -24,7 +24,7 @@ const render = (Routes: Array<object>) => {
         </ConnectedRouter>
       </Provider>
     </AppContainer>,
-    document.getElementById('react-view')
+    document.getElementById("react-view")
   );
 };
 
@@ -35,9 +35,9 @@ loadableReady(() => {
 
 if ((module as any).hot) {
   // Enable webpack hot module replacement for routes
-  (module as any).hot.accept('./routes', () => {
+  (module as any).hot.accept("./routes", () => {
     try {
-      const nextRoutes = require('./routes').default;
+      const nextRoutes = require("./routes").default;
 
       render(nextRoutes);
     } catch (error) {
