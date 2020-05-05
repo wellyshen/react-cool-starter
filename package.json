@@ -46,7 +46,7 @@
     "type-check:watch": "yarn type-check --watch",
     "lint": "run-p lint:*",
     "lint:code": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
-    "lint:style": "stylelint --fix \"./**/*.css\" \"./**/*.scss\" \"./**/*.sass\"",
+    "lint:style": "stylelint --fix \"**/*.{css,ts,tsx}\"",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "yarn test --watch",
     "test:cov": "yarn test --coverage",
