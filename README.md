@@ -37,7 +37,7 @@ Really cool starter boilerplate with the most popular technologies:
 - [Babel](https://babeljs.io) for transpile ES6+ to ES5.
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 - [nodemon](https://nodemon.io) to monitor for any changes in your Node.js application and automatically restart the server.
-- [axios](https://github.com/mzabriskie/axios) as the Promise-based HTTP client for the browser and Node.js.
+- [axios](https://github.com/axios/axios) as the Promise-based HTTP client for the browser and Node.js.
 - [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 - [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 - [loadable-component](https://github.com/smooth-code/loadable-components) to lazy load component when needed in app. Reduce your bundle size without stress.
@@ -225,7 +225,7 @@ export default [
 
 ### Data Fetching from Server-side
 
-Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org) document if you are new). The starter using [axios](https://github.com/mzabriskie/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
+Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org) document if you are new). The starter using [axios](https://github.com/axios/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
 Register the action(s) in `./src/routes.tsx`, which have to be called from server-side:
 
@@ -238,7 +238,8 @@ export default [
     exact: true,
     component: RouteComponent,
     // Actions in the loadData function will be fetched from server-side
-    loadData: () => [
+    // You can access the URL parameters, Redux store, HTTP request and response by the event object
+    loadData: ({ params, getState, req, res }) => [
       myReduxAction(),
       // Add other pre-fetched actions here
     ],
@@ -263,7 +264,12 @@ app.get("*", (req, res) => {
       if (route.loadData) {
         return Promise.all(
           route
-            .loadData({ params: match.params, getState: store.getState })
+            .loadData({
+              params: match.params,
+              getState: store.getState,
+              req,
+              res,
+            })
             .map((item) => store.dispatch(item))
         );
       }
