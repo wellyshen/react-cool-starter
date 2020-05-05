@@ -183,7 +183,6 @@
       "stylelint-config-prettier"
     ],
     "rules": {
-      "string-quotes": "single",
       "prettier/prettier": true
     },
     "ignoreFiles": [
