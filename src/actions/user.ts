@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 import {
   ThunkDispatch,
@@ -8,9 +8,9 @@ import {
   USER_REQUESTING,
   USER_SUCCESS,
   USER_FAILURE,
-} from '../types';
+} from "../types";
 
-const API_URL = 'https://jsonplaceholder.typicode.com/users';
+const API_URL = "https://jsonplaceholder.typicode.com/users";
 
 // Export this for unit testing
 /* istanbul ignore next */
@@ -34,7 +34,7 @@ export const fetchUser = (userId: string): ThunkAction => async (
 const shouldFetchUser = (state: AppState, userId: string): boolean => {
   const userInfo = state.userInfo[userId];
 
-  if (userInfo && userInfo.readyStatus === 'success') return false;
+  if (userInfo && userInfo.readyStatus === "success") return false;
 
   return true;
 };

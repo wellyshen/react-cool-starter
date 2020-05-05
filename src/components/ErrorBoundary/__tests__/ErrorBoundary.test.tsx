@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react';
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import React, { ReactNode } from "react";
+import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 
-import ErrorBoundary from '../index';
+import ErrorBoundary from "../index";
 
-describe('<ErrorBoundary />', () => {
+describe("<ErrorBoundary />", () => {
   const tree = (children?: ReactNode) =>
     render(
       <MemoryRouter>
@@ -12,11 +12,11 @@ describe('<ErrorBoundary />', () => {
       </MemoryRouter>
     ).container.firstChild;
 
-  it('renders nothing if no children', () => {
+  it("renders nothing if no children", () => {
     expect(tree()).toMatchSnapshot();
   });
 
-  it('renders children if no error', () => {
+  it("renders children if no error", () => {
     expect(
       tree(
         <div>
@@ -26,11 +26,11 @@ describe('<ErrorBoundary />', () => {
     ).toMatchSnapshot();
   });
 
-  it('renders error view if an error occurs', () => {
+  it("renders error view if an error occurs", () => {
     global.console.error = jest.fn();
 
     tree(<div>{new Error()}</div>);
 
-    expect(screen.getByTestId('error-view')).toBeInTheDocument();
+    expect(screen.getByTestId("error-view")).toBeInTheDocument();
   });
 });

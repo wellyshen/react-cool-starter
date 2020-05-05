@@ -1,11 +1,11 @@
-import React, { useEffect, memo } from 'react';
-import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
+import React, { useEffect, memo } from "react";
+import { connect } from "react-redux";
+import { Helmet } from "react-helmet";
 
-import { usersAction } from '../../actions';
-import { UserList } from '../../components';
-import { AppState, ThunkDispatch } from '../../types';
-import styles from './styles.scss';
+import { usersAction } from "../../actions";
+import { UserList } from "../../components";
+import { AppState, ThunkDispatch } from "../../types";
+import styles from "./styles.scss";
 
 type Props = ReturnType<typeof mapStateToProps> &
   ReturnType<typeof mapDispatchToProps>;
@@ -17,10 +17,10 @@ export const Home = ({ readyStatus, list, fetchUsersIfNeeded }: Props) => {
   }, []);
 
   const renderUserList = () => {
-    if (!readyStatus || readyStatus === 'invalid' || readyStatus === 'request')
+    if (!readyStatus || readyStatus === "invalid" || readyStatus === "request")
       return <p>Loading...</p>;
 
-    if (readyStatus === 'failure') return <p>Oops, Failed to load list!</p>;
+    if (readyStatus === "failure") return <p>Oops, Failed to load list!</p>;
 
     return <UserList list={list} />;
   };

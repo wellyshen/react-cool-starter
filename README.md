@@ -199,14 +199,14 @@ React v16.8 introduced a series of [Hooks](https://reactjs.org/docs/hooks-intro.
 This starter use [React Router](https://reacttraining.com/react-router) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.tsx`. For example:
 
 ```js
-import RouteComponent from './pages/RouteComponent';
+import RouteComponent from "./pages/RouteComponent";
 
 // ...
 
 export default [
   {
     // Define your route path
-    path: '/top-path',
+    path: "/top-path",
     // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
     // Add your route component here
@@ -214,7 +214,7 @@ export default [
     // Add your sub route component here
     routes: [
       {
-        path: '/top-path/sub-path',
+        path: "/top-path/sub-path",
         component: SubRouteComponent,
       },
     ],
@@ -235,7 +235,7 @@ Register the action(s) in `./src/routes.tsx`, which have to be called from serve
 
 export default [
   {
-    path: '/top-path',
+    path: "/top-path",
     exact: true,
     component: RouteComponent,
     // Actions in the loadData function will be fetched from server-side
@@ -253,7 +253,7 @@ The action(s) will be dispatched through `./src/server.tsx` on server-side:
 ```js
 // ...
 
-app.get('*', (req, res) => {
+app.get("*", (req, res) => {
   // ...
 
   // Here's the method for loading data from server-side
@@ -316,12 +316,12 @@ I use the following folder/file structure:
 The `index.js` will be:
 
 ```js
-import loadable from '@loadable/component';
+import loadable from "@loadable/component";
 
-import { Error, Loading } from '../../components';
+import { Error, Loading } from "../../components";
 
 // Import your async route component
-const AsyncComponent = loadable(() => import('./AsyncComponent'), {
+const AsyncComponent = loadable(() => import("./AsyncComponent"), {
   // Loading component will be displayed when the component is being loaded
   fallback: <Loading />,
 });
@@ -349,7 +349,7 @@ You can store app settings under `./src/config`. By default the `default.ts` wil
 You can access the correct config with:
 
 ```js
-import config from './config';
+import config from "./config";
 ```
 
 ### Styles
@@ -359,7 +359,7 @@ The starter supports CSS, SASS and [CSS modules](https://github.com/css-Modules/
 With CSS modules:
 
 ```js
-import styles from './styles.scss';
+import styles from "./styles.scss";
 
 // ...
 
@@ -375,7 +375,7 @@ return (
 Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.babel.js`):
 
 ```js
-import './styles.scss';
+import "./styles.scss";
 
 // ...
 
@@ -391,8 +391,8 @@ return (
 By the way, if you want to use vendor CSS frameworks or global styles, just import it through the `./src/app/index.tsx` file (app root component). For example:
 
 ```js
-import '../../theme/normalize.css'; // Import a vendor stylesheet here
-import styles from './styles.scss'; // Import your based stylesheet here
+import "../../theme/normalize.css"; // Import a vendor stylesheet here
+import styles from "./styles.scss"; // Import your based stylesheet here
 
 // ...
 
@@ -409,14 +409,14 @@ Using image:
 
 ```js
 // Require an image
-<img src={require('./assets/logo.svg')} alt="Logo" role="presentation" />
+<img src={require("./assets/logo.svg")} alt="Logo" role="presentation" />
 ```
 
 Using font-awesome:
 
 ```js
 // With CSS modules
-import styles from './styles.scss';
+import styles from "./styles.scss";
 
 // ...
 
@@ -429,7 +429,7 @@ return (
 );
 
 // Without CSS modules
-import './font-awesome.css';
+import "./font-awesome.css";
 
 // ...
 
@@ -461,7 +461,7 @@ In this starter, you can see I use [React.PureComponent](https://reactjs.org/doc
 - `React.PureComponent` is used for React class components. It can do shallow prop and state comparison for a performance boost:
 
 ```js
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 
 // ...
 
@@ -474,7 +474,7 @@ class MyComponent extends PureComponent {
 - `React.memo` is used for functional components. It plays the same role as `React.PureComponent`:
 
 ```js
-import React, { memo } from 'react';
+import React, { memo } from "react";
 
 // ...
 
@@ -487,7 +487,7 @@ const MyComponent = memo((props) => {
 - In addition, you can also use React hooks like [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) or [useCallback](https://reactjs.org/docs/hooks-reference.html#usecallback) to avoid expensive calculations on every render:
 
 ```js
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback } from "react";
 
 // Performance optimizing via useMemo()
 const ParentComponent = (props) => (

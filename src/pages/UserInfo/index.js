@@ -3,12 +3,12 @@
  * Use .js extension for code-splitting file
  */
 
-import React from 'react';
-import loadable from '@loadable/component';
+import React from "react";
+import loadable from "@loadable/component";
 
-import { Loading, ErrorBoundary } from '../../components';
+import { Loading, ErrorBoundary } from "../../components";
 
-const UserInfo = loadable(() => import('./UserInfo'), {
+const UserInfo = loadable(() => import("./UserInfo"), {
   fallback: <Loading />,
 });
 

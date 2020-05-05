@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 
 interface Props {
   children?: React.ReactNode;
@@ -30,7 +30,7 @@ export default class ErrorBoundary extends PureComponent<Props, State> {
     return errorInfo ? (
       <div data-testid="error-view">
         <h2>Something went wrong.</h2>
-        <details style={{ whiteSpace: 'pre-wrap' }}>
+        <details style={{ whiteSpace: "pre-wrap" }}>
           {error && error.toString()}
           <br />
           {errorInfo.componentStack}

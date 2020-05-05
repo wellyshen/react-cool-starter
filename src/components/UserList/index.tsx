@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
-import { Link } from 'react-router-dom';
+import React, { memo } from "react";
+import { Link } from "react-router-dom";
 
-import styles from './styles.scss';
+import styles from "./styles.scss";
 
 interface Props {
   list: Array<{ id: string; name: string }>;

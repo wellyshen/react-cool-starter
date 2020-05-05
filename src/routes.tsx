@@ -1,13 +1,13 @@
-import { usersAction, userAction } from './actions';
-import App from './app';
-import { asyncHome, asyncUserInfo, NotFound } from './pages';
+import { usersAction, userAction } from "./actions";
+import App from "./app";
+import { asyncHome, asyncUserInfo, NotFound } from "./pages";
 
 export default [
   {
     component: App,
     routes: [
       {
-        path: '/',
+        path: "/",
         exact: true,
         component: asyncHome, // Add your route here
         loadData: () => [
@@ -16,7 +16,7 @@ export default [
         ],
       },
       {
-        path: '/UserInfo/:id',
+        path: "/UserInfo/:id",
         component: asyncUserInfo,
         loadData: ({ params }: { params: { id: string } }) => [
           userAction.fetchUserIfNeeded(params.id),

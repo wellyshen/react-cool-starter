@@ -1,14 +1,14 @@
-import React from 'react';
-import { renderRoutes } from 'react-router-config';
-import { Helmet } from 'react-helmet';
-import { hot } from 'react-hot-loader';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { renderRoutes } from "react-router-config";
+import { Helmet } from "react-helmet";
+import { hot } from "react-hot-loader";
+import { Link } from "react-router-dom";
 
-import logo from '../static/logo.svg';
-import config from '../config';
+import logo from "../static/logo.svg";
+import config from "../config";
 // Import your global styles here
-import 'normalize.css/normalize.css';
-import styles from './styles.scss';
+import "normalize.css/normalize.css";
+import styles from "./styles.scss";
 
 interface Route {
   route: { routes: Array<object> };

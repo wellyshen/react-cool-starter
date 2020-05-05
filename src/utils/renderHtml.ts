@@ -1,5 +1,5 @@
-import serialize from 'serialize-javascript';
-import { minify } from 'html-minifier';
+import serialize from "serialize-javascript";
+import { minify } from "html-minifier";
 
 export default (
   head: any,

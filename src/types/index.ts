@@ -1,6 +1,6 @@
-import { RouterState } from 'connected-react-router';
-import { Action } from 'redux';
-import { ThunkAction as Act, ThunkDispatch as Dispatch } from 'redux-thunk';
+import { RouterState } from "connected-react-router";
+import { Action } from "redux";
+import { ThunkAction as Act, ThunkDispatch as Dispatch } from "redux-thunk";
 
 // Reducers
 export interface HomeState {
@@ -31,13 +31,13 @@ export interface AppState {
 export type ThunkState = () => AppState;
 
 // Actions
-export const USERS_REQUESTING = 'USERS_REQUESTING';
-export const USERS_SUCCESS = 'USERS_SUCCESS';
-export const USERS_FAILURE = 'USERS_FAILURE';
+export const USERS_REQUESTING = "USERS_REQUESTING";
+export const USERS_SUCCESS = "USERS_SUCCESS";
+export const USERS_FAILURE = "USERS_FAILURE";
 
-export const USER_REQUESTING = 'USER_REQUESTING';
-export const USER_SUCCESS = 'USER_SUCCESS';
-export const USER_FAILURE = 'USER_FAILURE';
+export const USER_REQUESTING = "USER_REQUESTING";
+export const USER_SUCCESS = "USER_SUCCESS";
+export const USER_FAILURE = "USER_FAILURE";
 
 export interface UsersAction {
   type: typeof USERS_REQUESTING | typeof USERS_SUCCESS | typeof USERS_FAILURE;
