@@ -103,12 +103,12 @@ const getStyleLoaders = (sass = false) => {
           localIdentName: isDev ? "[name]__[local]" : "[hash:base64:5]",
           context: path.resolve(process.cwd(), "src"),
         },
-        sourceMap: true,
+        sourceMap: isDev,
       },
     },
-    { loader: "postcss", options: { sourceMap: true } },
+    { loader: "postcss", options: { sourceMap: isDev } },
   ];
-  if (sass) loaders.push({ loader: "sass", options: { sourceMap: true } });
+  if (sass) loaders.push({ loader: "sass", options: { sourceMap: isDev } });
 
   return loaders;
 };
