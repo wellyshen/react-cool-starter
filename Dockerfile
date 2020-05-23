@@ -1,10 +1,12 @@
-FROM node:12
+FROM node:lts
 
 WORKDIR /react-cool-starter
 
-COPY . .
+COPY package.json .
 
 RUN yarn install --pure-lockfile
+
+COPY . .
 
 RUN yarn build
 
