@@ -332,7 +332,7 @@
     "redux-mock-store": "^1.5.4",
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
-    "source-map-loader": "^0.2.4",
+    "source-map-loader": "^1.0.0",
     "stylelint": "^13.3.3",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-recommended-scss": "^4.2.0",
