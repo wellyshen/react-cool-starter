@@ -1,0 +1,5 @@
+{
+  "*.{ts,tsx,js,jsx}": "eslint --fix",
+  "*.{css,scss,sass}": "stylelint --fix",
+  "*.{json,md,yml}": "prettier --write"
+}
