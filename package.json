@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "3.7.2",
+  "version": "3.8.0",
   "description": "A starter boilerplate for a universal web application with the best development experience and best practices.",
   "license": "MIT",
   "homepage": "https://github.com/wellyshen/react-cool-starter",
@@ -56,8 +56,7 @@
     "clean:cov": "rimraf ./coverage",
     "docker": "yarn docker:build && yarn docker:start",
     "docker:build": "docker build --rm -t wellyshen/react-cool-starter .",
-    "docker:start": "docker run --rm -it -e NODE_HOST=0.0.0.0 -p 8080:8080 wellyshen/react-cool-starter",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "docker:start": "docker run --rm -it -e NODE_HOST=0.0.0.0 -p 8080:8080 wellyshen/react-cool-starter"
   },
   "husky": {
     "hooks": {
@@ -301,7 +300,6 @@
     "@typescript-eslint/parser": "^2.30.0",
     "babel-loader": "^8.1.0",
     "compression-webpack-plugin": "^4.0.0",
-    "coveralls": "^3.1.0",
     "css-loader": "^3.5.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
@@ -335,7 +333,7 @@
     "redux-mock-store": "^1.5.4",
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
-    "source-map-loader": "^0.2.4",
+    "source-map-loader": "^1.0.0",
     "stylelint": "^13.3.3",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-recommended-scss": "^4.2.0",
