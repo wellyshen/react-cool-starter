@@ -6,7 +6,7 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 > 👻 I'm curious what kind of app that you guys building via this starter? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
 
-[![build status](https://img.shields.io/travis/wellyshen/react-cool-starter/master?style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
+[![build status](https://img.shields.io/github/workflow/status/wellyshen/react-cool-starter/Node.js%20CI?style=flat-square)](https://github.com/wellyshen/react-cool-starter/actions?query=workflow%3A%22Node.js+CI%22)
 [![coverage status](https://img.shields.io/coveralls/github/wellyshen/react-cool-starter?style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
 [![dependencies status](https://img.shields.io/david/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter)
 [![devDependencies status](https://img.shields.io/david/dev/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)

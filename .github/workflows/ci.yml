@@ -31,10 +31,10 @@ jobs:
       - name: Run lint
         run: yarn lint
       - name: Run test
-        run: yarn test
+        run: yarn test:cov
       - name: Run build
         run: yarn build
-      # - name: Coveralls GitHub Action
-      #   uses: coverallsapp/github-action@v1.1.1
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v1.1.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
