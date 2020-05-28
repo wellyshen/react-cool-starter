@@ -1,26 +1,26 @@
-language: node_js
+# language: node_js
 
-node_js:
-  - "10"
-  - "12"
-  - "14"
+# node_js:
+#   - "10"
+#   - "12"
+#   - "14"
 
-if: tag is blank
+# if: tag is blank
 
-cache:
-  yarn: true
-  directories:
-    - node_module
+# cache:
+#   yarn: true
+#   directories:
+#     - node_module
 
-script:
-  - yarn type-check
-  - yarn lint
-  - yarn test:cov
-  - yarn build
+# script:
+#   - yarn type-check
+#   - yarn lint
+#   - yarn test:cov
+#   - yarn build
 
-after_success:
-  - yarn coveralls
+# after_success:
+#   - yarn coveralls
 
-notifications:
-  email:
-    on_failure: change
+# notifications:
+#   email:
+#     on_failure: change
