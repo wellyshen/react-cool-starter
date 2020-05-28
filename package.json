@@ -53,8 +53,7 @@
     "test:update": "yarn test -u",
     "clean": "run-p clean:*",
     "clean:build": "rimraf ./public/assets",
-    "clean:cov": "rimraf ./coverage",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "clean:cov": "rimraf ./coverage"
   },
   "husky": {
     "hooks": {
@@ -298,7 +297,6 @@
     "@typescript-eslint/parser": "^2.30.0",
     "babel-loader": "^8.1.0",
     "compression-webpack-plugin": "^4.0.0",
-    "coveralls": "^3.1.0",
     "css-loader": "^3.5.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
