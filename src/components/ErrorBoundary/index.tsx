@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
+import React, { ReactNode, PureComponent } from "react";
 
 interface Props {
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 interface State {
   error: Error | null;
@@ -15,14 +15,14 @@ export default class ErrorBoundary extends PureComponent<Props, State> {
     this.state = { error: null, errorInfo: null };
   }
 
-  componentDidCatch(error: Error, errorInfo: { componentStack: string }) {
+  componentDidCatch(error: Error, errorInfo: { componentStack: string }): void {
     // Catch errors in any components below and re-render with error message
     this.setState({ error, errorInfo });
 
     // You can also log error messages to an error reporting service here
   }
 
-  render() {
+  render(): ReactNode {
     const { children } = this.props;
     const { errorInfo, error } = this.state;
 

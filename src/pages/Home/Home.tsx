@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+
 import React, { useEffect, memo } from "react";
 import { connect } from "react-redux";
 import { Helmet } from "react-helmet";
@@ -11,7 +13,11 @@ type Props = ReturnType<typeof mapStateToProps> &
   ReturnType<typeof mapDispatchToProps>;
 
 // Export for unit testing
-export const Home = ({ readyStatus, list, fetchUsersIfNeeded }: Props) => {
+export const Home = ({
+  readyStatus,
+  list,
+  fetchUsersIfNeeded,
+}: Props): JSX.Element => {
   useEffect(() => {
     fetchUsersIfNeeded();
   }, []);

@@ -2,23 +2,27 @@ import { RouterState } from "connected-react-router";
 import { Action } from "redux";
 import { ThunkAction as Act, ThunkDispatch as Dispatch } from "redux-thunk";
 
+// Common
+type UserList = Array<{ id: string; name: string }>;
+type UserInfo = {
+  name: string;
+  phone: string;
+  email: string;
+  website: string;
+};
+
 // Reducers
 export interface HomeState {
   readyStatus: string;
   err: any;
-  list: Array<{ id: string; name: string }>;
+  list: UserList;
 }
 
 export interface UserInfoState {
   [userId: string]: {
     readyStatus: string;
     err: any;
-    info: {
-      name: string;
-      phone: string;
-      email: string;
-      website: string;
-    };
+    info: UserInfo;
   };
 }
 
@@ -41,14 +45,14 @@ export const USER_FAILURE = "USER_FAILURE";
 
 export interface UsersAction {
   type: typeof USERS_REQUESTING | typeof USERS_SUCCESS | typeof USERS_FAILURE;
-  data?: Array<object>;
+  data?: UserList;
   err?: any;
 }
 
 export interface UserAction {
   type: typeof USER_REQUESTING | typeof USER_SUCCESS | typeof USER_FAILURE;
   userId: string;
-  data?: object;
+  data?: UserInfo;
   err?: any;
 }
 
