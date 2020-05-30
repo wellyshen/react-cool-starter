@@ -16,7 +16,7 @@ const API_URL = "https://jsonplaceholder.typicode.com/users";
 /* istanbul ignore next */
 export const fetchUsers = (): ThunkAction => async (
   dispatch: ThunkDispatch
-) => {
+): Promise<any> => {
   dispatch({ type: USERS_REQUESTING });
 
   try {
@@ -41,7 +41,7 @@ const shouldFetchUsers = (state: AppState): boolean => {
 export const fetchUsersIfNeeded = (): ThunkAction => (
   dispatch: ThunkDispatch,
   getState: ThunkState
-) => {
+): any => {
   /* istanbul ignore next */
   if (shouldFetchUsers(getState())) return dispatch(fetchUsers());
 

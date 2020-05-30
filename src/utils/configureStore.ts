@@ -6,11 +6,11 @@ import thunk from "redux-thunk";
 import createRootReducer from "../reducers";
 
 interface Argv {
-  initialState?: object;
+  initialState?: Record<string, unknown>;
   url?: string;
 }
 
-export default ({ initialState, url }: Argv) => {
+export default ({ initialState, url }: Argv): Record<string, any> => {
   const isServer = typeof window === "undefined";
   // Create a history depending on the environment
   const history = isServer

@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+
 import React, { useEffect, memo } from "react";
 import { connect } from "react-redux";
 import { Helmet } from "react-helmet";
@@ -9,14 +11,18 @@ import styles from "./styles.scss";
 
 // Normal props for the component
 type ownProps = {
-  match: any;
+  match: Record<string, any>;
 };
 type Props = ReturnType<typeof mapStateToProps> &
   ReturnType<typeof mapDispatchToProps> &
   ownProps;
 
 // Export for unit testing
-export const UserInfo = ({ match, userInfo, fetchUserIfNeeded }: Props) => {
+export const UserInfo = ({
+  match,
+  userInfo,
+  fetchUserIfNeeded,
+}: Props): JSX.Element => {
   const { id } = match.params;
 
   useEffect(() => {

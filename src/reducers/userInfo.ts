@@ -6,7 +6,10 @@ import {
   USER_FAILURE,
 } from "../types";
 
-export default (state: UserInfoState = {}, action: UserAction) => {
+export default (
+  state: UserInfoState = {},
+  action: UserAction
+): Record<string, unknown> => {
   switch (action.type) {
     case USER_REQUESTING:
       return {

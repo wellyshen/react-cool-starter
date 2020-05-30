@@ -5,7 +5,7 @@ import { connectRouter } from "connected-react-router";
 import home from "./home";
 import userInfo from "./userInfo";
 
-export default (history: History) =>
+export default (history: History): any =>
   combineReducers({
     // Register reducers here
     home,

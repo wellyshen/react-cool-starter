@@ -5,7 +5,10 @@ import { MemoryRouter } from "react-router-dom";
 import { Home } from "../Home";
 
 describe("<Home />", () => {
-  const tree = (props: object, actions: object) =>
+  const tree = (
+    props: Record<string, unknown>,
+    actions: Record<string, unknown>
+  ) =>
     render(
       <MemoryRouter>
         {/*
