@@ -551,16 +551,16 @@ Jest support the feature of [snapshot testing](https://jestjs.io/docs/en/snapsho
 
 By the way, Jest built-in code coverage reports, the report files are generated in `./coverage` folder. You can configure `./package.json` to define which files that you want to cover. For example:
 
-```
+```json
 {
   // ...
   "jest": {
     "collectCoverageFrom": [
-      "src/pages/**/*.tsx",     // Define the files, which want to be covered
-      "!src/pages/index.ts"     // The files will be ignored by code coverage
-    ],
+      "src/pages/**/*.tsx", // Define the files, which want to be covered
+      "!src/pages/index.ts" // The files will be ignored by code coverage
+    ]
     // Other configurations
-  },
+  }
   // ...
 }
 ```
