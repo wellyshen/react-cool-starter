@@ -1,32 +1,26 @@
-/* eslint-disable no-use-before-define */
-
 import React, { useEffect, memo } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 
 import { userAction } from "../../actions";
 import { UserCard } from "../../components";
-import { AppState, ThunkDispatch } from "../../types";
+import { AppState } from "../../types";
 import styles from "./styles.scss";
 
-// Normal props for the component
-type ownProps = {
+type Props = {
   match: Record<string, any>;
 };
-type Props = ReturnType<typeof mapStateToProps> &
-  ReturnType<typeof mapDispatchToProps> &
-  ownProps;
 
-// Export for unit testing
-export const UserInfo = ({
-  match,
-  userInfo,
-  fetchUserIfNeeded,
-}: Props): JSX.Element => {
+const UserInfo = ({ match }: Props): JSX.Element => {
   const { id } = match.params;
+  const dispatch = useDispatch();
+  const userInfo = useSelector(
+    (state: AppState) => state.userInfo,
+    shallowEqual
+  );
 
   useEffect(() => {
-    fetchUserIfNeeded(id);
+    dispatch(userAction.fetchUserIfNeeded(id));
   }, [id]);
 
   const renderUserCard = () => {
@@ -49,10 +43,4 @@ export const UserInfo = ({
   );
 };
 
-const mapStateToProps = ({ userInfo }: AppState) => ({ userInfo });
-
-const mapDispatchToProps = (dispatch: ThunkDispatch) => ({
-  fetchUserIfNeeded: (id: string) => dispatch(userAction.fetchUserIfNeeded(id)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(memo(UserInfo));
+export default memo(UserInfo);

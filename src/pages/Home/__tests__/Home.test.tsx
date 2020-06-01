@@ -2,58 +2,57 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
-import { Home } from "../Home";
+import { usersAction } from "../../../actions";
+import mockStore from "../../../utils/mockStore";
+import Home from "../Home";
 
 describe("<Home />", () => {
   const tree = (
-    props: Record<string, unknown>,
-    actions: Record<string, unknown>
-  ) =>
-    render(
-      <MemoryRouter>
-        {/*
-         // @ts-ignore */}
-        <Home {...props} {...actions} />
-      </MemoryRouter>
-    ).container.firstChild;
+    reducer: Record<string, unknown> = { readyStatus: "invalid" }
+  ) => {
+    const { dispatch, ProviderWithStore } = mockStore({ home: reducer });
+    const { container } = render(
+      <ProviderWithStore>
+        <MemoryRouter>
+          <Home />
+        </MemoryRouter>
+      </ProviderWithStore>
+    );
 
-  it("should call fetchUsersIfNeeded when componentDidMount", () => {
-    const mockAction = jest.fn();
-    const actions = { fetchUsersIfNeeded: mockAction };
+    return { dispatch, firstChild: container.firstChild };
+  };
 
-    tree({}, actions);
+  it("should fetch data when page loaded", () => {
+    const { dispatch } = tree();
 
-    expect(mockAction).toHaveBeenCalled();
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    expect(dispatch.mock.calls[0][0].toString()).toBe(
+      usersAction.fetchUsersIfNeeded().toString()
+    );
   });
 
   it("renders the loading status if data invalid", () => {
-    const props = { readyStatus: "invalid" };
-    const actions = { fetchUsersIfNeeded: (): void => null };
-
-    expect(tree(props, actions)).toMatchSnapshot();
+    expect(tree().firstChild).toMatchSnapshot();
   });
 
   it("renders the loading status if requesting data", () => {
-    const props = { readyStatus: "request" };
-    const actions = { fetchUsersIfNeeded: (): void => null };
+    const reducer = { readyStatus: "request" };
 
-    expect(tree(props, actions)).toMatchSnapshot();
+    expect(tree(reducer).firstChild).toMatchSnapshot();
   });
 
   it("renders an error if loading failed", () => {
-    const props = { readyStatus: "failure" };
-    const actions = { fetchUsersIfNeeded: (): void => null };
+    const reducer = { readyStatus: "failure" };
 
-    expect(tree(props, actions)).toMatchSnapshot();
+    expect(tree(reducer).firstChild).toMatchSnapshot();
   });
 
   it("renders the <UserList /> if loading was successful", () => {
-    const props = {
+    const reducer = {
       readyStatus: "success",
       list: [{ id: "1", name: "Welly" }],
     };
-    const actions = { fetchUsersIfNeeded: (): void => null };
 
-    expect(tree(props, actions)).toMatchSnapshot();
+    expect(tree(reducer).firstChild).toMatchSnapshot();
   });
 });
