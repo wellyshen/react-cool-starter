@@ -291,14 +291,12 @@ In client-side, don't forget to invoke the action(s) in `componentDidMount` or `
 
 ```js
 // If you use React class component
-
 componentDidMount() {
   // Invoke your redux action(s) for client rendering
   this.props.myReduxAction();
 }
 
 // If you use functional component
-
 useEffect(() => {
   myReduxAction();
 }, [])
