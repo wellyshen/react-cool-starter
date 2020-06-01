@@ -8,7 +8,7 @@ import UserInfo from "../UserInfo";
 
 describe("<UserInfo />", () => {
   const id = "1";
-  const tree = (reducer: Record<string, unknown> = {}) => {
+  const renderHelper = (reducer: Record<string, unknown> = {}) => {
     const { dispatch, ProviderWithStore } = mockStore({ userInfo: reducer });
     const { container } = render(
       <ProviderWithStore>
@@ -22,7 +22,7 @@ describe("<UserInfo />", () => {
   };
 
   it("should fetch data when page loaded", () => {
-    const { dispatch } = tree();
+    const { dispatch } = renderHelper();
 
     expect(dispatch).toHaveBeenCalledTimes(1);
     expect(dispatch.mock.calls[0][0].toString()).toBe(
@@ -31,19 +31,19 @@ describe("<UserInfo />", () => {
   });
 
   it("renders the loading status if data invalid", () => {
-    expect(tree().firstChild).toMatchSnapshot();
+    expect(renderHelper().firstChild).toMatchSnapshot();
   });
 
   it("renders the loading status if requesting data", () => {
     const reducer = { 1: { readyStatus: "request" } };
 
-    expect(tree(reducer).firstChild).toMatchSnapshot();
+    expect(renderHelper(reducer).firstChild).toMatchSnapshot();
   });
 
   it("renders an error if loading failed", () => {
     const reducer = { 1: { readyStatus: "failure" } };
 
-    expect(tree(reducer).firstChild).toMatchSnapshot();
+    expect(renderHelper(reducer).firstChild).toMatchSnapshot();
   });
 
   it("renders the <UserCard /> if loading was successful", () => {
@@ -59,6 +59,6 @@ describe("<UserInfo />", () => {
       },
     };
 
-    expect(tree(reducer).firstChild).toMatchSnapshot();
+    expect(renderHelper(reducer).firstChild).toMatchSnapshot();
   });
 });
