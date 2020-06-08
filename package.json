@@ -263,7 +263,7 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "serialize-javascript": "^3.1.0",
+    "serialize-javascript": "^4.0.0",
     "serve-favicon": "^2.5.0",
     "ts-node": "^8.10.2"
   },
