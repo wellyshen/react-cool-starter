@@ -18,7 +18,6 @@ describe("users action", () => {
     // @ts-ignore
     axios.get.mockResolvedValue({ data });
 
-    // @ts-ignore
     await dispatch(fetchUsers());
     expect(getActions()).toEqual(expectedActions);
   });
@@ -34,7 +33,6 @@ describe("users action", () => {
     // @ts-ignore
     axios.get.mockRejectedValue({ message: errorMessage });
 
-    // @ts-ignore
     await dispatch(fetchUsers());
     expect(getActions()).toEqual(expectedActions);
   });

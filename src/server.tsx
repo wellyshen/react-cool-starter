@@ -67,7 +67,7 @@ app.get("*", (req, res) => {
   const loadBranchData = (): Promise<any> => {
     // @ts-ignore
     const branch = matchRoutes(routes, req.path);
-    const promises = branch.map(({ route, match }: any) => {
+    const promises = branch.map(({ route, match }: Record<string, any>) => {
       if (route.loadData)
         return Promise.all(
           route
@@ -97,7 +97,7 @@ app.get("*", (req, res) => {
       );
       const extractor = new ChunkExtractor({ statsFile });
 
-      const staticContext: any = {};
+      const staticContext: Record<string, any> = {};
       const App = (
         <ChunkExtractorManager extractor={extractor}>
           <Provider store={store}>

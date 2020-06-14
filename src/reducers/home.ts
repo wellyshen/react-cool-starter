@@ -13,7 +13,7 @@ export const initialState: HomeState = {
   list: [],
 };
 
-export default (state = initialState, action: UsersAction) => {
+export default (state = initialState, action: UsersAction): HomeState => {
   switch (action.type) {
     case USERS_REQUESTING:
       return {

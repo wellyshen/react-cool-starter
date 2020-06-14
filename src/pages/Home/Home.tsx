@@ -1,19 +1,21 @@
 import React, { useEffect, memo } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 
 import { usersAction } from "../../actions";
 import { UserList } from "../../components";
-import { AppState, ThunkDispatch } from "../../types";
+import { AppState } from "../../types";
 import styles from "./styles.scss";
 
-type Props = ReturnType<typeof mapStateToProps> &
-  ReturnType<typeof mapDispatchToProps>;
+const Home = (): JSX.Element => {
+  const dispatch = useDispatch();
+  const { readyStatus, list } = useSelector(
+    ({ home }: AppState) => home,
+    shallowEqual
+  );
 
-// Export for unit testing
-export const Home = ({ readyStatus, list, fetchUsersIfNeeded }: Props) => {
   useEffect(() => {
-    fetchUsersIfNeeded();
+    dispatch(usersAction.fetchUsersIfNeeded());
   }, []);
 
   const renderUserList = () => {
@@ -33,13 +35,4 @@ export const Home = ({ readyStatus, list, fetchUsersIfNeeded }: Props) => {
   );
 };
 
-const mapStateToProps = ({ home: { readyStatus, list } }: AppState) => ({
-  readyStatus,
-  list,
-});
-
-const mapDispatchToProps = (dispatch: ThunkDispatch) => ({
-  fetchUsersIfNeeded: () => dispatch(usersAction.fetchUsersIfNeeded()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(memo(Home));
+export default memo(Home);

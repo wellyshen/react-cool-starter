@@ -6,7 +6,7 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 > 👻 I'm curious what kind of app that you guys building via this starter? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
 
-[![build status](https://img.shields.io/travis/wellyshen/react-cool-starter/master?style=flat-square)](https://travis-ci.org/wellyshen/react-cool-starter)
+[![build status](https://img.shields.io/github/workflow/status/wellyshen/react-cool-starter/CI?style=flat-square)](https://github.com/wellyshen/react-cool-starter/actions?query=workflow%3ACI)
 [![coverage status](https://img.shields.io/coveralls/github/wellyshen/react-cool-starter?style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
 [![dependencies status](https://img.shields.io/david/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter)
 [![devDependencies status](https://img.shields.io/david/dev/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter?type=dev)
@@ -291,14 +291,12 @@ In client-side, don't forget to invoke the action(s) in `componentDidMount` or `
 
 ```js
 // If you use React class component
-
 componentDidMount() {
   // Invoke your redux action(s) for client rendering
   this.props.myReduxAction();
 }
 
 // If you use functional component
-
 useEffect(() => {
   myReduxAction();
 }, [])
@@ -551,16 +549,16 @@ Jest support the feature of [snapshot testing](https://jestjs.io/docs/en/snapsho
 
 By the way, Jest built-in code coverage reports, the report files are generated in `./coverage` folder. You can configure `./package.json` to define which files that you want to cover. For example:
 
-```
+```json
 {
   // ...
   "jest": {
     "collectCoverageFrom": [
-      "src/pages/**/*.tsx",     // Define the files, which want to be covered
-      "!src/pages/index.ts"     // The files will be ignored by code coverage
-    ],
+      "src/pages/**/*.tsx", // Define the files, which want to be covered
+      "!src/pages/index.ts" // The files will be ignored by code coverage
+    ]
     // Other configurations
-  },
+  }
   // ...
 }
 ```

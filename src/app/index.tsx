@@ -11,7 +11,7 @@ import "normalize.css/normalize.css";
 import styles from "./styles.scss";
 
 interface Route {
-  route: { routes: Array<object> };
+  route: { routes: Array<Record<string, unknown>> };
 }
 
 const App = ({ route }: Route) => (

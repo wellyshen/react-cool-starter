@@ -20,5 +20,5 @@ declare namespace NodeJS {
 }
 
 interface Window {
-  __INITIAL_STATE__: object;
+  __INITIAL_STATE__: Record<string, unknown>;
 }

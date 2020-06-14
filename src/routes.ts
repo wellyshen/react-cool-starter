@@ -10,7 +10,7 @@ export default [
         path: "/",
         exact: true,
         component: asyncHome, // Add your route here
-        loadData: () => [
+        loadData: (): Array<any> => [
           usersAction.fetchUsersIfNeeded(),
           // Add other pre-fetched actions here
         ],
@@ -18,7 +18,7 @@ export default [
       {
         path: "/UserInfo/:id",
         component: asyncUserInfo,
-        loadData: ({ params }: { params: { id: string } }) => [
+        loadData: ({ params }: { params: { id: string } }): Array<any> => [
           userAction.fetchUserIfNeeded(params.id),
         ],
       },
