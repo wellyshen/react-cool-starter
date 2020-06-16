@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-prettier"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "prettier/prettier": true
+  },
+  "ignoreFiles": [
+    "public/assets/**/*.css",
+    "coverage/**/*.css"
+  ]
+}
