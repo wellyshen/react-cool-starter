@@ -55,6 +55,21 @@
     "clean:build": "rimraf ./public/assets",
     "clean:cov": "rimraf ./coverage"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "eslint --fix",
+    "*.{css,scss,sass}": "stylelint --fix",
+    "*.{json,md,yml}": "prettier --write"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
