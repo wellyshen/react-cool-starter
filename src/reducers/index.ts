@@ -10,5 +10,5 @@ export default (history: History): any =>
     // Register reducers here
     home,
     userInfo,
-    router: connectRouter(history),
+    router: connectRouter(history)
   });

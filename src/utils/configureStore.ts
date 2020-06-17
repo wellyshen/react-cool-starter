@@ -15,12 +15,12 @@ export default ({ initialState, url }: Argv): Record<string, any> => {
   // Create a history depending on the environment
   const history = isServer
     ? createMemoryHistory({
-        initialEntries: [url || "/"],
+        initialEntries: [url || "/"]
       })
     : createBrowserHistory();
   const middlewares = [
     routerMiddleware(history),
-    thunk,
+    thunk
     // Add other middlewares here
   ];
   // Use Redux DevTools Extension in development

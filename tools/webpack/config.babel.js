@@ -22,16 +22,16 @@ const getPlugins = () => {
   const plugins = [
     new ManifestPlugin({
       fileName: path.resolve(process.cwd(), "public/webpack-assets.json"),
-      filter: (file) => file.isInitial,
+      filter: (file) => file.isInitial
     }),
     new LoadablePlugin({
       writeToDisk: true,
-      filename: "../loadable-stats.json",
+      filename: "../loadable-stats.json"
     }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.js"
       filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
-      chunkFilename: isDev ? "[id].css" : "[id].[contenthash:8].css",
+      chunkFilename: isDev ? "[id].css" : "[id].[contenthash:8].css"
     }),
     // Setup enviorment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
@@ -39,10 +39,10 @@ const getPlugins = () => {
     new webpack.DefinePlugin({
       __CLIENT__: true,
       __SERVER__: false,
-      __DEV__: isDev,
+      __DEV__: isDev
     }),
     new webpack.ProgressPlugin(),
-    PnpWebpackPlugin,
+    PnpWebpackPlugin
   ];
 
   if (isDev) {
@@ -58,14 +58,13 @@ const getPlugins = () => {
       new webpack.HashedModuleIdsPlugin(),
       new CompressionPlugin({
         test: /\.(js|css|html)$/,
-        threshold: 10240,
+        threshold: 10240
       }),
       // Visualize all of the webpack bundles
       // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
       // for more configurations
       new BundleAnalyzerPlugin({
-        analyzerMode:
-          process.env.NODE_ENV === "analyze" ? "server" : "disabled",
+        analyzerMode: process.env.NODE_ENV === "analyze" ? "server" : "disabled"
       })
     );
   }
@@ -92,8 +91,8 @@ const getStyleLoaders = (sass = false) => {
       options: {
         hmr: isDev,
         // If hmr does not work, this is a forceful method
-        reloadAll: true,
-      },
+        reloadAll: true
+      }
     },
     {
       loader: "css",
@@ -101,12 +100,12 @@ const getStyleLoaders = (sass = false) => {
         importLoaders: sass ? 2 : 1,
         modules: USE_CSS_MODULES && {
           localIdentName: isDev ? "[name]__[local]" : "[hash:base64:5]",
-          context: path.resolve(process.cwd(), "src"),
+          context: path.resolve(process.cwd(), "src")
         },
-        sourceMap: isDev,
-      },
+        sourceMap: isDev
+      }
     },
-    { loader: "postcss", options: { sourceMap: isDev } },
+    { loader: "postcss", options: { sourceMap: isDev } }
   ];
   if (sass) loaders.push({ loader: "sass", options: { sourceMap: isDev } });
 
@@ -124,14 +123,14 @@ module.exports = {
       new TerserJSPlugin({}),
       new OptimizeCSSAssetsPlugin({
         cssProcessorPluginOptions: {
-          preset: ["default", { discardComments: { removeAll: !isDev } }],
-        },
-      }),
+          preset: ["default", { discardComments: { removeAll: !isDev } }]
+        }
+      })
     ],
     splitChunks: {
       // Auto split vendor modules in production only
-      chunks: isDev ? "async" : "all",
-    },
+      chunks: isDev ? "async" : "all"
+    }
   },
   output: {
     path: path.resolve(process.cwd(), "public/assets"),
@@ -139,7 +138,7 @@ module.exports = {
     // Don't use chunkhash in development it will increase compilation time
     filename: isDev ? "[name].js" : "[name].[chunkhash:8].js",
     chunkFilename: isDev ? "[id].js" : "[id].[chunkhash:8].js",
-    pathinfo: isDev,
+    pathinfo: isDev
   },
   module: {
     rules: [
@@ -147,26 +146,26 @@ module.exports = {
         test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
         loader: "babel",
-        options: { cacheDirectory: isDev },
+        options: { cacheDirectory: isDev }
       },
       // All output '.js' files will have any sourcemaps re-processed by source-map-loader.
       // So you can debug your output code as if it was Typescript.
       {
         enforce: "pre",
         test: /\.js$/,
-        loader: "source-map",
+        loader: "source-map"
       },
       {
         test: /\.css$/,
-        use: getStyleLoaders(),
+        use: getStyleLoaders()
       },
       {
         test: /\.(scss|sass)$/,
-        use: getStyleLoaders(true),
+        use: getStyleLoaders(true)
       },
       {
         test: /\.(woff2?|ttf|otf|eot)$/,
-        loader: "file",
+        loader: "file"
       },
       {
         test: /\.(gif|png|jpe?g|webp|svg)$/,
@@ -174,34 +173,34 @@ module.exports = {
           {
             // Any image below or equal to 10K will be converted to inline base64 instead
             loader: "url",
-            options: { limit: 10 * 1024, name: "[name].[hash:8].[ext]" },
+            options: { limit: 10 * 1024, name: "[name].[hash:8].[ext]" }
           },
           {
             loader: "image-webpack",
             // For each optimizer you wish to configure
             // Plz check https://github.com/tcoopman/image-webpack-loader#usage
-            options: { disable: true },
-          },
-        ],
+            options: { disable: true }
+          }
+        ]
       },
       {
         test: /\.js$/,
-        loader: require.resolve("babel-loader"),
-      },
-    ],
+        loader: require.resolve("babel-loader")
+      }
+    ]
   },
   plugins: getPlugins(),
   /* Advanced configuration */
   resolveLoader: {
     // Use loaders without the -loader suffix
     moduleExtensions: ["-loader"],
-    plugins: [PnpWebpackPlugin.moduleLoader(module)],
+    plugins: [PnpWebpackPlugin.moduleLoader(module)]
   },
   resolve: {
     modules: ["src", "node_modules"],
     descriptionFiles: ["package.json"],
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
-    alias: { "react-dom": "@hot-loader/react-dom" },
+    alias: { "react-dom": "@hot-loader/react-dom" }
   },
   cache: isDev,
   // Some libraries import Node modules but don't use them in the browser.
@@ -212,6 +211,6 @@ module.exports = {
     fs: "empty",
     vm: "empty",
     net: "empty",
-    tls: "empty",
-  },
+    tls: "empty"
+  }
 };

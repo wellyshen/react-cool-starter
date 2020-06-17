@@ -1,12 +1,10 @@
 module.exports = {
-  "preset": "ts-jest",
-  "setupFilesAfterEnv": [
-    "<rootDir>/tools/jest/setup.ts"
-  ],
-  "globals": {
-    "__DEV__": true
+  preset: "ts-jest",
+  setupFilesAfterEnv: ["<rootDir>/tools/jest/setup.ts"],
+  globals: {
+    __DEV__: true
   },
-  "collectCoverageFrom": [
+  collectCoverageFrom: [
     "src/actions/**/*.ts",
     "src/reducers/**/*.ts",
     "src/app/**/*.tsx",
@@ -19,8 +17,9 @@ module.exports = {
     "!src/pages/Home/index.js",
     "!src/pages/UserInfo/index.js"
   ],
-  "moduleNameMapper": {
+  moduleNameMapper: {
     ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.ts",
-    ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/jest/assetMock.ts"
+    ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      "<rootDir>/tools/jest/assetMock.ts"
   }
 };

@@ -56,7 +56,7 @@ export default (
     trimCustomFragments: true,
     minifyCSS: true,
     minifyJS: true,
-    minifyURLs: true,
+    minifyURLs: true
   };
 
   // Minify html in production

@@ -12,7 +12,7 @@ describe("users action", () => {
     const data = [{ id: "test", name: "Welly" }];
     const expectedActions = [
       { type: "USERS_REQUESTING" },
-      { type: "USERS_SUCCESS", data },
+      { type: "USERS_SUCCESS", data }
     ];
 
     // @ts-ignore
@@ -27,7 +27,7 @@ describe("users action", () => {
     const errorMessage = "Request failed with status code 404";
     const expectedActions = [
       { type: "USERS_REQUESTING" },
-      { type: "USERS_FAILURE", err: errorMessage },
+      { type: "USERS_FAILURE", err: errorMessage }
     ];
 
     // @ts-ignore

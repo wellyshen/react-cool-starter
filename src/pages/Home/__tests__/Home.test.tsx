@@ -50,7 +50,7 @@ describe("<Home />", () => {
   it("renders the <UserList /> if loading was successful", () => {
     const reducer = {
       readyStatus: "success",
-      list: [{ id: "1", name: "Welly" }],
+      list: [{ id: "1", name: "Welly" }]
     };
 
     expect(renderHelper(reducer).firstChild).toMatchSnapshot();
