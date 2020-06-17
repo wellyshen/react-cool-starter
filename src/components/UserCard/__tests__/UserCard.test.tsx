@@ -10,7 +10,7 @@ describe("<UserCard />", () => {
       name: "Welly",
       phone: "007",
       email: "test@gmail.com",
-      website: "www.test.com",
+      website: "www.test.com"
     };
     const tree = render(
       <MemoryRouter>

@@ -45,8 +45,8 @@ if (__DEV__) {
     stats: "minimal",
     serverSideRender: true,
     watchOptions: {
-      ignored: /node_modules/,
-    },
+      ignored: /node_modules/
+    }
   });
 
   app.use(instance);
@@ -75,7 +75,7 @@ app.get("*", (req, res) => {
               params: match.params,
               getState: store.getState,
               req,
-              res,
+              res
             })
             .map((item: MyAction) => store.dispatch(item))
         );

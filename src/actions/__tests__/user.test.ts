@@ -14,11 +14,11 @@ describe("user action", () => {
       name: "Welly",
       phone: "007",
       email: "test@gmail.com",
-      website: "www.test.com",
+      website: "www.test.com"
     };
     const expectedActions = [
       { type: "USER_REQUESTING", userId },
-      { type: "USER_SUCCESS", userId, data },
+      { type: "USER_SUCCESS", userId, data }
     ];
 
     // @ts-ignore
@@ -33,7 +33,7 @@ describe("user action", () => {
     const errorMessage = "Request failed with status code 404";
     const expectedActions = [
       { type: "USER_REQUESTING", userId },
-      { type: "USER_FAILURE", userId, err: errorMessage },
+      { type: "USER_FAILURE", userId, err: errorMessage }
     ];
 
     // @ts-ignore
