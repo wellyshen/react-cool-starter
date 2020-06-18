@@ -92,7 +92,7 @@
     "core-js": "^3.6.5",
     "cross-env": "^7.0.2",
     "css-modules-require-hook": "^4.2.3",
-    "eslint-plugin-react-hooks": "^2.5.1",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
     "history": "^4.10.1",
