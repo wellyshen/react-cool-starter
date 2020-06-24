@@ -18,7 +18,15 @@
   ],
   "env": {
     "production": {
+      "comments": false,
+      "minified": true,
+      "compact": true,
       "plugins": ["transform-remove-console"]
+    },
+    "development" : {
+      "comments": true,
+      "minified": false,
+      "compact": false
     }
   }
 }
