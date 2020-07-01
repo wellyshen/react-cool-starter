@@ -13,6 +13,8 @@ public/*
 !public/logo512.png
 !public/manifest.json
 
+.dockerignore
+.git
 .idea
 .vscode
 .history
