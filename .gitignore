@@ -1,9 +1,10 @@
 Thumbs.db
 __MACOSX
 .DS_Store
-
 *.log
-*.lock
+.idea
+.vscode
+.history
 
 coverage
 node_modules
@@ -12,7 +13,3 @@ public/*
 !public/logo192.png
 !public/logo512.png
 !public/manifest.json
-
-.idea
-.vscode
-.history
