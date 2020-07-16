@@ -186,7 +186,7 @@
     "stylelint-scss": "^3.17.2",
     "terser-webpack-plugin": "^3.0.2",
     "ts-jest": "^26.1.2",
-    "typescript": "^3.9.3",
+    "typescript": "^3.9.7",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^3.8.0",
