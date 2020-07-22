@@ -11,7 +11,7 @@ public/*
 !public/logo512.png
 !public/manifest.json
 
-# misc
+# Misc
 .DS_Store
 *.log
 
