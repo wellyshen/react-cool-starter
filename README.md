@@ -215,11 +215,11 @@ export default [
     routes: [
       {
         path: "/top-path/sub-path",
-        component: SubRouteComponent,
-      },
-    ],
+        component: SubRouteComponent
+      }
+    ]
     // ...
-  },
+  }
   // Setup other route components...
 ];
 ```
@@ -241,10 +241,10 @@ export default [
     // Actions in the loadData function will be fetched from server-side
     // You can access the URL parameters, Redux store, HTTP request and response by the event object
     loadData: ({ params, getState, req, res }) => [
-      myReduxAction(),
+      myReduxAction()
       // Add other pre-fetched actions here
-    ],
-  },
+    ]
+  }
   // ...
 ];
 ```
@@ -269,7 +269,7 @@ app.get("*", (req, res) => {
               params: match.params,
               getState: store.getState,
               req,
-              res,
+              res
             })
             .map((item) => store.dispatch(item))
         );
@@ -327,7 +327,7 @@ import { Error, Loading } from "../../components";
 // Import your async route component
 const AsyncComponent = loadable(() => import("./AsyncComponent"), {
   // Loading component will be displayed when the component is being loaded
-  fallback: <Loading />,
+  fallback: <Loading />
 });
 
 export default (props) => (
@@ -460,7 +460,7 @@ $fa-font-path:"../node_modules/font-awesome/fonts";
 
 ### Boost App Performance
 
-In this starter, you can see I use [React.PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) and [React.memo](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactmemo) to demostrate the basic performance optimizing for React app. The two APIs are used in different ways.
+In this starter, you can see I use [React.PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) and [React.memo](https://reactjs.org/blog/2018/10/23/react-v-16-6.html#reactmemo) to demonstrate the basic performance optimizing for React app. The two APIs are used in different ways.
 
 - `React.PureComponent` is used for React class components. It can do shallow prop and state comparison for a performance boost:
 
