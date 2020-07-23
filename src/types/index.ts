@@ -58,6 +58,6 @@ export interface UserAction {
 
 export type MyAction = UsersAction | UserAction;
 
-export type ThunkAction = Act<void, AppState, null, Action<string>>;
+export type ThunkAction = Act<void, AppState, unknown, Action<string>>;
 
 export type ThunkDispatch = Dispatch<AppState, void, MyAction>;
