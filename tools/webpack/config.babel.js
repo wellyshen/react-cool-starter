@@ -29,11 +29,11 @@ const getPlugins = () => {
       filename: "../loadable-stats.json",
     }),
     new MiniCssExtractPlugin({
-      // Don't use hash in development, we need the persistent for "renderHtml.js"
+      // Don't use hash in development, we need the persistent for "renderHtml.ts"
       filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
       chunkFilename: isDev ? "[id].css" : "[id].[contenthash:8].css",
     }),
-    // Setup enviorment variables for client
+    // Setup environment variables for client
     new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
     // Setup global variables for client
     new webpack.DefinePlugin({
@@ -101,8 +101,9 @@ const getStyleLoaders = (sass = false) => {
         importLoaders: sass ? 2 : 1,
         modules: USE_CSS_MODULES && {
           localIdentName: isDev ? "[name]__[local]" : "[hash:base64:5]",
-          localIdentContext: path.resolve(process.cwd(), "src"),
+          context: path.resolve(process.cwd(), "src"),
         },
+        sourceMap: isDev,
       },
     },
     { loader: "postcss", options: { sourceMap: isDev } },
@@ -119,14 +120,7 @@ module.exports = {
   context: path.resolve(process.cwd()),
   entry: getEntry(),
   optimization: {
-    minimizer: [
-      new TerserJSPlugin({}),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorPluginOptions: {
-          preset: ["default", { discardComments: { removeAll: !isDev } }],
-        },
-      }),
-    ],
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     splitChunks: {
       // Auto split vendor modules in production only
       chunks: isDev ? "async" : "all",
