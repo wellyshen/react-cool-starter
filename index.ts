@@ -1,9 +1,9 @@
-// Allows you to precompile ES6 syntax
+// Allows you to pre-compile ES6 syntax
 require("@babel/register")({
-  plugins: ["dynamic-import-node"]
+  plugins: ["dynamic-import-node"],
 });
 
-// Setup global variables for server-side
+// Global variables for server-side
 global.__CLIENT__ = false;
 global.__SERVER__ = true;
 global.__DEV__ = process.env.NODE_ENV === "development";

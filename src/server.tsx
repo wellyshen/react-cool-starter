@@ -13,12 +13,12 @@ import { Provider } from "react-redux";
 import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
 import { Helmet } from "react-helmet";
 import chalk from "chalk";
+import { Action } from "@reduxjs/toolkit";
 
-import configureStore from "./utils/configureStore";
+import createStore from "./store";
 import renderHtml from "./utils/renderHtml";
 import routes from "./routes";
 import config from "./config";
-import { MyAction } from "./types";
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.use(hpp());
 app.use(compression());
 
 // Use for http request debug (show errors only)
-app.use(logger("dev", { skip: (req, res) => res.statusCode < 400 }));
+app.use(logger("dev", { skip: (_, res) => res.statusCode < 400 }));
 app.use(favicon(path.resolve(process.cwd(), "public/favicon.ico")));
 app.use(express.static(path.resolve(process.cwd(), "public")));
 
@@ -45,14 +45,14 @@ if (__DEV__) {
     stats: "minimal",
     serverSideRender: true,
     watchOptions: {
-      ignored: /node_modules/
-    }
+      ignored: /node_modules/,
+    },
   });
 
   app.use(instance);
 
   instance.waitUntilValid(() => {
-    const url = `http://${config.host}:${config.port}`;
+    const url = `http://${config.HOST}:${config.PORT}`;
     console.info(chalk.green(`==> 🌎  Listening at ${url}`));
   });
 
@@ -61,13 +61,13 @@ if (__DEV__) {
 
 // Register server-side rendering middleware
 app.get("*", (req, res) => {
-  const { store } = configureStore({ url: req.url });
+  const { store } = createStore({ url: req.url });
 
   // The method for loading data from server-side
   const loadBranchData = (): Promise<any> => {
     // @ts-ignore
     const branch = matchRoutes(routes, req.path);
-    const promises = branch.map(({ route, match }: Record<string, any>) => {
+    const promises = branch.map(({ route, match }) => {
       if (route.loadData)
         return Promise.all(
           route
@@ -75,9 +75,9 @@ app.get("*", (req, res) => {
               params: match.params,
               getState: store.getState,
               req,
-              res
+              res,
             })
-            .map((item: MyAction) => store.dispatch(item))
+            .map((item: Action) => store.dispatch(item))
         );
 
       return Promise.resolve(null);
@@ -133,15 +133,15 @@ app.get("*", (req, res) => {
       res
         .status(status)
         .send(renderHtml(head, extractor, htmlContent, initialState));
-    } catch (err) {
+    } catch (error) {
       res.status(404).send("Not Found :(");
 
-      console.error(chalk.red(`==> 😭  Rendering routes error: ${err}`));
+      console.error(chalk.red(`==> 😭  Rendering routes error: ${error}`));
     }
   })();
 });
 
 // @ts-ignore
-app.listen(config.port, config.host, (err) => {
-  if (err) console.error(chalk.red(`==> 😭  OMG!!! ${err}`));
+app.listen(config.PORT, config.HOST, (error) => {
+  if (error) console.error(chalk.red(`==> 😭  OMG!!! ${error}`));
 });

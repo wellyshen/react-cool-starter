@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import configurecreateMockStore from "redux-mock-store";
 
-export default (obj: Record<string, unknown>): Record<string, any> => {
+export default (obj = {}): Record<string, any> => {
   const store = configurecreateMockStore([thunk])(obj);
   const originalDispatch = store.dispatch;
   store.dispatch = jest.fn(originalDispatch);

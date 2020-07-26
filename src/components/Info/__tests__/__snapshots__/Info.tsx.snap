@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Info /> renders 1`] = `
+<div
+  class="UserCard"
+>
+  <h4>
+    User Info
+  </h4>
+  <ul>
+    <li>
+      Name: 
+      Welly
+    </li>
+    <li>
+      Phone: 
+      +886 0970...
+    </li>
+    <li>
+      Email: 
+      hivoid19@gmail.com
+    </li>
+    <li>
+      Website: 
+      https://wellyshen.com
+    </li>
+  </ul>
+</div>
+`;

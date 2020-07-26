@@ -2,9 +2,9 @@ import React, { useEffect, memo } from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 
-import { userAction } from "../../actions";
-import { UserCard } from "../../components";
-import { AppState } from "../../types";
+import { AppState } from "../../store";
+import { fetchUserDataIfNeed } from "../../store/userData";
+import { Info } from "../../components";
 import styles from "./styles.scss";
 
 type Props = {
@@ -14,31 +14,31 @@ type Props = {
 const UserInfo = ({ match }: Props): JSX.Element => {
   const { id } = match.params;
   const dispatch = useDispatch();
-  const userInfo = useSelector(
-    (state: AppState) => state.userInfo,
+  const userData = useSelector(
+    (state: AppState) => state.userData,
     shallowEqual
   );
 
   useEffect(() => {
-    dispatch(userAction.fetchUserIfNeeded(id));
+    dispatch(fetchUserDataIfNeed(id));
   }, [id]);
 
-  const renderUserCard = () => {
-    const userInfoById = userInfo[id];
+  const renderInfo = () => {
+    const userInfo = userData[id];
 
-    if (!userInfoById || userInfoById.readyStatus === "request")
+    if (!userInfo || userInfo.readyStatus === "request")
       return <p>Loading...</p>;
 
-    if (userInfoById.readyStatus === "failure")
-      return <p>Oops, Failed to load info!</p>;
+    if (userInfo.readyStatus === "failure")
+      return <p>Oops! Failed to load data.</p>;
 
-    return <UserCard info={userInfoById.info} />;
+    return <Info item={userInfo.item} />;
   };
 
   return (
     <div className={styles.UserInfo}>
       <Helmet title="User Info" />
-      {renderUserCard()}
+      {renderInfo()}
     </div>
   );
 };

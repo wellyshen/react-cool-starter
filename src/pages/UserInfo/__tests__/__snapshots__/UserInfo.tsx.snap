@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserInfo /> renders an error if loading failed 1`] = `
+<div
+  class="UserInfo"
+>
+  <p>
+    Oops! Failed to load data.
+  </p>
+</div>
+`;
+
+exports[`<UserInfo /> renders the <Info /> if loading was successful 1`] = `
+<div
+  class="UserInfo"
+>
+  <div
+    class="UserCard"
+  >
+    <h4>
+      User Info
+    </h4>
+    <ul>
+      <li>
+        Name: 
+        Welly
+      </li>
+      <li>
+        Phone: 
+        +886 0970...
+      </li>
+      <li>
+        Email: 
+        hivoid19@gmail.com
+      </li>
+      <li>
+        Website: 
+        https://wellyshen.com
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<UserInfo /> renders the loading status if data invalid 1`] = `
+<div
+  class="UserInfo"
+>
+  <p>
+    Loading...
+  </p>
+</div>
+`;
+
+exports[`<UserInfo /> renders the loading status if requesting data 1`] = `
+<div
+  class="UserInfo"
+>
+  <p>
+    Loading...
+  </p>
+</div>
+`;

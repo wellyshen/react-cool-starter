@@ -2,35 +2,35 @@ import React, { useEffect, memo } from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 
-import { usersAction } from "../../actions";
-import { UserList } from "../../components";
-import { AppState } from "../../types";
+import { AppState } from "../../store";
+import { fetchUserListIfNeed } from "../../store/userList";
+import { List } from "../../components";
 import styles from "./styles.scss";
 
 const Home = (): JSX.Element => {
   const dispatch = useDispatch();
-  const { readyStatus, list } = useSelector(
-    ({ home }: AppState) => home,
+  const { readyStatus, items } = useSelector(
+    ({ userList }: AppState) => userList,
     shallowEqual
   );
 
   useEffect(() => {
-    dispatch(usersAction.fetchUsersIfNeeded());
+    dispatch(fetchUserListIfNeed());
   }, []);
 
-  const renderUserList = () => {
+  const renderList = () => {
     if (!readyStatus || readyStatus === "invalid" || readyStatus === "request")
       return <p>Loading...</p>;
 
     if (readyStatus === "failure") return <p>Oops, Failed to load list!</p>;
 
-    return <UserList list={list} />;
+    return <List items={items} />;
   };
 
   return (
     <div className={styles.Home}>
       <Helmet title="Home" />
-      {renderUserList()}
+      {renderList()}
     </div>
   );
 };
