@@ -6,14 +6,14 @@ import { ConnectedRouter } from "connected-react-router";
 import { renderRoutes } from "react-router-config";
 import { loadableReady } from "@loadable/component";
 
-import configureStore from "./utils/configureStore";
+import createStore from "./store";
 import routes from "./routes";
 
 // Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
-const { store, history } = configureStore({ initialState });
+const { store, history } = createStore({ initialState });
 
-const render = (Routes: Array<Record<string, unknown>>) => {
+const render = (Routes: Record<string, unknown>[]) => {
   const renderMethod = (module as any).hot ? ReactDOM.render : ReactDOM.hydrate;
 
   renderMethod(

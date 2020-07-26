@@ -1,6 +1,6 @@
 # React Cool Starter
 
-A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router) and [Express](https://expressjs.com). Includes all the hot stuff and modern web development tools such as [Typescript](https://www.typescriptlang.org), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest) and [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router) and [Express](https://expressjs.com). Includes all the hot stuff and modern web development tools such as [Redux Toolkit](https://redux-toolkit.js.org), [TypeScript](https://www.typescriptlang.org), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest) and [React Testing Library](https://github.com/testing-library/react-testing-library). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
@@ -27,20 +27,20 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 Really cool starter boilerplate with the most popular technologies:
 
 - [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering with async data fetching.
-- [React](https://facebook.github.io/react) as the view framework.
+- [React](https://facebook.github.io/react) as the view library.
 - [Redux](https://github.com/reactjs/redux) as the state management.
+- [Redux Toolkit](https://redux-toolkit.js.org) for efficient Redux development.
 - [React Router](https://reacttraining.com/react-router) as the router.
-- [Connected React Router](https://github.com/supasate/connected-react-router) to bind Redux with React Router. Refer to [doc](https://github.com/supasate/connected-react-router/blob/master/FAQ.md#frequently-asked-questions) to see how it works.
+- [Connected React Router](https://github.com/supasate/connected-react-router) to bind Redux with React Router. Refer to [document](https://github.com/supasate/connected-react-router/blob/master/FAQ.md#frequently-asked-questions) to see how it works.
 - [Express](https://expressjs.com) server.
-- [Typescript](https://www.typescriptlang.org) as the static type checker for Javascript.
+- [TypeScript](https://www.typescriptlang.org) as the static type checker for JavaScript.
 - [Webpack](https://webpack.js.org) for app bundling.
 - [Babel](https://babeljs.io) for transpile ES6+ to ES5.
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
 - [nodemon](https://nodemon.io) to monitor for any changes in your Node.js application and automatically restart the server.
 - [axios](https://github.com/axios/axios) as the Promise-based HTTP client for the browser and Node.js.
-- [redux-thunk](https://github.com/gaearon/redux-thunk) as the middleware to deal with asynchronous action.
 - [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
-- [loadable-component](https://github.com/smooth-code/loadable-components) to lazy load component when needed in app. Reduce your bundle size without stress.
+- [loadable-component](https://github.com/smooth-code/loadable-components) to lazy load a component when needed. Reduce your bundle size without stress.
 - [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 - [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
 - [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for SSR.
@@ -49,29 +49,31 @@ Really cool starter boilerplate with the most popular technologies:
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
 - [helmet](https://github.com/helmetjs/helmet) helps secure Express apps with various HTTP headers.
 - [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
-- [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) for debugging application's state changes.
-- [ESLint](http://eslint.org) to maintain a consistent Typescript/Javascript code style (with Airbnb configuration).
+- [ESLint](http://eslint.org) to maintain a consistent TypeScript/JavaScript code style (with Airbnb configuration).
 - [StyleLint](http://stylelint.io) to maintain a consistent css/scss code style.
 - [Prettier](https://prettier.io) to format code and style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
 - Image (compressed by [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader)) and Font support.
 - Split vendor's libraries from client bundle.
-- No other view engines, just Javascript based HTML rendering component.
-- Shared app config between development and production.
+- No other view engines, just JavaScript based HTML rendering component.
+- Shared app configuration between development and production.
 - 404 error page and redirect handling.
 - Integrate [Jest](https://facebook.github.io/jest) with [React Testing Library](https://github.com/testing-library/react-testing-library) as the solution for writing unit tests with code coverage support.
 - [Yarn](https://yarnpkg.com/lang/en) as the package manager.
 
 ## Who's the Starter for?
 
-This starter is for those who with basic knowledge of React and have the need for building a server-side app. In other words, it's not for a newbie. If you're new to React or you don't need a server-side rendering app, I'd recommend you give [create-react-app](https://github.com/facebook/create-react-app) a try.
+They're several React frameworks today, however this is a DIY oriented start-kit. It shows you how to build a universal web app from scratch and how to test it. If you're new to React or you want a ready-to-go solution, I'd recommend the following alternatives for you:
+
+- For client-side rendering, use [create-react-app](https://create-react-app.dev).
+- For server-side rendering, use [Next.js](https://nextjs.org).
 
 ## Requirements
 
 - [node](https://nodejs.org/en) >= 10.0
 - [npm](https://www.npmjs.com) >= 6.0
 
-## Looking for Docker?
+## Looking for Docker Image?
 
 You can find Docker support version on this [branch](https://github.com/wellyshen/react-cool-starter/tree/docker).
 
@@ -130,32 +132,36 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 
 ```
 .
-├── public                          # Express server static path/Webpack bundled output
-│   └── favicon.ico                 # Favicon is placed in the same path with the main HTML page
+├── public                          # Express server static path and Webpack bundled output
+│   ├── favicon.ico                 # App favicon
+│   ├── logo192.png                 # App logo small
+│   ├── logo512.png                 # App logo large
+│   └── manifest.json               # App favicon and logo manifest
 ├── src                             # App source code
-│   ├── config                      # App configuration settings
+│   ├── config                      # App configuration by environments
 │   │   ├── default.ts              # Default settings
 │   │   ├── index.ts                # Configuration entry point
-│   │   └── prod.ts                 # Production settings (overrides the default settings)
-│   ├── components                  # Reusable components (including scss/testing files)
-│   ├── pages                       # Page components (including scss/testing files)
-│   ├── app                         # App root component (including scss/testing files)
-│   ├── actions                     # Redux actions (including testing files)
-│   ├── reducers                    # Redux reducers (including testing files)
-│   ├── utils                       # App-wide utils (e.g. configure Redux store, HTML template etc.)
+│   │   └── prod.ts                 # Production settings (overrides the default)
+│   ├── components                  # Reusable components
+│   ├── pages                       # Page components
+│   ├── app                         # App root component
+│   ├── store                       # Redux store creator, actions + reducers (a.k.a slice)
+│   ├── services                    # API calls
+│   ├── utils                       # App-wide utils (e.g. HTML template, mock store creator for testing etc.)
 │   ├── static                      # Static assets (e.g. images, fonts etc.)
 │   ├── theme                       # App-wide style and vendor CSS framework
-│   ├── types                       # Typescript type declarations for redux and global
-│   ├── client.tsx                  # App bootstrap and rendering (webpack entry)
-│   ├── routes.tsx                  # Routes configuration for both client and server side
-│   └── server.tsx                  # Express server (with webpack dev/hot middlewares)
-├── tools                           # Project related configurations (testing/build etc.)
+│   ├── types                       # App-wide type definitions
+│   ├── client.tsx                  # App bootstrap and rendering (Webpack entry)
+│   ├── routes.tsx                  # Routes configuration for both client-side and server-side
+│   └── server.tsx                  # Express server (with Webpack dev and hot middlewares)
+├── tools                           # Project related configurations (e.g. build, testing etc.)
 │   ├── jest                        # Jest CSS modules and assets mocks settings
 │   ├── webpack                     # Webpack settings
 │   │   ├── config.babel.js         # Webpack configuration
 │   │   └── hooks.js                # Assets require hooks
 ├── index.ts                        # App entry point
-└── postcss.config.js               # PostCSS configuration
+├── postcss.config.js               # PostCSS configuration
+└── tsconfig.json                   # TypeScript configuration
 ```
 
 ## Server-Side Security and Performance
@@ -168,25 +174,65 @@ Concerning the security and performance of Express in production, I already setu
 
 > Note: It's just a basic protected mechanism for your app, you can see the [security best practices](https://expressjs.com/en/advanced/best-practice-security.html) for more advanced configuration.
 
-## Setup Redux DevTools Extension
+## Develop with Redux Toolkit
 
-[Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension) let us wire up our Redux app to a time-traveling debugger. It's enabled in development only. You can follow these installation guides to use it:
+[Redux Toolkit](https://redux-toolkit.js.org) is the official, opinionated, batteries-included toolset for efficient Redux development. It includes several utility functions that simplify the most common Redux use cases. In a word, we can do more work with less code, start from the [tutorial](https://redux-toolkit.js.org/tutorials/basic-tutorial) to learn more about it.
 
-**For Chrome**
+- Supports [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension), you can follow the [installation guide](https://github.com/zalmoxisus/redux-devtools-extension#installation) to use it.
+- Built-ins most commonly used Redux [middlewares](https://redux-toolkit.js.org/api/getDefaultMiddleware#included-default-middleware) for better DX, such as [Redux Thunk](https://github.com/reduxjs/redux-thunk), [Immer](https://immerjs.github.io/immer/docs/introduction) etc.
+- Provides useful [APIs](https://redux-toolkit.js.org/api/createReducer) for better development efficiency. We can even create entire [slices](https://redux-toolkit.js.org/api/createSlice) of state at once without writing any action creators or action types by hand.
+- Integrates the [Reselect library](https://github.com/reduxjs/reselect) for optimizing the performance of your React + Redux app.
 
-- from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
-- or download `extension.zip` from [last releases](https://github.com/zalmoxisus/redux-devtools-extension/releases), unzip, open `chrome://extensions` url and turn on developer mode from top left and then click; on `Load Unpacked` and select the extracted folder for use
-- or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`;
-- or run it in dev mode with `npm i && npm start` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
+Let's see how powerful it is by a simple asynchronous data fetching example:
 
-**For Firefox**
+```js
+import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
-- from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools);
-- or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
+const initialState = {
+  readyStatus: "invalid",
+  items: [],
+  error: null,
+};
 
-**For other browsers**
+const userList = createSlice({
+  // A name for action types
+  name: "userList",
+  initialState,
+  // An object of "case reducers", key names will be used to generate actions
+  reducers: {
+    getRequesting: (state) => {
+      // Write an immutable updated state by a mutable way, thanks to the built-in Immer middleware
+      state.readyStatus = "request";
+    },
+    getSuccess: (state, { payload }) => {
+      state.readyStatus = "success";
+      state.items = payload;
+    },
+    getFailure: (state, { payload }) => {
+      state.readyStatus = "failure";
+      state.error = payload;
+    },
+  },
+});
 
-- use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
+// We can get the "reducer" and "actions" from the slice instance
+export default userList.reducer;
+const { getRequesting, getSuccess, getFailure } = userList.actions;
+
+export const fetchUserList = () => async (dispatch) => {
+  dispatch(getRequesting());
+
+  try {
+    const { data } = await axios("/api/users");
+
+    // Dispatch the action once data is ready via the built-in Redux Thunk middleware
+    dispatch(getSuccess(data));
+  } catch (error) {
+    dispatch(getFailure(error.message));
+  }
+};
+```
 
 ## Overview
 
@@ -201,8 +247,6 @@ This starter use [React Router](https://reacttraining.com/react-router) library 
 ```js
 import RouteComponent from "./pages/RouteComponent";
 
-// ...
-
 export default [
   {
     // Define your route path
@@ -215,45 +259,39 @@ export default [
     routes: [
       {
         path: "/top-path/sub-path",
-        component: SubRouteComponent
-      }
-    ]
-    // ...
-  }
-  // Setup other route components...
+        component: SubRouteComponent,
+      },
+    ],
+  },
+  // Other routes...
 ];
 ```
 
 ### Data Fetching from Server-side
 
-Just write Redux actions and stores as normal (read the [Redux](https://redux.js.org) document if you are new). The starter using [axios](https://github.com/axios/axios) as the data fetcher, it's quite simple and easy to use. If the action creator is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
+Strongly recommend to write Redux actions and reducers via the [createSlice](https://redux-toolkit.js.org/api/createSlice) API of Redux Toolkit (start from the [tutorial](https://redux-toolkit.js.org/tutorials/basic-tutorial) if you are new). The starter using [axios](https://github.com/axios/axios) as the data fetcher, it's quite simple and easy to use. If the action is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
 Register the action(s) in `./src/routes.tsx`, which have to be called from server-side:
 
 ```js
-// ...
-
 export default [
   {
     path: "/top-path",
     exact: true,
     component: RouteComponent,
-    // Actions in the loadData function will be fetched from server-side
+    // Async actions in the loadData function will be fetched from server-side
     // You can access the URL parameters, Redux store, HTTP request and response by the event object
     loadData: ({ params, getState, req, res }) => [
-      myReduxAction()
-      // Add other pre-fetched actions here
-    ]
-  }
-  // ...
+      myReduxAction(),
+      // Add other pre-fetched actions...
+    ],
+  },
 ];
 ```
 
 The action(s) will be dispatched through `./src/server.tsx` on server-side:
 
 ```js
-// ...
-
 app.get("*", (req, res) => {
   // ...
 
@@ -269,7 +307,7 @@ app.get("*", (req, res) => {
               params: match.params,
               getState: store.getState,
               req,
-              res
+              res,
             })
             .map((item) => store.dispatch(item))
         );
@@ -283,20 +321,18 @@ app.get("*", (req, res) => {
 
   // ...
 });
-
-// ...
 ```
 
 In client-side, don't forget to invoke the action(s) in `componentDidMount` or `useEffect` hook. This ensures that if the component is reached on the client, then the same actions will be invoked. It's up to the action(s) to figure out if fetches for data need to be made or not:
 
 ```js
-// If you use React class component
+// Use React class component
 componentDidMount() {
   // Invoke your redux action(s) for client rendering
   this.props.myReduxAction();
 }
 
-// If you use functional component
+// Use functional component
 useEffect(() => {
   myReduxAction();
 }, [])
@@ -313,7 +349,7 @@ I use the following folder/file structure:
 ```
  |- pages
     |- AsyncRouteComponent
-       |- index.js             // Wrap the route component as async component
+       |- index.js             // Wrap the route component into async component
        |- RouteComponent.tsx   // The route component
 ```
 
@@ -327,7 +363,7 @@ import { Error, Loading } from "../../components";
 // Import your async route component
 const AsyncComponent = loadable(() => import("./AsyncComponent"), {
   // Loading component will be displayed when the component is being loaded
-  fallback: <Loading />
+  fallback: <Loading />,
 });
 
 export default (props) => (
@@ -344,13 +380,13 @@ Then you can [setup](#adding-routes) the route as usual.
 
 ### Managing Title, Meta, Styles and Scripts
 
-The `./src/app/index.tsx` (app root component) defines the base title and meta in a `<Helmet {...config.app} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) document for more info.
+The `./src/app/index.tsx` (app root component) defines the base title and meta in a `<Helmet {...config.APP} />` component. Any sub-component can override/add properties (supports meta, link, script, style tags and html attributes). See the [react-helmet](https://github.com/nfl/react-helmet) document for more info.
 
-### App config
+### App Configuration
 
-You can store app settings under `./src/config`. By default the `default.ts` will be loaded. If the `process.env.NODE_ENV` matches to production, the `prod.ts` will be used instead, and it inherits the data info from `default.ts`.
+You can store app settings under `./src/config`. By default the `default.ts` will be loaded. If the `process.env.NODE_ENV` matches to production, the `prod.ts` will be used instead, and it inherits the properties of `default.ts`.
 
-You can access the correct config with:
+You can access the correct configuration with:
 
 ```js
 import config from "./config";
@@ -369,7 +405,7 @@ import styles from "./styles.scss";
 
 return (
   <div className={styles.myClass}>
-    {/* The className matches one of CSS classes in your SCSS file */}
+    {/* The className matches one of CSS classes in your .scss file */}
     <Helmet title="My title" />
     {this.renderContent()}
   </div>
@@ -395,12 +431,10 @@ return (
 By the way, if you want to use vendor CSS frameworks or global styles, just import it through the `./src/app/index.tsx` file (app root component). For example:
 
 ```js
-import "../../theme/normalize.css"; // Import a vendor stylesheet here
-import styles from "./styles.scss"; // Import your based stylesheet here
+import "../../theme/normalize.css"; // Import the vendor stylesheet first
+import styles from "./styles.scss"; // Then your based stylesheet
 
-// ...
-
-export default (routes) => {
+const App = ({ route }) => (
   // ...
 };
 ```
@@ -412,8 +446,9 @@ It's super easy to render the image and font both on client and server, the usag
 Using image:
 
 ```js
-// Require an image
-<img src={require("./assets/logo.svg")} alt="Logo" role="presentation" />
+import logo from "../static/logo.svg";
+
+<img src={logo} alt="Logo" role="presentation" />;
 ```
 
 Using font-awesome:
@@ -448,8 +483,8 @@ return (
 
 For using CSS modules, you have to set the proper font path in your scss/sass file:
 
-```
-$fa-font-path:"../node_modules/font-awesome/fonts";
+```scss
+$fa-font-path: "../node_modules/font-awesome/fonts";
 @import "../node_modules/font-awesome/scss/font-awesome";
 
 .icon-user {
@@ -467,11 +502,8 @@ In this starter, you can see I use [React.PureComponent](https://reactjs.org/doc
 ```js
 import React, { PureComponent } from "react";
 
-// ...
-
 class MyComponent extends PureComponent {
   // Only re-renders if props change
-  // ...
 }
 ```
 
@@ -480,11 +512,8 @@ class MyComponent extends PureComponent {
 ```js
 import React, { memo } from "react";
 
-// ...
-
 const MyComponent = memo((props) => {
   // Only re-renders if props change
-  // ...
 });
 ```
 
@@ -522,20 +551,20 @@ const ParentComponent = (props) => (
 
 > For more performance optimizing techniques. Please see the [Optimizing Performance](https://reactjs.org/docs/optimizing-performance.html) topic.
 
-### Typescript
+### TypeScript
 
-[Typescript](https://www.typescriptlang.org) is a typed super-set of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to Typescript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
+[TypeScript](https://www.typescriptlang.org) is a typed super-set of JavaScript. It's getting more and more popular in the Front-end world. And being widely used by many libraries. If you are new to TypeScript, you can check out its document [here](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
 
-Typescript has been integrated with our application to bring the following benefits:
+TypeScript has been integrated with our application to bring the following benefits:
 
 - Type safety for components, reducers, state and actions.
-- Many IDEs support the hints of Typescript, which give us a superior developer experience.
+- Many IDEs support the hints of TypeScript, which give us a superior developer experience.
 - Easy refactoring of typed code.
-- In general, more types less bugs. Read this [article](https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b) to know more.
+- In general, more types less bugs. Read this [article](https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b) to learn more.
 
 ### Code and Style Lint
 
-[ESLint](http://eslint.org) (With Airbnb config), [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [StyleLint](http://stylelint.io), [Prettier](https://prettier.io) and [lint-staged](https://github.com/okonet/lint-staged) are integrated into this starter to maintain a consistent code style and give you a elegant code formatting. You can configure your lint rules through `./package.json` file.
+[ESLint](http://eslint.org) (With Airbnb configuration), [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [StyleLint](http://stylelint.io), [Prettier](https://prettier.io) and [lint-staged](https://github.com/okonet/lint-staged) are integrated into this starter to maintain a consistent code style and give you a elegant code formatting. You can configure your lint rules through the `.eslintrc`, `.stylelintrc` and `.prettierrc` files.
 
 ### Unit Testing
 
@@ -547,23 +576,19 @@ Jest support the feature of [snapshot testing](https://jestjs.io/docs/en/snapsho
 - Actions
 - Reducers
 
-By the way, Jest built-in code coverage reports, the report files are generated in `./coverage` folder. You can configure `./package.json` to define which files that you want to cover. For example:
+By the way, Jest built-in code coverage reports, the report files are generated in `./coverage` folder. You can configure `./jest.config.js` to define which files that you want to cover. For example:
 
-```json
-{
-  // ...
-  "jest": {
-    "collectCoverageFrom": [
-      "src/pages/**/*.tsx", // Define the files, which want to be covered
-      "!src/pages/index.ts" // The files will be ignored by code coverage
-    ]
-    // Other configurations
-  }
-  // ...
-}
+```js
+module.exports = {
+  collectCoverageFrom: [
+    "src/pages/**/*.tsx", // Define the files, which want to be covered
+    "!src/pages/index.ts", // The files will be ignored by code coverage
+  ],
+  // Other configurations...
+};
 ```
 
-You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code in a Javascript file to skip code coverage.
+You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md#ignoring-code-for-coverage-purposes) to specify specific lines of code in a JavaScript file to skip code coverage.
 
 ### How to Deploy
 
@@ -594,31 +619,25 @@ yarn install --production   # Then install dependencies only
 yarn start
 ```
 
-> Ideally, the above steps can be integrated into your CI. I recommend you to pack the `yarn.lock` for yarn installation by CI.
+> Ideally, the above steps can be integrated into your CI. I recommend you to pack the `./yarn.lock` for yarn installation by CI.
 
 ## Troubleshooting
 
-- If app crash due to the error: `Invariant Violation: loadable: SSR requires "@loadable/babel-plugin", please install it` (refer to this [issue](https://github.com/smooth-code/loadable-components/issues/173)). To solve that, you must use `.js` extension for code-splitting files (e.g. `src/Home/index.js`).
+- If app crash due to the error: `Invariant Violation: loadable: SSR requires "@loadable/babel-plugin", please install it` (refer to this [issue](https://github.com/smooth-code/loadable-components/issues/173)). To solve that, you must use `.js` extension for code-splitting files (e.g. `./src/Home/index.js`).
 
 - If you encounter the markup mismatches error (it's a React universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
 
   - Restart the server to solve it.
   - Or for v16.1.0 up, you can use `suppressHydrationWarning` attribute for intentional client/server text mismatches ([#11126](https://github.com/facebook/react/pull/11126)).
 
-- If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to `./package.json`.
-
-```
-"linebreak-style": 0
-```
-
-So it will look like:
+- If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to `.eslintrc`.
 
 ```
 // ...
 "rules": {
-  "linebreak-style": 0,
-  "global-require": 0,
-  // Other rules
+  "linebreak-style": "off",
+  // Other rules...
+}
 ```
 
 ## Contributors ✨

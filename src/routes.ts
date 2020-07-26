@@ -1,4 +1,6 @@
-import { usersAction, userAction } from "./actions";
+import { AppThunk } from "./store";
+import { fetchUserListIfNeed } from "./store/userList";
+import { fetchUserDataIfNeed } from "./store/userData";
 import App from "./app";
 import { asyncHome, asyncUserInfo, NotFound } from "./pages";
 
@@ -10,21 +12,21 @@ export default [
         path: "/",
         exact: true,
         component: asyncHome, // Add your route here
-        loadData: (): Array<any> => [
-          usersAction.fetchUsersIfNeeded()
+        loadData: (): AppThunk[] => [
+          fetchUserListIfNeed(),
           // Add other pre-fetched actions here
-        ]
+        ],
       },
       {
         path: "/UserInfo/:id",
         component: asyncUserInfo,
-        loadData: ({ params }: { params: { id: string } }): Array<any> => [
-          userAction.fetchUserIfNeeded(params.id)
-        ]
+        loadData: ({ params }: { params: { id: string } }): AppThunk[] => [
+          fetchUserDataIfNeed(params.id),
+        ],
       },
       {
-        component: NotFound
-      }
-    ]
-  }
+        component: NotFound,
+      },
+    ],
+  },
 ];

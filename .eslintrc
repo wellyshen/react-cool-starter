@@ -21,10 +21,7 @@
   ],
   "settings": {
     "import/resolver": {
-      "typescript": {},
-      "webpack": {
-        "config": "./tools/webpack/config.babel.js"
-      }
+      "typescript": {}
     }
   },
   "env": {
@@ -37,18 +34,13 @@
     "global-require": "off",
     "no-console": "off",
     "no-underscore-dangle": "off",
-    "react/prop-types": "off",
+    "no-param-reassign": "off",
     "react-hooks/exhaustive-deps": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
       "error",
       {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
     "import/extensions": "off",
@@ -60,8 +52,6 @@
     ],
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-var-requires": "off",
     "prettier/prettier": "error"
   },

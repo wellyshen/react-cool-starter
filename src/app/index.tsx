@@ -11,15 +11,15 @@ import "normalize.css/normalize.css";
 import styles from "./styles.scss";
 
 interface Route {
-  route: { routes: Array<Record<string, unknown>> };
+  route: { routes: Record<string, unknown>[] };
 }
 
 const App = ({ route }: Route) => (
   <div className={styles.App}>
-    <Helmet {...config.app} />
+    <Helmet {...config.APP} />
     <Link to="/" className={styles.header}>
       <img src={logo} alt="Logo" role="presentation" />
-      <h1>{config.app.title}</h1>
+      <h1>{config.APP.title}</h1>
     </Link>
     <hr />
     {/* Child routes won't render without this */}
