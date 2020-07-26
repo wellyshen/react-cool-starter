@@ -1,20 +1,30 @@
-Thumbs.db
-__MACOSX
-.DS_Store
-
-*.log
-*.lock
-
-coverage
+# Dependencies
 node_modules
+
+# Testing
+coverage
+
+# Production
 public/*
 !public/favicon.ico
 !public/logo192.png
 !public/logo512.png
 !public/manifest.json
 
+# Docker
+Dockerfile
 .dockerignore
+
+# Git
 .git
-.idea
-.vscode
-.history
+.github
+.gitignore
+
+# Misc
+.DS_Store
+.all-contributorsrc
+.editorconfig
+*.log
+*.md
+!README.md
+

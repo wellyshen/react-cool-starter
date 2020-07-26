@@ -1,6 +1,6 @@
 FROM node:lts
 
-WORKDIR /react-cool-starter
+WORKDIR /app
 
 COPY package.json .
 
@@ -12,4 +12,4 @@ RUN yarn build
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
