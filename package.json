@@ -59,7 +59,7 @@
     "clean": "run-p clean:*",
     "clean:build": "rimraf ./public/assets",
     "clean:cov": "rimraf ./coverage",
-    "docker": "yarn docker:build && yarn docker:start",
+    "docker": "run-s docker:build docker:start",
     "docker:build": "docker build --rm -t wellyshen/react-cool-starter .",
     "docker:start": "docker run --rm -it -e NODE_HOST=0.0.0.0 -p 8080:8080 wellyshen/react-cool-starter"
   },
