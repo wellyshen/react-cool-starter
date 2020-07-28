@@ -159,7 +159,7 @@
     "eslint-plugin-jest-dom": "^3.1.4",
     "eslint-plugin-jsx-a11y": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react": "^7.20.4",
     "eslint-plugin-testing-library": "^3.3.2",
     "file-loader": "^6.0.0",
     "fork-ts-checker-webpack-plugin": "^5.0.11",
