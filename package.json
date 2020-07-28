@@ -162,7 +162,7 @@
     "eslint-plugin-react": "^7.20.4",
     "eslint-plugin-testing-library": "^3.3.2",
     "file-loader": "^6.0.0",
-    "fork-ts-checker-webpack-plugin": "^5.0.11",
+    "fork-ts-checker-webpack-plugin": "^5.0.12",
     "husky": "^4.2.5",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^6.0.0",
