@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { RouteProps } from "react-router-dom";
 import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
@@ -13,7 +14,7 @@ import routes from "./routes";
 const initialState = window.__INITIAL_STATE__;
 const { store, history } = createStore({ initialState });
 
-const render = (Routes: Record<string, unknown>[]) => {
+const render = (Routes: RouteProps[]) => {
   const renderMethod = (module as any).hot ? ReactDOM.render : ReactDOM.hydrate;
 
   renderMethod(

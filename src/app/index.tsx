@@ -1,8 +1,8 @@
 import React from "react";
+import { RouteProps, Link } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import { Helmet } from "react-helmet";
 import { hot } from "react-hot-loader";
-import { Link } from "react-router-dom";
 
 import logo from "../static/logo.svg";
 import config from "../config";
@@ -11,7 +11,7 @@ import "normalize.css/normalize.css";
 import styles from "./styles.scss";
 
 interface Route {
-  route: { routes: Record<string, unknown>[] };
+  route: { routes: RouteProps[] };
 }
 
 const App = ({ route }: Route) => (
