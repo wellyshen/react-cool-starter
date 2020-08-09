@@ -23,7 +23,7 @@ import config from "./config";
 const app = express();
 
 // Use helmet to secure Express with various HTTP headers
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false }));
 // Prevent HTTP parameter pollution
 app.use(hpp());
 // Compress all requests
