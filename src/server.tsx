@@ -65,7 +65,7 @@ app.get("*", (req, res) => {
 
   // The method for loading data from server-side
   const loadBranchData = (): Promise<any> => {
-    // @ts-ignore
+    // @ts-expect-error
     const branch = matchRoutes(routes, req.path);
     const promises = branch.map(({ route, match }) => {
       if (route.loadData)
@@ -104,7 +104,7 @@ app.get("*", (req, res) => {
             {/* Setup React-Router server-side rendering */}
             <StaticRouter location={req.path} context={staticContext}>
               {/*
-              // @ts-ignore */}
+              // @ts-expect-error */}
               {renderRoutes(routes)}
             </StaticRouter>
           </Provider>
@@ -141,7 +141,7 @@ app.get("*", (req, res) => {
   })();
 });
 
-// @ts-ignore
+// @ts-expect-error
 app.listen(config.PORT, config.HOST, (error) => {
   if (error) console.error(chalk.red(`==> 😭  OMG!!! ${error}`));
 });

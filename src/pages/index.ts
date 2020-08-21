@@ -1,6 +1,6 @@
-// @ts-ignore
+// @ts-expect-error
 import asyncHome from "./Home";
-// @ts-ignore
+// @ts-expect-error
 import asyncUserInfo from "./UserInfo";
 import NotFound from "./NotFound";
 

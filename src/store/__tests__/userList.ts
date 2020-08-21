@@ -24,7 +24,7 @@ const mockError = "Oops! Something went wrong.";
 
 describe("userList reducer", () => {
   it("should handle initial state", () => {
-    // @ts-ignore
+    // @ts-expect-error
     expect(userList(undefined, {})).toEqual(initialState);
   });
 
@@ -57,7 +57,7 @@ describe("userList action", () => {
       { type: getSuccess.type, payload: mockData },
     ];
 
-    // @ts-ignore
+    // @ts-expect-error
     axios.get.mockResolvedValue({ data: mockData });
 
     await dispatch(fetchUserList());
@@ -71,7 +71,7 @@ describe("userList action", () => {
       { type: getFailure.type, payload: mockError },
     ];
 
-    // @ts-ignore
+    // @ts-expect-error
     axios.get.mockRejectedValue({ message: mockError });
 
     await dispatch(fetchUserList());
