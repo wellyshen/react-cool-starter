@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 import { User } from "../../services/jsonPlaceholder";
-import styles from "./styles.scss";
+import styles from "./styles.module.scss";
 
 interface Props {
   items: User[];

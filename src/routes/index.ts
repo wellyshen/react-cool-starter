@@ -1,8 +1,8 @@
-import { AppThunk } from "./store";
-import { fetchUserListIfNeed } from "./store/userList";
-import { fetchUserDataIfNeed } from "./store/userData";
-import App from "./app";
-import { asyncHome, asyncUserInfo, NotFound } from "./pages";
+import { AppThunk } from "../store";
+import { fetchUserListIfNeed } from "../store/userList";
+import { fetchUserDataIfNeed } from "../store/userData";
+import App from "../app";
+import { asyncHome, asyncUserInfo, NotFound } from "../pages";
 
 export default [
   {

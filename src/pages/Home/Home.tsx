@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { AppState } from "../../store";
 import { fetchUserListIfNeed } from "../../store/userList";
 import { List } from "../../components";
-import styles from "./styles.scss";
+import styles from "./styles.module.scss";
 
 const Home = (): JSX.Element => {
   const dispatch = useDispatch();

@@ -29,7 +29,7 @@ describe("<App />", () => {
 
     const tree = renderer
       .create(
-        // @ts-ignore
+        // @ts-expect-error
         <Provider store={mockStore}>
           <MemoryRouter>
             <App route={mockRoute} />

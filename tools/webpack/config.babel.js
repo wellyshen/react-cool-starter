@@ -13,9 +13,6 @@ import PnpWebpackPlugin from "pnp-webpack-plugin";
 const nodeEnv = process.env.NODE_ENV || "development";
 const isDev = nodeEnv === "development";
 
-// Enable/disable css modules here
-const USE_CSS_MODULES = true;
-
 // Setup the plugins for development/production
 const getPlugins = () => {
   // Common
@@ -76,10 +73,10 @@ const getPlugins = () => {
 // Setup the entry for development/production
 const getEntry = () => {
   // Development
-  let entry = ["webpack-hot-middleware/client?reload=true", "./src/client.tsx"];
+  let entry = ["webpack-hot-middleware/client?reload=true", "./src/client"];
 
   // production
-  if (!isDev) entry = ["./src/client.tsx"];
+  if (!isDev) entry = ["./src/client"];
 
   return entry;
 };
@@ -99,11 +96,11 @@ const getStyleLoaders = (sass = false) => {
       loader: "css",
       options: {
         importLoaders: sass ? 2 : 1,
-        modules: USE_CSS_MODULES && {
+        modules: {
+          auto: true,
           localIdentName: isDev ? "[name]__[local]" : "[hash:base64:5]",
-          context: path.resolve(process.cwd(), "src"),
+          localIdentContext: path.resolve(process.cwd(), "src"),
         },
-        sourceMap: isDev,
       },
     },
     { loader: "postcss", options: { sourceMap: isDev } },

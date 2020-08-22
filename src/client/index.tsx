@@ -7,8 +7,8 @@ import { ConnectedRouter } from "connected-react-router";
 import { renderRoutes } from "react-router-config";
 import { loadableReady } from "@loadable/component";
 
-import createStore from "./store";
-import routes from "./routes";
+import createStore from "../store";
+import routes from "../routes";
 
 // Get the initial state from server-side rendering
 const initialState = window.__INITIAL_STATE__;
@@ -36,9 +36,9 @@ loadableReady(() => {
 
 if ((module as any).hot) {
   // Enable webpack hot module replacement for routes
-  (module as any).hot.accept("./routes", () => {
+  (module as any).hot.accept("../routes", () => {
     try {
-      const nextRoutes = require("./routes").default;
+      const nextRoutes = require("../routes").default;
 
       render(nextRoutes);
     } catch (error) {

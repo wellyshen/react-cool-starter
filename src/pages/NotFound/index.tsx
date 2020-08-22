@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Helmet } from "react-helmet";
 
-import styles from "./styles.scss";
+import styles from "./styles.module.scss";
 
 interface Props {
   staticContext?: { status: string };
