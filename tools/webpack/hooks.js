@@ -9,7 +9,7 @@ const isDev = nodeEnv === "development";
 
 module.exports = () => {
   // CSS modules
-  require("css-modules-require-hook")({
+  require("@dr.pogodin/css-modules-require-hook")({
     // Must use the same pattern with your webpack config
     generateScopedName: isDev ? "[name]__[local]" : "[hash:base64:5]",
     extensions: [".css", ".scss", ".sass"],
