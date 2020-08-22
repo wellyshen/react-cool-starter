@@ -394,12 +394,12 @@ import config from "./config";
 
 ### Styles
 
-The starter supports CSS, SASS and [CSS modules](https://github.com/css-Modules/css-Modules) is enabled by default. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
+The starter supports CSS, SASS and [CSS modules](https://github.com/css-Modules/css-Modules) is auto enabled for all files the `[name].module.*` naming convention. I use [PostCSS](https://github.com/postcss/postcss-loader) plugin to parse CSS and add autoprefixer to your stylesheet. You can access your stylesheet with two ways.
 
 With CSS modules:
 
 ```js
-import styles from "./styles.scss";
+import styles from "./styles.module.scss";
 
 // ...
 
@@ -412,7 +412,7 @@ return (
 );
 ```
 
-Without CSS modules (you need to turn off CSS modules from the `./tools/webpack/config.babel.js`):
+Without CSS modules:
 
 ```js
 import "./styles.scss";

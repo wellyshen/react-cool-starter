@@ -12,9 +12,7 @@ export default (app: Express): void => {
     headers: { "Access-Control-Allow-Origin": "*" },
     stats: "minimal",
     serverSideRender: true,
-    watchOptions: {
-      ignored: /node_modules/,
-    },
+    watchOptions: { ignored: /node_modules/ },
   });
 
   app.use(instance);

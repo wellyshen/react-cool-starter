@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import { AppState } from "../../store";
 import { fetchUserDataIfNeed } from "../../store/userData";
 import { Info } from "../../components";
-import styles from "./styles.scss";
+import styles from "./styles.module.scss";
 
 type Props = {
   match: Record<string, any>;
