@@ -76,10 +76,10 @@ const getPlugins = () => {
 // Setup the entry for development/production
 const getEntry = () => {
   // Development
-  let entry = ["webpack-hot-middleware/client?reload=true", "./src/client.tsx"];
+  let entry = ["webpack-hot-middleware/client?reload=true", "./src/client"];
 
   // production
-  if (!isDev) entry = ["./src/client.tsx"];
+  if (!isDev) entry = ["./src/client"];
 
   return entry;
 };

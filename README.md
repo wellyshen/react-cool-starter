@@ -101,7 +101,7 @@ yarn start  # Running production server
 
 Now the app should be running at [http://localhost:8080](http://localhost:8080)
 
-> Note: You can change the port that you want from `./package.json`.
+> Note: You can change the port that you want from the `./package.json`.
 
 ## Script Commands
 
@@ -111,7 +111,7 @@ I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use enviro
 | ------------------ | -------------------------------------------------------------------------------- |
 | `dev`              | Run your app on the development server at `localhost:3000`. HMR will be enabled. |
 | `start`            | Run your app on the production server only at `localhost:8080`.                  |
-| `build`            | Delete the previous bundled files and bundle it to `./public/assets`.            |
+| `build`            | Delete the previous bundled files and bundle it to the `./public/assets`.        |
 | `analyze`          | Visualize the contents of all your bundles.                                      |
 | `type-check`       | Run type checking for `.tsx?` files.                                             |
 | `type-check:watch` | Run an interactive type checking watcher .                                       |
@@ -132,36 +132,36 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 
 ```
 .
-├── public                          # Express server static path and Webpack bundled output
-│   ├── favicon.ico                 # App favicon
-│   ├── logo192.png                 # App logo small
-│   ├── logo512.png                 # App logo large
-│   └── manifest.json               # App favicon and logo manifest
-├── src                             # App source code
-│   ├── config                      # App configuration by environments
-│   │   ├── default.ts              # Default settings
-│   │   ├── index.ts                # Configuration entry point
-│   │   └── prod.ts                 # Production settings (overrides the default)
-│   ├── components                  # Reusable components
-│   ├── pages                       # Page components
-│   ├── app                         # App root component
-│   ├── store                       # Redux store creator, actions + reducers (a.k.a slice)
-│   ├── services                    # API calls
-│   ├── utils                       # App-wide utils (e.g. HTML template, mock store creator for testing etc.)
-│   ├── static                      # Static assets (e.g. images, fonts etc.)
-│   ├── theme                       # App-wide style and vendor CSS framework
-│   ├── types                       # App-wide type definitions
-│   ├── client.tsx                  # App bootstrap and rendering (Webpack entry)
-│   ├── routes.tsx                  # Routes configuration for both client-side and server-side
-│   └── server.tsx                  # Express server (with Webpack dev and hot middlewares)
-├── tools                           # Project related configurations (e.g. build, testing etc.)
-│   ├── jest                        # Jest CSS modules and assets mocks settings
-│   ├── webpack                     # Webpack settings
-│   │   ├── config.babel.js         # Webpack configuration
-│   │   └── hooks.js                # Assets require hooks
-├── index.ts                        # App entry point
-├── postcss.config.js               # PostCSS configuration
-└── tsconfig.json                   # TypeScript configuration
+├── public                        # Express server static path and Webpack bundled output
+│   ├── favicon.ico               # App favicon
+│   ├── logo192.png               # App logo small
+│   ├── logo512.png               # App logo large
+│   └── manifest.json             # App favicon and logo manifest
+├── src                           # App source code
+│   ├── config                    # App configuration by environments
+│   │   ├── default.ts            # Default settings
+│   │   ├── index.ts              # Configuration entry point
+│   │   └── prod.ts               # Production settings (overrides the default)
+│   ├── components                # Reusable components
+│   ├── pages                     # Page components
+│   ├── app                       # App root component
+│   ├── store                     # Redux store creator, actions + reducers (a.k.a slice)
+│   ├── services                  # API calls
+│   ├── utils                     # App-wide utils (e.g. mock store creator for testing etc.)
+│   ├── static                    # Static assets (e.g. images, fonts etc.)
+│   ├── theme                     # App-wide style and vendor CSS framework
+│   ├── types                     # App-wide type definitions
+│   ├── client                    # App bootstrap and rendering (Webpack entry)
+│   ├── routes                    # Routes configuration for both client-side and server-side
+│   └── server                    # Express server (with Webpack dev and hot middlewares)
+├── tools                         # Project related configurations (e.g. build, testing etc.)
+│   ├── jest                      # Jest CSS modules and assets mocks settings
+│   ├── webpack                   # Webpack settings
+│   │   ├── config.babel.js       # Webpack configuration
+│   │   └── hooks.js              # Assets require hooks
+├── index.ts                      # App entry point
+├── postcss.config.js             # PostCSS configuration
+└── tsconfig.json                 # TypeScript configuration
 ```
 
 ## Server-Side Security and Performance
@@ -242,10 +242,10 @@ React v16.8 introduced a series of [Hooks](https://reactjs.org/docs/hooks-intro.
 
 ### Adding Routes
 
-This starter use [React Router](https://reacttraining.com/react-router) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in `./src/routes.tsx`. For example:
+This starter use [React Router](https://reacttraining.com/react-router) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in the `./src/routes/index.ts`. For example:
 
 ```js
-import RouteComponent from "./pages/RouteComponent";
+import RouteComponent from "../pages/RouteComponent";
 
 export default [
   {
@@ -271,7 +271,7 @@ export default [
 
 Strongly recommend to write Redux actions and reducers via the [createSlice](https://redux-toolkit.js.org/api/createSlice) API of Redux Toolkit (start from the [tutorial](https://redux-toolkit.js.org/tutorials/basic-tutorial) if you are new). The starter using [axios](https://github.com/axios/axios) as the data fetcher, it's quite simple and easy to use. If the action is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
-Register the action(s) in `./src/routes.tsx`, which have to be called from server-side:
+Register the action(s) in the `./src/routes/index.ts`, which have to be called from server-side:
 
 ```js
 export default [
@@ -289,7 +289,7 @@ export default [
 ];
 ```
 
-The action(s) will be dispatched through `./src/server.tsx` on server-side:
+The action(s) will be dispatched through the `./src/server/ssr.tsx` on server-side:
 
 ```js
 app.get("*", (req, res) => {
@@ -384,7 +384,7 @@ The `./src/app/index.tsx` (app root component) defines the base title and meta i
 
 ### App Configuration
 
-You can store app settings under `./src/config`. By default the `default.ts` will be loaded. If the `process.env.NODE_ENV` matches to production, the `prod.ts` will be used instead, and it inherits the properties of `default.ts`.
+You can store app settings under the `./src/config`. By default the `default.ts` will be loaded. If the `process.env.NODE_ENV` matches to production, the `prod.ts` will be used instead, and it inherits the properties of `default.ts`.
 
 You can access the correct configuration with:
 
@@ -412,7 +412,7 @@ return (
 );
 ```
 
-Without CSS modules (you need to turn off CSS modules from `./tools/webpack/config.babel.js`):
+Without CSS modules (you need to turn off CSS modules from the `./tools/webpack/config.babel.js`):
 
 ```js
 import "./styles.scss";
@@ -576,7 +576,7 @@ Jest support the feature of [snapshot testing](https://jestjs.io/docs/en/snapsho
 - Actions
 - Reducers
 
-By the way, Jest built-in code coverage reports, the report files are generated in `./coverage` folder. You can configure `./jest.config.js` to define which files that you want to cover. For example:
+By the way, Jest built-in code coverage reports, the report files are generated in the `./coverage` folder. You can configure the `./jest.config.js` to define which files that you want to cover. For example:
 
 ```js
 module.exports = {
