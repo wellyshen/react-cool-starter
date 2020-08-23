@@ -94,7 +94,6 @@
     "asset-require-hook": "^1.2.0",
     "autoprefixer": "^9.8.6",
     "axios": "^0.20.0",
-    "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "chalk": "^4.1.0",
     "compression": "^1.7.4",
