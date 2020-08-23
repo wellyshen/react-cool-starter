@@ -45,7 +45,7 @@ Really cool starter boilerplate with the most popular technologies:
 - [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
 - [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for SSR.
 - [asset-require-hook](https://github.com/aribouius/asset-require-hook) allows your assets files required during runtime for SSR.
-- [assets-webpack-plugin](https://github.com/ztoben/assets-webpack-plugin) generates assets with hash so you can use them for SSR.
+- [webpack-manifest-plugin](https://github.com/danethurber/webpack-manifest-plugin) generates an assets manifest with hash so you can use them for SSR.
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
 - [helmet](https://github.com/helmetjs/helmet) helps secure Express apps with various HTTP headers.
 - [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
