@@ -19,7 +19,9 @@ const App = ({ route }: Route) => (
     <Helmet {...config.APP} />
     <Link to="/" className={styles.header}>
       <img src={logo} alt="Logo" role="presentation" />
-      <h1>{config.APP.title}</h1>
+      <h1>
+        <em>{config.APP.title}</em>
+      </h1>
     </Link>
     <hr />
     {/* Child routes won't render without this */}

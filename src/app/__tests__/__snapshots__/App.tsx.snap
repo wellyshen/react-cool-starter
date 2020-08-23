@@ -15,7 +15,9 @@ exports[`<App /> renders 1`] = `
       src="IMAGE_MOCK"
     />
     <h1>
-      React Cool Starter
+      <em>
+        REACT COOL STARTER
+      </em>
     </h1>
   </a>
   <hr />

@@ -1,4 +1,4 @@
-# React Cool Starter
+# <em><b>REACT COOL STARTER</b></em>
 
 A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router) and [Express](https://expressjs.com). Includes all the hot stuff and modern web development tools such as [Redux Toolkit](https://redux-toolkit.js.org), [TypeScript](https://www.typescriptlang.org), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest) and [React Testing Library](https://github.com/testing-library/react-testing-library). See the [**“Features”**](#features) section for other awesome features you can expect.
 
