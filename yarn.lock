@@ -985,16 +985,16 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dr.pogodin/css-modules-require-hook@^4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@dr.pogodin/css-modules-require-hook/-/css-modules-require-hook-4.4.0.tgz#3bc4ec2b7ccde86ce628ac04e26985cf493bbed2"
-  integrity sha512-9JOJ61TOD6DqwkkHsWhDWlojyh059BTynOeYuwAV/qVwaV1UEfHFtnSBBKpA9/wmf/JHisXrPRMe21cwQLfAVw==
+"@dr.pogodin/css-modules-require-hook@^4.4.1":
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@dr.pogodin/css-modules-require-hook/-/css-modules-require-hook-4.4.1.tgz#ffd35b06e9d9fa97ed81ccfee9160102d5266322"
+  integrity sha512-13R20+cNmutllMF3xsDtl+7KJfY18SjwSgftEtQjMspJJ+piX0dEkPqZ5HeU7PRuxkGqRvNN+N+D7Ki10IxtmA==
   dependencies:
     css-loader "^4.2.1"
     debug "^4.1.1"
     glob-to-regexp "^0.4.1"
     icss-replace-symbols "^1.0.2"
-    lodash "^4.17.19"
+    lodash "^4.17.20"
     postcss "^7.0.32"
     postcss-modules-extract-imports "^2.0.0"
     postcss-modules-local-by-default "^3.0.3"
@@ -7656,7 +7656,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.5, lodash@~4.17.10:
+"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.5, lodash@~4.17.10:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
