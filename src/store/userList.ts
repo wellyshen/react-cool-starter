@@ -44,7 +44,7 @@ export const fetchUserList = (): AppThunk => async (dispatch) => {
   if (error) {
     dispatch(getFailure(error.message));
   } else {
-    dispatch(getSuccess(data));
+    dispatch(getSuccess(data as User[]));
   }
 };
 

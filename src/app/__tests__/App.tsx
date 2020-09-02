@@ -8,10 +8,10 @@ import App from "..";
 describe("<App />", () => {
   it("renders", () => {
     const mockStore = {
-      default: (): void => null,
-      subscribe: (): void => null,
-      dispatch: (): void => null,
-      getState: () => ({ home: (): void => null }),
+      default: () => null,
+      subscribe: () => null,
+      dispatch: () => null,
+      getState: () => ({ home: () => null }),
     };
     const mockRoute = {
       routes: [

@@ -9,6 +9,6 @@ import userData from "./userData";
 export default (history: History) => ({
   userList,
   userData,
-  router: connectRouter(history),
+  router: connectRouter(history) as any,
   // Register more reducers...
 });
