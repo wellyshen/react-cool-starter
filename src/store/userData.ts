@@ -48,7 +48,7 @@ export const fetchUserData = (id: string): AppThunk => async (dispatch) => {
   if (error) {
     dispatch(getFailure({ id, error: error.message }));
   } else {
-    dispatch(getSuccess({ id, item: data }));
+    dispatch(getSuccess({ id, item: data as User }));
   }
 };
 
