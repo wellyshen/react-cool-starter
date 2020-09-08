@@ -173,7 +173,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "pnp-webpack-plugin": "^1.6.4",
     "postcss": "^7.0.32",
-    "postcss-loader": "^3.0.0",
+    "postcss-loader": "^4.0.0",
     "prettier": "^2.1.1",
     "raf": "^3.4.1",
     "react-test-renderer": "^16.13.1",
