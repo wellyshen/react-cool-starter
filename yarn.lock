@@ -10753,6 +10753,13 @@ serialize-javascript@^4.0.0:
   dependencies:
     randombytes "^2.1.0"
 
+serialize-javascript@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-5.0.0.tgz#55ec4cbbbbb5440a1aca9e5e8b0c9168e6fb565b"
+  integrity sha512-JyENN0vEVTeDAFn+s4whS5OxSadXxb14iEtUOo8fw9h1xYd+/kjQ6zWVxHm7W8HfQjGxnD1TYlh3PhAZlj0xbg==
+  dependencies:
+    randombytes "^2.1.0"
+
 serve-favicon@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/serve-favicon/-/serve-favicon-2.5.0.tgz#935d240cdfe0f5805307fdfe967d88942a2cbcf0"
