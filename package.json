@@ -99,7 +99,7 @@
     "cross-env": "^7.0.2",
     "eslint-plugin-react-hooks": "^4",
     "express": "^4.17.1",
-    "helmet": "^4.1.0",
+    "helmet": "^4.1.1",
     "history": "^4.10.1",
     "hpp": "^0.2.3",
     "html-minifier": "^4.0.0",
