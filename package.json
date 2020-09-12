@@ -182,7 +182,7 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^10.0.2",
     "source-map-loader": "^1.1.0",
-    "stylelint": "^13.7.0",
+    "stylelint": "^13.7.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-standard": "^20.0.0",
