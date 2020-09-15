@@ -84,7 +84,7 @@
     "@babel/register": "^7.11.5",
     "@dr.pogodin/css-modules-require-hook": "^4.4.1",
     "@hot-loader/react-dom": "^16.13.0",
-    "@loadable/babel-plugin": "^5.13.0",
+    "@loadable/babel-plugin": "^5.13.2",
     "@loadable/component": "^5.13.2",
     "@loadable/server": "^5.13.2",
     "@reduxjs/toolkit": "^1.4.0",
