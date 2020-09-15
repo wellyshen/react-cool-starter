@@ -3450,15 +3450,15 @@ compressible@~2.0.16:
   dependencies:
     mime-db ">= 1.43.0 < 2"
 
-compression-webpack-plugin@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-5.0.2.tgz#df84e682cfa1fb2a230e71cf83d50c323d5369c2"
-  integrity sha512-F2G4cQfsMZ6CiPlG22Q5EDUCqnfyZqTjyJP5cMgNYUbBg/dUzV3hto8yTFFIogDCTWooVbePHQE0qL6FrJUSsA==
+compression-webpack-plugin@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-6.0.0.tgz#aee0daa06d5a880e7bddccbccd0309a02c6337e6"
+  integrity sha512-9t0xOQkOCjccNpRPKRQRRkUrM1/NqhUb9+pzhahJEriZZbT5p/6Keq/6t1DHLV6ChXZ0MSa1ROYEX649Rl1crg==
   dependencies:
     cacache "^15.0.5"
     find-cache-dir "^3.3.1"
-    schema-utils "^2.7.0"
-    serialize-javascript "^4.0.0"
+    schema-utils "^2.7.1"
+    serialize-javascript "^5.0.1"
     webpack-sources "^1.4.3"
 
 compression@^1.7.4:
