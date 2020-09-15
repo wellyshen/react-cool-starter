@@ -146,7 +146,7 @@
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.0.1",
     "babel-loader": "^8.1.0",
-    "compression-webpack-plugin": "^5.0.2",
+    "compression-webpack-plugin": "^6.0.0",
     "css-loader": "^4.3.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
