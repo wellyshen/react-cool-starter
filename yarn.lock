@@ -1226,10 +1226,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@loadable/babel-plugin@^5.13.0":
-  version "5.13.0"
-  resolved "https://registry.yarnpkg.com/@loadable/babel-plugin/-/babel-plugin-5.13.0.tgz#669b6f8cb0468800a1e59fc515030870b05aacb5"
-  integrity sha512-SlwrjW9xnsQJI96aRKcNJwhwjWB1I/zDdm8Viz4/+MELEdd8TXBIfopa2PgoOMNORaXpTgan6DQ8u4Bf0lWJjQ==
+"@loadable/babel-plugin@^5.13.2":
+  version "5.13.2"
+  resolved "https://registry.yarnpkg.com/@loadable/babel-plugin/-/babel-plugin-5.13.2.tgz#373cddc64ee5437814f7dca1c1b6a7b2c1665a9f"
+  integrity sha512-vSZUVeTH1S1sDbk8Tzft0plZSkN7W4zmVR5w/Bmy4UmvBiu9lin7ztrDpoUTUzxpoups+OJbTc/OosvN0aMXWg==
   dependencies:
     "@babel/plugin-syntax-dynamic-import" "^7.7.4"
 
