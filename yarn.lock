@@ -9303,10 +9303,10 @@ postcss-less@^3.1.4:
   dependencies:
     postcss "^7.0.14"
 
-postcss-loader@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-4.0.0.tgz#bfd04521d2a2db69cb9e8a7cee0a5ae704e751dc"
-  integrity sha512-LdpfM9yCVFeJzofnaFvLf3g9oMuH2mIIqOcu81n6JHxzRNBl78GHiYWUJ5gf4c7A7VZiBCeWwfVAMw/mQCAM3Q==
+postcss-loader@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-4.0.2.tgz#b9e55a6126ee67bb7b94bbfcbf1aa24c69f11229"
+  integrity sha512-u7Qoa6GSPIeg9/hHbNnXspzuD5jjCIWKgk1fJ/gGJPS0uaj6Whk2zjXhDAiHZyYSrDmIzUQk7GgwRF22eRIQGQ==
   dependencies:
     cosmiconfig "^7.0.0"
     klona "^2.0.3"
