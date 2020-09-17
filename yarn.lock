@@ -6196,15 +6196,15 @@ ignore@^5.1.1, ignore@^5.1.4, ignore@^5.1.8:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
   integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
 
-image-webpack-loader@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/image-webpack-loader/-/image-webpack-loader-7.0.0.tgz#0de714a2e9e8481d720aadb7e668424489daf0cb"
-  integrity sha512-6cESUcErBc4eB5rdwIDQO1KBcd0VsGfjTsV14zh2kwODzqu99Z6VKQf6XVAoBOgpWnhF2DHoq7qDDC9ksRDSUA==
+image-webpack-loader@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/image-webpack-loader/-/image-webpack-loader-7.0.1.tgz#5e5118e36a6ce17d40a0b835fe2bb39fc80eb9c7"
+  integrity sha512-Y6/lRqMGMhZayIx4AONjU1FIljNb9AfiA2SUZ2o65bN4xPcfHmI3MmhrcmphxK/hiwShK/Q7/9/JkPqQMX8HPw==
   dependencies:
     imagemin "^7.0.1"
     loader-utils "^2.0.0"
     object-assign "^4.1.1"
-    schema-utils "^2.6.1"
+    schema-utils "^2.7.1"
   optionalDependencies:
     imagemin-gifsicle "^7.0.0"
     imagemin-mozjpeg "^9.0.0"
@@ -10660,7 +10660,7 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-schema-utils@^2.6.1, schema-utils@^2.6.5, schema-utils@^2.7.0, schema-utils@^2.7.1:
+schema-utils@^2.6.5, schema-utils@^2.7.0, schema-utils@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.7.1.tgz#1ca4f32d1b24c590c203b8e7a50bf0ea4cd394d7"
   integrity sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==
