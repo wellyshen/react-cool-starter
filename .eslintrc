@@ -31,8 +31,8 @@
     "jest": true
   },
   "rules": {
+    "no-use-before-define": "off",
     "global-require": "off",
-    "no-shadow": "off",
     "no-console": "off",
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
@@ -51,7 +51,6 @@
         "devDependencies": true
       }
     ],
-    "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-var-requires": "off",
