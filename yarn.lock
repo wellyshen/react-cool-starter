@@ -2442,6 +2442,18 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
+autoprefixer@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.0.0.tgz#4afbe9eb902ffb5d7a9ef6d36013948fdb34601f"
+  integrity sha512-rFlVYthz6Iw0LhEYryiGGyjTGofebWie3ydvtqTCJiwWe+z6y8H35b4cadYbOUcYlP495TNeVktW+ZZqxbPW4Q==
+  dependencies:
+    browserslist "^4.14.2"
+    caniuse-lite "^1.0.30001131"
+    colorette "^1.2.1"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss-value-parser "^4.1.0"
+
 autoprefixer@^9.8.6:
   version "9.8.6"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.8.6.tgz#3b73594ca1bf9266320c5acf1588d74dea74210f"
@@ -2859,7 +2871,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.8.5:
+browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.14.2, browserslist@^4.8.5:
   version "4.14.3"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.14.3.tgz#381f9e7f13794b2eb17e1761b4f118e8ae665a53"
   integrity sha512-GcZPC5+YqyPO4SFnz48/B0YaCwS47Q9iPChRGi6t7HhflKBcINzFrJvRfC+jp30sRMKxF+d4EHGs27Z0XP1NaQ==
