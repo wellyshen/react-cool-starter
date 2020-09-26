@@ -129,7 +129,7 @@
     "@types/hpp": "^0.2.1",
     "@types/html-minifier": "^4.0.0",
     "@types/jest": "^26.0.14",
-    "@types/loadable__component": "^5.13.0",
+    "@types/loadable__component": "^5.13.1",
     "@types/loadable__server": "^5.12.2",
     "@types/morgan": "^1.9.1",
     "@types/react": "^16.9.49",
