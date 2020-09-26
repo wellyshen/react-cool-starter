@@ -1578,10 +1578,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/loadable__server@^5.12.2":
-  version "5.12.2"
-  resolved "https://registry.yarnpkg.com/@types/loadable__server/-/loadable__server-5.12.2.tgz#c87ef21fbd38d095828e153a345eb6752beb74c9"
-  integrity sha512-XG0KviY7G/hNH7qbnVHwol+FOEhezbsMrm8hjcvnLhJBRDsXjhjKPk+oRaoeuiABrH5z6Gf/FUNn6MrXK7t9Gw==
+"@types/loadable__server@^5.12.3":
+  version "5.12.3"
+  resolved "https://registry.yarnpkg.com/@types/loadable__server/-/loadable__server-5.12.3.tgz#b8cd4030b9719ea333309f9c566c7f8fcf3b88af"
+  integrity sha512-jqSmFdaxuBNKO3yX9pMIYzXqhu03jv6AT6i4eKEZMbgU+1nvgs2UC14a4DUJPDJVnaUBms0+E3UdD5ipcQPtgg==
   dependencies:
     "@types/react" "*"
 
