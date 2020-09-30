@@ -985,10 +985,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dr.pogodin/css-modules-require-hook@^4.4.4":
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/@dr.pogodin/css-modules-require-hook/-/css-modules-require-hook-4.4.4.tgz#a673ed31dae77260af2fe844afd061c4bc9e0d1e"
-  integrity sha512-Yva1c2fjcCwPo77/jNC6jk5NyzvMybTgCWdG4zXXpOmbM8I3e6AW7z2ImbKueFKfH/hYnr413fFQyGGKP1TReA==
+"@dr.pogodin/css-modules-require-hook@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@dr.pogodin/css-modules-require-hook/-/css-modules-require-hook-4.4.5.tgz#d0f53f2112ae14f583083105c613d3153998edc8"
+  integrity sha512-crzWJQX9l1aDKpWjnaPEMpNOh7VFV8ZUfrosl5eXL1odzA0EEqlTL+PfEggoisvpQGg3BszfHsY5AosA2Ae9rQ==
   dependencies:
     "@dr.pogodin/postcss-modules-resolve-imports" "^1.4.2"
     css-loader "^4.3.0"
