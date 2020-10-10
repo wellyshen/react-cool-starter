@@ -181,7 +181,7 @@
     "redux-thunk": "^2.3.0",
     "rimraf": "^3.0.2",
     "sass-loader": "^10.0.2",
-    "source-map-loader": "^1.1.0",
+    "source-map-loader": "^1.1.1",
     "stylelint": "^13.7.2",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-scss": "^4.2.0",
