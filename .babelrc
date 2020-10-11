@@ -14,7 +14,8 @@
     "react-hot-loader/babel",
     "@loadable/babel-plugin",
     "@babel/proposal-class-properties",
-    "@babel/syntax-dynamic-import"
+    "@babel/syntax-dynamic-import",
+    "@babel/plugin-transform-runtime"
   ],
   "env": {
     "production": {

@@ -114,6 +114,7 @@ const getStyleLoaders = (sass = false) => {
 module.exports = {
   mode: isDev ? "development" : "production",
   devtool: isDev ? "eval-source-map" : false,
+  stats: "minimal",
   context: path.resolve(process.cwd()),
   entry: getEntry(),
   optimization: {
