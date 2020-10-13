@@ -167,7 +167,7 @@
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^7.0.1",
-    "jest": "^26.5.2",
+    "jest": "^26.5.3",
     "lint-staged": "^10.4.0",
     "mini-css-extract-plugin": "^1.0.0",
     "nodemon": "^2.0.4",
