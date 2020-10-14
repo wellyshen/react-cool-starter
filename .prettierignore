@@ -1,0 +1,10 @@
+# Testing
+coverage
+
+# Production
+public/*
+!public/manifest.json
+
+# Misc
+*.log
+
