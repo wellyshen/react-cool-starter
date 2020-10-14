@@ -69,7 +69,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{css,scss,sass}": "stylelint --fix",
-    "*.{json,md,yml}": "prettier --write"
+    "**/*": "prettier --write --ignore-unknown"
   },
   "browserslist": [
     "> 1%",
