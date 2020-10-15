@@ -36,7 +36,6 @@
     "no-console": "off",
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
-    "react-hooks/exhaustive-deps": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
       "error",
