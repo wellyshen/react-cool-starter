@@ -16,7 +16,7 @@ const Home = (): JSX.Element => {
 
   useEffect(() => {
     dispatch(fetchUserListIfNeed());
-  }, []);
+  }, [dispatch]);
 
   const renderList = () => {
     if (!readyStatus || readyStatus === "invalid" || readyStatus === "request")

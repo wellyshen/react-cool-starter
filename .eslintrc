@@ -8,17 +8,11 @@
     "plugin:jest/style",
     "plugin:jest-dom/recommended",
     "plugin:testing-library/react",
-    "plugin:prettier/recommended",
+    "prettier",
     "prettier/@typescript-eslint",
     "prettier/react"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "jest",
-    "jest-dom",
-    "testing-library",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "jest", "jest-dom", "testing-library"],
   "settings": {
     "import/resolver": {
       "typescript": {}
@@ -36,7 +30,6 @@
     "no-console": "off",
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
-    "react-hooks/exhaustive-deps": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
       "error",
@@ -53,8 +46,7 @@
     ],
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-var-requires": "off",
-    "prettier/prettier": "error"
+    "@typescript-eslint/no-var-requires": "off"
   },
   "globals": {
     "__CLIENT__": true,
