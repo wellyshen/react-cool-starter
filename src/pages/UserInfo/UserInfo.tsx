@@ -22,7 +22,7 @@ const UserInfo = ({ match }: Props): JSX.Element => {
 
   useEffect(() => {
     dispatch(fetchUserDataIfNeed(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   const renderInfo = () => {
     const userInfo = userData[id];
