@@ -119,6 +119,7 @@ I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use enviro
 | `lint`             | Lint all `.tsx?`, `.jsx?` and `.scss` files.                                     |
 | `lint:code`        | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).     |
 | `lint:style`       | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
+| `lint:format`      | Format all `.tsx?`, `.jsx?` and `.scss` files.                                   |
 | `test`             | Run testing.                                                                     |
 | `test:watch`       | Run an interactive test watcher.                                                 |
 | `test:cov`         | Run testing with code coverage reports.                                          |

@@ -49,9 +49,10 @@
     "analyze": "yarn clean:build && cross-env NODE_ENV=analyze webpack -p --progress --config ./tools/webpack/config.babel.js",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check --watch",
-    "lint": "run-p lint:*",
+    "lint": "run-s lint:*",
     "lint:code": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
     "lint:style": "stylelint --fix \"**/*.{css,ts,tsx}\"",
+    "lint:format": "prettier -w . -u --loglevel silent",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "yarn test --watch",
     "test:cov": "yarn test --coverage",
@@ -69,7 +70,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{css,scss,sass}": "stylelint --fix",
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier -w -u"
   },
   "browserslist": [
     "> 1%",
@@ -159,7 +160,6 @@
     "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-jest-dom": "^3.2.3",
     "eslint-plugin-jsx-a11y": "^6.3.0",
-    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-testing-library": "^3.9.1",
     "file-loader": "^6.1.1",
@@ -188,7 +188,6 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.18.0",
     "terser-webpack-plugin": "^4.2.3",
     "ts-jest": "^26.4.1",
