@@ -81,7 +81,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
-    "@babel/preset-typescript": "^7.10.4",
+    "@babel/preset-typescript": "^7.12.1",
     "@babel/register": "^7.12.1",
     "@babel/runtime": "^7.12.1",
     "@dr.pogodin/css-modules-require-hook": "^4.4.5",
