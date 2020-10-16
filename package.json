@@ -83,7 +83,7 @@
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
     "@babel/register": "^7.11.5",
-    "@babel/runtime": "^7.11.2",
+    "@babel/runtime": "^7.12.1",
     "@dr.pogodin/css-modules-require-hook": "^4.4.5",
     "@hot-loader/react-dom": "^16.13.0",
     "@loadable/babel-plugin": "^5.13.2",
