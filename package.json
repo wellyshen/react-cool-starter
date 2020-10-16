@@ -108,7 +108,7 @@
     "morgan": "^1.10.0",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-hot-loader": "^4.13.0",
