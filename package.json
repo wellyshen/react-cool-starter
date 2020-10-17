@@ -178,7 +178,7 @@
     "postcss-loader": "^4.0.4",
     "prettier": "^2.1.2",
     "raf": "^3.4.1",
-    "react-test-renderer": "^16.13.1",
+    "react-test-renderer": "^16.14.0",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
     "rimraf": "^3.0.2",
