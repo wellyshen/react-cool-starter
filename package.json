@@ -88,7 +88,7 @@
     "@hot-loader/react-dom": "^16.13.0",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/component": "^5.13.2",
-    "@loadable/server": "^5.13.2",
+    "@loadable/server": "^5.14.0",
     "@reduxjs/toolkit": "^1.4.0",
     "asset-require-hook": "^1.2.0",
     "autoprefixer": "^10.0.1",
