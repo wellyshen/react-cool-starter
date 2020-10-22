@@ -85,7 +85,7 @@
     "@babel/register": "^7.12.1",
     "@babel/runtime": "^7.12.1",
     "@dr.pogodin/css-modules-require-hook": "^4.4.5",
-    "@hot-loader/react-dom": "^16.13.0",
+    "@hot-loader/react-dom": "^16.14.0",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/component": "^5.14.0",
     "@loadable/server": "^5.14.0",
