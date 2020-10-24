@@ -4,7 +4,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import { renderRoutes, matchRoutes } from "react-router-config";
 import { Provider } from "react-redux";
-import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
+import { ChunkExtractor } from "@loadable/server";
 import { Helmet } from "react-helmet";
 import chalk from "chalk";
 import { Request, Response, NextFunction } from "express";
@@ -52,17 +52,15 @@ export default async (
     const extractor = new ChunkExtractor({ statsFile });
 
     const staticContext: Record<string, any> = {};
-    const App = (
-      <ChunkExtractorManager extractor={extractor}>
-        <Provider store={store}>
-          {/* Setup React-Router server-side rendering */}
-          <StaticRouter location={req.path} context={staticContext}>
-            {/*
-              // @ts-expect-error */}
-            {renderRoutes(routes)}
-          </StaticRouter>
-        </Provider>
-      </ChunkExtractorManager>
+    const App = extractor.collectChunks(
+      <Provider store={store}>
+        {/* Setup React-Router server-side rendering */}
+        <StaticRouter location={req.path} context={staticContext}>
+          {/*
+          // @ts-expect-error */}
+          {renderRoutes(routes)}
+        </StaticRouter>
+      </Provider>
     );
 
     const initialState = store.getState();

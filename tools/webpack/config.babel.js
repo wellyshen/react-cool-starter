@@ -70,17 +70,6 @@ const getPlugins = () => {
   return plugins;
 };
 
-// Setup the entry for development/production
-const getEntry = () => {
-  // Development
-  let entry = ["webpack-hot-middleware/client?reload=true", "./src/client"];
-
-  // production
-  if (!isDev) entry = ["./src/client"];
-
-  return entry;
-};
-
 // Loaders for CSS and SASS
 const getStyleLoaders = (sass = false) => {
   const loaders = [
@@ -93,19 +82,20 @@ const getStyleLoaders = (sass = false) => {
       },
     },
     {
-      loader: "css",
+      loader: "css-loader",
       options: {
         importLoaders: sass ? 2 : 1,
         modules: {
           auto: true,
-          localIdentName: isDev ? "[name]__[local]" : "[hash:base64:5]",
+          localIdentName: isDev ? "[name]__[local]" : "[contenthash:base64:5]",
           localIdentContext: path.resolve(process.cwd(), "src"),
         },
       },
     },
-    { loader: "postcss", options: { sourceMap: isDev } },
+    { loader: "postcss-loader", options: { sourceMap: isDev } },
   ];
-  if (sass) loaders.push({ loader: "sass", options: { sourceMap: isDev } });
+  if (sass)
+    loaders.push({ loader: "sass-loader", options: { sourceMap: isDev } });
 
   return loaders;
 };
@@ -116,9 +106,12 @@ module.exports = {
   devtool: isDev ? "eval-source-map" : false,
   stats: "minimal",
   context: path.resolve(process.cwd()),
-  entry: getEntry(),
+  entry: [
+    isDev && "webpack-hot-middleware/client?reload=true",
+    "./src/client",
+  ].filter(Boolean),
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
     splitChunks: {
       // Auto split vendor modules in production only
       chunks: isDev ? "async" : "all",
@@ -137,7 +130,7 @@ module.exports = {
       {
         test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
-        loader: "babel",
+        loader: "babel-loader",
         options: { cacheDirectory: isDev },
       },
       // All output '.js' files will have any sourcemaps re-processed by source-map-loader.
@@ -145,7 +138,7 @@ module.exports = {
       {
         enforce: "pre",
         test: /\.js$/,
-        loader: "source-map",
+        loader: "source-map-loader",
       },
       {
         test: /\.css$/,
@@ -157,18 +150,18 @@ module.exports = {
       },
       {
         test: /\.(woff2?|ttf|otf|eot)$/,
-        loader: "file",
+        loader: "file-loader",
       },
       {
         test: /\.(gif|png|jpe?g|webp|svg)$/,
         use: [
           {
             // Any image below or equal to 10K will be converted to inline base64 instead
-            loader: "url",
-            options: { limit: 10 * 1024, name: "[name].[hash:8].[ext]" },
+            loader: "url-loader",
+            options: { limit: 10 * 1024, name: "[name].[contenthash:8].[ext]" },
           },
           {
-            loader: "image-webpack",
+            loader: "image-webpack-loader",
             // For each optimizer you wish to configure
             // Plz check https://github.com/tcoopman/image-webpack-loader#usage
             options: { disable: true },
@@ -180,24 +173,12 @@ module.exports = {
   plugins: getPlugins(),
   /* Advanced configuration */
   resolveLoader: {
-    // Use loaders without the -loader suffix
-    moduleExtensions: ["-loader"],
     plugins: [PnpWebpackPlugin.moduleLoader(module)],
   },
   resolve: {
     modules: ["src", "node_modules"],
     descriptionFiles: ["package.json"],
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: { "react-dom": "@hot-loader/react-dom" },
-  },
-  cache: isDev,
-  // Some libraries import Node modules but don't use them in the browser.
-  // Tell Webpack to provide empty mocks for them so importing them works.
-  // https://webpack.js.org/configuration/node/
-  // https://github.com/webpack/node-libs-browser/tree/master/mock
-  node: {
-    fs: "empty",
-    net: "empty",
-    tls: "empty",
   },
 };

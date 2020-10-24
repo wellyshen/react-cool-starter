@@ -1,6 +1,6 @@
 export default {
-  HOST: process.env.NODE_HOST || "localhost", // Define your host from "./package.json"
-  PORT: process.env.PORT || 8080,
+  HOST: "localhost",
+  PORT: 3000,
   API_URL: "https://jsonplaceholder.typicode.com",
   APP: {
     htmlAttributes: { lang: "en" },
