@@ -21,7 +21,10 @@ const getPlugins = () => {
       fileName: path.resolve(process.cwd(), "public/webpack-assets.json"),
       filter: (file) => file.isInitial,
     }),
-    new LoadablePlugin(),
+    new LoadablePlugin({
+      writeToDisk: true,
+      filename: "../loadable-stats.json",
+    }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.ts"
       filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
