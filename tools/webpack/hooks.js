@@ -2,10 +2,10 @@
 
 const sass = require("node-sass");
 const path = require("path");
+
 const postcssConfig = require("../../postcss.config");
 
-const nodeEnv = process.env.NODE_ENV || "development";
-const isDev = nodeEnv === "development";
+const isDev = process.env.NODE_ENV !== "production";
 
 module.exports = () => {
   // CSS modules

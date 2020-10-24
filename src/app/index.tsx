@@ -2,7 +2,6 @@ import React from "react";
 import { RouteProps, Link } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import { Helmet } from "react-helmet";
-import { hot } from "react-hot-loader";
 
 import logo from "../static/logo.svg";
 import config from "../config";
@@ -14,7 +13,7 @@ interface Route {
   route: { routes: RouteProps[] };
 }
 
-const App = ({ route }: Route) => (
+const App = ({ route }: Route): JSX.Element => (
   <div className={styles.App}>
     <Helmet {...config.APP} />
     <Link to="/" className={styles.header}>
@@ -29,4 +28,4 @@ const App = ({ route }: Route) => (
   </div>
 );
 
-export default hot(module)(App);
+export default App;

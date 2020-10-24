@@ -1,5 +1,6 @@
 import path from "path";
 import webpack from "webpack";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import ManifestPlugin from "webpack-manifest-plugin";
 import TerserJSPlugin from "terser-webpack-plugin";
 import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
@@ -8,71 +9,12 @@ import CompressionPlugin from "compression-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import LoadablePlugin from "@loadable/webpack-plugin";
-import PnpWebpackPlugin from "pnp-webpack-plugin";
 
-const nodeEnv = process.env.NODE_ENV || "development";
-const isDev = nodeEnv === "development";
-
-// Setup the plugins for development/production
-const getPlugins = () => {
-  // Common
-  const plugins = [
-    new ManifestPlugin({
-      fileName: path.resolve(process.cwd(), "public/webpack-assets.json"),
-      filter: (file) => file.isInitial,
-    }),
-    new LoadablePlugin({
-      writeToDisk: true,
-      filename: "../loadable-stats.json",
-    }),
-    new MiniCssExtractPlugin({
-      // Don't use hash in development, we need the persistent for "renderHtml.ts"
-      filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
-      chunkFilename: isDev ? "[id].css" : "[id].[contenthash:8].css",
-    }),
-    // Setup environment variables for client
-    new webpack.EnvironmentPlugin({ NODE_ENV: JSON.stringify(nodeEnv) }),
-    // Setup global variables for client
-    new webpack.DefinePlugin({
-      __CLIENT__: true,
-      __SERVER__: false,
-      __DEV__: isDev,
-    }),
-    new webpack.ProgressPlugin(),
-    PnpWebpackPlugin,
-  ];
-
-  if (isDev) {
-    // Development
-    plugins.push(
-      new webpack.HotModuleReplacementPlugin(),
-      // Runs typescript type checker on a separate process
-      new ForkTsCheckerWebpackPlugin()
-    );
-  } else {
-    plugins.push(
-      // Production
-      new webpack.HashedModuleIdsPlugin(),
-      new CompressionPlugin({
-        test: /\.(js|css|html)$/,
-        threshold: 10240,
-      }),
-      // Visualize all of the webpack bundles
-      // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin"
-      // for more configurations
-      new BundleAnalyzerPlugin({
-        analyzerMode:
-          process.env.NODE_ENV === "analyze" ? "server" : "disabled",
-      })
-    );
-  }
-
-  return plugins;
-};
+const isDev = process.env.NODE_ENV !== "production";
 
 // Loaders for CSS and SASS
-const getStyleLoaders = (sass = false) => {
-  const loaders = [
+const getStyleLoaders = (sass = false) =>
+  [
     {
       loader: MiniCssExtractPlugin.loader,
       options: {
@@ -93,12 +35,8 @@ const getStyleLoaders = (sass = false) => {
       },
     },
     { loader: "postcss-loader", options: { sourceMap: isDev } },
-  ];
-  if (sass)
-    loaders.push({ loader: "sass-loader", options: { sourceMap: isDev } });
-
-  return loaders;
-};
+    sass && { loader: "sass-loader", options: { sourceMap: isDev } },
+  ].filter(Boolean);
 
 // Webpack configuration
 module.exports = {
@@ -169,15 +107,49 @@ module.exports = {
       },
     ],
   },
-  plugins: getPlugins(),
-  /* Advanced configuration */
-  resolveLoader: {
-    plugins: [PnpWebpackPlugin.moduleLoader(module)],
-  },
+  plugins: [
+    new ManifestPlugin({
+      fileName: path.resolve(process.cwd(), "public/webpack-assets.json"),
+      filter: (file) => file.isInitial,
+    }),
+    new LoadablePlugin({
+      writeToDisk: true,
+      filename: "../loadable-stats.json",
+    }),
+    new MiniCssExtractPlugin({
+      // Don't use hash in development, we need the persistent for "renderHtml.ts"
+      filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
+      chunkFilename: isDev ? "[id].css" : "[id].[contenthash:8].css",
+    }),
+    // Setup global variables for client
+    new webpack.DefinePlugin({
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEV__: isDev,
+    }),
+    new webpack.ProgressPlugin(),
+    isDev && new webpack.HotModuleReplacementPlugin(),
+    isDev &&
+      new ReactRefreshWebpackPlugin({ overlay: { sockIntegration: "whm" } }),
+    // Runs typescript type checker on a separate process
+    isDev && new ForkTsCheckerWebpackPlugin(),
+    !isDev && new webpack.HashedModuleIdsPlugin(),
+    !isDev &&
+      new CompressionPlugin({
+        test: /\.(js|css|html)$/,
+        threshold: 10240,
+      }),
+    // Visualize all of the webpack bundles
+    // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin" for more configurations
+    !isDev &&
+      new BundleAnalyzerPlugin({
+        analyzerMode:
+          process.env.NODE_ENV === "analyze" ? "server" : "disabled",
+      }),
+  ].filter(Boolean),
   resolve: {
     modules: ["src", "node_modules"],
     descriptionFiles: ["package.json"],
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
-    alias: { "react-dom": "@hot-loader/react-dom" },
   },
 };

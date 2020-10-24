@@ -16,6 +16,8 @@ declare namespace NodeJS {
     __CLIENT__: boolean;
     __SERVER__: boolean;
     __DEV__: boolean;
+    $RefreshReg$: () => void;
+    $RefreshSig$$: () => void;
   }
 }
 

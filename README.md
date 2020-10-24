@@ -1,6 +1,6 @@
 # <em><b>REACT COOL STARTER</b></em>
 
-A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router) and [Express](https://expressjs.com). Includes all the hot stuff and modern web development tools such as [Redux Toolkit](https://redux-toolkit.js.org), [TypeScript](https://www.typescriptlang.org), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io), [PostCSS](https://github.com/postcss/postcss-loader), [React Hot Loader](https://github.com/gaearon/react-hot-loader), [Jest](https://facebook.github.io/jest) and [React Testing Library](https://github.com/testing-library/react-testing-library). See the [**“Features”**](#features) section for other awesome features you can expect.
+A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router) and [Express](https://expressjs.com). Includes all the hot stuff and modern web development tools such as [Redux Toolkit](https://redux-toolkit.js.org), [TypeScript](https://www.typescriptlang.org), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io), [PostCSS](https://github.com/postcss/postcss-loader), [React Refresh](https://github.com/facebook/react/tree/master/packages/react-refresh), [Jest](https://facebook.github.io/jest) and [React Testing Library](https://github.com/testing-library/react-testing-library). See the [**“Features”**](#features) section for other awesome features you can expect.
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
@@ -37,7 +37,7 @@ Really cool starter boilerplate with the most popular technologies:
 - [TypeScript](https://www.typescriptlang.org) as the static type checker for JavaScript.
 - [Webpack](https://webpack.js.org) for app bundling.
 - [Babel](https://babeljs.io) for transpile ES6+ to ES5.
-- [React Hot Loader](https://github.com/gaearon/react-hot-loader) to tweak React components in real time.
+- [React Refresh](https://github.com/facebook/react/tree/master/packages/react-refresh) to fast refresh components without losing their state.
 - [nodemon](https://nodemon.io) to monitor for any changes in your Node.js application and automatically restart the server.
 - [axios](https://github.com/axios/axios) as the Promise-based HTTP client for the browser and Node.js.
 - [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
@@ -386,7 +386,7 @@ The `./src/app/index.tsx` (app root component) defines the base title and meta i
 
 ### App Configuration
 
-You can store app settings under the `./src/config`. By default the `default.ts` will be loaded. If the `process.env.NODE_ENV` matches to production, the `prod.ts` will be used instead, and it inherits the properties of `default.ts`.
+You can store app settings under the `./src/config`. By default the `default.ts` will be loaded. If the `process.env.NODE_ENV` matches to production (alias as `!__DEV__`), the `prod.ts` will be used instead, and it inherits the properties of `default.ts`.
 
 You can access the correct configuration with:
 

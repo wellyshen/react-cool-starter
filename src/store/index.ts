@@ -30,19 +30,6 @@ const createStore = ({ initialState, url }: Arg = {}) => {
     devTools: __DEV__,
   });
 
-  if ((module as any).hot) {
-    // Enable Webpack hot module replacement for reducers
-    (module as any).hot.accept("./rootReducer", () => {
-      try {
-        const createNextReducer = require("./rootReducer").default;
-
-        store.replaceReducer(createNextReducer(history));
-      } catch (error) {
-        console.error(`==> 😭  Reducer hot reloading error ${error}`);
-      }
-    });
-  }
-
   return { store, history };
 };
 
