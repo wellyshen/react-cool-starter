@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { RouteProps } from "react-router-dom";
-import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { renderRoutes } from "react-router-config";
@@ -14,35 +13,15 @@ import routes from "../routes";
 const initialState = window.__INITIAL_STATE__;
 const { store, history } = createStore({ initialState });
 
-const render = (Routes: RouteProps[]) => {
-  const renderMethod = (module as any).hot ? ReactDOM.render : ReactDOM.hydrate;
-
-  renderMethod(
-    <AppContainer>
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          {renderRoutes(Routes)}
-        </ConnectedRouter>
-      </Provider>
-    </AppContainer>,
+const render = (Routes: RouteProps[]) =>
+  ReactDOM.hydrate(
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        {renderRoutes(Routes)}
+      </ConnectedRouter>
+    </Provider>,
     document.getElementById("react-view")
   );
-};
 
 // loadable-component setup
-loadableReady(() => {
-  render(routes);
-});
-
-if ((module as any).hot) {
-  // Enable webpack hot module replacement for routes
-  (module as any).hot.accept("../routes", () => {
-    try {
-      const nextRoutes = require("../routes").default;
-
-      render(nextRoutes);
-    } catch (error) {
-      console.error(`==> 😭  Routes hot reloading error ${error}`);
-    }
-  });
-}
+loadableReady(() => render(routes));

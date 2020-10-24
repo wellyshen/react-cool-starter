@@ -22,5 +22,11 @@ export default (app: Express): void => {
     console.info(chalk.green(`==> 🌎  Listening at ${url}`));
   });
 
-  app.use(require("webpack-hot-middleware")(compiler));
+  app.use(
+    require("webpack-hot-middleware")(compiler, {
+      log: false,
+      path: "/__webpack_hmr",
+      heartbeat: 10 * 1000,
+    })
+  );
 };
