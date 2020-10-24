@@ -83,7 +83,9 @@ const getStyleLoaders = (sass = false) => {
       options: {
         importLoaders: sass ? 2 : 1,
         modules: {
+          auto: true,
           localIdentName: isDev ? "[name]__[local]" : "[contenthash:base64:5]",
+          localIdentContext: path.resolve(process.cwd(), "src"),
         },
       },
     },
