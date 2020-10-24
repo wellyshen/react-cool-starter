@@ -106,7 +106,7 @@ module.exports = {
     "./src/client",
   ].filter(Boolean),
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
     splitChunks: {
       // Auto split vendor modules in production only
       chunks: isDev ? "async" : "all",
