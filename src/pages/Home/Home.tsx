@@ -29,7 +29,6 @@ const Home = (): JSX.Element => {
 
   return (
     <div className={styles.Home}>
-      HI
       <Helmet title="Home" />
       {renderList()}
     </div>
