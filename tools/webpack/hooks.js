@@ -11,7 +11,7 @@ module.exports = () => {
   // CSS modules
   require("@dr.pogodin/css-modules-require-hook")({
     // Must use the same pattern with your webpack config
-    generateScopedName: isDev ? "[name]__[local]" : "[hash:base64:5]",
+    generateScopedName: isDev ? "[name]__[local]" : "[contenthash:base64:5]",
     extensions: [".css", ".scss", ".sass"],
     prepend: [...postcssConfig.plugins],
     preprocessCss: (data, filename) =>
@@ -26,7 +26,7 @@ module.exports = () => {
     extensions: ["gif", "jpg", "jpeg", "png", "webp", "svg"],
     publicPath: "/assets/",
     limit: 10 * 1024,
-    name: "[name].[hash:8].[ext]",
+    name: "[name].[contenthash:8].[ext]",
   });
 
   // Fonts

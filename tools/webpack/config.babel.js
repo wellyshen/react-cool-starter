@@ -21,10 +21,7 @@ const getPlugins = () => {
       fileName: path.resolve(process.cwd(), "public/webpack-assets.json"),
       filter: (file) => file.isInitial,
     }),
-    new LoadablePlugin({
-      writeToDisk: true,
-      filename: "../loadable-stats.json",
-    }),
+    new LoadablePlugin(),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.ts"
       filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
@@ -70,17 +67,6 @@ const getPlugins = () => {
   return plugins;
 };
 
-// Setup the entry for development/production
-const getEntry = () => {
-  // Development
-  let entry = ["webpack-hot-middleware/client?reload=true", "./src/client"];
-
-  // production
-  if (!isDev) entry = ["./src/client"];
-
-  return entry;
-};
-
 // Loaders for CSS and SASS
 const getStyleLoaders = (sass = false) => {
   const loaders = [
@@ -98,7 +84,7 @@ const getStyleLoaders = (sass = false) => {
         importLoaders: sass ? 2 : 1,
         modules: {
           auto: true,
-          localIdentName: isDev ? "[name]__[local]" : "[hash:base64:5]",
+          localIdentName: isDev ? "[name]__[local]" : "[contenthash:base64:5]",
           localIdentContext: path.resolve(process.cwd(), "src"),
         },
       },
@@ -117,7 +103,10 @@ module.exports = {
   devtool: isDev ? "eval-source-map" : false,
   stats: "minimal",
   context: path.resolve(process.cwd()),
-  entry: getEntry(),
+  entry: [
+    isDev && "webpack-hot-middleware/client?reload=true",
+    "./src/client",
+  ].filter(Boolean),
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     splitChunks: {
@@ -166,7 +155,7 @@ module.exports = {
           {
             // Any image below or equal to 10K will be converted to inline base64 instead
             loader: "url-loader",
-            options: { limit: 10 * 1024, name: "[name].[hash:8].[ext]" },
+            options: { limit: 10 * 1024, name: "[name].[contenthash:8].[ext]" },
           },
           {
             loader: "image-webpack-loader",
@@ -186,7 +175,7 @@ module.exports = {
   resolve: {
     modules: ["src", "node_modules"],
     descriptionFiles: ["package.json"],
-    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     alias: { "react-dom": "@hot-loader/react-dom" },
   },
 };
