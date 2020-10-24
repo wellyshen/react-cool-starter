@@ -120,9 +120,8 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), "public/assets"),
     publicPath: "/assets/",
-    // Don't use chunkhash in development it will increase compilation time
-    filename: isDev ? "[name].js" : "[name].[chunkhash:8].js",
-    chunkFilename: isDev ? "[id].js" : "[id].[chunkhash:8].js",
+    filename: isDev ? "[name].js" : "[name].[contenthash:8].js",
+    chunkFilename: isDev ? "[id].js" : "[id].[contenthash:8].js",
     pathinfo: isDev,
   },
   module: {
