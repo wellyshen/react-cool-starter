@@ -93,7 +93,7 @@ const getStyleLoaders = (sass = false) => {
       },
     },
     {
-      loader: "css",
+      loader: "css-loader",
       options: {
         importLoaders: sass ? 2 : 1,
         modules: {
@@ -103,9 +103,10 @@ const getStyleLoaders = (sass = false) => {
         },
       },
     },
-    { loader: "postcss", options: { sourceMap: isDev } },
+    { loader: "postcss-loader", options: { sourceMap: isDev } },
   ];
-  if (sass) loaders.push({ loader: "sass", options: { sourceMap: isDev } });
+  if (sass)
+    loaders.push({ loader: "sass-loader", options: { sourceMap: isDev } });
 
   return loaders;
 };
@@ -137,7 +138,7 @@ module.exports = {
       {
         test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
-        loader: "babel",
+        loader: "babel-loader",
         options: { cacheDirectory: isDev },
       },
       // All output '.js' files will have any sourcemaps re-processed by source-map-loader.
@@ -145,7 +146,7 @@ module.exports = {
       {
         enforce: "pre",
         test: /\.js$/,
-        loader: "source-map",
+        loader: "source-map-loader",
       },
       {
         test: /\.css$/,
@@ -157,18 +158,18 @@ module.exports = {
       },
       {
         test: /\.(woff2?|ttf|otf|eot)$/,
-        loader: "file",
+        loader: "file-loader",
       },
       {
         test: /\.(gif|png|jpe?g|webp|svg)$/,
         use: [
           {
             // Any image below or equal to 10K will be converted to inline base64 instead
-            loader: "url",
+            loader: "url-loader",
             options: { limit: 10 * 1024, name: "[name].[hash:8].[ext]" },
           },
           {
-            loader: "image-webpack",
+            loader: "image-webpack-loader",
             // For each optimizer you wish to configure
             // Plz check https://github.com/tcoopman/image-webpack-loader#usage
             options: { disable: true },
@@ -180,8 +181,6 @@ module.exports = {
   plugins: getPlugins(),
   /* Advanced configuration */
   resolveLoader: {
-    // Use loaders without the -loader suffix
-    moduleExtensions: ["-loader"],
     plugins: [PnpWebpackPlugin.moduleLoader(module)],
   },
   resolve: {
@@ -189,15 +188,5 @@ module.exports = {
     descriptionFiles: ["package.json"],
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
     alias: { "react-dom": "@hot-loader/react-dom" },
-  },
-  cache: isDev,
-  // Some libraries import Node modules but don't use them in the browser.
-  // Tell Webpack to provide empty mocks for them so importing them works.
-  // https://webpack.js.org/configuration/node/
-  // https://github.com/webpack/node-libs-browser/tree/master/mock
-  node: {
-    fs: "empty",
-    net: "empty",
-    tls: "empty",
   },
 };
