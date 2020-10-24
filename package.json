@@ -150,7 +150,7 @@
     "@typescript-eslint/parser": "^4.5.0",
     "babel-loader": "^8.1.0",
     "compression-webpack-plugin": "^6.0.3",
-    "css-loader": "^5.0.0",
+    "css-loader": "^4.2.3",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.14.0",
