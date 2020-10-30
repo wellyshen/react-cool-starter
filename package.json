@@ -133,7 +133,7 @@
     "@types/jest": "^26.0.15",
     "@types/loadable__component": "^5.13.1",
     "@types/loadable__server": "^5.12.3",
-    "@types/morgan": "^1.9.1",
+    "@types/morgan": "^1.9.2",
     "@types/react": "^16.9.55",
     "@types/react-dom": "^16.9.9",
     "@types/react-helmet": "^6.1.0",
