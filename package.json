@@ -1,6 +1,6 @@
 {
   "name": "react-cool-starter",
-  "version": "3.14.0",
+  "version": "3.14.1",
   "description": "A starter boilerplate for a universal web application with the best development experience and best practices.",
   "license": "MIT",
   "homepage": "https://github.com/wellyshen/react-cool-starter",
@@ -78,7 +78,6 @@
   ],
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1",
