@@ -14,7 +14,6 @@ Please note we have a [code of conduct](https://github.com/wellyshen/react-cool-
 4. Ensure the test suite passes by running `yarn test`.
 5. Update the [README.md](https://github.com/wellyshen/react-cool-starter/blob/master/README.md) with details of changes.
 6. Make sure your code lints by running `yarn lint`.
-7. Make sure your code passes type check by running `yarn type-check`.
 
 ## Development Workflow
 
