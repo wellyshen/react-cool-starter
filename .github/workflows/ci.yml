@@ -2,10 +2,15 @@ name: CI
 
 on:
   push:
-    branches: ["**"]
-    tags-ignore: ["**"]
+    branches:
+      - master
+      - docker
+    tags-ignore:
+      - "*.*"
   pull_request:
-    branches: ["**"]
+    branches:
+      - master
+      - docker
 
 jobs:
   build:
