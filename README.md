@@ -108,28 +108,27 @@ Now the app should be running at [http://localhost:8080](http://localhost:8080)
 
 I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use environment variables across platforms. All of the scripts are listed as following:
 
-| `yarn <script>`    | Description                                                                      |
-| ------------------ | -------------------------------------------------------------------------------- |
-| `dev`              | Run your app on the development server at `localhost:3000`. HMR will be enabled. |
-| `start`            | Run your app on the production server only at `localhost:8080`.                  |
-| `build`            | Delete the previous bundled files and bundle it to the `./public/assets`.        |
-| `analyze`          | Visualize the contents of all your bundles.                                      |
-| `type-check`       | Run type checking for `.tsx?` files.                                             |
-| `type-check:watch` | Run an interactive type checking watcher .                                       |
-| `lint`             | Lint all `.tsx?`, `.jsx?` and `.scss` files.                                     |
-| `lint:code`        | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).     |
-| `lint:style`       | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
-| `lint:format`      | Format all files except the file list of `.prettierignore`.                      |
-| `test`             | Run testing.                                                                     |
-| `test:watch`       | Run an interactive test watcher.                                                 |
-| `test:cov`         | Run testing with code coverage reports.                                          |
-| `test:update`      | Update jest snapshot.                                                            |
-| `clean`            | Delete the client/server bundled stuff and the coverage report.                  |
-| `clean:build`      | Delete the `./public/assets` folder to clean the client bundled files.           |
-| `clean:cov`        | Delete the `./coverage` folder to clean the code coverage report.                |
-| `docker`           | Build then run docker.                                                           |
-| `docker:build`     | Build docker.                                                                    |
-| `docker:start`     | Run docker.                                                                      |
+| `yarn <script>` | Description                                                                      |
+| --------------- | -------------------------------------------------------------------------------- |
+| `dev`           | Run your app on the development server at `localhost:3000`. HMR will be enabled. |
+| `start`         | Run your app on the production server only at `localhost:8080`.                  |
+| `build`         | Delete the previous bundled files and bundle it to the `./public/assets`.        |
+| `analyze`       | Visualize the contents of all your bundles.                                      |
+| `lint`          | Lint all `.tsx?`, `.jsx?` and `.scss` files.                                     |
+| `lint:code`     | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).     |
+| `lint:type`     | Run type checking for `.tsx?` files.                                             |
+| `lint:style`    | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
+| `lint:format`   | Format all files except the file list of `.prettierignore`.                      |
+| `test`          | Run testing.                                                                     |
+| `test:watch`    | Run an interactive test watcher.                                                 |
+| `test:cov`      | Run testing with code coverage reports.                                          |
+| `test:update`   | Update jest snapshot.                                                            |
+| `clean`         | Delete the client/server bundled stuff and the coverage report.                  |
+| `clean:build`   | Delete the `./public/assets` folder to clean the client bundled files.           |
+| `clean:cov`     | Delete the `./coverage` folder to clean the code coverage report.                |
+| `docker`        | Build then run docker.                                                           |
+| `docker:build`  | Build docker.                                                                    |
+| `docker:start`  | Run docker.                                                                      |
 
 ## App Structure
 
