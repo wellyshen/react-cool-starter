@@ -1,6 +1,6 @@
-{
-  "parser": "@typescript-eslint/parser",
-  "extends": [
+module.exports = {
+  parser: "@typescript-eslint/parser",
+  extends: [
     "airbnb",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
@@ -10,21 +10,21 @@
     "plugin:testing-library/react",
     "prettier",
     "prettier/@typescript-eslint",
-    "prettier/react"
+    "prettier/react",
   ],
-  "plugins": ["@typescript-eslint", "jest", "jest-dom", "testing-library"],
-  "settings": {
+  plugins: ["@typescript-eslint", "jest", "jest-dom", "testing-library"],
+  settings: {
     "import/resolver": {
-      "typescript": {}
-    }
+      typescript: {},
+    },
   },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    jest: true,
   },
-  "rules": {
+  rules: {
     "no-use-before-define": "off",
     "global-require": "off",
     "no-console": "off",
@@ -34,23 +34,23 @@
     "react/jsx-filename-extension": [
       "error",
       {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
     ],
     "import/extensions": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": true
-      }
+        devDependencies: true,
+      },
     ],
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
   },
-  "globals": {
-    "__CLIENT__": true,
-    "__SERVER__": true,
-    "__DEV__": true
-  }
-}
+  globals: {
+    __CLIENT__: true,
+    __SERVER__: true,
+    __DEV__: true,
+  },
+};
