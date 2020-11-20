@@ -79,7 +79,7 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
-    "@babel/preset-typescript": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.7",
     "@babel/register": "^7.12.1",
     "@babel/runtime": "^7.12.5",
     "@dr.pogodin/css-modules-require-hook": "^4.4.5",
