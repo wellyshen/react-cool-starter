@@ -144,7 +144,7 @@
     "@types/serialize-javascript": "^4.0.0",
     "@types/serve-favicon": "^2.5.1",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.2",
     "babel-loader": "^8.2.1",
     "compression-webpack-plugin": "^6.1.1",
     "css-loader": "^5.0.1",
