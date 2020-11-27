@@ -88,7 +88,7 @@
     "@loadable/server": "^5.14.0",
     "@reduxjs/toolkit": "^1.4.0",
     "asset-require-hook": "^1.2.0",
-    "autoprefixer": "^10.0.2",
+    "autoprefixer": "^10.0.3",
     "axios": "^0.21.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "chalk": "^4.1.0",
