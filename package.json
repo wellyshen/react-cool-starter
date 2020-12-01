@@ -128,7 +128,7 @@
     "@types/helmet": "^0.0.48",
     "@types/hpp": "^0.2.1",
     "@types/html-minifier": "^4.0.0",
-    "@types/jest": "^26.0.15",
+    "@types/jest": "^26.0.16",
     "@types/loadable__component": "^5.13.1",
     "@types/loadable__server": "^5.12.3",
     "@types/morgan": "^1.9.2",
