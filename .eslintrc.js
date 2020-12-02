@@ -44,6 +44,7 @@ module.exports = {
         devDependencies: true,
       },
     ],
+    "@typescript-eslint/no-use-before-define": "error",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-var-requires": "off",
