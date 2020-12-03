@@ -115,7 +115,7 @@
     "redux-thunk": "^2.3.0",
     "serialize-javascript": "^5.0.1",
     "serve-favicon": "^2.5.0",
-    "ts-node": "^9.0.0"
+    "ts-node": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
