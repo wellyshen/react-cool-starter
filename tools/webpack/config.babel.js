@@ -71,7 +71,7 @@ module.exports = {
         options: { cacheDirectory: isDev },
       },
       // All output '.js' files will have any sourcemaps re-processed by source-map-loader.
-      // So you can debug your output code as if it was Typescript.
+      // So you can debug your output code as if it was TypeScript.
       {
         enforce: "pre",
         test: /\.js$/,
