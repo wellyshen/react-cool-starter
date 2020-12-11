@@ -1,6 +1,9 @@
 ---
-name: 🐛 Bug Report
-about: Create a bug report
+name: "\U0001F41B Bug Report"
+about: Create a report to help us improve
+title: ""
+labels: ""
+assignees: ""
 ---
 
 # Bug Report
@@ -28,9 +31,9 @@ Add screenshots to help explain your problem.
 ## Your Environment
 
 - Device: [e.g. MacBook Pro, iPhone12]
-- OS: [e.g. macOS, Windows]
-- Browser [e.g. Chrome, Safari]
-- Version of react-cool-starter: [e.g. v1.0.0]
+- OS: [e.g. macOS, iOS, Windows]
+- Browser: [e.g. Chrome, Safari]
+- Version: [e.g. v1.0.0]
 
 ## Additional Information
 
