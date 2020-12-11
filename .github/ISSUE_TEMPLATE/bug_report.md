@@ -34,7 +34,7 @@ Add screenshots to help explain your problem.
 - Device: [e.g. MacBook Pro, iPhone12]
 - OS: [e.g. macOS, Windows]
 - Browser [e.g. Chrome, Safari]
-- Version of react-cool-starter: [e.g. v1.0.0]
+- Version of `react-cool-starter`: [e.g. v1.0.0]
 
 ## Additional Information
 
