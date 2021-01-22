@@ -18,6 +18,7 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 ## Real Case Study
 
+- [Spinny](https://www.spinny.com) is a fully inspected highest quality second hand cars with money-back guarantee. simple and transparent buying.
 - [BAM Music](https://www.bammusic.com) is a new generation of music platform for audio visual professionals, filmmakers and content producers. Upgrade your soundtrack with great music that emphasizes your story!
 - [Rendah Mag](https://www.rendahmag.com) is a music magazine which exists to bring exposure to an ever-growing community, focusing on the latest Halftime, Beats & Experimental news & releases. Congrats for the amazing product.
 - [DealDrop](https://www.dealdrop.com) is the best place to find verified coupon codes, deals, promos and offers for thousands of stores & brands you love. Never pay full price again.
