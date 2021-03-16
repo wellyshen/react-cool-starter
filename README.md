@@ -72,7 +72,7 @@ They're several React frameworks today, however this is a DIY oriented start-kit
 
 ## Requirements
 
-- [node](https://nodejs.org/en) >= 10.0
+- [node](https://nodejs.org/en) >= 12.0
 - [npm](https://www.npmjs.com) >= 6.0
 
 ## Looking for Docker Image?
