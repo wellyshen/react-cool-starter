@@ -10,11 +10,7 @@
     "@babel/typescript",
     "@babel/react"
   ],
-  "plugins": [
-    "@loadable/babel-plugin",
-    "@babel/proposal-class-properties",
-    "@babel/plugin-transform-runtime"
-  ],
+  "plugins": ["@loadable/babel-plugin", "@babel/plugin-transform-runtime"],
   "env": {
     "development": {
       "plugins": ["react-refresh/babel"]
