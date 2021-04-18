@@ -4,6 +4,8 @@ A simple but feature rich starter boilerplate for creating your own [universal](
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
+> 👀 Looking for a form library? Give [React Cool Form](https://react-cool-form.netlify.app) a try!
+
 > 👻 I'm curious what kind of app that you guys building via this starter? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
 
 [![build status](https://img.shields.io/github/workflow/status/wellyshen/react-cool-starter/CI?style=flat-square)](https://github.com/wellyshen/react-cool-starter/actions?query=workflow%3ACI)
@@ -55,7 +57,8 @@ Really cool starter boilerplate with the most popular technologies:
 - [StyleLint](http://stylelint.io) to maintain a consistent css/scss code style.
 - [Prettier](https://prettier.io) to format code and style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
-- Image (compressed by [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader)) and Font support.
+-
+- Image (optimized/compressed by [Imagemin Webpack](https://github.com/webpack-contrib/image-minimizer-webpack-plugin)) and Font support.
 - Split vendor's libraries from client bundle.
 - No other view engines, just JavaScript based HTML rendering component.
 - Shared app configuration between development and production.
