@@ -1,5 +1,4 @@
 import path from "path";
-import React from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import { renderRoutes, matchRoutes } from "react-router-config";

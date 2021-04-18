@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import configurecreateMockStore from "redux-mock-store";
