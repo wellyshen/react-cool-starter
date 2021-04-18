@@ -57,7 +57,8 @@ Really cool starter boilerplate with the most popular technologies:
 - [StyleLint](http://stylelint.io) to maintain a consistent css/scss code style.
 - [Prettier](https://prettier.io) to format code and style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
-- Image (compressed by [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader)) and Font support.
+-
+- Image (optimized/compressed by [Imagemin Webpack](https://github.com/webpack-contrib/image-minimizer-webpack-plugin)) and Font support.
 - Split vendor's libraries from client bundle.
 - No other view engines, just JavaScript based HTML rendering component.
 - Shared app configuration between development and production.
