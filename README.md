@@ -505,7 +505,7 @@ In this starter, you can see I use [React.PureComponent](https://reactjs.org/doc
 - `React.PureComponent` is used for React class components. It can do shallow prop and state comparison for a performance boost:
 
 ```js
-import React, { PureComponent } from "react";
+import { PureComponent } from "react";
 
 class MyComponent extends PureComponent {
   // Only re-renders if props change
@@ -515,7 +515,7 @@ class MyComponent extends PureComponent {
 - `React.memo` is used for functional components. It plays the same role as `React.PureComponent`:
 
 ```js
-import React, { memo } from "react";
+import { memo } from "react";
 
 const MyComponent = memo((props) => {
   // Only re-renders if props change
@@ -525,7 +525,7 @@ const MyComponent = memo((props) => {
 - In addition, you can also use React hooks like [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) or [useCallback](https://reactjs.org/docs/hooks-reference.html#usecallback) to avoid expensive calculations on every render:
 
 ```js
-import React, { useMemo, useCallback } from "react";
+import { useMemo, useCallback } from "react";
 
 // Performance optimizing via useMemo()
 const ParentComponent = (props) => (

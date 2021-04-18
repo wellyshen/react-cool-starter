@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from "react";
+import { useEffect, memo } from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 

@@ -59,6 +59,6 @@ export default (
     minifyURLs: true,
   };
 
-  // Minify html in production
+  // Minify HTML in production
   return __DEV__ ? html : minify(html, minifyConfig);
 };
