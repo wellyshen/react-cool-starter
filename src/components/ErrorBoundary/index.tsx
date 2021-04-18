@@ -1,4 +1,4 @@
-import React, { ReactNode, PureComponent } from "react";
+import { ReactNode, PureComponent } from "react";
 
 interface Props {
   children?: ReactNode;

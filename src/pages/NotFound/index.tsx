@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { Helmet } from "react-helmet";
 
 import styles from "./styles.module.scss";

@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 
 import { User } from "../../services/jsonPlaceholder";
 import styles from "./styles.module.scss";
