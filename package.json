@@ -133,7 +133,7 @@
     "@types/react-router-dom": "^5.1.6",
     "@types/react-test-renderer": "^16.9.3",
     "@types/redux-mock-store": "^1.0.2",
-    "@types/serialize-javascript": "^4.0.0",
+    "@types/serialize-javascript": "^5.0.0",
     "@types/serve-favicon": "^2.5.2",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.0",
