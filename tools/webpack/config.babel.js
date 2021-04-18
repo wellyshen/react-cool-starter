@@ -1,11 +1,12 @@
 import path from "path";
 import webpack from "webpack";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
-import ManifestPlugin from "webpack-manifest-plugin";
-import TerserJSPlugin from "terser-webpack-plugin";
-import OptimizeCSSAssetsPlugin from "optimize-css-assets-webpack-plugin";
+import { WebpackManifestPlugin } from "webpack-manifest-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import CompressionPlugin from "compression-webpack-plugin";
+import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import LoadablePlugin from "@loadable/webpack-plugin";
@@ -13,24 +14,16 @@ import LoadablePlugin from "@loadable/webpack-plugin";
 const isDev = process.env.NODE_ENV !== "production";
 
 // Loaders for CSS and SASS
-const getStyleLoaders = (sass = false) =>
+const getStyleLoaders = (sass) =>
   [
-    {
-      loader: MiniCssExtractPlugin.loader,
-      options: {
-        hmr: isDev,
-        // If hmr does not work, this is a forceful method
-        reloadAll: true,
-      },
-    },
+    MiniCssExtractPlugin.loader,
     {
       loader: "css-loader",
       options: {
         importLoaders: sass ? 2 : 1,
         modules: {
           auto: true,
-          localIdentName: isDev ? "[name]__[local]" : "[contenthash:base64:5]",
-          localIdentContext: path.resolve(process.cwd(), "src"),
+          localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64]",
         },
       },
     },
@@ -41,26 +34,19 @@ const getStyleLoaders = (sass = false) =>
 // Webpack configuration
 module.exports = {
   mode: isDev ? "development" : "production",
-  devtool: isDev ? "eval-source-map" : false,
+  devtool: isDev && "eval-source-map",
   stats: "minimal",
   context: path.resolve(process.cwd()),
   entry: [
     isDev && "webpack-hot-middleware/client?reload=true",
     "./src/client",
   ].filter(Boolean),
-  optimization: {
-    minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
-    splitChunks: {
-      // Auto split vendor modules in production only
-      chunks: isDev ? "async" : "all",
-    },
-  },
+  optimization: { minimizer: [new TerserPlugin(), new CssMinimizerPlugin()] },
   output: {
     path: path.resolve(process.cwd(), "public/assets"),
     publicPath: "/assets/",
-    filename: isDev ? "[name].js" : "[name].[contenthash:8].js",
-    chunkFilename: isDev ? "[id].js" : "[id].[contenthash:8].js",
-    pathinfo: isDev,
+    filename: isDev ? "[name].js" : "[name].[contenthash].js",
+    chunkFilename: isDev ? "[id].js" : "[id].[contenthash].js",
   },
   module: {
     rules: [
@@ -86,29 +72,17 @@ module.exports = {
         use: getStyleLoaders(true),
       },
       {
-        test: /\.(woff2?|ttf|otf|eot)$/,
-        loader: "file-loader",
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: "asset",
       },
       {
-        test: /\.(gif|png|jpe?g|webp|svg)$/,
-        use: [
-          {
-            // Any image below or equal to 10K will be converted to inline base64 instead
-            loader: "url-loader",
-            options: { limit: 10 * 1024, name: "[name].[contenthash:8].[ext]" },
-          },
-          {
-            loader: "image-webpack-loader",
-            // For each optimizer you wish to configure
-            // Plz check https://github.com/tcoopman/image-webpack-loader#usage
-            options: { disable: true },
-          },
-        ],
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        type: "asset",
       },
     ],
   },
   plugins: [
-    new ManifestPlugin({
+    new WebpackManifestPlugin({
       fileName: path.resolve(process.cwd(), "public/webpack-assets.json"),
       filter: (file) => file.isInitial,
     }),
@@ -118,8 +92,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       // Don't use hash in development, we need the persistent for "renderHtml.ts"
-      filename: isDev ? "[name].css" : "[name].[contenthash:8].css",
-      chunkFilename: isDev ? "[id].css" : "[id].[contenthash:8].css",
+      filename: isDev ? "[name].css" : "[name].[contenthash].css",
+      chunkFilename: isDev ? "[id].css" : "[id].[contenthash].css",
     }),
     // Setup global variables for client
     new webpack.DefinePlugin({
@@ -132,12 +106,20 @@ module.exports = {
     isDev &&
       new ReactRefreshWebpackPlugin({ overlay: { sockIntegration: "whm" } }),
     // Runs typescript type checker on a separate process
-    isDev && new ForkTsCheckerWebpackPlugin(),
-    !isDev && new webpack.HashedModuleIdsPlugin(),
+    isDev &&
+      new ForkTsCheckerWebpackPlugin({
+        // (Required) Same as eslint command
+        eslint: { files: "./src/**/*.{js,jsx,ts,tsx}" },
+      }),
+    // Prepare compressed versions of assets to serve them with Content-Encoding
+    !isDev && new CompressionPlugin(),
     !isDev &&
-      new CompressionPlugin({
-        test: /\.(js|css|html)$/,
-        threshold: 10240,
+      new ImageMinimizerPlugin({
+        // Lossless optimization with default option, feel free to experiment with options for better result for you
+        // See https://github.com/webpack-contrib/image-minimizer-webpack-plugin#getting-started
+        minimizerOptions: {
+          plugins: [["gifsicle"], ["jpegtran"], ["optipng"], ["svgo"]],
+        },
       }),
     // Visualize all of the webpack bundles
     // Check "https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin" for more configurations

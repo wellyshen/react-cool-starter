@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { RouteProps } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
-import { renderRoutes } from "react-router-config";
+import { RouteConfig, renderRoutes } from "react-router-config";
 import { loadableReady } from "@loadable/component";
 
 import createStore from "../store";
@@ -13,7 +12,7 @@ import routes from "../routes";
 const initialState = window.__INITIAL_STATE__;
 const { store, history } = createStore({ initialState });
 
-const render = (Routes: RouteProps[]) =>
+const render = (Routes: RouteConfig[]) =>
   ReactDOM.hydrate(
     <Provider store={store}>
       <ConnectedRouter history={history}>
@@ -24,4 +23,4 @@ const render = (Routes: RouteProps[]) =>
   );
 
 // loadable-component setup
-loadableReady(() => render(routes));
+loadableReady(() => render(routes as RouteConfig[]));
