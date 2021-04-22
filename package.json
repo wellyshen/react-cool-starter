@@ -71,7 +71,7 @@
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/register": "^7.13.14",
-    "@babel/runtime": "^7.13.10",
+    "@babel/runtime": "^7.13.17",
     "@dr.pogodin/css-modules-require-hook": "^4.5.1",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/component": "^5.14.1",
