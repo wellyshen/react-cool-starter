@@ -150,7 +150,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-testing-library": "^4.1.1",
-    "fork-ts-checker-webpack-plugin": "^6.2.1",
+    "fork-ts-checker-webpack-plugin": "^6.2.4",
     "husky": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
