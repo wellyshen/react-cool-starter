@@ -131,7 +131,6 @@ module.exports = {
   ].filter(Boolean),
   resolve: {
     modules: ["src", "node_modules"],
-    descriptionFiles: ["package.json"],
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
   },
 };
