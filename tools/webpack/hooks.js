@@ -21,7 +21,7 @@ module.exports = () => {
     // Must use the same option with webpack's configuration
     extensions: ["gif", "jpg", "jpeg", "png", "webp", "svg"],
     publicPath: "/assets/",
-    limit: 8 * 1024, // Sync with the default setting of "asset" type
+    limit: 8 * 1024, // Sync with wepack's asset modules
   });
 
   // Fonts
