@@ -41,8 +41,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon --exec ts-node --files .",
     "start": "cross-env NODE_ENV=production ts-node --transpile-only --files .",
-    "build": "yarn clean:build && cross-env NODE_ENV=production webpack --progress --config ./tools/webpack/config.babel.js",
-    "analyze": "yarn clean:build && cross-env NODE_ENV=analyze webpack -p --progress --config ./tools/webpack/config.babel.js",
+    "build": "yarn clean:build && cross-env NODE_ENV=production webpack --config ./tools/webpack/config.babel.js",
+    "analyze": "yarn clean:build && cross-env NODE_ENV=analyze webpack -p --config ./tools/webpack/config.babel.js",
     "lint": "run-s lint:*",
     "lint:code": "eslint --fix . --ext .js,.jsx,.ts,.tsx",
     "lint:type": "tsc",
