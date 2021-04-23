@@ -180,7 +180,7 @@
     "terser-webpack-plugin": "^5.1.1",
     "ts-jest": "^26.5.5",
     "typescript": "^4.2.4",
-    "webpack": "^5.35.0",
+    "webpack": "^5.35.1",
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0",
     "webpack-dev-middleware": "^4.1.0",
