@@ -1,6 +1,6 @@
 import path from "path";
-import logger from "morgan";
 import express from "express";
+import logger from "morgan";
 import compression from "compression";
 import helmet from "helmet";
 import hpp from "hpp";

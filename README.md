@@ -20,6 +20,8 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 ## Real Case Study
 
+> 💡 If you have built a production web app based on this starter, please open a PR to add it here.
+
 - [Spinny](https://www.spinny.com) is a fully inspected highest quality second hand cars with money-back guarantee. simple and transparent buying.
 - [BAM Music](https://www.bammusic.com) is a new generation of music platform for audio visual professionals, filmmakers and content producers. Upgrade your soundtrack with great music that emphasizes your story!
 - [Rendah Mag](https://www.rendahmag.com) is a music magazine which exists to bring exposure to an ever-growing community, focusing on the latest Halftime, Beats & Experimental news & releases. Congrats for the amazing product.
@@ -47,18 +49,18 @@ Really cool starter boilerplate with the most popular technologies:
 - [loadable-component](https://github.com/smooth-code/loadable-components) to lazy load a component when needed. Reduce your bundle size without stress.
 - [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 - [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
-- [css-modules-require-hook](https://github.com/css-modules/css-modules-require-hook) compiles CSS Modules in runtime for SSR.
-- [asset-require-hook](https://github.com/aribouius/asset-require-hook) allows your assets files required during runtime for SSR.
 - [webpack-manifest-plugin](https://github.com/danethurber/webpack-manifest-plugin) generates an assets manifest with hash so you can use them for SSR.
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
 - [helmet](https://github.com/helmetjs/helmet) helps secure Express apps with various HTTP headers.
+- [hpp](https://github.com/analog-nico/hpp) protects against HTTP Parameter Pollution attacks.
+- [compression](https://github.com/expressjs/compression) decreases the amount of downloadable data for your web app.
 - [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 - [ESLint](http://eslint.org) to maintain a consistent TypeScript/JavaScript code style (with Airbnb configuration).
-- [StyleLint](http://stylelint.io) to maintain a consistent css/scss code style.
+- [stylelint](http://stylelint.io) to maintain a consistent CSS/SASS code style.
 - [Prettier](https://prettier.io) to format code and style.
 - CSS and SASS support with [PostCSS](https://github.com/postcss/postcss-loader) for advanced transformations (e.g. autoprefixer, cssnext etc.). [CSS modules](https://github.com/css-Modules/css-Modules) enabled.
--
 - Image (optimized/compressed by [Imagemin Webpack](https://github.com/webpack-contrib/image-minimizer-webpack-plugin)) and Font support.
+- Minimize JavaScript (by [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin)) and CSS (by [css-minimizer-webpack-plugin](https://github.com/webpack-contrib/css-minimizer-webpack-plugin)) bundles for you.
 - Split vendor's libraries from client bundle.
 - No other view engines, just JavaScript based HTML rendering component.
 - Shared app configuration between development and production.
@@ -112,24 +114,25 @@ Now the app should be running at [http://localhost:8080](http://localhost:8080)
 
 I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use environment variables across platforms. All of the scripts are listed as following:
 
-| `yarn <script>` | Description                                                                      |
-| --------------- | -------------------------------------------------------------------------------- |
-| `dev`           | Run your app on the development server at `localhost:3000`. HMR will be enabled. |
-| `start`         | Run your app on the production server only at `localhost:8080`.                  |
-| `build`         | Delete the previous bundled files and bundle it to the `./public/assets`.        |
-| `analyze`       | Visualize the contents of all your bundles.                                      |
-| `lint`          | Lint all `.tsx?`, `.jsx?` and `.scss` files.                                     |
-| `lint:code`     | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).     |
-| `lint:type`     | Run type checking for `.tsx?` files.                                             |
-| `lint:style`    | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).              |
-| `lint:format`   | Format all files except the file list of `.prettierignore`.                      |
-| `test`          | Run testing.                                                                     |
-| `test:watch`    | Run an interactive test watcher.                                                 |
-| `test:cov`      | Run testing with code coverage reports.                                          |
-| `test:update`   | Update jest snapshot.                                                            |
-| `clean`         | Delete the client/server bundled stuff and the coverage report.                  |
-| `clean:build`   | Delete the `./public/assets` folder to clean the client bundled files.           |
-| `clean:cov`     | Delete the `./coverage` folder to clean the code coverage report.                |
+| `yarn <script>`  | Description                                                                       |
+| ---------------- | --------------------------------------------------------------------------------- |
+| `dev`            | Run your app on the development server at `localhost:3000`. HMR will be enabled.  |
+| `dev:build`      | Bundle server-side files in development mode and put it to the `./public/server`. |
+| `start`          | Run your app on the production server only at `localhost:8080`.                   |
+| `build`          | Bundle both server-side and client-side files.                                    |
+| `build:server`   | Bundle server-side files in production mode and put it to the `./public/server`.  |
+| `build:client`   | Bundle client-side files in production mode and put it to the `./public/assets`.  |
+| `analyze:server` | Visualize the bundle content of server-side.                                      |
+| `analyze:client` | Visualize the bundle content of client-side.                                      |
+| `lint`           | Lint all `.tsx?`, `.jsx?` and `.scss` files.                                      |
+| `lint:code`      | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).      |
+| `lint:type`      | Run type checking for `.tsx?` files.                                              |
+| `lint:style`     | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).               |
+| `lint:format`    | Format all files except the file list of `.prettierignore`.                       |
+| `test`           | Run testing.                                                                      |
+| `test:watch`     | Run an interactive test watcher.                                                  |
+| `test:cov`       | Run testing with code coverage reports.                                           |
+| `test:update`    | Update jest snapshot.                                                             |
 
 ## App Structure
 
@@ -137,7 +140,7 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 
 ```
 .
-├── public                        # Express server static path and Webpack bundled output
+├── public                        # Express server static path and Webpack bundles output
 │   ├── favicon.ico               # App favicon
 │   ├── logo192.png               # App logo small
 │   ├── logo512.png               # App logo large
@@ -161,12 +164,14 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   └── server                    # Express server (with Webpack dev and hot middlewares)
 ├── tools                         # Project related configurations (e.g. build, testing etc.)
 │   ├── jest                      # Jest CSS modules and assets mocks settings
-│   ├── webpack                   # Webpack settings
-│   │   ├── config.babel.js       # Webpack configuration
-│   │   └── hooks.js              # Assets require hooks
-├── index.ts                      # App entry point
+│   └── webpack                   # Webpack configurations
+├── babel.config.js               # Babel configuration
 ├── postcss.config.js             # PostCSS configuration
-└── tsconfig.json                 # TypeScript configuration
+├── tsconfig.json                 # TypeScript configuration
+├── jest.config.js                # Jest configuration
+├── .eslintrc.js                  # ESLint configuration
+├── .stylelintrc.js               # stylelint configuration
+└── nodemon.json                  # nodemon configuration
 ```
 
 ## Server-Side Security and Performance
@@ -569,7 +574,7 @@ TypeScript has been integrated with our application to bring the following benef
 
 ### Code and Style Lint
 
-[ESLint](http://eslint.org) (With Airbnb configuration), [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [StyleLint](http://stylelint.io), [Prettier](https://prettier.io) and [lint-staged](https://github.com/okonet/lint-staged) are integrated into this starter to maintain a consistent code style and give you a elegant code formatting. You can configure your lint rules through the `.eslintrc`, `.stylelintrc` and `.prettierrc` files.
+[ESLint](http://eslint.org) (with Airbnb configuration), [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), [stylelint](http://stylelint.io), [Prettier](https://prettier.io) and [lint-staged](https://github.com/okonet/lint-staged) are integrated into this starter to maintain a consistent code style and give you a elegant code formatting. You can configure your lint rules through the `.eslintrc.js`, `.stylelintrc.js`, and [prettier configuration file](https://prettier.io/docs/en/configuration.html).
 
 ### Unit Testing
 
@@ -609,22 +614,17 @@ yarn install --production   # Then install dependencies only
 
 2. Pack necessary folders/files to your Node.js server:
 
-- ✅ node_modules
 - ✅ public
-- ✅ src
-- ✅ tools/webpack
-- ✅ index.ts
-- ✅ postcss.config.js
+- ✅ node_modules
 - ✅ package.json
-- ✅ tsconfig.json
 
-3. Run your app:
+1. Run your app:
 
 ```sh
 yarn start
 ```
 
-> Ideally, the above steps can be integrated into your CI. I recommend you to pack the `./yarn.lock` for yarn installation by CI.
+> Ideally, the above steps can be integrated into your CI. I recommend you to pack the `yarn.lock` file for yarn installation by CI.
 
 ## Troubleshooting
 
@@ -635,7 +635,7 @@ yarn start
   - Restart the server to solve it.
   - Or for v16.1.0 up, you can use `suppressHydrationWarning` attribute for intentional client/server text mismatches ([#11126](https://github.com/facebook/react/pull/11126)).
 
-- If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to `.eslintrc`.
+- If you are on windows and encounter the following error: Expected linebreaks to be 'LF' but found 'CRLF' linebreak-style. The following rule must be added to `.eslintrc.js`.
 
 ```
 // ...
