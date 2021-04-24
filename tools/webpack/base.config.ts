@@ -20,6 +20,7 @@ const getStyleLoaders = (isWeb: boolean, isSass?: boolean) => {
       options: {
         importLoaders: isSass ? 2 : 1,
         modules: {
+          auto: true,
           localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64]",
           exportOnlyLocals: !isWeb,
         },
