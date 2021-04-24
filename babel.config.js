@@ -1,5 +1,5 @@
 module.exports = (api) => {
-  const isWeb = api.caller((caller) => caller?.target === "isWeb");
+  const isWeb = api.caller((caller) => caller && caller.target === "isWeb");
 
   return {
     presets: [
