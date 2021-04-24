@@ -47,7 +47,7 @@ export default async (
     // Load data from server-side first
     await loadBranchData();
 
-    const statsFile = path.resolve(process.cwd(), "public/loadable-stats.json");
+    const statsFile = path.resolve(process.cwd(), "public/loadable-stats");
     const extractor = new ChunkExtractor({ statsFile });
 
     const staticContext: Record<string, any> = {};

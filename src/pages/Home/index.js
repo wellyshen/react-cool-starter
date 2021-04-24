@@ -5,7 +5,6 @@
  * Use .js extension for code-splitting file
  */
 
-import React from "react";
 import loadable from "@loadable/component";
 
 import { Loading, ErrorBoundary } from "../../components";
