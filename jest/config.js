@@ -1,9 +1,7 @@
 module.exports = {
   preset: "ts-jest",
-  setupFilesAfterEnv: ["<rootDir>/tools/jest/setup.ts"],
-  globals: {
-    __DEV__: true,
-  },
+  rootDir: "../",
+  setupFilesAfterEnv: ["<rootDir>/jest/setup.ts"],
   collectCoverageFrom: [
     "src/app/**/*.tsx",
     "src/pages/**/*.tsx",
@@ -13,8 +11,11 @@ module.exports = {
     "!src/store/rootReducer.ts",
   ],
   moduleNameMapper: {
-    ".*\\.(css|scss|sass)$": "<rootDir>/tools/jest/styleMock.ts",
+    ".*\\.(css|scss|sass)$": "<rootDir>/jest/styleMock.ts",
     ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-      "<rootDir>/tools/jest/assetMock.ts",
+      "<rootDir>/jest/assetMock.ts",
+  },
+  globals: {
+    __DEV__: true,
   },
 };

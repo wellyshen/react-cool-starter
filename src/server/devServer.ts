@@ -5,7 +5,7 @@ import config from "../config";
 
 export default (app: Express): void => {
   const webpack = require("webpack");
-  const webpackConfig = require("../../tools/webpack/client.config").default;
+  const webpackConfig = require("../../webpack/client.config").default;
   const compiler = webpack(webpackConfig);
   const instance = require("webpack-dev-middleware")(compiler, {
     headers: { "Access-Control-Allow-Origin": "*" },
