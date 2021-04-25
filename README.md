@@ -6,8 +6,6 @@ I will maintain the starter boilerplate and keep all of the technologies on tren
 
 > 👀 Looking for a form library? Give [React Cool Form](https://react-cool-form.netlify.app) a try!
 
-> 👻 I'm curious what kind of app that you guys building via this starter? Please feel free to [tell me](https://github.com/wellyshen/react-cool-starter/issues/6), let's make some sharing between us.
-
 [![build status](https://img.shields.io/github/workflow/status/wellyshen/react-cool-starter/CI?style=flat-square)](https://github.com/wellyshen/react-cool-starter/actions?query=workflow%3ACI)
 [![coverage status](https://img.shields.io/coveralls/github/wellyshen/react-cool-starter?style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
 [![dependencies status](https://img.shields.io/david/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter)
@@ -159,13 +157,11 @@ Here is the structure of the app, which serves as generally accepted guidelines 
 │   ├── client                    # App bootstrap and rendering (Webpack entry)
 │   ├── routes                    # Routes configuration for both client-side and server-side
 │   └── server                    # Express server (with Webpack dev and hot middlewares)
-├── tools                         # Project related configurations (e.g. build, testing etc.)
-│   ├── jest                      # Jest CSS modules and assets mocks settings
-│   └── webpack                   # Webpack configurations
+├── webpack                       # Webpack configurations
+├── jest                          # Jest configurations
 ├── babel.config.js               # Babel configuration
-├── postcss.config.js             # PostCSS configuration
 ├── tsconfig.json                 # TypeScript configuration
-├── jest.config.js                # Jest configuration
+├── postcss.config.js             # PostCSS configuration
 ├── .eslintrc.js                  # ESLint configuration
 ├── .stylelintrc.js               # stylelint configuration
 └── nodemon.json                  # nodemon configuration
@@ -583,7 +579,7 @@ Jest support the feature of [snapshot testing](https://jestjs.io/docs/en/snapsho
 - Actions
 - Reducers
 
-By the way, Jest built-in code coverage reports, the report files are generated in the `./coverage` folder. You can configure the `./jest.config.js` to define which files that you want to cover. For example:
+By the way, Jest built-in code coverage reports, the report files are generated in the `./coverage` folder. You can configure the `./jest/config.js` to define which files that you want to cover. For example:
 
 ```js
 module.exports = {
