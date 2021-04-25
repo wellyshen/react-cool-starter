@@ -2,15 +2,19 @@ import { useEffect, memo } from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 
-import { AppState } from "../../store";
+import { AppState, AppThunk } from "../../store";
 import { User } from "../../services/jsonPlaceholder";
 import { fetchUserDataIfNeed } from "../../store/userData";
 import { Info } from "../../components";
 import styles from "./styles.module.scss";
 
-type Props = {
+export interface Props {
   match: Record<string, any>;
-};
+}
+
+interface LoadDataArgs {
+  params: { id: string };
+}
 
 const UserInfo = ({ match }: Props): JSX.Element => {
   const { id } = match.params;
@@ -43,5 +47,9 @@ const UserInfo = ({ match }: Props): JSX.Element => {
     </div>
   );
 };
+
+export const loadData = ({ params }: LoadDataArgs): AppThunk[] => [
+  fetchUserDataIfNeed(params.id),
+];
 
 export default memo(UserInfo);

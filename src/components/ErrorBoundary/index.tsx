@@ -8,7 +8,7 @@ interface State {
   errorInfo: { componentStack: string } | null;
 }
 
-export default class ErrorBoundary extends PureComponent<Props, State> {
+class ErrorBoundary extends PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
@@ -41,3 +41,5 @@ export default class ErrorBoundary extends PureComponent<Props, State> {
     );
   }
 }
+
+export default ErrorBoundary;
