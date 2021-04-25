@@ -7,7 +7,7 @@ import UserInfo from "../UserInfo";
 
 describe("<UserInfo />", () => {
   const mockData = {
-    id: 1,
+    id: "1",
     name: "Welly",
     phone: "+886 0970...",
     email: "hivoid19@gmail.com",
@@ -20,6 +20,8 @@ describe("<UserInfo />", () => {
     const { container } = render(
       <ProviderWithStore>
         <MemoryRouter>
+          {/*
+            @ts-expect-error */}
           <UserInfo match={{ params: { id } }} />
         </MemoryRouter>
       </ProviderWithStore>
