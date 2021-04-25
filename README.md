@@ -616,7 +616,7 @@ You can also use [istanbul's ignore hints](https://github.com/gotwarlost/istanbu
 
 ### How to Deploy
 
-To deploy you app to cloud service (e.g. AWS, GCP), you can follow the instructions below.
+To deploy you app to cloud service (e.g. AWS, GCP, Azure etc.), you can follow the instructions below.
 
 1. Build then install production dependencies:
 
