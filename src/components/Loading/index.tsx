@@ -1,7 +1,9 @@
 import styles from "./styles.module.scss";
 
-export default (): JSX.Element => (
+const Loading = (): JSX.Element => (
   <div className={styles.Loading}>
     <p>Loading...</p>
   </div>
 );
+
+export default Loading;

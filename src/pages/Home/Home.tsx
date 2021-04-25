@@ -2,7 +2,7 @@ import { useEffect, memo } from "react";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 
-import { AppState } from "../../store";
+import { AppState, AppThunk } from "../../store";
 import { fetchUserListIfNeed } from "../../store/userList";
 import { List } from "../../components";
 import styles from "./styles.module.scss";
@@ -14,6 +14,7 @@ const Home = (): JSX.Element => {
     shallowEqual
   );
 
+  // Fetch client-side data here
   useEffect(() => {
     dispatch(fetchUserListIfNeed());
   }, [dispatch]);
@@ -34,5 +35,11 @@ const Home = (): JSX.Element => {
     </div>
   );
 };
+
+// Fetch server-side data here
+export const loadData = (): AppThunk[] => [
+  fetchUserListIfNeed(),
+  // More pre-fetched actions...
+];
 
 export default memo(Home);

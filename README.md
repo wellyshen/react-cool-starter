@@ -42,7 +42,7 @@ Really cool starter boilerplate with the most popular technologies:
 - [Babel](https://babeljs.io) for transpile ES6+ to ES5.
 - [React Refresh](https://github.com/facebook/react/tree/master/packages/react-refresh) to fast refresh components without losing their state.
 - [nodemon](https://nodemon.io) to monitor for any changes in your Node.js application and automatically restart the server.
-- [axios](https://github.com/axios/axios) as the Promise-based HTTP client for the browser and Node.js.
+- [axios](https://axios-http.com) as the Promise-based HTTP client for the browser and Node.js.
 - [react-helmet](https://github.com/nfl/react-helmet) to manage title, meta, styles and scripts tags on both server and client.
 - [loadable-component](https://github.com/smooth-code/loadable-components) to lazy load a component when needed. Reduce your bundle size without stress.
 - [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
@@ -182,7 +182,7 @@ Concerning the security and performance of Express in production, I already setu
 [Redux Toolkit](https://redux-toolkit.js.org) is the official, opinionated, batteries-included toolset for efficient Redux development. It includes several utility functions that simplify the most common Redux use cases. In a word, we can do more work with less code, start from the [tutorial](https://redux-toolkit.js.org/tutorials/basic-tutorial) to learn more about it.
 
 - Supports [Redux Devtools Extension](https://github.com/zalmoxisus/redux-devtools-extension), you can follow the [installation guide](https://github.com/zalmoxisus/redux-devtools-extension#installation) to use it.
-- Built-ins most commonly used Redux [middlewares](https://redux-toolkit.js.org/api/getDefaultMiddleware#included-default-middleware) for better DX, such as [Redux Thunk](https://github.com/reduxjs/redux-thunk), [Immer](https://immerjs.github.io/immer/docs/introduction) etc.
+- Built-ins most commonly used Redux [middlewares](https://redux-toolkit.js.org/api/getDefaultMiddleware#included-default-middleware) for better DX, such as [Redux Thunk](https://github.com/reduxjs/redux-thunk), [Immer](https://immerjs.github.io/immer) etc.
 - Provides useful [APIs](https://redux-toolkit.js.org/api/createReducer) for better development efficiency. We can even create entire [slices](https://redux-toolkit.js.org/api/createSlice) of state at once without writing any action creators or action types by hand.
 - Integrates the [Reselect library](https://github.com/reduxjs/reselect) for optimizing the performance of your React + Redux app.
 
@@ -248,7 +248,7 @@ React v16.8 introduced a series of [Hooks](https://reactjs.org/docs/hooks-intro.
 This starter use [React Router](https://reacttraining.com/react-router) library to manage our routes. For the purpose of SSR with data pre-fetched, I put the routes in a centralized [Route Config](https://reacttraining.com/react-router/web/example/route-config). You can setup your routes in the `./src/routes/index.ts`. For example:
 
 ```js
-import RouteComponent from "../pages/RouteComponent";
+import PageComponent from "../pages/PageComponent";
 
 export default [
   {
@@ -256,13 +256,13 @@ export default [
     path: "/top-path",
     // If the route matches the location.pathname exactly or not (used for index route usually)
     exact: true,
-    // Add your route component here
-    component: RouteComponent,
+    // Add your page component here
+    component: PageComponent,
     // Add your sub route component here
     routes: [
       {
         path: "/top-path/sub-path",
-        component: SubRouteComponent,
+        component: SubComponent,
       },
     ],
   },
@@ -272,7 +272,7 @@ export default [
 
 ### Data Fetching from Server-side
 
-Strongly recommend to write Redux actions and reducers via the [createSlice](https://redux-toolkit.js.org/api/createSlice) API of Redux Toolkit (start from the [tutorial](https://redux-toolkit.js.org/tutorials/basic-tutorial) if you are new). The starter using [axios](https://github.com/axios/axios) as the data fetcher, it's quite simple and easy to use. If the action is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
+Strongly recommend to write Redux actions and reducers via the [createSlice](https://redux-toolkit.js.org/api/createSlice) API of Redux Toolkit (start from the [tutorial](https://redux-toolkit.js.org/tutorials/basic-tutorial) if you are new). The starter using [axios](https://axios-http.com) as the data fetcher, it's quite simple and easy to use. If the action is asynchronous then it will return a Promise (or a Promise.all) in the inner function.
 
 Register the action(s) in the `./src/routes/index.ts`, which have to be called from server-side:
 
@@ -281,12 +281,12 @@ export default [
   {
     path: "/top-path",
     exact: true,
-    component: RouteComponent,
+    component: PageComponent,
     // Async actions in the loadData function will be fetched from server-side
     // You can access the URL parameters, Redux store, HTTP request and response by the event object
     loadData: ({ params, getState, req, res }) => [
       myReduxAction(),
-      // Add other pre-fetched actions...
+      // More pre-fetched actions...
     ],
   },
 ];
@@ -341,45 +341,66 @@ useEffect(() => {
 }, [])
 ```
 
+For better architecture, we can centralize the data fetching methods in one place like how I did in the [Home](https://github.com/wellyshen/react-cool-starter/blob/master/src/pages/Home/Home.tsx) page.
+
+```js
+const SomePage = () => {
+  // ...
+
+  // Fetch client-side data here
+  useEffect(() => {
+    dispatch(fetchUserListIfNeed());
+  }, [dispatch]);
+
+  // ...
+};
+
+// Fetch server-side data here, the method will be used by the route config
+export const loadData = () => [fetchUserListIfNeed()];
+export default SomePage;
+```
+
 ### Code Splitting
 
-One great feature of the web is that you don’t have to make your visitors download the entire app before they can use it. You can think of code splitting as incrementally downloading the app. It divides your code into small pieces called “chunks” to reduce the size of bundle loaded by user. Reducing the size of a chunk makes it load and run faster.
+One great feature of the web is that you don’t have to make your visitors download the entire app before they can use it. You can think of code splitting as incrementally downloading the app. It divides your code into small pieces called "chunks" to reduce the size of bundle loaded by user. Reducing the size of a chunk makes it load and run faster.
 
-To accomplish this, I integrate [loadable-components](https://github.com/smooth-code/loadable-components) into this starter. The reason I choose the library is because of its design philosophy of SSR. It works seamless with the starter rather than others. Let’s see how we split our app by route:
+To accomplish this, I integrate [loadable-components](https://loadable-components.com) into this starter. The reason I choose the library is because of its design philosophy of SSR. It works seamless with the starter rather than others. Let’s see how we split our app by page:
 
 I use the following folder/file structure:
 
 ```
- |- pages
-    |- AsyncRouteComponent
-       |- index.js             // Wrap the route component into async component
-       |- RouteComponent.tsx   // The route component
+ └─ pages
+    └─ SomePage
+       |- PageComponent.tsx  // The page component
+       └─ index.tsx          // Wrap the component into async component
 ```
 
-The `index.js` will be:
+The `index.tsx` will be:
 
 ```js
 import loadable from "@loadable/component";
 
 import { Error, Loading } from "../../components";
+import { loadData } from "./PageComponent";
 
-// Import your async route component
-const AsyncComponent = loadable(() => import("./AsyncComponent"), {
-  // Loading component will be displayed when the component is being loaded
+// Dynamically import your page component
+const AsyncPage = loadable(() => import("./PageComponent"), {
+  //  <Loading /> will be displayed when the component is being loaded
   fallback: <Loading />,
 });
 
 export default (props) => (
-  // Wrap an <ErrorBoundary /> to catch the error of <AsyncComponent /> (via "componentDidCatch()" life cycle)
+  // Wrap an <ErrorBoundary /> to catch the error of <AsyncPage /> (via "componentDidCatch()" life cycle)
   <ErrorBoundary>
-    <AsyncComponent {...props} />
+    <AsyncPage {...props} />
   </ErrorBoundary>
 );
+export { loadData }; // Export SSR data fetching method as well
 ```
 
 Then you can [setup](#adding-routes) the route as usual.
 
-> Note: I just show a general case route-based splitting, however you can even split your app by component-based depends on your need. For more advanced configuration you can refer to the [document](https://github.com/smooth-code/loadable-components) of loadable-components.
+> Note: I just show a general case page-based splitting, however you can even split your app by component-based depends on your needs. For more advanced configuration you can refer to the [document](https://loadable-components.com/docs/getting-started) of loadable-components.
 
 ### Managing Title, Meta, Styles and Scripts
 
@@ -620,8 +641,6 @@ yarn start
 > Ideally, the above steps can be integrated into your CI. I recommend you to pack the `yarn.lock` file for yarn installation by CI.
 
 ## Troubleshooting
-
-- If app crash due to the error: `Invariant Violation: loadable: SSR requires "@loadable/babel-plugin", please install it` (refer to this [issue](https://github.com/smooth-code/loadable-components/issues/173)). To solve that, you must use `.js` extension for code-splitting files (e.g. `./src/Home/index.js`).
 
 - If you encounter the markup mismatches error (it's a React universal issue, which usually occurs due to the non-synchronized rendering result between client and server), you can do:
 
