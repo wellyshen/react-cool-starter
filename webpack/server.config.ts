@@ -5,16 +5,6 @@ import merge from "webpack-merge";
 
 import baseConfig, { isDev } from "./base.config";
 
-const getPlugins = () =>
-  isDev
-    ? [
-        new webpack.BannerPlugin({
-          banner: 'require("source-map-support").install();',
-          raw: true,
-        }),
-      ]
-    : [];
-
 const config: Configuration = {
   target: "node",
   devtool: isDev ? "inline-source-map" : "source-map",
@@ -33,7 +23,13 @@ const config: Configuration = {
       allowlist: [/\.(?!(?:jsx?|json)$).{1,5}$/i],
     }),
   ],
-  plugins: getPlugins(),
+  plugins: [
+    // Adding source map support to node.js (for stack traces)
+    new webpack.BannerPlugin({
+      banner: 'require("source-map-support").install();',
+      raw: true,
+    }),
+  ],
 };
 
 export default merge(baseConfig(false), config);
