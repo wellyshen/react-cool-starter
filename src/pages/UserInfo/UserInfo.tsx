@@ -1,4 +1,5 @@
 import { useEffect, memo } from "react";
+import { RouteComponentProps } from "react-router-dom";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 
@@ -8,13 +9,7 @@ import { fetchUserDataIfNeed } from "../../store/userData";
 import { Info } from "../../components";
 import styles from "./styles.module.scss";
 
-export interface Props {
-  match: Record<string, any>;
-}
-
-interface LoadDataArgs {
-  params: { id: string };
-}
+export type Props = RouteComponentProps<{ id: string }>;
 
 const UserInfo = ({ match }: Props): JSX.Element => {
   const { id } = match.params;
@@ -47,6 +42,10 @@ const UserInfo = ({ match }: Props): JSX.Element => {
     </div>
   );
 };
+
+interface LoadDataArgs {
+  params: { id: string };
+}
 
 export const loadData = ({ params }: LoadDataArgs): AppThunk[] => [
   fetchUserDataIfNeed(params.id),

@@ -1,4 +1,5 @@
-import { useEffect, memo } from "react";
+import { FC, useEffect, memo } from "react";
+import { RouteComponentProps } from "react-router-dom";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Helmet } from "react-helmet";
 
@@ -7,7 +8,9 @@ import { fetchUserListIfNeed } from "../../store/userList";
 import { List } from "../../components";
 import styles from "./styles.module.scss";
 
-const Home = (): JSX.Element => {
+export type Props = RouteComponentProps;
+
+const Home: FC<Props> = (): JSX.Element => {
   const dispatch = useDispatch();
   const { readyStatus, items } = useSelector(
     ({ userList }: AppState) => userList,

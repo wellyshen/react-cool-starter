@@ -1,3 +1,5 @@
+import { RouteConfig } from "react-router-config";
+
 import App from "../app";
 import AsyncHome, { loadData as loadHomeData } from "../pages/Home";
 import AsyncUserInfo, { loadData as loadUserInfoData } from "../pages/UserInfo";
@@ -23,4 +25,4 @@ export default [
       },
     ],
   },
-];
+] as RouteConfig[];
