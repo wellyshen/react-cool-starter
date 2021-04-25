@@ -49,11 +49,8 @@ Really cool starter boilerplate with the most popular technologies:
 - [loadable-component](https://github.com/smooth-code/loadable-components) to lazy load a component when needed. Reduce your bundle size without stress.
 - [Webpack Dev Middleware](https://github.com/webpack/webpack-dev-middleware) serves the files emitted from webpack over the Express server.
 - [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware) allows you to add hot reloading into the Express server.
-- [webpack-manifest-plugin](https://github.com/danethurber/webpack-manifest-plugin) generates an assets manifest with hash so you can use them for SSR.
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) creates a visualize size of webpack output files with an interactive zoomable treemap.
-- [helmet](https://github.com/helmetjs/helmet) helps secure Express apps with various HTTP headers.
-- [hpp](https://github.com/analog-nico/hpp) protects against HTTP Parameter Pollution attacks.
-- [compression](https://github.com/expressjs/compression) decreases the amount of downloadable data for your web app.
+- [helmet](https://github.com/helmetjs/helmet), [hpp](https://github.com/analog-nico/hpp), and [compression](https://github.com/expressjs/compression) for [server-Side security and performance](#server-side-security-and-performance).
 - [morgan](https://github.com/expressjs/morgan) the HTTP request logger for server side debugging.
 - [ESLint](http://eslint.org) to maintain a consistent TypeScript/JavaScript code style (with Airbnb configuration).
 - [stylelint](http://stylelint.io) to maintain a consistent CSS/SASS code style.
