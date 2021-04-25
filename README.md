@@ -103,7 +103,7 @@ yarn start  # Running production server
 
 Now the app should be running at [http://localhost:8080](http://localhost:8080)
 
-> Note: You can change the port that you want from the `./arc/config`.
+> Note: You can change the port that you want from the `./src/config`.
 
 ## Script Commands
 
