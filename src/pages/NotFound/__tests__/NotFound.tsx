@@ -7,6 +7,8 @@ describe("<NotFound />", () => {
   it("renders", () => {
     const tree = render(
       <MemoryRouter>
+        {/* 
+          @ts-expect-error */}
         <NotFound />
       </MemoryRouter>
     ).container.firstChild;

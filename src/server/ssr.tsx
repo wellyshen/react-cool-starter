@@ -22,7 +22,6 @@ export default async (
 
   // The method for loading data from server-side
   const loadBranchData = (): Promise<any> => {
-    // @ts-expect-error
     const branch = matchRoutes(routes, req.path);
     const promises = branch.map(({ route, match }) => {
       if (route.loadData)
@@ -55,8 +54,6 @@ export default async (
       <Provider store={store}>
         {/* Setup React-Router server-side rendering */}
         <StaticRouter location={req.path} context={staticContext}>
-          {/*
-          // @ts-expect-error */}
           {renderRoutes(routes)}
         </StaticRouter>
       </Provider>
@@ -77,16 +74,12 @@ export default async (
       return;
     }
 
-    // Check page status
-    const status = staticContext.status === "404" ? 404 : 200;
-
-    // Pass the route and initial state into html template
+    // Pass the route and initial state into html template, the "statusCode" comes from <NotFound />
     res
-      .status(status)
+      .status(staticContext.statusCode === "404" ? 404 : 200)
       .send(renderHtml(head, extractor, htmlContent, initialState));
   } catch (error) {
     res.status(404).send("Not Found :(");
-
     console.error(chalk.red(`==> 😭  Rendering routes error: ${error}`));
   }
 

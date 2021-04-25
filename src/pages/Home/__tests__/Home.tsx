@@ -11,6 +11,8 @@ describe("<Home />", () => {
     const { container } = render(
       <ProviderWithStore>
         <MemoryRouter>
+          {/* 
+            @ts-expect-error */}
           <Home />
         </MemoryRouter>
       </ProviderWithStore>
