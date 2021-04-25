@@ -8,7 +8,7 @@ interface Props {
   items: User[];
 }
 
-export default memo(({ items }: Props) => (
+const List = ({ items }: Props) => (
   <div className={styles.UserList}>
     <h4>User List</h4>
     <ul>
@@ -19,4 +19,6 @@ export default memo(({ items }: Props) => (
       ))}
     </ul>
   </div>
-));
+);
+
+export default memo(List);

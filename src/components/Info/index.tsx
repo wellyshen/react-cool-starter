@@ -7,7 +7,7 @@ interface Props {
   item: User;
 }
 
-export default memo(({ item }: Props) => (
+const Info = ({ item }: Props) => (
   <div className={styles.UserCard}>
     <h4>User Info</h4>
     <ul>
@@ -17,4 +17,6 @@ export default memo(({ item }: Props) => (
       <li>Website: {item.website}</li>
     </ul>
   </div>
-));
+);
+
+export default memo(Info);
