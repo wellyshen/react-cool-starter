@@ -34,7 +34,6 @@
     "prettier"
   ],
   "author": "Welly Shen <hivoid19@gmail.com> (https://github.com/wellyshen)",
-  "main": "index.ts",
   "engines": {
     "node": ">=12",
     "npm": ">=6"
