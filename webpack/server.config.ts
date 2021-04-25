@@ -8,6 +8,7 @@ import baseConfig, { isDev } from "./base.config";
 const getPlugins = () =>
   isDev
     ? [
+        // Adding source map support to node.js (for stack traces)
         new webpack.BannerPlugin({
           banner: 'require("source-map-support").install();',
           raw: true,
