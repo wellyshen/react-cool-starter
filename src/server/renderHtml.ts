@@ -1,11 +1,13 @@
+import { ChunkExtractor } from "@loadable/server";
+import { HelmetData } from "react-helmet";
 import serialize from "serialize-javascript";
 import { minify } from "html-minifier";
 
 export default (
-  head: Record<string, any>,
-  extractor: Record<string, any>,
+  head: HelmetData,
+  extractor: ChunkExtractor,
   htmlContent: string,
-  initialState: Record<string, unknown>
+  initialState: typeof window.__INITIAL_STATE__
 ): any => {
   const html = `
     <!doctype html>

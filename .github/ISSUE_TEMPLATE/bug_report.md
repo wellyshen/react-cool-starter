@@ -33,7 +33,8 @@ Add screenshots to help explain your problem.
 - Device: [e.g. MacBook Pro, iPhone12]
 - OS: [e.g. macOS, iOS, Windows]
 - Browser: [e.g. Chrome, Safari]
-- Version: [e.g. v1.0.0]
+- Node version: [e.g. v16.0.0]
+- App version: [e.g. v1.0.0]
 
 ## Additional Information
 
