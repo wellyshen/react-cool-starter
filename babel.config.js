@@ -4,15 +4,15 @@ module.exports = (api) => {
   return {
     presets: [
       [
-        "@babel/preset-env",
+        "@babel/env",
         {
           useBuiltIns: isWeb ? "usage" : undefined,
           corejs: isWeb ? 3 : false,
         },
       ],
-      "@babel/preset-typescript",
+      "@babel/typescript",
       [
-        "@babel/preset-react",
+        "@babel/react",
         {
           runtime: "automatic",
         },
