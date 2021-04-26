@@ -109,25 +109,25 @@ Now the app should be running at [http://localhost:8080](http://localhost:8080)
 
 I use [cross-env](https://github.com/kentcdodds/cross-env) to set and use environment variables across platforms. All of the scripts are listed as following:
 
-| `yarn <script>`  | Description                                                                       |
-| ---------------- | --------------------------------------------------------------------------------- |
-| `dev`            | Run your app on the development server at `localhost:3000`. HMR will be enabled.  |
-| `dev:build`      | Bundle server-side files in development mode and put it to the `./public/server`. |
-| `start`          | Run your app on the production server only at `localhost:8080`.                   |
-| `build`          | Bundle both server-side and client-side files.                                    |
-| `build:server`   | Bundle server-side files in production mode and put it to the `./public/server`.  |
-| `build:client`   | Bundle client-side files in production mode and put it to the `./public/assets`.  |
-| `analyze:server` | Visualize the bundle content of server-side.                                      |
-| `analyze:client` | Visualize the bundle content of client-side.                                      |
-| `lint`           | Lint all `.tsx?`, `.jsx?` and `.scss` files.                                      |
-| `lint:code`      | Lint all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).      |
-| `lint:type`      | Run type checking for `.tsx?` files.                                              |
-| `lint:style`     | Lint all `.scss` files (With `--fix` to auto fix stylelint errors).               |
-| `lint:format`    | Format all files except the file list of `.prettierignore`.                       |
-| `test`           | Run testing.                                                                      |
-| `test:watch`     | Run an interactive test watcher.                                                  |
-| `test:cov`       | Run testing with code coverage reports.                                           |
-| `test:update`    | Update jest snapshot.                                                             |
+| `yarn <script>`  | Description                                                                        |
+| ---------------- | ---------------------------------------------------------------------------------- |
+| `dev`            | Runs your app on the development server at `localhost:3000`. HMR will be enabled.  |
+| `dev:build`      | Bundles server-side files in development mode and put it to the `./public/server`. |
+| `start`          | Runs your app on the production server only at `localhost:8080`.                   |
+| `build`          | Bundles both server-side and client-side files.                                    |
+| `build:server`   | Bundles server-side files in production mode and put it to the `./public/server`.  |
+| `build:client`   | Bundles client-side files in production mode and put it to the `./public/assets`.  |
+| `analyze:server` | Visualizes the bundle content of server-side.                                      |
+| `analyze:client` | Visualizes the bundle content of client-side.                                      |
+| `lint`           | Lints all `.tsx?`, `.jsx?` and `.scss` files.                                      |
+| `lint:code`      | Lints all `.tsx?` and `.jsx?` files (With `--fix` to auto fix eslint errors).      |
+| `lint:type`      | Runs type checking for `.tsx?` files.                                              |
+| `lint:style`     | Lints all `.scss` files (With `--fix` to auto fix stylelint errors).               |
+| `lint:format`    | Formats all files except the file list of `.prettierignore`.                       |
+| `test`           | Runs testing.                                                                      |
+| `test:watch`     | Runs an interactive test watcher.                                                  |
+| `test:cov`       | Runs testing with code coverage reports.                                           |
+| `test:update`    | Updates jest snapshot.                                                             |
 
 ## App Structure
 
@@ -400,7 +400,7 @@ export { loadData }; // Export SSR data fetching method as well
 
 Then you can [setup](#adding-routes) the route as usual.
 
-> Note: I just show a general case page-based splitting, however you can even split your app by component-based depends on your needs. For more advanced configuration you can refer to the [document](https://loadable-components.com/docs/getting-started) of loadable-components.
+> Note: I just show a general case page-based splitting, however you can even split your app by component-based depends on your needs. For more advanced configuration, please refer to the [document](https://loadable-components.com/docs/getting-started). In additional, loadable-components supports [Webpack pre-fetching/pre-loading](https://webpack.js.org/guides/code-splitting/#prefetchingpreloading-modules) out of the box. `<link rel="preload">` and `<link rel="prefetch">` can be added directly server-side to improve performances.
 
 ### Managing Title, Meta, Styles and Scripts
 
