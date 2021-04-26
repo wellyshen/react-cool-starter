@@ -6,7 +6,7 @@ import { routerMiddleware } from "connected-react-router";
 import createRootReducer from "./rootReducer";
 
 interface Arg {
-  initialState?: Record<string, unknown>;
+  initialState?: typeof window.__INITIAL_STATE__;
   url?: string;
 }
 
