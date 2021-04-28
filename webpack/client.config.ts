@@ -45,7 +45,7 @@ const getPlugins = () => {
 const config: Configuration = {
   devtool: isDev ? "inline-source-map" : "hidden-source-map",
   entry: isDev
-    ? ["webpack-hot-middleware/client", "./src/client"]
+    ? ["webpack-hot-middleware/client?reload=true", "./src/client"]
     : "./src/client",
   output: {
     filename: isDev ? "[name].js" : "[name].[contenthash].js",
