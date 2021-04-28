@@ -23,3 +23,9 @@ const render = (Routes: RouteConfig[]) =>
 
 // loadable-component setup
 loadableReady(() => render(routes as RouteConfig[]));
+
+/**
+ * A temporary workaround for Webpack v5 + HMR, why? see this issue: https://github.com/webpack-contrib/webpack-hot-middleware/issues/390
+ */
+// @ts-expect-error
+if (module.hot) module.hot.accept();
