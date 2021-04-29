@@ -68,7 +68,7 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.13.17",
+    "@babel/runtime": "^7.14.0",
     "@loadable/component": "^5.14.1",
     "@loadable/server": "^5.14.2",
     "@reduxjs/toolkit": "^1.5.1",
