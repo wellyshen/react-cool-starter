@@ -77,7 +77,7 @@
     "chalk": "^4.1.1",
     "compression": "^1.7.4",
     "connected-react-router": "^6.9.1",
-    "core-js": "^3.11.1",
+    "core-js": "^3.12.1",
     "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "helmet": "^4.5.0",
