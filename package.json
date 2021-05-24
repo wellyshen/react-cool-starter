@@ -133,7 +133,7 @@
     "@types/webpack-manifest-plugin": "^3.0.4",
     "@types/webpack-node-externals": "^2.5.1",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
+    "@typescript-eslint/parser": "^4.25.0",
     "babel-loader": "^8.2.2",
     "compression-webpack-plugin": "^7.1.2",
     "css-loader": "^5.2.4",
