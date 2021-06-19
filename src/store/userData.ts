@@ -40,26 +40,27 @@ const userData = createSlice({
 export default userData.reducer;
 export const { getRequesting, getSuccess, getFailure } = userData.actions;
 
-export const fetchUserData = (id: string): AppThunk => async (dispatch) => {
-  dispatch(getRequesting(id));
+export const fetchUserData =
+  (id: string): AppThunk =>
+  async (dispatch) => {
+    dispatch(getRequesting(id));
 
-  const { error, data } = await getUserData(id);
+    const { error, data } = await getUserData(id);
 
-  if (error) {
-    dispatch(getFailure({ id, error: error.message }));
-  } else {
-    dispatch(getSuccess({ id, item: data as User }));
-  }
-};
+    if (error) {
+      dispatch(getFailure({ id, error: error.message }));
+    } else {
+      dispatch(getSuccess({ id, item: data as User }));
+    }
+  };
 
 const shouldFetchUserData = (state: AppState, id: string) =>
   state.userData[id]?.readyStatus !== "success";
 
-export const fetchUserDataIfNeed = (id: string): AppThunk => (
-  dispatch,
-  getState
-) => {
-  if (shouldFetchUserData(getState(), id)) return dispatch(fetchUserData(id));
+export const fetchUserDataIfNeed =
+  (id: string): AppThunk =>
+  (dispatch, getState) => {
+    if (shouldFetchUserData(getState(), id)) return dispatch(fetchUserData(id));
 
-  return null;
-};
+    return null;
+  };
