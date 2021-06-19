@@ -13,12 +13,9 @@ interface Arg {
 // Use inferred return type for making correctly Redux types
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const createStore = ({ initialState, url }: Arg = {}) => {
-  const history =
-    typeof window === "undefined"
-      ? createMemoryHistory({
-          initialEntries: [url || "/"],
-        })
-      : createBrowserHistory();
+  const history = __SERVER__
+    ? createMemoryHistory({ initialEntries: [url || "/"] })
+    : createBrowserHistory();
   const store = configureStore({
     preloadedState: initialState,
     reducer: createRootReducer(history),
