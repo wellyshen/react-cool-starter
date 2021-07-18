@@ -469,9 +469,11 @@ It's super easy to render the image and font both on client and server, the usag
 Using image:
 
 ```js
-import logo from "../static/logo.svg";
+import logo, { ReactComponent as Logo } from "../static/logo.svg";
 
 <img src={logo} alt="Logo" role="presentation" />;
+
+<Logo />;
 ```
 
 Using font-awesome:
