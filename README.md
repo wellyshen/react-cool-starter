@@ -4,8 +4,6 @@ A simple but feature rich starter boilerplate for creating your own [universal](
 
 I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
-> 👀 Looking for a form library? Give [React Cool Form](https://react-cool-form.netlify.app) a try!
-
 [![build status](https://img.shields.io/github/workflow/status/wellyshen/react-cool-starter/CI?style=flat-square)](https://github.com/wellyshen/react-cool-starter/actions?query=workflow%3ACI)
 [![coverage status](https://img.shields.io/coveralls/github/wellyshen/react-cool-starter?style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
 [![dependencies status](https://img.shields.io/david/wellyshen/react-cool-starter?style=flat-square)](https://david-dm.org/wellyshen/react-cool-starter)
