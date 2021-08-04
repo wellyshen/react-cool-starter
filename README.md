@@ -2,7 +2,7 @@
 
 A simple but feature rich starter boilerplate for creating your own [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) app. It built on the top of [React](https://facebook.github.io/react), [Redux](https://github.com/reactjs/redux), [React Router](https://reacttraining.com/react-router) and [Express](https://expressjs.com). Includes all the hot stuff and modern web development tools such as [Redux Toolkit](https://redux-toolkit.js.org), [TypeScript](https://www.typescriptlang.org), [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io), [PostCSS](https://github.com/postcss/postcss-loader), [React Refresh](https://github.com/facebook/react/tree/master/packages/react-refresh), [Jest](https://facebook.github.io/jest) and [React Testing Library](https://github.com/testing-library/react-testing-library). See the [**“Features”**](#features) section for other awesome features you can expect.
 
-I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
+> I will maintain the starter boilerplate and keep all of the technologies on trend. Welcome to join me if you want. Hope you guys love it 🤩
 
 [![build status](https://img.shields.io/github/workflow/status/wellyshen/react-cool-starter/CI?style=flat-square)](https://github.com/wellyshen/react-cool-starter/actions?query=workflow%3ACI)
 [![coverage status](https://img.shields.io/coveralls/github/wellyshen/react-cool-starter?style=flat-square)](https://coveralls.io/github/wellyshen/react-cool-starter?branch=master)
