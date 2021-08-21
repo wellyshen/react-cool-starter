@@ -125,7 +125,7 @@
     "@types/react-router-config": "^5.0.2",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-test-renderer": "^17.0.1",
-    "@types/redux-mock-store": "^1.0.2",
+    "@types/redux-mock-store": "^1.0.3",
     "@types/serialize-javascript": "^5.0.1",
     "@types/serve-favicon": "^2.5.3",
     "@types/terser-webpack-plugin": "^5.0.4",
