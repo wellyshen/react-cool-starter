@@ -1591,10 +1591,10 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
-"@types/hpp@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@types/hpp/-/hpp-0.2.1.tgz#76b270089b0995d5a4e950b75213247e724d8c8e"
-  integrity sha512-+46c8i+nXpoJn8GJnZTvZUfggz4bKOlTtEXIxWTFb7xZI9onahMUnZ+xNdjc4vzSM/zUaUYtuEsY8ysgv68rXQ==
+"@types/hpp@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@types/hpp/-/hpp-0.2.2.tgz#cab5fec6fba5a8471383ffaaa62a840992d24f28"
+  integrity sha512-BLgsawqFFbS3tFUr+mcBRfst+DumnSfi4PgyNeJAGk0eIxm7lKX1axmHVlbgKNAZS0caZA5/LSopuj0T2LKRPw==
   dependencies:
     "@types/express" "*"
 
