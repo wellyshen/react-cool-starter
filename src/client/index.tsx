@@ -11,8 +11,14 @@ import routes from "../routes";
 const initialState = window.__INITIAL_STATE__;
 const { store, history } = createStore({ initialState });
 
+/**
+ * Fix: Expected server HTML to contain a matching <div> in <div>
+ */
+// @ts-expect-error
+const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
+
 const render = (Routes: RouteConfig[]) =>
-  ReactDOM.hydrate(
+  renderMethod(
     <Provider store={store}>
       <ConnectedRouter history={history}>
         {renderRoutes(Routes)}

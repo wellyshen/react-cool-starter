@@ -117,9 +117,49 @@ const config = (isWeb = false): Configuration => ({
         generator: { emit: isWeb },
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         type: "asset",
         generator: { emit: isWeb },
+      },
+      {
+        test: /\.svg$/i,
+        oneOf: [
+          {
+            // automatically chooses between exporting a data URI and emitting a separate file for SVG's referenced in CSS/SCSS
+            type: "asset",
+            generator: { emit: isWeb },
+            issuer: {
+              and: [/\.(sa|sc|c)ss$/],
+            },
+          },
+          {
+            // use SVG as the URI or ReactComponent
+            use: [
+              {
+                loader: "@svgr/webpack",
+                options: {
+                  prettier: false,
+                  svgo: true,
+                  svgoConfig: {
+                    plugins: [{ removeViewBox: false }],
+                  },
+                  titleProp: true,
+                },
+              },
+              {
+                loader: "file-loader",
+                options: {
+                  publicPath: "/assets/",
+                },
+              },
+            ],
+            type: "javascript/auto",
+            generator: { emit: isWeb },
+            issuer: {
+              and: [/\.(t|j)sx?$/],
+            },
+          },
+        ],
       },
     ],
   },
