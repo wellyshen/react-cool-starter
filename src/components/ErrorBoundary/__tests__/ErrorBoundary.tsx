@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
-import ErrorBoundary from "../index";
+import ErrorBoundary from "..";
 
 describe("<ErrorBoundary />", () => {
   const tree = (children?: ReactNode) =>
