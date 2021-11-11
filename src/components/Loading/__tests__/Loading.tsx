@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
-import Loading from "../index";
+import Loading from "..";
 
 describe("<Loading />", () => {
   it("renders", () => {
