@@ -43,7 +43,7 @@ const getPlugins = () => {
 };
 
 const config: Configuration = {
-  devtool: isDev ? "inline-source-map" : "hidden-source-map",
+  devtool: isDev && "eval-cheap-source-map",
   entry: isDev
     ? ["webpack-hot-middleware/client?reload=true", "./src/client"]
     : "./src/client",
