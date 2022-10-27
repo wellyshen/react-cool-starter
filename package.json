@@ -72,7 +72,7 @@
     "@loadable/component": "^5.15.0",
     "@loadable/server": "^5.15.0",
     "@reduxjs/toolkit": "^1.6.0",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.4.13",
     "axios": "^0.21.1",
     "chalk": "^4.1.1",
     "compression": "^1.7.4",
